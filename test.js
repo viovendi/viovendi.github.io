@@ -1,0 +1,1 @@
+$('.customization2_attendees_title').css('color', 'red');
