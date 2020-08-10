@@ -1,1 +1,1 @@
-$('.customization2_attendee_title').css('color', 'black');
+$('.customization2_attendee_title').css('color', 'red');
