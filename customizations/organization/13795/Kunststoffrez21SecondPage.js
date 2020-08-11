@@ -1,31 +1,4 @@
 
-<style type="text/css">
-  @keyframes nodeInserted { 
-    from { opacity: 0.99; }
-    to { opacity: 1; } 
-  }
-
-  .customization2_booker-state_edit{
-    animation-duration: 0.001s;
-    animation-name: nodeInserted;
-  }
-  .customization2_attendee_contact-data_first-name{
-    animation-duration: 0.001s;
-    animation-name: nodeInserted;
-  } 
-  .customization2_attendee_edit-action_save{
-    animation-duration: 0.001s;
-    animation-name: nodeInserted;
-  }
-    .customization2_summary_item-2{
-    animation-duration: 0.001s;
-    animation-name: nodeInserted;
-  }
-   .customization2_summary_item-3{
-    animation-duration: 0.001s;
-    animation-name: nodeInserted;
-  }
-</style>
 
 
 
