@@ -1,5 +1,5 @@
 
-
+<style type="text/css">
   @keyframes nodeInserted { 
     from { opacity: 0.99; }
     to { opacity: 1; } 
@@ -25,7 +25,7 @@
     animation-duration: 0.001s;
     animation-name: nodeInserted;
   }
-
+</style>
 
 
 
