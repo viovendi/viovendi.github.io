@@ -93,7 +93,7 @@ translateTicketCategory('Ausstellerstand Praxisforum Kunststoffrezyklate 2021', 
 translateTicketCategory('Weiterer Mitarbeiter mit Tagungsteilnahme', 'Additional employee with conference participation', '')
 translateTicketCategory('Ausstellungsstand Praxisforum Kunststoffrezyklate 2020 - Referentenunternehmen', 'Exhibitor Stand for Praxisforum Kunststoffrezyklate 2021 / Speaker company', 'The booking includes 1 stand supervisor including participation in the conference, documents and catering.')
 translateProduct('Hiermit melde ich mich zum Get-together am Abend des 09.03.2021 an', 'I hereby register for the networking event on the evening of 09.03.2021', '(included in the participation fee)')
-    translateSummaryBox("Hiermit melde ich mich zum Get-together am Abend des 09.03.2021 an", "I hereby register for the Get-together on the evening of 09.03.2021. (included in the participation fee)");
+translateSummaryBox("Hiermit melde ich mich zum Get-together am Abend des 09.03.2021 an", "I hereby register for the Get-together on the evening of 09.03.2021. (included in the participation fee)");
     /*
  //
  // Translate Summary Box
