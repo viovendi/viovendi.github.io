@@ -101,8 +101,8 @@ translateSummaryBox("Hiermit melde ich mich zum Get-together am Abend des 09.03.
  */
     
     
-translateSummaryBox('Frühbucher - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Ticket - Registration for Praxisforum Kunststoffrezyklate 2021')
-translateSummaryBox('Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Registration for Praxisforum Kunststoffrezyklate 2021')
+translateSummaryBox('Frühbucher - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Ticket - Registration for Praxisforum Kunststoffrezyklate 2021');
+translateSummaryBox('Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Registration for Praxisforum Kunststoffrezyklate 2021');
 translateSummaryBox('Frühbucher Abonnententicket - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Subscriber Price - Registration for Praxisforum Kunststoffrezyklate 2021')
 translateSummaryBox('Abonnententicket - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Subscriber Price - Registration for Praxisforum Kunststoffrezyklate 2021')
 translateSummaryBox('Frühbucher Sonderrabatt - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Special Rate Ticket - Registration for Praxisforum Kunststoffrezyklate 2021')
