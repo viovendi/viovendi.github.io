@@ -1,5 +1,5 @@
 
-<style type="text/css">
+
   @keyframes nodeInserted { 
     from { opacity: 0.99; }
     to { opacity: 1; } 
@@ -25,10 +25,10 @@
     animation-duration: 0.001s;
     animation-name: nodeInserted;
   }
-</style>
 
 
-<script>
+
+
   console.log('Start working, Google Tag Manager Second Page');
 
   function translateTicketCategory(categoryName, translation, description){
@@ -218,4 +218,3 @@ translateSummaryBox('Ausstellungsstand Praxisforum Kunststoffrezyklate 2020 - Re
   document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
-</script>
