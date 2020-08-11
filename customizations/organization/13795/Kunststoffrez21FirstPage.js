@@ -1,6 +1,5 @@
 
 
-<script>
   console.log('Start working, Google Tag Manager');
  function translateTicketCategoryName(titleName, titleTranslation, descriptionTranslation){
    $('.event-categories li').each(function(i, element) {
@@ -76,4 +75,4 @@ translateTicketCategoryName('Ausstellungsstand Praxisforum Kunststoffrezyklate 2
   });
 
   callAll();
-</script>
+
