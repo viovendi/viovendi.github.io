@@ -16,7 +16,7 @@ async function getAccessToken(){
       return response;
 }
 
-async function getContacts(){
+async function getContacts(accessToken){
     const headers = new Headers();
     headers.append("Content-Type", "application/json")
     headers.append("Authorization", `Bearer ${accessToken}`)
@@ -29,8 +29,9 @@ async function getContacts(){
 }
 
 async function handler(){
-    await getContacts()
+
     const accessToken = await getAccessToken();
+    await getContacts(accessToken)
     console.log(accessToken)
 }
 
