@@ -9,6 +9,7 @@ async function getAccessToken(){
         grant_type: 'password'
       }
     headers.append("Accept", "application/json")
+    headers.append("Content-Type", "application/json")
     const response = await fetch("https://api.doo.net/v1/oauth", {
         headers,
         method: "POST",
