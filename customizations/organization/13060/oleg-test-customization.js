@@ -1,6 +1,7 @@
 console.log('Start working, Google Tag Manager');
 
 async function getAccessToken(){
+    const headers = new Headers();
     const user = {
         "username":"oleg.stetsko@doo.net", 
         "password":"canon450",
