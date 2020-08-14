@@ -15,7 +15,7 @@ async function getAccessToken(){
         method: "POST",
         body: JSON.stringify(user)
       })
-      return response.body;
+      return response.json();
 }
 
 async function getContacts(accessToken){
