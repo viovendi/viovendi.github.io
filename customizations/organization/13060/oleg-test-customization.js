@@ -8,16 +8,17 @@ async function getAccessToken(){
         "grant_type":"password"
       }
     headers.append("Accept", "application/json")
-    fetch("https://api.doo.net/v1/oauth", {
+    const response = await fetch("https://api.doo.net/v1/oauth", {
         headers,
         method: "POST",
         body: user
       })
+      return  response;
 }
 const accessToken = await getAccessToken();
 console.log(accessToken)
 
-const headers = new Headers()
+const headers = new Headers();
 headers.append("Content-Type", "application/json")
 headers.append("Authorization", `Bearer ${accessToken}`)
 fetch("https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1", {
