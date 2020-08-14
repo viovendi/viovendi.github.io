@@ -34,8 +34,8 @@ async function getContacts(accessToken){
 async function handler(){
 
     const response = await getAccessToken();
+    console.log(response)
     await getContacts(response.data.access_token)
-    console.log(accessToken)
 }
 
 handler()
