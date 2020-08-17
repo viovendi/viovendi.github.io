@@ -6,7 +6,6 @@ console.log('Start working, Google Tag Manager');
     var regString  = `(${shortName})$`
     var rex = new RegExp(regString , 'g');
         if(item !== '' && item.trim().search(rex) == 0){
-          console.log($(this))
         $(this).toggleClass('show');
         }
     });
