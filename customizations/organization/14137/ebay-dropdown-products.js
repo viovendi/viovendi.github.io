@@ -23,8 +23,8 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Slot 1", "Do. 08. Oktober 2020", "Slot 1");
- 
+productAddTitle("Slot 1", "Slot 1", "Slot 1");
+productAddTitle("Slot 2", "Slot 2", "Slot 2"); 
 function workshopShowSD1(){
 productShow("Slot 1");
 productShow("Slot 2");
