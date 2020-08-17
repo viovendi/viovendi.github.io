@@ -23,9 +23,10 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Slot 1", "Slot 1", "Slot 1");
-productAddTitle("Slot 2", "Slot 2", "Slot 2"); 
+productAddTitle("Slot 1", "HEading 1", "Slot 1");
+productAddTitle("Slot 2", "Heading 2", "Slot 2"); 
 function workshopShowSD1(){
+ console.log('in workshopShowSD1');
 productShow("Slot 1");
 productShow("Slot 2");
 productShow("Slot 3");
