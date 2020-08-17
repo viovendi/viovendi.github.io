@@ -23,8 +23,10 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Uhr: SD1 BayBG", "Do. 08. Oktober 2020", "SD1");
+productAddTitle("Uhr: SD1 BayBG", "Do. 08. Oktober 2020", "Slot 1");
  
 function workshopShowSD1(){
-productShow("Uhr: SD1 BayBG");
+productShow("Slot 1");
+productShow("Slot 2");
+productShow("Slot 3");
 }
