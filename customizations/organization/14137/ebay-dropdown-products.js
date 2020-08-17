@@ -4,7 +4,7 @@ console.log('Start working, Google Tag Manager');
     $('.customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
         if(item !== '' && item.trim().includes(shortName)){
-         
+         console.log(shortName)
         $(this).find('.customization2_attendee_further-data_product').toggleClass('show');
         }
     });
@@ -24,11 +24,17 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Slot 1", "HEading 1", "SD1");
+productAddTitle("Slot 1", "Heading 1", "SD1");
 productAddTitle("Slot 2", "Heading 2", "SD2"); 
 function workshopShowSD1(){
+  console.log('workshopShowSD1')
 productShow("Slot 1");
 productShow("Slot 2");
 productShow("Slot 3");
 }
-workshopShowSD1();
+
+function workshopShowSD2(){
+  // productShow("Slot 1");
+  // productShow("Slot 2");
+  // productShow("Slot 3");
+  }
