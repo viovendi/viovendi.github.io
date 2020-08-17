@@ -10,7 +10,7 @@ console.log('Start working, Google Tag Manager');
   } 
  
   function productAddTitle(shortName, title, indexShowFunction){
-    $('customization2_attendee_further-data_product).each(function(i, element) {
+    $('customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) == 6){
           var div = document.createElement("div");
