@@ -4,7 +4,7 @@ console.log('Start working, Google Tag Manager');
     $('.customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
         if(item !== '' && item.trim().indexOf(shortName) == 0){
-         console.log(shortName)
+         console.log(item.trim(), this)
         $(this).find('.customization2_attendee_further-data_product').toggleClass('show');
         }
     });
