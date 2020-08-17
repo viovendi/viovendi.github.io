@@ -33,7 +33,7 @@ async function getContacts(accessToken){
 async function handler(){
 
     const response = await getAccessToken();
-    console.log(response)
+
     const contacts = await getContacts(response.data.access_token)
     console.log(contacts)
 }
