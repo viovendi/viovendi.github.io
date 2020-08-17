@@ -29,12 +29,8 @@ console.log('Start working, Google Tag Manager');
   }
  
 productAddTitle("Slot 1", "Heading 1", "SD1");
-productAddTitle("Slot 2", "Heading 2", "SD2"); 
 function workshopShowSD1(){
-  console.log('workshopShowSD1')
 productShow("Slot 1");
-productShow("Slot 2");
-productShow("Slot 3");
 }
 
 function workshopShowSD2(){
