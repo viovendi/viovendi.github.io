@@ -3,9 +3,8 @@ console.log('Start working, Google Tag Manager');
   function productShow(shortName){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
-        if(item !== '' && item.trim().search(/(shortName)$/g) == 0){
-         console.log(item.trim().indexOf(shortName) == 0, this)
-         console.log(item)
+    var rex = new RegExp(`\\(${shortName})$\\`, 'g');
+        if(item !== '' && item.trim().search(rex) == 0){
         $(this).find('.customization2_attendee_further-data_product').toggleClass('show');
         }
     });
@@ -14,7 +13,8 @@ console.log('Start working, Google Tag Manager');
   function productAddTitle(shortName, title, indexShowFunction){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
-    if(item !== '' && item.trim().search(/(shortName)$/g) == 0){
+    var rex = new RegExp(`\\(${shortName})$\\`, 'g');
+    if(item !== '' && item.trim().search(rex) == 0){
           var div = document.createElement("div");
               div.setAttribute("class","products-title");
               div.textContent = title;
