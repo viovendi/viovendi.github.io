@@ -30,3 +30,4 @@ productShow("Slot 1");
 productShow("Slot 2");
 productShow("Slot 3");
 }
+workshopShowSD1();
