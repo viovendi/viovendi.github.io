@@ -6,8 +6,8 @@ console.log('Start working, Google Tag Manager');
     var regString  = `(${shortName})$`
     var rex = new RegExp(regString , 'g');
         if(item !== '' && item.trim().search(rex) == 0){
-          console.log($(this).find('.customization2_attendee_further-data_product'))
-        $(this).find('.customization2_attendee_further-data_product').toggleClass('show');
+          console.log($(this))
+        $(this).toggleClass('show');
         }
     });
   } 
