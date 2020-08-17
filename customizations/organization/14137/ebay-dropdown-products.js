@@ -3,7 +3,7 @@ console.log('Start working, Google Tag Manager');
   function productShow(shortName){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
     var item = $(this).find('label').text();
-    var rex = new RegExp(`\\(${shortName})$\\`, 'g');
+    var rex = new RegExp(`/(${shortName})$/`, 'g');
     console.log(item.trim().search(rex))
     console.log(rex)
         if(item !== '' && item.trim().search(rex) == 0){
