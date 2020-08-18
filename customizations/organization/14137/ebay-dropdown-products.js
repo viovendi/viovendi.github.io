@@ -28,12 +28,13 @@ console.log('Start working, Google Tag Manager');
   }
  
 productAddTitle("Slot 1", "Heading 1", "SD1");
-productAddTitle("What is this", "Heading 2", "SD2");
+productAddTitle("Slot 2", "Heading 2", "SD2");
+
 function workshopShowSD1(){
-productShow("Slot 1");
+   productShow("Slot 1");
 }
 
 function workshopShowSD2(){
    productShow("Slot 2");
    productShow("Slot 3");
-  }
+}
