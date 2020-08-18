@@ -47,6 +47,9 @@ function workshopShowSD1(){
    productShow('Do. 08. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
    productShow('Do. 08. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
    productShow('Do. 08. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
+ productShow('Slot 1');
+ productShow('Slot 2');
+ productShow('Slot 3');
 }
 
 function workshopShowSD2(){
@@ -54,6 +57,9 @@ function workshopShowSD2(){
    productShow('Fr. 09. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
    productShow('Fr. 09. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
    productShow('Fr. 09. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
+ productShow('Slot 4');
+ productShow('Slot 5');
+ productShow('Slot 6');
 }
 
 function workshopShowSD3(){
