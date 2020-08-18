@@ -27,8 +27,8 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Do. 08", "Do. 08. Oktober 2020", "SD1");
-productAddTitle("Fr. 09", "Fr. 09. Oktober 2020", "SD2");
+productAddTitle("Slot", "Do. 08. Oktober 2020", "SD1");
+productAddTitle("Slot", "Fr. 09. Oktober 2020", "SD2");
 productAddTitle("Slot 3", "Mo. 12. Oktober 2020", "SD3");
 productAddTitle("Slot 4", "Di. 13. Oktober 2020", "SD4");
 productAddTitle("Slot 5", "Mi. 14. Oktober 2020", "SD5");
