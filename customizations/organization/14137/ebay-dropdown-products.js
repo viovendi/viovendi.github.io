@@ -27,39 +27,35 @@ console.log('Start working, Google Tag Manager');
   })
   }
  
-productAddTitle("Slot 1", "Do. 08. Oktober 2020", "SD1");
-productAddTitle("Slot 2", "Fr. 09. Oktober 2020", "SD2");
-productAddTitle("Slot 3", "Mo. 12. Oktober 2020", "SD3");
-productAddTitle("Slot 4", "Di. 13. Oktober 2020", "SD4");
-productAddTitle("Slot 5", "Mi. 14. Oktober 2020", "SD5");
-productAddTitle("Slot 6", "Do. 15. Oktober 2020", "SD6");
-productAddTitle("Slot 7", "Fr. 16. Oktober 2020", "SD7");
-productAddTitle("Slot 8", "Mo. 19. Oktober 2020", "SD8");
-productAddTitle("Slot 9", "Di. 20. Oktober 2020", "SD9");
-productAddTitle("Slot 10", "Mi. 21. Oktober 2020", "SD10");
-productAddTitle("Slot 11", "Do. 22. Oktober 2020", "SD11");
-productAddTitle("Slot 12", "Fr. 23. Oktober 2020", "SD12");
-productAddTitle("Slot 13", "Mo. 26. Oktober 2020", "SD13");
-productAddTitle("Slot 14", "Di. 27. Oktober 2020", "SD14");
+productAddTitle("Do. 08.", "Do. 08. Oktober 2020", "SD1");
+productAddTitle("Fr. 09.", "Fr. 09. Oktober 2020", "SD2");
+productAddTitle("Mo. 12.", "Mo. 12. Oktober 2020", "SD3");
+productAddTitle("Di. 13.", "Di. 13. Oktober 2020", "SD4");
+productAddTitle("Mi. 14.", "Mi. 14. Oktober 2020", "SD5");
+productAddTitle("Do. 15.", "Do. 15. Oktober 2020", "SD6");
+productAddTitle("Fr. 16.", "Fr. 16. Oktober 2020", "SD7");
+productAddTitle("Mo. 19.", "Mo. 19. Oktober 2020", "SD8");
+productAddTitle("Di. 20.", "Di. 20. Oktober 2020", "SD9");
+productAddTitle("Mi. 21.", "Mi. 21. Oktober 2020", "SD10");
+productAddTitle("Do. 22.", "Do. 22. Oktober 2020", "SD11");
+productAddTitle("Fr. 23.", "Fr. 23. Oktober 2020", "SD12");
+productAddTitle("Mo. 26.", "Mo. 26. Oktober 2020", "SD13");
+productAddTitle("Di. 27.", "Di. 27. Oktober 2020", "SD14");
 
 function workshopShowSD1(){
-   productShow('Do. 08. Oktober 2020 | 9:00 Uhr - 10:00 Uhr');
-   productShow('Do. 08. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
-   productShow('Do. 08. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
-   productShow('Do. 08. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
- productShow('Slot');
- productShow('Slot 2');
- productShow('Slot 3');
+   productShow('Do. 08.');
+   //productShow('Do. 08. Oktober 2020 | 9:00 Uhr - 10:00 Uhr');
+   //productShow('Do. 08. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
+  // productShow('Do. 08. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
+   //productShow('Do. 08. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
 }
 
 function workshopShowSD2(){
-   productShow('Fr. 09. Oktober 2020 | 9:00 Uhr - 10:00 Uhr');
+ productShow('Fr. 09.');
+   /*productShow('Fr. 09. Oktober 2020 | 9:00 Uhr - 10:00 Uhr');
    productShow('Fr. 09. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
    productShow('Fr. 09. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
-   productShow('Fr. 09. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
- productShow('Slot 4');
- productShow('Slot 5');
- productShow('Slot 6');
+   productShow('Fr. 09. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');*/
 }
 
 function workshopShowSD3(){
