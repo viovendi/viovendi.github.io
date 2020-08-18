@@ -28,7 +28,7 @@ console.log('Start working, Google Tag Manager');
   }
  
 productAddTitle("Slot 1", "Do. 08. Oktober 2020", "SD1");
-productAddTitle("Slot 1", "Fr. 09. Oktober 2020", "SD2");
+productAddTitle("Slot 2", "Fr. 09. Oktober 2020", "SD2");
 productAddTitle("Slot 3", "Mo. 12. Oktober 2020", "SD3");
 productAddTitle("Slot 4", "Di. 13. Oktober 2020", "SD4");
 productAddTitle("Slot 5", "Mi. 14. Oktober 2020", "SD5");
@@ -47,7 +47,7 @@ function workshopShowSD1(){
    productShow('Do. 08. Oktober 2020 | 11:00 Uhr - 12:00 Uhr');
    productShow('Do. 08. Oktober 2020 | 14:00 Uhr - 15:00 Uhr');
    productShow('Do. 08. Oktober 2020 | 16:00 Uhr - 17:00 Uhr');
- productShow('Slot 1');
+ productShow('Slot');
  productShow('Slot 2');
  productShow('Slot 3');
 }
