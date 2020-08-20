@@ -1,6 +1,6 @@
 console.log('Start working, Google Tag Manager');
 
-async function getAccessToken(){
+async function getAccessToken() {
   const result = await $.ajax({
     url: `https://api.doo.net/v1/oauth`,
     type: 'post',
@@ -9,8 +9,8 @@ async function getAccessToken(){
       'Accept': 'application/json'
     },
     data: JSON.stringify({
-      username: 'oleg.stetsko@doo.net', 
-      password:'canon450',
+      username: 'oleg.stetsko@doo.net',
+      password: 'canon450',
       client_id: 'viovendi_web',
       grant_type: 'password'
     }),
@@ -19,7 +19,7 @@ async function getAccessToken(){
   return result.data.access_token;
 }
 
-async function getContacts(accessToken, page = 1){
+async function getContacts(accessToken, page = 1) {
   const result = await $.ajax({
     url: `https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=${page}`,
     type: 'get',
@@ -32,8 +32,8 @@ async function getContacts(accessToken, page = 1){
   return result._embedded.organizer_contacts;
 }
 
-async function getPageCount(accessToken){
- const result = await $.ajax({
+async function getPageCount(accessToken) {
+  const result = await $.ajax({
     url: 'https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1',
     type: 'get',
     headers: {
@@ -44,12 +44,14 @@ async function getPageCount(accessToken){
   });
   return result.page_count;
 }
-async function checkCode(code, pageCount, accessToken){
-  for (let i = 0; i < pageCount; i += 1) {
-    const contacts = await getContacts(accessToken, 2)
+async function checkCode(code, pageCount, accessToken) {
+  for (let i = 1; i < pageCount; i += 1) {
+    const contacts = await getContacts(accessToken, i)
     console.log(i)
     for (let j = 0; j < contacts.length; j += 1) {
-    console.log(contacts[j].external_customer_id)
+      if (contacts[j].external_customer_id) {
+        console.log(contacts[j].external_customer_id)
+      }
     }
   }
 
@@ -57,10 +59,10 @@ async function checkCode(code, pageCount, accessToken){
 
 
 
-async function handler(){
-    const accessToken = await getAccessToken();
-    const pageCount = await getPageCount(accessToken)
-    await checkCode(null, pageCount, accessToken)
+async function handler() {
+  const accessToken = await getAccessToken();
+  const pageCount = await getPageCount(accessToken)
+  await checkCode(null, pageCount, accessToken)
 }
 
 handler()
