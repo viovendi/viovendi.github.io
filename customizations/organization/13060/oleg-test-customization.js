@@ -1,22 +1,22 @@
 console.log('Start working, Google Tag Manager');
 
 async function getAccessToken(){
-    const headers = new Headers();
-    const user = {
-        username: 'oleg.stetsko@doo.net', 
-        password:'canon450',
-        client_id: 'viovendi_web',
-        grant_type: 'password'
-      }
-    headers.append("Accept", "application/json")
-    headers.append("Content-Type", "application/json")
-    const response = await fetch("https://api.doo.net/v1/oauth", {
-        headers,
-        method: "POST",
-        body: JSON.stringify(user)
-      })
-     return response.json();
-      
+  const result = await $.ajax({
+    url: `https://api.doo.net/v1/oauth`,
+    type: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    data: {
+      username: 'oleg.stetsko@doo.net', 
+      password:'canon450',
+      client_id: 'viovendi_web',
+      grant_type: 'password'
+    },
+    dataType: 'json',
+  });
+  return result.data.access_token;
 }
 
 async function getContacts(accessToken, page = 1){
@@ -58,10 +58,10 @@ async function checkCode(code, pageCount){
 
 
 async function handler(){
-    const response = await getAccessToken();
+    const accessToken = await getAccessToken();
+    console.log(accessToken)
     const pageCount = await getPageCount(response.data.access_token)
     await checkCode(null, pageCount)
-    console.log(contacts)
 }
 
 handler()
