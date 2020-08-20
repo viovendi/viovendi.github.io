@@ -37,8 +37,8 @@ async function getPageCount(accessToken){
     headers,
     method: "GET",
   })
-  const result = response.json();
-  console.log(result.page_count)
+  //const result = response.json();
+  //console.log(result.page_count)
   return response.json();
 }
 
@@ -47,7 +47,8 @@ async function handler(){
     const response = await getAccessToken();
 
     const contacts = await getContacts(response.data.access_token)
-    await getPageCount(response.data.access_token)
+   const count = await getPageCount(response.data.access_token)
+   console.log(count)
     console.log(JSON.stringify(contacts))
 }
 
