@@ -51,6 +51,7 @@ async function checkCode(code, pageCount, accessToken) {
     for (let j = 0; j < contacts.length; j += 1) {
       if (contacts[j].external_customer_id && contacts[j].external_customer_id.includes(code)) {
         console.log(contacts[j].external_customer_id)
+        return true
       }
     }
   }
@@ -81,16 +82,31 @@ function prefill(input){
   input.dispatchEvent(event)
 }
 
+var debounce = function(fn, ms){
+  var timeout;
+  return function () {
+    var fnCall = function(){ fn.call(this, arguments) }
+    clearTimeout(timeout);
+
+    timeout = setTimeout(fnCall, ms)
+  };
+}
+
 
 
 async function handler() {
   const accessToken = await getAccessToken();
   const pageCount = await getPageCount(accessToken)
-  await checkCode(null, pageCount, accessToken)
-
   const input = getInput('Abonnentennummer');
+  const code = input.val().trim();
+  onChange = debounce(checkCode, 500);
+  const checkCode = await checkCode(code, pageCount, accessToken)
+
+
   if(input)  $('.customization2_attendee_edit-action_save').prop('disabled', true);
   prefill(input[0])
+  onChange = debounce(checkCode, 500);
+  input.keyup('keyup', onChange);
 }
 
 handler()
