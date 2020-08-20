@@ -30,7 +30,7 @@ async function getContacts(accessToken){
     return response.json();
 }
 async function getPageCount(accessToken){
- const result = $.ajax({
+ const result = await $.ajax({
     url: 'https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1',
     type: 'get',
     headers: {
