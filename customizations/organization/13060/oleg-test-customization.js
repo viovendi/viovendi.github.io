@@ -16,6 +16,7 @@ async function getAccessToken(){
     }),
     dataType: 'json',
   });
+  console.log(result)
   return result.data.access_token;
 }
 
