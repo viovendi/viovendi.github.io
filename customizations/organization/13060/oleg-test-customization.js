@@ -39,6 +39,7 @@ async function getPageCount(accessToken){
     },
     dataType: 'json',
     success: function (result) {
+      console.log(result)
     return result;
     }
   });
@@ -53,7 +54,6 @@ async function handler(){
 
     const contacts = await getContacts(response.data.access_token)
    const count = await getPageCount(response.data.access_token)
-   console.log(count)
     console.log(JSON.stringify(contacts))
 }
 
