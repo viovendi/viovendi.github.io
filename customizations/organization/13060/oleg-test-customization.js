@@ -39,6 +39,7 @@ async function getPageCount(accessToken){
     },
     dataType: 'json',
   });
+  console.log(result)
   return result.page_count;
 }
 
