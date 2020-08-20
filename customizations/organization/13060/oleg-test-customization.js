@@ -30,15 +30,23 @@ async function getContacts(accessToken){
     return response.json();
 }
 async function getPageCount(accessToken){
-  const headers = new Headers();
-  headers.append("Content-Type", "application/json")
-  headers.append("Authorization", `Bearer ${accessToken}`)
-  const response = await fetch("https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1", {
-    headers,
-    method: "GET",
-  })
-  return response.json();
+  $.ajax({
+    url: 'https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1',
+    type: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`
+    },
+    data: JSON.stringify(obj),
+    dataType: 'json',
+    success: function (result) {
+    return result;
+    }
+  });
 }
+
+
+
 
 async function handler(){
 
@@ -46,7 +54,7 @@ async function handler(){
 
     const contacts = await getContacts(response.data.access_token)
    const count = await getPageCount(response.data.access_token)
-   console.log($('.customization2_attendee_contact-data_first-name'))
+   console.log(count)
     console.log(JSON.stringify(contacts))
 }
 
