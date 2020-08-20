@@ -3,7 +3,7 @@ console.log('Start working, Google Tag Manager');
 async function getAccessToken(){
   const result = await $.ajax({
     url: `https://api.doo.net/v1/oauth`,
-    type: 'get',
+    type: 'post',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
