@@ -44,9 +44,9 @@ async function getPageCount(accessToken){
   });
   return result.page_count;
 }
-async function checkCode(code, pageCount){
+async function checkCode(code, pageCount, accessToken){
   for (let i = 0; i < pageCount; i += 1) {
-    const contacts = await getContacts(response.data.access_token, 2)
+    const contacts = await getContacts(accessToken, 2)
     console.log(i)
     for (let j = 0; j < contacts.length; j += 1) {
     console.log(contacts[j].external_customer_id)
@@ -60,7 +60,7 @@ async function checkCode(code, pageCount){
 async function handler(){
     const accessToken = await getAccessToken();
     const pageCount = await getPageCount(accessToken)
-    await checkCode(null, pageCount)
+    await checkCode(null, pageCount, accessToken)
 }
 
 handler()
