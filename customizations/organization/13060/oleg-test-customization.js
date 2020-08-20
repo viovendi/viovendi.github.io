@@ -37,7 +37,6 @@ async function getPageCount(accessToken){
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
     },
-    data: JSON.stringify(obj),
     dataType: 'json',
     success: function (result) {
     return result;
