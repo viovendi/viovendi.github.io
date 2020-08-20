@@ -60,7 +60,7 @@ async function checkCode(code, pageCount){
 async function handler(){
     const accessToken = await getAccessToken();
     console.log(accessToken)
-    const pageCount = await getPageCount(response.data.access_token)
+    const pageCount = await getPageCount(access_token)
     await checkCode(null, pageCount)
 }
 
