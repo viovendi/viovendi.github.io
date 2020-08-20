@@ -37,8 +37,6 @@ async function getPageCount(accessToken){
     headers,
     method: "GET",
   })
-  const result = response.json();
-  console.log(result)
   return response.json();
 }
 
