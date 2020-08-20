@@ -99,12 +99,15 @@ async function handler() {
   const pageCount = await getPageCount(accessToken)
   const input = getInput('Abonnentennummer');
   const code = input.val().trim();
-  const checkCode = await checkCode(code, pageCount, accessToken)
+  async function checkExternalId(){
+    const checkCode = await checkCode(code, pageCount, accessToken)
+  }
+  
 
 
   if(input)  $('.customization2_attendee_edit-action_save').prop('disabled', true);
   prefill(input[0])
-  onChange = debounce(checkCode, 500);
+  onChange = debounce(checkExternalId, 500);
   input.keyup('keyup', onChange);
 }
 
