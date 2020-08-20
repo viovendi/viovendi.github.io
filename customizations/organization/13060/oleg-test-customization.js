@@ -48,7 +48,6 @@ async function handler(){
 
     const contacts = await getContacts(response.data.access_token)
    const count = await getPageCount(response.data.access_token)
-   console.log(count)
     console.log(JSON.stringify(contacts))
 }
 
