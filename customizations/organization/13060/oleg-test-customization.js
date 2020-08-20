@@ -99,7 +99,6 @@ async function handler() {
   const pageCount = await getPageCount(accessToken)
   const input = getInput('Abonnentennummer');
   const code = input.val().trim();
-  onChange = debounce(checkCode, 500);
   const checkCode = await checkCode(code, pageCount, accessToken)
 
 
