@@ -48,6 +48,7 @@ async function handler(){
 
     const contacts = await getContacts(response.data.access_token)
    const count = await getPageCount(response.data.access_token)
+   console.log($('.customization2_attendee_contact-data_first-name'))
     console.log(JSON.stringify(contacts))
 }
 
