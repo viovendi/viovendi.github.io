@@ -45,17 +45,17 @@ async function getPageCount(accessToken) {
   return result.page_count;
 }
 async function checkCode(code, pageCount, accessToken) {
-  let code = false;
+  let externalCustomerId = false;
   for (let i = 0; i < pageCount; i += 1) {
     const page = pageCount - i;
     const contacts = await getContacts(accessToken, page)
     for (let j = 0; j < contacts.length; j += 1) {
       if (contacts[j].external_customer_id && contacts[j].external_customer_id.includes(code)) {
-        code = true;
+        externalCustomerId = true;
       }
     }
   }
-  return code; 
+  return externalCustomerId; 
 }
 
 function getInput(name){
