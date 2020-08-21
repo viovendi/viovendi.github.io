@@ -97,11 +97,11 @@ var debounce = function (fn, ms) {
   };
 }
 
-const input = getInput('Abonnentennummer');
-let code = input.val().trim();
 
 
 function checkCode() {
+const input = getInput('Abonnentennummer');
+let code = input.val().trim();
   console.log(code)
 }
 
@@ -111,7 +111,7 @@ async function handler() {
   const accessToken = await getAccessToken();
   const pageCount = await getPageCount(accessToken)
   const input = getInput('Abonnentennummer');
-  code = input.val().trim();
+  const code = input.val().trim();
 
 
 
