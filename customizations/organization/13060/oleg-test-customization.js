@@ -94,6 +94,7 @@ async function checkCode() {
     const page = pageCount - i;
     const contacts = await getContacts(accessToken, page)
     for (let j = 0; j < contacts.length; j += 1) {
+      console.log(contacts[j].external_customer_id)
       if (contacts[j].external_customer_id && contacts[j].external_customer_id.includes(code)) {
         $('.customization2_attendee_edit-action_save').prop('disabled', false);
       } else {
