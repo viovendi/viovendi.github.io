@@ -98,6 +98,7 @@ async function checkCode() {
       console.log(contacts[j].external_customer_id.includes(code))
       if (contacts[j].external_customer_id && contacts[j].external_customer_id.includes(code)) {
         $('.customization2_attendee_edit-action_save').prop('disabled', false);
+        return false;
       } else {
         $('.code-message').text('Bitte geben Sie Ihre Abonnentennummer an')
         $('.customization2_attendee_edit-action_save').prop('disabled', true);
