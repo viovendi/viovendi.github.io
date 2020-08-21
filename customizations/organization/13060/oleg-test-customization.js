@@ -98,7 +98,7 @@ async function checkCode() {
         continue;
       }
       console.log(contacts[j].external_customer_id.indexOf(code))
-      if (contacts[j].external_customer_id.indexOf(code) >= 0) {
+      if (contacts[j].external_customer_id == code) {
         console.log(contacts[j].external_customer_id)
         $('.customization2_attendee_edit-action_save').prop('disabled', false);
         $('.code-message').text('')
