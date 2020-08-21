@@ -99,6 +99,7 @@ async function checkCode() {
       }
       if (contacts[j].external_customer_id.includes(code)) {
         $('.customization2_attendee_edit-action_save').prop('disabled', false);
+        $('.code-message').text('')
         return false;
       } else {
         $('.code-message').text('Bitte geben Sie Ihre Abonnentennummer an')
