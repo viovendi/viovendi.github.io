@@ -1,5 +1,6 @@
 console.log('Start working, Google Tag Manager');
 
+
 async function getAccessToken() {
   const result = await $.ajax({
     url: `https://api.doo.net/v1/oauth`,
@@ -44,6 +45,7 @@ async function getPageCount(accessToken) {
   });
   return result.page_count;
 }
+/*
 async function checkCode(code, pageCount, accessToken) {
   let externalCustomerId = false;
   for (let i = 0; i < pageCount; i += 1) {
@@ -56,40 +58,51 @@ async function checkCode(code, pageCount, accessToken) {
     }
   }
   return externalCustomerId; 
-}
+}*/
 
-function getInput(name){
+
+function getInput(name) {
   var input;
-  $('.customization2_attendee_further-data_custom-question').each(function() {
+  $('.customization2_attendee_further-data_custom-question').each(function () {
 
-    var inputName =  $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
-    if(inputName.indexOf(name) >= 0){
+    var inputName = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
+    if (inputName.indexOf(name) >= 0) {
       input = $(this).find('.customization2_attendee_further-data_custom-question_input')
     }
   });
   return input;
 };
 
-function prefill(input){
-  if(input) input.value = 'ZS';
+function prefill(input) {
+  if (input) input.value = 'ZS';
   var event;
-  if(typeof(Event) === 'function') {
+  if (typeof (Event) === 'function') {
     event = new Event('input'); // for Chrome
-  }else{
+  } else {
     event = document.createEvent('Event');
     event.initEvent('input', true, true); // for IE
   }
   input.dispatchEvent(event)
 }
 
-var debounce = function(fn, ms){
+var debounce = function (fn, ms) {
   var timeout;
   return function () {
-    var fnCall = function(){ fn.call(this, arguments) }
+    var fnCall = function () {
+      fn.call(this, arguments)
+    }
     clearTimeout(timeout);
 
     timeout = setTimeout(fnCall, ms)
   };
+}
+
+const input = getInput('Abonnentennummer');
+let code = input.val().trim();
+
+
+function checkCode() {
+  console.log(code)
 }
 
 
@@ -98,17 +111,13 @@ async function handler() {
   const accessToken = await getAccessToken();
   const pageCount = await getPageCount(accessToken)
   const input = getInput('Abonnentennummer');
-  const code = input.val().trim();
-  async function checkExternalId(){
-    const checkCode = await checkCode(code, pageCount, accessToken)
-    console.log(checkCode)
-  }
-  
+  code = input.val().trim();
 
 
-  if(input)  $('.customization2_attendee_edit-action_save').prop('disabled', true);
+
+  if (input) $('.customization2_attendee_edit-action_save').prop('disabled', true);
   prefill(input[0])
-  onChange = debounce(checkExternalId, 500);
+  onChange = debounce(checkCode, 500);
   input.keyup('keyup', onChange);
 }
 
