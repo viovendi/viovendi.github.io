@@ -99,9 +99,21 @@ var debounce = function (fn, ms) {
 
 
 
-function checkCode() {
+async function checkCode() {
 const input = getInput('Abonnentennummer');
 let code = input.val().trim();
+const accessToken = await getAccessToken();
+const pageCount = await getPageCount(accessToken)
+
+for (let i = 0; i < pageCount; i += 1) {
+  const page = pageCount - i;
+  const contacts = await getContacts(accessToken, page)
+  for (let j = 0; j < contacts.length; j += 1) {
+    if (contacts[j].external_customer_id && contacts[j].external_customer_id.includes(code)) {
+      $('.customization2_attendee_edit-action_save').prop('disabled', false);
+    }
+  }
+}
   console.log(code)
 }
 
