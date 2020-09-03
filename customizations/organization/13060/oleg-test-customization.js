@@ -78,8 +78,7 @@ async function checkCode() {
 
 
 async function handler() {
-  const accessToken = await getAccessToken();
-  const pageCount = await getPageCount(accessToken)
+ // const pageCount = await getPageCount(accessToken)
   const input = getInput('Abonnentennummer');
   const code = input.val().trim();
 
