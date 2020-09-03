@@ -1,5 +1,5 @@
 console.log('Start working, Google Tag Manager');
-$.getScript('../../shared/http.js');
+$.getScript('https://viovendi.github.io/shared/http.js');
 $('.customization2_attendee_edit-action').append('<span class="code-message"></span>');
 
 
