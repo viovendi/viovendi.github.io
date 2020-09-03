@@ -1,50 +1,8 @@
 console.log('Start working, Google Tag Manager');
+$.getScript('../../shared/http.js');
 $('.customization2_attendee_edit-action').append('<span class="code-message"></span>');
 
-async function getAccessToken() {
-  const result = await $.ajax({
-    url: `https://api.doo.net/v1/oauth`,
-    type: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    data: JSON.stringify({
-      username: 'oleg.stetsko@doo.net',
-      password: 'canon450',
-      client_id: 'viovendi_web',
-      grant_type: 'password'
-    }),
-    dataType: 'json',
-  });
-  return result.data.access_token;
-}
 
-async function getContacts(accessToken, page = 1) {
-  const result = await $.ajax({
-    url: `https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=${page}`,
-    type: 'get',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`
-    },
-    dataType: 'json',
-  });
-  return result._embedded.organizer_contacts;
-}
-
-async function getPageCount(accessToken) {
-  const result = await $.ajax({
-    url: 'https://api.doo.net/v1/organizers/current/contacts?sort_order=asc&sort_by=last_name&page_size=50&page=1',
-    type: 'get',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`
-    },
-    dataType: 'json',
-  });
-  return result.page_count;
-}
 
 
 function getInput(name) {
@@ -87,10 +45,18 @@ var debounce = function (fn, ms) {
 async function checkCode() {
   const input = getInput('Abonnentennummer');
   let code = input.val().trim();
-  const accessToken = await getAccessToken();
-  const pageCount = await getPageCount(accessToken)
+  const result = await makeRequest({
+    url: `https://93d49ebfddd6.ngrok.io/v1/integrations/vincentz/booking-code?code=${code}`,
+    type: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    dataType: 'json',
+  })
 
-  for (let i = 0; i < pageCount; i += 1) {
+  console.log(result)
+
+  /* for (let i = 0; i < pageCount; i += 1) {
     const page = pageCount - i;
     const contacts = await getContacts(accessToken, page)
     for (let j = 0; j < contacts.length; j += 1) {
@@ -106,7 +72,7 @@ async function checkCode() {
         $('.customization2_attendee_edit-action_save').prop('disabled', true);
       }
     }
-  }
+  }*/
 }
 
 
