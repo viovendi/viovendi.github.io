@@ -53,8 +53,8 @@ async function checkCode() {
     },
     dataType: 'json',
   })
-
-  if (result.id) {
+console.log(result.payload.id);
+  if (result.payload.id) {
     $('.customization2_attendee_edit-action_save').prop('disabled', false);
     $('.code-message').text('')
     return false;
