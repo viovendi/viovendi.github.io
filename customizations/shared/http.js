@@ -1,5 +1,5 @@
 async function makeRequest(options) {
-    let result;
+    let result = null;
     try {
         result = await $.ajax(options);
         return result;
