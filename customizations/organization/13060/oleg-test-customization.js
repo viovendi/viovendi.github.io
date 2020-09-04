@@ -53,10 +53,10 @@ async function checkCode() {
     },
     dataType: 'json',
   })
-console.log(result.payload.id);
   if (result.payload.id) {
     $('.customization2_attendee_edit-action_save').prop('disabled', false);
     $('.code-message').text('')
+    localStorage.setItem('dooContactId', result.payload.id);
     return false;
   } else {
     $('.code-message').text('Bitte geben Sie Ihre Abonnentennummer an')
