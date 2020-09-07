@@ -2,9 +2,6 @@ console.log('Start working, Google Tag Manager');
 $.getScript('https://viovendi.github.io/customizations/shared/http.js');
 $('.customization2_attendee_edit-action').append('<span class="code-message"></span>');
 
-
-
-
 function getInput(name) {
   var input;
   $('.customization2_attendee_further-data_custom-question').each(function () {
@@ -40,13 +37,11 @@ var debounce = function (fn, ms) {
   };
 }
 
-
-
 async function checkCode() {
   const input = getInput('Abonnentennummer');
   const code = input.val().trim();
   const result = await makeRequest({
-    url: `https://93d49ebfddd6.ngrok.io/v1/integrations/vincentz/booking-code?code=${code}`,
+    url: `https://cs.doo.net/v1/integrations/vincentz/booking-code?code=${code}`,
     type: 'get',
     headers: {
       'Content-Type': 'application/json',
@@ -56,7 +51,6 @@ async function checkCode() {
   if (result.payload.id) {
     $('.customization2_attendee_edit-action_save').prop('disabled', false);
     $('.code-message').text('')
-    localStorage.setItem('dooContactId', result.payload.id);
     return false;
   } else {
     $('.code-message').text('Bitte geben Sie Ihre Abonnentennummer an')
