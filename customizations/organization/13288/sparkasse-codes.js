@@ -14,7 +14,7 @@
 
     function getCode(eventId){
       $.ajax({
-        url: 'https://cs.staging1.doo.net/v1/integrations/tierpark/get-code',
+        url: 'https://cs.doo.net/v1/integrations/tierpark/get-code',
         headers: {
           'Accept': '*/*',
           'Content-Type': 'application/json',
