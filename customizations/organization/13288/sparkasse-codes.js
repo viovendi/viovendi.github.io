@@ -64,6 +64,7 @@
 
       getCode(eventId);
   }
+  console.log(events.indexOf(eventId), eventId)
   if (events.indexOf(eventId) >= 1) {
       handler();
   }
