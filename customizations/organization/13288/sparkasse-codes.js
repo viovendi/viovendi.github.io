@@ -61,24 +61,27 @@
           }
 
       };
-      console.log(events.indexOf(eventId))
-      if (events.indexOf(eventId) >= 1) {
-          getCode(eventId);
-      }
   }
 
-  handler();
+  if (events.indexOf(eventId) >= 1) {
+    handler();
+  }
+ 
 
   var insertionListener = function (event) {
       if (event.animationName === "nodeInserted") {
           console.log("Node has been inserted: ", event.target);
-          handler();
+          if (events.indexOf(eventId) >= 1) {
+            handler();
+          }
           $('.customization2_attendee_edit-action_save').mouseover(function () {
               formValid = $("form").hasClass("ng-valid");
           })
           $('.customization2_attendee_edit-action_save').on('click', function () {
               if (formValid) {
-                  handler();
+                if (events.indexOf(eventId) >= 1) {
+                    handler();
+                  }
               }
           });
       }
