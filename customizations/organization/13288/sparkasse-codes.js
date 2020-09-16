@@ -64,14 +64,14 @@
 
       getCode(eventId);
   }
-  console.log(events.indexOf(eventId), eventId)
-  if (events.indexOf(eventId) >= 1) {
+
+  if (events.indexOf(eventId) != -1) {
       handler();
   }
   var insertionListener = function (event) {
       if (event.animationName === "nodeInserted") {
           console.log("Node has been inserted: ", event.target);
-          if (events.indexOf(eventId) >= 1) {
+          if (events.indexOf(eventId) != -1) {
               handler();
           }
           $('.customization2_attendee_edit-action_save').mouseover(function () {
@@ -79,7 +79,7 @@
           })
           $('.customization2_attendee_edit-action_save').on('click', function () {
               if (formValid) {
-                  if (events.indexOf(eventId) >= 1) {
+                  if (events.indexOf(eventId) != -1) {
                       handler();
                   }
               }
