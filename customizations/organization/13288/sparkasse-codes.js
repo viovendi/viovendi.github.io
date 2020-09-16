@@ -61,6 +61,7 @@
           }
 
       };
+      console.log(events.indexOf(eventId))
       if (events.indexOf(eventId) >= 1) {
           getCode(eventId);
       }
