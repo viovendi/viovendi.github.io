@@ -14,8 +14,6 @@
   }
 
 
-  
-
   /*
  //
  // Translate Ticket Category
@@ -23,16 +21,13 @@
  */
 
   function translateAll(){
+      translateTicketCategory('Early-Bird-Ticket (Mitglieder/Partner*)', 'Early-Bird-Ticket (Members / Partner*)', 'until 31.01.2021')
+      translateTicketCategory('Early-Bird-Ticket (Nicht-Mitglieder)', 'Early-Bird-Ticket (Non-Members)', 'until 31.01.2021')
+      translateTicketCategory('Ticket OPS 2021 (Mitglieder/Partner*)', 'Ticket OPS 2021 (Members / Partner*)', 'For members of associations and partners')
+      translateTicketCategory('Ticket OPS 2021 (Nicht-Mitglieder)', 'Ticket OPS 2021 (Non-Members)', 'Price without additional discounts')
+      translateTicketCategory('Ticket OPS 2021 (Mitarbeiter)', 'Ticket OPS 2021 (Employees)', '')
+  }
 
-
-
-translateTicketCategory('Frühbucher - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Ticket - Registration for Praxisforum Kunststoffrezyklate 2021', 'The Early Bird Ticket can be booked until 09.02.2021.')
-translateTicketCategory('Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Registration for Praxisforum Kunststoffrezyklate 2021', '')
-translateTicketCategory('Frühbucher Abonnententicket - Anmeldung zum Praxisforum Kunststoffrezyklate 2021', 'Early Bird Subscriber Price - Registration for Praxisforum Kunststoffrezyklate 2021', '10% discount for subscribers of "Kunststoffe" or "Kunststoffe international". The Early Bird Ticket can be booked until 09.02.2021.')
- }
-
-
- 
 
   translateAll();
 
