@@ -2,9 +2,9 @@
   console.log('Start working, Google Tag Manager Second Page');
 
   function translateTicketCategory(categoryName, translation, description){
-    $(".customization2_attendee").each(function(i, element) {
+    $(".ew-billing-information__attendee-questions").each(function(i, element) {
       var attendee = $(this);
-      var ticketCategoryName = attendee.find(".customization2_attendee_title")
+      var ticketCategoryName = attendee.find(".customization-category-name")
        var ticketDescription = attendee.find(".customization-category-description")
       if(ticketCategoryName.text().trim().indexOf(categoryName) == 0){
         ticketCategoryName.text(translation)
