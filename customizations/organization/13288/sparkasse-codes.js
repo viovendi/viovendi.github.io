@@ -61,8 +61,10 @@
           }
 
       };
+      if (getCategoryName()) {
+          getCode(eventId);
+      }
 
-      getCode(eventId);
   }
 
   if (events.indexOf(eventId) != -1) {
