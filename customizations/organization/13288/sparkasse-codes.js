@@ -1,4 +1,4 @@
-  console.log('Start working, Google Tag Manager test')
+  console.log('Start working, Google Tag Manager')
   var pathname = window.location.pathname;
   var eventId = pathname.split('/')[3];
   var formValid;
