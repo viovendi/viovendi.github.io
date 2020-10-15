@@ -28,7 +28,6 @@
               }),
               dataType: 'json',
               success: function (res) {
-                  console.log(res.payload.tierpark_code)
                   if (res.payload.tierpark_code) {
                       setTimeout(function () {
                           addCode(res.payload.tierpark_code, "QR-Code Nummer")
@@ -60,8 +59,8 @@
           }
 
       };
-      console.log(getCategoryName())
-      if (getCategoryName()) {
+     var categoryName = getCategoryName()
+      if (categoryName == "Kinderkarten 4 bis 14 Jahre" || categoryName == "Erwachsenenkarten") {
           console.log(eventId)
           getCode(eventId);
       }
