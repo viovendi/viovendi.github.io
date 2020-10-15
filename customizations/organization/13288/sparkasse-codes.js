@@ -61,7 +61,6 @@
       };
      var categoryName = getCategoryName()
       if (categoryName == "Kinderkarten 4 bis 14 Jahre" || categoryName == "Erwachsenenkarten") {
-          console.log(eventId)
           getCode(eventId);
       }
 
