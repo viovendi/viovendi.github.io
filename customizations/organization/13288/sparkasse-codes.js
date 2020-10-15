@@ -33,9 +33,7 @@
                           addCode(res.payload.tierpark_code, "QR-Code Nummer")
                       }, 7000);
                       addCode(res.payload.tierpark_code, "QR-Code Nummer")
-                  } else {
-                      addCode("no response", "QR-Code Nummer")
-                  }
+                  } 
               }
           });
       }
@@ -61,6 +59,7 @@
           }
 
       };
+      console.log(getCategoryName())
       if (getCategoryName()) {
           getCode(eventId);
       }
