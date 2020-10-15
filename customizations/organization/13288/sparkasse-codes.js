@@ -28,6 +28,7 @@
               }),
               dataType: 'json',
               success: function (res) {
+                  console.log(res.payload.tierpark_code)
                   if (res.payload.tierpark_code) {
                       setTimeout(function () {
                           addCode(res.payload.tierpark_code, "QR-Code Nummer")
@@ -61,6 +62,7 @@
       };
       console.log(getCategoryName())
       if (getCategoryName()) {
+          console.log(eventId)
           getCode(eventId);
       }
 
