@@ -2,7 +2,7 @@ console.log('dropdown');
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
-  var name = ticketname.val().replace(/^\s+|\s+$/g, "")
+  var name = ticketname.text().replace(/^\s+|\s+$/g, "")
   console.log(ticketname)
   console.log(name)
 
