@@ -1,4 +1,5 @@
- function handler(){
+console.log('dropdown');
+function handler(){
   console.log("im Handler")
      //Hide Position im Unternehmen and Funktion im Unternehmen
      $('.customization2_attendee_further-data_custom-question-5').css("display","none")
