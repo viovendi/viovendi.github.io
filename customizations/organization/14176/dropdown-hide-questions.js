@@ -28,7 +28,7 @@ function handler(){
 
                        
      ddFunktion.change(function(){
-       	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
+       	var state = ddFunktion.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
                   console.log("andere")
             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
