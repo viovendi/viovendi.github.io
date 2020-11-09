@@ -2,8 +2,10 @@ console.log('dropdown');
 function handler(){
   console.log("im Handler")
      //Hide Position im Unternehmen and Funktion im Unternehmen
-     $('.customization2_attendee_further-data_custom-question-5').css("display","none")
-     $('.customization2_attendee_further-data_custom-question-7').css("display","none")
+     /*
+     $('.customization2_attendee_further-data_custom-question-6').css("display","none") //position
+     $('.customization2_attendee_further-data_custom-question-8').css("display","none") //Funkton 1
+     $('.customization2_attendee_further-data_custom-question-10').css("display","none") //Funktion 2
 
     
      var ddPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_dropdown')
@@ -39,7 +41,7 @@ function handler(){
         }
      }
                       )
-      
+      */
  }
   handler();
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
