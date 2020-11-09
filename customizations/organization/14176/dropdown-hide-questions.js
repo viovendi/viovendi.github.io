@@ -40,7 +40,8 @@ function handler(){
       
  }
   handler();
-
-//document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
+  document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+  document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
   
