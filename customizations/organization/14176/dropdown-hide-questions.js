@@ -12,14 +12,15 @@ function handler(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
          console.log("andere")
-            $('.customization2_attendee_further-data_custom-question-5').css("display","block")
+            $('.customization2_attendee_further-data_custom-question-5').css("display","block");
         }
         else {    
                   console.log("else")
 
-            $('.customization2_attendee_further-data_custom-question-5').css("display","none")
+            $('.customization2_attendee_further-data_custom-question-5').css("display","none");
         }
      }
+                      )
          
                        
      var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
@@ -37,6 +38,7 @@ function handler(){
             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
         }
      }
+                      )
       
  }
   handler();
