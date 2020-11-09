@@ -1,17 +1,3 @@
-<style type="text/css">
-@keyframes nodeInserted { 
- from { opacity: 0.99; }
- to { opacity: 1; } 
-}
-  
-  .customization2_booker-state_edit{
- animation-duration: 0.001s;
- animation-name: nodeInserted;
-}
-</style>
-
-
-
  function handler(){
   console.log("im Handler")
      //Hide Position im Unternehmen and Funktion im Unternehmen
