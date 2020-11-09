@@ -1,4 +1,3 @@
-console.log('dropdown');
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
@@ -7,18 +6,14 @@ function handler(){
       {
            $('.customization2_attendee_further-data_custom-question-4').css("display","none") //Funkton
 
-
            var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
 
            ddPosition.change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
-                 console.log("andere")
                     $('.customization2_attendee_further-data_custom-question-4').css("display","block");
                 }
                 else {    
-                          console.log("else")
-
                     $('.customization2_attendee_further-data_custom-question-4').css("display","none");
                 }
 
@@ -29,7 +24,6 @@ function handler(){
   else{
 
   
-  console.log("im Handler")
      //Hide Position im Unternehmen and Funktion im Unternehmen
      
      $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
@@ -41,12 +35,9 @@ function handler(){
      ddPosition.change(function(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
-         console.log("andere")
             $('.customization2_attendee_further-data_custom-question-5').css("display","block");
         }
         else {    
-                  console.log("else")
-
             $('.customization2_attendee_further-data_custom-question-5').css("display","none");
         }
      }
@@ -59,12 +50,9 @@ function handler(){
      ddFunktion.change(function(){
        	var state = ddFunktion.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
-                  console.log("andere")
             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
         }
         else {  
-                  console.log("else")
-
             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
         }
      }
