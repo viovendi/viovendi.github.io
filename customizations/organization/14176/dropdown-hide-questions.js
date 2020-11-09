@@ -40,7 +40,7 @@ function handler(){
         }
      }
                       )
-      */
+      
  }
   handler();
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
