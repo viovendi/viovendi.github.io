@@ -13,6 +13,7 @@
 
 
  function handler(){
+  console.log("im Handler")
      //Hide Position im Unternehmen and Funktion im Unternehmen
      $('.customization2_attendee_further-data_custom-question-5').css("display","none")
      $('.customization2_attendee_further-data_custom-question-7').css("display","none")
@@ -23,9 +24,12 @@
      ddPosition.change(function(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
+         console.log("andere")
             $('.customization2_attendee_further-data_custom-question-5').css("display","block")
         }
-        else {                
+        else {    
+                  console.log("else")
+
             $('.customization2_attendee_further-data_custom-question-5').css("display","none")
         }
      }
@@ -37,9 +41,12 @@
      ddFunktion.change(function(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
+                  console.log("andere")
             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
         }
-        else {                
+        else {  
+                  console.log("else")
+
             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
         }
      }
