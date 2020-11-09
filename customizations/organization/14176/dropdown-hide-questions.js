@@ -3,8 +3,11 @@ function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
   var name = ticketname.text().replace(/^\s+|\s+$/g, "")
-  console.log(ticketname)
-  console.log(name)
+  if (name == "Ich bin Veranstaltungspartner / Speaker" )
+      {
+        console.log("speaker")
+      }
+  else{
 
   
   console.log("im Handler")
@@ -47,6 +50,7 @@ function handler(){
         }
      }
                       )
+    }
       
  }
   handler();
