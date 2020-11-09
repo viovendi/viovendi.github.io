@@ -5,8 +5,27 @@ function handler(){
   var name = ticketname.text().replace(/^\s+|\s+$/g, "")
   if (name == "Ich bin Veranstaltungspartner / Speaker" )
       {
-        console.log("speaker")
+           $('.customization2_attendee_further-data_custom-question-4').css("display","none") //Funkton
+
+
+           var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
+
+           ddPosition.change(function(){
+                var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
+                if ( state == "andere") {
+                 console.log("andere")
+                    $('.customization2_attendee_further-data_custom-question-4').css("display","block");
+                }
+                else {    
+                          console.log("else")
+
+                    $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+                }
+
+           }
+                            )
       }
+  
   else{
 
   
