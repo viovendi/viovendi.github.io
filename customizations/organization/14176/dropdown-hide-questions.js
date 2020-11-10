@@ -68,14 +68,15 @@ function getState(shortName, wrapperClass){
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      var state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
-     var valueText = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').value;
      
+     if (state == 'andere' && value !=''){
+        console.log("enable") 
+     }
+     else if( state == 'andere' && value ==''){
+             consoe.log("disable")
+     }
      console.log("value:");
-
      console.log(value)
-     console.log("text");
-     console.log(valueText);
-     return state;
    }
  });
 }
@@ -86,10 +87,7 @@ function init2(name){
     console.log("init2 works");
     getState('Funktion im Unternehmen', name);
     getState('Welche Funktion haben Sie', name);
-    if (getstate('Funktion im Unternehmen', name) == 'andere'){
-      console.log('andere')
-      
-    }
+    
   });
 }
 init2('customization2_attendee-1');
