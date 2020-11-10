@@ -67,14 +67,15 @@ function getState(shortName, className, wrapperClass){
    
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      var state = $(this).closest('.vv-nl-mb-lg').val();
-     console.log(state)
+     console.log(state);
+     console.log("inGetState");
    }
  });
 }
 
 function init2(name){
-  getState('Position im Unternehmen', 'vv-simple-select', name);
-  $('.'+name+' .vv-simple-select .customization2_attendee_further-data_custom-question_input').on('change', function(){
+  getState('Position im Unternehmen', 'customization2_attendee_further-data_custom-question', name);
+  $('.'+name+' .customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question_input').on('change', function(){
     //enabledDisabledButton(name);
     console.log("init2 works");
   });
