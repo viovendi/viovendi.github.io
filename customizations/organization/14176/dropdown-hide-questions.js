@@ -61,7 +61,7 @@ function handler(){
       
  }
 
-function getState(shortName, className, wrapperClass){
+function getState(shortName){
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
    var item2 = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
@@ -73,12 +73,13 @@ function getState(shortName, className, wrapperClass){
      console.log("state and textclose:");
      console.log(state);
      console.log(textclose);
+     
    }
  });
 }
 
 function init2(name){
-  getState('Funktion im Unternehmen', 'customization2_attendee_further-data_custom-question', name);
+  getState('Funktion im Unternehmen');
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
     //enabledDisabledButton(name);
     console.log("init2 works");
