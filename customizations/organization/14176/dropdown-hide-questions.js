@@ -73,7 +73,6 @@ function getState(shortName, wrapperClass){
      return state;
 
    }
-   return false;
  });
 }
 
@@ -88,7 +87,6 @@ function getValue(shortName, wrapperClass){
           //console.log(value);
      return value;
    }
-   return false;
  });
     
 }
