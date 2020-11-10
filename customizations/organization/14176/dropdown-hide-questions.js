@@ -69,9 +69,10 @@ function getState(shortName, wrapperClass){
      var state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      //console.log("in_getState");
      //console.log(state);
+       return state;
+
    }
  });
-  return state;
 }
 
 function getValue(shortName, wrapperClass){
@@ -82,9 +83,10 @@ function getValue(shortName, wrapperClass){
      var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
           //console.log("in_getValue");
           //console.log(value);
+     return value;
    }
  });
-    return value;
+    
 }
 
 function init2(name){
@@ -94,12 +96,9 @@ function init2(name){
     getState('Funktion im Unternehmen', name);
     console.log("Value:");
     getValue('Welche Funktion haben Sie?', name);
-    if (getState('Funktion im Unternehmen', name) == 'andere' && getValue('Welche Funktion haben Sie?', name) !=''){
-        console.log("enable");
-     }
-     else if( getState('Funktion im Unternehmen', name) == 'andere' && getValue('Welche Funktion haben Sie', name).length === 0){
-        consoe.log("disable");
-     }
+    console.log(getValue('Welche Funktion haben Sie?', name));
+    ;
+    
   });
 }
 init2('customization2_attendee-1');
