@@ -73,7 +73,7 @@ function getState(shortName, className, wrapperClass){
 }
 
 function init2(name){
-  getState('Position im Unternehmen', 'vv-simple-select__control-container', name);  markAsChecked(name);
+  getState('Position im Unternehmen', 'vv-simple-select__control-container', name);
   $('.'+name+' .vv-simple-select__control-container .customization2_attendee_further-data_custom-question_input').on('change', function(){
     //enabledDisabledButton(name);
     console.log("init2 works");
