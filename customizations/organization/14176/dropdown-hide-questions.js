@@ -87,7 +87,7 @@ function getState(shortName, wrapperClass){
      }
      return state;
 
-   }
+   
  });
 }
 
