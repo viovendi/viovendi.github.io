@@ -97,8 +97,10 @@ function init2(name){
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
     //enabledDisabledButton(name);
     console.log("State:");
+    console.log(getState('Funktion im Unternehmen', name));
     getState('Funktion im Unternehmen', name);
     console.log("Value:");
+    console.log(getValue('Welche Funktion haben Sie?', name));
     getValue('Welche Funktion haben Sie?', name);
     
     
