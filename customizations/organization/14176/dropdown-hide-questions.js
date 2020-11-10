@@ -63,13 +63,13 @@ function handler(){
 
 function getValue(shortName, wrapperClass){
   var value;
-  val count = 0;
+  var count = 0;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
-     count+1;
+     count = count + 1;
      console.log("in_getValue");
      if (value !== ''){
               console.log(value);
