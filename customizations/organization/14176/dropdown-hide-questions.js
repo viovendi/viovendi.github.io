@@ -64,15 +64,11 @@ function handler(){
 function getState(shortName, wrapperClass){
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-   var item2 = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-   console.log("item:");
-   console.log(item2);
+
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     var state = $(this).closest('.vv-nl-mb-lg').val();
-     var textclose = $(this).closest('.vv-nl-mb-lg').text();
+     var state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      console.log("state and textclose:");
      console.log(state);
-     console.log(textclose);
      
    }
  });
