@@ -68,12 +68,12 @@ function getState(shortName, wrapperClass){
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      var state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
-     if (state === 'undefined'){
-     
+     if (state == 'undefined'){
+        console.log(value);
        return value;
      }
-     else if (value === 'undefined'){
-     
+     else if (value == 'undefined'){
+       console.log(state);
        return state;
      }
      
