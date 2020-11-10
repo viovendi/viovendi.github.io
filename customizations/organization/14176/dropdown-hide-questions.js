@@ -92,9 +92,11 @@ function getValue(shortName, wrapperClass){
 }
 
 function init2(name){
+  var state1;
+  var value1
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
-    var state1 = getState('Funktion im Unternehmen', name);
-    var value1 = getValue('Welche Funktion haben Sie?', name);
+     state1 = getState('Funktion im Unternehmen', name);
+     value1 = getValue('Welche Funktion haben Sie?', name);
     console.log("State:");
     console.log(state1);
     console.log("Value:");
