@@ -69,7 +69,7 @@ function getValue(shortName, wrapperClass){
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
      console.log("in_getValue");
-     if (value !== ''){
+     if (value != ''){
               console.log(value);
               console.log("disable  == false");
             $('.customization2_attendee_edit-action_save').attr('disabled', false);
