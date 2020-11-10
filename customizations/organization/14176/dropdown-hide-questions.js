@@ -60,9 +60,9 @@ function handler(){
     }
       
  }
-
+//fuction to get value of input field
 function getValue(shortName, wrapperClass){
-  var value;
+ var value;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     
@@ -70,12 +70,14 @@ function getValue(shortName, wrapperClass){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val().replace(/^\s+|\s+$/g, "");
      console.log("Value of " + shortName +": " +value);
 
+     // Disable Button if input-field is empty
      if (value != ''){
               console.log("Value of " + shortName +": " +value);
               console.log("disable == false");
             $('.customization2_attendee_edit-action_save').attr('disabled', false);
 
            }
+     //enable button if input field is NOT empty
            else {
               console.log("Value of " + shortName +": " +value);
               console.log("disable == true");
@@ -85,7 +87,7 @@ function getValue(shortName, wrapperClass){
  });
     
 }
-
+//function to get value of Dropdown Question
 function getStatePosition(shortName, wrapperClass){
   var state;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
@@ -93,10 +95,13 @@ function getStatePosition(shortName, wrapperClass){
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val().replace(/^\s+|\s+$/g, "");
+     
+     // if in dropdown "andere" is selected check the value of the input field
            if (state == 'andere'){
              console.log("State Position is: " +state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
            }
+     // else (so if anything other than "andere" is selected , enable the button
            else {
               console.log("State Position is: " +state)
               console.log("disable == false");
