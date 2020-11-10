@@ -83,6 +83,7 @@ function init2(name){
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
     //enabledDisabledButton(name);
     console.log("init2 works");
+    getState('Funktion im Unternehmen', name);
   });
 }
 init2('customization2_attendee-1');
