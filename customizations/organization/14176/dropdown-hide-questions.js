@@ -74,7 +74,7 @@ function getState(shortName, wrapperClass){
 
                 var value1 = getValue('Welche Funktion haben Sie?', name);
                 console.log("in if value:")
-                console.log(value)
+                console.log(value1)
                 if (value1 != ""){
                           console.log("disabled")
                     }
