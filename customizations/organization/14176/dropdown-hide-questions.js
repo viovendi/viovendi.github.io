@@ -67,10 +67,10 @@ function getValue(shortName, wrapperClass){
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
+     value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val().replace(/^\s+|\s+$/g, "");
      console.log("Value of " + shortName +": " +value);
 
-     if (value != ""){
+     if (value !== ''){
             $('.customization2_attendee_edit-action_save').attr('disabled', false);
               console.log("disable == false");
 
@@ -91,7 +91,7 @@ function getStatePosition(shortName, wrapperClass){
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
+     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val().replace(/^\s+|\s+$/g, "");
            if (state == 'andere'){
              console.log("State Position is: "+state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
