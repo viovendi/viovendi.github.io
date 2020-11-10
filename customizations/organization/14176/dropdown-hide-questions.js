@@ -71,11 +71,15 @@ function getValue(shortName, wrapperClass){
      console.log("in_getValue");
      if (value !== ''){
               console.log(value);
-              console.log("enabled");
+              console.log("disable  == false");
+            $('.customization2_attendee_edit-action_save').attr('disabled', false);
+
            }
            else {
               console.log(value);
-              console.log("disable");
+              console.log("disable == true");
+              $('.customization2_attendee_edit-action_save').attr('disabled', true);
+
            }
    }
  });
@@ -96,7 +100,8 @@ function getState(shortName, wrapperClass){
            }
            else {
               console.log(state)
-              console.log("enabled")
+              console.log("disable == false");
+              $('.customization2_attendee_edit-action_save').attr('disabled', false);
            }
      }
 
