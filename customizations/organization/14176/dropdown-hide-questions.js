@@ -62,7 +62,7 @@ function handler(){
  }
 
 function getState(shortName){
- $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+ $('.customization2_attendee_further-data_custom-question .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
    var item2 = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
    console.log("item:");
