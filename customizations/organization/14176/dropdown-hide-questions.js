@@ -85,7 +85,7 @@ function getValue(shortName, wrapperClass){
     
 }
 
-function getState(shortName, wrapperClass){
+function getStatePosition(shortName, wrapperClass){
   var state;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
@@ -96,6 +96,28 @@ function getState(shortName, wrapperClass){
            if (state == 'andere'){
              console.log(state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
+           }
+           else {
+              console.log(state)
+              console.log("disable == false");
+              $('.customization2_attendee_edit-action_save').attr('disabled', false);
+           }
+     }
+
+   
+ });
+}
+
+function getStateFunktion(shortName, wrapperClass){
+  var state;
+ $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+
+   if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
+     console.log("Current state:" +state);
+           if (state == 'andere'){
+             console.log(state)
              getValue('Welche Funktion haben Sie?', 'customization2_attendee-1');  
            }
            else {
@@ -114,11 +136,10 @@ function getState(shortName, wrapperClass){
 function init2(name){
   
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
-    getState('Position im Unternehmen', name);
-    getState('Funktion im Unternehmen', name);
+    getStatePosition('Position im Unternehmen', name);
+    getStateFunktion('Funktion im Unternehmen', name);
 
-    
-    
+   
   });
   
 }
