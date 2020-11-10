@@ -63,13 +63,11 @@ function handler(){
 
 function getValue(shortName, wrapperClass){
   var value;
-  var count = 0;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
-     count = count + 1;
      console.log("in_getValue");
      if (value !== ''){
               console.log(value);
@@ -82,7 +80,6 @@ function getValue(shortName, wrapperClass){
               console.log("disable == true");
               $('.customization2_attendee_edit-action_save').attr('disabled', true);
            }
-     console.log(count);
    }
  });
     
@@ -117,9 +114,8 @@ function getState(shortName, wrapperClass){
 function init2(name){
   
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
-    
-    getState('Funktion im Unternehmen', name);
     getState('Position im Unternehmen', name);
+    getState('Funktion im Unternehmen', name);
 
     
     
