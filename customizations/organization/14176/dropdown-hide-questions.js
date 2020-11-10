@@ -96,6 +96,7 @@ function getState(shortName, wrapperClass){
      console.log("Current state:" +state);
            if (state == 'andere'){
              console.log(state)
+             getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
              getValue('Welche Funktion haben Sie?', 'customization2_attendee-1');  
            }
            else {
@@ -116,6 +117,9 @@ function init2(name){
   $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
     
     getState('Funktion im Unternehmen', name);
+    getState('Position im Unternehmen', name);
+
+    
     
   });
   
