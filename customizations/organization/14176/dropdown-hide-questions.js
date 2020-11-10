@@ -62,29 +62,33 @@ function handler(){
  }
 
 function getState(shortName, wrapperClass){
+  var state;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     var state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
+     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      //console.log("in_getState");
      //console.log(state);
-       return state;
+     return state;
 
    }
+   return false;
  });
 }
 
 function getValue(shortName, wrapperClass){
+  var value;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
+     value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
           //console.log("in_getValue");
           //console.log(value);
      return value;
    }
+   return false;
  });
     
 }
@@ -96,8 +100,7 @@ function init2(name){
     getState('Funktion im Unternehmen', name);
     console.log("Value:");
     getValue('Welche Funktion haben Sie?', name);
-    console.log(getValue('Welche Funktion haben Sie?', name));
-    ;
+    
     
   });
 }
