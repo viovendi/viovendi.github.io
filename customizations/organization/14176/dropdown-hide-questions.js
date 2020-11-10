@@ -70,9 +70,10 @@ function getValue(shortName, wrapperClass){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val().replace(/^\s+|\s+$/g, "");
      console.log("Value of " + shortName +": " +value);
 
-     if (value !== ''){
-            $('.customization2_attendee_edit-action_save').attr('disabled', false);
+     if (value != ''){
+              console.log("Value of " + shortName +": " +value);
               console.log("disable == false");
+            $('.customization2_attendee_edit-action_save').attr('disabled', false);
 
            }
            else {
@@ -93,11 +94,11 @@ function getStatePosition(shortName, wrapperClass){
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val().replace(/^\s+|\s+$/g, "");
            if (state == 'andere'){
-             console.log("State Position is: "+state)
+             console.log("State Position is: " +state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
            }
            else {
-             console.log("State Position is: "+state)
+              console.log("State Position is: " +state)
               console.log("disable == false");
               $('.customization2_attendee_edit-action_save').attr('disabled', false);
            }
