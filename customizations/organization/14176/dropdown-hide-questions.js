@@ -60,6 +60,28 @@ function handler(){
     }
       
  }
+
+function getState(shortName, className, wrapperClass){
+ $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+   
+   if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+     var state = $(this).closest('.vv-nl-mb-lg').val();
+     console.log(state)
+   }
+ });
+}
+
+function init2(name){
+  getState('Position im Unternehmen', 'vv-simple-select__control-container', name);  markAsChecked(name);
+  $('.'+name+' .vv-simple-select__control-container .customization2_attendee_further-data_custom-question_input').on('change', function(){
+    //enabledDisabledButton(name);
+    console.log("init2 works");
+  });
+}
+init2('customization2_attendee-1');
+  
+
   handler();
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
