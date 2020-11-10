@@ -92,10 +92,10 @@ function init2(name){
     getState('Funktion im Unternehmen', name);
     getState('Welche Funktion haben Sie', name);
     if (getState('Funktion im Unternehmen', name) == 'andere' && getState('Welche Funktion haben Sie', name) !=''){
-        console.log("enable") 
+        console.log("enable");
      }
-     else if( getState('Funktion im Unternehmen', name); == 'andere' && getState('Welche Funktion haben Sie', name).length === 0){
-        consoe.log("disable")
+     else if( getState('Funktion im Unternehmen', name) == 'andere' && getState('Welche Funktion haben Sie', name).length === 0){
+        consoe.log("disable");
      }
   });
 }
