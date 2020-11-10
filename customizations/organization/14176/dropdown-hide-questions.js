@@ -70,11 +70,9 @@ function getState(shortName, wrapperClass){
      var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
      if (state == 'undefined'){
         console.log(value);
-       return value;
      }
      else if (value == 'undefined'){
        console.log(state);
-       return state;
      }
      
      
