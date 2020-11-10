@@ -79,6 +79,7 @@ function getValue(shortName, wrapperClass){
               console.log(value);
               console.log("disable == true");
               $('.customization2_attendee_edit-action_save').attr('disabled', true);
+             return false;
            }
    }
  });
