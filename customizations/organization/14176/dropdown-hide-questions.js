@@ -70,6 +70,18 @@ function getState(shortName, wrapperClass){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      console.log("in_getState");
      console.log(state);
+     if (state == 'andere'){
+          var value1 = getValue('Welche Funktion haben Sie?', name);
+          if (value1 != ''){
+                    console.log("disabled")
+              }
+           else {
+                    console.log("enabled")
+                }
+       else {
+          console.log("enabled")
+       }
+     }
      return state;
 
    }
@@ -85,6 +97,7 @@ function getValue(shortName, wrapperClass){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
      console.log("in_getValue");
      console.log(value);
+     
      return value;
    }
  });
