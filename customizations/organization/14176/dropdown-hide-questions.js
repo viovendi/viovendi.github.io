@@ -71,6 +71,7 @@ function getState(shortName, wrapperClass){
      console.log(state);
      return state;
    }
+   else {return 0;}
  });
 }
 
@@ -82,8 +83,9 @@ function getValue(shortName, wrapperClass){
      var value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
           console.log("in_getValue");
           console.log(value);
-     return value;
+          return value;
    }
+   else {return 0;}
  });
 }
 
