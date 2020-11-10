@@ -70,13 +70,12 @@ function getValue(shortName, wrapperClass){
      value = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_input').val();
      console.log("in_getValue");
      if (value != ''){
-              console.log(value);
-              console.log("disable  == false");
+              console.log("Value of" + shortName +":" +value);
             $('.customization2_attendee_edit-action_save').attr('disabled', false);
 
            }
            else {
-              console.log(value);
+              console.log("Value of" + shortName +":" +value);
               console.log("disable == true");
               $('.customization2_attendee_edit-action_save').attr('disabled', true);
              return false;
@@ -93,13 +92,12 @@ function getStatePosition(shortName, wrapperClass){
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
-     console.log("Current state:" +state);
            if (state == 'andere'){
-             console.log("State Position: "+state)
+             console.log("State Position is: "+state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
            }
            else {
-             console.log("State Position: "+state)
+             console.log("State Position is: "+state)
               console.log("disable == false");
               $('.customization2_attendee_edit-action_save').attr('disabled', false);
            }
@@ -116,7 +114,6 @@ function getStateFunktion(shortName, wrapperClass){
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
-     console.log("getStateFunktion" +state);
            if (state == 'andere'){
              console.log("State Funktion: "+state)
              getValue('Welche Funktion haben Sie?', 'customization2_attendee-1');  
