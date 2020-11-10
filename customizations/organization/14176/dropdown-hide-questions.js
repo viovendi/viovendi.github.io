@@ -61,28 +61,6 @@ function handler(){
       
  }
 
-function getState(shortName, wrapperClass){
-  var state;
- $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
-   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-
-   if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
-     console.log("Current state:" +state);
-           if (state == 'andere'){
-             console.log(state)
-             getValue('Welche Funktion haben Sie?', name);  
-           }
-           else {
-              console.log(state)
-              console.log("enabled")
-           }
-     }
-
-   
- });
-}
-
 function getValue(shortName, wrapperClass){
   var value;
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
@@ -103,6 +81,30 @@ function getValue(shortName, wrapperClass){
  });
     
 }
+
+function getState(shortName, wrapperClass){
+  var state;
+ $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+
+   if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+     state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
+     console.log("Current state:" +state);
+           if (state == 'andere'){
+             console.log(state)
+             getValue('Welche Funktion haben Sie?', 'customization2_attendee-1');  
+           }
+           else {
+              console.log(state)
+              console.log("enabled")
+           }
+     }
+
+   
+ });
+}
+
+
 
 function init2(name){
   
