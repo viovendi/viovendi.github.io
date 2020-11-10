@@ -94,11 +94,11 @@ function getStatePosition(shortName, wrapperClass){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
      console.log("Current state:" +state);
            if (state == 'andere'){
-             console.log(state)
+             console.log("State Position: "+state)
              getValue('Welche Position haben Sie?', 'customization2_attendee-1');  
            }
            else {
-              console.log(state)
+             console.log("State Position: "+state)
               console.log("disable == false");
               $('.customization2_attendee_edit-action_save').attr('disabled', false);
            }
@@ -115,13 +115,13 @@ function getStateFunktion(shortName, wrapperClass){
 
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
      state = $(this).closest('.vv-nl-mb-lg').find('.customization2_attendee_further-data_custom-question_dropdown').val();
-     console.log("Current state:" +state);
+     console.log("getStateFunktion" +state);
            if (state == 'andere'){
-             console.log(state)
+             console.log("State Funktion: "+state)
              getValue('Welche Funktion haben Sie?', 'customization2_attendee-1');  
            }
            else {
-              console.log(state)
+              console.log("State Funktion: "+state)
               console.log("disable == false");
               $('.customization2_attendee_edit-action_save').attr('disabled', false);
            }
