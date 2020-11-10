@@ -78,8 +78,8 @@ function getState(shortName, className, wrapperClass){
 }
 
 function init2(name){
-  getState('Position im Unternehmen', 'customization2_attendee_further-data_custom-question', name);
-  $('.'+name+' .customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question_input').on('change', function(){
+  getState('Funktion im Unternehmen', 'customization2_attendee_further-data_custom-question', name);
+  $('.'+name+' .customization2_attendee_further-data_custom-question').on('change', function(){
     //enabledDisabledButton(name);
     console.log("init2 works");
   });
