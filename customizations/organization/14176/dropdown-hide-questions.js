@@ -72,7 +72,7 @@ function getState(shortName, wrapperClass){
      if (state == 'andere' && value !=''){
         console.log("enable") 
      }
-     else if( state == 'andere' && value ==''){
+     else if( state == 'andere' && value.length === 0){
              consoe.log("disable")
      }
      console.log("value:");
@@ -87,7 +87,6 @@ function init2(name){
     console.log("init2 works");
     getState('Funktion im Unternehmen', name);
     getState('Welche Funktion haben Sie', name);
-    
   });
 }
 init2('customization2_attendee-1');
