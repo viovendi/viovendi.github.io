@@ -102,6 +102,10 @@ function init2(name){
     
     
   });
+    console.log("State:");
+    console.log(state1);
+    console.log("Value:");
+    console.log(value1);
 }
 init2('customization2_attendee-1');
   
