@@ -19,11 +19,10 @@ function handler(){
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
                             $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                            inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                       }
                       else {    
                           $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                          $('.button-error-message').remove();
+                          $('.input-error-message').remove();
                       }
                 }
                 else {    
@@ -44,7 +43,7 @@ function handler(){
                   }
                   else {    
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                      $('.button-error-message').remove();
+                      $('.input-error-message').remove();
                   }
 
            }
@@ -69,6 +68,8 @@ function handler(){
         if ( state == "andere") {
             $('.customization2_attendee_further-data_custom-question-5').css("display","block");
             $('.customization2_attendee_further-data_custom-question-5').find('vv-optional-text').css("display","none");
+            inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+
 
             var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                     if ( input == "") {
@@ -76,6 +77,7 @@ function handler(){
                     }
                     else {    
                         $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                        $('.input-error-message').remove();
                     }
         }
         else {    
@@ -93,6 +95,7 @@ function handler(){
                   }
                   else {    
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                      $('.input-error-message').remove();
                   }
 
            }
@@ -108,6 +111,7 @@ function handler(){
         if ( state == "andere") {
             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
             $('.customization2_attendee_further-data_custom-question-7').find('vv-optional-text').css("display","none");
+            inputFunktion.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
                   if ( input == "") {
@@ -115,6 +119,7 @@ function handler(){
                   }
                   else {    
                     $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                    $('.input-error-message').remove();
                   }
 
         }
@@ -131,6 +136,7 @@ function handler(){
                   }
                   else {    
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                      $('.input-error-message').remove();
                   }
 
            }    
