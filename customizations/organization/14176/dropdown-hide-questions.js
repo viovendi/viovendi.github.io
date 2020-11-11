@@ -1,3 +1,4 @@
+// Funktion to show and hide custom question
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
@@ -7,7 +8,8 @@ function handler(){
            $('.customization2_attendee_further-data_custom-question-4').css("display","none") //Funkton
 
            var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
-
+           var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
+           
            ddPosition.change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
@@ -19,19 +21,34 @@ function handler(){
 
            }
                             )
+        
+        inputPosition.change(function(){
+                var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+                console.log(input)
+                  if ( input == "") {
+                      console.log("disable");
+                  }
+                  else {    
+                      console.log("enable");
+                  }
+
+           }
+                            )
+        
       }
   
   else{
 
   
-     //Hide Position im Unternehmen and Funktion im Unternehmen
+     //Hide "Position im Unternehmen" and "Funktion im Unternehmen"
      
      $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
      $('.customization2_attendee_further-data_custom-question-7').css("display","none") //Funkton
 
     
      var ddPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_dropdown')
-    
+     var inputPosition = $('.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_input')
+
      ddPosition.change(function(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
@@ -42,9 +59,23 @@ function handler(){
         }
      }
                       )
+    
+    inputPosition.change(function(){
+                var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+                console.log(input)
+                  if ( input == "") {
+                      console.log("disable");
+                  }
+                  else {    
+                      console.log("enable");
+                  }
+
+           }
+                            )
          
                        
      var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
+     var inputFunktion = $('.customization2_attendee_further-data_custom-question-7 .customization2_attendee_further-data_custom-question_input')
 
                        
      ddFunktion.change(function(){
@@ -57,9 +88,29 @@ function handler(){
         }
      }
                       )
+    
+    inputFunktion.change(function(){
+                var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
+                console.log(input)
+                  if ( input == "") {
+                      console.log("disable");
+                  }
+                  else {    
+                      console.log("enable");
+                  }
+
+           }
+                            )
+    
+    
     }
       
  }
+
+
+
+
+/*
 //fuction to get value of input field
 function getValue(shortName, wrapperClass){
  var value;
@@ -147,7 +198,7 @@ function init2(name){
   });
   
 }
-init2('customization2_attendee-1');
+init2('customization2_attendee-1');*/
   
 
   handler();
