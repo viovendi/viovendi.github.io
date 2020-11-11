@@ -9,7 +9,6 @@ function handler(){
 
            var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
            var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
-           $('.vv-optional-text').remove()
            ddPosition.change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
@@ -19,7 +18,7 @@ function handler(){
                           $('.customization2_attendee_edit-action_save').attr('disabled', true);
                             inputPosition.after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                             $('.button-error-message').remove();
-                                   $('.vv-optional-text').remove()
+                            $('.vv-optional-text .customization2_attendee_further-data_custom-question-4').css("display","none")
 
                       }
                       else {    
