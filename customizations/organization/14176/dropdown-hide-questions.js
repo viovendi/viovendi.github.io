@@ -152,12 +152,14 @@ function handler(){
   console.log( "clicked" );
 });
  }
+handler();
 
 var insertionListener = function(event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted: ", event.target);
     //Inser your code here.
     handler();
+
     $('customization2_attendee_view-action_edit').on( "click", function() {
         console.log( "clicked" );
     });
