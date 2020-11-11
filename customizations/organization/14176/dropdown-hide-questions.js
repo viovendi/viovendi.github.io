@@ -18,7 +18,7 @@ function handler(){
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
                             $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                            $('.customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question-4').after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                            $('.vv-nl-mb-lg .customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question-4').after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                             $('.button-error-message').remove();
 
                       }
