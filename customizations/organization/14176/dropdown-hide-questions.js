@@ -36,10 +36,10 @@ function handler(){
                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                 console.log(input)
                   if ( input == "") {
-                      console.log("disable");
+                      $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
-                      console.log("enable");
+                      $('.customization2_attendee_edit-action_save').attr('disabled', false);
                   }
 
            }
@@ -66,10 +66,10 @@ function handler(){
             var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                   console.log(input)
                     if ( input == "") {
-                        console.log("disable");
+                        $('.customization2_attendee_edit-action_save').attr('disabled', true);
                     }
                     else {    
-                        console.log("enable");
+                        $('.customization2_attendee_edit-action_save').attr('disabled', false);
                     }
         }
         else {    
@@ -84,10 +84,10 @@ function handler(){
                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                 console.log(input)
                   if ( input == "") {
-                      console.log("disable");
+                      $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
-                      console.log("enable");
+                      $('.customization2_attendee_edit-action_save').attr('disabled', false);
                   }
 
            }
@@ -105,10 +105,10 @@ function handler(){
                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
                 console.log(input)
                   if ( input == "") {
-                      console.log("disable");
+                    $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
-                      console.log("enable");
+                    $('.customization2_attendee_edit-action_save').attr('disabled', false);
                   }
 
         }
@@ -122,10 +122,10 @@ function handler(){
                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
                 console.log(input)
                   if ( input == "") {
-                      console.log("disable");
+                     $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
-                      console.log("enable");
+                      $('.customization2_attendee_edit-action_save').attr('disabled', false);
                   }
 
            }
