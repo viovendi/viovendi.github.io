@@ -148,14 +148,16 @@ function handler(){
     
     
     }
-      
+      $('.customization2_attendee_view-action_edit').on( "click", function() {
+  console.log( "clicked" );
+});
  }
 
 
 
   handler();
-$('.customization2_attendee_view-action_edit').on('click', function(){
-  console.log("clicked");
+$('.customization2_attendee_view-action_edit').on( "click", function() {
+  console.log( "clicked" );
 });
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
