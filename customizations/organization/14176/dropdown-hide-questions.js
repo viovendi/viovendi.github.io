@@ -14,12 +14,12 @@ function handler(){
                 if ( state == "andere") {
                     $('.customization2_attendee_further-data_custom-question-4').css("display","block");
                     $('.customization2_attendee_further-data_custom-question-4').find('vv-optional-text').css("display","none");
-                    inputPosition.after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                    inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
                             $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                            inputPosition.after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                            inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                       }
                       else {    
                           $('.customization2_attendee_edit-action_save').attr('disabled', false);
@@ -39,7 +39,7 @@ function handler(){
                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                   if ( input == "") {
                       $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                      inputPosition.after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                      inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                   }
                   else {    
