@@ -14,19 +14,19 @@ function handler(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
                     $('.customization2_attendee_further-data_custom-question-4').css("display","block");
-                
+                    var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+                    console.log(input)
+                      if ( input == "") {
+                          console.log("disable");
+                      }
+                      else {    
+                          console.log("enable");
+                      }
                 }
                 else {    
                     $('.customization2_attendee_further-data_custom-question-4').css("display","none");
                 }
-             var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
-                console.log(input)
-                  if ( input == "") {
-                      console.log("disable");
-                  }
-                  else {    
-                      console.log("enable");
-                  }
+             
 
            }
                              
@@ -63,18 +63,19 @@ function handler(){
        	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
             $('.customization2_attendee_further-data_custom-question-5').css("display","block");
+            var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+                  console.log(input)
+                    if ( input == "") {
+                        console.log("disable");
+                    }
+                    else {    
+                        console.log("enable");
+                    }
         }
         else {    
             $('.customization2_attendee_further-data_custom-question-5').css("display","none");
         }
-       var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
-                console.log(input)
-                  if ( input == "") {
-                      console.log("disable");
-                  }
-                  else {    
-                      console.log("enable");
-                  }
+       
 
      }
                       )
@@ -101,7 +102,6 @@ function handler(){
        	var state = ddFunktion.val().replace(/^\s+|\s+$/g, "")
         if ( state == "andere") {
             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
-           inputFunktion.change(function(){
                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
                 console.log(input)
                   if ( input == "") {
@@ -111,9 +111,6 @@ function handler(){
                       console.log("enable");
                   }
 
-           }
-                            )
-          
         }
         else {  
             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
