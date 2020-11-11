@@ -19,7 +19,7 @@ function handler(){
                             inputPosition.after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                             $('.button-error-message').remove();
                             //$('.vv-optional-text').css("display","none");
-                            $('vv-optional-text .customization2_attendee_further-data_custom-question-4').css("display","none");
+                            $('.vv-optional-text .customization2_attendee_further-data_custom-question-4').css("display","none");
 
                       }
                       else {    
