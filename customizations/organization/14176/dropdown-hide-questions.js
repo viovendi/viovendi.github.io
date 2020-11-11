@@ -18,9 +18,7 @@ function handler(){
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
                             $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                            $('.vv-nl-mb-lg .customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question-4').after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-                            $('.button-error-message').remove();
-
+                            $('.customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question-4').after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
                       }
                       else {    
                           $('.customization2_attendee_edit-action_save').attr('disabled', false);
@@ -134,16 +132,15 @@ function handler(){
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
                   }
 
-           }
-                            )
+           }    
+                        )
     
     
     }
       
  }
 
-//    $('SOMECLASS').after('<span class="button-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-//    $('.button-error-message').remove();
+
 
   handler();
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
