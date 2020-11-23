@@ -46,7 +46,6 @@ function getAttendee(){
    $(tag).each(function (i, element) {
        var item = $(this);
      var label = item.find("label");
-      console.log(label[0].text())
       console.log(label.text())
      /*if(label[0].text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item[0]).css("display", "none");
