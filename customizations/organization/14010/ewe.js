@@ -1,32 +1,11 @@
-function getAttendee(){
-    $('.customization2_attendee_further-data_custom-question').each(function(i, element) {
-      var attendee = $(this);
-      var checkbox = attendee.find('input[type="checkbox"]')
-      var inputs = attendee.find('vv-question-text');
 
-      console.log(inputs)
-      checkbox.change(function(){
- 
-        if(checkbox.is(':checked')){
-          //showQuestionText('Firma/Company',  inputs);
-          console.log('checked');
-        }else{
-          //hideQuestionText('Firma/Company', inputs);
-          console.log("not checked")  
- 
-        }
-      });
-    });
-  }
- 
-  getAttendee();
- 
 
 
    function markAsChecked(shortName, className, wrapperClass){
     $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
       console.log(item.replace(/^\s+|\s+$/g, ""));
+      console.log(item.replace(/\s/g, '');
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
           
           console.log("shortname passt")
