@@ -3,9 +3,10 @@ function getAttendee(){
       var attendee = $(this);
       var checkbox = attendee.find('input[type="checkbox"]')
       var inputs = attendee.find('vv-question-text').text().replace(/^\s+|\s+$/g, "");
-      var labels = attendee.find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-      console.log(inputs)
+      var labels = attendee.find('customization2_attendee_further-data_custom-question_label');
+      var text = labels.find('label').text().replace(/^\s+|\s+$/g, "")
       console.log(labels)
+       console.log(text)
       checkbox.change(function(){
  
         if(checkbox.is(':checked')){
