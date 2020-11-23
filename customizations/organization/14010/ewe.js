@@ -21,7 +21,11 @@ function getAttendee(){
  
   getAttendee();
  
- 
+ function markAsChecked(name){
+     $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
+       $(this).trigger('click');
+     });
+   }
   
 
   function hide(tag, name){
