@@ -46,6 +46,7 @@ function getAttendee(){
    $(tag).each(function (i, element) {
        var item = $(this);
      var label = item.find("customization2_attendee_further-data_custom-question_label");
+       console.log(label[0].text())
       console.log(label.text())
      if(label[0].text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item[0]).css("display", "none");
@@ -54,8 +55,8 @@ function getAttendee(){
    });             
   }
 
-  hide("vv-control-label","Einwilligungserklärung");
-  hide("vv-checkbox-group","Einwilligungserklärung");
+  hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+  hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
 
  
  
