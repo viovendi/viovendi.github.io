@@ -2,8 +2,8 @@ function getAttendee(){
     $('.customization2_attendee_further-data_custom-question').each(function(i, element) {
       var attendee = $(this);
       var checkbox = attendee.find('input[type="checkbox"]')
-      var inputs = attendee.find('vv-question-text');
-      var labels = attendee.find('customization2_attendee_further-data_custom-question_label');
+      var inputs = attendee.find('vv-question-text').text().replace(/^\s+|\s+$/g, "");
+      var labels = attendee.find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
       console.log(inputs)
       console.log(labels)
       checkbox.change(function(){
