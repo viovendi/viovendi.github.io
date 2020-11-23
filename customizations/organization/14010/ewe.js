@@ -21,11 +21,20 @@ function getAttendee(){
  
   getAttendee();
  
- function markAsChecked(name){
-     $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-       $(this).trigger('click');
-     });
-   }
+
+
+   function markAsChecked(shortName, className, wrapperClass){
+    $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+      
+      if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+        $('.check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
+            $(this).trigger('click');
+        });
+      }
+    });
+  }
+markAsChecked('Einwilligungserklärung','','')
   
 
   function hide(tag, name){
