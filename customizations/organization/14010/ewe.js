@@ -1,5 +1,5 @@
 function getAttendee(){
-    $('.customization-attendee-questions').each(function(i, element) {
+    $('.customization2_attendee_further-data_custom-question').each(function(i, element) {
       var attendee = $(this);
       var checkbox = attendee.find('input[type="checkbox"]')
       var inputs = attendee.find('vv-question-text');
