@@ -17,7 +17,7 @@
       }
     });
   }
-$('vv-control-label vv-checkbox__label-text customization2_attendee_further-data_custom-question_checkbox-line_label').innerHTML = '<a href="https://privacy.vogel.de/)">Einwilligungserklärung</a>' 
+//$('.vv-control-label .vv-checkbox__label-text .customization2_attendee_further-data_custom-question_checkbox-line_label').innerHTML = '<a href="https://privacy.vogel.de/)">Einwilligungserklärung</a>' 
 
 markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
 
