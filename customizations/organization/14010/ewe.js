@@ -6,8 +6,9 @@ function getAttendee(){
       var labels = attendee.find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");;
 
       
-      hideQuestionText('Einwilligungserklärung',labels)
-      hideQuestionText('Einwilligungserklärung',inputs)
+      hideQuestionText('Einwilligungserklärung',labels);
+      hideQuestionText('Einwilligungserklärung',inputs);
+      hideQuestionText('Einwilligungserklärung',attendee);
 
         
       console.log(labels)
@@ -32,8 +33,8 @@ function getAttendee(){
  
   function hideQuestionText(shortName, inputs){
     $(inputs).each(function(i, element) {
-      var item = $(this).find('label').text().replace(/^\s+|\s+$/g, "");
-        console.log(item);
+      var item = $(this).find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+      console.log("item:" +item);
  
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) == 0){
         $(this).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
