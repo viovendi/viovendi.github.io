@@ -7,8 +7,9 @@ function getAttendee(){
       var labels2 = attendee.find('vv-control-label').text().replace(/^\s+|\s+$/g, "");
 
       var text = labels.find('vv-control-label vv-control-label--regular customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "")
-      var text2 =labels.find('vv-control-label vv-control-label--regular customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "")
-      hideQuestionText('Einwilligungserklärung',inputs)
+      var text2 =labels.find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "")
+      hideQuestionText('Einwilligungserklärung',labels)
+        
       console.log(labels)
       console.log(labels2)
       console.log(text)
