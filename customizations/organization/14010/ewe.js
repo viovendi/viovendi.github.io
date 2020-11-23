@@ -9,10 +9,9 @@
           
         console.log("short name is found (in if)")
        
-        $('.check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-            $(this).trigger('click');
-            console.log("click");
-        });
+        $('.customization2_attendee-1 .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
+       $(this).trigger('click');
+     });
       }
     });
   }
