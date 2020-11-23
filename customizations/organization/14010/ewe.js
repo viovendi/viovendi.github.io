@@ -5,6 +5,7 @@
     $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
        
+      
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
           
         console.log("short name is found (in if)")
@@ -16,6 +17,7 @@
       }
     });
   }
+$('vv-control-label vv-checkbox__label-text customization2_attendee_further-data_custom-question_checkbox-line_label').innerHTML = '<a href="https://privacy.vogel.de/)">Einwilligungserklärung</a>' 
 
 markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
 
@@ -25,6 +27,7 @@ markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_at
    $(tag).each(function (i, element) {
      var item = $(this);
      var label = item.find("label");
+      
      if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
      }
