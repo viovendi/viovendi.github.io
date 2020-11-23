@@ -34,8 +34,8 @@ function getAttendee(){
       }
     });
   }
-markAsChecked('Einwilligungserklärung','','')
-  
+markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
+
 
   function hide(tag, name){
    $(tag).each(function (i, element) {
