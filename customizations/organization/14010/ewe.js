@@ -39,4 +39,16 @@ markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_at
 
  
  
- 
+ var insertionListener = function(event) {
+    if (event.animationName === "nodeInserted") {
+
+      markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
+
+
+    }
+  }
+
+
+  document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+  document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
