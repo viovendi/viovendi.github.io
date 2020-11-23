@@ -48,7 +48,7 @@ function getAttendee(){
      var label = item.find("label");
      if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
          console.log("displayNone");
-       $(item[0]).css("display", "none");
+       $(label).css("display", "none");
      }
       
    });             
