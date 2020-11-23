@@ -46,7 +46,7 @@ function getAttendee(){
    $(tag).each(function (i, element) {
        var item = $(this);
      var label = item.find("label");
-     if(label[0].text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
+     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
          console.log("displayNone");
        $(item[0]).css("display", "none");
      }
