@@ -12,10 +12,11 @@
         $('.check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
             $(this).trigger('click');
            console.log("click")
-     });
+         });
       }
     });
   }
+
 markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
 
 
@@ -40,7 +41,6 @@ markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_at
       console.log("Node has been inserted: ", event.target);
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
       markAsChecked('Einwilligungserklärung','check-boxes-wrapper','customization2_attendee-1')
-
 
     }
   }
