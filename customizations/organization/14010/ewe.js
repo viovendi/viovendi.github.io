@@ -45,8 +45,8 @@ function getAttendee(){
   function hide(tag, name){
    $(tag).each(function (i, element) {
        var item = $(this);
-     var label = item.find("label");
-      
+     var label = item.find("customization2_attendee_further-data_custom-question_label");
+      console.log(label.text())
      if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item[0]).css("display", "none");
      }
@@ -55,6 +55,8 @@ function getAttendee(){
   }
 
   hide("vv-control-label","Einwilligungserklärung");
+  hide("vv-checkbox-group","Einwilligungserklärung");
+
  
  
  
