@@ -48,7 +48,7 @@ function getAttendee(){
      var label = item.find("label");
      if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        console.log("displayNone");
-       $(item).find('vv-control-label').css( "display", "none" );
+       $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
      }
       
    });             
