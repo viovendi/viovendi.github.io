@@ -36,7 +36,7 @@ function getAttendee(){
       var item = $(this).find('label').text().replace(/^\s+|\s+$/g, "");
  
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) == 0){
-        $(this).find('.ew-billing-information__field').css( "display", "none" );
+        $(this).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
       }
     });
   }
