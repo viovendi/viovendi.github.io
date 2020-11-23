@@ -7,10 +7,11 @@ function getAttendee(){
 
       
       hideQuestionText('Einwilligungserklärung',labels)
+      hideQuestionText('Einwilligungserklärung',inputs)
+
         
       console.log(labels)
       console.log(inputs)
-      console.log(labels2)
 
       checkbox.change(function(){
  
