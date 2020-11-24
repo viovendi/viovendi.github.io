@@ -73,6 +73,7 @@ function init(name){
  
  //add link to checkboxtext
  $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').wrapInner('<a href="https://privacy.vogel.de/" target="_blank"/>');
+ $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').wrapInner('<a href="https://privacy.vogel.de/" target="_blank"/>');
 
 }
 
@@ -87,7 +88,7 @@ var insertionListener = function(event) {
   console.log("noteInserted");
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
       hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
-
+      init('customization2_booker');
 
    var classNames = event.target.classList;
 
