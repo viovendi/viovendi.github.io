@@ -67,6 +67,7 @@ function init(name){
 
   markAsChecked(name);
   markAsCheckedBooker(name)
+ 
  //Add Text after Checkbox
   $('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/" target="_blank">Support-Seite</a> genügt.</span>');
 
@@ -96,6 +97,10 @@ var insertionListener = function(event) {
      var className = classNames[i];
      
      if(className.indexOf('customization2_attendee-') > -1){
+       //clickedEdit(className);
+       return false;
+     }
+    if(className.indexOf('customization2_booker') > -1){
        //clickedEdit(className);
        return false;
      }
