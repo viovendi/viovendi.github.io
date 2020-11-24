@@ -9,11 +9,14 @@ function addClassToField(shortName, className, wrapperClass){
 }
 
 function markAsChecked(name){
+ $('.customization2_attendee-1 .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
+     console.log("click Kostenlos");
   $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-   var found = $(this).find('.customization2_attendee_further-data_custom-question_label').text()
-   console.log(found)
     $(this).trigger('click');
   });
+    }
 }
 
 
