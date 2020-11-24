@@ -39,7 +39,7 @@ function init(name){
 
  
  //add link to checkboxtext
- $('.'+name+' customization2_attendee_further-data_custom-question_checkbox-line_label').wrap('<a href="https://privacy.vogel.de/" target="_blank"/>');
+ $('.'+name+' .vv-control-label .vv-checkbox__label-text .customization2_attendee_further-data_custom-question_checkbox-line_label').wrap('<a href="https://privacy.vogel.de/" target="_blank"/>');
 }
 
 init('customization2_attendee-1');
