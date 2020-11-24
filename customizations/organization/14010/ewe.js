@@ -36,11 +36,11 @@ function init(name){
   addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
   markAsChecked(name);
  //Add Text after Checkbox
-  $('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/" target="_blank">Support-Seite</a> genügt.</span>');
+  //$('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/" target="_blank">Support-Seite</a> genügt.</span>');
 
  
  //add link to checkboxtext
- $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').wrapInner('<a href="https://privacy.vogel.de/" target="_blank"/>');
+ //$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').wrapInner('<a href="https://privacy.vogel.de/" target="_blank"/>');
 
 // add text after newsletter checkboxes
    $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
