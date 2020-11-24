@@ -40,6 +40,10 @@ function init(name){
  
  //add link to checkboxtext
  $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').wrapInner('<a href="https://privacy.vogel.de/" target="_blank"/>');
+
+// add text after newsletter checkboxes
+   $('.'+name+' .ustomization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
+
 }
 
 init('customization2_attendee-1');
