@@ -9,18 +9,17 @@ function addClassToField(shortName, className, wrapperClass){
 }
 
 function markAsChecked(name){
+ //search all further questions
  $('.customization2_attendee-1 .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
   
+  // check all labels and check if it contains "Einwilligungserklärung kostenlos"
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
-      console.log("click Kostenlos");
       $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
         $(this).trigger('click');
       }
-                                                                                                                            );
-    
+                                                                                                                                );
     }
-  
  }
                                                                                         )
 }
@@ -73,7 +72,7 @@ var insertionListener = function(event) {
      var className = classNames[i];
      
      if(className.indexOf('customization2_attendee-') > -1){
-       clickedEdit(className);
+       //clickedEdit(className);
        return false;
      }
    }
