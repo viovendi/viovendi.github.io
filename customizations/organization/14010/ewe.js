@@ -52,6 +52,8 @@ init('customization2_attendee-1');
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+     $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
+
 
    var classNames = event.target.classList;
 
