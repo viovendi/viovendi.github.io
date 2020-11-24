@@ -24,6 +24,22 @@ function markAsChecked(name){
                                                                                         )
 }
 
+function markAsCheckedBooker(name){
+ //search all further questions
+ $('.customization2_booker .customization2_booker_further-data .vv-nl-mb-lg').each(function(i, element) {
+  
+  // check all labels and check if it contains "Einwilligungserklärung kostenlos"
+   var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
+      $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
+        $(this).trigger('click');
+      }
+                                                                                                                                );
+    }
+ }
+                                                                                        )
+}
+
 
 //funktion to hide Label of question
   function hide(tag, name){
@@ -34,7 +50,6 @@ function markAsChecked(name){
      if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
        $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
-
      }
       
    });             
@@ -51,6 +66,7 @@ function init(name){
   addClassToField('Einwilligungserklärung kostenpflichtig', 'check-boxes-wrapper', name);
 
   markAsChecked(name);
+  markAsCheckedBooker(name)
  //Add Text after Checkbox
   $('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/" target="_blank">Support-Seite</a> genügt.</span>');
 
