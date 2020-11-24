@@ -34,9 +34,9 @@ function markAsChecked(name){
 function init(name){
   addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
   markAsChecked(name);
-  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+  /*$('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
     enabledDisabledButton(name);
-  });
+  });*/
 }
 init('customization2_attendee-1');
 
