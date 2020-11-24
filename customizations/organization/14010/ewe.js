@@ -37,6 +37,7 @@ function init(name){
   /*$('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
     enabledDisabledButton(name);
   });*/
+ $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere Support-Seite genügt.</span>');
 }
 init('customization2_attendee-1');
 
