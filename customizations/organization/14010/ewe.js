@@ -33,12 +33,16 @@ function markAsChecked(name){
       
      if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
        $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
+       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
+
      }
       
    });             
   }
 
   hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+  hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
+
 
 
  
@@ -59,11 +63,13 @@ function init(name){
 }
 
 init('customization2_attendee-1');
+init('customization2_booker')
 
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+      hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
 
 
    var classNames = event.target.classList;
