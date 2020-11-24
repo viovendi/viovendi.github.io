@@ -37,7 +37,7 @@ function init(name){
  //Add Text after Checkbox
   $('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe" style="font-size:12px"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/">Support-Seite</a> genügt.</span>');
 //add link to checkboxtext
- $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-line_label').href = "http://example.com";
+ $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-line_label').wrap('<a href="https://privacy.vogel.de/"/>');
 }
 
 init('customization2_attendee-1');
