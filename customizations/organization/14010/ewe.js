@@ -37,7 +37,7 @@ function init(name){
   /*$('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
     enabledDisabledButton(name);
   });*/
-  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-line_label').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://google.de/">Support-Seite</a> genügt.</span>');
+  $('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/">Support-Seite</a> genügt.</span>');
 
  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').after('<span class="text-after-ewe"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere Support-Seite genügt.</span>');
 }
