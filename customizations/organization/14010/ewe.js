@@ -47,7 +47,6 @@ function init(name){
 // add text after newsletter checkboxes
    $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
 }
-   $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
 
 init('customization2_attendee-1');
 
