@@ -30,6 +30,9 @@ function markAsChecked(name){
 
   hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
 
+function clickedEdit(name){
+  addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
+}
  
 function init(name){
   addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
