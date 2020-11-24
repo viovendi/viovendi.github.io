@@ -8,7 +8,11 @@ function addClassToField(shortName, className, wrapperClass){
  });
 }
 
-
+function markAsChecked(name){
+  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
+    $(this).trigger('click');
+  });
+}
 
 
 //funktion to hide Label of question
