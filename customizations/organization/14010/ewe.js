@@ -76,8 +76,8 @@ function init(name){
   
  }
  else{
-   $('.'+name+' .text-after-checkbox').remove();
-        console.log("remove");
+   //$('.'+name+' .text-after-checkbox').remove();
+        console.log("do nothing");
  }
  //$('.'+name+' .check-boxes-wrapper .vv-checkbox__label--md').after('<span class="text-after-checkbox"> Der Verwendung meiner Kontaktdaten für werbliche Zwecke gem. § 7 Abs. 3 UWG kann ich jederzeit widersprechen. Eine einfache Mitteilung über unsere <a href="https://contact.vogel.de/" target="_blank">Support-Seite</a> genügt.</span>');
  
