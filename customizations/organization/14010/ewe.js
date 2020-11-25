@@ -100,6 +100,7 @@ var insertionListener = function(event) {
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
       hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
       init('customization2_booker');
+      init('customization2_attendee-1');
 
    var classNames = event.target.classList;
 
