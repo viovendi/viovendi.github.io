@@ -72,7 +72,7 @@ function init(name){
     if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
       var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
       var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
-      var res = textString1.replace("(privacy.vogel.de)", "<a href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
+      var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
       $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
       $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
     }
