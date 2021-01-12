@@ -77,7 +77,7 @@ function init(name){
       $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
     }
   }
-  if(name == 'customization2_booker'){
+  else{
     if( !$('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
       var textString = $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').html();
       var res = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
