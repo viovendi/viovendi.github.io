@@ -69,8 +69,7 @@ function init(name){
   markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
-    if($('.customization2_attendee_further-data_custom-question_checkbox-group')){
-      console.log(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length)
+    if(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length){
       if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
         var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
@@ -81,7 +80,7 @@ function init(name){
     }
   }
   else{
-    if($('.customization2_booker_further-data_custom-question_checkbox-group')){
+    if(!!$('.customization2_booker_further-data_custom-question_checkbox-group').length){
       if( !$('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
         var textString = $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
