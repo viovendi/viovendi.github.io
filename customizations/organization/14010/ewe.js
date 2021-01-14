@@ -69,9 +69,9 @@ function init(name){
   markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
+    console.log('customization2_attendee')
     if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
       var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
-      console.log('oleg test', textString)
       var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
       var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
       $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
@@ -102,6 +102,7 @@ var insertionListener = function(event) {
       hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
       init('customization2_booker');
       init('customization2_attendee');
+      console.log(!$('.customization2_attendee .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links'))
 
    var classNames = event.target.classList;
 
