@@ -68,9 +68,10 @@ function init(name){
   markAsChecked(name);
   markAsCheckedBooker(name)
   
-  if(name == 'customization2_attendee-1'){
+  if(name == 'customization2_attendee'){
     if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
       var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
+      console.log('oleg test', textString)
       var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
       var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
       $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
@@ -89,7 +90,7 @@ function init(name){
   
 }
 
-init('customization2_attendee-1');
+init('customization2_attendee');
 init('customization2_booker');
 $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
 
@@ -100,7 +101,7 @@ var insertionListener = function(event) {
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
       hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
       init('customization2_booker');
-      init('customization2_attendee-1');
+      init('customization2_attendee');
 
    var classNames = event.target.classList;
 
