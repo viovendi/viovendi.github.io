@@ -69,7 +69,6 @@ function init(name){
   markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
-    console.log('customization2_attendee')
     if($('.customization2_attendee_further-data_custom-question_checkbox-group')){
       if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
         var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
