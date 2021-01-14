@@ -94,7 +94,7 @@ init('customization2_attendee');
 init('customization2_booker');
 $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bitte beachten Sie: Mit Ihrer Registrierung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</span>');
 
-
+/*
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
   console.log("noteInserted test");
@@ -126,3 +126,4 @@ var insertionListener = function(event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+*/
