@@ -97,7 +97,7 @@ $('.customization2_booking-terms_list').after('<span class="text-after-ewe"> Bit
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
-  console.log("noteInserted");
+  console.log("noteInserted test");
       hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
       hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
       init('customization2_booker');
