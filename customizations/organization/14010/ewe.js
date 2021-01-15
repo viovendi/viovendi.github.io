@@ -9,9 +9,9 @@ function addClassToField(shortName, className, wrapperClass){
 
 function markAsChecked(name){
  //search all further questions
- $('.customization2_attendee-1 .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+ $('.customization2_attendee .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
   
-  // check all labels and check if it contains "Einwilligungserklärung kostenlos"
+  // check all labels and check if it contains "Einwilligungserklärung"
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
@@ -25,7 +25,7 @@ function markAsCheckedBooker(name){
  //search all further questions
  $('.customization2_booker .customization2_booker_further-data .vv-nl-mb-lg').each(function(i, element) {
   
-  // check all labels and check if it contains "Einwilligungserklärung kostenlos"
+  // check all labels and check if it contains "Einwilligungserklärung"
    var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
@@ -58,9 +58,13 @@ function markAsCheckedBooker(name){
 function init(name){
   addClassToField('Einwilligungserklärung kostenlos', 'check-boxes-wrapper', name);
   addClassToField('Einwilligungserklärung kostenpflichtig', 'check-boxes-wrapper', name);
-
-  markAsChecked(name);
-  markAsCheckedBooker(name)
+ 
+  setTimeout(function(){
+    markAsChecked(name);
+    markAsCheckedBooker(name)
+  }, 500);
+  //markAsChecked(name);
+  //markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
     if(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length){
