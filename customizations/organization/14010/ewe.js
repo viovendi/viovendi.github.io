@@ -15,7 +15,10 @@ function markAsChecked(name){
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-        $(this).trigger('click');
+       if(!$(this).hasClass('checked-manually')){
+          $(this).trigger('click');
+          $(this).addClass('checked-manually');
+       }
       }                                                                                                                        );
     }
  }                                                                                 )
@@ -29,7 +32,10 @@ function markAsCheckedBooker(name){
    var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-        $(this).trigger('click');
+        if(!$(this).hasClass('checked-manually')){
+          $(this).trigger('click');
+          $(this).addClass('checked-manually');
+       }
       }                                                                                                                );
     }
  }                                                                                 )
