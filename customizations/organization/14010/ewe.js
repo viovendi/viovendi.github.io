@@ -14,7 +14,11 @@ function markAsChecked(name){
   
   // check all labels and check if it contains "Einwilligungserklärung kostenlos"
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
+   console.log(item);
+    if(item !== '' && (item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1 || item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenpflichtig') > -1)){
+     console.log('item found');
+     console.log('name');
+     console.log(name);
       $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
         $(this).trigger('click');
       }
@@ -30,7 +34,11 @@ function markAsCheckedBooker(name){
   
   // check all labels and check if it contains "Einwilligungserklärung kostenlos"
    var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenpflichtig') > -1){
+   console.log(item);
+    if(item !== '' && (item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1 || item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenpflichtig') > -1)){
+     console.log('item found');
+     console.log('name');
+     console.log(name);
       $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
         $(this).trigger('click');
       }
