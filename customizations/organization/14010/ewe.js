@@ -64,13 +64,9 @@ function markAsCheckedBooker(name){
 function init(name){
   addClassToField('Einwilligungserklärung kostenlos', 'check-boxes-wrapper', name);
   addClassToField('Einwilligungserklärung kostenpflichtig', 'check-boxes-wrapper', name);
- 
-  setTimeout(function(){
-    markAsChecked(name);
-    markAsCheckedBooker(name)
-  }, 500);
-  //markAsChecked(name);
-  //markAsCheckedBooker(name)
+  
+  markAsChecked(name);
+  markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
     if(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length){
