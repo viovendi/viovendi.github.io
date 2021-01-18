@@ -13,7 +13,7 @@ function markAsChecked(name){
   
   // check all labels and check if it contains "Einwilligungserklärung"
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
+    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
        if(!$(this).hasClass('checked-manually')){
           $(this).trigger('click');
@@ -30,7 +30,7 @@ function markAsCheckedBooker(name){
   
   // check all labels and check if it contains "Einwilligungserklärung"
    var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung') > -1){
+    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
       $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
         if(!$(this).hasClass('checked-manually')){
           $(this).trigger('click');
