@@ -20,6 +20,16 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
     });
    }
 
+   function isCheked(){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+      if(checkbox.is(':checked')){
+        disableProd(checkboxName)
+      }
+    })
+   }
+
    function prodCheked(){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -34,5 +44,5 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
       })
     })
   }
-
+  isCheked()
   prodCheked()
