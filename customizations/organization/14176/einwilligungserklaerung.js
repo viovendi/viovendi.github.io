@@ -62,8 +62,7 @@ function markAsCheckedBooker(name){
 
  
 function init(name){
-  addClassToField('Einwilligungserklärung kostenlos', 'check-boxes-wrapper', name);
-  addClassToField('Einwilligungserklärung kostenpflichtig', 'check-boxes-wrapper', name);
+  addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
   
   markAsChecked(name);
   markAsCheckedBooker(name)
