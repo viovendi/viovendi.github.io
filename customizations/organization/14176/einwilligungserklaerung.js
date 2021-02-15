@@ -64,8 +64,8 @@ function markAsCheckedBooker(name){
 function init(name){
   addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
   
-  markAsChecked(name);
-  markAsCheckedBooker(name)
+  //markAsChecked(name);
+  //markAsCheckedBooker(name)
   
   if(name == 'customization2_attendee'){
     if(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length){
