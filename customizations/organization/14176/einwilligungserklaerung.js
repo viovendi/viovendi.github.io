@@ -1,4 +1,4 @@
-function addClassToField2(shortName, className, wrapperClass){
+/*function addClassToField2(shortName, className, wrapperClass){
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
@@ -129,4 +129,8 @@ var insertionListener = function(event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+*/
+
+
+
 */
