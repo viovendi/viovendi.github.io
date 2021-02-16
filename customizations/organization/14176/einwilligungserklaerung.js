@@ -1,4 +1,4 @@
-/*
+
 function addClassToField2(shortName, className, wrapperClass){
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
@@ -10,7 +10,7 @@ function addClassToField2(shortName, className, wrapperClass){
 
 
 //funktion to hide Label of question
-  function hide(tag, name){
+  function hide2(tag, name){
    $(tag).each(function (i, element) {
      var item = $(this);
      var label = item.find("label");
@@ -23,8 +23,8 @@ function addClassToField2(shortName, className, wrapperClass){
    });             
   }
 
-  hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
-  hide(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
+  hide2(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+  hide2(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
 
 
 
@@ -64,7 +64,7 @@ init2('customization2_attendee');
 init2('customization2_booker');
 
 
-*/
+
 
 /*
 var insertionListener = function(event) {
