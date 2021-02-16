@@ -1,4 +1,5 @@
-// Funktion to show and hide custom question
+/*// Funktion to show and hide custom question
+
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
@@ -251,13 +252,13 @@ function handler(){
   console.log( "clicked" );
 });
  }
-//handler();
+handler();
 
 var insertionListener = function(event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted: ", event.target);
     //Inser your code here.
-    //handler();
+    handler();
 
     $('customization2_attendee_view-action_edit').on( "click", function() {
         console.log( "clicked" );
@@ -270,4 +271,5 @@ var insertionListener = function(event) {
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
-  
+  */
+
