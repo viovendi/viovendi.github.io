@@ -110,7 +110,7 @@ function hide(tag, name){
      
     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1){
       
-      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a target='_blank' style='color: blue' href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden <a target='_blank' href='https://www.vogelitakademie.de/ewe'>(privacy.vogel.de)</a>.");
+      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden <a target='_blank' href='https://www.vogelitakademie.de/ewe'>(privacy.vogel.de)</a>.");
       $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
     }
