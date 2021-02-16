@@ -42,10 +42,10 @@ function init2(name){
 init2('customization2_attendee');
 init2('customization2_booker');
 
+*/
 
 
-
-
+/*
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
   console.log("noteInserted test");
@@ -75,7 +75,7 @@ var insertionListener = function(event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
-
-
-
 */
+
+
+
