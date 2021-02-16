@@ -126,7 +126,7 @@ function handler(){
 
         }
         else {  
-            $('.customization2_attendee_further-data_custom-question-7').css("display","none")
+            //------------------$('.customization2_attendee_further-data_custom-question-7').css("display","none")
         }
      }
                       )
@@ -222,7 +222,7 @@ function handler(){
  
          }
          else {  
-             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
+             //-----------------$('.customization2_attendee_further-data_custom-question-7').css("display","none")
          }
       }
                        )
