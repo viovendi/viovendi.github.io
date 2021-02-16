@@ -1,4 +1,5 @@
-/*function addClassToField2(shortName, className, wrapperClass){
+/*
+function addClassToField2(shortName, className, wrapperClass){
  $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
    var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
@@ -7,39 +8,6 @@
  });
 }
 
-/*function markAsChecked(name){
- //search all further questions
- $('.customization2_attendee .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
-  
-  // check all labels and check if it contains "Einwilligungserklärung"
-   var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
-      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-       if(!$(this).hasClass('checked-manually')){
-          $(this).trigger('click');
-          $(this).addClass('checked-manually');
-       }
-      }                                                                                                                        );
-    }
- }                                                                                 )
-}*/
-
-/*function markAsCheckedBooker(name){
- //search all further questions
- $('.customization2_booker .customization2_booker_further-data .vv-nl-mb-lg').each(function(i, element) {
-  
-  // check all labels and check if it contains "Einwilligungserklärung"
-   var item = $(this).find('.customization2_booker_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-    if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Einwilligungserklärung kostenlos') > -1){
-      $('.'+name+' .check-boxes-wrapper .customization2_booker_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
-        if(!$(this).hasClass('checked-manually')){
-          $(this).trigger('click');
-          $(this).addClass('checked-manually');
-       }
-      }                                                                                                                );
-    }
- }                                                                                 )
-}*/
 
 //funktion to hide Label of question
   function hide(tag, name){
@@ -96,6 +64,7 @@ init2('customization2_attendee');
 init2('customization2_booker');
 
 
+*/
 
 /*
 var insertionListener = function(event) {
@@ -133,4 +102,3 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
 
 
-*/
