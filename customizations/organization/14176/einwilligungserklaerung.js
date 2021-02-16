@@ -110,8 +110,9 @@ function hide(tag, name){
      
     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1){
       console.log($(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').text().replace("Einwilligungserklärung", "11111"));
+      console.log($(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').text().replace("(https://www.vogelitakademie.de/ewe)", "<a target='_blank' href='https://www.vogelitakademie.de/ewe'>(privacy.vogel.de)</a>"));
       
-      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').text().replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
+      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').text().replace("Einwilligungserklärung", "<a target='_blank' style='color: blue' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
       $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').text().replace("(https://www.vogelitakademie.de/ewe)", "<a target='_blank' href='https://www.vogelitakademie.de/ewe'>(privacy.vogel.de)</a>");
       $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
