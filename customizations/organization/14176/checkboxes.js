@@ -43,41 +43,17 @@
        enabledDisabledButton(name);
      });
    }
-//funktion to hide Label of question
-  function hide2(tag, name){
-   $(tag).each(function (i, element) {
-     var item = $(this);
-     var label = item.find("label");
-      
-     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1){
-       $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
-       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
-     }
-      
-   });             
-  }
-
-  hide2(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
-  hide2(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
-
 
    
    function init(name){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-      
-     addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
-      
-      
-      
-      
-      
+        
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
        enabledDisabledButton(name);
      });
    }
    init('customization2_attendee-1');
-   init('customization2_booker');
 
    
   var insertionListener = function(event) {
