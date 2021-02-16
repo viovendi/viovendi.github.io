@@ -56,7 +56,7 @@ function handler(){
   
      //Hide "Position im Unternehmen" and "Funktion im Unternehmen"
      
-      $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
+     $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
      $('.customization2_attendee_further-data_custom-question-7').css("display","none") //Funkton
 
     
@@ -80,6 +80,7 @@ function handler(){
                         $('.input-error-message').remove();
                     }
         }
+       // if state is not "andere" hide question
         else {    
             $('.customization2_attendee_further-data_custom-question-5').css("display","none");
         }
@@ -125,8 +126,10 @@ function handler(){
                   }
 
         }
+       
+       // if state is not "andere" hide question
         else {  
-            $('.customization2_attendee_further-data_custom-question-7').css("display","none")
+            $('.customization2_attendee_further-data_custom-question-7').css("display","none") // Hide "Funktion"
         }
      }
                       )
@@ -248,13 +251,13 @@ function handler(){
   console.log( "clicked" );
 });
  }
-handler();
+//handler();
 
 var insertionListener = function(event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted: ", event.target);
     //Inser your code here.
-    handler();
+    //handler();
 
     $('customization2_attendee_view-action_edit').on( "click", function() {
         console.log( "clicked" );
