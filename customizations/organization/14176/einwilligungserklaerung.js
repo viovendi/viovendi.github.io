@@ -106,6 +106,7 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 function hide(tag, name){
   $(tag).each(function (i, element) {
     var item = $(this);
+    console.log(item)
     var label = item.find("label");
      
     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1){
@@ -114,7 +115,7 @@ function hide(tag, name){
       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
     }
      
-  });             
+  });
  }
 
  hide(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
