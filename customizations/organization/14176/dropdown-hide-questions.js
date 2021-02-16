@@ -1,4 +1,4 @@
-/*// Funktion to show and hide custom question
+// Funktion to show and hide custom question
 
 function handler(){
   //get Ticket name:
@@ -271,5 +271,5 @@ var insertionListener = function(event) {
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
-  */
+  
 
