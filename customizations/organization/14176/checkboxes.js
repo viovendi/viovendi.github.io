@@ -43,15 +43,63 @@
        enabledDisabledButton(name);
      });
    }
+//funktion to hide Label of question
+  function hide2(tag, name){
+   $(tag).each(function (i, element) {
+     var item = $(this);
+     var label = item.find("label");
+      
+     if(label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1){
+       $(item).find('.customization2_attendee_further-data_custom-question_label').css( "display", "none" );
+       $(item).find('.customization2_booker_further-data_custom-question_label').css( "display", "none" );
+     }
+      
+   });             
+  }
+
+  hide2(".customization2_attendee_further-data_custom-question","Einwilligungserklärung");
+  hide2(".customization2_booker_further-data_custom-question","Einwilligungserklärung");
+
+
    
    function init(name){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
+      
+     addClassToField('Einwilligungserklärung', 'check-boxes-wrapper', name);
+      if(name == 'customization2_attendee'){
+    if(!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length){
+      if( !$('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
+        var textString = $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
+        var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://www.vogelitakademie.de/ewe'>Einwilligungserklärung</a>");
+        var res = textString1.replace("(https://www.vogelitakademie.de/ewe)", "<a target='_blank' href='https://www.vogelitakademie.de/ewe'>(https://www.vogelitakademie.de/ewe)</a>");
+        $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
+        $('.'+name+' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
+      }
+    }
+  }
+  else{
+    if(!!$('.customization2_booker_further-data_custom-question_checkbox-group').length){
+      if( !$('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').hasClass('with-links')){
+        var textString = $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').html();
+        var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
+        var res = textString1.replace("(https://www.vogelitakademie.de/ewe)", "<a target='_blank' href='https://www.vogelitakademie.de/ewe'>(privacy.vogel.de)</a>");
+        $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').html(res);
+        $('.'+name+' .customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
+      }
+    }
+  }
+      
+      
+      
+      
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
        enabledDisabledButton(name);
      });
    }
    init('customization2_attendee-1');
+   init('customization2_booker');
+
    
   var insertionListener = function(event) {
     if (event.animationName === "nodeInserted") {
