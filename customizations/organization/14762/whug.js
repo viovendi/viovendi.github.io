@@ -152,6 +152,21 @@ function handler(){
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
+    
+    hideProdWhenChecked("Dienstag", "Montag" )
+    hideProdWhenChecked("Dienstag", "Mittwoch" )
+    hideProdWhenChecked("Dienstag", "Donnerstag" )
+      
+      
+    hideProdWhenChecked("Mittwoch", "Montag" )
+    hideProdWhenChecked("Mittwoch", "Dienstag" )
+    hideProdWhenChecked("Mittwoch", "Donnerstag" )
+      
+    hideProdWhenChecked("Donnerstag", "Montag" )
+    hideProdWhenChecked("Donnerstag", "Dienstag" )
+    hideProdWhenChecked("Donnerstag", "Mittwoch" )
+      
+      
     hideProdWhenChecked("Montag", "Workshop Dienstag" )
     hideProdWhenChecked("Montag", "Workshop Mittwoch" )
     hideProdWhenChecked("Montag", "Workshop Donnerstag" )
