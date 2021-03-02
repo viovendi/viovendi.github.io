@@ -31,7 +31,7 @@ function init(name){
  });
 }
 init('customization2_attendee');
-  
+handler();
 
 
 
