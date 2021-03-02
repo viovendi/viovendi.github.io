@@ -53,6 +53,7 @@ function uncheckProd(disable){
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("hide product");
+             $(this).find('.customization2_attendee_further-data_product_name').css("display", "none");
              $(this).css("display", "none");
              //checkbox.prop( "display", "none" )
           }
