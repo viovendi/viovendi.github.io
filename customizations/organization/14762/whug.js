@@ -179,10 +179,7 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-      
-    hideProdWhenChecked("Montag", "Workshop 2" )
-    hideProdWhenChecked("Montag", "Workshop 3" )
-    hideProdWhenChecked("Montag", "Workshop 4" )
+     
   
     showProdWhenChecked("Montag", "Workshop 1");
     showProdWhenChecked("Dienstag", "Workshop 2");
