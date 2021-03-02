@@ -20,6 +20,7 @@ console.log('Start working, Google Tag Manager (WHUG)');
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
    handler();
+     console.log("handler:");
 
  });
 }
@@ -178,7 +179,7 @@ function handler(){
     showProdWhenChecked("Donnerstag", "Workshop Donnerstag"); 
       
     if (calcCheckboxes(name) == 0 ){
-        console.log("calc is 0");
+        console.log("chide 4 products");
         hideProduct("Workshop Montag");
         hideProduct("Workshop Dienstag");
         hideProduct("Workshop Mittwoch");
@@ -200,6 +201,7 @@ function handler(){
     if (event.animationName === "nodeInserted") {
       console.log("Node has been inserted: ", event.target);
       //Insert your code here.
+        
       init('customization2_attendee');
     
     }};
