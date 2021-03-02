@@ -147,14 +147,14 @@ function handler(){
     
   */
   if (name == "Day Ticket Adult" ){
-    hideProduct("Workshop Montag");
-    hideProduct("Workshop Dienstag");
-    hideProduct("Workshop Mittwoch");
-    hideProduct("Workshop Donnerstag");
+   
       
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
+    hideProdWhenChecked("Montag", "Workshop Dienstag" )
+    hideProdWhenChecked("Montag", "Workshop Mittwoch" )
+    hideProdWhenChecked("Montag", "Workshop Donnerstag" )
   
     showProdWhenChecked("Montag", "Workshop Montag");
    }
