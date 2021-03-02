@@ -22,6 +22,11 @@ function init(name){
    console.log("letsgo");
    if (calcCheckboxes(name) == 0 ){
    console.log("calc is 0");
+    hideProduct("Workshop Montag");
+    hideProduct("Workshop Dienstag");
+    hideProduct("Workshop Mittwoch");
+    hideProduct("Workshop Donnerstag");
+       
    }
    handler();
  });
