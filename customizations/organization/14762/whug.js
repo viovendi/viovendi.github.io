@@ -32,17 +32,22 @@ handler();
 
 
 
-function ischecked(shortname){
+                                                          
+   function ischecked(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-      if(checkboxName.indexOf(shortName) >= 0){
-        if(checkbox.is(':checked')){
-            return 1;
-        }
-         else {return 0;}
-      });
-}
+          if(checkboxName.indexOf(shortName) >= 0){
+             if(checkbox.is(':checked')){
+                return 1;
+             }
+             else {
+                return 0;
+             }
+          }
+ });
+  }               
+                                                          
   
   function hideProduct(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
