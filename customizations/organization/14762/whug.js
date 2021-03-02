@@ -22,10 +22,10 @@ function init(name){
       handler();
       if (calcCheckboxes(name) == 0 ){
         console.log("hide 4 products");
-        hideProduct("Workshop Montag");
-        hideProduct("Workshop Dienstag");
-        hideProduct("Workshop Mittwoch");
-        hideProduct("Workshop Donnerstag");
+        hideProduct("Workshop 1");
+        hideProduct("Workshop 2");
+        hideProduct("Workshop 3");
+        hideProduct("Workshop 4");
        
    }
  });
@@ -180,14 +180,14 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
       
-    hideProdWhenChecked("Montag", "Workshop Dienstag" )
-    hideProdWhenChecked("Montag", "Workshop Mittwoch" )
-    hideProdWhenChecked("Montag", "Workshop Donnerstag" )
+    hideProdWhenChecked("Montag", "Workshop 2" )
+    hideProdWhenChecked("Montag", "Workshop 3" )
+    hideProdWhenChecked("Montag", "Workshop 4" )
   
-    showProdWhenChecked("Montag", "Workshop Montag");
-    showProdWhenChecked("Dienstag", "Workshop Dienstag");
-    showProdWhenChecked("Mittwoch", "Workshop Mittwoch"); 
-    showProdWhenChecked("Donnerstag", "Workshop Donnerstag"); 
+    showProdWhenChecked("Montag", "Workshop 1");
+    showProdWhenChecked("Dienstag", "Workshop 2");
+    showProdWhenChecked("Mittwoch", "Workshop 3"); 
+    showProdWhenChecked("Donnerstag", "Workshop 4"); 
       
     
    }
