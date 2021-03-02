@@ -19,7 +19,7 @@ console.log('Start working, Google Tag Manager (WHUG)');
   
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
-     handler();
+   handler();
    console.log("letsgo");
    
    
@@ -206,13 +206,11 @@ function handler(){
     
 
 }
-  handler();
   
   var insertionListener = function(event) {
     if (event.animationName === "nodeInserted") {
       console.log("Node has been inserted: ", event.target);
       //Insert your code here.
-      handler();
       init('customization2_attendee');
     
     }};
