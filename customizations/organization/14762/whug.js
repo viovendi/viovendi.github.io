@@ -51,7 +51,7 @@ function uncheckProd(disable){
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             checkbox.css("display", "none");
+             $(this).find('.customization2_attendee_further-data_product_name').css("display", "none");
           }
  });
   }
@@ -61,7 +61,7 @@ function uncheckProd(disable){
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             checkbox.css("display", "block");
+             $(this).find('.customization2_attendee_further-data_product_name').css("display", "block");
           }
  });
   }
