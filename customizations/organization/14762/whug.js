@@ -19,11 +19,15 @@ console.log('Start working, Google Tag Manager (WHUG)');
   
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
-   handler();
+      handler();
+      if (calcCheckboxes(name) == 0 ){
+        console.log("hide 4 products");
         hideProduct("Workshop Montag");
         hideProduct("Workshop Dienstag");
         hideProduct("Workshop Mittwoch");
         hideProduct("Workshop Donnerstag");
+       
+   }
  });
 }
 init('customization2_attendee');
@@ -37,6 +41,7 @@ init('customization2_attendee');
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
+             console.log("hide");
              $(this).css("display", "none");
           }
  });
@@ -192,14 +197,7 @@ function handler(){
     
 
     
-    if (calcCheckboxes(name) == 0 ){
-        console.log("hide 4 products");
-        hideProduct("Workshop Montag");
-        hideProduct("Workshop Dienstag");
-        hideProduct("Workshop Mittwoch");
-        hideProduct("Workshop Donnerstag");
-       
-   }
+    
 
 }
   
