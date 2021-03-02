@@ -19,16 +19,10 @@ console.log('Start working, Google Tag Manager (WHUG)');
   
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
+     handler();
    console.log("letsgo");
-   if (calcCheckboxes(name) == 0 ){
-   console.log("calc is 0");
-    hideProduct("Workshop Montag");
-    hideProduct("Workshop Dienstag");
-    hideProduct("Workshop Mittwoch");
-    hideProduct("Workshop Donnerstag");
-       
-   }
-   handler();
+   
+   
  });
 }
 init('customization2_attendee');
@@ -138,6 +132,7 @@ function showProdWhenChecked(shortName, show){
   
   
 function handler(){
+    
     hideProduct("Workshop Montag");
     hideProduct("Workshop Dienstag");
     hideProduct("Workshop Mittwoch");
@@ -156,7 +151,6 @@ function handler(){
     
   */
   if (name == "Day Ticket Adult" ){
-   
       
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
@@ -184,6 +178,15 @@ function handler(){
     showProdWhenChecked("Dienstag", "Workshop Dienstag");
     showProdWhenChecked("Mittwoch", "Workshop Mittwoch"); 
     showProdWhenChecked("Donnerstag", "Workshop Donnerstag"); 
+      
+    if (calcCheckboxes(name) == 0 ){
+        console.log("calc is 0");
+        hideProduct("Workshop Montag");
+        hideProduct("Workshop Dienstag");
+        hideProduct("Workshop Mittwoch");
+        hideProduct("Workshop Donnerstag");
+       
+   }
    }
     
     
