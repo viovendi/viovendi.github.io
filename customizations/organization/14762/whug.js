@@ -76,7 +76,7 @@ function enableProd(disable){
  });
 }
    
-  function prodCheked(shortName, disable){
+  function hideProdWhenChecked(shortName, hide){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
@@ -84,16 +84,36 @@ function enableProd(disable){
       checkbox.change(function(){
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             hideProduct(disable)
+             hideProduct(hide)
           }
         }else if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             showProduct(disable)
+             showProduct(hide)
           }
           }
       })
     })
   }
+function showProdWhenChecked(shortName, show){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+ 
+      checkbox.change(function(){
+        if(checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             showProduct(show)
+          }
+        }else if(!checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             hideProduct(show)
+          }
+          }
+      })
+    })
+  }
+
+
  
     function prodcheck(shortName, disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -127,7 +147,10 @@ function enableProd(disable){
   
   
 function handler(){
-  
+    hideProduct("Workshop Montag");
+    hideProduct("Workshop Dienstag");
+    hideProduct("Workshop Mittwoch");
+    hideProduct("Workshop Donnerstag");
     //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
   var name = ticketname.text().replace(/^\s+|\s+$/g, "")
@@ -142,15 +165,12 @@ function handler(){
     
   */
   if (name == "Day Ticket Adult" ){
-    hideProduct("Workshop Montag");
-    hideProduct("Workshop Dienstag");
-    hideProduct("Workshop Mittwoch");
-    hideProduct("Workshop Donnerstag");
-      
-      prodCheked("Montag", "Dienstag" )
-      prodCheked("Montag", "Mittwoch" )
-      prodCheked("Montag", "Donnerstag" )
     
+      
+    hideProdWhenChecked("Montag", "Dienstag" )
+    hideProdWhenChecked("Montag", "Mittwoch" )
+    hideProdWhenChecked("Montag", "Donnerstag" )
+    showProdWhenChecked("Montag", "Workshop Montag");
    }
     
     
