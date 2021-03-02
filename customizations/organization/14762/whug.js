@@ -40,8 +40,8 @@ function ischecked(shortname){
         if(checkbox.is(':checked')){
             return 1;
         }
-         else return 0;
-      }
+         else {return 0;}
+      });
 }
   
   function hideProduct(shortName){
