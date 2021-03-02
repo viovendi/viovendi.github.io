@@ -20,6 +20,10 @@ console.log('Start working, Google Tag Manager (WHUG)');
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
    handler();
+        hideProduct("Workshop Montag");
+        hideProduct("Workshop Dienstag");
+        hideProduct("Workshop Mittwoch");
+        hideProduct("Workshop Donnerstag");
  });
 }
 init('customization2_attendee');
