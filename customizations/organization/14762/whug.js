@@ -20,18 +20,16 @@ console.log('Start working, Google Tag Manager (WHUG)');
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
       handler();
-      if (calcCheckboxes(name) == 0 ){
-        console.log("hide 4 products");
-        hideProduct("Workshop 1");
-        hideProduct("Workshop 2");
-        hideProduct("Workshop 3");
-        hideProduct("Workshop 4");
-       
-   }
+      
  });
 }
 init('customization2_attendee');
+hideProduct("Workshop 1");
+hideProduct("Workshop 2");
+hideProduct("Workshop 3");
+hideProduct("Workshop 4");
 handler();
+
 
 
 
@@ -187,6 +185,15 @@ function handler(){
     showProdWhenChecked("Donnerstag", "Workshop 4"); 
       
     
+   }
+    
+    if (calcCheckboxes(name) == 0 ){
+        console.log("hide 4 products");
+        hideProduct("Workshop 1");
+        hideProduct("Workshop 2");
+        hideProduct("Workshop 3");
+        hideProduct("Workshop 4");
+       
    }
     
     
