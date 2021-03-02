@@ -202,7 +202,7 @@ function handler(){
     
    }
     
-    if (ischecked("Montag") == 0 && ischecked("Dienstag") == 0 && ischecked("Mittwoch") == 0 && ischecked("Donnerstag) == 0 && ){
+    if (ischecked("Montag") == 0 && ischecked("Dienstag") == 0 && ischecked("Mittwoch") == 0 && ischecked("Donnerstag") == 0 ){
         console.log("hide 4 products");
         hideProduct("Workshop 1");
         hideProduct("Workshop 2");
