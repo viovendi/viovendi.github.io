@@ -50,7 +50,7 @@ handler();
   }
    
 
-   
+   // this hides or shows another product when checkbox is checked or unchecked
   function hideProdWhenChecked(shortName, hide){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -70,6 +70,7 @@ handler();
     })
   }
 
+   // this hides another product when checkbox is unchecked
 function hideProdWhenUnChecked(shortName, hide){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
