@@ -20,9 +20,7 @@ console.log('Start working, Google Tag Manager (WHUG)');
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
    handler();
-   console.log("letsgo");
-   
-   
+
  });
 }
 init('customization2_attendee');
@@ -191,17 +189,8 @@ function handler(){
     
     
   
-
-  
-  // this is if booker edits his booking, retrigger all checked checkboxes so onchange is triggerd in other functions
-    recheckProd("Kreatives Zeichnen")
     
 
-  /*---------------*/
-
-    
-
-    prodcheck("Kreatives Zeichnen", "Filmpräsentation" )
     
     
 
