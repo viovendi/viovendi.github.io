@@ -172,6 +172,9 @@ function handler(){
     hideProdWhenChecked("Montag", "Workshop Donnerstag" )
   
     showProdWhenChecked("Montag", "Workshop Montag");
+    showProdWhenChecked("Dienstag", "Workshop Dienstag");
+    showProdWhenChecked("Mittwoch", "Workshop Mittwoch"); 
+    showProdWhenChecked("Donnerstag", "Workshop Donnerstag"); 
    }
     
     
