@@ -237,10 +237,10 @@ function handler(){
     if (name == "All Day Ticket" ){
         
         //preselect all days
-       markaschecked("Montag");
-       markaschecked("Dienstag");
-       markaschecked("Mittwoch");
-       markaschecked("Donnerstag");
+       markAsChecked("Montag");
+       markAsChecked("Dienstag");
+       markAsChecked("Mittwoch");
+       markAsChecked("Donnerstag");
         // disable all day
        disableProd("Montag");
        disableProd("Dienstag");
