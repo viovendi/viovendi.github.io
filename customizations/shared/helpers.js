@@ -11,6 +11,9 @@ function myHelpers() {
         }
       });
     }
+     this.hide = function (elem) {
+      elem.style.display = 'none';
+    };
     return this
   }
   
