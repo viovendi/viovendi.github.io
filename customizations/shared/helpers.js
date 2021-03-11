@@ -3,7 +3,7 @@ function myHelpers() {
     this.findField = function(cssClass, lable) {
       this.cssClass = cssClass;
       this.lable = lable;
-      const field = document.querySelectorAll(cssClass);
+      const field = document.querySelectorAll(this.cssClass);
       field.forEach((field) => {
        console.log(field)
       });
@@ -12,6 +12,6 @@ function myHelpers() {
     return this
   }
   
-  hp = new myHelpers()
+console.log('myHelpers')
   
   
