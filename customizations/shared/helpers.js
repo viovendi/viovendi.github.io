@@ -5,7 +5,7 @@ function myHelpers() {
       this.lable = lable;
       const field = document.querySelectorAll(this.cssClass);
       field.forEach((field) => {
-        field.querySelectorAll('label p')
+        console.log(field.querySelectorAll('label p'))
       });
       return this
     }
