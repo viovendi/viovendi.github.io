@@ -6,7 +6,7 @@ function myHelpers() {
       const fields= document.querySelectorAll(this.cssClass);
       fields.forEach((field) => {
         if( field.querySelectorAll('label p')[0].innerText.trim().includes(this.lable) ){
-          console.log(field)
+          console.log(this)
           return field;
         }
       });
