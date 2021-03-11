@@ -1,5 +1,4 @@
 function myHelpers() {
-
     this.findField = function(cssClass, lable) {
       this.cssClass = cssClass;
       this.lable = lable;
@@ -12,12 +11,9 @@ function myHelpers() {
       return this.field;
     }
      this.hide = function (elem) {
-      console.log(elem)
       elem.style.display = 'none';
     };
     return this
   }
-  
-console.log('myHelpers')
   
   
