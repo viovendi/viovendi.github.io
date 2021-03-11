@@ -12,6 +12,7 @@ function myHelpers() {
       });
     }
      this.hide = function (elem) {
+      console.log(elem)
       elem.style.display = 'none';
     };
     return this
