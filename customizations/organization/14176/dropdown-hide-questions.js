@@ -253,23 +253,13 @@ function handler(){
       $('customization2_attendee_view-action_edit').on( "click", function() {
   console.log( "clicked" );
 });
-/*
- Google Tag Manager JS Helpers used
-*/
 
-var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
-$(field).hide()
-
-var dropdown =  $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
-
-   $(dropdown).change(function() {
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
-  $(field).show()
-}else{$(field).hide()}
-});
  }
 handler();
 
+/*
+ Google Tag Manager JS Helpers used
+*/
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
 
