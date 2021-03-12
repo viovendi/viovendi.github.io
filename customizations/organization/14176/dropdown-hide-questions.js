@@ -1,7 +1,7 @@
 // Funktion to show and hide custom question
 
 $.getScript('https://viovendi.github.io/customizations/shared/helpers.js');
-
+console.log($.getScript('https://viovendi.github.io/customizations/shared/helpers.js'))
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
