@@ -252,9 +252,6 @@ function handler(){
   console.log( "clicked" );
 });
 
- }
-handler();
-
 /*
  Google Tag Manager JS Helpers used
 */
@@ -269,6 +266,9 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }else{$(field).hide()}
 
 });
+
+ }
+handler();
 
 var insertionListener = function(event) {
   if (event.animationName === "nodeInserted") {
