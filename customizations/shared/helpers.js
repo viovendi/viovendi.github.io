@@ -9,9 +9,6 @@ How to Connect
 
 As an external script in GTM
 <script src="https://viovendi.github.io/customizations/shared/helpers.js"></script>
-
-you can also connect to any file and use this function
-$.getScript('https://viovendi.github.io/customizations/shared/helpers.js');
 */
 
 function myHelpers(elements) {
