@@ -1,7 +1,7 @@
 // Funktion to show and hide custom question
 
 $.getScript('https://viovendi.github.io/customizations/shared/helpers.js');
-console.log($.getScript('https://viovendi.github.io/customizations/shared/helpers.js'))
+
 function handler(){
   //get Ticket name:
   var ticketname = $('.customization2_attendee_title')
@@ -256,7 +256,7 @@ function handler(){
 /*
  Google Tag Manager JS Helpers used
 */
-console.log(new myHelpers('.customization2_attendee_further-data_custom-question'))
+
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
 
@@ -269,6 +269,18 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 });
  }
 handler();
+
+var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
+$(field).hide()
+
+var dropdown =  $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
+
+   $(dropdown).change(function() {
+if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+  $(field).show()
+}else{$(field).hide()}
+
+});
 
 var insertionListener = function(event) {
   if (event.animationName === "nodeInserted") {
