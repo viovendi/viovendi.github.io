@@ -256,6 +256,7 @@ function handler(){
 /*
  Google Tag Manager JS Helpers used
 */
+console.log(new myHelpers('.customization2_attendee_further-data_custom-question'))
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
 
