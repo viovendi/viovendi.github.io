@@ -1,5 +1,5 @@
 /*
-"name": "Google Tag Manager Helpers",
+"name": "Google Tag Manager JS Helpers",
 "version": "1.0.0",
 "author": "Stetsko Oleg",
 */
