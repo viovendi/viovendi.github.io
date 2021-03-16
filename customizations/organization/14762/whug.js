@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager (WHUG)');
+console.log('Start working, Google Tag Manager (WHUG)1');
 
 // call handler whenever a checkbox is clicked/changed
 function init(name){
