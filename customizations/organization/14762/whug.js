@@ -148,10 +148,10 @@ function showProdWhenChecked(shortName, show){
           }
    });
   }
-    hideProduct("Workshop 1");
+    /*hideProduct("Workshop 1");
     hideProduct("Workshop 2");
     hideProduct("Workshop 3");
-    hideProduct("Workshop 4");
+    hideProduct("Workshop 4");*/
   
   
 function handler(){
