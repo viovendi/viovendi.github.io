@@ -1,18 +1,19 @@
 console.log('Start working, Google Tag Manager (WHUG)');
 
+// call handler whenever a checkbox is clicked/changed
 function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
       handler();
-      
  });
 }
+
 init('customization2_attendee');
 
 handler();
 
 
 
-                                                          
+    // retuen 1 id checkbox is checked , return 0 when not checked                                                      
    function ischecked(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
@@ -28,7 +29,7 @@ handler();
  });
   }               
                                                           
-  
+  //hides Products
   function hideProduct(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
@@ -39,6 +40,7 @@ handler();
  });
   }
 
+// show Products
  function showProduct(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
@@ -105,26 +107,6 @@ function showProdWhenChecked(shortName, show){
     })
   }
 
-function disableProd(disable){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-         var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-             if(checkboxName.indexOf(disable) >= 0){
-                checkbox.prop( "disabled", true )
-             }
-    });
-   }
-
-
-   function enableProd(disable){
-   $('.customization2_attendee_further-data_product').each(function(i, element) {
-         var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-        var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-            if(checkboxName){
-               checkbox.prop( "disabled", false )
-            }
-   });
-  }
 
 
  
@@ -166,16 +148,7 @@ function disableProd(disable){
           }
    });
   }
-                                                               
-   function disableProd(disable){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-         var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-             if(checkboxName.indexOf(disable) >= 0){
-                checkbox.prop( "disabled", true )
-             }
-    });
-   }
+   
   
   
 function handler(){
@@ -186,18 +159,20 @@ function handler(){
   
   //pseudo code
   /*
-  if any day ticket is selected:
+   if any day ticket is selected:
    by clicking one day (eg. Monday), hide all other day
    show only the workshops that are on the selected day
-   #
-   first hide all workshops
+   
+   
+   
+ 
     
   */
   if (name == "Day Ticket Adult" ){
-    hideProduct("Workshop 1");
-    hideProduct("Workshop 2");
-    hideProduct("Workshop 3");
-    hideProduct("Workshop 4");
+   // hideProduct("Workshop 1");
+    //hideProduct("Workshop 2");
+    //hideProduct("Workshop 3");
+    //hideProduct("Workshop 4");
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
@@ -205,7 +180,6 @@ function handler(){
     hideProdWhenChecked("Dienstag", "Montag" )
     hideProdWhenChecked("Dienstag", "Mittwoch" )
     hideProdWhenChecked("Dienstag", "Donnerstag" )
-      
       
     hideProdWhenChecked("Mittwoch", "Montag" )
     hideProdWhenChecked("Mittwoch", "Dienstag" )
@@ -215,8 +189,6 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-     
-  
     showProdWhenChecked("Montag", "Workshop 1");
     showProdWhenChecked("Dienstag", "Workshop 2");
     showProdWhenChecked("Mittwoch", "Workshop 3"); 
