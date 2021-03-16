@@ -148,7 +148,10 @@ function showProdWhenChecked(shortName, show){
           }
    });
   }
-   
+    hideProduct("Workshop 1");
+    hideProduct("Workshop 2");
+    hideProduct("Workshop 3");
+    hideProduct("Workshop 4");
   
   
 function handler(){
@@ -163,16 +166,13 @@ function handler(){
    by clicking one day (eg. Monday), hide all other day
    show only the workshops that are on the selected day
    
-   
+  
    
  
     
   */
   if (name == "Day Ticket Adult" ){
-   // hideProduct("Workshop 1");
-    //hideProduct("Workshop 2");
-    //hideProduct("Workshop 3");
-    //hideProduct("Workshop 4");
+
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
@@ -189,10 +189,37 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-    showProdWhenChecked("Montag", "Workshop 1");
-    showProdWhenChecked("Dienstag", "Workshop 2");
-    showProdWhenChecked("Mittwoch", "Workshop 3"); 
-    showProdWhenChecked("Donnerstag", "Workshop 4"); 
+    if(ischecked("Montag") == 1){
+      showProduct("Workshop 1");
+    }
+    else{
+      hideProduct("Workshop 1");
+    }
+   
+    if(ischecked("Dienstag") == 1){
+      showProduct("Workshop 2");
+    }
+    else{
+      hideProduct("Workshop 2");
+    }
+   
+   if(ischecked("Mittwoch") == 1){
+      showProduct("Workshop 3");
+    }
+    else{
+      hideProduct("Workshop 3");
+    }
+   
+   if(ischecked("Donnerstag") == 1){
+      showProduct("Workshop 4");
+    }
+    else{
+      hideProduct("Workshop 4");
+    }
+    //showProdWhenChecked("Montag", "Workshop 1");
+    //showProdWhenChecked("Dienstag", "Workshop 2");
+    //showProdWhenChecked("Mittwoch", "Workshop 3"); 
+    //showProdWhenChecked("Donnerstag", "Workshop 4"); 
       
     
    }
