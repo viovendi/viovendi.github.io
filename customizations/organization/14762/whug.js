@@ -8,20 +8,7 @@ function init(name){
 }
 
 init('customization2_attendee');
-function ischecked(shortName){
-   $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-       checkbox.change(function(){
-         if(checkbox.is(':checked')){
-              if(checkboxName.indexOf(shortName) >= 0){
-                 return 1;
-              }
-         }
-        else{return 0;}
-      })
- });
-  }        
+
 handler();
 
 
@@ -87,7 +74,26 @@ function hideProdWhenUnChecked(shortName, hide){
       })
     })
   }
-
+function ischecked(shortName){
+   $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+ 
+      checkbox.change(function(){
+        if(checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             console.log("1");
+           return 1;
+          }
+        }else if(!checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             console.log("0");
+           return 0;
+          }
+          }
+      })
+    })
+  }        
 function showProdWhenChecked(shortName, show){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
