@@ -79,7 +79,7 @@ function ischecked(shortName){
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
  
-      checkbox.change(function(){
+      
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("1");
@@ -91,7 +91,7 @@ function ischecked(shortName){
            return 0;
           }
           }
-      })
+      
     })
   }        
 function showProdWhenChecked(shortName, show){
@@ -178,7 +178,7 @@ function handler(){
     
   */
   if (name == "Day Ticket Adult" ){
-
+/*
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
@@ -193,7 +193,7 @@ function handler(){
       
     hideProdWhenChecked("Donnerstag", "Montag" )
     hideProdWhenChecked("Donnerstag", "Dienstag" )
-    hideProdWhenChecked("Donnerstag", "Mittwoch" )
+    hideProdWhenChecked("Donnerstag", "Mittwoch" )*/
    
     console.log(ischecked("Montag"))
     if(ischecked("Montag") == 1){
