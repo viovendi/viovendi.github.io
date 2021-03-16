@@ -188,6 +188,7 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Montag" )
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
+   
     console.log(ischecked("Montag"))
     if(ischecked("Montag") == 1){
       showProduct("Workshop 1");
@@ -195,6 +196,7 @@ function handler(){
     else{
      console.log(ischecked("Montag"));
       hideProduct("Workshop 1");
+     console.log("hide");
     }
    
     if(ischecked("Dienstag") == 1){
