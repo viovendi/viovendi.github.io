@@ -8,13 +8,7 @@ function init(name){
 }
 
 init('customization2_attendee');
-
-handler();
-
-
-
-    // retuen 1 id checkbox is checked , return 0 when not checked                                                      
-   function ischecked(shortName){
+function ischecked(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
@@ -27,7 +21,13 @@ handler();
              }
           }
  });
-  }               
+  }        
+handler();
+
+
+
+    // retuen 1 id checkbox is checked , return 0 when not checked                                                      
+          
                                                           
   //hides Products
   function hideProduct(shortName){
@@ -188,7 +188,7 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Montag" )
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
-      console.log(ischecked("Montag"))
+    console.log(ischecked("Montag"))
     if(ischecked("Montag") == 1){
       showProduct("Workshop 1");
     }
@@ -240,10 +240,10 @@ function handler(){
        markAsChecked("Mittwoch");
        markAsChecked("Donnerstag");
         // disable all days
-       disableProd("Montag");
+       /*disableProd("Montag");
        disableProd("Dienstag");
        disableProd("Mittwoch");
-       disableProd("Donnerstag");
+       disableProd("Donnerstag");*/
     }
     
 
