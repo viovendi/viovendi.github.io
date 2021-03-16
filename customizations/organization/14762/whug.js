@@ -199,13 +199,13 @@ function handler(){
     if(ischecked("Montag") == 1){
       showProduct("Workshop 1");
     }
-    else{
+    else if(ischecked("Montag") == 0){
      console.log(ischecked("Montag"));
-      hideProduct("Workshop 1");
+     hideProduct("Workshop 1");
      console.log("hide");
     }
    
-    if(ischecked("Dienstag") == 1){
+    /*if(ischecked("Dienstag") == 1){
       showProduct("Workshop 2");
     }
     else{
@@ -224,7 +224,7 @@ function handler(){
     }
     else{
       hideProduct("Workshop 4");
-    }
+    }*/
     //showProdWhenChecked("Montag", "Workshop 1");
     //showProdWhenChecked("Dienstag", "Workshop 2");
     //showProdWhenChecked("Mittwoch", "Workshop 3"); 
