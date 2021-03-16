@@ -144,12 +144,11 @@ function ischecked(shortName){
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("1");
-           return "1";
+             return 1;
           }
         }else if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("0");
-           return "0";
           }
           }
       
@@ -197,7 +196,6 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )*/
    
-    console.log(ischecked("Montag"));
     if(ischecked("Montag") == 1){
       showProduct("Workshop 1");
     }
