@@ -188,11 +188,12 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Montag" )
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
-      
+      console.log(ischecked("Montag"))
     if(ischecked("Montag") == 1){
       showProduct("Workshop 1");
     }
     else{
+     console.log(ischecked("Montag"));
       hideProduct("Workshop 1");
     }
    
