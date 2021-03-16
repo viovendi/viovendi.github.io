@@ -151,12 +151,12 @@ function handler(){
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("1");
-           return 1;
+           return "1";
           }
         }else if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("0");
-           return 0;
+           return "0";
           }
           }
       
