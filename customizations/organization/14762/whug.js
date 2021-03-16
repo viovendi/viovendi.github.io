@@ -9,8 +9,8 @@ function init(name){
 
 init('customization2_attendee');
 function ischecked(shortName){
-  $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
+   $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
              if(checkbox.is(':checked')){
