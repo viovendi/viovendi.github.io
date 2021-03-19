@@ -13,7 +13,7 @@ function handler(){
 
            var ddPosition = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
            
-           //var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
+           var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
            $(ddPosition).change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
@@ -39,7 +39,7 @@ function handler(){
                              
                             )
         
-        inputPosition.change(function(){
+              inputPosition.change(function(){
                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                   if ( input == "") {
                       $('.customization2_attendee_edit-action_save').attr('disabled', true);
