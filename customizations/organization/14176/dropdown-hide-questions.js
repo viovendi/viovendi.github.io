@@ -105,7 +105,8 @@ function handler(){
            }
                             )
          
-                       
+      var dd = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+      console.log(dd, "dd")
      var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
      var inputFunktion = $('.customization2_attendee_further-data_custom-question-7 .customization2_attendee_further-data_custom-question_input')
 
