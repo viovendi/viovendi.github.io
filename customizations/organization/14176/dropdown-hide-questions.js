@@ -8,15 +8,14 @@ function handler(){
       {
         console.log('Ich bin Veranstaltungspartner / Speaker')
         var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
-        
+        var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
            $(funkton).css("display","none") //Funkton
 
-           var ddPosition = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
+           var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
            
            var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
-           $(ddPosition).change(function(){
-                var state = $(ddPosition).val().trim()
-                console.log($(ddPosition))
+           ddPosition.change(function(){
+                var state = ddPosition.val().trim()
                 if (state.includes("andere")) {
                     $(funkton).css("display","block");
                     $(funkton).find('vv-optional-text').css("display","none");
