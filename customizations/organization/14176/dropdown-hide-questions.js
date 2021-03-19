@@ -11,14 +11,15 @@ function handler(){
         
            $(funkton).css("display","none") //Funkton
 
-           var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
-           var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
+           var ddPosition = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
+           
+           //var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
            ddPosition.change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
-                    $('.customization2_attendee_further-data_custom-question-4').css("display","block");
-                    $('.customization2_attendee_further-data_custom-question-4').find('vv-optional-text').css("display","none");
-                    inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                    $(funkton).css("display","block");
+                    $(funkton).find('vv-optional-text').css("display","none");
+                    funkton.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
