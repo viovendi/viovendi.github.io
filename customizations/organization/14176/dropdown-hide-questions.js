@@ -17,8 +17,8 @@ function handler(){
            ddPosition.change(function(){
                 var state = ddPosition.val().trim()
                 if (state.includes("andere")) {
-                    inputPosition.css("display","block");
-                    inputPosition.find('vv-optional-text').css("display","none");
+                  $(funkton).css("display","block");
+                  $(funkton).find('vv-optional-text').css("display","none");
               inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
