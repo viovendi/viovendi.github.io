@@ -31,7 +31,7 @@ function handler(){
                   }
             }
             else {    
-                $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+              ddPosition.css("display","none");
             }
          
 
