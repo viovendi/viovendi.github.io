@@ -19,7 +19,7 @@ function handler(){
                 if (state.includes("andere")) {
                   $(funkton).css("display","block");
                   $(funkton).find('vv-optional-text').css("display","none");
-              inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+                  inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
                     var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                       if ( input == "") {
@@ -57,201 +57,101 @@ function handler(){
       }
   
   else if(name == "Ich bin ein Student / Trainee im IT-Umfeld" ) {
+    console.log('Ich bin ein Student / Trainee im IT-Umfeld')
+    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+    var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
+       $(funkton).css("display","none") //Funkton
 
-  
-     //Hide "Position im Unternehmen" and "Funktion im Unternehmen"
-     
-     $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
-     $('.customization2_attendee_further-data_custom-question-7').css("display","none") //Funkton
-
-    
-     var ddPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_dropdown')
-     var inputPosition = $('.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_input')
-
-     ddPosition.change(function(){
-       	var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
-        if ( state == "andere") {
-            $('.customization2_attendee_further-data_custom-question-5').css("display","block");
-            $('.customization2_attendee_further-data_custom-question-5').find('vv-optional-text').css("display","none");
-            inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-
-
-            var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
-                    if ( input == "") {
-                        $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                    }
-                    else {    
-                        $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                        $('.input-error-message').remove();
-                    }
-        }
-       // if state is not "andere" hide question
-        else {    
-            $('.customization2_attendee_further-data_custom-question-5').css("display","none");
-        }
+       var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
        
+       var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
+       ddPosition.change(function(){
+            var state = ddPosition.val().trim()
+            if (state.includes("andere")) {
+              $(funkton).css("display","block");
+              $(funkton).find('vv-optional-text').css("display","none");
+              inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
-     }
-                      )
-    
-    inputPosition.change(function(){
                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
                   if ( input == "") {
-                      $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                      inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-
+                        $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
                       $('.input-error-message').remove();
                   }
-
-           }
-                            )
+            }
+            else {    
+                $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+            }
          
 
-     var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
-     var inputFunktion = $('.customization2_attendee_further-data_custom-question-7 .customization2_attendee_further-data_custom-question_input')
-
-                       
-     ddFunktion.change(function(){
-       	var state = ddFunktion.val().replace(/^\s+|\s+$/g, "")
-        if ( state == "andere") {
-            $('.customization2_attendee_further-data_custom-question-7').css("display","block")
-            $('.customization2_attendee_further-data_custom-question-7').find('vv-optional-text').css("display","none");
-            inputFunktion.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-
-                var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
-                  if ( input == "") {
-                    $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                  }
-                  else {    
-                    $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                    $('.input-error-message').remove();
-                  }
-
-        }
-       
-       // if state is not "andere" hide question
-        else {  
-            $('.customization2_attendee_further-data_custom-question-7').css("display","none") // Hide "Funktion"
-        }
-     }
-                      )
+       }
+                         
+                        )
     
-    inputFunktion.change(function(){
-                var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
-                  if ( input == "") {
-                     $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                     inputFunktion.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+          inputPosition.change(function(){
+            var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+              if ( input == "") {
+                  $('.customization2_attendee_edit-action_save').attr('disabled', true);
+                  inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
+              }
+              else {    
+                  $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                  $('.input-error-message').remove();
+              }
+
+       }
+                        )
+  } else {
+    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+    var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
+       $(funkton).css("display","none") //Funkton
+
+       var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
+       
+       var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
+       ddPosition.change(function(){
+            var state = ddPosition.val().trim()
+            if (state.includes("andere")) {
+              $(funkton).css("display","block");
+              $(funkton).find('vv-optional-text').css("display","none");
+              inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+
+                var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+                  if ( input == "") {
+                        $('.customization2_attendee_edit-action_save').attr('disabled', true);
                   }
                   else {    
                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
                       $('.input-error-message').remove();
                   }
+            }
+            else {    
+                $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+            }
+         
 
-           }    
+       }
+                         
                         )
     
-    
-    } else{
+          inputPosition.change(function(){
+            var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+              if ( input == "") {
+                  $('.customization2_attendee_edit-action_save').attr('disabled', true);
+                  inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
-  
-      //Hide "Position im Unternehmen" and "Funktion im Unternehmen"
-      
-      $('.customization2_attendee_further-data_custom-question-5').css("display","none") //position
-      $('.customization2_attendee_further-data_custom-question-7').css("display","none") //Funkton
- 
-     
-      var ddPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_dropdown')
-      var inputPosition = $('.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_input')
- 
-      ddPosition.change(function(){
-          var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
-         if ( state == "andere") {
-             $('.customization2_attendee_further-data_custom-question-5').css("display","block");
-             $('.customization2_attendee_further-data_custom-question-5').find('vv-optional-text').css("display","none");
-             inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
- 
- 
-             var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
-                     if ( input == "") {
-                         $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                     }
-                     else {    
-                         $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                         $('.input-error-message').remove();
-                     }
-         }
-         else {    
-             $('.customization2_attendee_further-data_custom-question-5').css("display","none");
-         }
-        
- 
-      }
-                       )
-     
-     inputPosition.change(function(){
-                 var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
-                   if ( input == "") {
-                       $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                       inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
- 
-                   }
-                   else {    
-                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                       $('.input-error-message').remove();
-                   }
- 
-            }
-                             )
-          
-                        
-      var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
-      var inputFunktion = $('.customization2_attendee_further-data_custom-question-7 .customization2_attendee_further-data_custom-question_input')
- 
-                        
-      ddFunktion.change(function(){
-          var state = ddFunktion.val().replace(/^\s+|\s+$/g, "")
-         if ( state == "andere") {
-             $('.customization2_attendee_further-data_custom-question-7').css("display","block")
-             $('.customization2_attendee_further-data_custom-question-7').find('vv-optional-text').css("display","none");
-             inputFunktion.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
- 
-                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
-                   if ( input == "") {
-                     $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                   }
-                   else {    
-                     $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                     $('.input-error-message').remove();
-                   }
- 
-         }
-         else {  
-             $('.customization2_attendee_further-data_custom-question-7').css("display","none")
-         }
-      }
-                       )
-     
-     inputFunktion.change(function(){
-                 var input = inputFunktion.val().replace(/^\s+|\s+$/g, "")
-                   if ( input == "") {
-                      $('.customization2_attendee_edit-action_save').attr('disabled', true);
-                      inputFunktion.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
- 
-                   }
-                   else {    
-                       $('.customization2_attendee_edit-action_save').attr('disabled', false);
-                       $('.input-error-message').remove();
-                   }
- 
-            }    
-                         )
-     
-     
-     }
+              }
+              else {    
+                  $('.customization2_attendee_edit-action_save').attr('disabled', false);
+                  $('.input-error-message').remove();
+              }
+
+       }
+                        )
+  }
       $('customization2_attendee_view-action_edit').on( "click", function() {
   console.log( "clicked" );
 });
