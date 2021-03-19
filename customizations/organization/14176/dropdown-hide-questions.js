@@ -105,7 +105,7 @@ function handler(){
        }
                         )
   } else {
-    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
     var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?*');
     var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du?');
