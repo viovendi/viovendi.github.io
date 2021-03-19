@@ -14,7 +14,7 @@ function handler(){
            var ddPosition = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
            
            //var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
-           ddPosition.change(function(){
+           $(ddPosition).change(function(){
                 var state = ddPosition.val().replace(/^\s+|\s+$/g, "")
                 if ( state == "andere") {
                     $(funkton).css("display","block");
