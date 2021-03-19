@@ -6,9 +6,10 @@ function handler(){
   var name = ticketname.text().replace(/^\s+|\s+$/g, "")
   if (name == "Ich bin Veranstaltungspartner / Speaker" )
       {
-        var dd = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
-        console.log(dd, "dd")
-           $('.customization2_attendee_further-data_custom-question-4').css("display","none") //Funkton
+        console.log('Ich bin Veranstaltungspartner / Speaker')
+        var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+        
+           $(funkton).css("display","none") //Funkton
 
            var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
            var inputPosition = $('.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_input')
