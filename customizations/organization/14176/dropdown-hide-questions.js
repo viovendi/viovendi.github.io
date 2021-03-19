@@ -15,8 +15,9 @@ function handler(){
            
            var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
            $(ddPosition).change(function(){
-                var state = $(ddPosition).val().replace(/^\s+|\s+$/g, "")
-                if ( state == "andere") {
+                var state = $(ddPosition).val().trim()
+                console.log(state)
+                if (state.includes("andere")) {
                     $(funkton).css("display","block");
                     $(funkton).find('vv-optional-text').css("display","none");
                     funkton.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
