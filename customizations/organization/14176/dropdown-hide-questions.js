@@ -6,6 +6,8 @@ function handler(){
   var name = ticketname.text().replace(/^\s+|\s+$/g, "")
   if (name == "Ich bin Veranstaltungspartner / Speaker" )
       {
+        var dd = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+        console.log(dd, "dd")
            $('.customization2_attendee_further-data_custom-question-4').css("display","none") //Funkton
 
            var ddPosition = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
@@ -105,8 +107,7 @@ function handler(){
            }
                             )
          
-      var dd = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
-      console.log(dd, "dd")
+
      var ddFunktion = $('.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_dropdown')
      var inputFunktion = $('.customization2_attendee_further-data_custom-question-7 .customization2_attendee_further-data_custom-question_input')
 
