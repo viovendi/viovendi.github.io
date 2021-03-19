@@ -164,7 +164,7 @@ function handler(){
       if (state.includes("andere")) {
         $(funkton2).css("display","block");
         $(funkton2).find('vv-optional-text').css("display","none");
-        inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
+        inputPosition2.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
           var input = inputPosition2.val().replace(/^\s+|\s+$/g, "")
             if ( input == "") {
