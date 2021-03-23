@@ -3,11 +3,11 @@
 function handler(){
     var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen*');
-    var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im');
+    var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
     var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du?');
     $(funkton).css("display","none")   
     $(funkton2).css("display","none") //Funkton
-console.log(select2)
+
        var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
        var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
 
