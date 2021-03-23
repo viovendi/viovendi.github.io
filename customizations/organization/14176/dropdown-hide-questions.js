@@ -10,7 +10,7 @@ function handler(){
 
        var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
        var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
-
+console.log(ddPosition2)
        var ddPosition2 = $(select2).find('.customization2_attendee_further-data_custom-question_dropdown')
        var inputPosition2 = $(funkton2).find('.customization2_attendee_further-data_custom-question_input')
 
