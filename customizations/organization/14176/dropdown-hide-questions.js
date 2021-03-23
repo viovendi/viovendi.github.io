@@ -31,7 +31,7 @@ function handler(){
                   }
             }
             else {    
-              ddPosition.css("display","none");
+              inputPosition.css("display","none");
             }
          
 
@@ -72,7 +72,7 @@ function handler(){
             }
       }
       else {    
-        ddPosition2.css("display","none");
+        inputPosition2.css("display","none");
       }
    
 
