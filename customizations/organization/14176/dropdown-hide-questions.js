@@ -32,6 +32,7 @@ function handler(){
             }
             else {    
               $(funkton).css("display","none") 
+              inputPosition.val('')
             }
          
 
@@ -73,6 +74,7 @@ function handler(){
       }
       else {    
         $(funkton2).css("display","none") 
+        inputPosition2.val('')
       }
    
 
@@ -110,7 +112,10 @@ var dropdown =  $$('.customization2_attendee_further-data_custom-question').find
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field).show()
-}else{$(field).hide()}
+}else{
+  $(field).hide()
+  $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
+}
 
 });
 
