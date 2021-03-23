@@ -31,7 +31,7 @@ function handler(){
                   }
             }
             else {    
-              inputPosition.css("display","none");
+              funkton.css("display","none");
             }
          
 
@@ -72,7 +72,7 @@ function handler(){
             }
       }
       else {    
-        inputPosition2.css("display","none");
+        funkton2.css("display","none");
       }
    
 
