@@ -79,8 +79,8 @@ function init(name) {
         var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
-      } else if($(fieldEn).text()){
-        $(fieldEn).text().trim().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
+      } else if($(fieldEn).html()){
+        $(fieldEn).html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
       }
     }
   } else {
