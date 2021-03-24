@@ -80,18 +80,23 @@ function init(name) {
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
       } else if($(fieldEn).html()){
-        var resultString = $(fieldEn).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>(privacy.vogel.de)</a>.");
+        var resultString = $(fieldEn).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
         $(fieldEn).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html(resultString)
       }
     }
   } else {
     if (!!$('.customization2_booker_further-data_custom-question_checkbox-group').length) {
+      var fieldDe = $$('.customization2_booker_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
+      var fieldEn = $$('.customization2_booker_further-data_custom-question_checkbox-line').findField('I consent to the use and processing')
       if (!$('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').hasClass('with-links')) {
         var textString = $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
         var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
         $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').html(res);
         $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
+      } else if($(fieldEn).html()){
+        var resultString = $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
+        $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html(resultString)
       }
     }
   }
