@@ -96,7 +96,7 @@ function init(name) {
         $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
       } else if($(fieldEn).html()){
         var resultString = $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
-        console.log(resultString)
+        console.log($(fieldEn), 'customization2_booker')
         $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html(resultString)
       }
     }
