@@ -71,14 +71,17 @@ function init(name) {
   if (name == 'customization2_attendee') {
 
     if (!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length) {
-      var field = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
+      var fieldDe = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
+      var fieldEn = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('I consent to the use and processing')
       console.log(field)
-      if (!$('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links')) {
+      if (!$('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links') && fieldDe) {
         var textString = $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
         var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
         $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
+      } else if(fieldEn){
+        var res = textString1.replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
       }
     }
   } else {
