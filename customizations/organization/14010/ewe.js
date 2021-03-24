@@ -73,7 +73,7 @@ function init(name) {
     if (!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length) {
       var fieldDe = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
       var fieldEn = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('I consent to the use and processing')
-      console.log($(fieldEn).html())
+      console.log($(fieldEn).text())
       if (!$('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').hasClass('with-links') && fieldDe) {
         var textString = $('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
