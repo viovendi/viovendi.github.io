@@ -57,7 +57,8 @@ function hide(tag, name) {
 
 hide(".customization2_attendee_further-data_custom-question", "Einwilligungserklärung");
 hide(".customization2_booker_further-data_custom-question", "Einwilligungserklärung");
-
+hide(".customization2_attendee_further-data_custom-question", "declaration of consent");
+hide(".customization2_booker_further-data_custom-question", "declaration of consent");
 
 
 
