@@ -75,7 +75,7 @@ async function makeRequest(options) {
       })
     })
   }
-
+console.log($('.customization2_attendee_title').text())
 
   //chekedAllProd()
 
