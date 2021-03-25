@@ -61,7 +61,7 @@ async function makeRequest(options) {
  
       checkbox.change(function(){
         if(checkbox.is(':checked')){
-            console.log($(this))
+            $(this).hiden()
         //   if(checkboxName.indexOf(shortName) >= 0){
         //      disableProd(disable)
         //   }
