@@ -1,31 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
-    <title>Document</title>
-  </head>
-  <body>
-    <iframe
-      src="https://stats.ubivent.com/startpage?email=doo%3Aoleg.stetsko%40doo.net&token=9e2df95471d3486a8906df15671dc929da22c30d&eventid=1219&page=qs"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        z-index: 999999;
-      "
-      frameborder="0"
-      allow="encrypted-media *;"
-      allowfullscreen=""
-    ></iframe>
-  </body>
-</html>
+console.log('Start working, Google Tag Manager');
+$.getScript('https://viovendi.github.io/customizations/shared/http.js');
+
+
+
+console.log('GTM Tag - COMPLEX-187 (TEST)')
+
+
+var pathname = window.location.pathname;
+var eventId = pathname.split('/')[3]
+
+
+async function makeRequest(options) {
+  let result = null;
+  try {
+    result = await $.ajax(options);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+const result = await makeRequest({
+  url: `https://api.doo.net/v1/events/${eventId}`,
+  type: 'get',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  dataType: 'json',
+})
+
+const containerId = result.event_attributes.attributes.filter(function (v) {
+  if (v.name.includes('GTM-container')) {
+    return v.data
+  }
+});
+
+
+console.log(containerId, 'containerId')
