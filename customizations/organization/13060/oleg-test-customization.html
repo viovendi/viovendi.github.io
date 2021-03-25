@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager');
+console.log('Start working, Google Tag Manager COMPLEX-187 (TEST)');
 async function makeRequest(options) {
   let result = null;
   try {
@@ -8,10 +8,6 @@ async function makeRequest(options) {
       console.error(error);
   }
 }
-
-
-
-console.log('GTM Tag - COMPLEX-187 (TEST)')
 
 
 var pathname = window.location.pathname;
@@ -36,7 +32,19 @@ async function getContainerId(eventId){
   return id
 }
 
+async function insertContainer(){
+  const s = document.createElement("script");
+  const sc = document.createElement("script");
+  const containerId = await getContainerId(eventId)
+  // Add script content
+  s.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${containerId}');`;
+  sc.setAttribute("async", "");
+  sc.setAttribute("custom-element", "amp-analytics");
+  sc.src = "https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  // Append
+  document.head.appendChild(s);
+  document.body.appendChild(sc);
 
-const containerId = getContainerId(eventId)
+}
 
-console.log(containerId, 'containerId')
+insertContainer()
