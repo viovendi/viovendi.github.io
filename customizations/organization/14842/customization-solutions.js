@@ -77,7 +77,7 @@ async function makeRequest(options) {
   }
 
 
-  chekedAllProd()
+  //chekedAllProd()
 
 
  // prodCheked()
