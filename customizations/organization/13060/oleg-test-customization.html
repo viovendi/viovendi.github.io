@@ -1,5 +1,13 @@
 console.log('Start working, Google Tag Manager');
-$.getScript('https://viovendi.github.io/customizations/shared/http.js');
+async function makeRequest(options) {
+  let result = null;
+  try {
+      result = await $.ajax(options);
+      return result;
+  } catch (error) {
+      console.error(error);
+  }
+}
 
 
 
