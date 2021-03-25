@@ -50,6 +50,12 @@ async function makeRequest(options) {
     });
    }
 
+   function chekedAllProd(){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+        var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+        checkbox.checked(true)
+    })
+   }
 
   function prodCheked(){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -71,5 +77,7 @@ async function makeRequest(options) {
   }
 
 
+  chekedAllProd()
 
-  prodCheked()
+
+ // prodCheked()
