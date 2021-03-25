@@ -60,7 +60,7 @@ async function makeRequest(options) {
       checkbox.change(function(){
         if(checkbox.is(':checked')){
             var shortName = $(this).parent().find('p').text().trim();
-          if(enable){
+          if(shortName){
              disableProd()
              enableProd(shortName)
           }
