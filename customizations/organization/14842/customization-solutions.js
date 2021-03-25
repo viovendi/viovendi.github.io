@@ -13,7 +13,7 @@ async function makeRequest(options) {
   
   var path = window.location.pathname;
   var eventId = path.split('/')[3]
-  
+
   async function getEventInfo(eventId) {
     const result = await makeRequest({
       url: `https://api.doo.net/v1/events/${eventId}`,
@@ -23,7 +23,7 @@ async function makeRequest(options) {
       },
       dataType: 'json',
     })
-  console.log(result.ticket_categories, result.event_attributes.attributes)
+  console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
     // const attribute = $.grep(result.event_attributes.attributes, function (v) {
     //   return v.name.includes('GTM-container')
     // });
