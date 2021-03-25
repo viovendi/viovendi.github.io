@@ -11,9 +11,9 @@ async function makeRequest(options) {
   }
   
   
-  var pathname = window.location.pathname;
-  var eventId = pathname.split('/')[3]
-  
+  var path = window.location.pathname;
+  var eventId = path.split('/')[3]
+   console.log(path)
   async function getEventInfo(eventId) {
     const result = await makeRequest({
       url: `https://api.doo.net/v1/events/${eventId}`,
