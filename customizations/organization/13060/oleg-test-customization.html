@@ -26,12 +26,13 @@ async function getContainerId(eventId){
     },
     dataType: 'json',
   })
-  console.log(result)
-  return result.event_attributes.attributes.filter(function (v) {
+  const id = result.event_attributes.attributes.filter(function (v) {
     if (v.name.includes('GTM-container')) {
       return v.data
     }
   });
+  console.log(id)
+  return id
 }
 
 
