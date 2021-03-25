@@ -13,7 +13,7 @@ async function makeRequest(options) {
   
   var path = window.location.pathname;
   var eventId = path.split('/')[3]
-   console.log(eventId)
+  
   async function getEventInfo(eventId) {
     const result = await makeRequest({
       url: `https://api.doo.net/v1/events/${eventId}`,
