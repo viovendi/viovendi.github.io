@@ -53,7 +53,7 @@ async function makeRequest(options) {
    function chekedAllProd(){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
         var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-        checkbox.prop('checked', true)
+        checkbox.prop('checked', true).prop( "disabled", true )
     })
    }
 
