@@ -23,7 +23,7 @@ async function makeRequest(options) {
       },
       dataType: 'json',
     })
-  console.log({"ticket_categories": result.ticket_categories})
+  console.log(result.ticket_categories, result.event_attributes.attributes)
     // const attribute = $.grep(result.event_attributes.attributes, function (v) {
     //   return v.name.includes('GTM-container')
     // });
