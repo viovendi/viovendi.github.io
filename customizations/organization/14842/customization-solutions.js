@@ -23,7 +23,7 @@ async function makeRequest(options) {
       },
       dataType: 'json',
     })
-    console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
+    //console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
     return  {"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes};
   }
 
