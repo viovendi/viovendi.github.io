@@ -81,7 +81,7 @@ async function makeRequest(options) {
       return v.name === ticketTitle;
     });
     console.log(result)
-    return result.event_attribute_ids[0];
+    return result[0].event_attribute_ids[0];
   }
 
 
