@@ -87,7 +87,7 @@ async function makeRequest(options) {
 
 
   async function  customization(){
-   const ticketTitle = $('.customization2_attendee_title').text().trim()
+   const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
    console.log(ticketTitle)
    const eventInfo = await getEventInfo(eventId);
    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
