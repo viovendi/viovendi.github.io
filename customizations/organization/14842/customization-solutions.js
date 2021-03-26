@@ -74,7 +74,6 @@ async function makeRequest(options) {
   const result = $.grep(ticketCategories, function (v) {
       return v.name === ticketTitle;
     });
-    console.log(result)
     return result[0].event_attribute_ids[0];
   }
 
@@ -83,7 +82,7 @@ async function makeRequest(options) {
     const result = $.grep(eventAttributes, function (v) {
         return v.id === attributeId;
       });
-      return result.name;
+      return result[0].name;
   }
 
 
