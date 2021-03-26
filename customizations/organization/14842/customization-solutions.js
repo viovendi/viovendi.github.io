@@ -76,10 +76,12 @@ async function makeRequest(options) {
   }
 
   function getTicketAttributeId(ticketTitle, ticketCategories){
-  const attribute = $.grep(ticketCategories, function (v) {
+      console.log(ticketCategories)
+  const result = $.grep(ticketCategories, function (v) {
       return v.name.includes(ticketTitle)
     });
-    return attribute.id;
+    console.log(result)
+    return result.id;
   }
 
 
