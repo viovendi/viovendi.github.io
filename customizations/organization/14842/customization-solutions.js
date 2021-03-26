@@ -78,7 +78,7 @@ async function makeRequest(options) {
   function getTicketAttributeId(ticketTitle, ticketCategories){
       console.log(ticketCategories)
   const result = $.grep(ticketCategories, function (v) {
-      return v.name.includes(ticketTitle)
+      return v.name === ticketTitle;
     });
     console.log(result)
     return result.event_attribute_ids[0];
