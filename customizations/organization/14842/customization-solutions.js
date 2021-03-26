@@ -27,7 +27,7 @@ async function makeRequest(options) {
     // const attribute = $.grep(result.event_attributes.attributes, function (v) {
     //   return v.name.includes('GTM-container')
     // });
-    return  result;
+    return  {"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes};
   }
 
   getEventInfo(eventId);
@@ -60,7 +60,6 @@ async function makeRequest(options) {
   function prodCheked(){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
  
       checkbox.change(function(){
         if(checkbox.is(':checked')){
@@ -75,9 +74,25 @@ async function makeRequest(options) {
       })
     })
   }
+
+  function getTicketAttributeId(ticketTitle, attributes){
+  const attribute = $.grep(attributes, function (v) {
+      return v.name.includes(ticketTitle)
+    });
+    return attribute.id;
+  }
+
+
+  async function  customization(){
+   const ticketTitle = $('.customization2_attendee_title').text().trim()
+   const eventInfo = await getEventInfo(eventId);
+   const attributeId = getTicketAttributeId(ticketTitle, eventInfo.attributes)
+  console.log(attributeId)
+  }
+  
 console.log($('.customization2_attendee_title').text().trim())
 
   //chekedAllProd()
-
+  customization()
 
  // prodCheked()
