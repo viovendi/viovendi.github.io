@@ -81,7 +81,7 @@ async function makeRequest(options) {
       return v.name.includes(ticketTitle)
     });
     console.log(result)
-    return result.id;
+    return result.event_attribute_ids[0];
   }
 
 
