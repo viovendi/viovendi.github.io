@@ -100,10 +100,17 @@ async function makeRequest(options) {
    }
 
   }
+  var insertionListener = function(event) {
+  if (event.animationName === "bookerNodeInserted") {
+    console.log('bookerNodeInserted')
+    customization()
+  }
+}
+document.addEventListener("animationstart", insertionListener, false); 
+document.addEventListener("MSAnimationStart", insertionListener, false); 
+document.addEventListener("webkitAnimationStart", insertionListener, false); 
+
   
 
-
-  
-  customization()
 
  
