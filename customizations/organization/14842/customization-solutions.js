@@ -91,12 +91,19 @@ async function makeRequest(options) {
    const eventInfo = await getEventInfo(eventId);
    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
    const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
-   console.log(attributeName);
+   if(attributeName === 'Customization1'){
+    console.log('Customization1');
+    // prodCheked()
+   } else if(attributeName === 'Customization2'){
+    console.log('Customization2');
+    //chekedAllProd()
+   }
+
   }
   
-console.log($('.customization2_attendee_title').text().trim())
 
-  //chekedAllProd()
+
+  
   customization()
 
- // prodCheked()
+ 
