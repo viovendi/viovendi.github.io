@@ -23,14 +23,9 @@ async function makeRequest(options) {
       },
       dataType: 'json',
     })
-  console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
-    // const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    //   return v.name.includes('GTM-container')
-    // });
+    console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
     return  {"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes};
   }
-
-  getEventInfo(eventId);
 
 
   function disableProd(disabled){
@@ -76,7 +71,6 @@ async function makeRequest(options) {
   }
 
   function getTicketAttributeId(ticketTitle, ticketCategories){
-      console.log(ticketCategories)
   const result = $.grep(ticketCategories, function (v) {
       return v.name === ticketTitle;
     });
@@ -85,11 +79,20 @@ async function makeRequest(options) {
   }
 
 
+  function getEventAttributeName(attributeId, eventAttributes){
+    const result = $.grep(eventAttributes, function (v) {
+        return v.id === attributeId;
+      });
+      return result.name;
+  }
+
+
   async function  customization(){
    const ticketTitle = $('.customization2_attendee_title').text().trim()
    const eventInfo = await getEventInfo(eventId);
    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
-  console.log(attributeId)
+   const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
+   console.log(attributeName);
   }
   
 console.log($('.customization2_attendee_title').text().trim())
