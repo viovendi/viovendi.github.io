@@ -102,9 +102,7 @@ async function makeRequest(options) {
   }
   customization()
 
-document.addEventListener("animationstart", insertionListener, false); 
-document.addEventListener("MSAnimationStart", insertionListener, false); 
-document.addEventListener("webkitAnimationStart", insertionListener, false); 
+
 
   
 
