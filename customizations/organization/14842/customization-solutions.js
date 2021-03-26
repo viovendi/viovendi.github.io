@@ -93,10 +93,10 @@ async function makeRequest(options) {
    const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
    if(attributeName === 'Customization1'){
     console.log('Customization1');
-    // prodCheked()
+    prodCheked()
    } else if(attributeName === 'Customization2'){
     console.log('Customization2');
-    //chekedAllProd()
+    chekedAllProd()
    }
 
   }
