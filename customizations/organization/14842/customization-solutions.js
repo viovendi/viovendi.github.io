@@ -75,9 +75,8 @@ async function makeRequest(options) {
     })
   }
 
-  function getTicketAttributeId(ticketTitle, attributes){
-      console.log(attributes)
-  const attribute = $.grep(attributes, function (v) {
+  function getTicketAttributeId(ticketTitle, ticketCategories){
+  const attribute = $.grep(ticketCategories, function (v) {
       return v.name.includes(ticketTitle)
     });
     return attribute.id;
@@ -87,7 +86,7 @@ async function makeRequest(options) {
   async function  customization(){
    const ticketTitle = $('.customization2_attendee_title').text().trim()
    const eventInfo = await getEventInfo(eventId);
-   const attributeId = getTicketAttributeId(ticketTitle, eventInfo.attributes)
+   const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
   console.log(attributeId)
   }
   
