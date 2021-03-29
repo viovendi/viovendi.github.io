@@ -122,19 +122,19 @@ function showProduct(shortName){
  }
 
   // this hides or shows another product when checkbox is checked or unchecked
-  function prodCheked(shortName, disable){
-    $('.customization2_booker_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_booker_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_booker_further-data_product_name').text().trim()
+  function hideProdWhenChecked(shortName, hide){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
  
       
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             disableProd(disable)
+             hideProduct(hide)
           }
         }else if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             enableProd(disable)
+             showProduct(hide);
           }
           }
       
