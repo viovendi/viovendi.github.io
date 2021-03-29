@@ -96,17 +96,19 @@ function getEventAttributeName(attributeId, eventAttributes) {
 
 async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-    console.log(ticketTitle)
+    console.log("ticketTitle:" +ticketTitle)
     const eventInfo = await getEventInfo(eventId);
-    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
+    
+    console.log("eventInfo:" +eventInfo);
+    //const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
     console.log(attributeName)
-    if (attributeName === 'Customization1') {
-        console.log('Customization1');
+    if (attributeName === 'Montag') {
+        console.log('Montag');
         prodCheked()
-    } else if (attributeName === 'Customization2') {
+    } else if (attributeName === 'Dienstag') {
     console.log(attributeName)
-        console.log('Customization2');
+        console.log('Customization2Dinestag');
         chekedAllProd()
     }
 }
