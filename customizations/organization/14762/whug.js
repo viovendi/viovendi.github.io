@@ -375,7 +375,7 @@ function handler(){
      console.log("hide");
     }
    
-    if( ischecked("Dienstag")){
+    if(ischecked("Dienstag")){
       showProduct("Workshop 2");
     }
     else{
@@ -389,7 +389,7 @@ function handler(){
       hideProduct("Workshop 3");
     }
    
-   if(await ischecked("Donnerstag") == 1){
+   if(ischecked("Donnerstag") == 1){
       showProduct("Workshop 4");
     }
     else{
@@ -403,7 +403,7 @@ function handler(){
     
    }
     // if no day is selected, hide all Workshops
-    if (ischecked("Montag") == 0 && ischecked("Dienstag") == 0 && ischecked("Mittwoch") == 0 && ischecked("Donnerstag") == 0 ){
+    if (ischecked("Montag")  && ischecked("Dienstag")  && ischecked("Mittwoch")  && ischecked("Donnerstag")  ){
        /* hideProduct("Workshop 1");
         hideProduct("Workshop 2");
         hideProduct("Workshop 3");
