@@ -304,9 +304,9 @@ function handler(){
    
  
     
-  */
+  
   if (name == "Day Ticket Adult" ){
-/*
+
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
