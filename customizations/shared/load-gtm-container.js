@@ -26,8 +26,8 @@ async function getContainerId(eventId) {
 
   for (const element of result.event_attributes.attributes) {
     //console.log(element)
-    if(element.name && element.name.includes('GTM-container')){
-      console.log(element)
+    if(element.name){
+      console.log(element.name)
       containerId = element.data;
     }
   }
