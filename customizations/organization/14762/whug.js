@@ -139,6 +139,16 @@ function showProdWhenChecked(shortName, show){
    });
   }
 
+function markAsUnChecked(name){
+       $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+       if(checkboxName.indexOf(name) >= 0){
+             checkbox.prop('checked', false);
+          }
+   });
+  }
+
 
 function ischecked(shortName){
  var bool = false;
@@ -213,13 +223,12 @@ function handler(){
       
    console.log("is checked montag:  "+ischecked("Montag"))
     if(ischecked("Montag")){
-      console.log("show ws1");
       showProduct("Workshop 1");
       
     }
     else if(!ischecked("Montag")){
      hideProduct("Workshop 1");
-     console.log("hide ws1");
+     markAsUnChecked("Workshop 1"); 
     }
    
     if(ischecked("Dienstag")){
@@ -227,6 +236,7 @@ function handler(){
     }
     else{
       hideProduct("Workshop 2");
+     markAsUnChecked("Workshop 2");
     }
    
    if(ischecked("Mittwoch")){
@@ -234,13 +244,15 @@ function handler(){
     }
     else{
       hideProduct("Workshop 3");
+     markAsUnChecked("Workshop 3");
     }
    
-   if(ischecked("Donnerstag") == 1){
+   if(ischecked("Donnerstag")){
       showProduct("Workshop 4");
     }
     else{
       hideProduct("Workshop 4");
+     markAsUnChecked("Workshop 4");
     }
     //showProdWhenChecked("Montag", "Workshop 1");
     //showProdWhenChecked("Dienstag", "Workshop 2");
