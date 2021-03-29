@@ -160,10 +160,10 @@ function ischecked(shortName){
         }
       
        console.log(bool);
-       return bool;
    
    }
                                                           )
+ return bool;
 }
     
    
