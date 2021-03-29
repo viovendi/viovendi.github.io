@@ -1,9 +1,8 @@
-console.log('Start working, Google Tag Manager (WHUG)1');
+console.log('Start working, Google Tag Manager (WHUG)');
 
 
 //------- Code from Oleg ------ 
 
-console.log('Start working, Google Tag Manager (Load different GTM-Container into the widget for each event)');
 
 async function makeRequest(options) {
     let result = null;
@@ -113,7 +112,7 @@ async function customization() {
     }
 }
 
-
+customization()
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
