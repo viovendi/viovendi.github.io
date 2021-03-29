@@ -369,19 +369,19 @@ function handler(){
       showProduct("Workshop 1");
         console.log("showws1");
     }
-    else if(!ischecked("Montag")){
+    if(!ischecked("Montag")){
      hideProduct("Workshop 1");
      console.log("hide");
     }
    
-    if(ischecked("Dienstag") == 1){
+    if(ischecked("Dienstag")){
       showProduct("Workshop 2");
     }
     else{
       hideProduct("Workshop 2");
     }
    
-   if(ischecked("Mittwoch") == 1){
+   if(ischecked("Mittwoch")){
       showProduct("Workshop 3");
     }
     else{
