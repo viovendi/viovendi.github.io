@@ -205,7 +205,8 @@ handler();
   }
    
 
-   // this hides or shows another product when checkbox is checked or unchecked
+   // this hides or shows another product when 
+checked or unchecked
   function hideProdWhenChecked(shortName, hide){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -301,25 +302,28 @@ function showProdWhenChecked(shortName, show){
           }
    });
   }
-async function ischecked(shortName){
+function ischecked(shortName){
    $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
- 
+      var bool = false;
       
         if(checkbox.is(':checked')){
             console.log("checkbox is checked + name:" + checkboxName)
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("checked");
-             return true;
+             bool = true;
           }
         }if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("unchecked");
-             return false;
+             bool = false;
           }
           }
-    })
+    }
+                                                           console.log(bool);
+                                                          return bool;)
+    
   }
     /*hideProduct("Workshop 1");
     hideProduct("Workshop 2");
