@@ -98,17 +98,18 @@ async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log(ticketTitle)
     const eventInfo = await getEventInfo(eventId);
-    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
-    const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
-    console.log(attributeName)
-    if (attributeName === 'Customization1') {
+    console.log(eventInfo);
+    //const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
+    //const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
+    //console.log(attributeName)
+    /*if (attributeName === 'Customization1') {
         console.log('Customization1');
         prodCheked()
     } else if (attributeName === 'Customization2') {
     console.log(attributeName)
         console.log('Customization2');
         chekedAllProd()
-    }
+    }*/
 }
 
 customization()
