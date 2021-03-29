@@ -24,12 +24,12 @@ async function getContainerId(eventId) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    console.log(v)
     if(v.name){
       return v.name.includes('GTM-container')
     }
   });
 
-  console.log(attribute[0])
   return  attribute[0].data;
 }
 
