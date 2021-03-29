@@ -106,7 +106,7 @@ function hideProduct(shortName){
           var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
           var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
               if(checkboxName.indexOf(shortName) >= 0){
-                 $(this).style.display = "none";
+                 $(this).css(display = "none");
               }
      });
  }
@@ -116,7 +116,7 @@ function showProduct(shortName){
           var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
           var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
               if(checkboxName.indexOf(shortName) >= 0){
-                 $(this).style.display = "block";
+                 $(this).css(display = "block");
               }
      });
  }
@@ -227,7 +227,7 @@ handler();
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             $(this).style.display = "block";
+             $(this).css(display = "block";
           }
  });
   }
