@@ -177,6 +177,9 @@ async function customization() {
     
     
 }
+     $('.customization2_attendee_further-data_product_checkbox').on('change', function(){
+        customization();
+     })
 
 customization()
 
