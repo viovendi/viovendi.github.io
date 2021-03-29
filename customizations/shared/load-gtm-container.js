@@ -22,15 +22,15 @@ async function getContainerId(eventId) {
     },
     dataType: 'json',
   })
+ let containerId = null;
 
-  const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    console.log(v)
-    if(v.name){
-      return v.name.includes('GTM-container')
+  for (const element of result.event_attributes.attributes) {
+    if(element.name && element.name.includes('GTM-container')){
+      containerId = element.data;
     }
-  });
+  }
 
-  return  attribute[0].data;
+  return  containerId;
 }
 
 async function loadContainer() {
