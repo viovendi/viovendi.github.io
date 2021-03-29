@@ -301,7 +301,7 @@ function showProdWhenChecked(shortName, show){
           }
    });
   }
-function ischecked(shortName){
+async function ischecked(shortName){
    $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
@@ -313,13 +313,12 @@ function ischecked(shortName){
              console.log("checked");
              return true;
           }
-        }else if(!checkbox.is(':checked')){
+        }if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("unchecked");
              return false;
           }
           }
-      
     })
   }
     /*hideProduct("Workshop 1");
@@ -365,7 +364,7 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-   console.log("ischecked montag: "+ischecked("Montag"))
+   console.log("ischecked montag:  "+ischecked("Montag"))
     if(ischecked("Montag")){
       console.log("showws1");
       showProduct("Workshop 1");
