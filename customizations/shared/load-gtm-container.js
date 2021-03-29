@@ -28,6 +28,8 @@ async function getContainerId(eventId) {
       return v.name.includes('GTM-container')
     }
   });
+
+  console.log(attribute[0])
   return  attribute[0].data;
 }
 
