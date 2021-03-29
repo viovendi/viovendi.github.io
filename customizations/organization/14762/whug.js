@@ -323,7 +323,7 @@ function ischecked(shortName){
           }
         }
        console.log(bool);
-       
+       return bool;
    
    }
                                                           )
