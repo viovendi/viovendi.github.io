@@ -96,13 +96,13 @@ function getEventAttributeName(attributeId, eventAttributes) {
 
 async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-    console.log("ticketTitle:" +ticketTitle)
+    console.log("ticketTitle: " +ticketTitle)
     const eventInfo = await getEventInfo(eventId);
     
-    console.log("eventInfo:" +eventInfo);
-    //const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
+    console.log("eventInfo: " +eventInfo);
+    const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
-    console.log(attributeName)
+    console.log("attributeName: " +attributeName)
     if (attributeName === 'Montag') {
         console.log('Montag');
         prodCheked()
