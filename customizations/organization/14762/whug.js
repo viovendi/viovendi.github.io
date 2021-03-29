@@ -188,7 +188,7 @@ handler();
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
               console.log("hide");
-             $(this).css(display = "none");
+             $(this).hide();
           }
  });
   }
