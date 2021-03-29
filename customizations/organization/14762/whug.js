@@ -319,12 +319,12 @@ function ischecked(shortName){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("unchecked");
              bool = false;
-          }
+             }
         }
-      }
+      
       console.log(bool);
        return bool;
-      )
+      })
     }
     
    
