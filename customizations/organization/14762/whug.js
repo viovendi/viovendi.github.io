@@ -365,31 +365,31 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
    console.log("ischecked montag:  "+ischecked("Montag"))
-    if(ischecked("Montag")){
+    if(await ischecked("Montag")){
       console.log("showws1");
       showProduct("Workshop 1");
       
     }
-    if(!ischecked("Montag")){
+    if(await !ischecked("Montag")){
      hideProduct("Workshop 1");
      console.log("hide");
     }
    
-    if(ischecked("Dienstag")){
+    if(await ischecked("Dienstag")){
       showProduct("Workshop 2");
     }
     else{
       hideProduct("Workshop 2");
     }
    
-   if(ischecked("Mittwoch")){
+   if(await ischecked("Mittwoch")){
       showProduct("Workshop 3");
     }
     else{
       hideProduct("Workshop 3");
     }
    
-   if(ischecked("Donnerstag") == 1){
+   if(await ischecked("Donnerstag") == 1){
       showProduct("Workshop 4");
     }
     else{
