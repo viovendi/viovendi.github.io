@@ -278,6 +278,7 @@ function handler(){
       console.log("Node has been inserted: ", event.target);
       //Insert your code here
       init('customization2_attendee');
+      handler()
     
     }};
   
