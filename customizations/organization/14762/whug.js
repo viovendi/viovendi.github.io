@@ -113,7 +113,7 @@ async function customization() {
     }
 }
 
-customization()
+
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
