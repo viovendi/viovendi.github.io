@@ -15,7 +15,6 @@ handler();
 
 
 
-    // retuen 1 id checkbox is checked , return 0 when not checked                                                      
           
                                                           
   //hides Products
@@ -24,7 +23,6 @@ handler();
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-              console.log("hide");
              $(this).hide();
           }
  });
@@ -171,11 +169,7 @@ function ischecked(shortName){
  return bool;
 }
     
-   
-    /*hideProduct("Workshop 1");
-    hideProduct("Workshop 2");
-    hideProduct("Workshop 3");
-    hideProduct("Workshop 4");*/
+
   
   
 function handler(){
@@ -193,12 +187,9 @@ function handler(){
    show only the workshops that are on the selected day
    */
 
-   
- 
-    
   
   if (name == "Erwachsenen Ticket" ){
-
+    // hide other day when 1 day is selected
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
     hideProdWhenChecked("Montag", "Donnerstag" )
@@ -215,7 +206,10 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-   console.log("is checked montag:  "+ischecked("Montag"))
+   //console.log("is checked montag:  "+ischecked("Montag"))
+   // show only the products/Workshop that happen on the selected day
+   //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
+   // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
     if(ischecked("Montag")){
       showProduct("Workshop 1");
       
@@ -255,18 +249,12 @@ function handler(){
       
     
    }
-    // if no day is selected, hide all Workshops
-    if (ischecked("Montag")  && ischecked("Dienstag")  && ischecked("Mittwoch")  && ischecked("Donnerstag")  ){
-       /* hideProduct("Workshop 1");
-        hideProduct("Workshop 2");
-        hideProduct("Workshop 3");
-        hideProduct("Workshop 4");
-        */
-       
-   }
+ 
     
     if (name == "Erwachsene Dauerkarte" ){
-        //preselect all days
+     // Customization 2
+     //preselect all days, 
+     //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
        markAsChecked("Montag");
        markAsChecked("Dienstag");
        markAsChecked("Mittwoch");
