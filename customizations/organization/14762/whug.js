@@ -42,6 +42,16 @@ function disableProd(disabled) {
     });
 }
 
+function disableProdByName(shortName) {
+    $('.customization2_attendee_further-data_product').each(function (i, element) {
+        var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+        var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+        if (checkboxName.includes(shortName)) {
+            checkbox.prop("disabled", true)
+        }
+    });
+}
+
 function enableProd(disable) {
     $('.customization2_attendee_further-data_product').each(function (i, element) {
         var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -91,13 +101,52 @@ function getEventAttributeName(attributeId, eventAttributes) {
     });
     return result[0].name;
 }
+function hideProduct(shortName){
+      $('.customization2_attendee_further-data_product').each(function(i, element) {
+          var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
+          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+              if(checkboxName.indexOf(shortName) >= 0){
+                 $(this).style.display = "none";
+              }
+     });
+ }
+
+function showProduct(shortName){
+      $('.customization2_attendee_further-data_product').each(function(i, element) {
+          var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
+          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+              if(checkboxName.indexOf(shortName) >= 0){
+                 $(this).style.display = "block";
+              }
+     });
+ }
+
+  // this hides or shows another product when checkbox is checked or unchecked
+  function hideProdWhenChecked(shortName, hide){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+ 
+      checkbox.change(function(){
+        if(checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             hideProduct(hide)
+          }
+        }else if(!checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             showProduct(hide);
+          }
+          }
+      })
+    })
+  }
 
 
 async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log("ticketTitle: " +ticketTitle)
-    const eventInfo = await getEventInfo(eventId);
-    
+    //const eventInfo = await getEventInfo(eventId);
+    /*
     console.log("eventInfo: " +eventInfo);
     const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
@@ -109,7 +158,24 @@ async function customization() {
     console.log(attributeName)
         console.log('Customization2Dinestag');
         chekedAllProd()
-    }
+    }*/
+    hideProdWhenChecked("Montag", "Dienstag" )
+    hideProdWhenChecked("Montag", "Mittwoch" )
+    hideProdWhenChecked("Montag", "Donnerstag" )
+    
+    hideProdWhenChecked("Dienstag", "Montag" )
+    hideProdWhenChecked("Dienstag", "Mittwoch" )
+    hideProdWhenChecked("Dienstag", "Donnerstag" )
+      
+    hideProdWhenChecked("Mittwoch", "Montag" )
+    hideProdWhenChecked("Mittwoch", "Dienstag" )
+    hideProdWhenChecked("Mittwoch", "Donnerstag" )
+      
+    hideProdWhenChecked("Donnerstag", "Montag" )
+    hideProdWhenChecked("Donnerstag", "Dienstag" )
+    hideProdWhenChecked("Donnerstag", "Mittwoch" )
+    
+    
 }
 
 customization()
@@ -150,7 +216,7 @@ handler();
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             $(this).css("display", "none");
+             $(this).style.display = "none";
           }
  });
   }
@@ -161,7 +227,7 @@ handler();
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             $(this).css("display", "block");
+             $(this).style.display = "block";
           }
  });
   }
@@ -259,7 +325,7 @@ function showProdWhenChecked(shortName, show){
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
        if(checkboxName.indexOf(name) >= 0){
-             checkbox.trigger('click');
+             checkbox.prop('checked', true);
           }
    });
   }
