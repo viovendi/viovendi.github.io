@@ -327,7 +327,7 @@ async function ischecked(shortName){
     hideProduct("Workshop 4");*/
   
   
-function handler(){
+async function handler(){
  
 
     //get Ticket name:
@@ -365,24 +365,24 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
    console.log("ischecked montag:  "+ischecked("Montag"))
-    if(await ischecked("Montag")){
+    if(ischecked("Montag")){
       console.log("showws1");
       showProduct("Workshop 1");
       
     }
-    if(await !ischecked("Montag")){
+    if( !ischecked("Montag")){
      hideProduct("Workshop 1");
      console.log("hide");
     }
    
-    if(await ischecked("Dienstag")){
+    if( ischecked("Dienstag")){
       showProduct("Workshop 2");
     }
     else{
       hideProduct("Workshop 2");
     }
    
-   if(await ischecked("Mittwoch")){
+   if(ischecked("Mittwoch")){
       showProduct("Workshop 3");
     }
     else{
