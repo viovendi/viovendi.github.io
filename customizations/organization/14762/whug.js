@@ -308,6 +308,7 @@ function ischecked(shortName){
  
       
         if(checkbox.is(':checked')){
+            console.log("checkbox is checked + name:" + checkboxName)
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("checked");
              return true;
@@ -366,8 +367,9 @@ function handler(){
       
    console.log("ischecked montag: "+ischecked("Montag"))
     if(ischecked("Montag")){
+      console.log("showws1");
       showProduct("Workshop 1");
-        console.log("showws1");
+      
     }
     if(!ischecked("Montag")){
      hideProduct("Workshop 1");
