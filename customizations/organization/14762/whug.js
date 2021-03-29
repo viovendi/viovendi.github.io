@@ -163,11 +163,6 @@ function ischecked(shortName){
           if(checkboxName.indexOf(shortName) >= 0){
              bool = true;
           }
-        
-        }if(!checkbox.is(':checked')){
-          if(checkboxName.indexOf(shortName) >= 0){
-             console.log("unchecked");
-          }
         }
       
    
