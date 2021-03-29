@@ -136,8 +136,6 @@ function showProduct(shortName){
               if(checkboxName.indexOf(shortName) >= 0){
                  showProduct(hide);
               }
-          
-      })
     })
   }
 
