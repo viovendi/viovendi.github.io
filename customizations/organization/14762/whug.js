@@ -327,7 +327,7 @@ async function ischecked(shortName){
     hideProduct("Workshop 4");*/
   
   
-async function handler(){
+function handler(){
  
 
     //get Ticket name:
