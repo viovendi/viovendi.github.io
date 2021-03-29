@@ -199,7 +199,7 @@ handler();
       var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           if(checkboxName.indexOf(shortName) >= 0){
-             $(this).css(display = "block");
+             $(this).show();
           }
  });
   }
