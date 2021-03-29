@@ -329,8 +329,9 @@ function handler(){
  
 
     //get Ticket name:
-  var ticketname = $('.customization2_attendee_title')
-  var name = ticketname.text().replace(/^\s+|\s+$/g, "")
+  
+  const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+
   
   //pseudo code
   /*
@@ -338,12 +339,12 @@ function handler(){
    by clicking one day (eg. Monday), hide all other day
    show only the workshops that are on the selected day
    */
-  
+  console.log(name);
    
  
     
   
-  if (name == "Erwachsene Dauerkarte" ){
+  if (name == "Erwachsenen Ticket" ){
 
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
@@ -406,7 +407,7 @@ function handler(){
        
    }
     
-    if (name == "All Day Ticket" ){
+    if (name == "Erwachsene Dauerkarte" ){
         //preselect all days
        markAsChecked("Montag");
        markAsChecked("Dienstag");
