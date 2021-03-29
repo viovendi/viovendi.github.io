@@ -308,7 +308,7 @@ function ischecked(shortName){
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
       var bool = false;
-      
+      checkbox.change(function(){
         if(checkbox.is(':checked')){
             console.log("checkbox is checked + name:" + checkboxName)
           if(checkboxName.indexOf(shortName) >= 0){
@@ -322,6 +322,7 @@ function ischecked(shortName){
              bool = false;
           }
         }
+      })
        console.log(bool);
        return bool;
        
