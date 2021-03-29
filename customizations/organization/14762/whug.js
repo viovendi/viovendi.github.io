@@ -315,18 +315,19 @@ function ischecked(shortName){
              console.log("checked");
              bool = true;
           }
+        
         }if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
              console.log("unchecked");
              bool = false;
-             }
+          }
         }
-      
-      console.log(bool);
-       return bool;
-      });
-    return bool;
-    }
+       console.log(bool);
+       
+   
+   }
+                                                          )
+}
     
    
     /*hideProduct("Workshop 1");
