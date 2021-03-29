@@ -1,7 +1,8 @@
 console.log('Start working, Google Tag Manager (WHUG)');
 
 
-//------- Code from Oleg ------ 
+/*
+/------- Code from Oleg ------ 
 
 
 async function makeRequest(options) {
@@ -101,6 +102,7 @@ function getEventAttributeName(attributeId, eventAttributes) {
     });
     return result[0].name;
 }
+
 function hideProduct(shortName){
       $('.customization2_attendee_further-data_product').each(function(i, element) {
           var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
@@ -121,32 +123,13 @@ function showProduct(shortName){
      });
  }
 
-  // this hides or shows another product when checkbox is checked or unchecked
-  function hideProdWhenChecked(shortName, hide){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
  
-      checkbox.change(function(){
-        if(checkbox.is(':checked')){
-          if(checkboxName.indexOf(shortName) >= 0){
-             hideProduct(hide)
-          }
-        }else if(!checkbox.is(':checked')){
-          if(checkboxName.indexOf(shortName) >= 0){
-             showProduct(hide);
-          }
-          }
-      })
-    })
-  }
 
 
 async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log("ticketTitle: " +ticketTitle)
-    //const eventInfo = await getEventInfo(eventId);
-    /*
+    const eventInfo = await getEventInfo(eventId);
     console.log("eventInfo: " +eventInfo);
     const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
@@ -158,30 +141,12 @@ async function customization() {
     console.log(attributeName)
         console.log('Customization2Dinestag');
         chekedAllProd()
-    }*/
-    console.log("cust");
-    hideProdWhenChecked("Montag", "Dienstag" )
-    hideProdWhenChecked("Montag", "Mittwoch" )
-    hideProdWhenChecked("Montag", "Donnerstag" )
-    
-    hideProdWhenChecked("Dienstag", "Montag" )
-    hideProdWhenChecked("Dienstag", "Mittwoch" )
-    hideProdWhenChecked("Dienstag", "Donnerstag" )
-      
-    hideProdWhenChecked("Mittwoch", "Montag" )
-    hideProdWhenChecked("Mittwoch", "Dienstag" )
-    hideProdWhenChecked("Mittwoch", "Donnerstag" )
-      
-    hideProdWhenChecked("Donnerstag", "Montag" )
-    hideProdWhenChecked("Donnerstag", "Dienstag" )
-    hideProdWhenChecked("Donnerstag", "Mittwoch" )
+    }
+
     
     
 }
-     $('.customization2_attendee_further-data_product_checkbox').on('change', function(){
-        customization();
-         console.log("change");
-     })
+    
 
 customization()
 
@@ -198,9 +163,10 @@ document.addEventListener("MSAnimationStart", insertionListener, false);
 document.addEventListener("webkitAnimationStart", insertionListener, false);
 
 //----------- End Code from Oleg ------
+*/
 
 // call handler whenever a checkbox is clicked/changed
-/*function init(name){
+function init(name){
  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
       handler();
  });
@@ -356,7 +322,7 @@ function ischecked(shortName){
     /*hideProduct("Workshop 1");
     hideProduct("Workshop 2");
     hideProduct("Workshop 3");
-    hideProduct("Workshop 4");
+    hideProduct("Workshop 4");*/
   
   
 function handler(){
@@ -371,13 +337,13 @@ function handler(){
    if any day ticket is selected:
    by clicking one day (eg. Monday), hide all other day
    show only the workshops that are on the selected day
-   
+   */
   
    
  
     
   
-  if (name == "Day Ticket Adult" ){
+  if (name == "Erwachsene Dauerkarte" ){
 
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
@@ -436,6 +402,7 @@ function handler(){
         hideProduct("Workshop 2");
         hideProduct("Workshop 3");
         hideProduct("Workshop 4");
+        */
        
    }
     
@@ -450,6 +417,7 @@ function handler(){
        disableProd("Dienstag");
        disableProd("Mittwoch");
        disableProd("Donnerstag");
+       */
     }
     
 
@@ -469,5 +437,5 @@ function handler(){
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
-*/
+
  
