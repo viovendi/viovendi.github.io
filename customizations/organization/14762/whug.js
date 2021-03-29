@@ -309,13 +309,13 @@ function ischecked(shortName){
       
         if(checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             console.log("1");
-             return 1;
+             console.log("checked");
+             return true;
           }
         }else if(!checkbox.is(':checked')){
           if(checkboxName.indexOf(shortName) >= 0){
-             console.log("0");
-             return 0;
+             console.log("unchecked");
+             return false;
           }
           }
       
@@ -365,10 +365,11 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
    console.log("ischecked montag: "+ischecked("Montag"))
-    if(ischecked("Montag") == 1){
+    if(ischecked("Montag")){
       showProduct("Workshop 1");
+        console.log("showws1");
     }
-    else if(ischecked("Montag") == "0"){
+    else if(!ischecked("Montag")){
      hideProduct("Workshop 1");
      console.log("hide");
     }
