@@ -214,10 +214,16 @@ function handler(){
    // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
     if(ischecked("Montag")){
       showProduct("Workshop 1");
+      showProduct("Workshop 1.1");
+      showProduct("Workshop 1.2");
     }
     else if(!ischecked("Montag")){
      hideProduct("Workshop 1");
+     hideProduct("Workshop 1.1");
+     hideProduct("Workshop 1.2");
      markAsUnChecked("Workshop 1"); 
+     markAsUnChecked("Workshop 1.1");
+     markAsUnChecked("Workshop 1.2");
     }
    
     if(ischecked("Dienstag")){
