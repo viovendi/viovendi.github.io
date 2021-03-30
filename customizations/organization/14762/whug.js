@@ -59,7 +59,7 @@ handler();
       })
     })
   }
-
+/*
    // this hides another product when checkbox is unchecked
 function hideProdWhenUnChecked(shortName, hide){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -74,7 +74,7 @@ function hideProdWhenUnChecked(shortName, hide){
          }
       })
     })
-  }
+  */
         
 function showProdWhenChecked(shortName, show){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -97,7 +97,7 @@ function showProdWhenChecked(shortName, show){
 
 
 
- 
+ /*
     function prodcheck(shortName, disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -112,20 +112,24 @@ function showProdWhenChecked(shortName, show){
       })
     })
   }
-  
+  */
+
+
+  /*
   function recheckProd(shortName){
   $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-      
-      if(checkbox.is(':checked')){
-          if(checkboxName.indexOf(shortName) >= 0){
-             checkbox.trigger('click');
-             checkbox.trigger('click');
-          }
-        }
-  }
+       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+       if(checkbox.is(':checked')){
+           if(checkboxName.indexOf(shortName) >= 0){
+              checkbox.trigger('click');
+              checkbox.trigger('click');
+           }
+         }
+   }
                                                         )};
+  */
 
   function markAsChecked(name){
        $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -148,7 +152,8 @@ function markAsUnChecked(name){
    });
   }
 
-
+// return true if checkbox is checked, returns false is checkbox is NOT checked
+// checks all checkboxes, filter by shortName
 function ischecked(shortName){
  var bool = false;
    $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -171,12 +176,10 @@ function ischecked(shortName){
     
 
   
-  
+ // handler is called every time a checkbox is "changed" 
 function handler(){
  
-
-    //get Ticket name:
-  
+ //get Ticket name:
   const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
   
@@ -184,8 +187,8 @@ function handler(){
   /*
    if any day ticket is selected:
    by clicking one day (eg. Monday), hide all other day
-   show only the workshops that are on the selected day
-   */
+   show only the workshops that are on the selected day (on Monday its Workshop1)
+  */
 
   
   if (name == "Erwachsenen Ticket" ){
@@ -206,13 +209,11 @@ function handler(){
     hideProdWhenChecked("Donnerstag", "Dienstag" )
     hideProdWhenChecked("Donnerstag", "Mittwoch" )
       
-   //console.log("is checked montag:  "+ischecked("Montag"))
    // show only the products/Workshop that happen on the selected day
    //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
    // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
     if(ischecked("Montag")){
       showProduct("Workshop 1");
-      
     }
     else if(!ischecked("Montag")){
      hideProduct("Workshop 1");
@@ -239,14 +240,9 @@ function handler(){
       showProduct("Workshop 4");
     }
     else{
-      hideProduct("Workshop 4");
+     hideProduct("Workshop 4");
      markAsUnChecked("Workshop 4");
     }
-    //showProdWhenChecked("Montag", "Workshop 1");
-    //showProdWhenChecked("Dienstag", "Workshop 2");
-    //showProdWhenChecked("Mittwoch", "Workshop 3"); 
-    //showProdWhenChecked("Donnerstag", "Workshop 4"); 
-      
     
    }
  
