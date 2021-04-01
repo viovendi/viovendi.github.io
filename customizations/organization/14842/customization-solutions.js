@@ -55,6 +55,19 @@ function chekedAllProd() {
     })
 }
 
+function isCheked(){
+    $('.customization2_attendee_further-data_product').each(function (i, element) {
+        var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+        if (checkbox.is(':checked')) {
+            var shortName = $(this).parent().find('p').text().trim();
+            if (shortName) {
+                disableProd(true)
+                enableProd(shortName)
+            }
+        }
+    });
+}
+
 function prodCheked() {
     $('.customization2_attendee_further-data_product').each(function (i, element) {
         var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -97,6 +110,7 @@ async function customization() {
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
     if (attributeName === 'Customization1') {
         console.log('Customization1');
+        isCheked()
         prodCheked()
     } else if (attributeName === 'Customization2') {
         console.log('Customization2');
