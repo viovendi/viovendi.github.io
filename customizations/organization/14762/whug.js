@@ -295,7 +295,7 @@ var insertionListener = function (event) {
     handler()
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     if (name == "Erwachsenen Ticket") {
-
+console.log('TEST')
       hideProd("Montag", "Dienstag")
       hideProd("Montag", "Mittwoch")
       hideProd("Montag", "Donnerstag")
