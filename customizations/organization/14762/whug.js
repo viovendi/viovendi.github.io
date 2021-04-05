@@ -69,11 +69,7 @@ function hideProd(shortName, hide) {
       if (checkboxName.includes(shortName)) {
         hideProduct(hide)
       }
-    } else if (!checkbox.is(':checked')) {
-      if (checkboxName.includes(shortName)) {
-        showProduct(hide);
-      }
-    }
+    } 
   })
 }
 /*
