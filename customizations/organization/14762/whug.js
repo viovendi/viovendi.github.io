@@ -66,6 +66,7 @@ function hideProd(shortName, hide) {
     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
 
     if (checkbox.is(':checked')) {
+        console.log("TSETS", hide)
       if (checkboxName.includes(shortName)) {
         hideProduct(hide)
       }
