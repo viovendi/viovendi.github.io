@@ -192,6 +192,7 @@ function handler(){
 
   
   if (name == "Erwachsenen Ticket" ){
+    console.log('Oleg Test', 'Erwachsenen Ticket')
     // hide other day when 1 day is selected
     hideProdWhenChecked("Montag", "Dienstag" )
     hideProdWhenChecked("Montag", "Mittwoch" )
