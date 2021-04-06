@@ -302,12 +302,13 @@ function handler() {
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
-    console.log("Node has been inserted: ", event.target);
+    console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     init('customization2_attendee');
     handler()
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     if (name == "Erwachsenen Ticket") {
+      console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
       hideProd("Montag", "Dienstag")
       hideProd("Montag", "Mittwoch")
