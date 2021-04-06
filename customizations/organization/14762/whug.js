@@ -324,7 +324,64 @@ var insertionListener = function (event) {
       hideProd("Donnerstag", "Montag")
       hideProd("Donnerstag", "Dienstag")
       hideProd("Donnerstag", "Mittwoch")
+  
+
+    // show only the products/Workshop that happen on the selected day
+    //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
+    // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
+    if (ischecked("Montag")) {
+      showProduct("Workshop 1");
+      showProduct("Workshop 1.1");
+      showProduct("Workshop 1.2");
+    } else if (!ischecked("Montag")) {
+      hideProduct("Workshop 1");
+      hideProduct("Workshop 1.1");
+      hideProduct("Workshop 1.2");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
     }
+
+    if (ischecked("Dienstag")) {
+      showProduct("Workshop 2");
+    } else {
+      hideProduct("Workshop 2");
+      uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
+    }
+
+    if (ischecked("Mittwoch")) {
+      showProduct("Workshop 3");
+    } else {
+      hideProduct("Workshop 3");
+      uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
+    }
+
+    if (ischecked("Donnerstag")) {
+      showProduct("Workshop 4");
+    } else {
+      hideProduct("Workshop 4");
+      uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
+    }
+
+  }
+
+
+  if (name == "Erwachsene Dauerkarte") {
+    // Customization 2
+    //preselect all days, 
+    //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
+    markAsChecked("Montag");
+    markAsChecked("Dienstag");
+    markAsChecked("Mittwoch");
+    markAsChecked("Donnerstag");
+    // disable all days
+    /*disableProd("Montag");
+    disableProd("Dienstag");
+    disableProd("Mittwoch");
+    disableProd("Donnerstag");
+    */
+  }
+
   }
 };
 
