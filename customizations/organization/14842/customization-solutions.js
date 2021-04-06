@@ -34,8 +34,11 @@ function calcCheckboxes(name){
 function enabledDisabledButton(name){
  if(calcCheckboxes(name) < 1 ){
    $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
-   if( $('.'+name+' .check-boxes-wrapper .button-error-message').length < 1 ){
+   if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){
     console.log("error message");
+     
+     $('.'+name+' .customization2_attendee_edit-action').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+
      $('.'+name+' .check-boxes-wrapper .vv-checkbox-group__control').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
    }
  }else{
