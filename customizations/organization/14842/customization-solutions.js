@@ -20,7 +20,7 @@ function enabledDisabledButton(name){
 
 function calcCheckboxes(name){
   var checked = 0;
-  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group vv-checkbox label').each(function(){
+  $('.'+name+' .customization2_attendee_further-data_product_checkbox vv-checkbox label').each(function(){
     if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
       checked = checked + 1;
     }
@@ -31,7 +31,7 @@ function calcCheckboxes(name){
 function clickedEdit(name){
   //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
   enabledDisabledButton(name);
-  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
     enabledDisabledButton(name);
   });
 }
@@ -40,7 +40,7 @@ function init(name){
   //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      
   //markAsChecked(name);
-  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+  $('.'+name+' .customization2_attendee_further-data_product_checkbox').on('change', function(){
     enabledDisabledButton(name);
   });
 }
