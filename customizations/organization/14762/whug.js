@@ -307,6 +307,10 @@ var insertionListener = function (event) {
     init('customization2_attendee');
     handler()
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+    var name2 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+    console.log("const name: "+name);
+    console.log("var name: "+name2);
+
     if (name == "Erwachsenen Ticket") {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
