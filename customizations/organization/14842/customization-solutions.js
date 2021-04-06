@@ -9,7 +9,7 @@ OID 14842
 */
 function init(name) {
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
-    handler();
+    enabledDisabledButton(name)
   });
 }
 
