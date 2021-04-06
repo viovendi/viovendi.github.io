@@ -34,7 +34,7 @@ function enabledDisabledButton(name){
  if(calcCheckboxes(name) < 1 ){
    $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
    if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){     
-    $('.'+name+' .customization2_double-opt-in').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+    $('.'+name+' .customization2_double-opt-in').before('<div class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</div>');
    }
  }else{
    $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', false);
