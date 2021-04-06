@@ -287,11 +287,11 @@ function handler() {
     markAsChecked("Mittwoch");
     markAsChecked("Donnerstag");
     // disable all days
-    /*disableProd("Montag");
+    disableProd("Montag");
     disableProd("Dienstag");
     disableProd("Mittwoch");
     disableProd("Donnerstag");
-    */
+    
   }
 
 
