@@ -68,6 +68,7 @@ function uncheckProduct2whenProduct1Isunchecked(product1, product2){
     checkbox.change(function () {
       if (!checkbox.is(':checked')) {
         if (checkboxName.includes(product1)) {
+          
           uncheckProd(product2)
         }
       } 
@@ -248,9 +249,9 @@ function handler() {
       hideProduct("Workshop 1");
       hideProduct("Workshop 1.1");
       hideProduct("Workshop 1.2");
-      uncheckProduct2whenProduct1Isunchecked("Workshop 1");
-      uncheckProduct2whenProduct1Isunchecked("Workshop 1.1");
-      uncheckProduct2whenProduct1Isunchecked("Workshop 1.2");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
 
       //markAsUnChecked("Workshop 1");
       //markAsUnChecked("Workshop 1.1");
