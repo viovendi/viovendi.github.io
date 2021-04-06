@@ -6,6 +6,7 @@ Code from https://github.com/viovendi/viovendi.github.io/blob/master/customizati
 Preview Link: https://doo.net/de-de/preview/widget.html?isPreview=true&configName=booking-14842-23230&eventId=71456&locale=de-de&organizerId=14842&widgetType=booking
 OID 14842
 */
+
 function init(name) {
   enabledDisabledButton(name)
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
