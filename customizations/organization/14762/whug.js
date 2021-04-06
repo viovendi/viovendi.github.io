@@ -252,31 +252,27 @@ function handler() {
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
-
-      //markAsUnChecked("Workshop 1");
-      //markAsUnChecked("Workshop 1.1");
-      //markAsUnChecked("Workshop 1.2");
     }
 
     if (ischecked("Dienstag")) {
       showProduct("Workshop 2");
     } else {
       hideProduct("Workshop 2");
-      markAsUnChecked("Workshop 2");
+      uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
     }
 
     if (ischecked("Mittwoch")) {
       showProduct("Workshop 3");
     } else {
       hideProduct("Workshop 3");
-      markAsUnChecked("Workshop 3");
+      uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
     }
 
     if (ischecked("Donnerstag")) {
       showProduct("Workshop 4");
     } else {
       hideProduct("Workshop 4");
-      markAsUnChecked("Workshop 4");
+      uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
     }
 
   }
