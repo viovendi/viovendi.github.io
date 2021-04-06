@@ -20,7 +20,7 @@ function enabledDisabledButton(name){
 
 function calcCheckboxes(name){
   var checked = 0;
-  $('.'+name+' .customization2_attendee_further-data_product_checkbox vv-checkbox label').each(function(){
+  $('.'+name+' .customization2_attendee_further-data_product_checkbox').each(function(){
     if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
       checked = checked + 1;
     }
