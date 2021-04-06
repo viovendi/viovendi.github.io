@@ -170,6 +170,7 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log('bookerNodeInserted')
         customization()
+        init('customization2_attendee');
     }
 }
 
