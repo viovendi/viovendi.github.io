@@ -1,5 +1,53 @@
 console.log('Start working, Google Tag Manager (Load different GTM-Container into the widget for each event)');
 
+
+/*
+Code from https://github.com/viovendi/viovendi.github.io/blob/master/customizations/organization/14176/checkboxes.js
+Preview Link: https://doo.net/de-de/preview/widget.html?isPreview=true&configName=booking-14842-23230&eventId=71456&locale=de-de&organizerId=14842&widgetType=booking
+OID 14842
+*/
+function enabledDisabledButton(name){
+ if(calcCheckboxes(name) < 1 ){
+   $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
+   if( $('.'+name+' .check-boxes-wrapper .button-error-message').length < 1 ){
+     $('.'+name+' .check-boxes-wrapper .vv-checkbox-group__control').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+   }
+ }else{
+   $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', false);
+   $('.'+name+' .button-error-message').remove();
+ }
+}
+
+function calcCheckboxes(name){
+  var checked = 0;
+  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group vv-checkbox label').each(function(){
+    if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
+      checked = checked + 1;
+    }
+  });
+  return checked;
+}
+
+function clickedEdit(name){
+  //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
+  enabledDisabledButton(name);
+  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+    enabledDisabledButton(name);
+  });
+}
+
+function init(name){
+  //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
+     
+  //markAsChecked(name);
+  $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+    enabledDisabledButton(name);
+  });
+}
+init('customization2_attendee-1');
+
+// ------------------
+
 async function makeRequest(options) {
     let result = null;
     try {
