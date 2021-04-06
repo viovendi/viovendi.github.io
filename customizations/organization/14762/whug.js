@@ -311,7 +311,7 @@ var insertionListener = function (event) {
     console.log("const name: "+name);
     console.log("var name: "+name2);
 
-    if (name == "Erwachsenen Ticket") {
+    if (name.indexOf("Erwachsenen Ticket")) {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
       hideProd("Montag", "Dienstag")
