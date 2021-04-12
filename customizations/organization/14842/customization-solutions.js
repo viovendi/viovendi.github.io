@@ -66,9 +66,8 @@ async function makeRequest(options) {
 
 
 var path = window.location.pathname;
-console.log(path);
 var eventId = path.split('/')[3]
-var language = path.split('/')[4]
+var language = path.split('/')[1]
 console.log(language);
 
 async function getEventInfo(eventId) {
