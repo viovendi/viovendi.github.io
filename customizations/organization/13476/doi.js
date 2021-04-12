@@ -8,6 +8,7 @@ function markAsChecked(name) {
     var checkboxName = $(this).find('.customization2_double-opt-in_checkbox-text').text().trim()
     if (checkboxName.indexOf(name) >= 0) {
       checkbox.trigger('click');
+      console.log('clicked');
     }
   });
   $('.customization2_opt-out-and-opt-in').hide()
@@ -27,7 +28,7 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    handler();
+    //handler();
 
   }
 };
