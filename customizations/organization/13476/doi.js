@@ -7,17 +7,6 @@ function init(name) {
   $('.customization2_double-opt-in_checkbox').trigger('clicked');
 }
 
-init('customization2_attendee');
-
-handler();
-
-
-
-
-
-
-
-
 function markAsChecked(name) {
   $('.customization2_opt-out-and-opt-in').each(function (i, element) {
     var checkbox = $(this).find('.customization2_double-opt-in_checkbox')
@@ -35,10 +24,9 @@ function markAsChecked(name) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
- console.log('clicked');
 
-$('.customization2_double-opt-in_checkbox').click();
-  markAsChecked("Double Opt in Text");
+//$('.customization2_double-opt-in_checkbox').click();
+markAsChecked("Double Opt in Text");
 
 }
 
@@ -46,7 +34,6 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    init('customization2_attendee');
     handler();
    
  
