@@ -36,7 +36,7 @@ function enabledDisabledButton(name){
    $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
    if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){     
      
-    $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+    $('.'+name+' .customization2_attendee-state_edit .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
     //$('.'+name+' .customization2_attendee_further-data_headline').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
    }
  }else{
