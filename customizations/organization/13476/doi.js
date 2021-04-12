@@ -7,12 +7,12 @@ function init(name) {
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
     handler();
   });
+  $('.customization2_double-opt-in_checkbox').trigger('clicked');
 }
 
 init('customization2_attendee');
 
 handler();
-
 
 
 
