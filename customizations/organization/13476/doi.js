@@ -10,7 +10,7 @@ function markAsChecked(name) {
       checkbox.trigger('click');
     }
   });
-  //$('.customization2_opt-out-and-opt-in').hide()
+  $('.customization2_opt-out-and-opt-in').hide()
 }
 
 
