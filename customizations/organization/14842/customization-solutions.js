@@ -24,7 +24,6 @@ function calcCheckboxes(name){
   
     if ( checkbox.is(':checked') ) {
       checked = checked + 1;
-      console.log("+1");
     }
   }
                                                           )
@@ -40,7 +39,7 @@ function enabledDisabledButton(name){
 
         $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
         //$('.'+name+' .customization2_attendee_further-data_headline').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
-        $('.'+name+' .customization2_attendee-state_view .button-error-message').remove();
+        $('.customization2_attendee-state_view .button-error-message').remove();
 
        }
      }else{
