@@ -36,7 +36,7 @@ function enabledDisabledButton(name){
      if(calcCheckboxes(name) < 1 ){
        $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
        if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){     
-
+        console.log(language)
          if (language == "en-us"){
         $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Please select a date</span>');
         //$('.'+name+' .customization2_attendee_further-data_headline').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
@@ -72,7 +72,6 @@ async function makeRequest(options) {
 var path = window.location.pathname;
 var eventId = path.split('/')[3]
 var language = path.split('/')[1]
-console.log(language);
 
 async function getEventInfo(eventId) {
     const result = await makeRequest({
