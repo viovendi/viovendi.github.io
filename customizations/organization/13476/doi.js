@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager (WHUG)');
+console.log('Start working, Google Tag Manager (DOI)');
 
 
 
@@ -47,7 +47,9 @@ function markAsUnChecked(name) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
+ console.log('clicked');
 
+$('.customization2_double-opt-in_checkbox').click();
 
 }
 
