@@ -37,7 +37,7 @@ function calcCheckboxes(name){
 function enabledDisabledButton(name){
   const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
   console.log(ticketTitle)
-  if (ticketTitle != "Tortenwettbewerb" || ticketTitle != "Dauerkarte" ) {
+  if (ticketTitle != "Dauerkarte" ) {
      if(calcCheckboxes(name) < 1 ){
        $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
        if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){     
