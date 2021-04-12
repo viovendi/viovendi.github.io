@@ -7,6 +7,10 @@ Preview Link: https://doo.net/de-de/preview/widget.html?isPreview=true&configNam
 OID 14842
 */
 
+var path = window.location.pathname;
+var eventId = path.split('/')[3]
+var language = path.split('/')[1]
+
 function init(name) {
   enabledDisabledButton(name)
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
@@ -69,9 +73,7 @@ async function makeRequest(options) {
 }
 
 
-var path = window.location.pathname;
-var eventId = path.split('/')[3]
-var language = path.split('/')[1]
+
 
 async function getEventInfo(eventId) {
     const result = await makeRequest({
