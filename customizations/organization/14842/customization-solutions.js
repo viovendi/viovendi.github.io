@@ -7,9 +7,8 @@ Preview Link: https://doo.net/de-de/preview/widget.html?isPreview=true&configNam
 OID 14842
 */
 
-var path = window.location.pathname;
-var eventId = path.split('/')[3]
-var language = path.split('/')[1]
+var windowpath = window.location.pathname;
+var language = windowpath.split('/')[1]
 
 function init(name) {
   enabledDisabledButton(name)
@@ -61,7 +60,9 @@ function enabledDisabledButton(name){
 }
    
 /* --------- Olegs Code begins -------- */
-                                                          
+       
+var path = window.location.pathname;
+var eventId = path.split('/')[3]
 
 async function makeRequest(options) {
     let result = null;
