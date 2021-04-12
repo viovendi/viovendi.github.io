@@ -7,7 +7,7 @@ function markAsChecked(name) {
     var checkbox = $(this).find('.customization2_double-opt-in_checkbox')
     var checkboxName = $(this).find('.customization2_double-opt-in_checkbox-text').text().trim()
     if (checkboxName.indexOf(name) >= 0) {
-      checkbox.click();
+      checkbox.trigger('click');
     }
   });
   //$('.customization2_opt-out-and-opt-in').hide()
