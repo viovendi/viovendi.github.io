@@ -15,6 +15,7 @@ function markAsChecked(name) {
       checkbox.prop('checked', true);
     }
   });
+  $('.customization2_opt-out-and-opt-in').hide()
 }
 
 
