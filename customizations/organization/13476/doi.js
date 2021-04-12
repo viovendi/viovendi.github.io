@@ -20,7 +20,6 @@ function markAsChecked(name) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-//$('.customization2_double-opt-in_checkbox').click();
 markAsChecked("Double Opt in Text");
 }
 
