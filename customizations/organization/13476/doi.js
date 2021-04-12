@@ -1,6 +1,6 @@
 console.log('Start working, Google Tag Manager (DOI)');
 
-
+handler();
 
 function markAsChecked(name) {
   $('.customization2_opt-out-and-opt-in').each(function (i, element) {
@@ -28,8 +28,7 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     handler();
-   
- 
+
   }
 };
 
