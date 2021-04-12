@@ -2,11 +2,6 @@ console.log('Start working, Google Tag Manager (DOI)');
 
 
 
-// call handler whenever a checkbox is clicked/changed
-function init(name) {
-  $('.customization2_double-opt-in_checkbox').trigger('clicked');
-}
-
 function markAsChecked(name) {
   $('.customization2_opt-out-and-opt-in').each(function (i, element) {
     var checkbox = $(this).find('.customization2_double-opt-in_checkbox')
@@ -25,10 +20,8 @@ function markAsChecked(name) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-
 //$('.customization2_double-opt-in_checkbox').click();
 markAsChecked("Double Opt in Text");
-
 }
 
 var insertionListener = function (event) {
