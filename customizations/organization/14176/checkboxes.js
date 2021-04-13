@@ -38,7 +38,7 @@
    
    function clickedEdit(name){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-     addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten an Konferenzpartner wie in der Infobox (i) beschrieben zu, damit diese Dich einmalig kontaktieren dürfen. Welche interessieren Dich am meisten (mindestens 5)?', 'check-boxes-wrapper', name);
+     addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      enabledDisabledButton(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
        enabledDisabledButton(name);
@@ -48,7 +48,7 @@
    
    function init(name){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-     addClassToField('Mit dem Freiticket stimmst Du widerruflich damit', 'check-boxes-wrapper', name);
+     addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
       
         
      markAsChecked(name);
