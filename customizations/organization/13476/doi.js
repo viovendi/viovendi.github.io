@@ -14,21 +14,12 @@ function markAsChecked(name) {
   $('.customization2_opt-out-and-opt-in').hide()
 }
 
-$('.customization2_organizer-bank-transfer_button').trigger('click');
-function checkRadio(name) {
-  $('.customization2_payment_options').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_organizer-bank-transfer_button')
-    var checkboxName = $(this).find('.vv-radio__label-text').text().trim()
-    console.log(checkboxName);
-    if (checkboxName.indexOf(name) >= 0) {
-      //checkbox.trigger('click');
-      console.log('clicked radio');
-    }
-  });
-  $('.customization2_payment').hide()
-}
 
-//checkRadio("Überweisung / Kauf auf Rechnung");
+// click radio box and hid
+$('.customization2_organizer-bank-transfer_button').trigger('click');
+//$('.customization2_payment').hide()
+$("vv-payment-method-selection > div > div.vv-p-xl.vv-border-xs.vv-border-grey-light.vv-rounded-lg").hide()
+
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
