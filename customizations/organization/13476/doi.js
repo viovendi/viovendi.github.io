@@ -25,7 +25,7 @@ function checkRadio(name) {
       console.log('clicked radio');
     }
   });
-  //$('.customization2_payment').hide()
+  $('.customization2_payment').hide()
 }
 
 checkRadio("Überweisung / Kauf auf Rechnung");
