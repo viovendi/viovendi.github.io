@@ -15,9 +15,20 @@ function markAsChecked(name) {
 }
 
 
+function checkRadio(name) {
+  $('.customization2_payment_options').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_organizer-bank-transfer_button')
+    var checkboxName = $(this).find('.vv-radio__label-text').text().trim()
+    console.log(checkboxName);
+    if (checkboxName.indexOf(name) >= 0) {
+      checkbox.trigger('click');
+      console.log('clicked radio');
+    }
+  });
+  //$('.customization2_payment').hide()
+}
 
-
-
+checkRadio("Überweisung / Kauf auf Rechnung");
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
@@ -29,6 +40,7 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     //handler();
+    
     $('.customization2_opt-out-and-opt-in').hide()
   }
 };
