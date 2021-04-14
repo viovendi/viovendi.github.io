@@ -24,7 +24,7 @@ function calcCheckboxes(name){
   $('.customization2_attendee_further-data_product').each(function (i, element) {
     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-  
+
     if ( checkbox.is(':checked') ) {
       checked = checked + 1;
     }
@@ -38,7 +38,7 @@ function enabledDisabledButton(name){
   if (!(ticketTitle == "Dauerkarte" || ticketTitle == "Tortenwettbewerb" || ticketTitle == "Multi-day ticket" || ticketTitle == "Cake contest") ) {
      if(calcCheckboxes(name) < 1 ){
        $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
-       if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){     
+       if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){
         console.log(language)
          if (language == "en-us"){
         $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Please select a date</span>');
@@ -47,7 +47,7 @@ function enabledDisabledButton(name){
          else {
            $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
          }
-         // this removes the error message in state_view 
+         // this removes the error message in state_view
          $('.customization2_attendee-state_view .button-error-message').remove();
 
        }
@@ -57,9 +57,9 @@ function enabledDisabledButton(name){
      }
     }
 }
-   
+
 /* --------- Olegs Code begins -------- */
-       
+
 var path = window.location.pathname;
 var eventId = path.split('/')[3];
 console.log(eventId);
@@ -153,6 +153,7 @@ function getTicketAttributeId(ticketTitle, ticketCategories) {
     const result = $.grep(ticketCategories, function (v) {
         return v.name === ticketTitle;
     });
+    console.log(result)
     return result[0].event_attribute_ids[0];
 }
 
@@ -186,7 +187,7 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log('bookerNodeInserted')
         customization()
-      
+
       // Added this so that this works for every attendee
         init('customization2_attendee');
     }
