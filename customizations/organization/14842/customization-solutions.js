@@ -63,7 +63,7 @@ function enabledDisabledButton(name){
 var path = window.location.pathname;
 var eventId = path.split('/')[3];
 var locale = path.split('/')[1];;
-console.log(locale);
+//console.log(locale);
 
 async function makeRequest(options) {
     let result = null;
@@ -78,9 +78,9 @@ async function makeRequest(options) {
 
 
 
-async function getEventInfo(eventId) {
+async function getEventInfo(eventId,locale) {
     const result = await makeRequest({
-        url: `https://api.doo.net/v1/events/${eventId}`,
+        url: `https://api.doo.net/v1/events/${eventId}?locale=${locale}`,
         type: 'get',
         headers: {
             'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ function getEventAttributeName(attributeId, eventAttributes) {
 
 async function customization() {
     const ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-    const eventInfo = await getEventInfo(eventId);
+    const eventInfo = await getEventInfo(eventId, locale);
     const attributeId = getTicketAttributeId(ticketTitle, eventInfo.ticket_categories)
     const attributeName = getEventAttributeName(attributeId, eventInfo.attributes);
     if (attributeName === 'Customization1') {
