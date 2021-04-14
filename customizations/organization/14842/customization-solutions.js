@@ -62,7 +62,8 @@ function enabledDisabledButton(name){
 
 var path = window.location.pathname;
 var eventId = path.split('/')[3];
-console.log(eventId);
+var locale;
+console.log(path);
 
 async function makeRequest(options) {
     let result = null;
