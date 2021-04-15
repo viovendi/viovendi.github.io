@@ -152,7 +152,7 @@ function prodCheked() {
 
 function getTicketAttributeId(ticketTitle, ticketCategories) {
     const result = $.grep(ticketCategories, function (v) {
-        return v.name === ticketTitle;
+        return v.name.includes(ticketTitle);
     });
     console.log(result)
     return result[0].event_attribute_ids[0];
