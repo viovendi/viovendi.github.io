@@ -371,14 +371,15 @@ var insertionListener = function (event) {
     } 
     else if (!ischecked("Montag")) {
       
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
+      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
       hideProduct("Workshop 1");
       hideProduct("Workshop 1.1");
       hideProduct("Workshop 1.2");
       
       console.log("uncheck ws1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
+      
     }
 
     if (ischecked("Dienstag")) {
@@ -387,9 +388,9 @@ var insertionListener = function (event) {
       
     } 
     else {
-      
-      hideProduct("Workshop 2");
+            console.log("uncheck ws2");
       uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
+      hideProduct("Workshop 2");
       
     }
 
@@ -398,9 +399,10 @@ var insertionListener = function (event) {
       showProduct("Workshop 3");
     }
     else {
-      
-      hideProduct("Workshop 3");
+      console.log("uncheck ws3");
       uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
+      hideProduct("Workshop 3");
+      
     }
 
     if (ischecked("Donnerstag")) {
@@ -408,9 +410,10 @@ var insertionListener = function (event) {
       showProduct("Workshop 4");
     } 
     else {
-      
-      hideProduct("Workshop 4");
+      console.log("uncheck ws4");
       uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
+      hideProduct("Workshop 4");
+      
     }
 
   }
