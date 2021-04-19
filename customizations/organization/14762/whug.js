@@ -215,11 +215,13 @@ function ischecked(shortName) {
 
 
 
+
 // handler is called every time a checkbox is "changed" 
 function handler() {
 
   //get Ticket name:
-  const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+  //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+  const name = $('..customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
 
 
   //pseudo code
@@ -252,35 +254,51 @@ function handler() {
     //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
     // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
     if (ischecked("Montag")) {
+      
       showProduct("Workshop 1");
       showProduct("Workshop 1.1");
       showProduct("Workshop 1.2");
-    } else if (!ischecked("Montag")) {
+      
+    } 
+    else if (!ischecked("Montag")) {
+      
       hideProduct("Workshop 1");
       hideProduct("Workshop 1.1");
       hideProduct("Workshop 1.2");
+      
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
     }
 
     if (ischecked("Dienstag")) {
+      
       showProduct("Workshop 2");
-    } else {
+      
+    } 
+    else {
+      
       hideProduct("Workshop 2");
       uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
+      
     }
 
     if (ischecked("Mittwoch")) {
+      
       showProduct("Workshop 3");
-    } else {
+    }
+    else {
+      
       hideProduct("Workshop 3");
       uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
     }
 
     if (ischecked("Donnerstag")) {
+      
       showProduct("Workshop 4");
-    } else {
+    } 
+    else {
+      
       hideProduct("Workshop 4");
       uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
     }
