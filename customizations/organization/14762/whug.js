@@ -217,7 +217,7 @@ function ischecked(shortName) {
 // handler is called every time a checkbox is "changed" 
 function handler() {
   
-    const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
+    var name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
     console.log("moreattendes ticketname: " + name);
     if (!name.trim()) {
        name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
