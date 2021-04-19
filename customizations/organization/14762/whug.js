@@ -427,11 +427,11 @@ var insertionListener = function (event) {
     init('customization2_attendee');
     handler();
     test();
-    $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
+    /*$('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
       test();
       init('customization2_attendee');
       handler();
-    });
+    });*/
   }
 };
 
