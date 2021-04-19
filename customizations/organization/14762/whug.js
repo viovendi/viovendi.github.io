@@ -427,7 +427,6 @@ var insertionListener = function (event) {
     init('customization2_attendee');
     handler();
 
-    console.log("const name1: "+name1);
     test()
     $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
       test();
