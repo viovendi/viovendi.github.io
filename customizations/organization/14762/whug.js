@@ -619,7 +619,7 @@ var insertionListener = function (event) {
         customization()
 
       // Added this so that this works for every attendee
-        init('customization2_attendee');
+      //  init('customization2_attendee');
     }
 }
 
