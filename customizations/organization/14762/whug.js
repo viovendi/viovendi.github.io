@@ -317,104 +317,106 @@ function handler() {
 }
 
 function test(){
-if (name1 == "Erwachsenen Ticket") {
-      console.log("edit state");
-     // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
-      hideProd("Montag", "Dienstag")
-      hideProd("Montag", "Mittwoch")
-      hideProd("Montag", "Donnerstag")
-  
-      hideProd("Dienstag", "Montag")
-      hideProd("Dienstag", "Mittwoch")
-      hideProd("Dienstag", "Donnerstag")
-  
-      hideProd("Mittwoch", "Montag")
-      hideProd("Mittwoch", "Dienstag")
-      hideProd("Mittwoch", "Donnerstag")
-  
-      hideProd("Donnerstag", "Montag")
-      hideProd("Donnerstag", "Dienstag")
-      hideProd("Donnerstag", "Mittwoch")
-      
-      // maybe we need this so .onchange is triggered
-    
-  
+    const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
-    // show only the products/Workshop that happen on the selected day
-    //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
-    // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
-    if (ischecked("Montag")) {
-      
-      showProduct("Workshop 1");
-      showProduct("Workshop 1.1");
-      showProduct("Workshop 1.2");
-      
-    } 
-    else if (!ischecked("Montag")) {
-      
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
-      hideProduct("Workshop 1");
-      hideProduct("Workshop 1.1");
-      hideProduct("Workshop 1.2");
-      
-      console.log("uncheck ws1");
-      
-    }
+    if (name1 == "Erwachsenen Ticket") {
+          console.log("edit state");
+         // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
+          hideProd("Montag", "Dienstag")
+          hideProd("Montag", "Mittwoch")
+          hideProd("Montag", "Donnerstag")
 
-    if (ischecked("Dienstag")) {
-      
-      showProduct("Workshop 2");
-      
-    } 
-    else {
-            console.log("uncheck ws2");
-      uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
-      hideProduct("Workshop 2");
-      
-    }
+          hideProd("Dienstag", "Montag")
+          hideProd("Dienstag", "Mittwoch")
+          hideProd("Dienstag", "Donnerstag")
 
-    if (ischecked("Mittwoch")) {
-      
-      showProduct("Workshop 3");
-    }
-    else {
-      console.log("uncheck ws3");
-      uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
-      hideProduct("Workshop 3");
-      
-    }
+          hideProd("Mittwoch", "Montag")
+          hideProd("Mittwoch", "Dienstag")
+          hideProd("Mittwoch", "Donnerstag")
 
-    if (ischecked("Donnerstag")) {
-      
-      showProduct("Workshop 4");
-    } 
-    else {
-      console.log("uncheck ws4");
-      uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
-      hideProduct("Workshop 4");
-      
-    }
+          hideProd("Donnerstag", "Montag")
+          hideProd("Donnerstag", "Dienstag")
+          hideProd("Donnerstag", "Mittwoch")
 
-  }
+          // maybe we need this so .onchange is triggered
 
 
-  if (name1 == "Erwachsene Dauerkarte") {
-    // Customization 2
-    //preselect all days, 
-    //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
-    markAsChecked("Montag");
-    markAsChecked("Dienstag");
-    markAsChecked("Mittwoch");
-    markAsChecked("Donnerstag");
-    // disable all days
-    disableProd("Montag");
-    disableProd("Dienstag");
-    disableProd("Mittwoch");
-    disableProd("Donnerstag");
-    
-  }
+
+        // show only the products/Workshop that happen on the selected day
+        //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
+        // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
+        if (ischecked("Montag")) {
+
+          showProduct("Workshop 1");
+          showProduct("Workshop 1.1");
+          showProduct("Workshop 1.2");
+
+        } 
+        else if (!ischecked("Montag")) {
+
+          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
+          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
+          hideProduct("Workshop 1");
+          hideProduct("Workshop 1.1");
+          hideProduct("Workshop 1.2");
+
+          console.log("uncheck ws1");
+
+        }
+
+        if (ischecked("Dienstag")) {
+
+          showProduct("Workshop 2");
+
+        } 
+        else {
+                console.log("uncheck ws2");
+          uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
+          hideProduct("Workshop 2");
+
+        }
+
+        if (ischecked("Mittwoch")) {
+
+          showProduct("Workshop 3");
+        }
+        else {
+          console.log("uncheck ws3");
+          uncheckProduct2whenProduct1Isunchecked("Mittwoch","Workshop 3");
+          hideProduct("Workshop 3");
+
+        }
+
+        if (ischecked("Donnerstag")) {
+
+          showProduct("Workshop 4");
+        } 
+        else {
+          console.log("uncheck ws4");
+          uncheckProduct2whenProduct1Isunchecked("Donnerstag","Workshop 4");
+          hideProduct("Workshop 4");
+
+        }
+
+      }
+
+
+      if (name1 == "Erwachsene Dauerkarte") {
+        // Customization 2
+        //preselect all days, 
+        //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
+        markAsChecked("Montag");
+        markAsChecked("Dienstag");
+        markAsChecked("Mittwoch");
+        markAsChecked("Donnerstag");
+        // disable all days
+        disableProd("Montag");
+        disableProd("Dienstag");
+        disableProd("Mittwoch");
+        disableProd("Donnerstag");
+
+      }
 }
 
 var insertionListener = function (event) {
@@ -425,7 +427,6 @@ var insertionListener = function (event) {
     init('customization2_attendee');
     handler();
 
-    const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log("const name1: "+name1);
     test()
     $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
