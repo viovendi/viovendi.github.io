@@ -317,9 +317,9 @@ function handler() {
 }
 
 function test(){
-    const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
-    if (name1 == "Erwachsenen Ticket") {
+    if (name == "Erwachsenen Ticket") {
           console.log("edit state");
          // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
           hideProd("Montag", "Dienstag")
@@ -402,7 +402,7 @@ function test(){
       }
 
 
-      if (name1 == "Erwachsene Dauerkarte") {
+      if (name == "Erwachsene Dauerkarte") {
         // Customization 2
         //preselect all days, 
         //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
@@ -426,10 +426,11 @@ var insertionListener = function (event) {
    
     init('customization2_attendee');
     handler();
-
-    test()
+    test();
     $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
       test();
+      init('customization2_attendee');
+      handler();
     });
   }
 };
