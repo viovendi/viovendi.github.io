@@ -358,7 +358,7 @@ var insertionListener = function (event) {
       hideProd("Donnerstag", "Dienstag")
       hideProd("Donnerstag", "Mittwoch")
   
-
+/*
     // show only the products/Workshop that happen on the selected day
     //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
     // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
@@ -414,7 +414,7 @@ var insertionListener = function (event) {
     disableProd("Donnerstag");
     
   }
-
+*/
   }
 };
 
