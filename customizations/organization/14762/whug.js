@@ -327,7 +327,7 @@ var insertionListener = function (event) {
     const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log("const name1: "+name1);
 
-     $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
+     $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
         console.log("checkbox change");
     });
     if (name1 == "Erwachsenen Ticket") {
