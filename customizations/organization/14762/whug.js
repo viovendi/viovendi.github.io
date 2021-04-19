@@ -516,7 +516,7 @@ async function getEventInfo(eventId,locale) {
         },
         dataType: 'json',
     })
-    //console.log({"ticket_categories": result.ticket_categories, "attributes": result.event_attributes.attributes})
+    console.log({result})
     return {
         "ticket_categories": result.ticket_categories,
         "attributes": result.event_attributes.attributes
