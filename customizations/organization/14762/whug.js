@@ -77,7 +77,7 @@ function uncheckProduct2whenProduct1Isunchecked(product1, product2){
     checkbox.change(function () {
       if (!checkbox.is(':checked')) {
         if (checkboxName.includes(product1)) {
-          
+          console.log("uncheck prod2");
           uncheckProd(product2)
         }
       } 
@@ -162,6 +162,7 @@ $('.customization2_attendee_further-data_product').each(function(i, element) {
      if(checkbox.is(':checked')){
          if(checkboxName.indexOf(shortName) >= 0){
             checkbox.trigger('click');
+           console.log(checkboxName + "clicked / unchecked");
          }
        }
  }
