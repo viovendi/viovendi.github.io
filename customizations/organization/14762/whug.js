@@ -219,8 +219,8 @@ function handler() {
   
     const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
     console.log("moreattendes ticketname: " + name);
-    if (name == "") {
-    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+    if (!name.trim())) {
+       name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
     console.log("one ticket ticketname: " +name);
   }
   //get Ticket name:
