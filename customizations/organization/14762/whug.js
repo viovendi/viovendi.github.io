@@ -97,22 +97,7 @@ function hideProd(shortName, hide) {
     } 
   })
 }
-/*
-   // this hides another product when checkbox is unchecked
-function hideProdWhenUnChecked(shortName, hide){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
- 
-      checkbox.change(function(){
-         if(!checkbox.is(':checked')){
-              if(checkboxName.indexOf(shortName) >= 0){
-                 hideProduct(hide);
-              }
-         }
-      })
-    })
-  */
+
 
 function showProdWhenChecked(shortName, show) {
   $('.customization2_attendee_further-data_product').each(function (i, element) {
@@ -133,25 +118,6 @@ function showProdWhenChecked(shortName, show) {
   })
 }
 
-
-
-/*
-   function prodcheck(shortName, disable){
-   $('.customization2_attendee_further-data_product').each(function(i, element) {
-     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-     checkbox.change(function(){
-       if(checkbox.is(':checked')){
-         if(checkboxName.indexOf(shortName) >= 0){
-            uncheckProd(disable)
-         }
-       }
-     })
-   })
- }
- 
-*/
 
 
 function uncheckProd(shortName){
@@ -218,7 +184,6 @@ function ischecked(shortName) {
 function handler() {
  
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-  
 
   if (name == "Erwachsenen Ticket") {
     // hide other day when 1 day is selected
@@ -293,7 +258,6 @@ function handler() {
 
   }
 
-
   if (name == "Erwachsene Dauerkarte") {
     // Customization 2
     //preselect all days, 
@@ -316,7 +280,7 @@ function handler() {
 
 }
 
-function test(){
+function inEditMode(){
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
     if (name == "Erwachsenen Ticket") {
@@ -423,15 +387,10 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-   
     init('customization2_attendee');
     handler();
-    test();
-    /*$('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
-      test();
-      init('customization2_attendee');
-      handler();
-    });*/
+    inEditMode();
+
   }
 };
 
