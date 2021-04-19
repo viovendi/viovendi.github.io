@@ -316,21 +316,8 @@ function handler() {
 
 }
 
-var insertionListener = function (event) {
-  if (event.animationName === "nodeInserted") {
-    console.log("Node has been inserted Git: ", event.target);
-    //Insert your code here
-   
-    init('customization2_attendee');
-    handler();
-
-    const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-    console.log("const name1: "+name1);
-
-     $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
-        console.log("checkbox change");
-    
-    if (name1 == "Erwachsenen Ticket") {
+function test(){
+if (name1 == "Erwachsenen Ticket") {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
       hideProd("Montag", "Dienstag")
@@ -428,7 +415,21 @@ var insertionListener = function (event) {
     disableProd("Donnerstag");
     
   }
+}
 
+var insertionListener = function (event) {
+  if (event.animationName === "nodeInserted") {
+    console.log("Node has been inserted Git: ", event.target);
+    //Insert your code here
+   
+    init('customization2_attendee');
+    handler();
+
+    const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+    console.log("const name1: "+name1);
+    test()
+    $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
+      test();
     });
   }
 };
