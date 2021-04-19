@@ -186,7 +186,6 @@ function markAsUnChecked(name) {
     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
     if (checkboxName.indexOf(name) >= 0) {
-      console.log("markasunchecked" + checkboxName);
       checkbox.prop('checked', false);
     }
   });
@@ -202,7 +201,6 @@ function ischecked(shortName) {
 
 
     if (checkbox.is(':checked')) {
-      console.log("checkbox is checked + name:" + checkboxName)
       if (checkboxName.indexOf(shortName) >= 0) {
         bool = true;
       }
@@ -221,7 +219,7 @@ function handler() {
 
   //get Ticket name:
   //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  const name = $('..customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
+  const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
 
 
   //pseudo code
