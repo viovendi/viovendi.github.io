@@ -329,7 +329,7 @@ var insertionListener = function (event) {
 
      $('.customization2_attendee .customization2_attendee_further-data_product_checkbox').on('change', function () {
         console.log("checkbox change");
-    });
+    
     if (name1 == "Erwachsenen Ticket") {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
@@ -429,7 +429,7 @@ var insertionListener = function (event) {
     
   }
 
-    
+    });
   }
 };
 
