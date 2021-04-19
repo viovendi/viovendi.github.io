@@ -216,13 +216,10 @@ function ischecked(shortName) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-  
-    const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
-    console.log("moreattendes ticketname: " + name);
-    if (!name.trim()) {
-      const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+ 
+    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
     console.log("one ticket ticketname: " +name);
-  }
+  
   //get Ticket name:
   //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
   //const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
@@ -339,10 +336,10 @@ var insertionListener = function (event) {
     init('customization2_attendee');
     handler()
     
-    const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
-    console.log("const name: "+name);
+    const name1 = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
+    console.log("const name1: "+name1);
 
-    if (name == "Erwachsenen Ticket") {
+    if (name1 == "Erwachsenen Ticket") {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
       hideProd("Montag", "Dienstag")
@@ -402,7 +399,7 @@ var insertionListener = function (event) {
   }
 
 
-  if (name == "Erwachsene Dauerkarte") {
+  if (name1 == "Erwachsene Dauerkarte") {
     // Customization 2
     //preselect all days, 
     //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
