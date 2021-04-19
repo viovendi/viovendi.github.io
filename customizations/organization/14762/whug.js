@@ -218,20 +218,7 @@ function ischecked(shortName) {
 function handler() {
  
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-    console.log("one ticket ticketname: " +name);
   
-  //get Ticket name:
-  //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  //const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
-
-
-  //pseudo code
-  /*
-   if any day ticket is selected:
-   by clicking one day (eg. Monday), hide all other day
-   show only the workshops that are on the selected day (on Monday its Workshop1)
-  
-*/
 
   if (name == "Erwachsenen Ticket") {
     // hide other day when 1 day is selected
@@ -333,14 +320,16 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
-      handler();
-      init('customization2_attendee');
-    });
+   
+    init('customization2_attendee');
+    handler();
 
     const name1 = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log("const name1: "+name1);
 
+     $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
+        console.log("checkbox change");
+    });
     if (name1 == "Erwachsenen Ticket") {
       console.log("edit state");
      // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
