@@ -216,10 +216,18 @@ function ischecked(shortName) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-
+  
+  if (event.animationName === "nodeInserted"){
+    const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
+    console.log("2 or more attendee");
+  }
+  else {
+    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+    console.log("1 attendee");
+  }
   //get Ticket name:
   //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
+  //const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
 
 
   //pseudo code
@@ -332,6 +340,7 @@ var insertionListener = function (event) {
     //Insert your code here
     init('customization2_attendee');
     handler()
+    /*
     const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
     console.log("const name: "+name);
 
@@ -410,7 +419,7 @@ var insertionListener = function (event) {
     disableProd("Donnerstag");
     
   }
-
+*/
   }
 };
 
