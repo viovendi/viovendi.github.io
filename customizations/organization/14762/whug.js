@@ -22,7 +22,6 @@ function hideProduct(shortName) {
   $('.customization2_attendee_further-data_product').each(function (i, element) {
     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
     if (checkboxName.includes(shortName)) {
-      console.log($(this), shortName)
       $(this).hide();
     }
   });
