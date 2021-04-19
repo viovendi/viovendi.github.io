@@ -77,7 +77,7 @@ function uncheckProduct2whenProduct1Isunchecked(product1, product2){
     checkbox.change(function () {
       if (!checkbox.is(':checked')) {
         if (checkboxName.includes(product1)) {
-          console.log("uncheck prod2");
+          console.log("uncheck" + product2 +" if " +product1 +" is checked");
           uncheckProd(product2)
         }
       } 
@@ -359,21 +359,7 @@ var insertionListener = function (event) {
       hideProd("Donnerstag", "Mittwoch")
       
       // maybe we need this so .onchange is triggered
-    hideProdWhenChecked("Montag", "Dienstag")
-    hideProdWhenChecked("Montag", "Mittwoch")
-    hideProdWhenChecked("Montag", "Donnerstag")
-
-    hideProdWhenChecked("Dienstag", "Montag")
-    hideProdWhenChecked("Dienstag", "Mittwoch")
-    hideProdWhenChecked("Dienstag", "Donnerstag")
-
-    hideProdWhenChecked("Mittwoch", "Montag")
-    hideProdWhenChecked("Mittwoch", "Dienstag")
-    hideProdWhenChecked("Mittwoch", "Donnerstag")
-
-    hideProdWhenChecked("Donnerstag", "Montag")
-    hideProdWhenChecked("Donnerstag", "Dienstag")
-    hideProdWhenChecked("Donnerstag", "Mittwoch")
+    
   
 
     // show only the products/Workshop that happen on the selected day
