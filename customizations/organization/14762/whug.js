@@ -357,6 +357,23 @@ var insertionListener = function (event) {
       hideProd("Donnerstag", "Montag")
       hideProd("Donnerstag", "Dienstag")
       hideProd("Donnerstag", "Mittwoch")
+      
+      // maybe we need this so .onchange is triggered
+    hideProdWhenChecked("Montag", "Dienstag")
+    hideProdWhenChecked("Montag", "Mittwoch")
+    hideProdWhenChecked("Montag", "Donnerstag")
+
+    hideProdWhenChecked("Dienstag", "Montag")
+    hideProdWhenChecked("Dienstag", "Mittwoch")
+    hideProdWhenChecked("Dienstag", "Donnerstag")
+
+    hideProdWhenChecked("Mittwoch", "Montag")
+    hideProdWhenChecked("Mittwoch", "Dienstag")
+    hideProdWhenChecked("Mittwoch", "Donnerstag")
+
+    hideProdWhenChecked("Donnerstag", "Montag")
+    hideProdWhenChecked("Donnerstag", "Dienstag")
+    hideProdWhenChecked("Donnerstag", "Mittwoch")
   
 
     // show only the products/Workshop that happen on the selected day
