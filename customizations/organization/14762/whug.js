@@ -216,15 +216,13 @@ function ischecked(shortName) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-  var insertionListener = function (event){
-  if (event.animationName === "nodeInserted"){
+  
     const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim();
-    console.log("2 or more attendee");
-  }
-  else {
+    console.log("moreattendes ticketname: " + name);
+    if (name == "") {
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-    console.log("1 attendee");
-  }}
+    console.log("one ticket ticketname: " +name);
+  }
   //get Ticket name:
   //const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
   //const name = $('.customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_title').text().trim()
