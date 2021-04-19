@@ -415,6 +415,7 @@ var insertionListener = function (event) {
     
   }
 */
+    }
   }
 };
 
