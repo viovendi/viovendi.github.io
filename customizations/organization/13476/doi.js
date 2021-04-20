@@ -34,7 +34,6 @@ obj.html(obj.html().replace(/\n/g,'<br/>'));
 // .customization2_booking-terms_text
 $(".customization2_booking-terms_custom-term-1").hide();
 
-
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
