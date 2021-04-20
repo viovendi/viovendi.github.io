@@ -280,6 +280,7 @@ function handler() {
 
 }
 
+// function pretty similar to handler(); is called when attendee is editing his data
 function inEditMode(){
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
