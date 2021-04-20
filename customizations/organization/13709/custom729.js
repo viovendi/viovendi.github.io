@@ -110,26 +110,26 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text == "INDIVIDUELLE TOUR am 23. Juni, 14 - 17:30 Uhr - kostenfrei" ){
+        if( label_text == "INDIVIDUELLE TOUR am 23.06., 14 - 17:30 Uhr - kostenfrei" ){
           console.log('23. Juni');
 
           if( !item.hasClass('product-23-06')){
             item.addClass('product-23-06');
-            show("vv-additional-question-dropdown","23.06.,");
+            show("vv-additional-question-dropdown","23.06.");
           }else{
             item.removeClass('product-23-06');
-            hide("vv-additional-question-dropdown","23.06.,");
+            hide("vv-additional-question-dropdown","23.06.");
           }
 
-        }else if( label_text == "INDIVIDUELLE TOUR am 24. Juni, 10 - 17 Uhr - kostenfrei" ){
+        }else if( label_text == "INDIVIDUELLE TOUR am 24.06., 10 - 17 Uhr - kostenfrei" ){
           console.log('24. Juni');
 
           if( !item.hasClass('product-24-06')){
             item.addClass('product-24-06');
-            show("vv-additional-question-dropdown","24.06.,");
+            show("vv-additional-question-dropdown","24.06.");
           }else{
             item.removeClass('product-24-06');
-            hide("vv-additional-question-dropdown","24.06.,");
+            hide("vv-additional-question-dropdown","24.06.");
           }
 
         }else if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
