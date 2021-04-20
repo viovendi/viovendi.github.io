@@ -115,10 +115,10 @@
 
           if( !item.hasClass('product-23-06')){
             item.addClass('product-23-06');
-            show("vv-additional-question-dropdown","23.06.");
+            show("vv-additional-question-dropdown","23.06.,");
           }else{
             item.removeClass('product-23-06');
-            hide("vv-additional-question-dropdown","23.06.");
+            hide("vv-additional-question-dropdown","23.06.,");
           }
 
         }else if( label_text == "INDIVIDUELLE TOUR am 24. Juni, 10 - 17 Uhr - kostenfrei" ){
@@ -126,10 +126,10 @@
 
           if( !item.hasClass('product-24-06')){
             item.addClass('product-24-06');
-            show("vv-additional-question-dropdown","24.06.");
+            show("vv-additional-question-dropdown","24.06.,");
           }else{
             item.removeClass('product-24-06');
-            hide("vv-additional-question-dropdown","24.06.");
+            hide("vv-additional-question-dropdown","24.06.,");
           }
 
         }else if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
