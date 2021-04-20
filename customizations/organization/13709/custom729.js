@@ -6,8 +6,11 @@
     formValid = false;
     
     checkboxChecked();
-    hide("vv-additional-question-dropdown","25.03.2020");
-    hide("vv-additional-question-dropdown","26.03.2020");
+	hide("vv-additional-question-dropdown","23.06.");
+	hide("vv-additional-question-dropdown","24.06.");
+	  
+	hide("vv-additional-question-dropdown","25.03.2020");
+	hide("vv-additional-question-dropdown","26.03.2020");
   }
   handler();
  
