@@ -252,7 +252,7 @@ function disableProd(title1, title2){
         if( true_label_text.indexOf(title1) == 0 || true_label_text.indexOf(title2) == 0 ){
             $(this).attr('disabled',true);
           }
-        }
+        
       }
     });
   }
