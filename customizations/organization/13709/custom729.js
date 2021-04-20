@@ -111,26 +111,26 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text == "INDIVIDUELLE TOUR am 25. März, 14 - 17:30 Uhr - kostenfrei" ){
-          console.log('25. März');
+        if( label_text == "INDIVIDUELLE TOUR am 23. Juni, 14 - 17:30 Uhr - kostenfrei" ){
+          console.log('23. Juni');
 
-          if( !item.hasClass('product-25-03')){
-            item.addClass('product-25-03');
-            show("vv-additional-question-dropdown","25.03.2020");
+          if( !item.hasClass('product-23-06')){
+            item.addClass('product-23-06');
+            show("vv-additional-question-dropdown","23.06.");
           }else{
-            item.removeClass('product-25-03');
-            hide("vv-additional-question-dropdown","25.03.2020");
+            item.removeClass('product-23-06');
+            hide("vv-additional-question-dropdown","23.06.");
           }
 
-        }else if( label_text == "INDIVIDUELLE TOUR am 26. März, 10 - 17 Uhr - kostenfrei" ){
-          console.log('26. März');
+        }else if( label_text == "INDIVIDUELLE TOUR am 24. Juni, 10 - 17 Uhr - kostenfrei" ){
+          console.log('24. Juni');
 
-          if( !item.hasClass('product-26-03')){
-            item.addClass('product-26-03');
-            show("vv-additional-question-dropdown","26.03.2020");
+          if( !item.hasClass('product-24-06')){
+            item.addClass('product-24-06');
+            show("vv-additional-question-dropdown","24.06.");
           }else{
-            item.removeClass('product-26-03');
-            hide("vv-additional-question-dropdown","26.03.2020");
+            item.removeClass('product-24-06');
+            hide("vv-additional-question-dropdown","24.06.");
           }
 
         }else if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
