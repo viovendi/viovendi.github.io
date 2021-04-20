@@ -116,9 +116,17 @@
           if( !item.hasClass('product-23-06')){
             item.addClass('product-23-06');
             show("vv-additional-question-dropdown","23.06.");
+		  
+		  // disable 
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-23-06');
             hide("vv-additional-question-dropdown","23.06.");
+		  
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-23-06");
           }
 
         }else if( label_text == "INDIVIDUELLE TOUR am 24.06., 10 - 17 Uhr - kostenfrei" ){
@@ -135,6 +143,8 @@
           }else{
             item.removeClass('product-24-06');
             hide("vv-additional-question-dropdown","24.06.");
+		  
+		  //enable
 		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-24-06");
           }
 
