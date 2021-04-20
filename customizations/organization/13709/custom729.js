@@ -82,14 +82,14 @@
             }
           }
 
-        }else if( label_text.indexOf("MEET HANSE TOUR inkl. MICE Networking Event") != -1){
+        }else if( label_text.indexOf("INDIVIDUELLE TOUR am 23.06., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
-              makeChecked('MICE','MICE');
+              makeChecked('BUSTOUR Rot','BUSTOUR Grün');
           }else{
             if( $(this).hasClass('checked-by-func-meet') ){
               $(this).removeClass('checked-by-func-meet');
-              makeUnChecked('MICE','MICE', '.checked-by-func-meet');
+              makeUnChecked('BUSTOUR Rot','BUSTOUR Grün', '.checked-by-func-meet');
             }
           }
         }
