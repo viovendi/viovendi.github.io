@@ -86,7 +86,7 @@
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 23.06");
-              disableProd("BUSTOUR Rot");
+              enableProd("BUSTOUR Rot");
             }
           }
 
