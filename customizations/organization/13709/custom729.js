@@ -58,7 +58,7 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
+        if( label_text.indexOf("BUSTOUR Rot") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
@@ -171,7 +171,7 @@
 		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-24-06");
           }
 
-        }else if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
+        }else if( label_text.indexOf("BUSTOUR Rot") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
