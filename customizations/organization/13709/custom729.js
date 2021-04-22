@@ -58,27 +58,17 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text.indexOf("BUSTOUR Rot") != -1 ){
+        if( label_text.indexOf("BUSTOUR Rot") != -1 || label_text.indexOf("BUSTOUR Blau") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
-              makeChecked('INDIVIDUELLE TOUR am 23.06','BUSTOUR Blau');
+              makeChecked('FORUM','NIGHT');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
-              makeUnChecked('INDIVIDUELLE TOUR am 23.06','BUSTOUR Blau','.checked-by-func');
-            }
-          }
-
-        }else if( label_text.indexOf("BUSTOUR Blau") != -1){
-
-          if( $(this).is(':checked') ){
-              $(this).addClass('checked-by-func-grun');
-              makeChecked('INDIVIDUELLE TOUR am 23.06','BUSTOUR Rot');
-          }else{
-            if( $(this).hasClass('checked-by-func-grun') ){
-              $(this).removeClass('checked-by-func-grun');
-              makeUnChecked('INDIVIDUELLE TOUR am 23.06','BUSTOUR Rot', '.checked-by-func-grun');
+              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
             }
           }
 
@@ -86,11 +76,11 @@
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
-              makeChecked('INDIVIDUELLE TOUR am 24.06');
+              makeChecked('BREAKFAST','CLOSING');
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
-              makeUnChecked('INDIVIDUELLE TOUR am 24.06', '.checked-by-func-grun');
+              makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
             }
           }
 
@@ -165,10 +155,12 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
             }
           }
 
