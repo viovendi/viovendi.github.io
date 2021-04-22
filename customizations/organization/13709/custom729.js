@@ -74,7 +74,7 @@
             }
           }
 
-        }if( label_text.indexOf("BUSTOUR Blau") != -1){
+        }else if( label_text.indexOf("BUSTOUR Blau") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
