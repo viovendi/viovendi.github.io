@@ -64,23 +64,44 @@
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
               disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("BUSTOUR Blau");
             }
           }
 
-        }else if( label_text.indexOf("BUSTOUR Grün") != -1){
+        }if( label_text.indexOf("BUSTOUR Blau") != -1){
+
+          if( $(this).is(':checked') ){
+              $(this).addClass('checked-by-func');
+              makeChecked('FORUM','NIGHT');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("BUSTOUR Rot");
+          }else{
+            if( $(this).hasClass('checked-by-func') ){
+              $(this).removeClass('checked-by-func');
+              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("BUSTOUR Rot");
+            }
+          }
+
+        }
+        else if( label_text.indexOf("BUSTOUR Grün") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
               makeChecked('BREAKFAST','CLOSING');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
               makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
             }
           }
 
@@ -156,23 +177,44 @@
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
               disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("BUSTOUR Blau");
             }
           }
 
-        }else if( label_text.indexOf("BUSTOUR Grün") != -1){
+        }else if( label_text.indexOf("BUSTOUR Blau") != -1){
+
+          if( $(this).is(':checked') ){
+              $(this).addClass('checked-by-func');
+              makeChecked('FORUM','NIGHT');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("BUSTOUR Rot");
+          }else{
+            if( $(this).hasClass('checked-by-func') ){
+              $(this).removeClass('checked-by-func');
+              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("BUSTOUR Rot");
+            }
+          }
+
+        }
+        else if( label_text.indexOf("BUSTOUR Grün") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
               makeChecked('BREAKFAST','CLOSING');
+              disableProd("INDIVIDUELLE TOUR am 23.06");
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
               makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
+              enableProd("INDIVIDUELLE TOUR am 23.06");
             }
           }
 
