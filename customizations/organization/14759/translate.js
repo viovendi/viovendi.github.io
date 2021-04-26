@@ -18,7 +18,7 @@ $('.vv-selection-input__control').click(function () {
 }
                                 )
 
-setInterval(function(){ 
+//setInterval(function(){ 
 
 //Start Date
 $('.ng-tns-c47-0').attr("placeholder", "Startdatum");
@@ -101,4 +101,4 @@ $('.customization-button-previous').text('Tillbaka till urval');
 //Book now
 $('.customization-button-next').text('Boka nu');
   
- }, 3000);
+ //}, 3000);
