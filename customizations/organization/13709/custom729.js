@@ -63,13 +63,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 08.12");
+              disableProd("INDIVIDUELLE TOUR am 08.12.,");
               disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 08.12");
+              enableProd("INDIVIDUELLE TOUR am 08.12.,");
               enableProd("BUSTOUR Blau");
             }
           }
@@ -79,13 +79,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 08.12");
+              disableProd("INDIVIDUELLE TOUR am 08.12.,");
               disableProd("BUSTOUR Rot");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 08.12");
+              enableProd("INDIVIDUELLE TOUR am 08.12.,");
               enableProd("BUSTOUR Rot");
             }
           }
@@ -96,12 +96,12 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
               makeChecked('BREAKFAST','CLOSING');
-              disableProd("INDIVIDUELLE TOUR am 09.12");
+              disableProd("INDIVIDUELLE TOUR am 09.12.,");
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
               makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
-              enableProd("INDIVIDUELLE TOUR am 09.12");
+              enableProd("INDIVIDUELLE TOUR am 09.12.,");
             }
           }
 
@@ -134,10 +134,10 @@
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
         if( label_text == "INDIVIDUELLE TOUR am 08.12., 14 - 17:30 Uhr - kostenfrei" ){
-          console.log('23. Juni');
+          console.log('08. 12');
 
-          if( !item.hasClass('product-23-06')){
-            item.addClass('product-23-06');
+          if( !item.hasClass('product-08-12')){
+            item.addClass('product-08-12');
             show("vv-additional-question-dropdown","08.12.");
 
 		  // disable
@@ -153,7 +153,7 @@
           }
 
         }else if( label_text == "INDIVIDUELLE TOUR am 09.12., 10 - 17 Uhr - kostenfrei" ){
-          console.log('24. Juni');
+          console.log('09. 12');
 
           if( !item.hasClass('product-09-12')){
             item.addClass('product-09-12');
