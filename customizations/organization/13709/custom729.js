@@ -232,7 +232,136 @@
 		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-09-12");
           }
 
-        }else if( label_text.indexOf("BUSTOUR Rot") != -1){
+        }
+	
+	      //newcode
+	      else if( label_text == "INDIVIDUELLE TOUR am 25.08., 10 - 17 Uhr - kostenfrei" ){
+          console.log('25.08');
+
+          if( !item.hasClass('product-25-08')){
+            item.addClass('product-25-08');
+            show("vv-additional-question-dropdown","25.08.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-25-08');
+            hide("vv-additional-question-dropdown","25.08.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-25-08");
+          }
+
+        }
+	else if( label_text == "INDIVIDUELLE TOUR am 26.08., 10 - 17 Uhr - kostenfrei" ){
+          console.log('26.08');
+
+          if( !item.hasClass('product-26-08')){
+            item.addClass('product-26-08');
+            show("vv-additional-question-dropdown","26.08.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-26-08');
+            hide("vv-additional-question-dropdown","26.08.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-26-08");
+          }
+
+        }
+	      else if( label_text == "INDIVIDUELLE TOUR am 27.10., 10 - 17 Uhr - kostenfrei" ){
+          console.log('27. 10');
+
+          if( !item.hasClass('product-27-10')){
+            item.addClass('product-27-10');
+            show("vv-additional-question-dropdown","27.10.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-27-10');
+            hide("vv-additional-question-dropdown","27.10.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-27-10");
+          }
+
+        }
+	      else if( label_text == "INDIVIDUELLE TOUR am 28.10., 10 - 17 Uhr - kostenfrei" ){
+          console.log('28.10');
+
+          if( !item.hasClass('product-28-10')){
+            item.addClass('product-28-10');
+            show("vv-additional-question-dropdown","28.10.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-28-10');
+            hide("vv-additional-question-dropdown","28.10.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-28-10");
+          }
+
+        }
+	      else if( label_text == "INDIVIDUELLE TOUR am 17.11., 10 - 17 Uhr - kostenfrei" ){
+          console.log('17.11');
+
+          if( !item.hasClass('product-17-11')){
+            item.addClass('product-17-11');
+            show("vv-additional-question-dropdown","17.11.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-17-11');
+            hide("vv-additional-question-dropdown","17.11.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-17-11");
+          }
+
+        }
+	  else if( label_text == "INDIVIDUELLE TOUR am 18.11., 10 - 17 Uhr - kostenfrei" ){
+          console.log('18.11');
+
+          if( !item.hasClass('product-18-11')){
+            item.addClass('product-18-11');
+            show("vv-additional-question-dropdown","18.11.");
+
+		  // disable
+		  disableProd("BUSTOUR Blau");
+		  disableProd("BUSTOUR Rot");
+		  disableProd("BUSTOUR Grün");
+          }else{
+            item.removeClass('product-18-11');
+            hide("vv-additional-question-dropdown","18.11.");
+
+		  //enable
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-18-11");
+          }
+
+        }
+	      
+	      
+	  //end newcode    
+	      
+	      
+	      
+	else if( label_text.indexOf("BUSTOUR Rot") != -1){
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
