@@ -84,7 +84,7 @@ $('.customization2_booker_contact-data_company_error').text('Obligatorisk');
   
   
 //Email address
-$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett));
+$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett)');
   
  // confirm email address                                                         
 $('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
