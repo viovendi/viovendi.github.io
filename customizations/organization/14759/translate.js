@@ -78,7 +78,7 @@ $('.customization2_booker_contact-data_headline').text('Kontaktperson');
 
 
 //Contact details
-$('.customization2_booker_contact-data_headline').text('Contact details1');
+$('.customization2_booker_contact-data_headline').text('Kontaktperson: ');
 
 //First name
 $('.customization2_booker_contact-data_first-name_label').text('Förnamn');
