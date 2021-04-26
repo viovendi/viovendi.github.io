@@ -62,13 +62,13 @@
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
-              makeChecked('FORUM','NIGHT');
+              makeChecked('LUNCH','MICE');
               disableProd("INDIVIDUELLE TOUR am 08.12.,");
               disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
-              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              makeUnChecked('LUNCH','MICE','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 08.12.,");
               enableProd("BUSTOUR Blau");
             }
@@ -78,13 +78,13 @@
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
-              makeChecked('FORUM','NIGHT');
+              makeChecked('LUNCH','MICE');
               disableProd("INDIVIDUELLE TOUR am 08.12.,");
               disableProd("BUSTOUR Rot");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
-              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              makeUnChecked('LUNCH','MICE','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 08.12.,");
               enableProd("BUSTOUR Rot");
             }
@@ -175,13 +175,13 @@
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
-              makeChecked('FORUM','NIGHT');
+              makeChecked('LUNCH','MICE');
               disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
-              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              makeUnChecked('LUNCH','MICE','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Blau");
             }
@@ -191,13 +191,13 @@
 
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
-              makeChecked('FORUM','NIGHT');
+              makeChecked('LUNCH','MICE');
               disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Rot");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
-              makeUnChecked('FORUM','NIGHT','.checked-by-func');
+              makeUnChecked('LUNCH','MICE','.checked-by-func');
               enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Rot");
             }
