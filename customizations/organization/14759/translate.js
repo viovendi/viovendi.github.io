@@ -47,7 +47,7 @@ $('.customization-encrypted-connection').text('Krypterad anslutning');
 
 $('.ew-header__progress-container .progress-meter .selection span').text('Urval');
 $('.ew-header__progress-container .progress-meter .details span').text('Deltagarinformation');
-$('.ew-header__progress-container .progress-meter .information span').text('Bekräftelse');
+$('.ew-header__progress-container .progress-meter .confirmation span').text('Bekräftelse');
 
 //ATTENDEE DETAILS // BOOKING DETAILS
 $('.customization2_booker_title').text('BOKNINGSINFORMATION');
@@ -83,28 +83,31 @@ $('.customization2_booker_contact-data_company_label').text('Organisation/Föret
 $('.customization2_booker_contact-data_company_error').text('Obligatorisk');
   
   
-
 //Email address
-$('.customization2_attendee_contact-data_email_label').text('E-postadress');
+$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett));
+  
+ // confirm email address                                                         
+$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
 
+  
 //Please enter valid email address
-$('.customization2_attendee_contact-data_email_error').text('Vänligen fyll i giltig e-postadress');
+$('.customization2_booker_contact-data_email_error').text('Vänligen fyll i giltig e-postadress');
 
 //Confirm email address
-$('.customization2_attendee_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
+$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
 
 //Please enter valid email address
-$('.customization2_attendee_contact-data_email-confirmation_error').text('Vänligen fyll i giltig e-postadress');
+$('.customization2_booker_contact-data_email-confirmation_error').text('Vänligen fyll i giltig e-postadress');
 
 //Accept
-$('.customization2_attendee_edit-action_save').text('Jag har fyllt i mina uppgifter');
+$('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 //I accept the following terms:
 $('.customization2_booking-terms_text').text('');
 
 
 //Email addresses not matching
-$('.customization2_attendee_contact-data_email-confirmation_error').text('E-postadresser stämmer inte överens');
+$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresser stämmer inte överens');
 
 //Change selection
 $('.customization-button-previous').text('Tillbaka till urval');
