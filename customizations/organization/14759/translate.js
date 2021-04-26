@@ -20,6 +20,10 @@ $('.vv-selection-input__control').click(function () {
 
 
 setInterval(function(){ 
+  
+  
+//page 1
+$("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div.row.event-info__address > div.col-xs-12.col-12.col-sm-8 > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)").text('E-postadress: ');
  
 $('.event-info__details').hide();
 $('.customization-event-info-address-label').hide();
