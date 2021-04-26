@@ -18,7 +18,14 @@ $('.vv-selection-input__control').click(function () {
 }
                                 )
 
+
 setInterval(function(){ 
+ 
+$('.event-info__details').hide();
+$('.customization-event-info-address-label').hide();
+$('.customization-event-info-contact').hide();
+
+  
 
 //Start Date
 $('.ng-tns-c47-0').attr("placeholder", "Startdatum");
@@ -61,20 +68,20 @@ $('.customization2_booker_contact-data_headline').text('Kontaktperson');
 
 
 //Contact details
-$('.customization2_attendee_contact-data_headline').text('Contact details1');
+$('.customization2_booker_contact-data_headline').text('Contact details1');
 
 //First name
 $('.customization2_booker_contact-data_first-name_label').text('Förnamn');
 
 
 //First name Required
-$('.customization2_attendee_contact-data_first-name_error').text('Obligatorisk');
+$('.customization2_booker_contact-data_first-name_error').text('Obligatorisk');
 
 //Last name
 $('.customization2_booker_contact-data_last-name_label').text('Efternamn');
 
 //Last name Required
-$('.customization2_attendee_contact-data_last-name_error').text('Obligatorisk');
+$('.customization2_booker_contact-data_last-name_error').text('Obligatorisk');
 
 //Organisation
 $('.customization2_booker_contact-data_company_label').text('Organisation/Företag');
@@ -103,7 +110,7 @@ $('.customization2_booker_contact-data_email-confirmation_error').text('Vänlige
 $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 //I accept the following terms:
-$('.customization2_booking-terms_text').text('');
+//$('.customization2_booking-terms_text').text('');
 
 
 //Email addresses not matching
