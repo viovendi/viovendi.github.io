@@ -6,8 +6,8 @@
     formValid = false;
 
     checkboxChecked();
-	hide("vv-additional-question-dropdown","23.06.");
-	hide("vv-additional-question-dropdown","24.06.");
+	hide("vv-additional-question-dropdown","08.12.");
+	hide("vv-additional-question-dropdown","09.12.");
 
 
   }
@@ -63,13 +63,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Blau");
             }
           }
@@ -79,13 +79,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Rot");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Rot");
             }
           }
@@ -96,16 +96,16 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
               makeChecked('BREAKFAST','CLOSING');
-              disableProd("INDIVIDUELLE TOUR am 24.06");
+              disableProd("INDIVIDUELLE TOUR am 09.12");
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
               makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
-              enableProd("INDIVIDUELLE TOUR am 24.06");
+              enableProd("INDIVIDUELLE TOUR am 09.12");
             }
           }
 
-        }else if( label_text.indexOf("INDIVIDUELLE TOUR am 23.06., 14 - 17:30 Uhr - kostenfrei") != -1){
+        }else if( label_text.indexOf("INDIVIDUELLE TOUR am 08.12., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
               makeChecked('BUSTOUR Rot','BUSTOUR Grün');
@@ -133,42 +133,42 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text == "INDIVIDUELLE TOUR am 23.06., 14 - 17:30 Uhr - kostenfrei" ){
+        if( label_text == "INDIVIDUELLE TOUR am 08.12., 14 - 17:30 Uhr - kostenfrei" ){
           console.log('23. Juni');
 
           if( !item.hasClass('product-23-06')){
             item.addClass('product-23-06');
-            show("vv-additional-question-dropdown","23.06.");
+            show("vv-additional-question-dropdown","08.12.");
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
-            item.removeClass('product-23-06');
-            hide("vv-additional-question-dropdown","23.06.");
+            item.removeClass('product-08-12');
+            hide("vv-additional-question-dropdown","08.12.");
 
 		  //enable
-		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-23-06");
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-08-12");
           }
 
-        }else if( label_text == "INDIVIDUELLE TOUR am 24.06., 10 - 17 Uhr - kostenfrei" ){
+        }else if( label_text == "INDIVIDUELLE TOUR am 09.12., 10 - 17 Uhr - kostenfrei" ){
           console.log('24. Juni');
 
-          if( !item.hasClass('product-24-06')){
-            item.addClass('product-24-06');
-            show("vv-additional-question-dropdown","24.06.");
+          if( !item.hasClass('product-09-12')){
+            item.addClass('product-09-12');
+            show("vv-additional-question-dropdown","09.12.");
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
-            item.removeClass('product-24-06');
-            hide("vv-additional-question-dropdown","24.06.");
+            item.removeClass('product-09-12');
+            hide("vv-additional-question-dropdown","09.12.");
 
 		  //enable
-		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-24-06");
+		  enableProd("BUSTOUR Blau","BUSTOUR Rot","BUSTOUR Grün", "product-09-12");
           }
 
         }else if( label_text.indexOf("BUSTOUR Rot") != -1){
@@ -176,13 +176,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Blau");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Blau");
             }
           }
@@ -192,13 +192,13 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
               makeChecked('FORUM','NIGHT');
-              disableProd("INDIVIDUELLE TOUR am 23.06");
+              disableProd("INDIVIDUELLE TOUR am 08.12");
               disableProd("BUSTOUR Rot");
           }else{
             if( $(this).hasClass('checked-by-func') ){
               $(this).removeClass('checked-by-func');
               makeUnChecked('FORUM','NIGHT','.checked-by-func');
-              enableProd("INDIVIDUELLE TOUR am 23.06");
+              enableProd("INDIVIDUELLE TOUR am 08.12");
               enableProd("BUSTOUR Rot");
             }
           }
@@ -209,12 +209,12 @@
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-grun');
               makeChecked('BREAKFAST','CLOSING');
-              disableProd("INDIVIDUELLE TOUR am 24.06");
+              disableProd("INDIVIDUELLE TOUR am 09.12");
           }else{
             if( $(this).hasClass('checked-by-func-grun') ){
               $(this).removeClass('checked-by-func-grun');
               makeUnChecked('BREAKFAST','CLOSING', '.checked-by-func-grun');
-              enableProd("INDIVIDUELLE TOUR am 24.06");
+              enableProd("INDIVIDUELLE TOUR am 09.12");
             }
           }
 
