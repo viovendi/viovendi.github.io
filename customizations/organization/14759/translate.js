@@ -27,16 +27,12 @@ $('.ng-tns-c47-0').attr("placeholder", "Startdatum");
 $('.ng-tns-c47-1').attr("placeholder", "Slutdatum");
  
 //Organizer contact
-<h2 class="customization-event-info-contact-label">
-              Organizer contact
-            </h2>
+$('.customization-event-info-contact-label').text('Kontakta arrangör');
 
 
 //99 available
-$('.')
-<p class="event-category__amount">
-        99 available
-      </p>
+//$('.event-category__amount')
+
 
 //Next
 $('.customization-button-next').text('Nästa');
