@@ -63,7 +63,7 @@ $('.customization-encrypted-connection').text('Krypterad anslutning');
 
 
 $('.ew-header__progress-container .progress-meter .selection span').text('Urval');
-$('.ew-header__progress-container .progress-meter .details span').text('Deltagarinformation');
+$('.ew-header__progress-container .progress-meter .information span').text('Deltagarinformation');
 $('.ew-header__progress-container .progress-meter .confirmation span').text('Bekräftelse');
 
 //ATTENDEE DETAILS // BOOKING DETAILS
