@@ -50,27 +50,39 @@ $('.ew-header__progress-container .progress-meter .details span').text('Deltagar
 $('.ew-header__progress-container .progress-meter .information span').text('Bekräftelse');
 
 //ATTENDEE DETAILS // BOOKING DETAILS
-$('.customization2_attendees_title').text('BOKNINGSINFORMATION');
+$('.customization2_booker_title').text('BOKNINGSINFORMATION');
     
   
 //SUMMARY
 $('.customization2_summary_headline').text('SAMMANFATTNING');
+  
+//Contact Person
+$('.customization2_booker_contact-data_headline').text('Kontaktperson');
+
 
 //Contact details
 $('.customization2_attendee_contact-data_headline').text('Contact details1');
 
 //First name
-$('.customization2_attendee_contact-data_first-name_label').text('Förnamn');
+$('.customization2_booker_contact-data_first-name_label').text('Förnamn');
 
 
-//Required
+//First name Required
 $('.customization2_attendee_contact-data_first-name_error').text('Obligatorisk');
 
 //Last name
-$('.customization2_attendee_contact-data_last-name_label').text('Efternamn');
+$('.customization2_booker_contact-data_last-name_label').text('Efternamn');
 
-//   Required
+//Last name Required
 $('.customization2_attendee_contact-data_last-name_error').text('Obligatorisk');
+
+//Organisation
+$('.customization2_booker_contact-data_company_label').text('Organisation/Företag');
+  
+//Organisation Required
+$('.customization2_booker_contact-data_company_error').text('Obligatorisk');
+  
+  
 
 //Email address
 $('.customization2_attendee_contact-data_email_label').text('E-postadress');
