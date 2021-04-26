@@ -1,24 +1,4 @@
-<style>
 
-  @keyframes nodeInserted { 
-    from { opacity: 0.99; }
-    to { opacity: 1; } 
-  }
-
-.customization-encrypted-connection{
-text-indent: -9999px;
-line-height: 0;
-display: block;
-}
- 
-.customization-encrypted-connection:after{
-content: "Connexion sécurisée";
-text-indent: 0;
-display: block;
-line-height: normal;
-}
-  
-</style>
 
 console.log("GTM Git loaded");
 
