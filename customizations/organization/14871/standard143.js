@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide("vv-radio-group","Möchte auf die Warteliste");
+	hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste");
 
 
   }
@@ -93,10 +93,11 @@ console.log('Start working, Google Tag Manager');
   function hide(tag, date){
    $(tag).each(function(){
      var item = $(this);
-     var label = item.find("label");
-	   console.log(label);
+	var label = $(this).text();
+	console.log(label);
 
-     if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+     if(label.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+	     console.log("display none");
        $(item[0]).css("display", "none");
      }
    });
