@@ -185,7 +185,7 @@ function handler() {
  
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
 
-  if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" ) {
+  if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene") {
     // hide other day when 1 day is selected
     hideProdWhenChecked("Montag", "Dienstag")
     hideProdWhenChecked("Montag", "Mittwoch")
@@ -284,7 +284,7 @@ function handler() {
 function inEditMode(){
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
 
-    if (name == "Erwachsenen Ticket") {
+    if (name == "Erwachsenen Ticket" || name == "Tagesticket Erwachsene") {
           console.log("edit state");
          // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
           hideProd("Montag", "Dienstag")
@@ -367,7 +367,7 @@ function inEditMode(){
       }
 
 
-      if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)") {
+      if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene") {
         // Customization 2
         //preselect all days, 
         //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
