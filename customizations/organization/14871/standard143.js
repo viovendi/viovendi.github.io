@@ -68,29 +68,25 @@ console.log('Start working, Google Tag Manager');
   function checkboxChecked(){
     $('input[type=checkbox]').on('change', function(){
 
-      if( $(this).closest('vv-additional-question-product').length ){
+	      if( $(this).closest('vv-additional-question-product').length ){
 
-        var item = $(this).closest('vv-additional-question-product'),
-            label = item.find("label"),
-            label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
+		var item = $(this).closest('vv-additional-question-product'),
+		    label = item.find("label"),
+		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
-          console.log('workshop');
+			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
+			  console.log('workshop');
 
-          if( !item.hasClass('ws')){
-            item.addClass('ws');
-            show(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
+			  if( !item.hasClass('ws')){
+			    item.addClass('ws');
+			    show(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
 
-
-          }else{
-            item.removeClass('ws');
-            hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
-
-          }
-
-        }
-        }
-      }
+			  }else{
+			    item.removeClass('ws');
+			    hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
+			  }
+			}
+	      }
     });
   }
 
