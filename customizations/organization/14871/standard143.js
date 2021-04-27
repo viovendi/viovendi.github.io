@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide("customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste");
+	hide("vv-additional-question-radio","Möchte auf die Warteliste");
 
 
   }
@@ -78,11 +78,11 @@ console.log('Start working, Google Tag Manager');
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
-			    show(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
+			    show("vv-additional-question-radio","Möchte auf die Warteliste")
 
 			  }else{
 			    item.removeClass('ws');
-			    hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste")
+			    hide("vv-additional-question-radio","Möchte auf die Warteliste")
 			  }
 			}
 	      }
