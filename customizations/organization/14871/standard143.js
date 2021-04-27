@@ -95,9 +95,6 @@ console.log('Start working, Google Tag Manager');
      	var item = $(this);
 	var label = item.find('label')
 	
-	console.log(label[0].innerText);
-	   console.log(label[1].innerText);
-	   console.log(label[2].innerText);
 	   
 
      if(label[0].replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
