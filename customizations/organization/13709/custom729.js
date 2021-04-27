@@ -130,11 +130,11 @@
         }else if( label_text.indexOf("INDIVIDUELLE TOUR am 08.12., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
-              makeChecked('BUSTOUR Rot','BUSTOUR Grün');
+              makeChecked('BUSTOUR Rot',''); //grüner tour nicht BUSTOUR Grün
           }else{
             if( $(this).hasClass('checked-by-func-meet') ){
               $(this).removeClass('checked-by-func-meet');
-              makeUnChecked('BUSTOUR Rot','BUSTOUR Grün', '.checked-by-func-meet');
+              makeUnChecked('BUSTOUR Rot','', '.checked-by-func-meet');
             }
           }
         }
@@ -204,7 +204,7 @@
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
-		  disableProd("BUSTOUR Grün");
+		  //disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-08-12');
             hide("vv-additional-question-dropdown","08.12.");
@@ -222,7 +222,7 @@
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
-		  disableProd("BUSTOUR Rot");
+		  //disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-09-12');
