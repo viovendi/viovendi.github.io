@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste");
+	hide("customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste");
 
 
   }
@@ -94,7 +94,7 @@ console.log('Start working, Google Tag Manager');
      var item = $(this);
      var label = item.find("label");
 
-     if(label.innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+     if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
        $(item[0]).css("display", "none");
      }
    });
@@ -105,7 +105,7 @@ console.log('Start working, Google Tag Manager');
      var item = $(this);
      var label = item.find("label");
 
-     if(label.innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+     if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
        $(item[0]).css("display", "block");
      }
    });
