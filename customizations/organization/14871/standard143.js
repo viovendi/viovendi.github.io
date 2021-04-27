@@ -79,11 +79,11 @@ console.log('Start working, Google Tag Manager');
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
-			    show("vv-additional-question-radio","Möchte auf die Warteliste")
+			    show("vv-additional-question-radio","Ja")
 
 			  }else{
 			    item.removeClass('ws');
-			    hide("vv-additional-question-radio","Möchte auf die Warteliste")
+			    hide("vv-additional-question-radio","Ja")
 			  }
 			}
 	      }
