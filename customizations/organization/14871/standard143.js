@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide("vv-additional-question-radio","Möchte auf die Warteliste");
+	hide("vv-additional-question-radio","Ja");
 
 
   }
