@@ -93,10 +93,10 @@ console.log('Start working, Google Tag Manager');
   function hide(tag, date){
    $(tag).each(function(){
      	var item = $(this);
-	var label = $(this).find('customization2_attendee_further-data_custom-question_label');
+	var label = item.find('customization2_attendee_further-data_custom-question_label');
 	console.log(label);
 
-     if(label.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+     if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
 	     console.log("display none");
        $(item[0]).css("display", "none");
      }
