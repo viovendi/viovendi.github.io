@@ -97,7 +97,7 @@ console.log('Start working, Google Tag Manager');
 	
 	   
 
-     if(label[0].replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
+     if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
 	     console.log("display none");
        $(item[0]).css("display", "none");
      }
