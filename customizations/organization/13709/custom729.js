@@ -143,33 +143,33 @@
 	  else if( label_text.indexOf("INDIVIDUELLE TOUR am 25.08., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
-              makeChecked('BUSTOUR Rot','BUSTOUR Grün');
+              makeChecked('BUSTOUR Rot',''); //BUSTOUR Grün
           }else{
             if( $(this).hasClass('checked-by-func-meet') ){
               $(this).removeClass('checked-by-func-meet');
-              makeUnChecked('BUSTOUR Rot','BUSTOUR Grün', '.checked-by-func-meet');
+              makeUnChecked('BUSTOUR Rot','', '.checked-by-func-meet'); //BUSTOUR Grün
             }
           }
         }
 	 else if( label_text.indexOf("INDIVIDUELLE TOUR am 27.10., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
-              makeChecked('BUSTOUR Rot','BUSTOUR Grün');
+              makeChecked('BUSTOUR Rot',''); //BUSTOUR Grün
           }else{
             if( $(this).hasClass('checked-by-func-meet') ){
               $(this).removeClass('checked-by-func-meet');
-              makeUnChecked('BUSTOUR Rot','BUSTOUR Grün', '.checked-by-func-meet');
+              makeUnChecked('BUSTOUR Rot','', '.checked-by-func-meet'); //BUSTOUR Grün
             }
           }
         }
 	else if( label_text.indexOf("INDIVIDUELLE TOUR am 17.11., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func-meet');
-              makeChecked('BUSTOUR Rot','BUSTOUR Grün');
+              makeChecked('BUSTOUR Rot',''); //BUSTOUR Grün
           }else{
             if( $(this).hasClass('checked-by-func-meet') ){
               $(this).removeClass('checked-by-func-meet');
-              makeUnChecked('BUSTOUR Rot','BUSTOUR Grün', '.checked-by-func-meet');
+              makeUnChecked('BUSTOUR Rot','', '.checked-by-func-meet'); //BUSTOUR Grün
             }
           }
         }
@@ -245,7 +245,7 @@
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
-		  disableProd("BUSTOUR Grün");
+		  //disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-25-08');
             hide("vv-additional-question-dropdown","25.08.");
@@ -264,7 +264,7 @@
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
-		  disableProd("BUSTOUR Rot");
+		  //disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-26-08');
@@ -285,7 +285,7 @@
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
-		  disableProd("BUSTOUR Grün");
+		  //disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-27-10');
             hide("vv-additional-question-dropdown","27.10.");
@@ -304,7 +304,7 @@
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
-		  disableProd("BUSTOUR Rot");
+		  //disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-28-10');
@@ -325,7 +325,7 @@
 		  // disable
 		  disableProd("BUSTOUR Blau");
 		  disableProd("BUSTOUR Rot");
-		  disableProd("BUSTOUR Grün");
+		  //disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-17-11');
             hide("vv-additional-question-dropdown","17.11.");
@@ -344,7 +344,7 @@
 
 		  // disable
 		  disableProd("BUSTOUR Blau");
-		  disableProd("BUSTOUR Rot");
+		  //disableProd("BUSTOUR Rot");
 		  disableProd("BUSTOUR Grün");
           }else{
             item.removeClass('product-18-11');
