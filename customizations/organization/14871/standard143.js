@@ -50,8 +50,9 @@ console.log('Start working, Google Tag Manager');
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
         if( label_text.indexOf("Interaktiver Workshop: Pionierarbeit ist Teamarbeit") != -1){
-
+		console.log("interaktiv ws");
           if( $(this).is(':checked') ){
+		  
               $(this).addClass('checked-by-func');
                 console.log("ischecked");
 	  }
@@ -93,6 +94,7 @@ console.log('Start working, Google Tag Manager');
    $(tag).each(function(){
      var item = $(this);
      var label = item.find("label");
+	   console.log(label);
 
      if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
        $(item[0]).css("display", "none");
