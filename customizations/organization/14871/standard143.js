@@ -106,7 +106,7 @@ console.log('Start working, Google Tag Manager');
   function show(tag, date){
    $(tag).each(function(){
      var item = $(this);
-     var label = item.find("label");
+     var label = item.find('customization2_attendee_further-data_custom-question_label');
 
      if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
        $(item[0]).css("display", "block");
