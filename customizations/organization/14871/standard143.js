@@ -54,13 +54,12 @@ console.log('Start working, Google Tag Manager');
           if( $(this).is(':checked') ){
               $(this).addClass('checked-by-func');
                 console.log("ischecked");
-		
-          }
+	  }
 	    
       }
-		
-
-    });
+      }
+  	}
+    );
   }
 
 
