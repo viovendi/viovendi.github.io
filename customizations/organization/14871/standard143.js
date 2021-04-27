@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide(".customization2_attendee_further-data_custom-question_label","Möchte auf die Warteliste");
+	hide("vv-additional-question-radio","Möchte auf die Warteliste");
 
 
   }
@@ -92,8 +92,8 @@ console.log('Start working, Google Tag Manager');
 
   function hide(tag, date){
    $(tag).each(function(){
-     var item = $(this);
-	var label = $(this).text();
+     	var item = $(this);
+	var label = $(this).find('customization2_attendee_further-data_custom-question_label');
 	console.log(label);
 
      if(label.replace(/^\s+|\s+$/g, "").indexOf(date) != -1){
