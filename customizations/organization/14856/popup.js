@@ -101,6 +101,7 @@
     var insertionListener = function(event) {
     if (event.animationName === "nodeInserted") {
       console.log('edit');
+      init();
       //initEditState();
     }
   }
