@@ -259,7 +259,7 @@ function handler() {
 
   }
 
-  if (name == "Erwachsene Dauerkarte" || name == "Dauerkarte") {
+   if (name == "Erwachsene Dauerkarte" || name == "Dauerkarte") {
     console.log(name);
     // Customization 2
     //preselect all days, 
@@ -287,7 +287,10 @@ function inEditMode(){
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
     console.log('edit mode');
     console.log(name);
-    if (name == "Erwachsenen Ticket" || name == "Tagesticket Erwachsene") {
+  
+  // name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene" || name == "Gruppenticket" || name == "Schwerbehinderten Ticket" || name == "Begleitperson"
+    
+  if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene" || name == "Gruppenticket" || name == "Schwerbehinderten Ticket" || name == "Begleitperson") {
           console.log("edit state");
          // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
           hideProd("Montag", "Dienstag")
@@ -370,7 +373,7 @@ function inEditMode(){
       }
 
 
-      if (name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene" || name == "Gruppenticket" || name == "Schwerbehinderten Ticket" || name == "Begleitperson") {
+      if (name == "Erwachsene Dauerkarte" || name == "Dauerkarte") {
         // Customization 2
         //preselect all days, 
         //NOTE this does not Trigger the actual product... we need a workaround here, maybe not use .prop( "checked", true) but .trigger("clicked)"
