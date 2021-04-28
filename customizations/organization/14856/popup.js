@@ -3,13 +3,13 @@ console.log('GTM github');
 var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p>';
 
   function addPopUp(){
-    if($('#myModal').length < 1){
-       $('<div id="myModal" class="modal"><div class="modal-content"><div class="modal-body">'+modalText+'</div><div class="modal-footer"><button class="accept-button" id="accept" disabled>Akzeptieren!</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
+    if($('#checkboxModal').length < 1){
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-body">'+modalText+'</div><div class="modal-footer"><button class="accept-button" id="accept" disabled>Akzeptieren!</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
       // move popup to checkbox
       var offset = $('.popup').offset();
-      var positionPopup = offset.top - $('#myModal .modal-content').outerHeight() - 35;
+      var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
 
-      $('#myModal .modal-content').css({top: positionPopup});
+      $('#checkboxModal .modal-content').css({top: positionPopup});
     }
   }
   
@@ -37,17 +37,12 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
   
   
   function popupClick(){
-    console.log('popupClick- ');
     $('.popup').on('click', function(e){
-      console.log($(this).hasClass('unchecked'));
-      
       if($(this).hasClass('unchecked')){
-        console.log('show pop-up');
         e.preventDefault();
         addPopUp();
         checkScroll();
       }else{
-        console.log('checkbox unchecked');
         $('.popup').addClass('unchecked');
       }
     });
@@ -56,10 +51,9 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
   
   // check scroll inside the pop-up
   function checkScroll(){
-    console.log('checkScroll1- ');
-    $('#myModal .modal-body').scroll(function(){
+    $('#checkboxModal .modal-body').scroll(function(){
       if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-        $('#myModal .accept-button').attr('disabled', false);
+        $('#checkboxModal .accept-button').attr('disabled', false);
         clickAcceptButton();
       }
     });
@@ -68,9 +62,8 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
   
   function clickAcceptButton(){
      $('#accept').on('click', function(){
-      console.log('bttn clicked- ');
-      $('#myModal').hide();
-      $('#myModal').remove();
+      $('#checkboxModal').hide();
+      $('#checkboxModal').remove();
     
       $('.popup').removeClass('unchecked');
       $('.popup input').trigger('click');
