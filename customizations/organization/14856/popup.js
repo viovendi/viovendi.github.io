@@ -1,4 +1,4 @@
-console.log('GTM github 1');
+console.log('GTM github');
 
 var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p>';
 
@@ -6,21 +6,6 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
     if($('#myModal').length < 1){
        $('<div id="myModal" class="modal"><div class="modal-content"><div class="modal-body">'+modalText+'</div><div class="modal-footer"><button class="accept-button" id="accept" disabled>Akzeptieren!</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
     }
-  }
-  
-  
-  function initEditState(){
-  console.log('edit');
-    $('.customization2_attendee .vv-checkbox__label-text').each(function(){
-      var textLabel = $(this).text().trim();
-      var textTofind = 'Einwilligungstext für die Verwendung des Videokonferenztools Zoom';
-    
-      if(textLabel == textTofind){
-        console.log('class POPUP added');
-        $(this).closest('label').addClass('popup');
-        popupClick();
-      }
-    });
   }
   
   
@@ -42,24 +27,6 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
        $('.popup').addClass('unchecked');
     }
     popupClick();    
-    /*
-  $('.customization2_attendee .vv-checkbox__label-text').each(function(){
-    var textLabel = $(this).text().trim();
-    var textTofind = 'Einwilligungstext für die Verwendung des Videokonferenztools Zoom';
-    
-    if(textLabel == textTofind){
-      console.log('class added');
-      
-      $(this).closest('label').addClass('popup unchecked');
-      
-      console.log($('.popup input'));
-      console.log($('.popup input').prop('checked'));
-      console.log($('.popup input').checked);
-      console.log($('.popup input').is(':checked'));
-      popupClick();
-    }
-  });
-    */
   }
   init();
   
@@ -110,7 +77,6 @@ var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some
     if (event.animationName === "nodeInserted") {
       console.log('edit');
       init();
-      //initEditState();
     }
   }
   
