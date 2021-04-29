@@ -10,7 +10,7 @@ console.log('GTM github!');
       $('#checkboxModal .modal-content').css({top: positionPopup});
     }
   }
-  
+
   
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
@@ -20,10 +20,9 @@ console.log('GTM github!');
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
       }
-      var checkboxWrapper = $('.popup').closest('div');
-      console.log(checkboxWrapper);
-      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-1</a></p>').insertBefore(checkboxWrapper);
-      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-2</a></p>').insertBefore('.popup');
+      
+      $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-2</a></p>');
+      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-1</a></p>').insertAfter('.popup');
     });
   }
   
