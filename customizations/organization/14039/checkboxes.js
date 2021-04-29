@@ -61,7 +61,7 @@
     main();
     enabledDisabledButton('customization2_attendee-1', 0);
   }
-  inint();
+  //inint();
    
    
   var insertionListener = function(event) {
