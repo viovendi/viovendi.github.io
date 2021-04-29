@@ -22,7 +22,7 @@ console.log('GTM github!');
       }
       
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-2</a></p>');
-      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-1</a></p>').insertAfter('.popup');
+
     });
   }
   
