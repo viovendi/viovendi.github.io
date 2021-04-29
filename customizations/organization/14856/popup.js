@@ -21,7 +21,7 @@ console.log('GTM github!');
         $(this).closest('label').addClass('popup');
       }
       
-      $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-2</a></p>');
+      $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
 
     });
   }
