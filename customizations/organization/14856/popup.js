@@ -1,14 +1,8 @@
-console.log('GTM github');
-
-/*
-var headerText = '<h3>Some text in the Modal Header Some</h3>';
-var modalText = '<p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p><p>Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body Some text in the Modal Body</p>';
-var buttonText = 'Akzeptieren!';
-*/
+console.log('GTM github!');
 
   function addPopUp(){
     if($('#checkboxModal').length < 1){
-       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body">'+modalText+'</div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText+'</p><p><a href="'+linkSource+'">'+linkText+'</a></p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
       // move popup to checkbox
       var offset = $('.popup').offset();
       var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
