@@ -2,7 +2,7 @@ console.log('GTM github!');
 
   function addPopUp(){
     if($('#checkboxModal').length < 1){
-       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText4+'</p><p>'+modalText5+'</p><p><a href="'+linkSource+'" target="_blank">'+linkText+'</a></p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText4+'</p><p>'+modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
       // move popup to checkbox
       var offset = $('.popup').offset();
       var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
@@ -20,6 +20,10 @@ console.log('GTM github!');
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
       }
+      var checkboxWrapper = $('.popup').closest('div');
+      console.log(checkboxWrapper);
+      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-1</a></p>').insertBefore(checkboxWrapper);
+      $('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'-2</a></p>').insertBefore('.popup');
     });
   }
   
