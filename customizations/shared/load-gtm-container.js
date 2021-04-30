@@ -12,6 +12,7 @@ async function makeRequest(options) {
 
 var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
+console.log(window.location.pathname)
 
 async function getContainerId(eventId) {
   const result = await makeRequest({
@@ -27,7 +28,7 @@ async function getContainerId(eventId) {
     if(v.name){
       return v.name.includes('GTM-Container')
     }
-    
+
   });
   return  attribute[0].data;
 }
