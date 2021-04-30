@@ -2,7 +2,7 @@ console.log('GTM github!');
 
   function addPopUp(){
     if($('#checkboxModal').length < 1){
-       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText4+'</p><p>'+modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" ); 
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText4+'</p><p>'+modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
       // move popup to checkbox
       var offset = $('.popup').offset();
       var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
@@ -11,32 +11,32 @@ console.log('GTM github!');
     }
   }
 
-  
+
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
       var textLabel = $(this).text().trim();
       var textTofind = 'Einwilligungstext für die Verwendung des Videokonferenztools Zoom';
-    
+
       if(textLabel == textTofind){
-        $(this).closest('label').addClass('popup');
+        $(this).closest('.customization2_attendee_further-data_custom-question_checkbox-line_checkbox').addClass('popup');
       }
-      
+
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
 
     });
   }
-  
+
   // add class to checkbox
   function init(){
     addClass();
     if(!$('.popup input').is(':checked')){
        $('.popup').addClass('unchecked');
     }
-    popupClick();    
+    popupClick();
   }
   init();
-  
-  
+
+
   function popupClick(){
     $('.popup').on('click', function(e){
       if($(this).hasClass('unchecked')){
@@ -48,8 +48,8 @@ console.log('GTM github!');
       }
     });
   }
-  
-  
+
+
   // check scroll inside the pop-up
   function checkScroll(){
     $('#checkboxModal .modal-body').scroll(function(){
@@ -59,26 +59,26 @@ console.log('GTM github!');
       }
     });
   }
-  
-  
+
+
   function clickAcceptButton(){
      $('#accept').on('click', function(){
       $('#checkboxModal').hide();
       $('#checkboxModal').remove();
-    
+
       $('.popup').removeClass('unchecked');
       $('.popup input').trigger('click');
-       
-    }); 
+
+    });
   }
-  
+
     var insertionListener = function(event) {
     if (event.animationName === "nodeInserted") {
       console.log('edit');
       init();
     }
   }
-  
+
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+  document.addEventListener("webkitAnimationStart", insertionListener, false); //
