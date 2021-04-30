@@ -38,6 +38,7 @@ console.log('GTM github!');
 
 
   function popupClick(){
+
     $('.popup' ).on('click', function(e){
       if($(this).hasClass('unchecked')){
         e.preventDefault();
