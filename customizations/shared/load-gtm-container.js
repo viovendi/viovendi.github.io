@@ -12,7 +12,7 @@ async function makeRequest(options) {
 
 var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
-console.log(window.location.pathname)
+console.log(window.location.pathname);
 
 async function getContainerId(eventId) {
   const result = await makeRequest({
