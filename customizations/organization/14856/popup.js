@@ -18,8 +18,7 @@ console.log('GTM github!');
       var textTofind = 'Einwilligungstext für die Verwendung des Videokonferenztools Zoom';
 
       if(textLabel == textTofind){
-        console.log(  $(this).closest('.customization2_attendee_further-data_custom-question_checkbox-line_checkbox').find('input'))
-        $(this).closest('.customization2_attendee_further-data_custom-question_checkbox-line_checkbox').find('input').addClass('popup');
+        $(this).closest('label').find('input').addClass('popup');
       }
 
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
