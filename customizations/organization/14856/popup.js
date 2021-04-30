@@ -15,10 +15,10 @@ console.log('GTM github!');
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
       var textLabel = $(this).text().trim();
-      var textTofind = 'Einwilligung zur Durchführung der Fachkonferenz Teilgebiete';
+      var textTofind = 'Einwilligungstext für die Verwendung des Videokonferenztools Zoom';
 
       if(textLabel == textTofind){
-        $(this).closest('label').find('input').addClass('popup');
+        $(this).closest('label').addClass('popup');
       }
 
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
