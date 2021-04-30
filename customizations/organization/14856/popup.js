@@ -59,8 +59,6 @@ console.log('GTM github!');
       }else{
         $('.popup').addClass('unchecked');
       }
-      
-      return false;
   });
   }
 
