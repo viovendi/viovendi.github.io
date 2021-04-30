@@ -28,7 +28,6 @@ console.log('GTM github!');
 
   // add class to checkbox
   function init(){
-    $('.customization2_attendee_further-data_custom-question_checkbox-line_checkbox').attr('disabled', true);
     addClass();
     if(!$('.popup input').is(':checked')){
        $('.popup').addClass('unchecked');
@@ -39,7 +38,7 @@ console.log('GTM github!');
 
 
   function popupClick(){
-    $('.popup' ).on('click', function(e){
+    $('.popup, .customization2_attendee_further-data_custom-question_checkbox-line_checkbox' ).on('click', function(e){
       if($(this).hasClass('unchecked')){
         e.preventDefault();
         addPopUp();
