@@ -39,9 +39,7 @@ console.log('GTM github!');
 
   function popupClick(){
 
-    $('.popup, .customization2_attendee_further-data_custom-question_checkbox-line input[type="checkbox"]' ).on('click', function(e){
-      e.preventDefault();
-      
+    $('.popup' ).on('click', function(e){
       if($(this).hasClass('unchecked')){
         e.preventDefault();
         addPopUp();
