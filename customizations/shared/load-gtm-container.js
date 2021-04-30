@@ -12,11 +12,12 @@ async function makeRequest(options) {
 
 var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
-console.log(window.location.pathname);
+var locale = window.location.pathname.split('/')[1]
 
-async function getContainerId(eventId) {
+
+async function getContainerId(eventId, locale) {
   const result = await makeRequest({
-    url: `https://api.doo.net/v1/events/${eventId}`,
+    url: `https://api.doo.net/v1/events/${eventId}?locale=${locale}`,
     type: 'get',
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +37,7 @@ async function getContainerId(eventId) {
 async function loadContainer() {
   const s = document.createElement("script");
   const sc = document.createElement("script");
-  const containerId = await getContainerId(eventId)
+  const containerId = await getContainerId(eventId, locale)
   // Add script content
   s.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${containerId}');`;
   sc.setAttribute("async", "");
