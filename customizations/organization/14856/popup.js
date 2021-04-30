@@ -48,6 +48,12 @@ console.log('GTM github!');
         $('.popup').addClass('unchecked');
       }
     });
+
+    $('.customization2_attendee_further-data_custom-question_checkbox-line input[type="checkbox"]').on('click', function(event) {
+      console.log('test1');
+      event.preventDefault();
+      return false;
+  });
   }
 
 
