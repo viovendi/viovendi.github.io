@@ -4,9 +4,11 @@ console.log('Start working, Google Tag Manager');
 
 
   $(".customization2_attendee_edit-action_save").click(function() {
+	  delay(800);
 	  console.log("scroll");
+	  delay(800);
     $('html, body').animate({
-        scrollTop: $(".customization2_attendees_title").offset().top
+        scrollTop: $("#customization2_attendees_title").offset().top
     }, 1000);
 });
 
