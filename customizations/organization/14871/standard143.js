@@ -72,11 +72,9 @@ scrollToAnchor();
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
         if( label_text.indexOf("Interaktiver Workshop: Pionierarbeit ist Teamarbeit") != -1){
-		console.log("interaktiv ws");
           if( $(this).is(':checked') ){
 		  
               $(this).addClass('checked-by-func');
-                console.log("ischecked");
 	  }
 	    
       }
@@ -92,20 +90,15 @@ if( $('input[type=checkbox]').closest('vv-additional-question-product').length )
 		    label = item.find("label"),
 		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 		    cap = $('.customization2_attendee_further-data_product_capacity').text();
-		      console.log(cap);
 
 			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
 			  	console.log('workshop');
 				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
-		      		console.log(cap);
-				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('84') != -1){
-					console.log("ausgebucht also zeige die frage an")
+				if(cap.indexOf('Ausgebucht') != -1 ){
 					show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				}
 					else {
-						console.log(cap)
-						hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
-				console.log("noch nicht ausgebucht, also verstecke die frage");
+					hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				} 
 
 			  if( !item.hasClass('ws')){
@@ -131,18 +124,14 @@ if( $('input[type=checkbox]').closest('vv-additional-question-product').length )
 		    label = item.find("label"),
 		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 		    cap = $('.customization2_attendee_further-data_product_capacity').text();
-		      console.log(cap);
 
 			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
-			  	console.log('workshop');
 				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
 		      		console.log(cap);
-				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('84') != -1){
-					console.log("ausgebucht also zeige die frage an")
+				if(cap.indexOf('Ausgebucht') != -1 ){
 					show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				}
 					else {
-						console.log(cap)
 						hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				console.log("noch nicht ausgebucht, also verstecke die frage");
 				} 
