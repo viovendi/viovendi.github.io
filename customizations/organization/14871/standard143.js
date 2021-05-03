@@ -2,7 +2,12 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-
+$(function(){
+  $(window).scroll(function(){
+	  console.log("scroll");
+    
+  });
+});
 
   var formValid;
   function handler(){
