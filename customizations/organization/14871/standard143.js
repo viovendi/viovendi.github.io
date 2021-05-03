@@ -12,6 +12,11 @@ function addPopUp(){
     }
   }
 addPopUp();
+$('.customization2_attendee_edit-action_save').on('click', function(){
+	scrollToAnchor();
+	console.log("scroll");
+}
+);
 function scrollToAnchor(){
     $('html,body').animate({scrollTop: $('#checkboxModal').offset().top},'slow');
 }
