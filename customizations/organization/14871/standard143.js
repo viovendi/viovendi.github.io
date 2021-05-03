@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
     formValid = false;
 
     checkboxChecked();
-	hide("vv-additional-question-radio","Ja");
+	hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste");
 
 
   }
@@ -79,11 +79,11 @@ console.log('Start working, Google Tag Manager');
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
-			    show("vv-additional-question-radio","Ja")
+			    show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 
 			  }else{
 			    item.removeClass('ws');
-			    hide("vv-additional-question-radio","Ja")
+			    hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 			  }
 			}
 	      }
