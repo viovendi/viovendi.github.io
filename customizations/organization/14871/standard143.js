@@ -2,7 +2,12 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
 
+scrollToAnchor('id3');
 
   var formValid;
   function handler(){
