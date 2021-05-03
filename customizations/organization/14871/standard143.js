@@ -2,17 +2,11 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-
-  $(".customization2_attendee_edit-action_save").click(function() {
-
-	  console.log("scroll");
-	  setTimeout(function() { 
+setTimeout(function() { 
         	  window.scrollBy(0, -100)
+	console.log("sscrolled");
 	    }, 2000);
-		
-		  
-			
-});
+  
 
   var formValid;
   function handler(){
