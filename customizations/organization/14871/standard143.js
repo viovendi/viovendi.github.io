@@ -7,7 +7,7 @@ console.log('Start working, Google Tag Manager');
 	 $(document).ready(function(){
     $( ".customization2_attendee_edit-action_save" ).click(function( event ) {
         event.preventDefault();
-        $("html, body").animate({ scrollTop: $($(this).attr("animation-name")).offset().top }, 500);
+        $("html, body").animate({ scrollTop: "0" }
     });
 });
   })
