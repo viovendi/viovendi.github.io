@@ -2,8 +2,11 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-
-$(".customization2_attendee_edit-action_save").click(function (){
+var insertionListener = function (event) {
+  if (event.animationName === "nodeInserted") {
+    console.log("Node has been inserted Git: ", event.target);
+    //Insert your code here
+    $(".customization2_attendee_edit-action_save").click(function (){
 	console.log("clicked");
                 $('html, body').animate({
                     scrollTop: $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step > div > div.vv-ph-lg.vv-pb-md > form > div.col-md-7 > vv-questions > vv-attendees > div > vv-heading > h2").offset().top
@@ -14,6 +17,15 @@ setTimeout(function () {
 	console.log("scrolled");
         },200);
   
+
+
+  }
+};
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+
 
   var formValid;
   function handler(){
