@@ -2,13 +2,6 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
- $(document).ready(function (){
-            $(".customization2_attendee_edit-action_save").click(function (){
-                $('html, body').animate({
-                    scrollTop: $(".progress-meter").offset().top
-                }, 2000);
-            });
-        });
 
 
   var formValid;
@@ -71,6 +64,41 @@ console.log('Start working, Google Tag Manager');
   	}
     );
   }
+
+function checkWhenload(){
+if( $('input[type=checkbox]').closest('vv-additional-question-product').length ){
+
+		var item = $(this).closest('vv-additional-question-product'),
+		    label = item.find("label"),
+		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
+		    cap = $('.customization2_attendee_further-data_product_capacity').text();
+		      console.log(cap);
+
+			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
+			  	console.log('workshop');
+				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
+		      		console.log(cap);
+				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('84') != -1){
+					console.log("ausgebucht also zeige die frage an")
+					show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+				}
+					else {
+						console.log(cap)
+						hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+				console.log("noch nicht ausgebucht, also verstecke die frage");
+				} 
+
+			  if( !item.hasClass('ws')){
+			    item.addClass('ws');
+			    //show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+
+			  }else{
+			    item.removeClass('ws');
+			    //hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+			  }
+			}
+	      }
+}
 
 
 
