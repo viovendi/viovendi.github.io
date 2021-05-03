@@ -2,12 +2,13 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-function checkScroll(){
-    $('html' , 'body').scroll(function(){
-      console.log("scroll");
-    });
-  }
-checkScroll();
+ $(document).ready(function (){
+            $(".customization2_attendee_edit-action_save").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#progress-meter").offset().top
+                }, 2000);
+            });
+        });
 
 
   var formValid;
