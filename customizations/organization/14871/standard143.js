@@ -6,12 +6,13 @@ console.log('Start working, Google Tag Manager');
   $(".customization2_attendee_edit-action_save").click(function() {
 
 	  console.log("scroll");
-	  setTimeout(function(){
-		  console.log("scrolled");
-  			$('html, body').animate({ scrollTop: $('#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step > div > div.vv-ph-lg.vv-pb-md > form > div.col-md-7').offset().top}, 1000);
-			}, 2000);
-	  $('html, body').animate({ scrollTop: $('#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step > div > div.vv-ph-lg.vv-pb-md > form > div.col-md-7').offset().top}, 1000);
-	
+	  setTimeout(function() { 
+        	  console.log("scroll");
+		$(window).scrollTop(100);
+    }, 2000);
+		
+		  
+			
 });
 
   var formValid;
