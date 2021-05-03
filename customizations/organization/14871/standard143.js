@@ -2,9 +2,17 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
+
+$(".customization2_attendee_edit-action_save").click(function (){
+	console.log("clicked");
+                $('html, body').animate({
+                    scrollTop: $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step > div > div.vv-ph-lg.vv-pb-md > form > div.col-md-7 > vv-questions > vv-attendees > div > vv-heading > h2").offset().top
+                }, 2000);
+            });
 setTimeout(function () {
             window.scrollTo(0, 1000);
-        },20);
+	console.log("scrolled");
+        },200);
   
 
   var formValid;
