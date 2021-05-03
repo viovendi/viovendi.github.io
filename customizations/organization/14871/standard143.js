@@ -2,7 +2,7 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-
+/*
  $('.customization2_attendee_edit-action_save').on('click', function(){
 	 $(document).ready(function(){
     $( ".customization2_attendee_edit-action_save" ).click(function( event ) {
@@ -11,7 +11,7 @@ console.log('Start working, Google Tag Manager');
     });
 });
   })
-
+*/
 
   var formValid;
   function handler(){
