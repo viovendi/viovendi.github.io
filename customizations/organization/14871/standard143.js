@@ -7,9 +7,11 @@ console.log('Start working, Google Tag Manager');
 
 	  console.log("scroll");
 	  setTimeout(
-  function() 
-  {
-console.log("timeout"  }, 1000);
+  		function() 
+  		{
+		console.log("timeout");
+			    }, 1000);
+	  
     $('html, body').animate({
         scrollTop: $("#customization2_attendees_title").offset().top
     }, 1000);
