@@ -83,13 +83,12 @@ console.log('Start working, Google Tag Manager');
 				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
 		      		console.log(cap);
 				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('83') != -1){
-					console.log("ausgebucht")
-											console.log(cap)
-
+					console.log("ausgebucht also zeige die frage an")
+					
 				}
 					else {
 						console.log(cap)
-				console.log("mehrals 1");
+				console.log("noch nicht ausgebucht, also verstecke die frage");
 				} 
 
 			  if( !item.hasClass('ws')){
