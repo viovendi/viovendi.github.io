@@ -2,25 +2,6 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-var insertionListener = function (event) {
-  if (event.animationName === "nodeInserted") {
-    console.log("Node has been inserted Git: ", event.target);
-    //Insert your code here
-    $(".customization2_attendee_edit-action_save").click(function (){
-	console.log("clicked");
-                $('html, body').animate({
-                    scrollTop: $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step > div > div.vv-ph-lg.vv-pb-md > form > div.col-md-7 > vv-questions > vv-attendees > div > vv-heading > h2").offset().top
-                }, 2000);
-            });
-setTimeout(function () {
-            window.scrollTo(0, 100);
-	console.log("scrolled");
-        },2000);
-  
-
-
-  }
-};
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
@@ -98,9 +79,13 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 		var item = $(this).closest('vv-additional-question-product'),
 		    label = item.find("label"),
 		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
+		    cap = $('.customization2_attendee_further-data_product_capacity').text();
+		      console.log(cap);
 
 			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
-			  console.log('workshop');
+			  	console.log('workshop');
+				cap = $('.customization2_attendee_further-data_product_capacity').text();
+		      		console.log(cap);
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
