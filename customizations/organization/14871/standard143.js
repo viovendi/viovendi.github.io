@@ -2,12 +2,22 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-function scrollToAnchor(aid){
-    var aTag = $("a[name='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+function addPopUp(){
+    if($('#checkboxModal').length < 1){
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head"></div><div class="modal-body"></div> </div></div>').insertBefore( ".customization2_booking-terms_text" );
+      // move popup to checkbox
+      var offset = $('.popup').offset();
+      var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
+
+      $('#checkboxModal .modal-content').css({top: positionPopup});
+    }
+  }
+addPopUp();
+function scrollToAnchor(){
+    $('html,body').animate({scrollTop: $('#checkboxModal').offset().top},'slow');
 }
 
-scrollToAnchor('id3');
+scrollToAnchor();
 
   var formValid;
   function handler(){
