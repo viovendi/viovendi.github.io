@@ -2,12 +2,13 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-$(function(){
-  $(window).scroll(function(){
-	  console.log("scroll");
-    
-  });
-});
+function checkScroll(){
+    $('body').scroll(function(){
+      console.log("scroll");
+    });
+  }
+checkScroll();
+
 
   var formValid;
   function handler(){
