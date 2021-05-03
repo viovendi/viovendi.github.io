@@ -8,8 +8,8 @@ console.log('Start working, Google Tag Manager');
 	  console.log("scroll");
 	  setTimeout(function() { 
         	  console.log("scroll");
-		$(window).scrollTop(100);
-    }, 2000);
+		 $('html,body').animate({scrollTop: 0});
+	    }, 2000);
 		
 		  
 			
