@@ -3,7 +3,7 @@ console.log("GTM works");
 console.log('Start working, Google Tag Manager');
 
 function checkScroll(){
-    $('body').scroll(function(){
+    $('html' , 'body').scroll(function(){
       console.log("scroll");
     });
   }
