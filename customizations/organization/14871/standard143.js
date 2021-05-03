@@ -6,8 +6,7 @@ function addPopUp(){
     if($('#checkboxModal').length < 1){
        $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head"></div><div class="modal-body"></div> </div></div>').insertBefore( ".customization2_booking-terms_text" );
       // move popup to checkbox
-      var offset = $('.popup').offset();
-      var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
+      var positionPopup = 35;
 
       $('#checkboxModal .modal-content').css({top: positionPopup});
     }
