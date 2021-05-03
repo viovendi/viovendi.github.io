@@ -6,14 +6,10 @@ console.log('Start working, Google Tag Manager');
   $(".customization2_attendee_edit-action_save").click(function() {
 
 	  console.log("scroll");
-	  setTimeout(
-  		function() 
-  		{
-		console.log("timeout");
-			    }, 1000);
+	  
 	  
     $('html, body').animate({
-        scrollTop: $(".customization2_attendees_title").offset().top
+        scrollTop: $(".customization2_attendees_title").scrollTo(100);
     }, 1000);
 });
 
