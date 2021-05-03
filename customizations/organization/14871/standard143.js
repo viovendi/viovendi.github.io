@@ -89,22 +89,23 @@ console.log('Start working, Google Tag Manager');
 			  	console.log('workshop');
 				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
 		      		console.log(cap);
-				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('83') != -1){
+				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('84') != -1){
 					console.log("ausgebucht also zeige die frage an")
-					
+					show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				}
 					else {
 						console.log(cap)
+						hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 				console.log("noch nicht ausgebucht, also verstecke die frage");
 				} 
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
-			    show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+			    //show("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 
 			  }else{
 			    item.removeClass('ws');
-			    hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
+			    //hide("vv-additional-question-radio","Ja, ich möchte auf die Warteliste")
 			  }
 			}
 	      }
