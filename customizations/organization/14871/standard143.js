@@ -2,10 +2,9 @@ console.log("GTM works");
 
 console.log('Start working, Google Tag Manager');
 
-setTimeout(function() { 
-        	  window.scrollBy(0, -100)
-	console.log("sscrolled");
-	    }, 2000);
+setTimeout(function () {
+            window.scrollTo(0, 300);
+        },2);
   
 
   var formValid;
