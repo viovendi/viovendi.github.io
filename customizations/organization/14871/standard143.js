@@ -3,10 +3,6 @@ console.log("GTM works");
 console.log('Start working, Google Tag Manager');
 
 
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); // 
-
 
   var formValid;
   function handler(){
