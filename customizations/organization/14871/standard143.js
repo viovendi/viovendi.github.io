@@ -69,7 +69,7 @@ console.log('Start working, Google Tag Manager');
 function checkWhenload(){
 if( $('input[type=checkbox]').closest('vv-additional-question-product').length ){
 
-		var item = $(this).closest('vv-additional-question-product'),
+		var item = $('input[type=checkbox]').closest('vv-additional-question-product'),
 		    label = item.find("label"),
 		    label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 		    cap = $('.customization2_attendee_further-data_product_capacity').text();
