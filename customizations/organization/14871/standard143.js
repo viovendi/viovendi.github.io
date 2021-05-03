@@ -9,7 +9,7 @@ console.log('Start working, Google Tag Manager');
 	  
 	  
     $('html, body').animate({
-        scrollTop: $(".customization2_attendees_title").scrollTo(100);
+        scrollTop: $(".customization2_attendees_title").scrollTo(100)
     }, 1000);
 });
 
