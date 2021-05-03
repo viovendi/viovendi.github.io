@@ -80,8 +80,17 @@ console.log('Start working, Google Tag Manager');
 
 			if( label_text == "Interaktiver Workshop: Pionierarbeit ist Teamarbeit" ){
 			  	console.log('workshop');
-				cap = $('.customization2_attendee_further-data_product_capacity').text();
+				cap = $('.customization2_attendee_further-data_product_capacity').text().replace(/^\s+|\s+$/g, "");
 		      		console.log(cap);
+				if(cap.indexOf('Ausgebucht') != -1 || cap.indexOf('83') != -1){
+					console.log("ausgebucht")
+											console.log(cap)
+
+				}
+					else {
+						console.log(cap)
+				console.log("mehrals 1");
+				} 
 
 			  if( !item.hasClass('ws')){
 			    item.addClass('ws');
