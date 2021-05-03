@@ -13,9 +13,9 @@ var insertionListener = function (event) {
                 }, 2000);
             });
 setTimeout(function () {
-            window.scrollTo(0, 1000);
+            window.scrollTo(0, 100);
 	console.log("scrolled");
-        },200);
+        },2000);
   
 
 
