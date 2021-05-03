@@ -3,12 +3,14 @@ console.log("GTM works");
 console.log('Start working, Google Tag Manager');
 
 
-scrollTo = $('.customization2_booking-terms');
-
-var $container = $("html,body");
-var $scrollTo = $('.customization2_booking-terms');
+ $('.customization2_attendee_edit-action_save').on('click', function(){
+	 scrollTo = $('.customization2_booking-terms');
+    	var $container = $("html,body");
+	var $scrollTo = $('.customization2_booking-terms');
 
 $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},300); 
+console.log("sroll");
+  })
 
 
   var formValid;
