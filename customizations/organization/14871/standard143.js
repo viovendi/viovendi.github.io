@@ -13,7 +13,7 @@ console.log('Start working, Google Tag Manager');
 			    }, 1000);
 	  
     $('html, body').animate({
-        scrollTop: $("#customization2_attendees_title").offset().top
+        scrollTop: $(".customization2_attendees_title").offset().top
     }, 1000);
 });
 
