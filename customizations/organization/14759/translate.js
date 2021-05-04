@@ -3,8 +3,8 @@
 console.log("GTM Git loaded");
 
 // replace placeholder on first page:
-var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input").find('placeholder').text();
-console.log(placeholder);
+var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input");
+placeholder.attr("placeholder", "Search");
 //
 
 
