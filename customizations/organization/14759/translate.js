@@ -3,7 +3,7 @@
 console.log("GTM Git loaded");
 
 // replace placeholder on first page:
-var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input").find('placeholder').innerHTML;
+var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input").find('placeholder').text();
 console.log(placeholder);
 //
 
@@ -12,7 +12,8 @@ var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > u
 var replace = ava.replace("available", "tillgängliga platser");
 $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
 
-
+//back (on top)
+//$('.button-back').text()
 
 //Dropdown
 $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__value-container > vv-selection-input > div > div > p").text('Välj varuhus');
