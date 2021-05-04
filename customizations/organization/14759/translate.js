@@ -1,10 +1,13 @@
 
-
+// Ü, ü     \u00dc, \u00fc
+// Ä, ä     \u00c4, \u00e4
+// Ö, ö     \u00d6, \u00f6
+// ß        \u00df
 console.log("GTM Git loaded");
 
 // replace placeholder on first page:
 var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input")
-placeholder.attr("placeholder", "Sök efter nyckelord");
+placeholder.attr("placeholder", "S\u00f6k efter nyckelord");
 //
 
 
@@ -26,7 +29,7 @@ setInterval(function(){
   
   //replace available
 var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
-var replace = ava.replace("available", "tillgängliga platser");
+var replace = ava.replace("available", "tillg\u00e4ngliga platser");
 $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
 
 //page 1
