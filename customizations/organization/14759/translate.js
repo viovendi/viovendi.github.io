@@ -54,7 +54,7 @@ var inner = $('.event-category__amount').innerHTML;
 //Get last two
  
 //var splitText = available.split(" ").splice(9).join(" ");}
-console.log(splitText);
+console.log(available);
 console.log(inner);
 
 //$('.event-category__amount')
