@@ -156,7 +156,7 @@ $('.customization-confirmation-description').text('Tack för din bokning! Inom k
 $('.customization-client-portal-description').text('Information om eventet hittar du även i bokningsportalen:');
   
 //Your Booking Portal
-$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.:');
+$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.');
 $('.customization-client-portal-link').css('color', '#F99D27');
   
   
