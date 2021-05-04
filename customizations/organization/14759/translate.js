@@ -50,9 +50,10 @@ $('.customization-event-info-contact-label').text('Kontakta arrangör');
 //99 available
   //Get text
 var available = $('.event-category__amount').text();
-var inner = $('.event-category__amount').innerHTML;
+var inner = $('.event-category__amount').find("label").innerHTML;
 //Get last two
- 
+  var res = available.replace("available", "someword");
+  $('.event-category__amount').text(res);
 //var splitText = available.split(" ").splice(9).join(" ");}
 console.log(available);
 console.log(inner);
