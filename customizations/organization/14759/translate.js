@@ -7,10 +7,6 @@ var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > 
 console.log(placeholder);
 //
 
-//replace available
-var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
-var replace = ava.replace("available", "tillgängliga platser");
-$("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
 
 //back (on top)
 //$('.button-back').text()
@@ -28,7 +24,11 @@ $('.vv-selection-input__control').click(function () {
 
 setInterval(function(){ 
   
-  
+  //replace available
+var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
+var replace = ava.replace("available", "tillgängliga platser");
+$("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
+
 //page 1
   //contact person
 $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div.row.event-info__address > div.col-xs-12.col-12.col-sm-8 > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)").text('Kontaktperson: ');
