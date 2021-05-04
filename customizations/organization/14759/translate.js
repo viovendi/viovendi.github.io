@@ -5,7 +5,13 @@ console.log("GTM Git loaded");
 // replace placeholder on first page:
 
 //
-$("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input").attr("placeholder", "Sök efter nyckelord");
+
+//replace available
+var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
+var replace = ava.replace("available", "tillgängliga platser");
+$("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
+
+
 
 //Dropdown
 $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__value-container > vv-selection-input > div > div > p").text('Välj varuhus');
@@ -47,16 +53,12 @@ $('.ng-tns-c47-1').attr("placeholder", "Slutdatum");
 $('.customization-event-info-contact-label').text('Kontakta arrangör');
 
 
-//99 available
-  //Get text
+//99 available Replace the word
 var available = $('.event-category__amount').text();
-var inner = $('.event-category__amount').find("label").innerHTML;
-//Get last two
-  var res = available.replace("available", "someword");
-  $('.event-category__amount').text(res);
-//var splitText = available.split(" ").splice(9).join(" ");}
-console.log(available);
-console.log(inner);
+var res = available.replace("available", "tillgängliga platser");
+$('.event-category__amount').text(res);
+  
+
 
 //$('.event-category__amount')
 
