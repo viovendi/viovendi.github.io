@@ -139,9 +139,7 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresser stämmer inte överens');
 
 //Change selection
-var buttn = $('.customization-button-previous').text();
-var repBut = buttn.replace("Change selection", "Tillbaka till urval");
-$('.customization-button-previous').text(repBut);
+$('.customization-button-previous').text('<- Tillbaka till urval');
 
 //Book now
 $('.customization-button-next').text('Boka nu');
