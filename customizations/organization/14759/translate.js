@@ -48,6 +48,14 @@ $('.customization-event-info-contact-label').text('Kontakta arrangör');
 
 
 //99 available
+  //Get text
+var available = $('.event-category__amount').text();
+var inner = $('.event-category__amount').innerHTML;
+//Get last two
+var splitText = available.textContent.split(" ").splice(9).join(" ");
+console.log(splitText);
+console.log(inner);
+
 //$('.event-category__amount')
 
 
