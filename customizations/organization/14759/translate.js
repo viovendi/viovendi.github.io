@@ -3,7 +3,7 @@
 console.log("GTM Git loaded");
 
 // replace placeholder on first page:
-var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input").find('placeholder').innerHTML;
+var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input").find('placeholder').innerHTML;
 console.log(placeholder);
 //
 
@@ -60,8 +60,7 @@ $('.event-category__amount').text(res);
   
 
 
-//$('.event-category__amount')
-
+$('.event-category__error').text('has ended');
 
 //Next
 $('.customization-button-next').text('Nästa');
