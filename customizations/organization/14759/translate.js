@@ -157,7 +157,7 @@ $('.customization-client-portal-description').text('Information om eventet hitta
   
 //Your Booking Portal
 $('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.:');
-$('.customization-client-portal-link .a').css('color', '#F99D27');
+$('.customization-client-portal-link').css('color', '#F99D27');
   
   
  }, 1000);
