@@ -145,7 +145,7 @@ var but = $('.customization-button-previous .button').text();
   console.log(but)
   console.log(buttn)
 var repBut = but.replace("Change selection", "Tillbaka till urval");
-/$('.customization-button-previous').text(repBut);
+//$('.customization-button-previous').text(repBut);
 
 //Book now
 $('.customization-button-next').text('Boka nu');
