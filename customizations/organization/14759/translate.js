@@ -52,8 +52,8 @@ $('.customization-event-info-contact-label').text('Kontakta arrangör');
 var available = $('.event-category__amount').text();
 var inner = $('.event-category__amount').innerHTML;
 //Get last two
-  if(available != null){
-var splitText = available.textContent.split(" ").splice(9).join(" ");}
+  if(available.lenght() == 0){
+var splitText = available.split(" ").splice(9).join(" ");}
 console.log(splitText);
 console.log(inner);
 
