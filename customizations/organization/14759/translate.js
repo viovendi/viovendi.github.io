@@ -149,4 +149,4 @@ $('.customization-button-next').text('Boka nu');
   
   
   
- }, 3000);
+ }, 1000);
