@@ -144,5 +144,20 @@ $('.customization-button-previous').text('<- Tillbaka till urval');
 $('.customization-button-next').text('Boka nu');
   
   
+//page 3 Confirmation
+
+//Booking confirmation
+$('.customization-confirmation-label').text('Bokningsbekräftelse');
+  
+//Thank you for your booking. You will shortly receive your confirmation by email.
+$('.customization-confirmation-description').text('Tack för din bokning! Inom kort skickar vi en bekräftelse med din eventbiljett till den e-postadress du uppgivit.');
+  
+//Details and documents are available in the booking portal:
+$('.customization-client-portal-description').text('Information om eventet hittar du även i bokningsportalen:');
+  
+//Your Booking Portal
+$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.:');
+$('.customization-client-portal-link .a').css('color', '#F99D27');
+  
   
  }, 1000);
