@@ -27,12 +27,7 @@ markAsChecked("Double Opt in Text");
 }
 
 
-//change Datasecurity text
-var obj = $(".customization2_booking-terms_text").text("Ich willige ein, dass die Wealthcap Kapitalverwaltungsgesellschaft mbH die von mir angegebenen personenbezogenen Daten zu Werbezwecken per E-Mail und/oder Briefpost nutzt, um mir Informationen zu Veranstaltungen, zum Unternehmen und zu weiteren Produkten und Angeboten der Wealthcap Kapitalverwaltungsgesellschaft mbH aus dem Bereich der Finanz- und Kapitalanlage sowie zur Immobilienwirtschaft zukommen zu lassen. \n \n Ich nehme zur Kenntnis, dass Wealthcap die Richtigkeit meiner E-Mail-Adresse durch Zusendung eines von mir zu bestätigenden Links überprüft. Nur durch diese Bestätigung schließe ich meine Anmeldung erfolgreich ab.\n\n");
-obj.append($('<a/>').attr({ href:"https://www.wealthcap.com/service/datenschutz", target:"_blank" }).html("Es gelten die Datenschutzinformationen von Wealthcap.")).html();
-obj.html(obj.html().replace(/\n/g,'<br/>'));
-// .customization2_booking-terms_text
-$(".customization2_booking-terms_custom-term-1").hide();
+
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
@@ -43,6 +38,12 @@ var insertionListener = function (event) {
     $('.customization2_opt-out-and-opt-in').hide()
   }
 };
+//change Datasecurity text
+var obj = $(".customization2_booking-terms_text").text("Ich willige ein, dass die Wealthcap Kapitalverwaltungsgesellschaft mbH die von mir angegebenen personenbezogenen Daten zu Werbezwecken per E-Mail und/oder Briefpost nutzt, um mir Informationen zu Veranstaltungen, zum Unternehmen und zu weiteren Produkten und Angeboten der Wealthcap Kapitalverwaltungsgesellschaft mbH aus dem Bereich der Finanz- und Kapitalanlage sowie zur Immobilienwirtschaft zukommen zu lassen. \n \n Ich nehme zur Kenntnis, dass Wealthcap die Richtigkeit meiner E-Mail-Adresse durch Zusendung eines von mir zu bestätigenden Links überprüft. Nur durch diese Bestätigung schließe ich meine Anmeldung erfolgreich ab.\n\n");
+obj.append($('<a/>').attr({ href:"https://www.wealthcap.com/service/datenschutz", target:"_blank" }).html("Es gelten die Datenschutzinformationen von Wealthcap.")).html();
+obj.html(obj.html().replace(/\n/g,'<br/>'));
+// .customization2_booking-terms_text
+$(".customization2_booking-terms_custom-term-1").hide();
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
