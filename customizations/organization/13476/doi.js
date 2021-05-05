@@ -26,7 +26,7 @@ function handler() {
 markAsChecked("Double Opt in Text");
 }
 
-
+$('.vv-checkbox__indicator').css({"position":"absolute","top":"85px","left":"23px");
 
 
 var insertionListener = function (event) {
