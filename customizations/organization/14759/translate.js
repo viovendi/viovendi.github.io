@@ -141,12 +141,12 @@ $('.customization2_booker_contact-data_email-confirmation_error').text('Vänlige
 $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 //Cancel
-//$('.customization2_booker_edit-action_cancel .vv-button .vv-button-text .vv-button-text-blue').text('Avbryt');
+//$('.vv-button vv-button-text vv-button-text-blue vv-text__size--md').text('Avbryt');
     //replace available
-var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text();
+var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button vv-button-text vv-button-text-blue vv-text__size--md").text();
   console.log(canceltext);
 var replacecancel = canceltext.replace("Cancel", "Avbryt");
-$(".customization2_booker_edit-action_cancel .vv-button-text-blue").text(replacecancel);
+$(".customization2_booker_edit-action_cancel .vv-button vv-button-text vv-button-text-blue vv-text__size--md").text(replacecancel);
   
 //Email addresses not matching
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
