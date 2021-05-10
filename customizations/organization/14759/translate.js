@@ -164,8 +164,8 @@ $('.customization2_booker_contact-data_email_label').text('E-postadress (för bo
 $('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
 
   
-//Please enter valid email address
-$('.customization2_booker_contact-data_email_error').text('Vänligen fyll i giltig e-postadress');
+//already registed
+$('.customization2_booker_contact-data_email_error').text('Du är redan inbokad på detta event');
 
 //Confirm email address
 $('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
