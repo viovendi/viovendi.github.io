@@ -24,7 +24,10 @@ function translateDates() {
   var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
   var swMonths = [ 'Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
   
+  //get index of english month
   var indexEN = enMonths.indexOf(month);
+    
+  //replace english month by swedish month by using the same index
   $(".p-datepicker-month").text(swMonths[indexEN]);
   
 }
