@@ -27,6 +27,14 @@ $('.vv-selection-input__control').click(function () {
 
 setInterval(function(){ 
   
+  
+  //Calender Su Mo ...
+  var mo = $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text();
+  console.log(mo);
+  var di = $("#div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text();
+  console.log(di);
+  var mi = $(".div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text();
+  console.log(mi);
   //replace available
 var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
 var replace = ava.replace("available", "tillg\u00e4ngliga platser");
