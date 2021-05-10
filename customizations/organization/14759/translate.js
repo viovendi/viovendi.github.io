@@ -143,7 +143,7 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
 //Cancel
 //$('.document.querySelector("#vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text")).text('Avbryt');
     //replace available .customization2_booker_edit-action_cancel .vv-button-text-blue
-  vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text
+  //vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text
 var canceltext =  $("vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text").text();
 var replacecancel = canceltext.replace("Cancel", "Avbryt");
 $("vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text").text(replacecancel);
