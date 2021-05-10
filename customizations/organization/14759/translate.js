@@ -198,7 +198,7 @@ $('.customization-button-next').text('Boka nu');
 $('.customization2_booking-terms_text').each(function() {
 var text = $(this).text('Jag har läst integritets- & personuppgiftspolicyn och godkänner att mina uppgifter registreras.');
 var editedtext = text.text();
-$(this).html(editedtext.replace('integritets- & personuppgiftspolicyn', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/" , target:"_blank">integritets- & personuppgiftspolicyn</a>'));
+$(this).html(editedtext.replace('integritets- & personuppgiftspolicyn', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/", target:"_blank">integritets- & personuppgiftspolicyn</a>'));
 });
   
   
