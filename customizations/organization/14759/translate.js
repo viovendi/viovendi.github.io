@@ -145,7 +145,7 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
     //replace available
 var canceltext =  $(".customization2_booker_edit-action_cancel").text();
 var replacecancel = canceltext.replace("Cancel", "Avbryt");
-$("customization2_booker_edit-action_cancel").text(replacecancel);
+$(".customization2_booker_edit-action_cancel").text(replacecancel);
   
 //Email addresses not matching
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
