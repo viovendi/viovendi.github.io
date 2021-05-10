@@ -147,10 +147,11 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
 var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html();
   console.log(canceltext);
   if(!typeof canceltext === "undefined"){
-    $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(
-    var replacedcancel = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html().replace("Cancel", "&#9747; Avbryt")
-    $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replacedcancel);
-  );
+   
+   var replaced = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html().replace("Cancel", "&#9747; Avbryt")
+  
+    
+    
 //var replacecancel = canceltext.replace("Cancel", "&#9747; Avbryt");
 //$(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replacecancel);
   }
