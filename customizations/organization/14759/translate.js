@@ -43,7 +43,7 @@ setInterval(function(){
   var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
   
   var indexEN = enMonths.indexOf(month);
-  month.text(swMonths[indexEN]);
+  $(".p-datepicker-month").text(swMonths[indexEN]);
   //replace available
 var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
 var replace = ava.replace("available", "tillg\u00e4ngliga platser");
