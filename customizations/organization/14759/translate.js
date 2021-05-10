@@ -24,7 +24,24 @@ $('.vv-selection-input__control').click(function () {
 }
                                 )
 
-
+$('.vv-input__control-container').click(function() {
+  $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text('Sö');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text('Må');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Ti');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('On');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('To');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Fr');
+    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Lö');
+  
+  var month = $(".p-datepicker-month").text();
+  console.log(month)
+  var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+  var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+  
+  var indexEN = enMonths.indexOf(month);
+  $(".p-datepicker-month").text(swMonths[indexEN]);
+  
+}
 setInterval(function(){ 
   
   $('.p-datepicker-next').click(function() {
