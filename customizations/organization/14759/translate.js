@@ -75,12 +75,18 @@ $('.customization-encrypted-connection').text('Krypterad anslutning');
 
 //		Selection
 //$('.progress-point__label').text('');
+ 
 
 
 $('.ew-header__progress-container .progress-meter .selection span').text('Urval');
 $('.ew-header__progress-container .progress-meter .information span').text('Deltagarinformation');
 $('.ew-header__progress-container .progress-meter .confirmation span').text('Bekräftelse');
-
+  
+  
+//Please select a ticket category
+$('.ew-selection__error').text('Välj antal biljetter du vill boka');
+  
+  
 //ATTENDEE DETAILS // BOOKING DETAILS
 $('.customization2_booker_title').text('BOKNINGSINFORMATION');
     
@@ -139,10 +145,14 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
 
 
 //Email addresses not matching
-$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresser stämmer inte överens');
+$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
 //Change selection
 $('.customization-button-previous').text('<- Tillbaka till urval');
+  
+//Back button (Back to Overview)
+$('.button-back').text('<- Tillbaka till översikt');
+
 
 //Book now
 $('.customization-button-next').text('Boka nu');
