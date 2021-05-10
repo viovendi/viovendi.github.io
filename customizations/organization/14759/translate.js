@@ -161,7 +161,7 @@ $('.customization-button-next').text('Boka nu');
 var obj = $(".customization2_booking-terms_text").text("Jag har läst [integritets- & personuppgiftspolicyn] och godkänner att mina uppgifter registreras.");
 if(!obj.length <= 0){
 
-obj.append($('<a/>').attr({ href:"https://www.wealthcap.com/service/datenschutz", target:"_blank" }).html("[integritets- & personuppgiftspolicyn]")).html();
+obj.append($('<a/>').attr({ href:"https://www.google.com/", target:"_blank" }).html("[integritets- & personuppgiftspolicyn]")).html();
 obj.html(obj.html().replace(/\n/g,'<br/>'));
   }
 $(".customization2_booking-terms_custom-term-1").hide();
