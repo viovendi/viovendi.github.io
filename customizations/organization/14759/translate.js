@@ -145,9 +145,10 @@ $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifte
     //replace available .customization2_booker_edit-action_cancel .vv-button-text-blue
   //vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text
 var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html();
+  if(!canceltext.length <= 0){
 var replacecancel = canceltext.replace("Cancel", "&#9747; Avbryt");
 $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replacecancel);
-  
+  }
 //Email addresses not matching
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
