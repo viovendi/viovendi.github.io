@@ -37,6 +37,13 @@ setInterval(function(){
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Fr');
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Lö');
   
+  var month = $("div.p-datepicker-header.ng-tns-c47-0 > div > span.p-datepicker-month.ng-tns-c47-0.ng-star-inserted").text();
+  console.log(month)
+  var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+  var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+  
+  var indexEN = enMonths.indexOf(month);
+  month.text(swMonths[indexEN]);
   //replace available
 var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
 var replace = ava.replace("available", "tillg\u00e4ngliga platser");
