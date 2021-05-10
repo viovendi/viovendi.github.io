@@ -140,10 +140,10 @@ $('.customization2_booker_contact-data_email-confirmation_error').text('Vänlige
 //Accept
 $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
-//I accept the following terms:
-//$('.customization2_booking-terms_text').text('');
-
-
+//Cancel
+$('.customization2_booker_edit-action_cancel').text('Avbryt');
+  
+  
 //Email addresses not matching
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
