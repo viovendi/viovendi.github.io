@@ -141,7 +141,7 @@ $('.customization2_booker_contact-data_email-confirmation_error').text('Vänlige
 $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 //Cancel
-$('.customization2_booker_edit-action_cancel .vv-button .vv-button-text .vv-button-text-blue').text('Avbryt');
+//$('.customization2_booker_edit-action_cancel .vv-button .vv-button-text .vv-button-text-blue').text('Avbryt');
     //replace available
 var canceltext =  $(".customization2_booker_edit-action_cancel").text();
 var replacecancel = canceltext.replace("Cancel", "Avbryt");
