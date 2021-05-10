@@ -41,7 +41,9 @@ $('.vv-input__control-container').click(function() {
   var indexEN = enMonths.indexOf(month);
   $(".p-datepicker-month").text(swMonths[indexEN]);
   
-}
+});
+
+
 setInterval(function(){ 
   
   $('.p-datepicker-next').click(function() {
