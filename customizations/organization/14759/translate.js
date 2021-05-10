@@ -37,7 +37,7 @@ setInterval(function(){
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Fr');
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Lö');
   
-  var month = $("div.p-datepicker-header.ng-tns-c47-0 > div > span.p-datepicker-month.ng-tns-c47-0.ng-star-inserted").text();
+  var month = $(".p-datepicker-month").text();
   console.log(month)
   var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
   var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
