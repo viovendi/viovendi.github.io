@@ -27,7 +27,7 @@ $('.vv-selection-input__control').click(function () {
 
 setInterval(function(){ 
   
-  
+  $('.p-datepicker-next').click(function() {
   //Calender stats with sunday: Su Mo ...
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text('Sö');
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text('Må');
@@ -44,6 +44,9 @@ setInterval(function(){
   
   var indexEN = enMonths.indexOf(month);
   $(".p-datepicker-month").text(swMonths[indexEN]);
+});
+  
+  
   //replace available
 var ava =  $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
 var replace = ava.replace("available", "tillg\u00e4ngliga platser");
