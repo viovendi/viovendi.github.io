@@ -10,13 +10,15 @@ var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > 
 placeholder.attr("placeholder", "S\u00f6k efter nyckelord");
 //
 function translateDates() {
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text('Sö');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text('Må');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Ti');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('On');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('To');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Fr');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Lö');
+    $("table > thead > tr > th:nth-child(1) > span").text('Sö');
+    $("table > thead > tr > th:nth-child(2) > span").text('Må');
+    $("table > thead > tr > th:nth-child(3) > span").text('Ti');
+    $("table > thead > tr > th:nth-child(3) > span").text('On');
+    $("table > thead > tr > th:nth-child(3) > span").text('To');
+    $("table > thead > tr > th:nth-child(3) > span").text('Fr');
+    $("table > thead > tr > th:nth-child(3) > span").text('Lö');
+    //div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > 
+    //$("div.p-datepicker-calendar-container.ng-tns-c47-1.ng-star-inserted > table > thead > tr > th:nth-child(2) > span")
   
   var month = $(".p-datepicker-month").text();
   console.log(month)
