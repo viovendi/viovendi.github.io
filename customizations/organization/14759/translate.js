@@ -9,45 +9,7 @@ console.log("GTM Git loaded");
 var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input")
 placeholder.attr("placeholder", "S\u00f6k efter nyckelord");
 //
-
-
-//back (on top)
-//$('.button-back').text()
-
-//Dropdown
-$("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__value-container > vv-selection-input > div > div > p").text('Välj varuhus');
-//Dropdown opened
-$('.vv-selection-input__control').click(function () {
-  setTimeout(function(){
-    $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__dropdown-container.vv-selection__dropdown-container--bottom > vv-single-select-dropdown > div > vv-single-select-option:nth-child(1) > div").text('Välj varuhus');
-}, 50);
-}
-                                )
-
-$('.vv-input__control-container').click(function() {
-  $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text('Sö');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text('Må');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Ti');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('On');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('To');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Fr');
-    $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Lö');
-  
-  var month = $(".p-datepicker-month").text();
-  console.log(month)
-  var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
-  var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
-  
-  var indexEN = enMonths.indexOf(month);
-  $(".p-datepicker-month").text(swMonths[indexEN]);
-  
-});
-
-
-setInterval(function(){ 
-  
-  $('.p-datepicker-next').click(function() {
-  //Calender stats with sunday: Su Mo ...
+function translateDates() {
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(1) > span").text('Sö');
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(2) > span").text('Må');
     $("div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > table > thead > tr > th:nth-child(3) > span").text('Ti');
@@ -63,6 +25,37 @@ setInterval(function(){
   
   var indexEN = enMonths.indexOf(month);
   $(".p-datepicker-month").text(swMonths[indexEN]);
+  
+}
+
+//back (on top)
+//$('.button-back').text()
+
+//Dropdown
+$("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__value-container > vv-selection-input > div > div > p").text('Välj varuhus');
+//Dropdown opened
+$('.vv-selection-input__control').click(function () {
+  setTimeout(function(){
+    $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(2) > vv-selection > div > div.vv-selection__dropdown-container.vv-selection__dropdown-container--bottom > vv-single-select-dropdown > div > vv-single-select-option:nth-child(1) > div").text('Välj varuhus');
+}, 50);
+}
+                                )
+
+$('.vv-input__control-container').click(function() {
+    translateDates();
+});
+$('.p-datepicker-next').click(function() {
+  translateDates();
+});
+$('.p-datepicker-prev').click(function() {
+  translateDates();
+});
+
+
+setInterval(function(){ 
+  
+  $('.p-datepicker-next').click(function() {
+  
 });
   
   
