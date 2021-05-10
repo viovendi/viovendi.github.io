@@ -157,14 +157,15 @@ $('.button-back').text('Tillbaka till översikt');
 //Book now
 $('.customization-button-next').text('Boka nu');
   
-  //change Datasecurity text
-var obj = $(".customization2_booking-terms_text").text("Jag har läst [integritets- & personuppgiftspolicyn] och godkänner att mina uppgifter registreras.");
-if(!obj.length <= 0){
+ /* 
+$('.customization2_booking-terms_text').each(function() {
+var text = $(this).text('Jag har läst [integritets- & personuppgiftspolicyn] och godkänner att mina uppgifter registreras.');
+$(this).html(text.replace('[integritets- & personuppgiftspolicyn]', '<a href="http://xxx.xx/name/">[integritets- & personuppgiftspolicyn]</a>'));
+});
+  */
+  
 
-obj.append($('<a/>').attr({ href:"https://www.google.com/", target:"_blank" }).html("[integritets- & personuppgiftspolicyn]")).html();
-obj.html(obj.html().replace(/\n/g,'<br/>'));
-  }
-$(".customization2_booking-terms_custom-term-1").hide();
+//$(".customization2_booking-terms_custom-term-1").hide();
   
   
 //page 3 Confirmation
