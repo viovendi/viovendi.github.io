@@ -148,9 +148,10 @@ var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-b
   console.log(canceltext);
   if(!typeof canceltext === "undefined"){
    
-   var htmltext = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html()
-   var replacedText = htmltext.replace("Cancel", "&#9747; Avbryt")
-   $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replacedText)
+    
+    
+var replaced = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html().replace(/Cancel/g,'&#9747; Avbryt');
+$(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replaced);
     
     
 //var replacecancel = canceltext.replace("Cancel", "&#9747; Avbryt");
