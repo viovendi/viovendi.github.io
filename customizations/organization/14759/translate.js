@@ -149,7 +149,7 @@ var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-b
   if(!typeof canceltext === "undefined"){
    
    var replaced = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html().replace("Cancel", "&#9747; Avbryt")
-  
+    $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replaced)
     
     
 //var replacecancel = canceltext.replace("Cancel", "&#9747; Avbryt");
