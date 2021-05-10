@@ -21,9 +21,8 @@ function translateDates() {
     //$("div.p-datepicker-calendar-container.ng-tns-c47-1.ng-star-inserted > table > thead > tr > th:nth-child(2) > span")
   
   var month = $(".p-datepicker-month").text();
-  console.log(month)
   var enMonths = [ 'January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
-  var swMonths = ['Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+  var swMonths = [ 'Januari','Februari','Mars', 'April', 'Maj' , 'Juni' , 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
   
   var indexEN = enMonths.indexOf(month);
   $(".p-datepicker-month").text(swMonths[indexEN]);
