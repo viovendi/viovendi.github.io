@@ -161,12 +161,12 @@ $('.customization-button-next').text('Boka nu');
 $('.customization2_booking-terms_text').each(function() {
 var text = $(this).text('Jag har läst [integritets- & personuppgiftspolicyn] och godkänner att mina uppgifter registreras.');
 var editedtext = text.text();
-$(this).html(editedtext.replace('[integritets- & personuppgiftspolicyn]', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/">[integritets- & personuppgiftspolicyn]</a>'));
+$(this).html(editedtext.replace('[integritets- & personuppgiftspolicyn]', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/" , target:"_blank">[integritets- & personuppgiftspolicyn]</a>'));
 });
   
   
 
-//$(".customization2_booking-terms_custom-term-1").hide();
+$(".customization2_booking-terms_custom-term-1").hide();
   
   
 //page 3 Confirmation
