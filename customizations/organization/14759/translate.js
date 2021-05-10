@@ -141,22 +141,10 @@ $('.customization2_booker_contact-data_email-confirmation_error').text('Vänlige
 $('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 //Cancel
-//$('.document.querySelector("#vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text")).text('Avbryt');
-    //replace available .customization2_booker_edit-action_cancel .vv-button-text-blue
-  //vv-button.vv-mr-sm.customization2_booker_edit-action_cancel > button > text
-var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html();
-  console.log(canceltext);
-  if(!typeof canceltext === "undefined"){
-   
-    
-    
-var replaced = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").html().replace(/Cancel/g,'&#9747; Avbryt');
-$(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replaced);
-    
-    
-//var replacecancel = canceltext.replace("Cancel", "&#9747; Avbryt");
-//$(".customization2_booker_edit-action_cancel .vv-button-text-blue").html(replacecancel);
-  }
+var canceltext =  $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text();
+var replacecancel = canceltext.replace("Cancel", "X Avbryt");
+$(".customization2_booker_edit-action_cancel .vv-button-text-blue").text(replacecancel);
+//   if(!typeof canceltext === "undefined"){}
 //Email addresses not matching
 $('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
