@@ -53,6 +53,7 @@ function prefill(){
     if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
       $(".customization2_booker_contact-data_country_input")[0].selectedIndex = 49;
       $('.customization2_booker_contact-data_country_input').focus();
+      $('.customization2_booker_contact-data_country_input').trigger('click');
       $('.customization2_booker_contact-data_country_input').trigger('focusout');
     }
   
