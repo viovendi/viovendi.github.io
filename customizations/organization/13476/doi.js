@@ -53,8 +53,9 @@ function prefill(){
     if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
       $(".customization2_booker_contact-data_country_input").attr('option','Deutschland');
     }
-    
-    
+  
+  //set focus to first input
+  $('.customization2_booker_contact-data_first-name_input').focus();    
 }
 
 prefill();
