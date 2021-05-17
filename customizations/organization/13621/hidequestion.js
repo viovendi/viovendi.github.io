@@ -1,4 +1,4 @@
-console.log('hide Eventinsight');
+console.log('hide wkz');
 
 //funktion to hide Label of question
 function hideQuestion(tag, name) {
@@ -15,7 +15,7 @@ hideQuestion(".customization2_booker_further-data_custom-question", "WKZ-Nummer"
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
-  console.log("noteInserted Eventinsight");
+  console.log("hide wkz");
 hideQuestion(".customization2_booker_further-data_custom-question", "WKZ-Nummer");
      }
    }
