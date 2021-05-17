@@ -21,35 +21,8 @@ $('.customization2_organizer-bank-transfer_button').trigger('click');
 $("vv-payment-method-selection > div > div.vv-p-xl.vv-border-xs.vv-border-grey-light.vv-rounded-lg").hide()
 
 
-//Prefill fields
-if ($('.customization2_booker_contact-data_street_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_street_input').val('prefilled');
-  $('.customization2_booker_contact-data_street_input').focus();
-  $('.customization2_booker_contact-data_street_input').trigger('focusout');
-}
 
-if ($('.customization2_booker_contact-data_street-number_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_street-number_input').val('prefilled');
-  $('.customization2_booker_contact-data_street-number_input').focus();
-  $('.customization2_booker_contact-data_street-number_input').trigger('focusout');
-  
-}
-if ($('.customization2_booker_contact-data_zip_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_zip_input').val('prefilled');
-  $('.customization2_booker_contact-data_zip_input').focus();
-  $('.customization2_booker_contact-data_zip_input').trigger('focusout');
-  
-}
-if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_city_input').val('prefilled');
-  $('.customization2_booker_contact-data_city_input').focus();
-  $('.customization2_booker_contact-data_city_input').trigger('focusout');
-  
-}
-console.log($('.customization2_booker_contact-data_country_input').val().length);
-if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
-  $(".customization2_booker_contact-data_country_input .option[value='Deutschland']").attr('selected','selected');
-}
+
 
 $('.customization2_booker-state_edit').focus()
 // handler is called every time a checkbox is "changed" 
@@ -100,7 +73,7 @@ if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
 }
 console.log($('.customization2_booker_contact-data_country_input').val().length);
 if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
-  $(".customization2_booker_contact-data_country_input .option[value='Deutschland']").attr('selected','selected');
+  $(".customization2_booker_contact-data_country_input").attr('option','Deutschland');
 }
     
     
