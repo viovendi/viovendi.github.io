@@ -57,7 +57,10 @@ function prefill(){
       $('.customization2_booker_contact-data_country_input').trigger('click');
       $('.customization2_booker_contact-data_country_input').trigger('focusout');
     }
-  
+      $('.customization2_booker_contact-data_country_input').focus();
+      //$('.customization2_booker_contact-data_country_input').val('DE');
+      $('.customization2_booker_contact-data_country_input').trigger('click');
+      $('.customization2_booker_contact-data_country_input').trigger('focusout');
   //set focus to first input
   $('.customization2_booker_contact-data_first-name_input').focus();    
 }
