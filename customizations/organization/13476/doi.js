@@ -21,11 +21,25 @@ $('.customization2_organizer-bank-transfer_button').trigger('click');
 $("vv-payment-method-selection > div > div.vv-p-xl.vv-border-xs.vv-border-grey-light.vv-rounded-lg").hide()
 
 
-console.log($('.customization2_booker_contact-data_street_input').val().length)
 //Prefill fields
 if ($('.customization2_booker_contact-data_street_input').val().length === 0 ){
   $('.customization2_booker_contact-data_street_input').val('prefilled');
 }
+
+if ($('.customization2_booker_contact-data_street-number_input').val().length === 0 ){
+  $('.customization2_booker_contact-data_street-number_input').val('prefilled');
+}
+if ($('.customization2_booker_contact-data_zip_input').val().length === 0 ){
+  $('.customization2_booker_contact-data_zip_input').val('prefilled');
+}
+if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
+  $('.customization2_booker_contact-data_city_input').val('prefilled');
+}
+if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
+  $('.customization2_booker_contact-data_country_input').val('Deutschland');
+}
+
+
 // handler is called every time a checkbox is "changed" 
 function handler() {
 markAsChecked("Double Opt in Text");
