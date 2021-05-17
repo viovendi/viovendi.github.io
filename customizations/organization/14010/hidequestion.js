@@ -13,4 +13,16 @@ function hideQuestion(tag, name) {
 
 hideQuestion(".customization2_attendee_further-data_custom-question", "EventInsight user id");
 
+var insertionListener = function(event) {
+ if (event.animationName === "nodeInserted") {
+  console.log("noteInserted Eventinsight");
+hideQuestion(".customization2_attendee_further-data_custom-question", "EventInsight user id");
+     }
+   }
+ 
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+
 
