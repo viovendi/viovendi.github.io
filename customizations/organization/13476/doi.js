@@ -24,24 +24,27 @@ $("vv-payment-method-selection > div > div.vv-p-xl.vv-border-xs.vv-border-grey-l
 //Prefill fields
 if ($('.customization2_booker_contact-data_street_input').val().length === 0 ){
   $('.customization2_booker_contact-data_street_input').val('prefilled');
-  $('.customization2_booker_contact-data_street_input').trigger('click');
-  $('.customization2_booker_contact-data_street_input').focus()
+  $('.customization2_booker_contact-data_street_input').focus();
+  $('.customization2_booker_contact-data_street_input').trigger('focusout');
 }
 
 if ($('.customization2_booker_contact-data_street-number_input').val().length === 0 ){
   $('.customization2_booker_contact-data_street-number_input').val('prefilled');
-  $('.customization2_booker_contact-data_street-number_input').trigger('click');
-  $('.customization2_booker_contact-data_street-number_input').focus()
+  $('.customization2_booker_contact-data_street-number_input').focus();
+  $('.customization2_booker_contact-data_street-number_input').trigger('focusout');
+  
 }
 if ($('.customization2_booker_contact-data_zip_input').val().length === 0 ){
   $('.customization2_booker_contact-data_zip_input').val('prefilled');
-  $('.customization2_booker_contact-data_zip_input').trigger('click');
-  $('.customization2_booker_contact-data_zip_input').focus()
+  $('.customization2_booker_contact-data_zip_input').focus();
+  $('.customization2_booker_contact-data_zip_input').trigger('focusout');
+  
 }
 if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
   $('.customization2_booker_contact-data_city_input').val('prefilled');
-  $('.customization2_booker_contact-data_city_input').trigger('click');
-  $('.customization2_booker_contact-data_city_input').focus()
+  $('.customization2_booker_contact-data_city_input').focus();
+  $('.customization2_booker_contact-data_city_input').trigger('focusout');
+  
 }
 console.log($('.customization2_booker_contact-data_country_input').val().length);
 if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
