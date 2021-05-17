@@ -41,7 +41,7 @@ if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
 }
 console.log($('.customization2_booker_contact-data_country_input').val().length);
 if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_country_input option[value='Deutschland']').attr('selected','selected');
+  $(".customization2_booker_contact-data_country_input option[value='Deutschland']").attr('selected','selected');
 }
 
 
