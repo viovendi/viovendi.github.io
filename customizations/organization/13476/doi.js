@@ -35,8 +35,9 @@ if ($('.customization2_booker_contact-data_zip_input').val().length === 0 ){
 if ($('.customization2_booker_contact-data_city_input').val().length === 0 ){
   $('.customization2_booker_contact-data_city_input').val('prefilled');
 }
+console.log($('.customization2_booker_contact-data_country_input').val().length);
 if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
-  $('.customization2_booker_contact-data_country_input').val('Deutschland');
+  $('.customization2_booker_contact-data_country_input option[value='Deutschland']').attr('selected','selected');
 }
 
 
