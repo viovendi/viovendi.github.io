@@ -7,7 +7,7 @@ function hideQuestion(tag, name) {
     var label = item.find("label");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      $(item).find('.customization2_attendee_further-data_custom-question_label').css("display", "none");    }
+      $(item).hide();    }
   });
 }
 
