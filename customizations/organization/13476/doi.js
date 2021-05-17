@@ -63,7 +63,7 @@ function prefill(){
       $('.customization2_booker_contact-data_country_input').trigger('open');
   
   //set focus to first input
-  $('.customization2_booker_contact-data_first-name_input').focus();    
+  //$('.customization2_booker_contact-data_first-name_input').focus();    
 }
 
 prefill();
