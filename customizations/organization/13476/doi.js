@@ -51,7 +51,7 @@ function prefill(){
     }
     console.log($('.customization2_booker_contact-data_country_input').val().length);
     if ($('.customization2_booker_contact-data_country_input').val().length === 0 ){
-      $(".customization2_booker_contact-data_country_input")[0].selectedIndex = 33;
+      $(".customization2_booker_contact-data_country_input")[0].selectedIndex = 52;
     }
   
   //set focus to first input
