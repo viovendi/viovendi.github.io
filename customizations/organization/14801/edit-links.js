@@ -1,7 +1,7 @@
 console.log('GTM Works Standard-203');
 
 
-var answer1 ='text123 <a href="https://www.wellacompany.com/privacy-policy" target="_blank">Privacy Notice</a>'
+var answer1 ='<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-1_Vortrag_14-WissTag_B21+(1).pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
 
 //funktion to hide Label of question
 function changeText(tag, name, newtext) {
@@ -15,7 +15,7 @@ function changeText(tag, name, newtext) {
       
       //do something
       var htmlold = label.html()
-      var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', "HALLO");
+      var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', answer1);
       label.html(newtest)
       console.log(newtest);
       
