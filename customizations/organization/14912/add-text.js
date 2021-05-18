@@ -5,6 +5,8 @@ function addText(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
+    console.log(item);
+    console.log(label);
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       console.log("after:");
