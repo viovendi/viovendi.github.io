@@ -14,6 +14,7 @@ function changeText(tag, name, newtext) {
       
       //do something
       label.html(function () {
+        console.log($(this).html())
         $(this).html().replace('datenschutzrechtlichen Hinweise', newtext);
       //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       //label.html(newtest)
