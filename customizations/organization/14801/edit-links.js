@@ -8,7 +8,7 @@ function changeText(tag, name, newtext) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
-    console.log(label.innerHTML);
+    console.log(label.text());
 //.customization2_attendee_further-data_custom-question_label
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
