@@ -14,7 +14,7 @@ function changeText(tag, name, newtext) {
       
       //do something
       label.html(function () {
-        $(this).html().replace(/datenschutzrechtlichen Hinweise/g, newtext);
+        $(this).html().replace('datenschutzrechtlichen Hinweise', newtext);
       //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       //label.html(newtest)
         });
