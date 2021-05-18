@@ -16,7 +16,7 @@ function addText(tag, name) {
 "line-height": "1.37rem",
 "font-family": "Open Sans,sans-serif",
 "color": "#343a3f",
-"margin-top": "5px",
+"margin-top": "10px",
 "margin-bottom": "4px",
 "font-weight": "400"}); 
     }
