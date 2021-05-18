@@ -1,7 +1,7 @@
 console.log('GTM Works Standard-203');
 
 
-var answer1 = '<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-1_Vortrag_14-WissTag_B21+(1).pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
+var answer1 = 'some text<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-1_Vortrag_14-WissTag_B21+(1).pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
 var answer2 = '<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-2_Video_14-WissTag_B21.pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
 //funktion to hide Label of question
 function changeText(tag, name, newtext) {
@@ -12,10 +12,11 @@ function changeText(tag, name, newtext) {
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       //$(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a target='_blank' href='https://www.vogelitakademie.de/ewe'>Einwilligungserklärung</a> einverstanden <a target='_blank' href='https://www.vogelitakademie.de/ewe'>(www.vogelitakademie.de/ewe)</a>.");
+      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html(newtext);
 
-      var htmlold = label.html()
+     /* var htmlold = label.html()
       var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
-      label.empty().html(newtest);
+      label.empty().html(newtest);*/
        
       
       
