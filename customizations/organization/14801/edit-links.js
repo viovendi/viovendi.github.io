@@ -14,7 +14,7 @@ function changeText(tag, name, newtext) {
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       
       //do something
-      label.text(newtext);
+      label.text().replace('datenschutzrechtlichen Hinweise', "HALLO");
       
       
   }});
