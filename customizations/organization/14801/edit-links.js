@@ -1,4 +1,4 @@
-console.log('GTM Works');
+console.log('GTM Works Standard-203');
 
 
 var answer1 ='text123 <a href="https://www.wellacompany.com/privacy-policy" target="_blank">Privacy Notice</a>'
@@ -11,17 +11,23 @@ function changeText(tag, name, newtext) {
 //.customization2_attendee_further-data_custom-question_label
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+      
+      //do something
       label.text(newtext);
       
       
-  });
+  }});
 }
-changeText(".customization2_attendee_further-data_custom-question", "Wella Company would also like to keep", answer1);
+changeText(".customization2_attendee_further-data_custom-question", "Die datenschutzrechtlichen Hinweise und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, ", answer1);
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
-  console.log("noteInserted");
-    changeText(".customization2_attendee_further-data_custom-question", "Wella Company would also like to keep", answer1);
+    console.log("noteInserted");
+   
+   // code here
+    changeText(".customization2_attendee_further-data_custom-question", "Die datenschutzrechtlichen Hinweise und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, ", answer1);
+   
+   
      }
    }
  
