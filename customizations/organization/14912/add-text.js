@@ -1,4 +1,4 @@
-console.log('GTM Works);
+console.log('GTM Works');
 
 //funktion to hide Label of question
 function addText(tag, name) {
