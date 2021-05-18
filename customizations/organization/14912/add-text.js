@@ -7,6 +7,7 @@ function addText(tag, name) {
     var label = item.find("label");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+      console.log("after:");
       $(item).after('You can change your preferences at any time by unsubscribing from these communications. For further information on how we use and protect your personal data, please click here to view our <a href="https://www.wellacompany.com/privacy-policy" target="_blank">Privacy Notice</a>.</p>');
    }
   });
