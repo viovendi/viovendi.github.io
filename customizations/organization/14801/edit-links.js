@@ -13,9 +13,11 @@ function changeText(tag, name, newtext) {
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       
       //do something
-      var htmlold = label.html()
-      var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
-      label.html(newtest)
+      label.html(function () {
+       return $(this).text().replace(/(datenschutzrechtlichen Hinweise)/g, newtext);
+      //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
+      //label.html(newtest)
+        });
       
       
   }});
