@@ -14,9 +14,7 @@ function changeText(tag, name, newtext) {
       
       //do something
       label.html(function () {
-        console.log($(this).html())
-        var newrr = $(this).html().replace('datenschutzrechtlichen Hinweise', newtext);
-        console.log(newrr)
+        console.log($(this).find("vv-checkbox__label-text").text())
         return $(this).html().replace('datenschutzrechtlichen Hinweise', newtext);
       //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       //label.html(newtest)
