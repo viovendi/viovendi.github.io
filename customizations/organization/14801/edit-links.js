@@ -8,13 +8,15 @@ function changeText(tag, name, newtext) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
-    console.log(label.text());
+    console.log(label.html());
 //.customization2_attendee_further-data_custom-question_label
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       
       //do something
-      label.text().replace('datenschutzrechtlichen Hinweise', "HALLO");
+      var test = label.text()
+      var newtest = test.replace('datenschutzrechtlichen Hinweise', "HALLO");
+      console.log(newtest);
       
       
   }});
