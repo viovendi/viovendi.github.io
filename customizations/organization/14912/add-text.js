@@ -12,13 +12,13 @@ function addText(tag, name) {
       console.log("after:");
       $(item).after('<span class="textandlink">You can change your preferences at any time by unsubscribing from these communications. For further information on how we use and protect your personal data, please click here to view our <a href="https://www.wellacompany.com/privacy-policy" target="_blank">Privacy Notice</a>.</span>');
       $('.textandlink').css({"font-family": "inherit",
-"font-size": .9rem",
-"line-height": 1.37rem",
-"font-family": Open Sans,sans-serif",
-"color": #343a3f",
-"margin-top": 5px",
-"margin-bottom": 4px",
-"font-weight": 400"}); 
+"font-size": ".9rem",
+"line-height": "1.37rem",
+"font-family": "Open Sans,sans-serif",
+"color": "#343a3f",
+"margin-top": "5px",
+"margin-bottom": "4px",
+"font-weight": "400"}); 
     }
               else {    
                   $('.textandlink').remove();
