@@ -11,8 +11,9 @@ function changeText(tag, name, newtext) {
     //item.find(".customization2_attendee_further-data_custom-question_label");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      
-      var htmlold = label.html()
+      //$(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a target='_blank' href='https://www.vogelitakademie.de/ewe'>Einwilligungserklärung</a> einverstanden <a target='_blank' href='https://www.vogelitakademie.de/ewe'>(www.vogelitakademie.de/ewe)</a>.");
+
+      var htmlold = label.empty().html()
       var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       label.html(newtest);
        
