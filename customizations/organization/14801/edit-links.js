@@ -13,11 +13,10 @@ function changeText(tag, name, newtext) {
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       
       //do something
-      label.html(function () {
-        return $(this).text().replace('Die datenschutzrechtlichen Hinweise und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, Vortragende und Diskutanten habe ich gelesen. Ich bin damit einverstanden, dass meine Daten zu den in den Hinweisen angegebene Zwecken verarbeitet werden.', newtext);
-      //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
-      //label.html(newtest)
-        });
+      var htmlold = label.html()
+      var newtest = htmlold.replace('Die datenschutzrechtlichen Hinweise und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, Vortragende und Diskutanten habe ich gelesen. Ich bin damit einverstanden, dass meine Daten zu den in den Hinweisen angegebene Zwecken verarbeitet werden.', newtext);
+      label.html(newtest);
+       
       
       
   }});
