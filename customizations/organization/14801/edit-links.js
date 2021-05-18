@@ -1,7 +1,7 @@
 console.log('GTM Works Standard-203');
 
 
-var answer1 ='<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-1_Vortrag_14-WissTag_B21+(1).pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
+var answer1 ='Die <a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-1_Vortrag_14-WissTag_B21+(1).pdf" target="_blank">datenschutzrechtlichen Hinweise</a> und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, Vortragende und Diskutanten habe ich gelesen. Ich bin damit einverstanden, dass meine Daten zu den in den Hinweisen angegebene Zwecken verarbeitet werden.'
 var answer2 = '<a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Destatis/20210518_Einvera%CC%88ndniserkl_Speaker_Teil-2_Video_14-WissTag_B21.pdf" target="_blank">datenschutzrechtlichen Hinweise</a>'
 //funktion to hide Label of question
 function changeText(tag, name, newtext) {
@@ -15,7 +15,7 @@ function changeText(tag, name, newtext) {
       //do something
       label.html(function () {
         console.log($(this).html().find("p").text())
-        return $(this).html().find("p").text().replace('datenschutzrechtlichen Hinweise', newtext);
+        return $(this).html().replace('Die datenschutzrechtlichen Hinweise und Informationen nach Art. 13 DS-GVO zur Anmeldung und bei Teilnahme an der Veranstaltung für Moderatoren, Vortragende und Diskutanten habe ich gelesen. Ich bin damit einverstanden, dass meine Daten zu den in den Hinweisen angegebene Zwecken verarbeitet werden.', newtext);
       //var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       //label.html(newtest)
         });
