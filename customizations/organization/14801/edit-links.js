@@ -7,12 +7,11 @@ var answer2 = '<a href="https://doo-product-consulting-uploads.s3.eu-central-1.a
 function changeText(tag, name, newtext) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find(".customization2_attendee_further-data_custom-question_label");
-//.customization2_attendee_further-data_custom-question_label
+    var label = item.find("label");
+    //item.find(".customization2_attendee_further-data_custom-question_label");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       
-      //do something
       var htmlold = label.html()
       var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       label.html(newtest);
