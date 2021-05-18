@@ -4,7 +4,7 @@ console.log('GTM Works');
 function addText(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find("customization2_attendee_further-data_custom-question_label");
+    var label = item.find(".customization2_attendee_further-data_custom-question_label");
     console.log(item);
     console.log(label);
 
