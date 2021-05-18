@@ -14,7 +14,7 @@ function changeText(tag, name, newtext) {
       
       //do something
       var htmlold = label.html()
-      var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', answer1);
+      var newtest = htmlold.replace('datenschutzrechtlichen Hinweise', newtext);
       label.html(newtest)
       
       
