@@ -38,7 +38,7 @@ function prefill(){
 
     }
     if ($('.customization2_booker_contact-data_zip_input').val().length=== 0){
-      $('.customization2_booker_contact-data_zip_input').val('11111');
+      $('.customization2_booker_contact-data_zip_input').val(' ');
       $('.customization2_booker_contact-data_zip_input').focus();
       $('.customization2_booker_contact-data_zip_input').trigger('focusout');
 
