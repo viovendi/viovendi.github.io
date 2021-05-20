@@ -26,13 +26,13 @@ function prefill(){
     if ($('.customization2_booker_contact-data_street_input').length){
     //Prefill fields
     if ($('.customization2_booker_contact-data_street_input').val().length === 0){
-      $('.customization2_booker_contact-data_street_input').val('&nbsp;');
+      $('.customization2_booker_contact-data_street_input').val(' ');
       $('.customization2_booker_contact-data_street_input').focus();
       $('.customization2_booker_contact-data_street_input').trigger('focusout');
     }
 
     if ($('.customization2_booker_contact-data_street-number_input').val().length=== 0){
-      $('.customization2_booker_contact-data_street-number_input').val('&nbsp;');
+      $('.customization2_booker_contact-data_street-number_input').val(' ');
       $('.customization2_booker_contact-data_street-number_input').focus();
       $('.customization2_booker_contact-data_street-number_input').trigger('focusout');
 
@@ -44,7 +44,7 @@ function prefill(){
 
     }
     if ($('.customization2_booker_contact-data_city_input').val().length=== 0){
-      $('.customization2_booker_contact-data_city_input').val('&nbsp;');
+      $('.customization2_booker_contact-data_city_input').val(' ');
       $('.customization2_booker_contact-data_city_input').focus();
       $('.customization2_booker_contact-data_city_input').trigger('focusout');
 
