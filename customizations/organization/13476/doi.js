@@ -19,6 +19,8 @@ function markAsChecked(name) {
 $('.customization2_organizer-bank-transfer_button').trigger('click');
 //$('.customization2_payment').hide()
 $("vv-payment-method-selection > div > div.vv-p-xl.vv-border-xs.vv-border-grey-light.vv-rounded-lg").hide()
+$(".customization2_booker_view-action_collapse").hide()
+
 
 
 
