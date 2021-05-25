@@ -86,7 +86,7 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     //handler();
-    
+    $(".customization2_booker_view-action_collapse").hide()
     $('.customization2_opt-out-and-opt-in').hide()
     
     prefill();
