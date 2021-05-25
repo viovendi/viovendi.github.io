@@ -34,6 +34,8 @@
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function(){
        $(this).trigger('click');
      });
+     // scroll page back to top
+     $('.customization2_attendee_contact-data_first-name label').trigger('click');
    }
    
    function clickedEdit(name){
