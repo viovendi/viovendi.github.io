@@ -6,7 +6,25 @@
     $('.customization2_attendee_further-data_custom-question-6').css("display","none")
      var ddIndustry = $('.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_dropdown')
      var ddManufacturing = $('.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_dropdown')
-     
+     var state2 = ddIndustry.val().replace(/^\s+|\s+$/g, "")
+        	$('.customization2_booker_further-data_custom-question-4').css("display","none")
+              
+            if (state2 == "Others" ){
+              $('.customization2_attendee_further-data_custom-question-4').css("display","block")
+            }
+           else{
+           $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+            }
+   
+   var state1 = ddManufacturing.val().replace(/^\s+|\s+$/g, "")
+        	$('.customization2_booker_further-data_custom-question-4').css("display","none")
+              
+            if (state1 == "Others" ){
+              $('.customization2_attendee_further-data_custom-question-6').css("display","block")
+            }
+           else{
+           $('.customization2_attendee_further-data_custom-question-6').css("display","none");
+            }
      ddIndustry.change(function(){
        	var state = ddIndustry.val().replace(/^\s+|\s+$/g, "")
         	$('.customization2_booker_further-data_custom-question-4').css("display","none")
