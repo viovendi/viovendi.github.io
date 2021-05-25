@@ -10,17 +10,16 @@
        	var state = ddIndustry.val().replace(/^\s+|\s+$/g, "")
         	$('.customization2_booker_further-data_custom-question-4').css("display","none")
               
-        if (state == "Others" ){
-        	$('.customization2_attendee_further-data_custom-question-4').css("display","block")
-         
-        }
-       else{
-       $('.customization2_attendee_further-data_custom-question-4').css("display","none")}
-        })
+            if (state == "Others" ){
+              $('.customization2_attendee_further-data_custom-question-4').css("display","block")
+            }
+           else{
+           $('.customization2_attendee_further-data_custom-question-4').css("display","none");
+            }
+                       
      }
-                   
-   
-  
+                      );
+          
  }
   handler();
 
