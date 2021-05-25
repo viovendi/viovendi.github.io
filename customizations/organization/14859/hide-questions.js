@@ -37,5 +37,16 @@
           
  }
   handler();
+var insertionListener = function (event) {
+  if (event.animationName === "nodeInserted") {
+    console.log("Node has been inserted Git: ", event.target);
+    //Insert your code here
+    handler();
 
+  }
+};
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
