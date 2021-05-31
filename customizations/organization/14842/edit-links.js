@@ -1,23 +1,7 @@
 console.log('GTM Works Complex-600');
 
-
 var answer1 = 'Das vollständige Programm finden Sie auf <a href="https://nachhaltige-beschaffung.org/">www.nachhaltige-beschaffung.org</a> Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.'
-//funktion to hide Label of question
-function changeText(tag, name, newtext) {
-  $(tag).each(function (i, element) {
-    var item = $(this);
-    var label = item.find("label");
-    //item.find(".customization2_attendee_further-data_product-11");
-
-    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      $(item).find('.customization2_attendee_further-data_product-11').empty().html(newtext);
-
-  
-      
-      
-  }});
-}
-changeText(".customization2_attendee_further-data_product-11", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
+$(".customization2_attendee_further-data_product-11:before").before(answer1)
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
