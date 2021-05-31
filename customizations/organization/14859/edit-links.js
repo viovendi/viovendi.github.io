@@ -4,11 +4,11 @@ var answer1 = '<div class="standard-230">I want to have my contact details share
 $(".customization2_booking-terms_text").before(answer1)
 $(".standard-230").css({
 	"word-break": "break-word",
-	"font-size": "14px",
-	"font-family": "Helvetica Neue LT Std-Th",
+	"font-size": "inherit",
+	"font-family": "inherit",
 	"font-weight": "400",
 	"position": "absolute",
 	"margin-left": "25px",
-	"padding-bottom": "100px"
-
+	"padding-bottom": "100px",
+	"width": "85%"
 })
