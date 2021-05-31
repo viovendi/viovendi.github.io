@@ -10,6 +10,7 @@ $(".standard-230").css({
 	"position": "absolute",
 	"margin-left": "25px",
 	"padding-bottom": "100px",
-	"padding-right": "25px";
+	"padding-right": "25px",
+	"height": "auto",
 	"width": "85%"
 })
