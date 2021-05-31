@@ -57,8 +57,8 @@
      
      // disable other checkboxes
      $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').each(function(){
-       if ( $(this).find('.vv-checkbox__input').not(':checked') ) {
-         console.log("1");
+       if ( !$(this).find('.vv-checkbox__input').is(':checked') ) {
+         console.log("2");
         $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
         //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox').attr("disabled", true);
        }
