@@ -59,7 +59,8 @@
      $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
        if ( $(this).find('.vv-checkbox__input').not(':checked') ) {
          console.log($(this));
-        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox').attr("disabled", true);
+        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox').prop("disabled", true)
+        //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox').attr("disabled", true);
        }
      });
      
