@@ -63,7 +63,7 @@
     
   }
 function enableDisableProducts(attendee, number){
- if(number < 1 ){
+ if(number == 1 ){
  
   $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
    console.log(attendee);
