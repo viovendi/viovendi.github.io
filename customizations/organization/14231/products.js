@@ -57,10 +57,6 @@
      
      // disable other checkboxes
      
-     
-    }
-    
-    $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
        if ( !$(this).find('.vv-checkbox__input').is(':checked') ) {
         console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
         $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
@@ -70,7 +66,11 @@
         $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", false);
        console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
       }
-     });
+    
+     
+    }
+    
+    
   }
   
   function inint(){
