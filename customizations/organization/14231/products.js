@@ -6,6 +6,8 @@
      for (var i = 0; i < keys.length; i++) {
        var val = obj[keys[i]];       
        enabledDisabledButton(keys[i], val);
+       enableDisableProducts(keys[i]);
+      
      }
    }
    
@@ -54,24 +56,22 @@
     }else{
       $('.'+attendee+' .customization2_attendee_edit-action_save').attr('disabled', false);
       $('.'+attendee+' .button-error-message').remove();
-     
-     // disable other checkboxes
-     
-       if ( !$(this).find('.vv-checkbox__input').is(':checked') ) {
-        console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
-        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
-        //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox').attr("disabled", true);
-       }
-      else {
-        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", false);
-       console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
-      }
-    
+      
      
     }
     
     
   }
+function enableDisableProducts(attendee){
+       if ( !$(this).find('.vv-checkbox__input').is(':checked') ) {
+        console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
+        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
+       }
+      else {
+        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", false);
+       console.log($(this).find('.vv-checkbox__input').is(':checked'));
+      }
+}
   
   function inint(){
     main();
