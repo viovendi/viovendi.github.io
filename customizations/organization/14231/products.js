@@ -60,6 +60,7 @@
        if ( $(this).find('.vv-checkbox__input').not(':checked') ) {
          console.log($(this));
        }
+     });
      
     }
   }
