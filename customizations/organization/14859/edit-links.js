@@ -4,7 +4,7 @@ var answer1 = '<div class="standard-230">I want to have my contact details share
 $(".customization2_booking-terms_text").before(answer1)
 $(".standard-230").css({
 	"word-break": "break-word",
-	"font-size": "inherit",
+	"font-size": "14.4px",
 	"font-family": "inherit",
 	"font-weight": "400",
 	"position": "absolute",
