@@ -8,7 +8,7 @@ var insertionListener = function(event) {
     console.log("noteInserted");
    
    // code here
-   // changeText(".customization2_attendee_further-data_product-11", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
+  $(".customization2_attendee_further-data_product-11").before(answer1)
    
    
      }
