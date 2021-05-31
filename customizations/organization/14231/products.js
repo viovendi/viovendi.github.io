@@ -45,7 +45,7 @@
    }
    
    function enabledDisabledButton(attendee, number){
-    if(number == 1 ){
+    if(number < 1 ){
       $('.'+attendee+' .customization2_attendee_edit-action_save').attr('disabled', true);
       
       if( $('.'+attendee+' .button-error-message').length < 1 ){
@@ -54,6 +54,13 @@
     }else{
       $('.'+attendee+' .customization2_attendee_edit-action_save').attr('disabled', false);
       $('.'+attendee+' .button-error-message').remove();
+     
+     // disable other checkboxes
+     $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
+       if ( $(this).find('.vv-checkbox__input').not(':checked') ) {
+         console.log($(this));
+       }
+     
     }
   }
   
