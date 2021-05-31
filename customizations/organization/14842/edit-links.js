@@ -7,24 +7,24 @@ function changeText(tag, name, newtext) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
-    //item.find(".customization2_attendee_further-data_custom-question_label");
+    //item.find(".customization2_attendee_further-data_product-11");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      $(item).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').empty().html(newtext);
+      $(item).find('.customization2_attendee_further-data_product-11').empty().html(newtext);
 
   
       
       
   }});
 }
-changeText(".customization2_attendee_further-data_custom-question", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
+changeText(".customization2_attendee_further-data_product-11", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
     console.log("noteInserted");
    
    // code here
-    changeText(".customization2_attendee_further-data_custom-question", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
+    changeText(".customization2_attendee_further-data_product-11", "Das vollständige Programm finden Sie auf www.nachhaltige-beschaffung.org Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.", answer1);
    
    
      }
