@@ -5,7 +5,7 @@ $(".customization2_booking-terms_text").before(answer1)
 $(".standard-230").css({
 	"word-break": "break-word",
 	"font-size": "14.4px",
-	"font-family": "inherit",
+	"font-family": "'Helvetica Neue LT Std-Th'",
 	"font-weight": "400",
 	"position": "absolute",
 	"margin-left": "25px",
