@@ -2,7 +2,7 @@ console.log('GTM Works Complex-600');
 
 var answer1 = '<div class="complex-600">Das vollständige Programm finden Sie auf <a href="https://nachhaltige-beschaffung.org/" target="_blank">www.nachhaltige-beschaffung.org</a>. Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.</div>'
 $(".customization2_attendee_further-data_product-11").before(answer1)
-$(".complex-600").css({"font-weight": "600","font-size": "16px","color": "#343a3f","word-break": "break-all","padding-bottom": "20px"})
+$(".complex-600").css({"font-weight": "600","font-size": "16px","color": "#343a3f","word-break": "break-all"})
 
 var insertionListener = function(event) {
  if (event.animationName === "nodeInserted") {
@@ -10,7 +10,7 @@ var insertionListener = function(event) {
    
    // code here
   $(".customization2_attendee_further-data_product-11").before(answer1)
-  $(".complex-600").css({"font-weight": "600","font-size": "16px","color": "#343a3f","word-break": "break-all","padding-bottom": "20px"})
+  $(".complex-600").css({"font-weight": "600","font-size": "16px","color": "#343a3f","word-break": "break-all"})
      }
    }
  
