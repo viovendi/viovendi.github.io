@@ -10,7 +10,7 @@ var insertionListener = function(event) {
    
    // code here
   $(".customization2_attendee_further-data_product-11").before(answer1)
- 
+  $(".complex-600").css({"font-weight": "600","font-size": "16px","color": "#343a3f","word-break": "break-all","padding-bottom": "20px"})
      }
    }
  
