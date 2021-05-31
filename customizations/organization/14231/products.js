@@ -69,21 +69,22 @@ function enableDisableProducts(attendee, number){
    console.log(attendee);
        if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
          console.log("ischecked");
-        $(this).find('.vv-checkbox__input').prop("disabled", false)
+        $(this).find('.vv-checkbox__input').prop("disabled", false);
        }
    else {
     console.log("not checked")
-    $(this).find('.vv-checkbox__input').prop("disabled", true)
+    $(this).find('.vv-checkbox__input').prop("disabled", true);
         }
      });
  
  }
   if(number == 0 ){
- 
-  $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function()
-        $(this).find('.vv-checkbox__input').prop("disabled", false)
+ $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
+   console.log(attendee);
+
+        $(this).find('.vv-checkbox__input').prop("disabled", false);
  }
-      
+                                                                                 }
         //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
 
 }
