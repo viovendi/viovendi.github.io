@@ -67,8 +67,12 @@ function enableDisableProducts(attendee){
    console.log(attendee);
        if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
          console.log("ischecked");
+        $(this).find('.vv-checkbox__input').prop("disabled", false)
        }
-   else {console.log("not checked")}
+   else {
+    console.log("not checked")
+    $(this).find('.vv-checkbox__input').prop("disabled", true)
+        }
      });
  
  
