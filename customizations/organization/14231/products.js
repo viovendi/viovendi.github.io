@@ -63,7 +63,7 @@
         //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox').attr("disabled", true);
        }
       else {
-        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", false)
+        $('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').removeAttr("disabled");
        console.log( !$(this).find('.vv-checkbox__input').is(':checked'));
       }
      });
