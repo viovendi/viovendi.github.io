@@ -1,4 +1,4 @@
-console.log('GTM Works Standard-203');
+console.log('GTM Works Complex-600');
 
 
 var answer1 = 'Das vollständige Programm finden Sie auf <a href="https://nachhaltige-beschaffung.org/">www.nachhaltige-beschaffung.org</a> Weitere organisatorische Informationen bekommen Sie rechtzeitig zugeschickt.'
