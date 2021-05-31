@@ -6,7 +6,7 @@
      for (var i = 0; i < keys.length; i++) {
        var val = obj[keys[i]];       
        enabledDisabledButton(keys[i], val);
-       enableDisableProducts(keys[i]);
+       enableDisableProducts(keys[i], val);
       
      }
    }
@@ -62,7 +62,9 @@
     
     
   }
-function enableDisableProducts(attendee){
+function enableDisableProducts(attendee, number){
+ if(number < 1 ){
+ 
   $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function(){
    console.log(attendee);
        if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
@@ -75,7 +77,12 @@ function enableDisableProducts(attendee){
         }
      });
  
+ }
+  if(number == 0 ){
  
+  $('.'+attendee+' .customization2_attendee_further-data vv-checkbox label').each(function()
+        $(this).find('.vv-checkbox__input').prop("disabled", false)
+ }
       
         //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
 
