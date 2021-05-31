@@ -83,6 +83,7 @@ function enableDisableProducts(attendee, number){
    console.log(attendee);
 
         $(this).find('.vv-checkbox__input').prop("disabled", false);
+  )
  }
                                                                                  }
         //$('.'+attendee+' .customization2_attendee_further-data vv-checkbox input').prop("disabled", true)
