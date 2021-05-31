@@ -5,20 +5,3 @@ $(".customization2_booking-terms_text").before(answer1)
 $(".standard-230").css({
 	"word-break": "break-all"
 })
-
-var insertionListener = function (event) {
-	if (event.animationName === "nodeInserted") {
-		console.log("noteInserted");
-
-		// code here
-		$(".customization2_booking-terms_text").before(answer1)
-		$(".standard-230").css({
-			"word-break": "break-all"
-		})
-	}
-}
-
-
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); // 
