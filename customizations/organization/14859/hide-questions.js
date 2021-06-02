@@ -90,6 +90,7 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     handler();
+changeText(".customization2_attendee_further-data_product", "Privacy Notice", answer1);
 
   }
 };
