@@ -12,6 +12,8 @@ $("#object1").css({
 
 
 // first page:
-$('.customization-access-code-label .span').text('test');
+$('.customization-access-code-label').text('test');
 $('.customization-access-code-label.span').text('test2');
-$('.customization-access-code-label span').text('test3');
+$('*[@id="customization-booking-area-wrapper-page1"]/vv-ticket-selection/div/div[1]/div/vv-code-input/div/vv-button/button/text').text('test3');
+$('.vv-ticket-selection/div/div[1]/div/vv-code-input/div/vv-button/button/text').text('test4');
+
