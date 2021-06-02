@@ -10,5 +10,3 @@ $("#object1").css({
 	"margin-top": "-50px",
 	"padding-bottom": "10px"	
 })
-
-
