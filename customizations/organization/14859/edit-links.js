@@ -9,3 +9,9 @@ $("#object1").css({
 	"padding-bottom": "10px"	
 })
 
+
+
+// first page:
+$('.customization-access-code-label .span').text('test');
+$('.customization-access-code-label.span').text('test2');
+$('.customization-access-code-label span').text('test3');
