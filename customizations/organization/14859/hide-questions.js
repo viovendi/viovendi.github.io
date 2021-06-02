@@ -14,7 +14,7 @@ function changeText(tag, name, newtext) {
     var item = $(this);
     var label = item.find("label");
     //item.find(".customization2_attendee_further-data_custom-question_label");
-console.log((label.text());
+console.log(label.text());
             console.log(label);
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       $(item).find('.customization2_attendee_further-data_product_description').empty().html(newtext);
