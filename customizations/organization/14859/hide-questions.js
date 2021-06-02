@@ -12,7 +12,7 @@ var answer1 = 'I want to have my contact details shared within the Oerlikon Grou
 
 
 
-
+// % -----------------------------------%
  function handler(){
      //Hide all questions except the one needed
     $('.customization2_attendee_further-data_custom-question-4').css("display","none")
