@@ -6,16 +6,6 @@ var newdiv1 = $( "<div id='object1'>I want to have my contact details shared wit
 $(".customization2_booking-terms_text").prepend(newdiv1);
 $("#object1").css({
 	"margin-top": "-50px",
-	//"word-break": "break-word",
-	//"font-size": "14.4px",
-	//"font-family": "'Helvetica Neue LT Std-Th'",
-	"font-weight": "400",
-	//"position": "absolute",
-	//"margin-left": "25px",
-	"padding-bottom": "10px"
-	//"padding-right": "25px",
-	//"height": "auto",
-	//"width": "85%"
-	
+	"padding-bottom": "10px"	
 })
 
