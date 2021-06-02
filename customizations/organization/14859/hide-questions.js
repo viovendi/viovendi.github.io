@@ -8,6 +8,25 @@
 
 var answer1 = 'I want to have my contact details shared within the Oerlikon Group and with Oerlikon’s partners of the 2021 AMTC conference listed in the <a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Oerlikon/2021/2021+AMTC+Conference+privacy+noticefor+website.pdf" target="_blank">Privacy Notice</a> in order to receive information about their services, products and invites to their events and conferences.'
 
+//funktion to hide Label of question
+function changeText(tag, name, newtext) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label");
+    //item.find(".customization2_attendee_further-data_custom-question_label");
+console.log((label.text());
+            console.log(label);
+    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+      $(item).find('.customization2_attendee_further-data_product_description').empty().html(newtext);
+
+  
+      
+      
+  }});
+}
+changeText(".customization2_attendee_further-data_product", "Privacy Notice", answer1);
+
+
 
 
 
