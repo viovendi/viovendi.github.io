@@ -1,10 +1,5 @@
 console.log('GTM Works Standard-230');
-console.log("1");
-// first page:
-$('.customization-access-code-label').text('test');
-$('.customization-access-code-label.span').text('test2');
-$('*[@id="customization-booking-area-wrapper-page1"]/vv-ticket-selection/div/div[1]/div/vv-code-input/div/vv-button/button/text').text('test3');
-$('.vv-ticket-selection/div/div[1]/div/vv-code-input/div/vv-button/button/text').text('test4');
+
 
 
 
