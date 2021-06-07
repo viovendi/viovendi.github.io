@@ -54,7 +54,7 @@ $('.p-datepicker-prev').click(function () {
 });
 
 
-/setInterval(function () {
+setInterval(function () {
 
 
 			$('.p-datepicker-next').click(function () {});
