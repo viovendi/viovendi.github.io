@@ -54,7 +54,7 @@ $('.p-datepicker-prev').click(function () {
 });
 
 
-setInterval(function () {
+//setInterval(function () {
 
 
 			$('.p-datepicker-next').click(function () {});
@@ -240,7 +240,7 @@ setInterval(function () {
 				$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.'); $('.customization-client-portal-link').css('color', '#F99D27');
 
 
-			}, 5000);
+		//	}, 1000);
 		//99 available Replace the word
 		//var available = $('.event-category__amount').text(); 
 		//var res = available.replace("available", "tillgängliga platser");
