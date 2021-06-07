@@ -119,7 +119,30 @@ $('.ew-header__progress-container .progress-meter .confirmation span').text('Bek
 $('.ew-selection__error').text('Välj antal biljetter du vill boka');
   
   
-//ATTENDEE DETAILS // BOOKING DETAILS
+//ATTENDEE DETAILS 
+    
+//ATTENDEE COUNT    
+$('.customization2_attendee_count').text('Deltagare 1 av 1');
+    
+//CONTACT    
+$('.customization2_attendee_contact-data_headline').text('Kontaktuppgifter');    
+
+//FIRST NAME    
+$('.customization2_attendee_contact-data_first-name').text('Förnamn (valfritt)');    
+
+//LAST NAME    
+$('.customization2_attendee_contact-data_last-name').text('Efternamn (valfritt)');
+    
+//Accept
+$('.customization2_attendee_edit-action_save').text('Jag har fyllt i mina uppgifter');
+
+//Cancel
+var canceltext =  $(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text();
+var replacecancel = canceltext.replace("Cancel", "X Avbryt");
+$(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text(replacecancel);
+//   if(!typeof canceltext === "undefined"){}    
+    
+// BOOKING DETAILS
 $('.customization2_booker_title').text('BOKNINGSINFORMATION');
     
   
