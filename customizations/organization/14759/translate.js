@@ -128,10 +128,10 @@ $('.customization2_attendee_count').text('Deltagare 1 av 1');
 $('.customization2_attendee_contact-data_headline').text('Kontaktuppgifter');    
 
 //FIRST NAME    
-$('.customization2_attendee_contact-data_first-name').text('Förnamn (valfritt)');    
+$('.customization2_attendee_contact-data_first-name_label').text('Förnamn (valfritt)');    
 
 //LAST NAME    
-$('.customization2_attendee_contact-data_last-name').text('Efternamn (valfritt)');
+$('.customization2_attendee_contact-data_last-name_label').text('Efternamn (valfritt)');
     
 //Accept
 $('.customization2_attendee_edit-action_save').text('Jag har fyllt i mina uppgifter');
