@@ -57,10 +57,10 @@ $('.p-datepicker-prev').click(function() {
 
 
 setInterval(function(){ 
+    
   
   $('.p-datepicker-next').click(function() {
-  
-});
+  });
   
   
   //replace available
