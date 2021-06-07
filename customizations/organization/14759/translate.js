@@ -155,11 +155,11 @@ setInterval(function () {
 
 			//Dropdown
 			//Dropdown
-			$(".customization2_booker_contact-data_booker-attendee-relation_input").text('Samma uppgifter som “delt agare 1"');
+			$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
 			//Dropdown opened
 			$('.vv-selection-input__control').click(function () {
 					setTimeout(function () {
-						$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “delt agare 1"');
+						$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
 						$(".customization2_booker_contact-data_booker-attendee-relation_different-attendee").text('Fyll i alternativa uppgifter');
 					}, 50);
 				}
