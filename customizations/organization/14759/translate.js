@@ -54,7 +54,7 @@ $('.p-datepicker-prev').click(function () {
 });
 
 
-setInterval(function () {
+	setInterval(function () {
 
 
 			$('.p-datepicker-next').click(function () {});
@@ -157,90 +157,90 @@ setInterval(function () {
 			$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
 			$(".customization2_booker_contact-data_booker-attendee-relation_different-attendee").text('Fyll i alternativa uppgifter');
 
-				//First name
-				$('.customization2_booker_contact-data_first-name_label').text('Förnamn');
+			//First name
+			$('.customization2_booker_contact-data_first-name_label').text('Förnamn');
 
 
-				//First name Required
-				$('.customization2_booker_contact-data_first-name_error').text('Obligatorisk');
+			//First name Required
+			$('.customization2_booker_contact-data_first-name_error').text('Obligatorisk');
 
-				//Last name
-				$('.customization2_booker_contact-data_last-name_label').text('Efternamn');
+			//Last name
+			$('.customization2_booker_contact-data_last-name_label').text('Efternamn');
 
-				//Last name Required
-				$('.customization2_booker_contact-data_last-name_error').text('Obligatorisk');
+			//Last name Required
+			$('.customization2_booker_contact-data_last-name_error').text('Obligatorisk');
 
-				//Organisation
-				$('.customization2_booker_contact-data_company_label').text('Organisation/Företag');
+			//Organisation
+			$('.customization2_booker_contact-data_company_label').text('Organisation/Företag');
 
-				//Organisation Required
-				$('.customization2_booker_contact-data_company_error').text('Obligatorisk');
-
-
-				//Email address
-				$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett)');
-
-				// confirm email address                                                         
-				$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
+			//Organisation Required
+			$('.customization2_booker_contact-data_company_error').text('Obligatorisk');
 
 
-				//already registed
-				$('.customization2_booker_contact-data_email_error').text('Du är redan inbokad på detta event');
+			//Email address
+			$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett)');
 
-				//Confirm email address
-				$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
-
-				//Please enter valid email address
-				$('.customization2_booker_contact-data_email-confirmation_error').text('Vänligen fyll i giltig e-postadress');
-
-				//Accept
-				$('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
-
-				//Cancel
-				var canceltext = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text();
-				var replacecancel = canceltext.replace("Cancel", "X Avbryt"); $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text(replacecancel);
-				//   if(!typeof canceltext === "undefined"){}
-				//Email addresses not matching
-				$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
-
-				//Change selection
-				$('.customization-button-previous').text('<- Tillbaka till urval');
-
-				//Back button (Back to Overview)
-				$('.button-back').text('Tillbaka till översikt');
+			// confirm email address                                                         
+			$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
 
 
-				//Book now
-				$('.customization-button-next').text('Boka nu');
+			//already registed
+			$('.customization2_booker_contact-data_email_error').text('Du är redan inbokad på detta event');
+
+			//Confirm email address
+			$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
+
+			//Please enter valid email address
+			$('.customization2_booker_contact-data_email-confirmation_error').text('Vänligen fyll i giltig e-postadress');
+
+			//Accept
+			$('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
+
+			//Cancel
+			var canceltext = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text();
+			var replacecancel = canceltext.replace("Cancel", "X Avbryt"); $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text(replacecancel);
+			//   if(!typeof canceltext === "undefined"){}
+			//Email addresses not matching
+			$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
+
+			//Change selection
+			$('.customization-button-previous').text('<- Tillbaka till urval');
+
+			//Back button (Back to Overview)
+			$('.button-back').text('Tillbaka till översikt');
 
 
-				$('.customization2_booking-terms_text').each(function () {
-					var text = $(this).text('Jag har läst integritets- & personuppgiftspolicyn och godkänner att mina uppgifter registreras.');
-					var editedtext = text.text();
-					$(this).html(editedtext.replace('integritets- & personuppgiftspolicyn', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/" target="_blank">integritets- & personuppgiftspolicyn</a>'));
-				});
+			//Book now
+			$('.customization-button-next').text('Boka nu');
+
+
+			$('.customization2_booking-terms_text').each(function () {
+				var text = $(this).text('Jag har läst integritets- & personuppgiftspolicyn och godkänner att mina uppgifter registreras.');
+				var editedtext = text.text();
+				$(this).html(editedtext.replace('integritets- & personuppgiftspolicyn', '<a href="https://www.hornbach.se/service/integritets-och-personuppgiftspolicy/" target="_blank">integritets- & personuppgiftspolicyn</a>'));
+			});
 
 
 
-				$(".customization2_booking-terms_custom-term-1").hide();
+			$(".customization2_booking-terms_custom-term-1").hide();
 
 
-				//page 3 Confirmation
+			//page 3 Confirmation
 
-				//Booking confirmation
-				$('.customization-confirmation-label').text('Bokningsbekräftelse');
+			//Booking confirmation
+			$('.customization-confirmation-label').text('Bokningsbekräftelse');
 
-				//Thank you for your booking. You will shortly receive your confirmation by email.
-				$('.customization-confirmation-description').text('Tack för din bokning! Inom kort skickar vi en bekräftelse med din eventbiljett till den e-postadress du uppgivit.');
+			//Thank you for your booking. You will shortly receive your confirmation by email.
+			$('.customization-confirmation-description').text('Tack för din bokning! Inom kort skickar vi en bekräftelse med din eventbiljett till den e-postadress du uppgivit.');
 
-				//Details and documents are available in the booking portal:
-				$('.customization-client-portal-description').text('Information om eventet hittar du även i bokningsportalen:');
+			//Details and documents are available in the booking portal:
+			$('.customization-client-portal-description').text('Information om eventet hittar du även i bokningsportalen:');
 
-				//Your Booking Portal
-				$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.'); $('.customization-client-portal-link').css('color', '#F99D27');
+			//Your Booking Portal
+			$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.'); $('.customization-client-portal-link').css('color', '#F99D27');
 
 
-			}, 3000);
+	}, 3000);
 		//99 available Replace the word
 		//var available = $('.event-category__amount').text(); 
 		//var res = available.replace("available", "tillgängliga platser");
