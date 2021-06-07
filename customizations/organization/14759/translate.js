@@ -220,7 +220,7 @@ $('.customization-client-portal-link').css('color', '#F99D27');
   
  }, 1000);
 //99 available Replace the word
-//var available = $('.event-category__amount').text();
+//var available = $('.event-category__amount').text(); 
 //var res = available.replace("available", "tillgängliga platser");
 //$('.event-category__amount').text(res);
   
