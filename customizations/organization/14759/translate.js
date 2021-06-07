@@ -240,7 +240,7 @@ setInterval(function () {
 				$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.'); $('.customization-client-portal-link').css('color', '#F99D27');
 
 
-			}, 2000);
+			}, 5000);
 		//99 available Replace the word
 		//var available = $('.event-category__amount').text(); 
 		//var res = available.replace("available", "tillgängliga platser");
