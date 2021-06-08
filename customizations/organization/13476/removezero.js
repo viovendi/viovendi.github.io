@@ -1,2 +1,2 @@
 console.log("remove 0");
-  $(".option[value='0']").remove();
+  $('option[value="0"]').remove();
