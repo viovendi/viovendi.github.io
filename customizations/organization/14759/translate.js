@@ -117,6 +117,7 @@ $('.p-datepicker-prev').click(function () {
 
 
 			//ATTENDEE DETAILS 
+			$('.customization2_attendees_title').text('Deltagarinformation');
 
 			//ATTENDEE COUNT    
 			$('.customization2_attendee_count').text('Deltagare 1 av 1');
