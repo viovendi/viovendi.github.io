@@ -39,5 +39,6 @@ function myHelpers(elements) {
 */
 function $$(selector) {
   const elements = document.querySelectorAll(selector);
+  console.log(elements)
   return new myHelpers(elements);
 }
