@@ -23,6 +23,7 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
+      console.log(field.querySelectorAll('label p')[0].innerText.trim())
       if (field.querySelectorAll('label p')[0].innerText.trim().includes(this.lable)) {
         this.field = field;
       }
