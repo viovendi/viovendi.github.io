@@ -247,14 +247,14 @@ $('.p-datepicker-prev').click(function () {
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
 
-		const $TextToReplace = 'available';
-		const textReplacement = 'tillgängliga';
+		//const textToReplace = 'available';
+		//const textReplacement = 'tillgängliga';
 		const element = document.querySelector('.event-category__amount--less')
 
-		const replaceText = () => {
-		  if (element.textContent.trim() === $TextToReplace) {
+		const replaceText = (textToReplace, textReplacement) => {
+		  if (element.textContent.trim() === textToReplace) {
 			element.childNodes.forEach(node => {
-			  if (node.textContent.trim() === $TextToReplace) {
+			  if (node.textContent.trim() === textToReplace) {
 				node.textContent = textReplacement;
 			  }
 			})
@@ -265,4 +265,4 @@ $('.p-datepicker-prev').click(function () {
 
 		observer.observe(element, { characterData: true, subtree: true, childList: true });
 
-		replaceText();
+		replaceText('available', 'tillgängliga');
