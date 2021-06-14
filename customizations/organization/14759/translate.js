@@ -61,9 +61,9 @@ $('.p-datepicker-prev').click(function () {
 
 
 			//replace available
-			var ava = $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
-			var replace = ava.replace("available", "tillg\u00e4ngliga platser");
-			$("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
+			// var ava = $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text();
+			// var replace = ava.replace("available", "tillg\u00e4ngliga platser");
+			// $("#event-list-widget > vv-events-search > vv-list-view > section > ul > li > vv-list-view-standard-item > article > div > div.col-12.event-article__event-info > div.event-article__footer > div > div.event-article__ticket-info.col-sm-7.col-md-8.green > span").text(replace);
 
 			//page 1
 			//contact person
@@ -245,21 +245,4 @@ $('.p-datepicker-prev').click(function () {
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
 
-		var textToReplace = 'available';
-		var textReplacement = 'tillgängliga';
 
-		var replaceText = (textToReplace, textReplacement) => {
-		  if (element.textContent.trim() === textToReplace) {
-			element.childNodes.forEach(node => {
-			  if (node.textContent.trim() === textToReplace) {
-				node.textContent = textReplacement;
-			  }
-			})
-		  }
-		}
-
-		observer = new MutationObserver(replaceText);
-
-		observer.observe(element, { characterData: true, subtree: true, childList: true });
-
-		replaceText();
