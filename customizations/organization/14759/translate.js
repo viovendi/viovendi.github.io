@@ -247,14 +247,14 @@ $('.p-datepicker-prev').click(function () {
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
 
-		const textToReplace = 'available';
+		const $TextToReplace = 'available';
 		const textReplacement = 'tillgängliga';
-
 		const element = document.querySelector('.event-category__amount--less')
+
 		const replaceText = () => {
-		  if (element.textContent.trim() === textToReplace) {
+		  if (element.textContent.trim() === $TextToReplace) {
 			element.childNodes.forEach(node => {
-			  if (node.textContent.trim() === textToReplace) {
+			  if (node.textContent.trim() === $TextToReplace) {
 				node.textContent = textReplacement;
 			  }
 			})
