@@ -249,10 +249,6 @@ $('.p-datepicker-prev').click(function () {
 
 		const textToReplace = 'available';
 		const textReplacement = 'tillgängliga';
-		const correctTranslation = ()=>{
-
-		}
-
 
 		const element = document.querySelector('.event-category__amount--less')
 		const replaceText = () => {
