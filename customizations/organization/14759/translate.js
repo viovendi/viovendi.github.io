@@ -16,7 +16,7 @@ function translateDates() {
 	$("table > thead > tr > th:nth-child(5) > span").text('To');
 	$("table > thead > tr > th:nth-child(6) > span").text('Fr');
 	$("table > thead > tr > th:nth-child(7) > span").text('Lö');
-	//div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted > 
+	//div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted >
 	//$("div.p-datepicker-calendar-container.ng-tns-c47-1.ng-star-inserted > table > thead > tr > th:nth-child(2) > span")
 
 	var month = $(".p-datepicker-month").text();
@@ -116,19 +116,19 @@ $('.p-datepicker-prev').click(function () {
 			$('.ew-selection__error').text('Välj antal biljetter du vill boka');
 
 
-			//ATTENDEE DETAILS 
+			//ATTENDEE DETAILS
 			$('.customization2_attendees_title').text('Deltagarinformation');
 
-			//ATTENDEE COUNT    
+			//ATTENDEE COUNT
 			$('.customization2_attendee_count').text('Deltagare 1 av 1');
 
-			//CONTACT    
+			//CONTACT
 			$('.customization2_attendee_contact-data_headline').text('Kontaktuppgifter');
 
-			//FIRST NAME    
+			//FIRST NAME
 			$('.customization2_attendee_contact-data_first-name_label').text('Förnamn (valfritt)');
 
-			//LAST NAME    
+			//LAST NAME
 			$('.customization2_attendee_contact-data_last-name_label').text('Efternamn (valfritt)');
 
 			//Accept
@@ -138,7 +138,7 @@ $('.p-datepicker-prev').click(function () {
 			var canceltext = $(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text();
 			var replacecancel = canceltext.replace("Cancel", "X Avbryt");
 			$(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text(replacecancel);
-			//   if(!typeof canceltext === "undefined"){}    
+			//   if(!typeof canceltext === "undefined"){}
 
 			// BOOKING DETAILS
 			$('.customization2_booker_title').text('BOKNINGSINFORMATION');
@@ -181,7 +181,7 @@ $('.p-datepicker-prev').click(function () {
 			//Email address
 			$('.customization2_booker_contact-data_email_label').text('E-postadress (för bokningsbekräftelse och biljett)');
 
-			// confirm email address                                                         
+			// confirm email address
 			$('.customization2_booker_contact-data_email-confirmation_label').text('Bekräfta e-postadress');
 
 
@@ -243,6 +243,30 @@ $('.p-datepicker-prev').click(function () {
 
 	}, 3000);
 		//99 available Replace the word
-		//var available = $('.event-category__amount').text(); 
+		//var available = $('.event-category__amount').text();
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
+
+		const textToReplace = 'available';
+		const textReplacement = 'tillgängliga';
+		const correctTranslation = ()=>{
+
+		}
+
+
+		const element = document.querySelector('.event-category__amount--less')
+		const replaceText = () => {
+		  if (element.textContent.trim() === textToReplace) {
+			element.childNodes.forEach(node => {
+			  if (node.textContent.trim() === textToReplace) {
+				node.textContent = textReplacement;
+			  }
+			})
+		  }
+		}
+
+		observer = new MutationObserver(replaceText);
+
+		observer.observe(element, { characterData: true, subtree: true, childList: true });
+
+		replaceText();
