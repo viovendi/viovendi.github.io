@@ -1,4 +1,4 @@
-var stateObj = {};
+/*var stateObj = {};
 
 function checkStateObj(obj){
   var keys = Object.keys(obj);
@@ -90,6 +90,8 @@ var insertionListener = function(event) {
    }
  }
 }
+
+*/
 
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
