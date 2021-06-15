@@ -1,14 +1,15 @@
  function checkIfChecked(){
-  	$('.vv-radio__indicator').each(function(){
+  	$('.vv-radio__label').each(function(){
       console.log($(this).closest('vv-radio').length);
 
       if( $(this).closest('vv-radio').length ){
 
-        var item = $(this).closest('vv-radio__label'),
-            label = item.find("label"),
-            label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
+        var item = $(this).closest('vv-control-label');
+            label = item.find("vv-radio__label-text");
+       console.log(label);
+           // label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text.indexOf("Abstract submission") != -1){
+        if( label.indexOf("Yes") != -1){
 
           if( $(this).is(':checked') ){
               
