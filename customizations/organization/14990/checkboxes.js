@@ -45,23 +45,23 @@ function calcCheckboxes(attendee){
   return checked;
 }
 
-function enabledDisabledButton(attendee, number){
+function enabledDisabledButton(number){
   console.log(number);
  if(number < 1 ){
-   $('.'+attendee+' .customization2_booker_edit-action_save').attr('disabled', true);
+   $('.customization2_booker_edit-action_save').attr('disabled', true);
 
-   if( $('.'+attendee+' .button-error-message').length < 1 ){
-     $('.'+attendee+' .customization2_booker_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Please select at least 1 presentation</span>');
+   if( $('.button-error-message').length < 1 ){
+     $('.customization2_booker_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Please select at least 1 presentation</span>');
    }
  }else{
-   $('.'+attendee+' .customization2_booker_edit-action_save').attr('disabled', false);
-   $('.'+attendee+' .button-error-message').remove();
+   $('.customization2_booker_edit-action_save').attr('disabled', false);
+   $('.button-error-message').remove();
  }
 }
 
 function inint(){
  main();
- enabledDisabledButton('customization2_booker-', 0);
+ enabledDisabledButton(0);
 }
 inint();
 
