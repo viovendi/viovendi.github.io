@@ -59,7 +59,7 @@ function enabledDisabledButton(attendee, number){
 
 function inint(){
  main();
- enabledDisabledButton('customization2_booker', 0);
+ enabledDisabledButton('customization2_booker-', 0);
 }
 inint();
 
