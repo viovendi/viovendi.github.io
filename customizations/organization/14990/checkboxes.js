@@ -39,29 +39,27 @@ function calcCheckboxes(attendee){
   $('.'+attendee+' .customization2_booker_further-data vv-checkbox label').each(function(){
     if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
       checked = checked + 1;
-      console.log("+1");
     }
   });
   return checked;
 }
 
-function enabledDisabledButton(number){
-  console.log(number);
+function enabledDisabledButton(attendee, number){
  if(number < 1 ){
-   $('.customization2_booker_edit-action_save').attr('disabled', true);
+   $('.'+attendee+' .customization2_booker_edit-action_save').attr('disabled', true);
 
-   if( $('.button-error-message').length < 1 ){
-     $('.customization2_booker_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Please select at least 1 presentation</span>');
+   if( $('.'+attendee+' .button-error-message').length < 1 ){
+     $('.'+attendee+' .customization2_booker_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Please select at least 1 presentation</span>');
    }
  }else{
-   $('.customization2_booker_edit-action_save').attr('disabled', false);
-   $('.button-error-message').remove();
+   $('.'+attendee+' .customization2_booker_edit-action_save').attr('disabled', false);
+   $('.'+attendee+' .button-error-message').remove();
  }
 }
 
 function inint(){
  main();
- enabledDisabledButton(0);
+ enabledDisabledButton('customization2_booker', 0);
 }
 inint();
 
