@@ -1,3 +1,25 @@
+ function checkIfChecked(){
+  	$('vv-radio__indicator').each(function(){
+      console.log($(this).closest('vv-radio').length);
+
+      if( $(this).closest('vv-radio').length ){
+
+        var item = $(this).closest('vv-radio__label'),
+            label = item.find("label"),
+            label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
+
+        if( label_text.indexOf(Abstract submission") != -1){
+
+          if( $(this).is(':checked') ){
+              
+          console.log("show");
+        }
+        else{console.log("hide")}
+      }
+    
+    }
+                                   })
+ }
 /*var stateObj = {};
 
 function checkStateObj(obj){
