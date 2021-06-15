@@ -20,6 +20,7 @@
     }
                                    })
  }
+checkIfChecked();
 /*var stateObj = {};
 
 function checkStateObj(obj){
