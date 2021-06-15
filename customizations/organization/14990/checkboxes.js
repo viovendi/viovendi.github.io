@@ -39,12 +39,14 @@ function calcCheckboxes(attendee){
   $('.'+attendee+' .customization2_booker_further-data vv-checkbox label').each(function(){
     if ( $(this).find('.vv-checkbox__input').is(':checked') ) {
       checked = checked + 1;
+      console.log("+1");
     }
   });
   return checked;
 }
 
 function enabledDisabledButton(attendee, number){
+  console.log(number);
  if(number < 1 ){
    $('.'+attendee+' .customization2_booker_edit-action_save').attr('disabled', true);
 
