@@ -1,5 +1,5 @@
  function checkIfChecked(){
-  	$('vv-radio__indicator').each(function(){
+  	$('.vv-radio__indicator').each(function(){
       console.log($(this).closest('vv-radio').length);
 
       if( $(this).closest('vv-radio').length ){
