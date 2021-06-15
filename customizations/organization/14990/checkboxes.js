@@ -8,7 +8,7 @@
             label = item.find("label"),
             label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
 
-        if( label_text.indexOf(Abstract submission") != -1){
+        if( label_text.indexOf("Abstract submission") != -1){
 
           if( $(this).is(':checked') ){
               
