@@ -29,6 +29,17 @@ function myHelpers(elements) {
     });
     return this.field;
   }
+  this.findRadioGroup = function (lable) {
+    this.lable = lable;
+    this.field = null;
+
+    elements.forEach((field) => {
+      if (field.querySelectorAll('.vv-radio-group p')[0].innerText.trim().includes(this.lable)) {
+        this.field = field;
+      }
+    });
+    return this.field;
+  }
   return this
 }
 
