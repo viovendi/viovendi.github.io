@@ -34,8 +34,8 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
-      if(typeof field.querySelectorAll('.vv-radio-group p')[0].innerText !== 'undefined'){
-console.log(field.querySelectorAll('.vv-radio-group p')[0].innerText)
+      if(field.querySelectorAll('.vv-radio-group p')[0]){
+console.log(document.createElement(field.querySelectorAll('.vv-radio-group p')[0]).innerText)
       }
      /*if (field.querySelectorAll('.vv-radio-group p')[0].trim().includes(this.lable)) {
         this.field = field;
