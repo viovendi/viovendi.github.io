@@ -11,9 +11,11 @@ var radioGroup = $$('.customization2_booker_further-data_custom-question').findR
     if($(input.currentTarget).siblings('.customization2_booker_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Yes')){
        console.log('show');
       $(field).show();
+       $('.col-xs-4 .col-4 .vv-pr-none').show()
        }
     else{
     $(field).hide();
+       $('.col-xs-4 .col-4 .vv-pr-none').hide()
       console.log('hide');
     }
                     
