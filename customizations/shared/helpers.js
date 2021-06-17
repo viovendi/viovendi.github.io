@@ -34,7 +34,7 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
-      if(field.querySelectorAll('.vv-radio-group p')[0].innerText){
+      if(typeof field.querySelectorAll('.vv-radio-group p')[0].innerText !== 'undefined'){
 console.log(field.querySelectorAll('.vv-radio-group p')[0].innerText)
       }
      /*if (field.querySelectorAll('.vv-radio-group p')[0].trim().includes(this.lable)) {
