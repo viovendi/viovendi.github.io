@@ -35,7 +35,7 @@ function myHelpers(elements) {
 
     elements.forEach((field) => {
 
-console.log(field.querySelectorAll('.vv-radio-group p')[0])
+console.log(field.querySelectorAll('.vv-radio-group > p'))
 
      /*if (field.querySelectorAll('.vv-radio-group p')[0].trim().includes(this.lable)) {
         this.field = field;
