@@ -35,9 +35,9 @@ function myHelpers(elements) {
 
     elements.forEach((field) => {
       console.log(field)
-      if (field.querySelectorAll('.vv-radio-group p')[0].innerText.trim().includes(this.lable)) {
+     /* if (field.querySelectorAll('.vv-radio-group p')[0].innerText.trim().includes(this.lable)) {
         this.field = field;
-      }
+      }*/
     });
     return this.field;
   }
