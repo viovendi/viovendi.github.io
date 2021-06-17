@@ -34,9 +34,6 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
-
-
-
      if ($(field.querySelectorAll('.vv-radio-group > p')[0]).text().trim().includes(this.lable)) {
         this.field = field;
       }
