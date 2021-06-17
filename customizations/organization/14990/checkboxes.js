@@ -21,3 +21,4 @@ var radioGroup = $$('.customization2_booker_further-data_custom-question').findR
     console.log($(input.currentTarget).siblings('.customization2_booker_further-data_custom-question_radio-line_label').text())
    });
   });
+
