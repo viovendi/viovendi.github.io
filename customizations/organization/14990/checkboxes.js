@@ -10,10 +10,10 @@ var radioGroup = $$('.customization2_booker_further-data_custom-question').findR
   $(element).change(function(input) {
     if($(input.currentTarget).siblings('.customization2_booker_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Yes')){
        console.log('show');
-      $$('.customization2_booker_further-data_custom-question').findField('Abstract submission (optional)').show();
+      $('.customization2_booker_further-data_custom-question').findField('Abstract submission (optional)').show();
        }
     else{
-    $$('.customization2_booker_further-data_custom-question').findField('Abstract submission (optional)').hide();
+    $('.customization2_booker_further-data_custom-question').findField('Abstract submission (optional)').hide();
       console.log('hide');
     }
                     
