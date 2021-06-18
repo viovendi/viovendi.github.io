@@ -13,11 +13,11 @@ $('.col-xs-4 .col-4 .vv-pr-none').hide()
     if($(input.currentTarget).siblings('.customization2_booker_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('No')){
        console.log('show');
       $(field).show();
-       $('.col-xs-4 .col-4 .vv-pr-none').show()
+       $('.col-xs-4 .col-4 .vv-pr-none').css("display", "block");
        }
     else{
     $(field).hide();
-       $('.col-xs-4 .col-4 .vv-pr-none').hide()
+       $('.col-xs-4 .col-4 .vv-pr-none').css("display", "none");
       console.log('hide');
     }
                     
