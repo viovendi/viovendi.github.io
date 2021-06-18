@@ -5,6 +5,7 @@ var field = $$('.customization2_booker_further-data_custom-question').findField(
 var radioGroup = $$('.customization2_booker_further-data_custom-question').findRadioGroup('Abstract submission (deadline: 30th June 2021)');
    
    $(field).hide()
+
 $('.col-xs-4 .col-4 .vv-pr-none').hide()
   var inputs = $(radioGroup).find('input');
   inputs.each(function( i, element ) {
