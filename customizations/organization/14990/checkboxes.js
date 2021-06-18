@@ -6,7 +6,7 @@ var radioGroup = $$('.customization2_booker_further-data_custom-question').findR
    
    $(field).hide()
 
-$('.col-xs-4 .col-4 .vv-pr-none').hide()
+$('.col-xs-4.col-4.vv-pr-none').css("display", "none");
   var inputs = $(radioGroup).find('input');
   inputs.each(function( i, element ) {
   $(element).change(function(input) {
