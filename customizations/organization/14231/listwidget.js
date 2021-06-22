@@ -1,4 +1,4 @@
-console.log('works');
+console.log('14231 Git listwidget');
 
 //$('.event-info__event-description.customization-event-info-description').hide();
 var page1 = $('.customization-booking-area-wrapper-page1');
