@@ -12,13 +12,13 @@ console.log('GTM github!');
   }
 
   function addPopUp2(){
-    if($('#checkboxModal').length < 1){
-       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2">'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
+    if($('#checkboxModal2').length < 1){
+       $('<div id="checkboxModal2" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2">'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
       // move popup to checkbox
       var offset = $('.popup').offset();
-      var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
+      var positionPopup = offset.top - $('#checkboxModal2 .modal-content').outerHeight() - 35;
 
-      $('#checkboxModal .modal-content').css({top: positionPopup});
+      $('#checkboxModal2 .modal-content').css({top: positionPopup});
     }
   }
 
@@ -83,8 +83,9 @@ console.log('GTM github!');
 
     });
     $('#accept2').on('click', function(){
-      $('#checkboxModal').hide();
-      $('#checkboxModal').remove();
+      console.log('accept2')
+      $('#checkboxModal2').hide();
+      $('#checkboxModal2').remove();
 
     });
   }
