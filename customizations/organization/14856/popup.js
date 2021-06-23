@@ -33,7 +33,7 @@ console.log('GTM github!');
       }
     if(!!$('.checkbox-link')){
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
-      console.log($('.checkbox-link'))
+      console.log(!!$('.checkbox-link'))
     }
 
     });
