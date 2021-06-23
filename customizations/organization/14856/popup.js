@@ -82,6 +82,11 @@ console.log('GTM github!');
       $('.popup input').trigger('click');
 
     });
+    $('#accept2').on('click', function(){
+      $('#checkboxModal2').hide();
+      $('#checkboxModal2').remove();
+
+    });
   }
 
     var insertionListener = function(event) {
