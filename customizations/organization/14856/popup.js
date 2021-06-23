@@ -73,7 +73,7 @@ console.log('GTM github!');
   }
 
 
-  function clickAcceptButton(input){
+  function clickAcceptButton(){
      $('#accept').on('click', function(){
       $('#checkboxModal').hide();
       $('#checkboxModal').remove();
@@ -81,11 +81,6 @@ console.log('GTM github!');
       $('.popup').removeClass('unchecked');
       $('.popup input').trigger('click');
 
-    });
-    $('#accept2').on('click', function(){
-      $('#checkboxModal2').hide();
-      $('#checkboxModal2').remove();
-     input.click();
     });
   }
 
