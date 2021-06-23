@@ -40,6 +40,17 @@ function myHelpers(elements) {
     });
     return this.field;
   }
+  this.findCheckboxGroup = function (lable) {
+    this.lable = lable;
+    this.field = null;
+
+    elements.forEach((field) => {
+     if ($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim().includes(this.lable)) {
+        this.field = field;
+      }
+    });
+    return this.field;
+  }
   return this
 }
 
