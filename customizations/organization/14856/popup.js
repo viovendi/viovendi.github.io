@@ -31,8 +31,9 @@ console.log('GTM github!');
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
       }
-
+    if(!$('.checkbox-link')){
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
+    }
 
     });
   }
