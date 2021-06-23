@@ -31,6 +31,7 @@ console.log('GTM github!');
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
       }
+      console.log(!!$('.checkbox-link'))
     if(!!$('.checkbox-link')){
       $('.popup').after('<p><a href="'+linkSource+'" target="_blank" class="checkbox-link">'+linkText+'</a></p>');
       console.log(!!$('.checkbox-link'))
