@@ -85,7 +85,7 @@ console.log('GTM github!');
     $('#accept2').on('click', function(){
       $('#checkboxModal2').hide();
       $('#checkboxModal2').remove();
-      $(input).trigger('click');
+      input.trigger('click');
     });
   }
 
