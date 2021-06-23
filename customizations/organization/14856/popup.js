@@ -11,6 +11,17 @@ console.log('GTM github!');
     }
   }
 
+  function addPopUp2(){
+    if($('#checkboxModal').length < 1){
+       $('<div id="checkboxModal" class="modal"><div class="modal-content"><div class="modal-head">'+headerText+'</div><div class="modal-body"><p>'+modalText1+'</p><p>'+modalText2+'</p><p>'+modalText3+'</p><p>'+modalText4+'</p><p>'+modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept" disabled>'+buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
+      // move popup to checkbox
+      var offset = $('.popup').offset();
+      var positionPopup = offset.top - $('#checkboxModal .modal-content').outerHeight() - 35;
+
+      $('#checkboxModal .modal-content').css({top: positionPopup});
+    }
+  }
+
 
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
