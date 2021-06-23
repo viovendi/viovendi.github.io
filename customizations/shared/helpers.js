@@ -45,7 +45,8 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
-      console.log($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text())
+      console.log($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim())
+      console.log($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim().includes(this.lable))
      if ($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim().includes(this.lable)) {
         this.field = field;
       }
