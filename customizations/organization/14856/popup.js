@@ -17,7 +17,7 @@ const buttonText = 'Ich willige ein';
 const linkText = 'Einwilligungserklärung zum Herunterladen';
 const linkSource = 'https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/BASE/Einwilligung_Fachtagung_Livestream_Vers.001.pdf';
 
-const popUp2headerText = '<h3>Einwilligung Bildnutzung Internet,social media</h3>';
+const popUp2headerText = '<h3>Einwilligung Bildnutzung Internet, social media</h3>';
 
 const popUp2modalText1 = '<strong>Einwilligung<br /><br />zur Aufnahme und Veröffentlichung von<br />Bildmaterial<br /><br />durch das BASE<br /><br /></strong>';
 
