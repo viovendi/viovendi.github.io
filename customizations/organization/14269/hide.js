@@ -4,7 +4,7 @@ var name = $('.event-info__title').text()
 
 if(name.indexOf("Brennholz")>=0){
   $('.customization-booking-area-wrapper-page1').hide();
-  $('.event-info__header').css("margin-left:", "-130px");
+  $('.event-info__header').css("margin-left", "-130px");
   $('.event-info__date-container').hide();
   $('.event-info .event-info__details').css("margin-left", "0px");
 /*.event-info__header {
