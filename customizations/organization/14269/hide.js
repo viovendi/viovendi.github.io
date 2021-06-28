@@ -45,6 +45,9 @@ async function getEventAttributes(eventId) {
       $('.event-info__header').css("margin-left", "-130px");
       $('.event-info__date-container').hide();
       $('.event-info .event-info__details').css("margin-left", "0px");
+       //hide date
+      $('.customization-event-info-date-details').hide();
+      $('div.m-box.event-info__details > div:nth-child(3)').hide();
     }
     
     return v.name
