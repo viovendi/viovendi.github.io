@@ -21,7 +21,7 @@ async function getEventAttributes(eventId) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    return v.name.includes('attribute_names)
+    return v.name.includes('attribute_names')
   });
   return  attribute[0].data;
 }
