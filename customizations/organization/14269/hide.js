@@ -10,7 +10,7 @@ console.log("hide")
 var iframe = $('viovendi_iframe');
 
 console.log(iframe);
-var prev = ifrage.prev();
+var prev = iframe.prev();
 console.log(prev.attr('src'))
 console.log(src);
 
