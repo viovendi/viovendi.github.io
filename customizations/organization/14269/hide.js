@@ -9,7 +9,7 @@ console.log("hide")
 
 var path = window.location.pathname;
 console.log(path)
-var eventAttribute = $('.viovendi_iframe').contents().location.href ;
+var eventAttribute = $('.viovendi_iframe').location ;
 var ea = $('viovendi_iframe').src//.attr('src');
 console.log(eventAttribute);
 console.log(ea);
