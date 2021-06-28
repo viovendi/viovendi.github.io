@@ -31,19 +31,15 @@ async function getEventAttributes(eventId) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    console.log(v.name);
+    if(v.name == 'Forst'){
+      $('.customization-booking-area-wrapper-page1').hide();
+    }
+    
     return v.name
   });
   return  attribute[0].data;
 }
 
-console.log(getEventAttributes(eventId));
+getEventAttributes(eventId);
 
-/*
-if(getEventAttributes(eventId).PromiseResult()){
-console.log("forst");
-}
-*/
-
-//attribute_names=Forst
 
