@@ -16,5 +16,8 @@ console.log(ea);
 if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
 }
+
+var path = window.location.pathname;
+console.log(path)
 //attribute_names=Forst
 
