@@ -31,13 +31,13 @@ async function getEventAttributes(eventId) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    console.log(v.name);
     return v.name
   });
   return  attribute[0].data;
 }
 
 console.log(getEventAttributes(eventId));
-console.log(getEventAttributes(eventId).promise());
 
 /*
 if(getEventAttributes(eventId).PromiseResult()){
