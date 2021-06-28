@@ -38,10 +38,10 @@ async function getEventAttributes(eventId) {
 
 console.log(getEventAttributes(eventId));
 
-/*if(eventAttribute.indexOf("attribute_names=Forst")){
+if(getEventAttributes(eventId).indexOf("Forst")){
 console.log("forst");
 }
 
-*/
+
 //attribute_names=Forst
 
