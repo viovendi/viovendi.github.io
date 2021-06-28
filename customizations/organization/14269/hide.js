@@ -10,7 +10,8 @@ console.log("hide")
 var iframe = $('viovendi_iframe');
 
 console.log(iframe);
-var src = iframe[0].attr('src');
+var prev = ifrage.prev();
+console.log(prev.attr('src'))
 console.log(src);
 
 /*if(eventAttribute.indexOf("attribute_names=Forst")){
