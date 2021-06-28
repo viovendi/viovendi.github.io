@@ -7,7 +7,7 @@ console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
 
-var iframe = document.find('.viovendi_iframe');
+var iframe = $('.viovendi_iframe');
 var content = $('.viovendi_iframe').contents();
 console.log(content);
 
