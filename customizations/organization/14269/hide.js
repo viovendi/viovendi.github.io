@@ -41,7 +41,7 @@ console.log(getEventAttributes(eventId).PromiseResult());
 if(getEventAttributes(eventId).PromiseResult()){
 console.log("forst");
 }
-*(
+*/
 
 //attribute_names=Forst
 
