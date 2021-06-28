@@ -8,8 +8,11 @@ console.log("hide")
 }
 
 
-var eventAttribute = $('#viovendi-event-list-14444-rd6bb2bqd').attr('src');
+var eventAttribute = $('.viovendi_iframe');
+var ea = $('viovendi_iframe')//.attr('src');
 console.log(eventAttribute);
+console.log(ea);
+
 if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
 }
