@@ -36,7 +36,10 @@ async function getEventAttributes(eventId) {
   return  attribute[0].data;
 }
 
-console.log(getEventAttributes(eventId).PromiseResult());
+console.log(getEventAttributes(eventId));
+console.log(getEventAttributes(eventId)[0]);
+console.log(getEventAttributes(eventId)[1]);
+
 /*
 if(getEventAttributes(eventId).PromiseResult()){
 console.log("forst");
