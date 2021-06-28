@@ -7,11 +7,26 @@ console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
 
-var iframe = $('viovendi_iframe');
+var pathname = window.location.pathname;
+var eventId = pathname.split('/')[3]
 
-console.log(iframe);
-var prev = iframe.prev();
-console.log(prev)
+async function getEventAttributes(eventId) {
+  const result = await makeRequest({
+    url: `https://api.doo.net/v1/events/${eventId}`,
+    type: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    dataType: 'json',
+  })
+
+  const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    return v.name.includes('attribute_names)
+  });
+  return  attribute[0].data;
+}
+
+console.log(getEventAttributes(eventId));
 
 /*if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
