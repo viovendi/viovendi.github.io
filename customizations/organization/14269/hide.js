@@ -11,8 +11,7 @@ var iframe = $('viovendi_iframe');
 
 console.log(iframe);
 var prev = iframe.prev();
-console.log(prev.attr('src'))
-console.log(src);
+console.log(prev)
 
 /*if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
