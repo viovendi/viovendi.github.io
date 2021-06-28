@@ -7,6 +7,10 @@ if(name.indexOf("Brennholz")>=0){
   $('.event-info__header').css("margin-left", "-130px");
   $('.event-info__date-container').hide();
   $('.event-info .event-info__details').css("margin-left", "0px");
+  
+  //hide date
+  $('.customization-event-info-date-details').hide();
+  $('div.m-box.event-info__details > div:nth-child(3) > div.col-xs-4.col-4.col-sm-3.event-info__details__col-name').hide();
 
 
   
