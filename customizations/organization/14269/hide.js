@@ -7,7 +7,8 @@ console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
 
-
+var path = window.location.pathname;
+console.log(path)
 var eventAttribute = $('.viovendi_iframe').contents().location.href ;
 var ea = $('viovendi_iframe').src//.attr('src');
 console.log(eventAttribute);
@@ -17,7 +18,6 @@ if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
 }
 
-var path = window.location.pathname;
-console.log(path)
+
 //attribute_names=Forst
 
