@@ -7,6 +7,16 @@ console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
 
+async function makeRequest(options) {
+  let result = null;
+  try {
+    result = await $.ajax(options);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
 
