@@ -3,7 +3,7 @@ console.log('14269 Booking wrapper if Brennholz in name or Forst attribute');
 var name = $('.event-info__title').text()
 
 if(name.indexOf("Brennholz")){
-  console.log(name);
+  console.log(name.indexOf("Brennholz"));
 console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
