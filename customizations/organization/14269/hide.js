@@ -8,7 +8,7 @@ console.log("hide")
 }
 
 
-var eventAttribute = $('.viovendi_iframe').attr('src');
+var eventAttribute = $('#viovendi-event-list-14444-rd6bb2bqd').attr('src');
 console.log(eventAttribute);
 if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
