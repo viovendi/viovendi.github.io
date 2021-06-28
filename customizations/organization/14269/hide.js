@@ -37,8 +37,7 @@ async function getEventAttributes(eventId) {
 }
 
 console.log(getEventAttributes(eventId));
-console.log(getEventAttributes(eventId)[0]);
-console.log(getEventAttributes(eventId)[1]);
+console.log(getEventAttributes(eventId).promise());
 
 /*
 if(getEventAttributes(eventId).PromiseResult()){
