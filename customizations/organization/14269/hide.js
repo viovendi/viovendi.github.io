@@ -7,12 +7,7 @@ if(name.indexOf("Brennholz")>=0){
   $('.event-info__header').css("margin-left", "-130px");
   $('.event-info__date-container').hide();
   $('.event-info .event-info__details').css("margin-left", "0px");
-/*.event-info__header {
-    margin-left: -130px;
-}
-  .event-info .event-info__details {
-    margin-left: 0px;
-}*/
+
 
   
 }
@@ -43,8 +38,8 @@ async function getEventAttributes(eventId) {
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
     if(v.name == 'Forst'){
       $('.customization-booking-area-wrapper-page1').hide();
+      $('.event-info__header').css("margin-left", "-130px");
       $('.event-info__date-container').hide();
-      $('.event-info__date-container').css("margin-left:", "-130px");
       $('.event-info .event-info__details').css("margin-left", "0px");
     }
     
