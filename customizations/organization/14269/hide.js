@@ -8,11 +8,9 @@ console.log("hide")
 }
 
 var iframe = $('viovendi_iframe');
-var content = $('viovendi_iframe').contents();
-console.log(content);
 
 console.log(iframe);
-var src = iframe.getAttribute('src');
+var src = iframe.attr('src');
 console.log(src);
 
 /*if(eventAttribute.indexOf("attribute_names=Forst")){
