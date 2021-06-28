@@ -8,10 +8,8 @@ console.log("hide")
 }
 
 
-var eventAttribute = $('.viovendi_iframe').attr('src') ;
-var ea = $('viovendi_iframe').attr('src')//.attr('src');
+var eventAttribute = $('.viovendi_iframe').find('src') ;
 console.log(eventAttribute);
-console.log(ea);
 
 if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
