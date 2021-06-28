@@ -7,14 +7,15 @@ console.log("hide")
   $('.customization-booking-area-wrapper-page1').hide();
 }
 
+var iframe = document.find('.viovendi_iframe');
+console.log(iframe);
+var src = iframe.getAttribute('src');
+console.log(src);
 
-var eventAttribute = $('.viovendi_iframe').find('src') ;
-console.log(eventAttribute);
-
-if(eventAttribute.indexOf("attribute_names=Forst")){
+/*if(eventAttribute.indexOf("attribute_names=Forst")){
 console.log("forst");
 }
 
-
+*/
 //attribute_names=Forst
 
