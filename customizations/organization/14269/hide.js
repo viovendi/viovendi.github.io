@@ -1,4 +1,4 @@
-console.log('14269 hide stuff');
+console.log('14269 Booking wrapper if Brennholz in name or Forst attribute');
 
 var name = $('.event-info__title').text()
 
