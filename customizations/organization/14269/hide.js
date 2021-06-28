@@ -8,6 +8,9 @@ console.log("hide")
 }
 
 var iframe = document.find('.viovendi_iframe');
+var content = $('.viovendi_iframe').contents();
+console.log(content);
+
 console.log(iframe);
 var src = iframe.getAttribute('src');
 console.log(src);
