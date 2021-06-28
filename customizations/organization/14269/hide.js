@@ -8,8 +8,8 @@ console.log("hide")
 }
 
 
-var eventAttribute = $('.viovendi_iframe').location.href;
-var ea = $('viovendi_iframe').location.href//.attr('src');
+var eventAttribute = $('.viovendi_iframe').contents().get(0).location.href ;
+var ea = $('viovendi_iframe').src//.attr('src');
 console.log(eventAttribute);
 console.log(ea);
 
