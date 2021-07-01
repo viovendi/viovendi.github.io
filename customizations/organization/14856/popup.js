@@ -106,7 +106,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
       console.log($('#checkboxModal2').length);
       $('#checkboxModal2 .modal-body').scroll(function(){
         if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-          $('#checkboxModal .accept-button').attr('disabled', false);
+          $('#checkboxModal2 .accept-button').attr('disabled', false);
           clickAcceptButton();
         }
       });
