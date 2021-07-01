@@ -125,7 +125,6 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
     if (event.animationName === "nodeInserted") {
       console.log('edit');
       init();
-      init2();
     }
   }
 
