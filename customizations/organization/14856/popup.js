@@ -44,7 +44,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
 
   function addPopUp2(){
     if($('#checkboxModal2').length < 1){
-       $('<div id="checkboxModal2" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2">'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
+       $('<div id="checkboxModal2" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2" disabled>'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
       // move popup to checkbox
       var offset = $('.popup').offset();
       var positionPopup = offset.top - $('#checkboxModal2 .modal-content').outerHeight() - 35;
@@ -57,7 +57,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
       var textLabel = $(this).text().trim();
-      var textTofind = 'Einwilligung zur Durchführung der Fachkonferenz Teilgebiete';
+      var textTofind1 = 'Einwilligung zur Durchführung der Fachkonferenz Teilgebiete';
 
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
@@ -112,6 +112,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
       $('.popup input').trigger('click');
 
     });
+    
     $('#accept2').on('click', function(){
       console.log($('#checkboxModal2'))
       $('#checkboxModal2').hide();
@@ -124,6 +125,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
     if (event.animationName === "nodeInserted") {
       console.log('edit');
       init();
+      init2();
     }
   }
 
