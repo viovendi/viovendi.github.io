@@ -81,11 +81,12 @@ var insertionListener = function(event) {
           console.log("changed");
             //on change show these 2 questions
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
-                showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+                showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
+                showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
               console.log('show');
             }
             else{
-               hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+               hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
               console.log('hide');
             }
            });
