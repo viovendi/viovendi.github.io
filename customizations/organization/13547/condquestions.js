@@ -75,21 +75,21 @@ var insertionListener = function(event) {
      
    
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
-  var inputs = $(radioGroupGastorMitglied).find('input');
-  inputs.each(function( i, element ) {
-  $(element).change(function(input) {
-    console.log("changed");
-      //on change show these 2 questions
-     if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
-          showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
-        console.log('mitgiedsnummer');
-      }
-      else{
-         hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
-        console.log('mitgiedsnummer');
-      }
-     });
-  });
+        var inputs = $(radioGroupGastorMitglied).find('input');
+        inputs.each(function( i, element ) {
+        $(element).change(function(input) {
+          console.log("changed");
+            //on change show these 2 questions
+           if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
+                showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+              console.log('show');
+            }
+            else{
+               hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+              console.log('hide');
+            }
+           });
+        });
 
     
     //Oleg: now this question should be shown, it works fine with the 'Mitgliedsnummer' but not with the other question 
