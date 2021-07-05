@@ -95,6 +95,8 @@ var insertionListener = function(event) {
                     hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                     hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                     hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
+
 
                    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
                    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
