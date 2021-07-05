@@ -86,7 +86,19 @@ var insertionListener = function(event) {
               $(element).change(function(input) {
                   if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Ja')){
                     console.log('Nein');
-                    //hide everything TODO
+                    //hide everything
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+
+
+                   $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
+                   $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
+                   $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
+                   $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
+                   $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
                   }
                   else{
                       console.log('Ja');
