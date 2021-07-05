@@ -59,15 +59,15 @@ var insertionListener = function(event) {
        console.log('Gast');
        showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder");
        showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
-       }
+    }
+    
     else{
       console.log('Mitglied');
-    
-    }
-
-     
-
-   }
+      }
+                    
+       
+   });
+  });
 }
    
 
