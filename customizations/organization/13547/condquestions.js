@@ -109,7 +109,7 @@ var insertionListener = function(event) {
                                 console.log('2');
                               }
 
-                         )}
+                         })
                   }
               });
           });
