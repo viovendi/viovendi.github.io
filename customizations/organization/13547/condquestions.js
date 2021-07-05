@@ -69,14 +69,9 @@ var insertionListener = function(event) {
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein Stimmberechtigtes Mitglied?');
      hideAll();
      
-     
+    
 
-     
-
-     
-
-
-
+// show 2 questions when 'Gast' or 'Stimmberechtigtes Mitglied' is checked
   var inputs = $(radioGroupGastorMitglied).find('input');
   inputs.each(function( i, element ) {
   $(element).change(function(input) {
@@ -88,7 +83,7 @@ var insertionListener = function(event) {
     showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
 
-      
+      // show question 'Wie viele Mitglieder vertreten Sie?' if 'Ja' is selected; Hide everything if 'Nein' is selected
           var radioGroupVertreter = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Kommen Sie zusätzlich als Vertreter für andere Mitglieder?');
           var inputsVertreter =  $(radioGroupVertreter).find('input');
           inputsVertreter.each(function( i, element ) {
@@ -99,8 +94,24 @@ var insertionListener = function(event) {
                   }
                   else{
                     console.log('Ja');
-                    showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
+                    showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie?");
                     
+                    // show 1-5 question depending on the selected number:
+                    var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
+                    var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
+                    var inputDropDown = $(question).find('.customization2_attendee_further-data_custom-question_input')
+                    dropDownQuestion.change(function(){
+                        var state = dropDownQuestion.val().trim()
+                        if (state.includes("1")) {
+                          console.log('1');
+                        }
+                        if (state.includes("2")) {
+                          console.log('2');
+                        }
+                    }
+
+
+
                     
                   }
               });
