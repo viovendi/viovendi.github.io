@@ -48,7 +48,7 @@ function hideAll(){
      hideQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
-     hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
+     //hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
       
       //@Oleg: next question does not hide... I dont know why
@@ -83,10 +83,11 @@ var insertionListener = function(event) {
       //on change show these 2 questions
       if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
           showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+        console.log('mitgiedsnummer');
       }
-    else{
-              hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
-    }
+      else{
+            hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+      }
 
     
     //Oleg: now this question should be shown, it works fine with the 'Mitgliedsnummer' but not with the other question 
