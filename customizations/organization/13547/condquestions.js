@@ -69,12 +69,11 @@ var insertionListener = function(event) {
    if (event.animationName === "nodeInserted") {
       console.log("noteInserted");
      
-     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein Stimmberechtigtes Mitglied?');
+     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein stimmberechtigtes Mitglied?');
      
      hideAll();
      
-    
-
+   
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
   var inputs = $(radioGroupGastorMitglied).find('input');
   inputs.each(function( i, element ) {
