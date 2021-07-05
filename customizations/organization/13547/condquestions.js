@@ -50,7 +50,9 @@ function hideAll(){
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
-     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie");
+  //next question does not hide... I dont know why
+     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+  
      hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
      $('.vv-mt-md').hide(); // grey text  "erlaubte Formate: PNG, JPG, PDF"
 }
@@ -67,19 +69,18 @@ var insertionListener = function(event) {
       console.log("noteInserted");
      
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein Stimmberechtigtes Mitglied?');
+     
      hideAll();
-     console.log("hide this shit question");
-     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
      
     
 
-// show 2 questions when 'Gast' or 'Stimmberechtigtes Mitglied' is checked
+// show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
   var inputs = $(radioGroupGastorMitglied).find('input');
   inputs.each(function( i, element ) {
   $(element).change(function(input) {
     console.log("changed");
       //on change show these 2 questions
-    showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+    //showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
 
       // show question 'Wie viele Mitglieder vertreten Sie?' if 'Ja' is selected; Hide everything if 'Nein' is selected
