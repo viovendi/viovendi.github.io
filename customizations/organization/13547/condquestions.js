@@ -82,7 +82,7 @@ var insertionListener = function(event) {
     console.log("changed");
       //on change show these 2 questions
     
-    //Oleg: now (after something is checked) this question should be shown, 
+    //Oleg: now this question should be shown, it works fine with the 'Mitgliedsnummer' but not with the other question 
     showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
 
