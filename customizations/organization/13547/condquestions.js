@@ -105,7 +105,7 @@ var insertionListener = function(event) {
                               if (state.includes("1")) {
                                  console.log('1');
                                  showQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung 1");
-                                 showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung" 1);
+                                 showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung 1");
                                  showQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung 1");
                               }
                               if (state.includes("2")) {
