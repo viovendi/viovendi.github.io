@@ -68,6 +68,8 @@ var insertionListener = function(event) {
      
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein Stimmberechtigtes Mitglied?');
      hideAll();
+     console.log("hide this shit question");
+     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich");
      
     
 
@@ -75,6 +77,7 @@ var insertionListener = function(event) {
   var inputs = $(radioGroupGastorMitglied).find('input');
   inputs.each(function( i, element ) {
   $(element).change(function(input) {
+    console.log("changed");
       //on change show these 2 questions
     showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
