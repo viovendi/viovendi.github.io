@@ -100,10 +100,10 @@ var insertionListener = function(event) {
                               if (state.includes("1")) {
                                  console.log('1');
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "2");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "3");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "5");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
 
                                  
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
