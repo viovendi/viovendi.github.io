@@ -100,16 +100,23 @@ var insertionListener = function(event) {
                               var state = dropDownQuestion.val().trim()
                               if (state.includes("1")) {
                                  console.log('1');
-                                 showQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung 1");
-                                 showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung 1");
-                                 showQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung 1");
+                                 showQuestion(".customization2_attendee_further-data_custom-question", "1");
+
+                                 //showQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung 1");
+                                 //showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung 1");
+                                 //showQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung 1");
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                               }
                               if (state.includes("2")) {
                                 console.log('2');
+                                showQuestion(".customization2_attendee_further-data_custom-question", "1");
+                                showQuestion(".customization2_attendee_further-data_custom-question", "2");
                               }
                               if (state.includes("3")) {
                                   console.log('3');
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "1");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "2");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "3");
                               }
                               if (state.includes("4")) {
                                   console.log('4');
