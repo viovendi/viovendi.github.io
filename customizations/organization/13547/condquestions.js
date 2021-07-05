@@ -50,7 +50,7 @@ function hideAll(){
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
-     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+     hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
      $('.vv-mt-md').hide(); // grey text  "erlaubte Formate: PNG, JPG, PDF"
 }
@@ -76,7 +76,7 @@ var insertionListener = function(event) {
   inputs.each(function( i, element ) {
   $(element).change(function(input) {
       //on change show these 2 questions
-    showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+    showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
 
       // show question 'Wie viele Mitglieder vertreten Sie?' if 'Ja' is selected; Hide everything if 'Nein' is selected
