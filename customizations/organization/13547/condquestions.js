@@ -82,11 +82,12 @@ var insertionListener = function(event) {
     console.log("changed");
       //on change show these 2 questions
       if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
-          showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+          showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
         console.log('mitgiedsnummer');
       }
       else{
-            hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
+            hideQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
+        console.log('mitgiedsnummer');
       }
 
     
@@ -98,8 +99,8 @@ var insertionListener = function(event) {
           var radioGroupVertreter = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Kommen Sie zusätzlich als Vertreter für andere Mitglieder?');
           var inputsVertreter =  $(radioGroupVertreter).find('input');
           inputsVertreter.each(function( i, element ) {
-              $(element).change(function(input) {
-                  if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Ja')){
+              $(element).change(function(input2) {
+                  if($(input2.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Ja')){
                     console.log('Nein');
                     //hide everything
                     hideQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
