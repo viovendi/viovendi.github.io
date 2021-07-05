@@ -103,7 +103,7 @@ var insertionListener = function(event) {
                                  showQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung 1");
                                  showQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung 1");
                                  showQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung 1");
-                                 $('.vv-mt-md .customization2_attendee_further-data_custom-question-7').show();
+                                 $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                               }
                               if (state.includes("2")) {
                                 console.log('2');
