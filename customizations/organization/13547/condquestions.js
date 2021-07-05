@@ -36,7 +36,7 @@ function showQuestionExactWording(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
-console.log(label.text().replace(/ /g,''););
+console.log(label.text().replace(/ /g,''));
     if (label.text().replace(/^\s+|\s+$/g, "") == name) {
       
       $(item).show();    }
