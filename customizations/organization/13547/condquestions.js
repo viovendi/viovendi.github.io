@@ -93,26 +93,23 @@ var insertionListener = function(event) {
                     //hide everything TODO
                   }
                   else{
-                    console.log('Ja');
-                    showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie?");
-                    
-                    // show 1-5 question depending on the selected number:
-                    var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
-                    var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
-                    var inputDropDown = $(question).find('.customization2_attendee_further-data_custom-question_input')
-                    dropDownQuestion.change(function(){
-                        var state = dropDownQuestion.val().trim()
-                        if (state.includes("1")) {
-                          console.log('1');
-                        }
-                        if (state.includes("2")) {
-                          console.log('2');
-                        }
-                    }
+                      console.log('Ja');
+                      showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie?");
 
+                      // show 1-5 question depending on the selected number:
+                      var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
+                      var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
+                      var inputDropDown = $(question).find('.customization2_attendee_further-data_custom-question_input')
+                          dropDownQuestion.change(function(){
+                              var state = dropDownQuestion.val().trim()
+                              if (state.includes("1")) {
+                                console.log('1');
+                              }
+                              if (state.includes("2")) {
+                                console.log('2');
+                              }
 
-
-                    
+                         )}
                   }
               });
           });
