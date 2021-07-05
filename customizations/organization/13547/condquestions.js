@@ -81,11 +81,11 @@ var insertionListener = function(event) {
           console.log("changed");
             //on change show these 2 questions
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
-             $('customization2_attendee_further-data_custom-question-2').show();
+             $('.customization2_attendee_further-data_custom-question-2').show();
               console.log('show');
             }
             else{
-               $('customization2_attendee_further-data_custom-question-2').hide();
+               $('.customization2_attendee_further-data_custom-question-2').hide();
               console.log('hide');
             }
            });
