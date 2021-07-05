@@ -64,10 +64,11 @@ var insertionListener = function(event) {
     else{
       console.log('Mitglied');
       }
-                    
-       
    });
   });
+
+   }
+  
 }
    
 
