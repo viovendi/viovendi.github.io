@@ -83,6 +83,8 @@ var insertionListener = function(event) {
     // this is somehow twisted (maybe because of "change" and currentTarget); if 'Gast', it's actual 'Mitglied'
     if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
     console.log('Mitglied');
+      
+    
     showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder");
     showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
 
@@ -98,6 +100,8 @@ var insertionListener = function(event) {
                   else{
                     console.log('Ja');
                     showQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
+                    
+                    
                   }
               });
           });
