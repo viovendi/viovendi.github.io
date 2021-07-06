@@ -7,6 +7,7 @@
       }
     });
   }
+
    
   function enabledDisabledButton(name){
     if(calcCheckboxes(name) < 5 ){
@@ -47,11 +48,21 @@
      });
    }
 
+function addTextUnderQuestion(shortName, className, wrapperClass, text){
+    $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+      
+      if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+        $(this).after(text);
+      }
+    });
+  }
+
    
    function init(name){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-      
+     addTextUnderQuestion('Mit dem Ticket stimmst Du', 'check-boxes-wrapper', name, 'text'); 
         
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
