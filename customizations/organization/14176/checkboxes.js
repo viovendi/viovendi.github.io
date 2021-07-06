@@ -64,6 +64,8 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
      addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
       
+     addTextUnderQuestion('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
+     addTextUnderQuestion('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addTextUnderQuestion('Mit dem Ticket stimmst Du', 'check-boxes-wrapper', name); 
         
      markAsChecked(name);
