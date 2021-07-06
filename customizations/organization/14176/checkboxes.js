@@ -53,8 +53,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
       
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-        $(this).after('');
-         
+        $(this).after('<div class="addedtext" style="font-size: 14px;"><p>Mit Ankreuzen der oben aufgeführten Konferenzpartner oder Teilnahme an deren Sessions erlaubst Du uns, Deine Daten an diese zu übermitteln, damit diese Dich per Mail oder Telefon ansprechen können. Dazu erhalten sie Deine Adress- und Kontaktdaten sowie den Nachweis dieser Einwilligung, die Du im Übrigen jederzeit mit Wirkung für die Zukunft gegenüber den Konferenzpartnern widerrufen kannst. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht.</p></div>');         
       }
     });
   }
