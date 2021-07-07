@@ -62,7 +62,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
       
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
         $(this).find('.customization2_attendee_further-data_custom-question_label').css('font-size','12px') ;
-        $(this).after('<div class="addedtext" style="font-size: 12px; color: #343a3f; margin-top: 20px;margin-bottom: 30px;"><p>Mit Ankreuzen der oben aufgeführten Konferenzpartner oder Teilnahme an deren Sessions erlaubst Du uns, Deine Daten an diese zu übermitteln, damit diese Dich per Mail oder Telefon ansprechen können. Dazu erhalten sie Deine Adress- und Kontaktdaten sowie den Nachweis dieser Einwilligung, die Du im Übrigen jederzeit mit Wirkung für die Zukunft gegenüber den Konferenzpartnern widerrufen kannst. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht.</p></div>');         
+        $(this).after('<div class="addedtext" style="font-size: 12px; color: #343a3f; margin-top: 20px;margin-bottom: 30px;"><p>Die ausgewählten Partner erhalten meine Adress- und Kontaktdaten für die Bewerbung ihrer Produkte auch per E-Mail und Telefon sowie Daten zum Nachweis dieser Einwilligung, die diese in eigener Verantwortung verarbeiten. Du hast das Recht, diese Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen. Nutze dafür folgende Kontaktmöglichkeit <a href="mailto:eventservice@vogel.de">eventservice@vogel.de</a>. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht. Weitere Informationen zum Umgang mit personenbezogenen Daten siehe <a href="https://www.vogelitakademie.de/datenschutz">Datenschutzerklärung</a>.</p></div>');         
       }
     });
   }
@@ -71,7 +71,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
    function init(name){
       addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
-     addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
+      addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       
      //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
