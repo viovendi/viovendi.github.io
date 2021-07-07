@@ -54,7 +54,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
       
       if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
-        $(this).after('<div class="addedtext" style="font-size: 14px; color: #343a3f"><p>Mit Ankreuzen der oben aufgeführten Konferenzpartner oder Teilnahme an deren Sessions erlaubst Du uns, Deine Daten an diese zu übermitteln, damit diese Dich per Mail oder Telefon ansprechen können. Dazu erhalten sie Deine Adress- und Kontaktdaten sowie den Nachweis dieser Einwilligung, die Du im Übrigen jederzeit mit Wirkung für die Zukunft gegenüber den Konferenzpartnern widerrufen kannst. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht.</p></div>');         
+        $(this).after('<div class="addedtext" style="font-size: 12px; color: #343a3f; margin-top: 20px;"><p>Mit Ankreuzen der oben aufgeführten Konferenzpartner oder Teilnahme an deren Sessions erlaubst Du uns, Deine Daten an diese zu übermitteln, damit diese Dich per Mail oder Telefon ansprechen können. Dazu erhalten sie Deine Adress- und Kontaktdaten sowie den Nachweis dieser Einwilligung, die Du im Übrigen jederzeit mit Wirkung für die Zukunft gegenüber den Konferenzpartnern widerrufen kannst. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht.</p></div>');         
       }
     });
   }
@@ -65,9 +65,8 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
      addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Ticket stimmst', 'check-boxes-wrapper', name);
       
-     addTextUnderQuestion('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-     addTextUnderQuestion('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
-     addTextUnderQuestion('Mit dem Ticket stimmst Du', 'check-boxes-wrapper', name); 
+     addTextUnderQuestion('Mit dem Freiticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
+     addTextUnderQuestion('Mit dem Ticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
         
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
