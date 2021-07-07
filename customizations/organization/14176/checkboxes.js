@@ -44,6 +44,9 @@
      addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Ticket stimmst', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Freiticket stimmst Du jederzeit ', 'check-boxes-wrapper', name);
+     addClassToField('Mit dem VIP-Ticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
+      
+     addTextUnderQuestion('Hiermit stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
 
      enabledDisabledButton(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
@@ -68,9 +71,12 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
      addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Ticket stimmst', 'check-boxes-wrapper', name);
      addClassToField('Mit dem Freiticket stimmst Du jederzeit ', 'check-boxes-wrapper', name);
+      addClassToField('Mit dem VIP-Ticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
       
      addTextUnderQuestion('Mit dem Freiticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
      addTextUnderQuestion('Mit dem Ticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
+     addTextUnderQuestion('Hiermit stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
+     
         
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
