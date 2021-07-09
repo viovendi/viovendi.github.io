@@ -1,1 +1,1 @@
-console.log('GTM tag COMPLEX-744')
+console.log('GTM tag COMPLEX-744');
