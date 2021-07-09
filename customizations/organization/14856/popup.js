@@ -44,7 +44,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
 
   function addPopUp2(){
     if($('#checkboxModal2').length < 1){
-       $('<div id="checkboxModal2" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2">'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
+       $('<div id="checkboxModal2" class="modal"><div class="modal-content"><div class="modal-head">'+popUp2headerText+'</div><div class="modal-body"><p>'+popUp2modalText1+'</p><p>'+popUp2modalText2+'</p><p>'+popUp2modalText3+'</p><p>'+popUp2modalText4+'</p><p>'+popUp2modalText5+'</p></div><div class="modal-footer"><button class="accept-button" id="accept2" disabled>'+popUp2buttonText+'</button></div></div>').insertBefore( ".customization-booking-area-wrapper-page2" );
       // move popup to checkbox
       var offset = $('.popup').offset();
       var positionPopup = offset.top - $('#checkboxModal2 .modal-content').outerHeight() - 35;
@@ -94,12 +94,22 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
 
   // check scroll inside the pop-up
   function checkScroll(){
-    $('#checkboxModal .modal-body').scroll(function(){
-      if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-        $('#checkboxModal .accept-button').attr('disabled', false);
-        clickAcceptButton();
-      }
-    });
+    if( $('#checkboxModal').length > 0 ){
+      $('#checkboxModal .modal-body').scroll(function(){
+        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+          $('#checkboxModal .accept-button').attr('disabled', false);
+          clickAcceptButton();
+        }
+      });  
+    }else if( $('#checkboxModal2').length > 0 ){
+      $('#checkboxModal2 .modal-body').scroll(function(){
+        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+          $('#checkboxModal2 .accept-button').attr('disabled', false);
+          clickAcceptButton();
+        }
+      });
+    }
+    
   }
 
 
@@ -112,6 +122,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
       $('.popup input').trigger('click');
 
     });
+    
     $('#accept2').on('click', function(){
       console.log($('#checkboxModal2'))
       $('#checkboxModal2').hide();

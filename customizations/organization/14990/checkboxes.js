@@ -2,7 +2,7 @@ console.log('works');
 
 var field = $$('.customization2_booker_further-data_custom-question').findField('Abstract submission (optional)');
    
-var radioGroup = $$('.customization2_booker_further-data_custom-question').findRadioGroup('Abstract submission (deadline: 30th June 2021)');
+var radioGroup = $$('.customization2_booker_further-data_custom-question').findRadioGroup('Abstract submission (deadline: 7th July 2021)');
    
    $(field).hide()
 
