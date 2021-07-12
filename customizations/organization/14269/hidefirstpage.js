@@ -39,7 +39,10 @@ console.log('git first page')
  
  $('.vv-button').on('click', function(){
    console.log('clicked');
-   replaceText();
+   setTimeout(function(){
+  replaceText();
+}, 1000);
+   
   })
 
 observer = new MutationObserver(replaceText);
