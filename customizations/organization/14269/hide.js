@@ -9,7 +9,7 @@ if(name.indexOf("Brennholz")>=0){
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('customization-event-info-date-start').text();
+  var startdate = $('.customization-event-info-date-start').text();
   console.log(startdate);
   //$('.event-info__header').css("margin-left", "-130px");
   //$('.event-info__date-container').hide();
@@ -54,7 +54,7 @@ async function getEventAttributes(eventId) {
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('customization-event-info-date-start').text();
+  var startdate = $('.customization-event-info-date-start').text();
   console.log(startdate);
       //$('.event-info__header').css("margin-left", "-130px");
       //$('.event-info__date-container').hide();
