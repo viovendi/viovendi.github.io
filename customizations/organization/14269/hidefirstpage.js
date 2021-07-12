@@ -38,7 +38,7 @@ console.log('git first page')
 }
  
  $('.vv-button').on('click', function(){
-   consloe.log('clicked');
+   console.log('clicked');
    replaceText();
   })
 
