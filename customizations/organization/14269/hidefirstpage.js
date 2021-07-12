@@ -4,7 +4,6 @@ console.log('git first page')
 
 
  var replaceText = function() {
-  console.log('observe');
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
        $(this).hide();
