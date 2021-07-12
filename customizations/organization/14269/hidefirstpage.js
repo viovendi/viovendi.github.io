@@ -1,4 +1,8 @@
 console.log('git first page')
+//rearange search-button
+$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
+ 
+
 //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
        $(this).hide();
