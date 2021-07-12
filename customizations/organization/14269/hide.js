@@ -4,6 +4,13 @@ var name = $('.event-info__title').text()
 
 if(name.indexOf("Brennholz")>=0){
   $('.customization-booking-area-wrapper-page1').hide();
+  
+  //hide end day and month, replace '-' with '' 
+  $('.customization-event-info-date-end').hide()
+  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
+  
+  var startdate = $('customization-event-info-date-start').text();
+  console.log(startdate);
   //$('.event-info__header').css("margin-left", "-130px");
   //$('.event-info__date-container').hide();
   //$('.event-info .event-info__details').css("margin-left", "0px");
@@ -42,6 +49,13 @@ async function getEventAttributes(eventId) {
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
     if(v.name == 'Forst'){
       $('.customization-booking-area-wrapper-page1').hide();
+      
+      //hide end day and month, replace '-' with '' 
+  $('.customization-event-info-date-end').hide()
+  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
+  
+  var startdate = $('customization-event-info-date-start').text();
+  console.log(startdate);
       //$('.event-info__header').css("margin-left", "-130px");
       //$('.event-info__date-container').hide();
       //$('.event-info .event-info__details').css("margin-left", "0px");
