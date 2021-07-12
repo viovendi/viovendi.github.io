@@ -1,6 +1,6 @@
 console.log('git first page')
-//rearange search-button
-$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
+//rearange search-button INFO, overlaps on smartphone view
+//$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
  
 
 //hide end day
