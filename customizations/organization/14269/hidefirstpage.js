@@ -35,7 +35,7 @@ console.log('git first page')
   }*/
 }
 
-observer = new MutationObserver(replaceText);
+observer = new MutationObserver(hideEndDate);
 
 observer.observe(element, { characterData: true, subtree: true, childList: true });
 
