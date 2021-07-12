@@ -1,6 +1,8 @@
 console.log('git first page')
 //rearange search-button INFO, overlaps on smartphone view
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
+
+
  var replaceText = function() {
   console.log('observe');
   //hide end day
@@ -34,6 +36,11 @@ console.log('git first page')
     })
   }*/
 }
+ 
+ $('.vv-button').on('click', function(){
+   consloe.log('clicked');
+   replaceText();
+  })
 
 observer = new MutationObserver(replaceText);
 
