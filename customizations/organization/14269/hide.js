@@ -9,12 +9,18 @@ if(name.indexOf("Brennholz")>=0){
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('.customization-event-info-date-start')
-    //item.find(".customization2_attendee_further-data_custom-question_label");
-   var newText = startdate.text().replace(/^\s+|\s+$/g, "")
-   var finalText = newText.replace('-','')
-   console.log(finalText)
-   $('.customization-event-info-date-start').empty().html(finalText);
+  var startDay = $('.customization-event-info-date-start')
+  var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
+  var newTextDay = startDay.text().replace(/^\s+|\s+$/g, "")
+  var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
+  var finalTextDay = newTextDay.replace('-','')
+  var finalTextMonth = newTextMonth.replace('-','')
+
+  console.log(finalTextDay)
+  console.log(finalTextMonth)
+  $('.customization-event-info-date-start').empty().html(finalTextDay);
+  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
+  
   
   //$('.event-info__header').css("margin-left", "-130px");
   //$('.event-info__date-container').hide();
@@ -59,12 +65,18 @@ async function getEventAttributes(eventId) {
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('.customization-event-info-date-start')
-    //item.find(".customization2_attendee_further-data_custom-question_label");
-   var newText = startdate.text().replace(/^\s+|\s+$/g, "")
-   var finalText = newText.replace('-','')
-   console.log(finalText)
-   $('.customization-event-info-date-start').empty().html(finalText);
+  var startDay = $('.customization-event-info-date-start')
+  var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
+  var newTextDay = startDay.text().replace(/^\s+|\s+$/g, "")
+  var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
+  var finalTextDay = newTextDay.replace('-','')
+  var finalTextMonth = newTextMonth.replace('-','')
+
+  console.log(finalTextDay)
+  console.log(finalTextMonth)
+  $('.customization-event-info-date-start').empty().html(finalTextDay);
+  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
+  
       //$('.event-info__header').css("margin-left", "-130px");
       //$('.event-info__date-container').hide();
       //$('.event-info .event-info__details').css("margin-left", "0px");
