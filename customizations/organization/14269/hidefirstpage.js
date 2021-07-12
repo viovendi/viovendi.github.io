@@ -1,7 +1,22 @@
 console.log('git first page')
 //rearange search-button INFO, overlaps on smartphone view
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
- 
+ var replaceText = function() {
+  console.log('observe');
+  /*if (element.textContent.trim() === textToReplace) {
+    element.childNodes.forEach(function(node){
+      if (node.textContent.trim() === textToReplace) {
+        node.textContent = textReplacement;
+      } 
+    })
+  }*/
+}
+
+observer = new MutationObserver(replaceText);
+
+observer.observe(element, { characterData: true, subtree: true, childList: true });
+
+replaceText();
 
 //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
