@@ -14,15 +14,15 @@ console.log('git first page')
   
   // remove '-' from day
   $('div.event-article__date-container__day > span.ng-star-inserted').each(function(i, element) {
-       var newTextDay = $(this).text().replace(/^\s+|\s+$/g, "");
-       var finalTextDay = newTextDay.replace('-','');
+       var newTextDay = $(this).text().replace('-','');
+       var finalTextDay = newTextDay.replace(/^\s+|\s+$/g, "");
        $(this).empty().html(finalTextDay);
     });
   
   // remove '-' from month
   $('div.event-article__date-container__month > span.ng-star-inserted').each(function(i, element) {
-       var newTextMonth = $(this).text().replace(/^\s+|\s+$/g, "");
-       var finalTextMonth = newTextMonth.replace('-','');
+       var newTextMonth = $(this).text().replace('-','');
+       var finalTextMonth = newTextMonth.replace(/^\s+|\s+$/g, "");
        $(this).empty().html(finalTextMonth);
     });
   
