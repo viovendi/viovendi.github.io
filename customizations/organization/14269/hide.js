@@ -9,8 +9,14 @@ if(name.indexOf("Brennholz")>=0){
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('.customization-event-info-date-start').text();
-  console.log(startdate);
+  var startdate = $('.customization-event-info-date-start')
+  var label = item.find("label");
+    //item.find(".customization2_attendee_further-data_custom-question_label");
+   var newText = startdate.text().replace(/^\s+|\s+$/g, "")
+   var finalText = newText.replace('-','')
+   console.log(finalText)
+   $('.customization-event-info-date-start').empty().html(finalText);
+  
   //$('.event-info__header').css("margin-left", "-130px");
   //$('.event-info__date-container').hide();
   //$('.event-info .event-info__details').css("margin-left", "0px");
@@ -54,8 +60,13 @@ async function getEventAttributes(eventId) {
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startdate = $('.customization-event-info-date-start').text();
-  console.log(startdate);
+  var startdate = $('.customization-event-info-date-start')
+  var label = item.find("label");
+    //item.find(".customization2_attendee_further-data_custom-question_label");
+   var newText = startdate.text().replace(/^\s+|\s+$/g, "")
+   var finalText = newText.replace('-','')
+   console.log(finalText)
+   $('.customization-event-info-date-start').empty().html(finalText);
       //$('.event-info__header').css("margin-left", "-130px");
       //$('.event-info__date-container').hide();
       //$('.event-info .event-info__details').css("margin-left", "0px");
