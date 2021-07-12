@@ -1,7 +1,7 @@
 console.log('git first page')
 //rearange search-button INFO, overlaps on smartphone view
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
- var hideEndDate = function() {
+ var replaceText = function() {
   console.log('observe');
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
@@ -35,10 +35,10 @@ console.log('git first page')
   }*/
 }
 
-observer = new MutationObserver(hideEndDate);
+observer = new MutationObserver(replaceText);
 
 observer.observe(element, { characterData: true, subtree: true, childList: true });
 
-hideEndDate();
+replaceText();
 
 
