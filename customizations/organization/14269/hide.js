@@ -2,39 +2,6 @@ console.log('14269 Booking wrapper if Brennholz in name or Forst attribute');
 
 var name = $('.event-info__title').text()
 
-if(name.indexOf("Brennholz")>=0){
- /* $('.customization-booking-area-wrapper-page1').hide();
-  $('.event-info__title').css('line-height','2.87rem')
-  //hide end day and month, replace '-' with '' 
-  $('.customization-event-info-date-end').hide()
-  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
-  
-  var startDay = $('.customization-event-info-date-start')
-  var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
-  
-  var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
-  var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
-  var finalTextDay = day.text().replace('-','')
-  var finalTextMonth = newTextMonth.replace('-','')
-
-  //console.log(finalTextDay)
-  //console.log(finalTextMonth)
-  $('.customization-event-info-date-start').empty().html(finalTextDay);
-  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
-  
-  
-  //$('.event-info__header').css("margin-left", "-130px");
-  //$('.event-info__date-container').hide();
-  //$('.event-info .event-info__details').css("margin-left", "0px");
-  
-  //hide date
-  $('.customization-event-info-date-details').hide();
-  $('div.m-box.event-info__details > div:nth-child(3)').hide();
-
-
-  */
-}
-
 async function makeRequest(options) {
   let result = null;
   try {
@@ -63,25 +30,21 @@ async function getEventAttributes(eventId) {
       $('.customization-booking-area-wrapper-page1').hide();
       $('.event-info__title').css('line-height','2.87rem')
       //hide end day and month, replace '-' with '' 
-  $('.customization-event-info-date-end').hide()
-  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
+      $('.customization-event-info-date-end').hide()
+      $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
-  var startDay = $('.customization-event-info-date-start')
-  var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
-  
-  var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
-  var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
-  var finalTextDay = day.text().replace('-','')
-  var finalTextMonth = newTextMonth.replace('-','')
+      var startDay = $('.customization-event-info-date-start')
+      var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
 
-  //console.log(finalTextDay)
-  //console.log(finalTextMonth)
-  $('.customization-event-info-date-start').empty().html(finalTextDay);
-  $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
+      var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
+      var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
+      var finalTextDay = day.text().replace('-','')
+      var finalTextMonth = newTextMonth.replace('-','')
+
+
+      $('.customization-event-info-date-start').empty().html(finalTextDay);
+      $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
   
-      //$('.event-info__header').css("margin-left", "-130px");
-      //$('.event-info__date-container').hide();
-      //$('.event-info .event-info__details').css("margin-left", "0px");
        //hide date
       $('.customization-event-info-date-details').hide();
       $('div.m-box.event-info__details > div:nth-child(3)').hide();
