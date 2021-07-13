@@ -13,7 +13,7 @@ if(name.indexOf("Brennholz")>=0){
   var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
   
   var day = startDay.text().replace(/^\s+|\s+$/g, "")
-  var dayAb = day.text('Ab ' + day.text());
+  var dayAb = day.text('Ab ' + day);
   var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
   var finalTextDay = dayAb.text().replace('-','')
   var finalTextMonth = newTextMonth.replace('-','')
@@ -71,7 +71,7 @@ async function getEventAttributes(eventId) {
   var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
   
   var day = startDay.text().replace(/^\s+|\s+$/g, "");
-  var dayAb = day.text('Ab ' + day.text());
+  var dayAb = day.text('Ab ' + day);
   var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
   var finalTextDay = dayAb.text().replace('-','')
   var finalTextMonth = newTextMonth.replace('-','')
