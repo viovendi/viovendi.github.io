@@ -3,7 +3,7 @@ console.log('git first page')
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
 
 
- var replaceText = function() {
+ var forstReplaceText = function() {
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
        $(this).hide();
@@ -28,26 +28,17 @@ console.log('git first page')
        $(this).empty().html(finalTextMonth);
     });
   
-  /*if (element.textContent.trim() === textToReplace) {
-    element.childNodes.forEach(function(node){
-      if (node.textContent.trim() === textToReplace) {
-        node.textContent = textReplacement;
-      } 
-    })
-  }*/
 }
  
  $('.vv-button').on('click', function(){
    setTimeout(function(){
-  replaceText();
+  forstReplaceText();
 }, 400);
    
   })
 
-//observer = new MutationObserver(replaceText);
 
-//observer.observe(element, { characterData: true, subtree: true, childList: true });
 
-replaceText();
+forstReplaceText();
 
 
