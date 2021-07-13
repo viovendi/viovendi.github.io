@@ -3,6 +3,8 @@ console.log('git first page')
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
 
 
+// --------------------------------------
+
  var forstReplaceText = function() {
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
