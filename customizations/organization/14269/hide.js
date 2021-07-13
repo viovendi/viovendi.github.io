@@ -3,7 +3,7 @@ console.log('14269 Booking wrapper if Brennholz in name or Forst attribute');
 var name = $('.event-info__title').text()
 
 if(name.indexOf("Brennholz")>=0){
-  $('.customization-booking-area-wrapper-page1').hide();
+ /* $('.customization-booking-area-wrapper-page1').hide();
   $('.event-info__title').css('line-height','2.87rem')
   //hide end day and month, replace '-' with '' 
   $('.customization-event-info-date-end').hide()
@@ -32,7 +32,7 @@ if(name.indexOf("Brennholz")>=0){
   $('div.m-box.event-info__details > div:nth-child(3)').hide();
 
 
-  
+  */
 }
 
 async function makeRequest(options) {
@@ -59,7 +59,7 @@ async function getEventAttributes(eventId) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    if(v.name == 'Forst'){
+    if(v.name == 'Forst' || name.indexOf("Brennholz")>=0){
       $('.customization-booking-area-wrapper-page1').hide();
       $('.event-info__title').css('line-height','2.87rem')
       //hide end day and month, replace '-' with '' 
