@@ -50,6 +50,15 @@ console.log('git first page')
   
 }
  
+ 
+ 
+$('.vv-pagination__item').on('click', function(){
+   setTimeout(function(){
+  forstReplaceText();
+}, 400);
+   
+  })
+
  $('.vv-button').on('click', function(){
    setTimeout(function(){
   forstReplaceText();
