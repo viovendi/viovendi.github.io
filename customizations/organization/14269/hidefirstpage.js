@@ -7,7 +7,7 @@ console.log('git first page')
 $('.event-article__event-info__title').each(function(i, element) {
   if($(this).text().indexOf('Brennholz') >= 0){
    
-     // $(this).closest('div.event-article__date-container__day > span:nth-child(2)').hide();
+      $(this).parents().find('div.event-article__date-container__day > span:nth-child(2)').hide();
 
 
   }
@@ -15,7 +15,7 @@ $('.event-article__event-info__title').each(function(i, element) {
  var forstReplaceText = function() {
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
-       $(this).hide();
+      // $(this).hide();
     });
   //hide end month
   $('div.event-article__date-container__month > span:nth-child(2)').each(function(i, element) {
