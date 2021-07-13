@@ -6,7 +6,7 @@ console.log('git first page')
 // --------------------------------------
 $('.event-article__event-info__title').each(function(i, element) {
   if($(this).text().indexOf('Brennholz') >= 0){
-  console.log($(this).parent())
+  console.log($(this).parent().partent().find('div.event-article__date-container__day > span:nth-child(2)').text())
   }
 });
  var forstReplaceText = function() {
