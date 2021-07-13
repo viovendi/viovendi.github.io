@@ -12,7 +12,7 @@ $('.event-article__event-info__title').each(function(i, element) {
       var day = $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted')
       var textDay = day.text().replace('-','');
        var finalTextDay = textDay.replace(/^\s+|\s+$/g, "")
-       $(this).empty().html(finalTextDay);
+       day.empty().html(finalTextDay);
 
   }
 });
