@@ -9,12 +9,12 @@ $('.event-article__event-info__title').each(function(i, element) {
    
       $(this).parents().find('div.event-article__date-container__day > span:nth-child(2)').hide();
       $(this).parents().find('div.event-article__date-container__month > span:nth-child(2)').hide();
-       var newTextDay = $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted').text('Ab ' + $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted').text().replace(/^\s+|\s+$/g, ""));
+      /* var newTextDay = $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted').text('Ab ' + $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted').text().replace(/^\s+|\s+$/g, ""));
        var textDay = newTextDay.text().replace('-','');
        var finalTextDay = textDay.replace(/^\s+|\s+$/g, "")
        $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted').empty().html(finalTextDay);
     
-
+*/
 
 
   }
