@@ -12,10 +12,9 @@ if(name.indexOf("Brennholz")>=0){
   var startDay = $('.customization-event-info-date-start')
   var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
   
-  var day = startDay.text().replace(/^\s+|\s+$/g, "")
-  var dayAb = day.text('Ab ' + day);
+  var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
   var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
-  var finalTextDay = dayAb.text().replace('-','')
+  var finalTextDay = day.text().replace('-','')
   var finalTextMonth = newTextMonth.replace('-','')
 
   //console.log(finalTextDay)
@@ -70,10 +69,9 @@ async function getEventAttributes(eventId) {
   var startDay = $('.customization-event-info-date-start')
   var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
   
-  var day = startDay.text().replace(/^\s+|\s+$/g, "");
-  var dayAb = day.text('Ab ' + day);
+  var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
   var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
-  var finalTextDay = dayAb.text().replace('-','')
+  var finalTextDay = day.text().replace('-','')
   var finalTextMonth = newTextMonth.replace('-','')
 
   //console.log(finalTextDay)
