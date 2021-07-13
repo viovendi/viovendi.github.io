@@ -43,10 +43,11 @@ async function getEventAttributes(eventId) {
       var day = startDay.text('Ab ' + startDay.text().replace(/^\s+|\s+$/g, ""))
       var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
       var finalTextDay = day.text().replace('-','')
+      
       var finalTextMonth = newTextMonth.replace('-','')
 
 
-      $('.customization-event-info-date-start').empty().html(finalTextDay);
+      $('.customization-event-info-date-start').empty().html(finalTextDay.replace(/^\s+|\s+$/g, ""));
       $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)').empty().html(finalTextMonth);
   
        //hide date
