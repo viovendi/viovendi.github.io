@@ -9,6 +9,9 @@ if(name.indexOf("Brennholz")>=0){
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
   
+  var startDay = $('.customization-event-info-date-start')
+  var startMonth = $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(1)')
+  
   var day = startDay.text().replace(/^\s+|\s+$/g, "")
   var dayAb = day.text('Ab ' + day.text());
   var newTextMonth = startMonth.text().replace(/^\s+|\s+$/g, "")
