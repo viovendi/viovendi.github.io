@@ -15,14 +15,14 @@ $('.event-article__event-info__title').each(function(i, element) {
 });
  var forstReplaceText = function() {
   //hide end day
-  $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
+ /* $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
        $(this).hide();
     });
   //hide end month
   $('div.event-article__date-container__month > span:nth-child(2)').each(function(i, element) {
        $(this).hide();
     });
-  
+  */
   // remove '-' from day
   $('div.event-article__date-container__day > span.ng-star-inserted').each(function(i, element) {
       if($(this).parents().find('.event-article__event-info__title').text().indexOf('Brennholz') >= 0){
