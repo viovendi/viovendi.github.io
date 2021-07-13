@@ -4,7 +4,7 @@ var name = $('.event-info__title').text()
 
 if(name.indexOf("Brennholz")>=0){
   $('.customization-booking-area-wrapper-page1').hide();
-  
+  $('.event-info__title').css('line-height','2.87rem')
   //hide end day and month, replace '-' with '' 
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
@@ -62,7 +62,7 @@ async function getEventAttributes(eventId) {
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
     if(v.name == 'Forst'){
       $('.customization-booking-area-wrapper-page1').hide();
-      
+      $('.event-info__title').css('line-height','2.87rem')
       //hide end day and month, replace '-' with '' 
   $('.customization-event-info-date-end').hide()
   $('div.event-info__date-container__month.customization-event-info-date-month > span:nth-child(2)').hide();
