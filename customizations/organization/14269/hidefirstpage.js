@@ -25,22 +25,22 @@ $('.event-article__event-info__title').each(function(i, element) {
   
   // remove '-' from day
   $('div.event-article__date-container__day > span.ng-star-inserted').each(function(i, element) {
-    if($(this).parents().find('.event-article__event-info__title').text().indexOf('Brennholz') >= 0){
-      console.log('1');
-    }
-       var newTextDay = $(this).text('Ab ' + $(this).text().replace(/^\s+|\s+$/g, ""));
-       var textDay = newTextDay.text().replace('-','');
-       var finalTextDay = textDay.replace(/^\s+|\s+$/g, "")
-       $(this).empty().html(finalTextDay);
-       
-    });
+      if($(this).parents().find('.event-article__event-info__title').text().indexOf('Brennholz') >= 0){
+           var newTextDay = $(this).text('Ab ' + $(this).text().replace(/^\s+|\s+$/g, ""));
+           var textDay = newTextDay.text().replace('-','');
+           var finalTextDay = textDay.replace(/^\s+|\s+$/g, "")
+           $(this).empty().html(finalTextDay);
+      }
+   });
   
   // remove '-' from month
   $('div.event-article__date-container__month > span.ng-star-inserted').each(function(i, element) {
-       var newTextMonth = $(this).text().replace('-','');
-       var finalTextMonth = newTextMonth.replace(/^\s+|\s+$/g, "");
-       $(this).empty().html(finalTextMonth);
-    });
+      if($(this).parents().find('.event-article__event-info__title').text().indexOf('Brennholz') >= 0){
+           var newTextMonth = $(this).text().replace('-','');
+           var finalTextMonth = newTextMonth.replace(/^\s+|\s+$/g, "");
+           $(this).empty().html(finalTextMonth);
+       }
+   });
   
 }
  
