@@ -4,7 +4,11 @@ console.log('git first page')
 
 
 // --------------------------------------
-
+$('.event-article__event-info__title').each(function(i, element) {
+  if($(this:contains('Brennholz'))){
+  console.log('brennholz');
+  }
+});
  var forstReplaceText = function() {
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
