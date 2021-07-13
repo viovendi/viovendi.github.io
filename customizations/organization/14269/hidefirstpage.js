@@ -9,14 +9,15 @@ $('.event-article__event-info__title').each(function(i, element) {
    
       $(this).parents().find('div.event-article__date-container__day > span:nth-child(2)').hide();
       $(this).parents().find('div.event-article__date-container__month > span:nth-child(2)').hide();
-     
+      var day = $(this).parents().find('div.event-article__date-container__day > span.ng-star-inserted')
+      console.log(day.text('Ab ' + day.text().replace(/^\s+|\s+$/g, ""));)
 
   }
 });
  var forstReplaceText = function() {
   //hide end day
   $('div.event-article__date-container__day > span:nth-child(2)').each(function(i, element) {
-      // $(this).hide();
+       $(this).hide();
     });
   //hide end month
   $('div.event-article__date-container__month > span:nth-child(2)').each(function(i, element) {
