@@ -5,7 +5,7 @@ console.log('git first page')
 
 // --------------------------------------
 $('.event-article__event-info__title').each(function(i, element) {
-  if($(this:contains('Brennholz'))){
+  if($(this).contains('Brennholz')){
   console.log('brennholz');
   }
 });
