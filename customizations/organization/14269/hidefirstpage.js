@@ -16,8 +16,8 @@ console.log('git first page')
   // remove '-' from day
   $('div.event-article__date-container__day > span.ng-star-inserted').each(function(i, element) {
        var newTextDay = $(this).text('Ab ' + $(this).text().replace(/^\s+|\s+$/g, ""));
-       var TextDay = newTextDay.text().replace('-','');
-       var finalTextDay = TextDay.text().replace(/^\s+|\s+$/g, "")
+       var textDay = newTextDay.text().replace('-','');
+       var finalTextDay = textDay.replace(/^\s+|\s+$/g, "")
        $(this).empty().html(finalTextDay);
     });
   
