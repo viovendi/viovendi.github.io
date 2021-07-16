@@ -1,6 +1,7 @@
 console.log('14269 Booking wrapper if Brennholz in name or Forst attribute');
 
 var name = $('.event-info__title').text()
+console.log(name);
 
 async function makeRequest(options) {
   let result = null;
