@@ -59,7 +59,7 @@ async function getEventAttributes(eventId) {
     
     return v.name
   });
-  return true//attribute[0].data;
+  return attribute[0].data;
 }
 
 getEventAttributes(eventId);
