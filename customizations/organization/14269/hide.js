@@ -94,5 +94,5 @@ async function getEventAttributes(eventId) {
 }
 
 getEventAttributes(eventId);
-*(
+*/
 
