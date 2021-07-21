@@ -1,6 +1,6 @@
    function addClassToField(shortName, className, wrapperClass){
     $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
-      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim().replace('(optional)','');
+      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace('(optional)','').trim();
       console.log(item, item.includes(shortName))
       if(item !== '' && item.includes(shortName)){
         console.log(item);
