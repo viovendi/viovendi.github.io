@@ -1,7 +1,7 @@
    function addClassToField(shortName, className, wrapperClass){
     $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace('(optional)','').trim();
-      console.log(item, item.includes(shortName), shortName)
+      console.log(shortName)
       if(item !== '' && item.includes(shortName)){
         console.log(item);
         $(this).closest('.vv-nl-mb-lg').addClass(className);
@@ -78,6 +78,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
 
       addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
+      addTextUnderQuestion('Mit dem Freiticket stimmst Du der Daten-Weitergabe', name);
 
      //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      //addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
