@@ -73,6 +73,8 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
    function init(name){
       addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
+      addClassToField('Mit dem Freiticket stimmst Du der Daten-Weitergabe', name);
+
       addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 
