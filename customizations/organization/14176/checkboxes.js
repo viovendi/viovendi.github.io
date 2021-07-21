@@ -106,6 +106,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
 
       for (var i = 0; i < classNames.length; i++) {
         var className = classNames[i];
+        console.log(className)
 
         if(className.indexOf('customization2_attendee-') > -1){
           clickedEdit(className);
