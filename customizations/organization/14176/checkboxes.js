@@ -83,7 +83,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
       addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem ermäßigten VIP-Ticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
-      addTextUnderQuestion('Mit dem Ticket stimmst Du der Daten-Weitergabe', name);
+      addTextUnderQuestion('Mit dem Ticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
 
      //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      //addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
