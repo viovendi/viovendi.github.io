@@ -54,6 +54,7 @@
 
      enabledDisabledButton(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+       console.log($(this),'change')
        enabledDisabledButton(name);
      });
    }
