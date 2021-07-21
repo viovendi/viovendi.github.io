@@ -93,6 +93,7 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
 
 
      markAsChecked(name);
+     console.log($('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group'))
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
       console.log('change')
        enabledDisabledButton(name);
