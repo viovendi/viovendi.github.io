@@ -14,3 +14,10 @@ if( page1.length )  // it exists (page1)
 else{
  $('.event-info__event-description.customization-event-info-description').show();
 }
+
+
+if( page2.length )  // it exists (page1)
+{
+  console.log('page2');
+    
+}
