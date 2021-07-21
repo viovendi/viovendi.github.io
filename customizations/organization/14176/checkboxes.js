@@ -1,5 +1,6 @@
-   function addClassToField(shortName, className){
-    $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+
+  function addClassToField(shortName, className, wrapperClass){
+    $(`.${wrapperClass} .customization2_attendee_further-data .vv-nl-mb-lg`).each(function(i, element) {
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace('(optional)','').trim();
       if(item !== '' && item.includes(shortName)){
         console.log(item);
@@ -43,7 +44,7 @@
       addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 
-      addClassToField('Mit dem Freiticket stimmst Du der Daten-Weitergabe', name);
+      addClassToField('Mit dem Freiticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
 
      //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      //addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
@@ -75,11 +76,11 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
    function init(name){
       addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
-      addClassToField('Mit dem Freiticket stimmst Du der Daten-Weitergabe', name);
+      addClassToField('Mit dem Freiticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
 
       addTextUnderQuestion('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
       addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
-      addTextUnderQuestion('Mit dem Freiticket stimmst Du der Daten-Weitergabe', name);
+      addTextUnderQuestion('Mit dem Freiticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
 
      //addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
      //addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
