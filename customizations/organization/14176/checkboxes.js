@@ -1,8 +1,8 @@
    function addClassToField(shortName, className, wrapperClass){
     $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
-      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
-console.log(item)
-      if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
+      if(item !== '' && item.includes(shortName)){
+        console.log(item);
         $(this).closest('.vv-nl-mb-lg').addClass(className);
       }
     });
