@@ -91,9 +91,10 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
      //addTextUnderQuestion('Mit dem Ticket stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
      //addTextUnderQuestion('Hiermit stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
 
-console.log(name)
+
      markAsChecked(name);
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
+      console.log('change')
        enabledDisabledButton(name);
      });
    }
