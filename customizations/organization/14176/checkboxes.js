@@ -53,8 +53,9 @@
      //addTextUnderQuestion('Hiermit stimmst Du jederzeit widerruflich', 'check-boxes-wrapper', name);
 
      enabledDisabledButton(name);
+     console.log(name)
      $('.'+name+' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group').on('change', function(){
-       console.log($(this),'change')
+       console.log('change')
        enabledDisabledButton(name);
      });
    }
