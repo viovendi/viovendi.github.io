@@ -54,15 +54,12 @@ function showQuestion(tag, name) {
         var inputs = $(ifAnswerYes).find('input');
         inputs.each(function( i, element ) {
         $(element).change(function(input) {
-          console.log("changed");
             //on change show the question
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Yes')){
              hideQuestion(".customization2_attendee_further-data_custom-question", "If you answered yes to the above question");
-              console.log('hide');
             }
             else{
                showQuestion(".customization2_attendee_further-data_custom-question", "If you answered yes to the above question");
-              console.log('show');
             }
            });
         });
