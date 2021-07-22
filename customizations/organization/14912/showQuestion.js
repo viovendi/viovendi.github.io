@@ -40,8 +40,10 @@ function showQuestion(tag, name) {
 
 
 
-var insertionListener = function(event) {
-   if (event.animationName === "nodeInserted") {
+//var insertionListener = function(event) {
+//   if (event.animationName === "nodeInserted") {
+     
+     
       console.log("noteInserted");
      
      var ifAnswerYes = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Do you have any dietary requirements');
@@ -65,9 +67,9 @@ var insertionListener = function(event) {
            });
         });
 
-   }
+  // }
   
-}
+//}
    
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
