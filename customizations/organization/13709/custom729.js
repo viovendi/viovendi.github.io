@@ -52,14 +52,12 @@ $(window).on('click', function (event) {
 function checkIfChecked() {
   $('input[type=checkbox]').each(function () {
 
-    console.log($(this).closest('vv-additional-question-product').length);
-
     if ($(this).closest('vv-additional-question-product').length) {
 
       var item = $(this).closest('vv-additional-question-product'),
         label = item.find("label"),
         label_text = label[0].innerText.replace(/^\s+|\s+$/g, "");
-
+console.log(item)
       if (label_text.indexOf("BUSTOUR Rot") != -1) {
 
         if ($(this).is(':checked')) {
