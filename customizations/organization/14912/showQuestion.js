@@ -72,6 +72,6 @@ function showQuestion(tag, name) {
 //}
    
 
-  document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-  document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+ // document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+  //document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+  //document.addEventListener("webkitAnimationStart", insertionListener, false); // 
