@@ -90,6 +90,7 @@ function checkIfChecked() {
           console.log($(this))
           $(this).addClass('checked-by-func');
           makeChecked('LUNCH', 'MICE');
+          makeChecked('FORUM', 'NIGHT');
           disableProd("INDIVIDUELLE TOUR am 08.12.,");
           disableProd("INDIVIDUELLE TOUR am 25.08.,");
           disableProd("INDIVIDUELLE TOUR am 27.10.,");
