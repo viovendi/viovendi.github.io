@@ -8,17 +8,17 @@
     checkboxChecked();
 	hide("vv-additional-question-dropdown","08.12.");
 	hide("vv-additional-question-dropdown","09.12.");
-	  
+
 	hide("vv-additional-question-dropdown","25.08.");
 	hide("vv-additional-question-dropdown","26.08.");
-	  
+
 	hide("vv-additional-question-dropdown","27.10.");
 	hide("vv-additional-question-dropdown","28.10.");
-	  
+
 	hide("vv-additional-question-dropdown","17.11.");
 	hide("vv-additional-question-dropdown","18.11.");
-	
- 
+
+
 
 
   }
@@ -138,7 +138,7 @@
             }
           }
         }
-	      
+
 	//newcode for other events
 	  else if( label_text.indexOf("INDIVIDUELLE TOUR am 25.08., 14 - 17:30 Uhr - kostenfrei") != -1){
           if( $(this).is(':checked') ){
@@ -173,12 +173,12 @@
             }
           }
         }
-	      
+
 
 	      //end new code
-	    
+
       }
-		
+
 
     });
   }
@@ -233,7 +233,7 @@
           }
 
         }
-	
+
 	      //newcode
 	      else if( label_text == "INDIVIDUELLE TOUR am 25.08., 10 - 17 Uhr - kostenfrei" ){
           console.log('25.08');
@@ -255,7 +255,7 @@
           }
 
         }
-	else if( label_text == "INDIVIDUELLE TOUR am 26.08., 10 - 17 Uhr - kostenfrei" ){
+	else if( label_text == "INDIVIDUELLE TOUR am 26.08., 14 - 17 Uhr - kostenfrei" ){
           console.log('26.08');
 
           if( !item.hasClass('product-26-08')){
@@ -355,12 +355,12 @@
           }
 
         }
-	      
-	      
-	  //end newcode    
-	      
-	      
-	      
+
+
+	  //end newcode
+
+
+
 	else if( label_text.indexOf("BUSTOUR Rot") != -1){
 
           if( $(this).is(':checked') ){
