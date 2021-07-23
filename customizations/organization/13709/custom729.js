@@ -231,7 +231,7 @@ function checkboxChecked() {
       }
 
       //newcode
-      else if (label_text == "INDIVIDUELLE TOUR am 25.08., 10 - 17 Uhr - kostenfrei") {
+      else if (label_text == "INDIVIDUELLE TOUR am 25.08., 14 - 17 Uhr - kostenfrei") {
         console.log('25.08');
 
         if (!item.hasClass('product-25-08')) {
