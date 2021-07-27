@@ -85,7 +85,7 @@ function checkIfChecked() {
 
         if ($(this).is(':checked')) {
 
-          $(this).addClass('checked-by-func');
+          $(this).addClass('checked-by-func-blau');
           makeChecked('LUNCH', 'MICE');
           makeChecked('FORUM', 'NIGHT');
           disableProd("INDIVIDUELLE TOUR am 08.12.,");
@@ -96,10 +96,10 @@ function checkIfChecked() {
         } else {
           if ($(this).hasClass('checked-by-func')) {
             $(this).removeClass('checked-by-func');
-            makeUnChecked('LUNCH', 'MICE', '.checked-by-func');
+            makeUnChecked('LUNCH', 'MICE', '.checked-by-func-blau');
             
             //Added
-            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func');
+            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func-blau');
             
             enableProd("INDIVIDUELLE TOUR am 08.12.,");
             enableProd("INDIVIDUELLE TOUR am 25.08.,");
