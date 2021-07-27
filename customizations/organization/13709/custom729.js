@@ -360,6 +360,11 @@ function checkboxChecked() {
           makeChecked('LUNCH', 'MICE');
           makeChecked('FORUM', 'NIGHT');
           disableProd("INDIVIDUELLE TOUR am 08.12");
+          
+          //newcode
+          disableProd("INDIVIDUELLE TOUR am 25.08");
+          
+          
           disableProd("BUSTOUR Blau");
         } else {
           if ($(this).hasClass('checked-by-func')) {
@@ -367,6 +372,11 @@ function checkboxChecked() {
             makeUnChecked('LUNCH', 'MICE', '.checked-by-func');
             makeUnChecked('FORUM', 'NIGHT', '.checked-by-func');
             enableProd("INDIVIDUELLE TOUR am 08.12");
+            
+            //newcode
+            enableProd("INDIVIDUELLE TOUR am 25.08");
+            
+            
             enableProd("BUSTOUR Blau");
           }
         }
