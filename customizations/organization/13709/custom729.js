@@ -85,7 +85,7 @@ function checkIfChecked() {
 
         if ($(this).is(':checked')) {
 
-          $(this).addClass('checked-by-func-blau');
+          $(this).addClass('checked-by-func');
           makeChecked('LUNCH', 'MICE');
           makeChecked('FORUM', 'NIGHT');
           disableProd("INDIVIDUELLE TOUR am 08.12.,");
@@ -96,10 +96,10 @@ function checkIfChecked() {
         } else {
           if ($(this).hasClass('checked-by-func')) {
             $(this).removeClass('checked-by-func');
-            makeUnChecked('LUNCH', 'MICE', '.checked-by-func-blau');
+            makeUnChecked('LUNCH', 'MICE', '.checked-by-func');
             
             //Added
-            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func-blau');
+            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func');
             
             enableProd("INDIVIDUELLE TOUR am 08.12.,");
             enableProd("INDIVIDUELLE TOUR am 25.08.,");
@@ -384,7 +384,7 @@ function checkboxChecked() {
       } else if (label_text.includes("BUSTOUR Blau")) {
 
         if ($(this).is(':checked')) {
-          $(this).addClass('checked-by-func-blau');
+          $(this).addClass('checked-by-func');
           makeChecked('LUNCH', 'MICE');
           makeChecked('FORUM', 'NIGHT');
           disableProd("INDIVIDUELLE TOUR am 08.12");
@@ -395,12 +395,13 @@ function checkboxChecked() {
         } else {
           if ($(this).hasClass('checked-by-func')) {
             $(this).removeClass('checked-by-func');
-            makeUnChecked('LUNCH', 'MICE', '.checked-by-func-blau');
-            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func-blau');
             enableProd("INDIVIDUELLE TOUR am 08.12");
             enableProd("INDIVIDUELLE TOUR am 25.08");
             enableProd("INDIVIDUELLE TOUR am 27.10");
             enableProd("INDIVIDUELLE TOUR am 17.11");
+            makeUnChecked('LUNCH', 'MICE', '.checked-by-func');
+            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func');
+            
 
             enableProd("BUSTOUR Rot");
           }
