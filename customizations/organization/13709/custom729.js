@@ -97,6 +97,10 @@ function checkIfChecked() {
           if ($(this).hasClass('checked-by-func')) {
             $(this).removeClass('checked-by-func');
             makeUnChecked('LUNCH', 'MICE', '.checked-by-func');
+            
+            //Added
+            makeUnChecked('FORUM', 'NIGHT', '.checked-by-func');
+            
             enableProd("INDIVIDUELLE TOUR am 08.12.,");
             enableProd("INDIVIDUELLE TOUR am 25.08.,");
             enableProd("INDIVIDUELLE TOUR am 27.10.,");
