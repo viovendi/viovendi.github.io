@@ -74,7 +74,7 @@ var workshopblock360 = ["36One – Establish ‘one version of the truth’ (16:
 
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
-$(product1).before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
+$(product1).before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
  productChecked(workshopblock1); 
 
 
@@ -94,7 +94,7 @@ productChecked(workshopblock3);
 // Workshopblock4
 var workshopblock4 = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","ERP 2025 (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","Employee Engagement Program (9:25 - 9:50)","Innovation Management (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)"];
 var product4 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:25 - 9:50)');
-$(product4).before('<span class= "title_before_text" >Flight Plan Adventure Part 2</span><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock4);">Workshopslot 1 (09:25-09:50)▼</span>');
+$(product4).before('<span class= "title_before_text" >Flight Plan Adventure Part 2</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock4);">Workshopslot 1 (09:25-09:50)▼</span>');
 productChecked(workshopblock4);
 
 // Workshopblock5
