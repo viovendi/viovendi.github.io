@@ -52,7 +52,6 @@ var product = $$('.customization2_attendee_further-data_product').findField(elem
 // Workshopblock1
 // Workshopblock1
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
-
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
  productChecked(workshopblock1); 
