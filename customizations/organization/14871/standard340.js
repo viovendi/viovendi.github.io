@@ -46,16 +46,16 @@ var product = $$('.customization2_attendee_further-data_product').findField(elem
  });
 }
 
-var product0 = $$('.customization2_attendee_further-data_product').findField('Software Implementation Efficiency (16:15 - 16:35)');
+//var product0 = $$('.customization2_attendee_further-data_product').findField('Software Implementation Efficiency (16:15 - 16:35)');
   
-$(product0).addClass('show');
+//$(product0).addClass('show');
 // Workshopblock1
 // Workshopblock1
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
 
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
- 
+ productChecked(workshopblock1); 
 // Workshopblock2
 var workshopblock2 = ["Value + (16:40 - 17:00)","GTM Excellence (16:40 - 17:00)","Operations Excellence (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)","SaaS Acceleration (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)"];
 var product2 = $$('.customization2_attendee_further-data_product').findField('Value + (16:40 - 17:00)');
@@ -78,6 +78,6 @@ productChecked(workshopblock4);
 // Workshopblock5
 var workshopblock5 = ["Digital Roadmap/ New Growth Cases (9:55 - 10:20)","ERP 2025 (9:55 - 10:20)","The Aareon triad: This is what we stand for!  Vision, Mission and Values (9:55 - 10:20)","Employee Engagement Program (9:55 - 10:20)","Innovation Management (9:55 - 10:20)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"];
 var product5 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20));
-$(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock4a);">Workshopslot 2 (09:55-10:20)▼</span>');
+$(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Workshopslot 2 (09:55-10:20)▼</span>');
 productChecked(workshopblock5);
 
