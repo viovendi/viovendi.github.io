@@ -59,14 +59,14 @@ $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
  productChecked(workshopblock1); 
 
 // Workshopblock2
-var workshopblock2 = ["Value + (16:40 - 17:00)","GTM Excellence (16:40 - 17:00)","Operations Excellence (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)","SaaS Acceleration (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)"];
+var workshopblock2 = ["Value + (16:40 - 17:00)","GTM Excellence (16:40 - 17:00)","Operations Excellence (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)","SaaS Acceleration (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)","Value + (16:15 - 16:35)"];
 var product2 = $$('.customization2_attendee_further-data_product').findField('Value + (16:40 - 17:00)');
  
 $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Workshopslot 2 (16:40-17:00)▼</span>');
  productChecked(workshopblock2);
 
 // Workshopblock3
-var workshopblock3 = ["Value + (17:05 - 17:25)","GTM Excellence (17:05 - 17:25)","Software Implementation Efficiency (17:05 - 17:25)","Operations Excellence (17:05 - 17:25)","SaaS Acceleration (17:05 - 17:25)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)"];
+var workshopblock3 = ["Value + (17:05 - 17:25)","GTM Excellence (17:05 - 17:25)","Software Implementation Efficiency (17:05 - 17:25)","Operations Excellence (17:05 - 17:25)","SaaS Acceleration (17:05 - 17:25)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)","Value + (16:15 - 16:35)"];
 var product3 = $$('.customization2_attendee_further-data_product').findField('Value + (17:05 - 17:25)');
 $(product3).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock3);">Workshopslot 3 (17:05-17:25)▼</span>');
 productChecked(workshopblock3);
