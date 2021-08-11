@@ -11,6 +11,9 @@ function showWorkshopblock(workshopblock){
     
   });                                   
 };
+
+
+
   function disabelProducts(products){
     $(products).each( function(i, element) {
       var product = $$('.customization2_attendee_further-data_product').findField(element); 
