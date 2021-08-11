@@ -56,6 +56,21 @@ var product = $$('.customization2_attendee_further-data_product').findField(elem
 var workshopblockValue = ["Value + (16:15 - 16:35)","Value + (16:40 - 17:00)","Value + (17:05 - 17:25)"] 
  productChecked(workshopblockValue); 
 
+var workshopblockGTM = ["GTM Excellence (16:15 - 16:35)","GTM Excellence (16:40 - 17:00)","GTM Excellence (17:05 - 17:25)"];
+ productChecked(workshopblockGTM); 
+
+var workshopblockOper = ["Operations Excellence (16:15 - 16:35)","Operations Excellence (16:40 - 17:00)","Operations Excellence (17:05 - 17:25)"];
+ productChecked(workshopblockOper); 
+
+var workshopblockSaaS = ["SaaS Acceleration (16:15 - 16:35)","SaaS Acceleration (16:40 - 17:00)","SaaS Acceleration (17:05 - 17:25)"];
+ productChecked(workshopblockSaaS); 
+
+var workshopblockSoft = ["Software Implementation Efficiency (16:15 - 16:35)","Software Implementation Efficiency (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)"];
+ productChecked(workshopblockSoft); 
+
+var workshopblock360 = ["36One – Establish ‘one version of the truth’ (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)"];
+ productChecked(workshopblock360); 
+
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
