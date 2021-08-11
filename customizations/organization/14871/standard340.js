@@ -77,7 +77,7 @@ productChecked(workshopblock4);
 
 // Workshopblock5
 var workshopblock5 = ["Digital Roadmap/ New Growth Cases (9:55 - 10:20)","ERP 2025 (9:55 - 10:20)","The Aareon triad: This is what we stand for!  Vision, Mission and Values (9:55 - 10:20)","Employee Engagement Program (9:55 - 10:20)","Innovation Management (9:55 - 10:20)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"];
-var product5 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20));
+var product5 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20)');
 $(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Workshopslot 2 (09:55-10:20)▼</span>');
 productChecked(workshopblock5);
 
