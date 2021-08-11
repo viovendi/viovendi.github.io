@@ -71,6 +71,7 @@ var workshopblockSoft = ["Software Implementation Efficiency (16:15 - 16:35)","S
 var workshopblock360 = ["36One – Establish ‘one version of the truth’ (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)"];
  productChecked(workshopblock360); 
 
+
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
@@ -90,7 +91,7 @@ $(product3).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 productChecked(workshopblock3);
 
 // Workshopblock4
-var workshopblock4 = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","ERP 2025 (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","Innovation Management (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)"];
+var workshopblock4 = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","ERP 2025 (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","Employee Engagement Program (9:25 - 9:50)","Innovation Management (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)"];
 var product4 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:25 - 9:50)');
 $(product4).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock4);">Workshopslot 1 (09:25-09:50)▼</span>');
 productChecked(workshopblock4);
@@ -101,3 +102,21 @@ var product5 = $$('.customization2_attendee_further-data_product').findField('Di
 $(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Workshopslot 2 (09:55-10:20)▼</span>');
 productChecked(workshopblock5);
 
+
+var workshopblockDig = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","Digital Roadmap/ New Growth Cases (9:55 - 10:20)"] 
+ productChecked(workshopblockDig); 
+
+var workshopblockERP = ["ERP 2025 (9:25 - 9:50)","ERP 2025 (9:55 - 10:20)"] 
+ productChecked(workshopblockERP); 
+
+var workshopblockThe = ["The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:55 - 10:20)"] 
+ productChecked(workshopblockThe); 
+
+var workshopblockEmpl = ["Employee Engagement Program (9:25 - 9:50)","Employee Engagement Program (9:55 - 10:20)"] 
+ productChecked(workshopblockEmpl); 
+
+var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Management (9:55 - 10:20)"] 
+ productChecked(workshopblockInno); 
+
+var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
+ productChecked(workshopblockWeKnow); 
