@@ -39,7 +39,7 @@ var product = $$('.customization2_attendee_further-data_product').findField(elem
    input.change(function(){
      if(input.is(':checked')){
      disabelProducts(products);
-       $('.customization2_attendee_further-data_product').removeClass('show', 2000);
+       //$('.customization2_attendee_further-data_product').removeClass('show', 2000);
      }
      if(!input.is(':checked')){
        enableProducts(products);
