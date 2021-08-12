@@ -121,3 +121,36 @@ var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Manag
 
 var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
  productChecked(workshopblockWeKnow); 
+function handler(){
+  productChecked(workshopblockWeKnow); 
+  productChecked(workshopblockInno); 
+  productChecked(workshopblockEmpl); 
+  productChecked(workshopblockThe); 
+  productChecked(workshopblockERP); 
+  productChecked(workshopblockDig); 
+  productChecked(workshopblock5); 
+  productChecked(workshopblock4); 
+  productChecked(workshopblock3); 
+  productChecked(workshopblock2); 
+  productChecked(workshopblock1); 
+  productChecked(workshopblock360); 
+  productChecked(workshopblockSoft); 
+  productChecked(workshopblockSaaS); 
+  productChecked(workshopblockOper); 
+  productChecked(workshopblockGTM); 
+  productChecked(workshopblockValue); 
+  
+}
+var insertionListener = function (event) {
+  if (event.animationName === "nodeInserted") {
+    console.log("Node has been inserted Git: ", event.target);
+    //Insert your code here
+    handler();
+    
+
+  }
+};
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // 
