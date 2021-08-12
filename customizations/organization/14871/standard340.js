@@ -122,7 +122,7 @@ var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Manag
 var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
  //productChecked(workshopblockWeKnow); 
 
-        handler();
+      
 
 function handler(){
   productChecked(workshopblockWeKnow); 
@@ -144,6 +144,7 @@ function handler(){
   productChecked(workshopblockValue); 
   
 }
+  handler();
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
