@@ -122,9 +122,8 @@ var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Manag
 var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
  //productChecked(workshopblockWeKnow); 
 
-setTimeout(function() { 
         handler();
-    }, 2000);
+
 function handler(){
   productChecked(workshopblockWeKnow); 
   productChecked(workshopblockInno); 
@@ -149,9 +148,7 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    setTimeout(function() { 
-        handler();
-    }, 2000);
+handler();
   }
 };
 
