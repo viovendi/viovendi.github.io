@@ -73,6 +73,7 @@ var workshopblock360 = ["36One – Establish ‘one version of the truth’ (16:
 
 var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
 var product1 = $$('.customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
+console.log(product1);
 //$(product1).before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
 // productChecked(workshopblock1); 
 
@@ -122,6 +123,8 @@ var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landsc
  //productChecked(workshopblockWeKnow); 
 function main(){
   console.log('main - run');
+  console.log(product1);
+  console.log(product2);
   $(product1).before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
   $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Workshopslot 2 (16:40-17:00)▼</span>');
   $(product3).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock3);">Workshopslot 3 (17:05-17:25)▼</span>');
