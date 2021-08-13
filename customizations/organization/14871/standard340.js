@@ -12,29 +12,37 @@ function showWorkshopblock(workshopblock){
   });                                   
 };
 
+function disabelProducts(products){
+  $(products).each( function(i, element) {
+    var product = $$('.customization2_attendee_further-data_product').findField(element); 
+    var input = $(product).find('input');
+    if(input.is(':checked')){
+      $(product).find('input').prop('disabled', false);
+    } else {
+      $(product).find('input').prop('disabled', true);
+    }
+  });
+}
 
+function enableProducts(products){
+  $(products).each( function(i, element) {
+    var product = $$('.customization2_attendee_further-data_product').findField(element); 
+    var input = $(product).find('input');
+      $(product).find('input').prop('disabled', false);
+  });
+}
 
-  function disabelProducts(products){
-    $(products).each( function(i, element) {
-      var product = $$('.customization2_attendee_further-data_product').findField(element); 
-      var input = $(product).find('input');
-      if(input.is(':checked')){
-        $(product).find('input').prop('disabled', false);
-      } else {
-        $(product).find('input').prop('disabled', true);
-      }
-    });
-  }
-  function enableProducts(products){
-    $(products).each( function(i, element) {
-      var product = $$('.customization2_attendee_further-data_product').findField(element); 
-      var input = $(product).find('input');
-        $(product).find('input').prop('disabled', false);
-    });
-  }
 function productChecked(products){
+ console.log('productChecked - run');
+ console.log(products);
+  
  $(products).each( function(i, element) {
-var product = $$('.customization2_attendee_further-data_product').findField(element); 
+  var product = $$('.customization2_attendee_further-data_product').findField(element); 
+  console.log('element - ');
+  console.log(element);
+
+  console.log('product - ');
+  console.log(product);
   var input = $(product).find('input');
    input.change(function(){
      if(input.is(':checked')){
@@ -44,8 +52,7 @@ var product = $$('.customization2_attendee_further-data_product').findField(elem
      if(!input.is(':checked')){
        enableProducts(products);
      }
-   });
-   
+   }); 
  });
 }
 
@@ -125,6 +132,7 @@ var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landsc
       
 
 function handler(){
+  console.log('handler - run');
   productChecked(workshopblockWeKnow); 
   productChecked(workshopblockInno); 
   productChecked(workshopblockEmpl); 
@@ -144,12 +152,13 @@ function handler(){
   productChecked(workshopblockValue); 
   
 }
-  handler();
+handler();
+
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-handler();
+    handler();
   }
 };
 
