@@ -32,17 +32,9 @@ function enableProducts(products){
   });
 }
 
-function productChecked(products){
- console.log('productChecked - run');
- console.log(products);
-  
+function productChecked(products){  
  $(products).each( function(i, element) {
   var product = $$('.customization2_attendee_further-data_product').findField(element); 
-  console.log('element - ');
-  console.log(element);
-
-  console.log('product - ');
-  console.log(product);
   var input = $(product).find('input');
    input.change(function(){
      if(input.is(':checked')){
@@ -60,6 +52,8 @@ function productChecked(products){
   
 //$(product0).addClass('show');
 // Workshopblock1
+function main(){
+console.log('main - run');
 var workshopblockValue = ["Value + (16:15 - 16:35)","Value + (16:40 - 17:00)","Value + (17:05 - 17:25)"] 
  //productChecked(workshopblockValue); 
 
@@ -128,7 +122,7 @@ var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Manag
 
 var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
  //productChecked(workshopblockWeKnow); 
-
+}
       
 
 function handler(){
@@ -158,10 +152,8 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    setTimeout(function(){
-      handler();
-    }, 300);
-    // handler();
+    main();
+    handler();
   }
 };
 
