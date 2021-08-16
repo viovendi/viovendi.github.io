@@ -28,9 +28,7 @@ function enableProducts(products){
   $(products).each( function(i, element) {
     var product = $$('.customization2_attendee_further-data_product').findField(element); 
     var input = $(product).find('input');
-      if(!input.hasClass('blocked')){
-        $(product).find('input').prop('disabled', false);
-      }
+      $(product).find('input').prop('disabled', false);
   });
 }
 
