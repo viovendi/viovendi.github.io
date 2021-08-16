@@ -16,7 +16,7 @@ function disabelProducts(products){
   $(products).each( function(i, element) {
     var product = $$('.customization2_attendee_further-data_product').findField(element); 
     var input = $(product).find('input');
-    if(input.is(':checked')){
+    if(input.is(':checked') && !input.hasClass('blocked')){
       $(product).find('input').prop('disabled', false);
     } else {
       $(product).find('input').prop('disabled', true);
@@ -28,20 +28,28 @@ function enableProducts(products){
   $(products).each( function(i, element) {
     var product = $$('.customization2_attendee_further-data_product').findField(element); 
     var input = $(product).find('input');
-      $(product).find('input').prop('disabled', false);
+      if(!input.hasClass('blocked')){
+        $(product).find('input').prop('disabled', false);
+      }
   });
 }
 
-function productChecked(products){  
+function productChecked(products, isBlockDisabled){  
  $(products).each( function(i, element) {
   var product = $$('.customization2_attendee_further-data_product').findField(element); 
   var input = $(product).find('input');
    input.change(function(){
      if(input.is(':checked')){
-     disabelProducts(products);
+       if(isBlockDisabled){
+         input.addClass('blocked');
+       }
+      disabelProducts(products);
        //$('.customization2_attendee_further-data_product').removeClass('show', 2000);
      }
      if(!input.is(':checked')){
+       if(isBlockDisabled){
+         input.removeClass('blocked');
+       }
        enableProducts(products);
      }
    }); 
@@ -137,24 +145,24 @@ function editFunc(){
 
 function handler(){
   console.log('handler - run');
-  productChecked(workshopblockWeKnow); 
-  productChecked(workshopblockInno); 
-  productChecked(workshopblockEmpl); 
-  productChecked(workshopblockThe); 
-  productChecked(workshopblockERP); 
-  productChecked(workshopblockDig); 
-  productChecked(workshopblock5); 
-  productChecked(workshopblock4); 
-  productChecked(workshopblock3); 
-  productChecked(workshopblock2); 
-  productChecked(workshopblock1); 
-  productChecked(workshopblock360); 
-  productChecked(workshopblockSoft); 
-  productChecked(workshopblockSaaS); 
-  productChecked(workshopblockOper); 
-  productChecked(workshopblockGTM); 
-  productChecked(workshopblockValue); 
+  productChecked(workshopblockWeKnow, false); 
+  productChecked(workshopblockInno, false); 
+  productChecked(workshopblockEmpl, false); 
+  productChecked(workshopblockThe, false); 
+  productChecked(workshopblockERP, false); 
+  productChecked(workshopblockDig, false);
+  productChecked(workshopblock360, false); 
+  productChecked(workshopblockSoft, false); 
+  productChecked(workshopblockSaaS, false); 
+  productChecked(workshopblockOper, false); 
+  productChecked(workshopblockGTM, false); 
+  productChecked(workshopblockValue, false); 
   
+  productCheckedBlock(workshopblock5, true); 
+  productCheckedBlock(workshopblock4, true); 
+  productCheckedBlock(workshopblock3, true); 
+  productCheckedBlock(workshopblock2, true); 
+  productCheckedBlock(workshopblock1, true);
 }
 handler();
 
