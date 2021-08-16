@@ -158,11 +158,11 @@ function handler(){
   productChecked(workshopblockGTM, false); 
   productChecked(workshopblockValue, false); 
   
-  productCheckedBlock(workshopblock5, true); 
-  productCheckedBlock(workshopblock4, true); 
-  productCheckedBlock(workshopblock3, true); 
-  productCheckedBlock(workshopblock2, true); 
-  productCheckedBlock(workshopblock1, true);
+  productChecked(workshopblock5, true); 
+  productChecked(workshopblock4, true); 
+  productChecked(workshopblock3, true); 
+  productChecked(workshopblock2, true); 
+  productChecked(workshopblock1, true);
 }
 handler();
 
