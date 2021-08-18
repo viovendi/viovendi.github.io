@@ -116,7 +116,9 @@ function productChecked(products){
    }); 
  });
 }
-productChecked();
+
+var workshopblockValue = ["Eventbox"] 
+productChecked(workshopblockValue);
 
 
 /*
