@@ -7,91 +7,26 @@ $('.customization2_attendee_further-data_custom-question-4').hide();
 $('.customization2_attendee_further-data_custom-question-5').hide();
 $('.customization2_attendee_further-data_custom-question-6').hide();
 
- //hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung");
-
-     
-     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
+var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
      
 
 
    
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
-        var inputs = $(radioGroupGastorMitglied).find('input');
+        var inputs = $(radioGroupYesNo).find('input');
         inputs.each(function( i, element ) {
         $(element).change(function(input) {
-          //console.log("changed");
             //on change show these 2 questions
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Nein')){
              $('.customization2_attendee_further-data_custom-question-2').show();
-             $(this).closest('.vv-nl-mb-lg').addClass('visibleCheckbox');
-             $(this).closest('vv-input').find('input').addClass('addressField addressInput');
-
-              //console.log('show');
             }
             else{
                $('.customization2_attendee_further-data_custom-question-2').hide();
-             // console.log('hide');
             }
            });
         });
 
- function checkIfAddressEmpty(){
-    var sum = 0;
-    var select = false;
-    $('.addressInput').each(function(){
-      if($(this).val() !=''){
-        sum = sum + 1;
-      }
-    });
-    if($('.addressSelect').children("option:selected").val() != ''){
-      select = true;
-    }
-    if(sum == 4 && select){
-      makeAddressOptional();
-    }
-  }
 
-function checkIfAddressEmpty(){
-    var sum = 0;
-    var select = false;
-    $('.addressInput').each(function(){
-      if($(this).val() !=''){
-        sum = sum + 1;
-      }
-    });
-    if($('.addressSelect').children("option:selected").val() != ''){
-      select = true;
-    }
-    if(sum == 1 && select){
-      makeAddressOptional();
-    }
-  }
-  
-  function makeAddressRequired(){
-    if(!checkIfAddressEmpty() ){
-      $('.customization2_attendee_edit-action_save').attr('disabled', true);
-      $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte geben Sie Ihre Adresse an</span>');
-      $('.addressInput').closest('input').addClass('ng-invalid ng-dirty');
-      $('.addressSelect').closest('select').addClass('ng-invalid ng-dirty'); 
-    }
-  }
-  
-  function makeAddressOptional(){
-    $('.customization2_attendee_edit-action_save').attr('disabled', false);
-    $('.button-error-message').remove();
-    $('.addressInput').closest('input').removeClass('ng-invalid ng-dirty');
-    $('.addressSelect').closest('select').removeClass('ng-invalid ng-dirty');
-  }
-
- $('.visibleCheckbox').on('change', function(){
-    if( $(this).find('input').is(':checked') ){
-      makeAddressRequired();
-      var timerId = setInterval(checkIfAddressEmpty, 500);
-    }else{
-      clearInterval(timerId);
-      makeAddressOptional();
-    }
-  });
 
 
 function productChecked(products){  
@@ -100,23 +35,14 @@ function productChecked(products){
   var input = $(product).find('input');
    input.change(function(){
      if(input.is(':checked')){
-      console.log("checked");
-      
        $('.customization2_attendee_further-data_custom-question-4').show();
-             $('.customization2_attendee_further-data_custom-question-5').show();
-
-             $('.customization2_attendee_further-data_custom-question-6').show();
-
-
+       $('.customization2_attendee_further-data_custom-question-5').show();
+       $('.customization2_attendee_further-data_custom-question-6').show();
      }
      if(!input.is(':checked')){
       $('.customization2_attendee_further-data_custom-question-4').hide();
-            $('.customization2_attendee_further-data_custom-question-5').hide();
-      console.log("c nothecked");
-
-            $('.customization2_attendee_further-data_custom-question-6').hide();
-
-
+      $('.customization2_attendee_further-data_custom-question-5').hide();
+      $('.customization2_attendee_further-data_custom-question-6').hide();
      }
    }); 
  });
