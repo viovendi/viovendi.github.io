@@ -48,39 +48,19 @@ function productChecked(products){
  });
 }
 
-//var product0 = $$('.customization2_attendee_further-data_product').findField('Software Implementation Efficiency (16:15 - 16:35)');
-  
-//$(product0).addClass('show');
-// Workshopblock1
-var workshopblockValue = ["Value + (16:15 - 16:35)","Value + (16:40 - 17:00)","Value + (17:05 - 17:25)"] 
- //productChecked(workshopblockValue); 
-
-var workshopblockGTM = ["GTM Excellence (16:15 - 16:35)","GTM Excellence (16:40 - 17:00)","GTM Excellence (17:05 - 17:25)"];
- //productChecked(workshopblockGTM); 
-
-var workshopblockOper = ["Operations Excellence (16:15 - 16:35)","Operations Excellence (16:40 - 17:00)","Operations Excellence (17:05 - 17:25)"];
-// productChecked(workshopblockOper); 
-
-var workshopblockSaaS = ["SaaS Acceleration (16:15 - 16:35)","SaaS Acceleration (16:40 - 17:00)","SaaS Acceleration (17:05 - 17:25)"];
-// productChecked(workshopblockSaaS); 
-
-var workshopblockSoft = ["Software Implementation Efficiency (16:15 - 16:35)","Software Implementation Efficiency (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)"];
-// productChecked(workshopblockSoft); 
-
-var workshopblock360 = ["36One – Establish ‘one version of the truth’ (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)"];
- //productChecked(workshopblock360); 
 
 
-var workshopblock1 = ["Value + (16:15 - 16:35)","GTM Excellence (16:15 - 16:35)","Operations Excellence (16:15 - 16:35)","SaaS Acceleration (16:15 - 16:35)","Software Implementation Efficiency (16:15 - 16:35)","36One – Establish ‘one version of the truth’ (16:15 - 16:35)"];
-var product1 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Value + (16:15 - 16:35)');
-$(product1).before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Workshopslot 1 (16:15-16:35) ▼</span>');
+
+var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Rahmenprogramm | Montag, 25. Oktober 2021","Maschinenvorführung A | Montag, 25. Oktober 2021"]; 
+var product1 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
+$(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Montag, 25. Oktober 2021 ▼</span>');
 // productChecked(workshopblock1); 
 
 
 // Workshopblock2
-var workshopblock2 = ["Value + (16:40 - 17:00)","GTM Excellence (16:40 - 17:00)","Operations Excellence (16:40 - 17:00)","Software Implementation Efficiency (16:40 - 17:00)","SaaS Acceleration (16:40 - 17:00)","36One – Establish ‘one version of the truth’ (16:40 - 17:00)"];
-var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Value + (16:40 - 17:00)');
-$(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Workshopslot 2 (16:40-17:00)▼</span>');
+var workshopblock2 = ["Dienstag I 26 Oktober 2021","GTM Excellence (16:40 - 17:00)","GTM Excellence (17:05 - 17:25)"];
+var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
+$(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 // productChecked(workshopblock2);
 
 // Workshopblock3
