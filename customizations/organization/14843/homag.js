@@ -1,4 +1,4 @@
-onsole.log('Tag - Homag');
+console.log('Tag - Homag');
   
 function showWorkshopblock(workshopblock){
   $(workshopblock).each( function(i, element) {
