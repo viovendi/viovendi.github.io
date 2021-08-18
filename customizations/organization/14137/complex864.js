@@ -7,8 +7,8 @@ console.log("Complex864")
 
      
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
-     var productCheckbox = $$('.customization2_attendee_further-data_product_name').findProduct('Eventbox);
-     
+     var productCheckbox = $$('.customization2_attendee_further-data_product_name').findField('Eventbox');
+     console.log(productCheckbox):
    
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
         var inputs = $(radioGroupGastorMitglied).find('input');
