@@ -9,10 +9,7 @@ $('.customization2_attendee_further-data_custom-question-6').hide();
 
 var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
      
-
-
-   
-// show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
+// show question if 'Ja' is clicked
         var inputs = $(radioGroupYesNo).find('input');
         inputs.each(function( i, element ) {
         $(element).change(function(input) {
@@ -26,9 +23,7 @@ var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question'
            });
         });
 
-
-
-
+//show 3 questions if product is checked, else hide
 function productChecked(products){  
  $(products).each( function(i, element) {
   var product = $$('.customization2_attendee_further-data_product').findField(element); 
@@ -52,6 +47,7 @@ var workshopblockValue = ["Eventbox"] ;
 productChecked(workshopblockValue);
 
 
+//Olexiys code from
 /*
 
   function addClassToField(shortName, className){
