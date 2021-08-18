@@ -1,4 +1,4 @@
-console.log('Start-14780');
+console.log('Start-14780-git');
   
   // global var
   var isFuncUsed = false;
