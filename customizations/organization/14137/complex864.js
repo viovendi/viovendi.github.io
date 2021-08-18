@@ -37,6 +37,9 @@ function showQuestion(tag, name) {
             //on change show these 2 questions
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Nein')){
              $('.customization2_attendee_further-data_custom-question-2').show();
+             $(this).closest('.vv-nl-mb-lg').addClass('visibleCheckbox');
+             $(this).closest('vv-input').find('input').addClass('addressField addressInput');
+
               console.log('show');
             }
             else{
@@ -46,13 +49,21 @@ function showQuestion(tag, name) {
            });
         });
 
- $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
-    var itemCheckbox = $(this).find('.customization2_attendee_further-data_custom-question_radio-line_label').text();
-        console.log(itemCheckbox);
-    if(itemCheckbox !== '' && itemCheckbox.replace(/^\s+|\s+$/g, "").indexOf('Nein') > -1){
-      $(this).closest('.vv-nl-mb-lg').addClass('visibleCheckbox');
+ function checkIfAddressEmpty(){
+    var sum = 0;
+    var select = false;
+    $('.addressInput').each(function(){
+      if($(this).val() !=''){
+        sum = sum + 1;
+      }
+    });
+    if($('.addressSelect').children("option:selected").val() != ''){
+      select = true;
     }
-  });
+    if(sum == 4 && select){
+      makeAddressOptional();
+    }
+  }
 
 function checkIfAddressEmpty(){
     var sum = 0;
