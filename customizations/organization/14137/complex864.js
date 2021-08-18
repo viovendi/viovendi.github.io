@@ -1,7 +1,11 @@
 console.log("Complex864")
  console.log('GTM file connected');
 
-
+// Hide questions
+$('.customization2_attendee_further-data_custom-question-2').hide();
+$('.customization2_attendee_further-data_custom-question-4').hide();
+$('.customization2_attendee_further-data_custom-question-5').hide();
+$('.customization2_attendee_further-data_custom-question-6').hide();
 
  //hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung");
 
