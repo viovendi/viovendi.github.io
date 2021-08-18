@@ -1,32 +1,13 @@
 console.log("Complex864")
  console.log('GTM file connected');
 
-//funktion to hide question
-function hideQuestion(tag, name) {
-  $(tag).each(function (i, element) {
-    var item = $(this);
-    var label = item.find("label");
 
-    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      $(item).hide();    }
-  });
-}
-
-function showQuestion(tag, name) {
-  $(tag).each(function (i, element) {
-    var item = $(this);
-    var label = item.find("label");
-
-    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
-      $(item).show();    }
-  });
-}
 
  //hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung");
 
      
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
-     
+     var productCheckbox = $$('.customization2_attendee_further-data_product_name').findProduct('Eventbox);
      
    
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
