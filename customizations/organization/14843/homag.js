@@ -123,17 +123,7 @@ function editFunc(){
       
 
 function handler(){
-  productChecked(workshopblockWeKnow); 
-  productChecked(workshopblockInno); 
-  productChecked(workshopblockEmpl); 
-  productChecked(workshopblockThe); 
-  productChecked(workshopblockERP); 
-  productChecked(workshopblockDig);
-  productChecked(workshopblockSoft); 
-  productChecked(workshopblockSaaS); 
-  productChecked(workshopblockOper); 
-  productChecked(workshopblockGTM); 
-  productChecked(workshopblockValue); 
+
   
   productChecked(workshopblock5); 
   productChecked(workshopblock4); 
