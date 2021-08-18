@@ -46,6 +46,57 @@ function showQuestion(tag, name) {
            });
         });
 
+ $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+    var itemCheckbox = $(this).find('.customization2_attendee_further-data_custom-question_radio-line_label').text();
+        console.log(itemCheckbox);
+    if(itemCheckbox !== '' && itemCheckbox.replace(/^\s+|\s+$/g, "").indexOf('Nein') > -1){
+      $(this).closest('.vv-nl-mb-lg').addClass('visibleCheckbox');
+    }
+  });
+
+function checkIfAddressEmpty(){
+    var sum = 0;
+    var select = false;
+    $('.addressInput').each(function(){
+      if($(this).val() !=''){
+        sum = sum + 1;
+      }
+    });
+    if($('.addressSelect').children("option:selected").val() != ''){
+      select = true;
+    }
+    if(sum == 1 && select){
+      makeAddressOptional();
+    }
+  }
+  
+  function makeAddressRequired(){
+    if(!checkIfAddressEmpty() ){
+      $('.customization2_attendee_edit-action_save').attr('disabled', true);
+      $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte geben Sie Ihre Adresse an</span>');
+      $('.addressInput').closest('input').addClass('ng-invalid ng-dirty');
+      $('.addressSelect').closest('select').addClass('ng-invalid ng-dirty'); 
+    }
+  }
+  
+  function makeAddressOptional(){
+    $('.customization2_attendee_edit-action_save').attr('disabled', false);
+    $('.button-error-message').remove();
+    $('.addressInput').closest('input').removeClass('ng-invalid ng-dirty');
+    $('.addressSelect').closest('select').removeClass('ng-invalid ng-dirty');
+  }
+
+ $('.visibleCheckbox').on('change', function(){
+    if( $(this).find('input').is(':checked') ){
+      makeAddressRequired();
+      var timerId = setInterval(checkIfAddressEmpty, 500);
+    }else{
+      clearInterval(timerId);
+      makeAddressOptional();
+    }
+  });
+
+
 /*
 
   function addClassToField(shortName, className){
