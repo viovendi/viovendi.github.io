@@ -3,10 +3,17 @@ console.log('Tag - Homag');
 function showWorkshopblock(workshopblock){
   $(workshopblock).each( function(i, element) {
     var product = $$('.customization2_attendee_further-data_product').findField(element);
+    var question = $$('.customization2_attendee_further-data_custom-question').findField(element);
+    console.log(element);
     if($(product).hasClass('show')){
       $(product).removeClass('show');
     } else {
      $(product).addClass('show');   
+    }
+    if($(question).hasClass('show')){
+      $(question).removeClass('show');
+    } else {
+     $(question).addClass('show');   
     }
     
   });                                   
