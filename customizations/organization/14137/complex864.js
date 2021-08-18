@@ -1,6 +1,53 @@
 console.log("Complex864")
  console.log('GTM file connected');
 
+//funktion to hide question
+function hideQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label");
+
+    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+      $(item).hide();    }
+  });
+}
+
+function showQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label");
+
+    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+      $(item).show();    }
+  });
+}
+
+ //hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer - Vertretung");
+
+     
+     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
+     
+     
+   
+// show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
+        var inputs = $(radioGroupGastorMitglied).find('input');
+        inputs.each(function( i, element ) {
+        $(element).change(function(input) {
+          console.log("changed");
+            //on change show these 2 questions
+           if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Ja')){
+             $('.customization2_attendee_further-data_custom-question-2').show();
+              console.log('show');
+            }
+            else{
+               $('.customization2_attendee_further-data_custom-question-2').hide();
+              console.log('hide');
+            }
+           });
+        });
+
+/*
+
   function addClassToField(shortName, className){
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
       var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
@@ -122,3 +169,4 @@ function productAddTitle(shortName, title, indexShowFunction){
       makeAddressOptional();
     }
   });
+*/
