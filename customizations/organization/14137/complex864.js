@@ -96,7 +96,7 @@ function productChecked(products){
   var input = $(product).find('input');
    input.change(function(){
      if(input.is(':checked')){
-      console.log();
+      console.log("checked");
       
        $('.customization2_attendee_further-data_custom-question-4').show();
              $('.customization2_attendee_further-data_custom-question-5').show();
@@ -108,6 +108,7 @@ function productChecked(products){
      if(!input.is(':checked')){
       $('.customization2_attendee_further-data_custom-question-4').hide();
             $('.customization2_attendee_further-data_custom-question-5').hide();
+      console.log("c nothecked");
 
             $('.customization2_attendee_further-data_custom-question-6').hide();
 
@@ -117,7 +118,7 @@ function productChecked(products){
  });
 }
 
-var workshopblockValue = ["Eventbox"] 
+var workshopblockValue = ["Eventbox"] ;
 productChecked(workshopblockValue);
 
 
