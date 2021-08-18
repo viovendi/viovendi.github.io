@@ -7,8 +7,9 @@ console.log("Complex864")
 
      
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
-     var productCheckbox = $('.customization2_attendee_further-data_product_name').text()
-     console.log(productCheckbox);
+     
+
+
    
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
         var inputs = $(radioGroupGastorMitglied).find('input');
@@ -87,6 +88,35 @@ function checkIfAddressEmpty(){
       makeAddressOptional();
     }
   });
+
+
+function productChecked(products){  
+ $(products).each( function(i, element) {
+  var product = $$('.customization2_attendee_further-data_product').findField(element); 
+  var input = $(product).find('input');
+   input.change(function(){
+     if(input.is(':checked')){
+      console.log();
+      
+       $('.customization2_attendee_further-data_custom-question-4').show();
+             $('.customization2_attendee_further-data_custom-question-5').show();
+
+             $('.customization2_attendee_further-data_custom-question-6').show();
+
+
+     }
+     if(!input.is(':checked')){
+      $('.customization2_attendee_further-data_custom-question-4').hide();
+            $('.customization2_attendee_further-data_custom-question-5').hide();
+
+            $('.customization2_attendee_further-data_custom-question-6').hide();
+
+
+     }
+   }); 
+ });
+}
+productChecked();
 
 
 /*
