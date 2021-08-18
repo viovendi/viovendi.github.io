@@ -47,7 +47,7 @@ var workshopblockValue = ["Eventbox"] ;
 productChecked(workshopblockValue);
 
 
-//Olexiys code from
+//Olexiys code from same OID in file : booking-14137-18072.js
 /*
 
   function addClassToField(shortName, className){
