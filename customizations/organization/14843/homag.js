@@ -129,7 +129,6 @@ function handler(){
   productChecked(workshopblockThe); 
   productChecked(workshopblockERP); 
   productChecked(workshopblockDig);
-  productChecked(workshopblock360); 
   productChecked(workshopblockSoft); 
   productChecked(workshopblockSaaS); 
   productChecked(workshopblockOper); 
