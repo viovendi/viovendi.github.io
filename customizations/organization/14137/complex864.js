@@ -35,7 +35,7 @@ function showQuestion(tag, name) {
         $(element).change(function(input) {
           console.log("changed");
             //on change show these 2 questions
-           if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Ja')){
+           if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Nein')){
              $('.customization2_attendee_further-data_custom-question-2').show();
               console.log('show');
             }
