@@ -2,6 +2,8 @@ console.log('Tag - Homag');
 
 $('.customization2_attendee_further-data_custom-question-1').show()
 $('.customization2_attendee_further-data_custom-question-2').show()
+$('.customization2_attendee_further-data_custom-question-2').show()
+
   
   
 function showWorkshopblock(workshopblock){
@@ -27,14 +29,14 @@ function showWorkshopblock(workshopblock){
 
 
 
-var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Rahmenprogramm | Montag, 25. Oktober 2021","Maschinenvorführung A | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"]; 
+var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"]; 
 var product1 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Montag, 25. Oktober 2021 ▼</span>');
 // productChecked(workshopblock1); 
 
 
 // Workshopblock2
-var workshopblock2 = ["Dienstag I 26 Oktober 2021","Geplantes Besuchsende 26 Oktober 2021","Geplanter Besuchsbeginn 26 Oktober 2021"];
+var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplantes Besuchsende 26 Oktober 2021","Geplanter Besuchsbeginn 26 Oktober 2021"];
 var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
 $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 // productChecked(workshopblock2);
