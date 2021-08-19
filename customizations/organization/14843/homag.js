@@ -43,7 +43,9 @@ $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 
 function editFunc(){
   
-
+$('.customization2_attendee_further-data_custom-question-3').show()
+$('.customization2_attendee_further-data_custom-question-4').show()
+$$('.customization2_attendee_further-data_product').show()
  // var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
  // var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
 
