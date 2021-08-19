@@ -25,10 +25,10 @@ function showWorkshopblock(workshopblock){
   });                                   
 };
 
-showWorkshopblock(workshopblock1);
-showWorkshopblock(workshopblock1)
-showWorkshopblock(workshopblock2)
-showWorkshopblock(workshopblock2)
+//showWorkshopblock(workshopblock1);
+//showWorkshopblock(workshopblock1)
+//showWorkshopblock(workshopblock2)
+//showWorkshopblock(workshopblock2)
 
 
 
