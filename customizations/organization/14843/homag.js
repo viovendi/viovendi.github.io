@@ -36,8 +36,8 @@ $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 
 
 // Workshopblock2
-var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplantes Besuchsende 26 Oktober 2021","Geplanter Besuchsbeginn 26 Oktober 2021","26.10.21 | 13:00 Uhr - 14:00 Uhr | Software materialManager Advanced Workshop live"];
-var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
+var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplanter Besuchsbeginn | 26. Oktober 2021","Geplantes Besuchsende | 26. Oktober 2021","26.10.21 | 13:00 Uhr - 14:00 Uhr | Software materialManager Advanced Workshop live"];
+var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 26. Oktober 2021');
 $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 // productChecked(workshopblock2);
 
