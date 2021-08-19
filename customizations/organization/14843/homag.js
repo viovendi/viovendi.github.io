@@ -44,14 +44,13 @@ $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 function editFunc(){
   
 $('.customization2_attendee_further-data_custom-question').show()
-$('.customization2_attendee_further-data_custom-question-4').show()
 $('.customization2_attendee_further-data_product').show()
- // var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
- // var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
+  var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
+  var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
 
   
- // $(product11).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Teilnahme | Montag, 25. Oktober 2021▼</span>');
- // $(product12).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
+  $(product11).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Teilnahme | Montag, 25. Oktober 2021▼</span>');
+  $(product12).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 
 }
       
