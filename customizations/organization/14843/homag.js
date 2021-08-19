@@ -82,8 +82,8 @@ var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landsc
  //productChecked(workshopblockWeKnow);
 
 function editFunc(){
-  var product11 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
-  var product12 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
+  var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
+  var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
   var product13 = $$('.customization2_attendee_further-data_product').findField('Value + (17:05 - 17:25)');
   var product14 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:25 - 9:50)');
   var product15 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20)');
