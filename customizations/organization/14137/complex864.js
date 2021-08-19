@@ -10,18 +10,22 @@ $('.customization2_attendee_further-data_custom-question-6').hide();
 var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
      
 // show question if 'Ja' is clicked
-        var inputs = $(radioGroupYesNo).find('input');
-        inputs.each(function( i, element ) {
-        $(element).change(function(input) {
-            //on change show these 2 questions
-           if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Nein')){
-             $('.customization2_attendee_further-data_custom-question-2').show();
-            }
-            else{
-               $('.customization2_attendee_further-data_custom-question-2').hide();
-            }
-           });
-        });
+var inputs = $(radioGroupYesNo).find('input');
+console.log('inputs');
+console.log(inputs);
+inputs.each(function( i, element ) {
+  $(element).change(function(input) {
+    //on change show these 2 questions
+   console.log($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, ""));
+    if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Nein')){
+      console.log('show!');
+      $('.customization2_attendee_further-data_custom-question-2').show();
+    }else{
+      console.log('hide!');
+      $('.customization2_attendee_further-data_custom-question-2').hide();
+    }
+   });
+});
 
 //show 3 questions if product is checked, else hide
 function productChecked(products){  
