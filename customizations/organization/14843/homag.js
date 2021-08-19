@@ -13,7 +13,6 @@ function showWorkshopblock(workshopblock){
     if($(question).hasClass('show')){
       $(question).removeClass('show');
       $(question).hide();
-      console.log("remove show");
     } else {
      $(question).addClass('show');
       $(question).show();
@@ -61,20 +60,20 @@ function productChecked(products){
 
 
 
-var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Rahmenprogramm | Montag, 25. Oktober 2021","Maschinenvorführung A | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021"]; 
+var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Rahmenprogramm | Montag, 25. Oktober 2021","Maschinenvorführung A | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021"]; 
 var product1 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Montag, 25. Oktober 2021 ▼</span>');
 // productChecked(workshopblock1); 
 
 
 // Workshopblock2
-var workshopblock2 = ["Dienstag I 26 Oktober 2021","Geplantes Besuchende | 25. Oktober 2021 (optional)","GTM Excellence (17:05 - 17:25)"];
+var workshopblock2 = ["Dienstag I 26 Oktober 2021","Geplantes Besuchende | 25. Oktober 2021","Geplanter Besuchsbeginn 26 Oktober 2021"];
 var product2 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
 $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 // productChecked(workshopblock2);
 
 // Workshopblock3
-var workshopblock3 = ["Value + (17:05 - 17:25)","GTM Excellence (17:05 - 17:25)","Software Implementation Efficiency (17:05 - 17:25)","Operations Excellence (17:05 - 17:25)","SaaS Acceleration (17:05 - 17:25)","36One – Establish ‘one version of the truth’ (17:05 - 17:25)"];
+var workshopblock3 = ["Mittwoch I 27 Oktober 2021","Geplanter Besuchsbeginn 27 Oktober 2021)","Geplantes Besuchsende 27 Oktober 2021"];
 var product3 = $$('.customization2_attendee_further-data_product').findField('Value + (17:05 - 17:25)');
 $(product3).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock3);">Workshopslot 3 (17:05-17:25)▼</span>');
 //productChecked(workshopblock3);
