@@ -97,11 +97,7 @@ function editFunc(){
 function handler(){
 
   
-  productChecked(workshopblock5); 
-  productChecked(workshopblock4); 
-  productChecked(workshopblock3); 
-  productChecked(workshopblock2); 
-  productChecked(workshopblock1);
+ 
 }
 handler();
 
