@@ -16,19 +16,14 @@ function showWorkshopblock(workshopblock){
     }
     if($(question).hasClass('show')){
       $(question).removeClass('show');
-      //$(question).hide();
     } else {
      $(question).addClass('show');
-      //$(question).show();
     }
     
   });                                   
 };
 
-//showWorkshopblock(workshopblock1);
-//showWorkshopblock(workshopblock1)
-//showWorkshopblock(workshopblock2)
-//showWorkshopblock(workshopblock2)
+
 
 
 
@@ -44,74 +39,27 @@ var product2 = $$('.customization2_attendee_further-data .customization2_attende
 $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
 // productChecked(workshopblock2);
 
-// Workshopblock3
-var workshopblock3 = ["Mittwoch I 27 Oktober 2021","Geplanter Besuchsbeginn 27 Oktober 2021)","Geplantes Besuchsende 27 Oktober 2021"];
-var product3 = $$('.customization2_attendee_further-data_product').findField('Value + (17:05 - 17:25)');
-$(product3).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock3);">Workshopslot 3 (17:05-17:25)▼</span>');
-//productChecked(workshopblock3);
 
-// Workshopblock4
-var workshopblock4 = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","ERP 2025 (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","Employee Engagement Program (9:25 - 9:50)","Innovation Management (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)"];
-var product4 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:25 - 9:50)');
-$(product4).before('<span class= "title_before_text" >Flight Plan Adventure Part 2</span><br><br><span class= "workshops" onclick = "showWorkshopblock(workshopblock4);">Workshopslot 1 (09:25-09:50)▼</span>');
-//productChecked(workshopblock4);
-
-// Workshopblock5
-var workshopblock5 = ["Digital Roadmap/ New Growth Cases (9:55 - 10:20)","ERP 2025 (9:55 - 10:20)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:55 - 10:20)","Employee Engagement Program (9:55 - 10:20)","Innovation Management (9:55 - 10:20)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"];
-var product5 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20)');
-$(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Workshopslot 2 (09:55-10:20)▼</span>');
-//productChecked(workshopblock5);
-
-
-var workshopblockDig = ["Digital Roadmap/ New Growth Cases (9:25 - 9:50)","Digital Roadmap/ New Growth Cases (9:55 - 10:20)"] 
- //productChecked(workshopblockDig); 
-
-var workshopblockERP = ["ERP 2025 (9:25 - 9:50)","ERP 2025 (9:55 - 10:20)"] 
- //productChecked(workshopblockERP); 
-
-var workshopblockThe = ["The Aareon triad: This is what we stand for! Vision, Mission and Values (9:25 - 9:50)","The Aareon triad: This is what we stand for! Vision, Mission and Values (9:55 - 10:20)"] 
- //productChecked(workshopblockThe); 
-
-var workshopblockEmpl = ["Employee Engagement Program (9:25 - 9:50)","Employee Engagement Program (9:55 - 10:20)"] 
-// productChecked(workshopblockEmpl); 
-
-var workshopblockInno = ["Innovation Management (9:25 - 9:50)","Innovation Management (9:55 - 10:20)"] 
- //productChecked(workshopblockInno); 
-
-var workshopblockWeKnow = ["We support you….GAM, GAB, Group Application Landscape? (9:25 - 9:50)","We support you….GAM, GAB, Group Application Landscape? (9:55 - 10:20)"] 
- //productChecked(workshopblockWeKnow);
 
 function editFunc(){
   
-  var product11 = $$('.customization2_attendee_further-data_product')
-  $(product11).addClass('show');
-  var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
-  var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
-  var product13 = $$('.customization2_attendee_further-data_product').findField('Value + (17:05 - 17:25)');
-  var product14 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:25 - 9:50)');
-  var product15 = $$('.customization2_attendee_further-data_product').findField('Digital Roadmap/ New Growth Cases (9:55 - 10:20)');
+
+ // var product11 = $$('.customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
+ // var product12 = $$('.customization2_attendee_further-data_product').findField('Dienstag I 26 Oktober 2021');
+
   
-  $(product11).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Teilnahme | Montag, 25. Oktober 2021▼</span>');
-  $(product12).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
-  $(product13).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock3);">Workshopslot 3 (17:05-17:25)▼</span>');
-  $(product14).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock4);">Workshopslot 1 (09:25-09:50)▼</span>');
-  $(product15).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Workshopslot 2 (09:55-10:20)▼</span>');
+ // $(product11).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Teilnahme | Montag, 25. Oktober 2021▼</span>');
+ // $(product12).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
+
 }
       
 
-function handler(){
-
-  
- 
-}
-handler();
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     editFunc();
-    handler();
   }
 };
 
