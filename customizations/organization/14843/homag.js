@@ -16,10 +16,10 @@ function showWorkshopblock(workshopblock){
     }
     if($(question).hasClass('show')){
       $(question).removeClass('show');
-      $(question).hide();
+      //$(question).hide();
     } else {
      $(question).addClass('show');
-      $(question).show();
+      //$(question).show();
     }
     
   });                                   
