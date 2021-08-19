@@ -12,10 +12,11 @@ function showWorkshopblock(workshopblock){
     }
     if($(question).hasClass('show')){
       $(question).removeClass('show');
+      $(question).hide();
       console.log("remove show");
     } else {
      $(question).addClass('show');
-      console.log("add show");
+      $(question).show();
     }
     
   });                                   
