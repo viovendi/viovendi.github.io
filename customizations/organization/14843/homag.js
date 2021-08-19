@@ -1,4 +1,6 @@
 console.log('Tag - Homag');
+
+
   
 function showWorkshopblock(workshopblock){
   $(workshopblock).each( function(i, element) {
@@ -21,42 +23,10 @@ function showWorkshopblock(workshopblock){
   });                                   
 };
 
-function disabelProducts(products){
-  $(products).each( function(i, element) {
-    var product = $$('.customization2_attendee_further-data_product').findField(element); 
-    var input = $(product).find('input');
-    if(input.is(':checked')){
-      $(product).find('input').prop('disabled', false);
-    } else {
-      $(product).find('input').prop('disabled', true);
-    }
-  });
-}
-
-function enableProducts(products){
-  $(products).each( function(i, element) {
-    var product = $$('.customization2_attendee_further-data_product').findField(element); 
-    var input = $(product).find('input');
-      $(product).find('input').prop('disabled', false);
-  });
-}
-
-function productChecked(products){  
- $(products).each( function(i, element) {
-  var product = $$('.customization2_attendee_further-data_product').findField(element); 
-  var input = $(product).find('input');
-   input.change(function(){
-     if(input.is(':checked')){
-      disabelProducts(products);
-       //$('.customization2_attendee_further-data_product').removeClass('show', 2000);
-     }
-     if(!input.is(':checked')){
-       enableProducts(products);
-     }
-   }); 
- });
-}
-
+showWorkshopblock(workshopblock1);
+showWorkshopblock(workshopblock1)
+showWorkshopblock(workshopblock2)
+showWorkshopblock(workshopblock2)
 
 
 
