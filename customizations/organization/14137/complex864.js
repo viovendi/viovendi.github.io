@@ -43,7 +43,7 @@ function productChecked(products){
  });
 }
 
-var workshopblockValue = ["Eventbox"] ;
+var workshopblockValue = ["Goodie Paket"] ;
 productChecked(workshopblockValue);
 
 
