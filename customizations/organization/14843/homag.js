@@ -1,6 +1,8 @@
 console.log('Tag - Homag');
 
-
+$('.customization2_attendee_further-data_custom-question-1').show()
+$('.customization2_attendee_further-data_custom-question-2').show()
+  
   
 function showWorkshopblock(workshopblock){
   $(workshopblock).each( function(i, element) {
