@@ -61,9 +61,22 @@ var product6 = $$('.customization2_attendee_further-data .customization2_attende
 $(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Dienstag, 02. November 2021 ▼</span>');
 
 //Mittwoch
-var workshopblock6 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuchsbeginn | 03. November 2021","Geplantes Besuchsende | 03. November 2021","03.11.21 | 10:00 Uhr - 11:00 Uhr | Puffer woodStore 8 Lager","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"]; 
-var product6 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Mittwoch, 03. November 2021');
-$(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Mittwoch, 03. November 2021 ▼</span>');
+var workshopblock7 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuchsbeginn | 03. November 2021","Geplantes Besuchsende | 03. November 2021","03.11.21 | 10:00 Uhr - 11:00 Uhr | Puffer woodStore 8 Lager","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"]; 
+var product7 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Mittwoch, 03. November 2021');
+$(product7).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock7);">Mittwoch, 03. November 2021 ▼</span>');
+
+
+//Donnerstag
+var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"]; 
+var product8 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Donnerstag, 04. November 2021');
+$(product8).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock8);">Donnerstag, 04. November 2021 ▼</span>');
+
+
+//Freitag
+var workshopblock6 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"]; 
+var product6 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Freitag, 05. November 2021');
+$(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Freitag, 05. November 2021 ▼</span>');
+
 
 
 function editFunc(){
