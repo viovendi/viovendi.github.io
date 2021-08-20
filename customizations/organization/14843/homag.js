@@ -73,9 +73,9 @@ $(product8).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 
 
 //Freitag
-var workshopblock6 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"]; 
-var product6 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Freitag, 05. November 2021');
-$(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Freitag, 05. November 2021 ▼</span>');
+var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"]; 
+var product9 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Freitag, 05. November 2021');
+$(product9).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock9);">Freitag, 05. November 2021 ▼</span>');
 
 
 
