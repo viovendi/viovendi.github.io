@@ -55,6 +55,17 @@ var product5 = $$('.customization2_attendee_further-data .customization2_attende
 $(product5).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock5);">Freitag, 29. Oktober 2021 ▼</span>');
 
 
+//Dienstag
+var workshopblock6 = ["Teilnahme | Dienstag, 02. November 2021","Geplanter Besuchsbeginn | 02. November 2021","Geplantes Besuchsende | 02. November 2021","02.11.21 | 10:00 Uhr - 11:00 Uhr | Einstieg in den halbautomatischen Zuschnitt – Flexibilität und Leistung (B-130/B-200 inkl. PC Classic)"]; 
+var product6 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 02. November 2021');
+$(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Dienstag, 02. November 2021 ▼</span>');
+
+//Mittwoch
+var workshopblock6 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuchsbeginn | 03. November 2021","Geplantes Besuchsende | 03. November 2021","03.11.21 | 10:00 Uhr - 11:00 Uhr | Puffer woodStore 8 Lager","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"]; 
+var product6 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Mittwoch, 03. November 2021');
+$(product6).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock6);">Mittwoch, 03. November 2021 ▼</span>');
+
+
 function editFunc(){
   
 $('.customization2_attendee_further-data_custom-question').show()
