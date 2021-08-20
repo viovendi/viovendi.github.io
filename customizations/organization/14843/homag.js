@@ -67,7 +67,7 @@ $(product7).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 
 
 //Donnerstag
-var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"]; 
+var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"]; 
 var product8 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Donnerstag, 04. November 2021');
 $(product8).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock8);">Donnerstag, 04. November 2021 ▼</span>');
 
