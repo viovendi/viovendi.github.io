@@ -12,6 +12,12 @@ var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question'
 
 // show question if 'Ja' is clicked
 var inputs = $(radioGroupYesNo).find('input');
+const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
+<div _ngcontent-sqr-c37="">
+  <div _ngcontent-sqr-c37="" style="font-size: .75rem;" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
+</div>
+</div>
+</vv-show-errors>`
 console.log('inputs');
 console.log(inputs);
 inputs.each(function (i, element) {
@@ -21,14 +27,8 @@ inputs.each(function (i, element) {
     if (option.includes('Ja')) {
       $('.customization2_attendee_further-data_custom-question-2').show();
       $('.customization2_attendee_edit-action_save').on('click', () => {
-        console.log($('.customization2_attendee_further-data_custom-question-2').find('input').val())
+
         if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
-         const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
-         <div _ngcontent-sqr-c37="">
-           <div _ngcontent-sqr-c37="" style="font-size: .75rem;" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
-         </div>
-       </div>
-       </vv-show-errors>`
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
 
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after(error)
@@ -58,6 +58,13 @@ function productChecked(products) {
         $('.customization2_attendee_further-data_custom-question-4').show();
         $('.customization2_attendee_further-data_custom-question-5').show();
         $('.customization2_attendee_further-data_custom-question-6').show();
+        if (!$('.customization2_attendee_further-data_custom-question-4').find('input').val().trim().length) {
+          $('.customization2_attendee_further-data_custom-question-4').find('vv-input').addClass('ng-invalid ng-dirty');
+
+          $('.customization2_attendee_further-data_custom-question-4').find('vv-input').after(error)
+          $('.customization2_attendee_edit-action_save').attr('disabled', true);
+          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
+        }
       }
       if (!input.is(':checked')) {
         $('.customization2_attendee_further-data_custom-question-4').hide();
