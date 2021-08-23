@@ -4,7 +4,7 @@ console.log('GTM file connected');
 
 
 const requiredInputs = (id) => {
-  const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
+  const errorMessage = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
 <div _ngcontent-sqr-c37="">
   <div _ngcontent-sqr-c37="" style="font-size: .75rem;" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
 </div>
@@ -13,8 +13,8 @@ const requiredInputs = (id) => {
 
   if (!$(`.customization2_attendee_further-data_custom-question-${id}`).find('input').val().trim().length) {
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').addClass('ng-invalid ng-dirty');
-    console.log($(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input'))
-    $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').after(error)
+
+    $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').after(errorMessage)
     $('.customization2_attendee_edit-action_save').attr('disabled', true);
     $('.error-text').detach();
     $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
