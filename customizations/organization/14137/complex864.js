@@ -1,6 +1,18 @@
 console.log("COMPLEX-864")
 console.log('GTM file connected');
 
+
+
+const requiredInputs = (id) => {
+  if (!$(`.customization2_attendee_further-data_custom-question-${id}`).find('input').val().trim().length) {
+    $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').addClass('ng-invalid ng-dirty');
+
+    $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').after(error)
+    $('.customization2_attendee_edit-action_save').attr('disabled', true);
+    $('.error-text').detach();
+    $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
+  }
+}
 // Hide questions
 $('.customization2_attendee_further-data_custom-question-2').hide();
 $('.customization2_attendee_further-data_custom-question-2').find('span').detach();
@@ -58,13 +70,12 @@ function productChecked(products) {
         $('.customization2_attendee_further-data_custom-question-4').show();
         $('.customization2_attendee_further-data_custom-question-5').show();
         $('.customization2_attendee_further-data_custom-question-6').show();
-        if (!$('.customization2_attendee_further-data_custom-question-4').find('input').val().trim().length) {
-          $('.customization2_attendee_further-data_custom-question-4').find('vv-input').addClass('ng-invalid ng-dirty');
+        $('.customization2_attendee_edit-action_save').on('click', () => {
+          requiredInputs(4);
+          requiredInputs(5);
+          requiredInputs(6);
+        })
 
-          $('.customization2_attendee_further-data_custom-question-4').find('vv-input').after(error)
-          $('.customization2_attendee_edit-action_save').attr('disabled', true);
-          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
-        }
       }
       if (!input.is(':checked')) {
         $('.customization2_attendee_further-data_custom-question-4').hide();
