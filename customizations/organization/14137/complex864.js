@@ -82,6 +82,9 @@ function productChecked(products) {
         $('.customization2_attendee_further-data_custom-question-4').show();
         $('.customization2_attendee_further-data_custom-question-5').show();
         $('.customization2_attendee_further-data_custom-question-6').show();
+        $(`.customization2_attendee_further-data_custom-question`).find('input').on("keyup change", function(e) {
+          $('.customization2_attendee_edit-action_save').attr('disabled', false);
+        })
         $('.customization2_attendee_edit-action_save').on('click', () => {
           requiredInputs(4);
           requiredInputs(5);
