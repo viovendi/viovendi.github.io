@@ -16,10 +16,13 @@ console.log(inputs);
 inputs.each(function( i, element ) {
   $(element).change(function(input) {
     //on change show these 2 questions
-console.log($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim())
-    if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Ja')){
-      console.log('show!');
+const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
+    if(option.includes('Ja')){
       $('.customization2_attendee_further-data_custom-question-2').show();
+      $('.customization2_attendee_edit-action_save').on('click', ()=>{
+        console.log(option.val());
+       // $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
+      })
     }else{
       console.log('hide!');
       $('.customization2_attendee_further-data_custom-question-2').hide();
