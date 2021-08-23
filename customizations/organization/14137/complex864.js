@@ -22,9 +22,19 @@ inputs.each(function (i, element) {
       $('.customization2_attendee_edit-action_save').on('click', () => {
         console.log($('.customization2_attendee_further-data_custom-question-2').find('input').val())
         if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
+         const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
+         <div _ngcontent-sqr-c37="">
+           <div _ngcontent-sqr-c37="" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
+         </div>
+       </div>
+       </vv-show-errors>`
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
+
+          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after()
+
         } else {
-          console.log('!empty')
+          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').removeClass('ng-invalid ng-dirty');
+          $('.customization2_attendee_further-data_custom-question-2').find('vv-show-errors').detach()
         }
       });
     } else {
