@@ -4,6 +4,12 @@ console.log('GTM file connected');
 
 
 const requiredInputs = (id) => {
+  const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
+<div _ngcontent-sqr-c37="">
+  <div _ngcontent-sqr-c37="" style="font-size: .75rem;" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
+</div>
+</div>
+</vv-show-errors>`
   if (!$(`.customization2_attendee_further-data_custom-question-${id}`).find('input').val().trim().length) {
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').addClass('ng-invalid ng-dirty');
 
