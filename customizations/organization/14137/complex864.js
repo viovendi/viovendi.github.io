@@ -64,7 +64,7 @@ function productChecked(products) {
   });
 }
 
-var workshopblockValue = ["Goodie Paket"];
+var workshopblockValue = ["Goodie-Paket"];
 productChecked(workshopblockValue);
 
 
