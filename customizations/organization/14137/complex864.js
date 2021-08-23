@@ -30,7 +30,7 @@ inputs.each(function (i, element) {
        </vv-show-errors>`
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
 
-          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after()
+          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after(error)
 
         } else {
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').removeClass('ng-invalid ng-dirty');
