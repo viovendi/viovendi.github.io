@@ -29,8 +29,11 @@ const requiredInputs = (id) => {
 $('.customization2_attendee_further-data_custom-question-2').hide();
 $('.customization2_attendee_further-data_custom-question-2').find('span').detach();
 $('.customization2_attendee_further-data_custom-question-4').hide();
+$('.customization2_attendee_further-data_custom-question-4').find('span').detach();
 $('.customization2_attendee_further-data_custom-question-5').hide();
+$('.customization2_attendee_further-data_custom-question-5').find('span').detach();
 $('.customization2_attendee_further-data_custom-question-6').hide();
+$('.customization2_attendee_further-data_custom-question-6').find('span').detach();
 
 var radioGroupYesNo = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Betreiben Sie einen eBay Shop');
 
@@ -49,6 +52,10 @@ inputs.each(function (i, element) {
     //on change show these 2 questions
     const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
     if (option.includes('Ja')) {
+      $(`.customization2_attendee_further-data_custom-question`).find('input').on("keyup change", function(e) {
+        $('.customization2_attendee_edit-action_save').attr('disabled', false);
+        $('.error-text').detach();
+      })
       $('.customization2_attendee_further-data_custom-question-2').show();
       $('.customization2_attendee_edit-action_save').on('click', () => {
         requiredInputs(2);
