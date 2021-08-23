@@ -15,12 +15,14 @@ const requiredInputs = (id) => {
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').addClass('ng-invalid ng-dirty');
 
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').after(errorMessage)
-    $('.customization2_attendee_edit-action_save').attr('disabled', true);
-    $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
+    $('.customization2_attendee_edit-action').find('button').attr('disabled', true);
+    $('.customization2_attendee_edit-action').find('.error-text ').detach();
+    $('.customization2_attendee_edit-action').find('button').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
+
   }else {
     $( `.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').removeClass('ng-invalid ng-dirty');
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-show-errors').detach()
-    $('.customization2_attendee_edit-action_save').attr('disabled', false);
+    $('.customization2_attendee_edit-action').find('button').attr('disabled', false);
   }
 }
 // Hide questions
