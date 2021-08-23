@@ -22,7 +22,7 @@ inputs.each(function (i, element) {
       $('.customization2_attendee_edit-action_save').on('click', () => {
         console.log($('.customization2_attendee_further-data_custom-question-2').find('input').val())
         if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
-          $('.customization2_attendee_further-data_custom-question-2').addClass('ng-invalid ng-dirty');
+          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
         } else {
           console.log('!empty')
         }
