@@ -10,9 +10,11 @@ const requiredInputs = (id) => {
 </div>
 </div>
 </vv-show-errors>`
+$(`.customization2_attendee_further-data_custom-question-${id}`).keyup(function(){
+  $('.customization2_attendee_edit-action_save').attr('disabled', true);
+})
   if (!$(`.customization2_attendee_further-data_custom-question-${id}`).find('input').val().trim().length) {
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').addClass('ng-invalid ng-dirty');
-
     $(`.customization2_attendee_further-data_custom-question-${id}`).find('vv-input').after(error)
     $('.customization2_attendee_edit-action_save').attr('disabled', true);
     $('.error-text').detach();
