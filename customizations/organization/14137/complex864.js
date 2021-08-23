@@ -16,7 +16,7 @@ console.log(inputs);
 inputs.each(function( i, element ) {
   $(element).change(function(input) {
     //on change show these 2 questions
-console.log($(input.currentTarget))
+console.log($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim())
     if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().indexOf('Nein')){
       console.log('show!');
       $('.customization2_attendee_further-data_custom-question-2').show();
