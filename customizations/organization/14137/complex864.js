@@ -51,19 +51,7 @@ inputs.each(function (i, element) {
     if (option.includes('Ja')) {
       $('.customization2_attendee_further-data_custom-question-2').show();
       $('.customization2_attendee_edit-action_save').on('click', () => {
-
-        if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
-          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
-
-          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after(error)
-          $('.customization2_attendee_edit-action_save').attr('disabled', true);
-          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
-
-        } else {
-          $('.customization2_attendee_further-data_custom-question-2').find('vv-input').removeClass('ng-invalid ng-dirty');
-          $('.customization2_attendee_further-data_custom-question-2').find('vv-show-errors').detach()
-          $('.customization2_attendee_edit-action_save').attr('disabled', false);
-        }
+        requiredInputs(2);
       });
     } else {
       console.log('hide!');
