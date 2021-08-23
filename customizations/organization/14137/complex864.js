@@ -24,17 +24,20 @@ inputs.each(function (i, element) {
         if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
          const error = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
          <div _ngcontent-sqr-c37="">
-           <div _ngcontent-sqr-c37="" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
+           <div _ngcontent-sqr-c37="" style="font-size: .75rem;" class="error-text customization2_attendee_contact-data_company_error error-text--left no-wrap">Erforderlich</div><!---->
          </div>
        </div>
        </vv-show-errors>`
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
 
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after(error)
+          $('.customization2_attendee_edit-action_save').attr('disabled', true);
+          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">error message</span>');
 
         } else {
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').removeClass('ng-invalid ng-dirty');
           $('.customization2_attendee_further-data_custom-question-2').find('vv-show-errors').detach()
+          $('.customization2_attendee_edit-action_save').attr('disabled', false);
         }
       });
     } else {
