@@ -20,7 +20,7 @@ const option = $(input.currentTarget).siblings('.customization2_attendee_further
     if(option.includes('Ja')){
       $('.customization2_attendee_further-data_custom-question-2').show();
       $('.customization2_attendee_edit-action_save').on('click', ()=>{
-        console.log($(option).val());
+        console.log($(option));
        // $('.customization2_attendee_further-data_custom-question-2').find('vv-input').addClass('ng-invalid ng-dirty');
       })
     }else{
