@@ -3,6 +3,7 @@ console.log('GTM file connected');
 
 // Hide questions
 $('.customization2_attendee_further-data_custom-question-2').hide();
+$('.customization2_attendee_further-data_custom-question-2').find('span').detach();
 $('.customization2_attendee_further-data_custom-question-4').hide();
 $('.customization2_attendee_further-data_custom-question-5').hide();
 $('.customization2_attendee_further-data_custom-question-6').hide();
@@ -32,7 +33,7 @@ inputs.each(function (i, element) {
 
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').after(error)
           $('.customization2_attendee_edit-action_save').attr('disabled', true);
-          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">error message</span>');
+          $('.customization2_attendee_edit-action_save').after('<span class="button-error-message error-text error-text--multiple">Bitte füllen Sie alle Felder aus.</span>');
 
         } else {
           $('.customization2_attendee_further-data_custom-question-2').find('vv-input').removeClass('ng-invalid ng-dirty');
