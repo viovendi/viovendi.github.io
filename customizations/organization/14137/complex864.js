@@ -20,8 +20,8 @@ inputs.each(function (i, element) {
     if (option.includes('Ja')) {
       $('.customization2_attendee_further-data_custom-question-2').show();
       $('.customization2_attendee_edit-action_save').on('click', () => {
-        console.log($('.customization2_attendee_further-data_custom-question-2').val().trim())
-        if (!$('.customization2_attendee_further-data_custom-question-2').val().trim().length) {
+        console.log($('.customization2_attendee_further-data_custom-question-2').find('input').val())
+        if (!$('.customization2_attendee_further-data_custom-question-2').find('input').val().trim().length) {
           console.log('empty')
         } else {
           console.log('!empty')
