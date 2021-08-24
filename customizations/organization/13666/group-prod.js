@@ -15,8 +15,18 @@ $('.power_talk').append($(this))
 });
 
 $('.power_talk h4').click(function(e){
-    $('.power_talk').find('vv-additional-question-product').toggle("slide", { direction: "right" }, 1000);
+    if($('.power_talk').find('vv-additional-question-product:visible').length){
+        $('.power_talk').find('vv-additional-question-product').hide();
+    }else{
+        $('.power_talk').find('vv-additional-question-product').show();
+    }
+
 })
 $('.investment_forum h4').click(function(){
-    $('.investment_forum').find('vv-additional-question-product').toggle("slide", { direction: "right" }, 1000);
+    if($('.investment_forum').find('vv-additional-question-product:visible').length){
+        $('.investment_forum').find('vv-additional-question-product').hide();
+    } else {
+        $('.investment_forum').find('vv-additional-question-product').show();
+    }
+
 })
