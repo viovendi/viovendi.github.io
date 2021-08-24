@@ -60,5 +60,5 @@ $(checkboxGroup).find('input').change(function(){
         $(field4).hide();
     }
 })
-
-$(checkboxGroup).after('<p>Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>')
+if(locale === "de-de"){
+$(checkboxGroup).after('<p style="margin-top: 20px;">Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>')}
