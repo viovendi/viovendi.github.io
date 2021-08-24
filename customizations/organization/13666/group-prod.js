@@ -14,9 +14,9 @@ $('.power_talk').append($(this))
             }
 });
 
-$('.power_talk h4').click(function(){
-    $('.power_talk').find('vv-additional-question-product').show()
+$('.power_talk h4').click(function(e){
+    $('.power_talk').find('vv-additional-question-product').toggle("slide", { direction: "right" }, 1000);
 })
 $('.investment_forum h4').click(function(){
-    $('.investment_forum').find('vv-additional-question-product').show()
+    $('.investment_forum').find('vv-additional-question-product').toggle("slide", { direction: "right" }, 1000);
 })
