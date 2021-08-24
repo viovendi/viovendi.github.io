@@ -45,11 +45,19 @@ $(field4).hide();
 var checkboxGroup = $$('.customization2_attendee_further-data_custom-question').findCheckboxGroup('Shuttle');
 
 $(checkboxGroup).find('input').change(function(){
-const option = $(this).parent('label').text().trim();
-if(option.includes('Ich benötige einen Shuttle-Service vom Flughafen zur Location')){
-    $(field1).show();
-    $(field2).show();
-    $(field3).show();
-    $(field4).show();
-}
+    if($(this).is(":checked")){
+        const option = $(this).parent('label').text().trim();
+        if(option.includes('Ich benötige einen Shuttle-Service vom Flughafen zur Location')){
+            $(field1).show();
+            $(field2).show();
+            $(field3).show();
+            $(field4).show();
+        }
+    }else {
+        $(field1).hide();
+        $(field2).hide();
+        $(field3).hide();
+        $(field4).hide();
+    }
+
 })
