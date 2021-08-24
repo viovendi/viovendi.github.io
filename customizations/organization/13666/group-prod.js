@@ -30,3 +30,7 @@ $('.investment_forum h4').click(function(){
     }
 
 })
+
+
+var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Ankunft Datum (optional)');
+$(field1).hide();
