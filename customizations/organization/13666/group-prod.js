@@ -1,1 +1,1 @@
-$('vv-additional-questions').prepend(`<h4>Power Talk</h4>`)
+console.log($('power_talk'))
