@@ -13,3 +13,10 @@ $('.power_talk').append($(this))
         $('.investment_forum').append($(this))
             }
 });
+
+$('.power_talk h4').click(function(){
+    $('.power_talk').find('vv-additional-question-product').show()
+})
+$('.investment_forum h4').click(function(){
+    $('.investment_forum').find('vv-additional-question-product').show()
+})
