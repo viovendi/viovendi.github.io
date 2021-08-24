@@ -45,5 +45,5 @@ $(field4).hide();
 var checkboxGroup = $$('.customization2_attendee_further-data_custom-question').findCheckboxGroup('Shuttle');
 
 $(checkboxGroup).find('input').change(function(){
-    consol.log($(this).parent('label').text())
+    console.log($(this).parent('label').text())
 })
