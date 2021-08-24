@@ -59,5 +59,6 @@ $(checkboxGroup).find('input').change(function(){
         $(field3).hide();
         $(field4).hide();
     }
-
 })
+
+$(checkboxGroup).after('<p>Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>')
