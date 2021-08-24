@@ -43,3 +43,7 @@ $(field3).hide();
 
 var field4 = $$('.customization2_attendee_further-data_custom-question').findField('Abfahrts-/Abflugsort (optional)');
 $(field4).hide();
+
+var checkboxGroup = $$('.customization2_attendee_further-data_custom-question').findCheckboxGroup('Shuttle (optional)');
+
+console.log(checkboxGroup)
