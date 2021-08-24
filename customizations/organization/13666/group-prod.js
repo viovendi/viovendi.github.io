@@ -1,1 +1,1 @@
-console.log($('power_talk'))
+console.log($('.power_talk'))
