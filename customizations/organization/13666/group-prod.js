@@ -109,4 +109,7 @@ if(locale === "en-us"){
 
 
 
-prodCheked("Power Talk (vor Ort)", "Power Talk (online)" )
+prodCheked("Power Talk (vor Ort)", "Power Talk (online)");
+prodCheked("Power Talk (online)", "Power Talk (vor Ort)");
+prodCheked("Schlendernde Weinprobe mit Besichtigung von Kloster Eberbach (vor Ort)", "Investment Dinner (vor Ort)");
+prodCheked("Investment Dinner (vor Ort)", "Schlendernde Weinprobe mit Besichtigung von Kloster Eberbach (vor Ort)");
