@@ -97,7 +97,7 @@ $(checkboxGroup).find('input').change(function () {
             }
 
             if (locale === "en-us") {
-                $(checkboxGroup).after('<p style="margin-top: 20px;">If you need a shuttle servie from the airport to the location, please enter your arrival information here.</p>')
+                $(checkboxGroup).after('<p style="margin-top: 20px;">If you need a shuttle service from the airport to the location, please enter your arrival information here.</p>')
             }
         }
     } else {
