@@ -93,11 +93,11 @@ $(checkboxGroup).find('input').change(function () {
             $(field3).show();
             $(field4).show();
             if (locale === "de-de") {
-                $(checkboxGroup).after('<p style="margin-top: 20px;">Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>')
+                $(checkboxGroup).after(`<p class="service"  style="margin-top: 20px;">Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>`)
             }
 
             if (locale === "en-us") {
-                $(checkboxGroup).after('<p style="margin-top: 20px;">If you need a shuttle service from the airport to the location, please enter your arrival information here.</p>')
+                $(checkboxGroup).after(`<p class="service" style="margin-top: 20px;">If you need a shuttle service from the airport to the location, please enter your arrival information here.</p>`)
             }
         }
     } else {
@@ -105,6 +105,7 @@ $(checkboxGroup).find('input').change(function () {
         $(field2).hide();
         $(field3).hide();
         $(field4).hide();
+        $('.service').hide();;
     }
 })
 
