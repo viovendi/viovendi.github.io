@@ -5,7 +5,7 @@ console.log('Start - 13844!');
 var isFuncUsed = false;
 var domain_url = 'https://cs.doo.net';
 
-var delivery_invoice_labels = ['Delivery of the invoice','Zustellung der Rechnung'];
+var delivery_invoice_labels = ['Delivery of the invoice', 'Delivery of invoice', 'Zustellung der Rechnung'];
 var payment_methods_labels = ['Payment method','Zahlungsmethode','ZAHLUNGSART WÄHLEN'];
 var invoice_payment_method_arr_options = ['Invoice Payment', 'Bank transfer / on account', 'Überweisung / auf Rechnung', 'Überweisung / Kauf auf Rechnung'];
 var hub_payment_method_arr_options = ['Direct Payment', 'Sofortzahlung', 'Sofortbezahlung', 'Sofortzahlung via Kreditkarte' ,'Direct payment via credit card'];
