@@ -1,3 +1,43 @@
+function disableProd(disable){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+         var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+             if(checkboxName.indexOf(disable) >= 0){
+                checkbox.prop( "disabled", true )
+             }
+    });
+   }
+
+function enableProd(disable){
+$('.customization2_attendee_further-data_product').each(function(i, element) {
+        var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+        var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+            if(checkboxName.indexOf(disable) >= 0){
+            checkbox.prop( "disabled", false )
+            }
+});
+}
+
+function prodCheked(shortName, disable){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+      var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+      var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+      checkbox.change(function(){
+        if(checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             disableProd(disable)
+          }
+        }else if(!checkbox.is(':checked')){
+          if(checkboxName.indexOf(shortName) >= 0){
+             enableProd(disable)
+          }
+          }
+      })
+    })
+  }
+
+
 
 $('vv-additional-question-product').each(function (index, value) {
     const prodName = $(this).find('label p').text().trim();
@@ -65,3 +105,8 @@ $(checkboxGroup).after('<p style="margin-top: 20px;">Wenn Sie einen Shuttle-Serv
 
 if(locale === "en-us"){
     $(checkboxGroup).after('<p style="margin-top: 20px;">If you need a shuttle servie from the airport to the location, please enter your arrival information here.</p>')}
+
+
+
+
+prodCheked("Power Talk (vor Ort)", "Power Talk (online)" )
