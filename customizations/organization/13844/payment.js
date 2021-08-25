@@ -11,22 +11,22 @@ var invoice_payment_method_arr_options = ['Invoice Payment', 'Bank transfer / on
 var hub_payment_method_arr_options = ['Direct Payment', 'Sofortzahlung', 'Sofortbezahlung', 'Sofortzahlung via Kreditkarte' ,'Direct payment via credit card'];
 
 function getInvoiceRadioGroup(arrayOfLabels){
-var targetElem = null;
-$('vv-additional-question-radio').each(function(){
-var label = $(this).find('.customization2_booker_further-data_custom-question_label').text().trim();      
-arrayOfLabels.forEach(function(item){
-if( label.indexOf(item) != -1 ){
-  targetElem = $(this).find('.customization2_booker_further-data_custom-question_radio-group');
-}  
-}, this);
-});
-return targetElem;
+  var targetElem = null;
+  $('vv-additional-question-radio').each(function(){
+    var label = $(this).find('.customization2_booker_further-data_custom-question_label').text().trim();      
+    arrayOfLabels.forEach(function(item){
+      if( label.indexOf(item) != -1 ){
+        targetElem = $(this).find('.customization2_booker_further-data_custom-question_radio-group');
+      }  
+    }, this);
+    });
+  return targetElem;
 }
 
 var insertionListener = function(event) {
-if (event.animationName === "nodeInserted") {
-check_country();
-}
+  if (event.animationName === "nodeInserted") {
+    check_country();
+  }
 }
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
@@ -36,129 +36,129 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 if( localStorage.delivery_of_invoice){
-localStorage.removeItem('delivery_of_invoice');
+  localStorage.removeItem('delivery_of_invoice');
 }
 
 if( localStorage.payment_method ){
-localStorage.removeItem('payment_method');
+  localStorage.removeItem('payment_method');
 }
 
 if( localStorage.free_order){
-localStorage.removeItem('free_order');
+  localStorage.removeItem('free_order');
 }
 
 function check_country(){
-var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
-// var invoice_radio_group = $('.customization2_booker_further-data_custom-question-3 .customization2_booker_further-data_custom-question_radio-group');
-var countries = ['AT', 'DE', 'CH'];
-var curr_country = $('.customization2_booker_contact-data_country select').children("option:selected").val();
+  var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
+  // var invoice_radio_group = $('.customization2_booker_further-data_custom-question-3 .customization2_booker_further-data_custom-question_radio-group');
+  var countries = ['AT', 'DE', 'CH'];
+  var curr_country = $('.customization2_booker_contact-data_country select').children("option:selected").val();
 
-if(countries.indexOf(curr_country) != -1 ){
-invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
-}
+  if(countries.indexOf(curr_country) != -1 ){
+    invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+  }
 
-$('.customization2_booker_contact-data_country select').on('change', function(e){
-var country = $(this).children("option:selected").val();
+  $('.customization2_booker_contact-data_country select').on('change', function(e){
+    var country = $(this).children("option:selected").val();
 
-if(countries.indexOf(country) != -1){
-invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
-}else{
-// var click_event = new Event("click");
-invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
-invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
-}
+    if(countries.indexOf(country) != -1){
+      invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+    }else{
+      // var click_event = new Event("click");
+      invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
+      invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
+    }
 
-});
+  });
 }
 
 function getWidgetLang(){
-var lang = $('html').attr('lang');
-return lang;
+  var lang = $('html').attr('lang');
+  return lang;
 }
 
 $('.vv-button.customization-button-next').on('click', function(){
-var payment_method = '';
-var delivery_of_invoice = '';
-$('.customization2_booker_further-data .customization2_booker_further-data_custom-question').each(function(){
-var label = $(this).find('.customization2_booker_further-data_custom-question_label').text().trim();
+  var payment_method = '';
+  var delivery_of_invoice = '';
+  $('.customization2_booker_further-data .customization2_booker_further-data_custom-question').each(function(){
+    var label = $(this).find('.customization2_booker_further-data_custom-question_label').text().trim();
 
-if(payment_methods_labels.indexOf(label) != -1 ){
-payment_method = $(this).find('.customization2_booker_further-data_custom-question_value').text().trim();
-}
+    if(payment_methods_labels.indexOf(label) != -1 ){
+      payment_method = $(this).find('.customization2_booker_further-data_custom-question_value').text().trim();
+    }
 
-if( delivery_invoice_labels.indexOf(label) != -1 ){
-delivery_of_invoice = $(this).find('.customization2_booker_further-data_custom-question_value').text().trim();
-}
-});
+    if( delivery_invoice_labels.indexOf(label) != -1 ){
+      delivery_of_invoice = $(this).find('.customization2_booker_further-data_custom-question_value').text().trim();
+    }
+  });
 
-localStorage.setItem('payment_method', payment_method);
-localStorage.setItem('delivery_of_invoice', delivery_of_invoice);
+  localStorage.setItem('payment_method', payment_method);
+  localStorage.setItem('delivery_of_invoice', delivery_of_invoice);
 });
 
 
 var id_page2, id_page3, id_page4 = null;
 
 function stop_checking_page2() {
-cancelAnimationFrame(id_page2);
+  cancelAnimationFrame(id_page2);
 }
 
 function stop_checking_page3() {
-cancelAnimationFrame(id_page3);
+  cancelAnimationFrame(id_page3);
 }
 
 function stop_checking_page4() {
-cancelAnimationFrame(id_page4);
+  cancelAnimationFrame(id_page4);
 }
 
 function checking_page2() {
-id_page2 = requestAnimationFrame(checking_page2);
-if($('.customization-booking-area-wrapper-page2').length > 0){
-if( $('.customization2_summary_total_price').text().trim() == '0,00 EUR' || $('.customization2_summary_total_price').length < 1){
-getXMLHttpRequest(XMLHttpRequest.prototype.open);
-localStorage.setItem('free_order', true);
-stop_checking_page2(); 
-}
-}
+  id_page2 = requestAnimationFrame(checking_page2);
+  if($('.customization-booking-area-wrapper-page2').length > 0){
+    if( $('.customization2_summary_total_price').text().trim() == '0,00 EUR' || $('.customization2_summary_total_price').length < 1){
+      getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      localStorage.setItem('free_order', true);
+      stop_checking_page2(); 
+    }
+  }
 }
 checking_page2();
 
 function checking_page3() {
-id_page3 = requestAnimationFrame(checking_page3);
-if($('.customization-booking-area-wrapper-page3').length > 0){
-rebuildPage();
-getXMLHttpRequest(XMLHttpRequest.prototype.open);
-stop_checking_page3();
-}
+  id_page3 = requestAnimationFrame(checking_page3);
+  if($('.customization-booking-area-wrapper-page3').length > 0){
+    rebuildPage();
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    stop_checking_page3();
+  }
 }
 checking_page3();
 
 function checking_page4() {
-id_page4 = requestAnimationFrame(checking_page4);
-if ($('.customization-booking-area-wrapper-page4').length > 0){
+  id_page4 = requestAnimationFrame(checking_page4);
+  if ($('.customization-booking-area-wrapper-page4').length > 0){
 
-var payment_method = localStorage.getItem('payment_method');
+    var payment_method = localStorage.getItem('payment_method');
 
-var free_order = localStorage.getItem('free_order');
+    var free_order = localStorage.getItem('free_order');
 
-console.log('payment_method');
-console.log(payment_method);
-console.log(invoice_payment_method_arr_options.indexOf(payment_method));
-console.log(hub_payment_method_arr_options.indexOf(payment_method));
+    console.log('payment_method');
+    console.log(payment_method);
+    console.log(invoice_payment_method_arr_options.indexOf(payment_method));
+    console.log(hub_payment_method_arr_options.indexOf(payment_method));
 
-if(free_order){
-console.log('free order');
-responseMessage('free-ticket');
-}else{
-console.log('NOT free order');
-if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-  console.log('rebuildPageInvoiceConfirm');
-  rebuildPageInvoiceConfirm();
-}else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
-  console.log('send request to payment hub');
-  loaderOn('on');
-  sendRequest(obj, organizer_id, free_order);
-}
-}
+    if(free_order){
+      console.log('free order');
+      responseMessage('free-ticket');
+    }else{
+      console.log('NOT free order');
+      if( !payment_method || payment_method =='' || invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+        console.log('rebuildPageInvoiceConfirm');
+        rebuildPageInvoiceConfirm();
+      }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
+        console.log('send request to payment hub');
+        loaderOn('on');
+        sendRequest(obj, organizer_id, free_order);
+      }
+    }
 // if event w/o customization (payment system)
 /*
 if(!payment_method || payment_method ==''){  
@@ -169,8 +169,8 @@ $('.customization2_payment-description_none-selected').css('display','block');
 }
 */
 
-stop_checking_page4();
-}
+  stop_checking_page4();
+  }
 }
 checking_page4();
 
