@@ -110,6 +110,9 @@ function editFunc(){
   
   $('.customization2_attendee_further-data_custom-question').show()
   $('.customization2_attendee_further-data_product').show()
+    
+  console.log('editFunc + main');
+  main();
   
   //this somehow does not work... he cant find the products...
  // var product11 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
