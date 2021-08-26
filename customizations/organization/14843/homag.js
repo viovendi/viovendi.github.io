@@ -27,11 +27,14 @@ function showWorkshopblock(workshopblock){
 
 
 
-
-
+function main(){
+console.log('main');
+  
 var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"]; 
 var product1 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
+$(product1).before('<p id="drop-down-header">Bitte unterstützen Sie uns bei der Organisation und teilen uns für den Tag Ihres Besuchs Ihre geplante Ankunfts- und Abreisezeit mit. Vielen Dank!</p>');
 $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Montag, 25. Oktober 2021 ▼</span>');
+
 
 
 // Workshopblock2
@@ -76,13 +79,14 @@ $(product8).before('<span class= "workshops" onclick = "showWorkshopblock(worksh
 var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"]; 
 var product9 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Freitag, 05. November 2021');
 $(product9).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock9);">Freitag, 05. November 2021 ▼</span>');
-
-
+}
+main();
 
 function editFunc(){
+  console.log('editFunc');
   
-$('.customization2_attendee_further-data_custom-question').show()
-$('.customization2_attendee_further-data_product').show()
+  $('.customization2_attendee_further-data_custom-question').show()
+  $('.customization2_attendee_further-data_product').show()
   
   //this somehow does not work... he cant find the products...
  // var product11 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
