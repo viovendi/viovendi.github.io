@@ -26,7 +26,8 @@ var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuch
 var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"];
 
 
-var editAttendee;
+var editAttendeeNumber;
+/*
 $(document).on('click', function(e){
     console.log(e);
     console.log(e.target);
@@ -54,7 +55,7 @@ $(document).on('click', function(e){
         console.log(editAttendee);
     }
 });
-
+*/
 
 
 function showWorkshopblock(workshopblock){
@@ -149,14 +150,14 @@ function main(wrapper){
 }
 main();
 
-function editFunc(){
+function editFunc(wrapper){
   console.log('editFunc');
 
   // $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').show();
   // $('.customization2_attendee-state_edit .customization2_attendee_further-data_product').show();
 
   console.log('editFunc + main');
-  main();
+  main(wrapper);
 
   //this somehow does not work... he cant find the products...
  // var product11 = $$('.customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
@@ -175,8 +176,10 @@ var insertionListener = function (event) {
     //Insert your code here
     console.log('event.target');
     console.log(event.target);
-    console.log($(".customization2_attendee").length);
-    editFunc();
+    var classList = event.target.attr('class')
+    console.log(classList);
+      
+    editFunc(editAttendeeNumber);
   }
 };
 
