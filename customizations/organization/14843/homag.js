@@ -117,8 +117,8 @@ main();
 function editFunc(){
   console.log('editFunc');
   
-  // $('.customization2_attendee_further-data_custom-question').show()
-  // $('.customization2_attendee_further-data_product').show()
+  $('.customization2_attendee_further-data_custom-question').show();
+  $('.customization2_attendee_further-data_product').show();
     
   console.log('editFunc + main');
   main();
