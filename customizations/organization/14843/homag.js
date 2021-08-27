@@ -41,7 +41,7 @@ function showWorkshopblock(workshopblock){
   $(workshopblock).each( function(i, element) {
     console.log('each prodWrapper');
     console.log(prodWrapper);
-    var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);.customization2_attendee-state_edit
+    var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);
     var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
     console.log(element);
     if($(product).hasClass('show')){
