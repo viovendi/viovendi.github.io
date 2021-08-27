@@ -174,7 +174,7 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
       // get current attendee wrapper
-    var classList = $(event.target).attr('class').split('');
+    var classList = $(event.target).attr('class').split(' ');
       
     console.log(classList);
     console.log(classList[6]);
