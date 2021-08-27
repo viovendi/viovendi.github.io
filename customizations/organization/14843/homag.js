@@ -51,8 +51,8 @@ function clickListener(){
         var workshopblockProp = $(this).data('block');
         console.log(workshopblockProp);
         console.log(typeof workshopblockProp);
-        var workshopblock = workshopblockObj.['workshopblockProp'];
-        var workshopblock1 = workshopblockObj.[workshopblockProp];
+        var workshopblock = workshopblockObj['workshopblockProp'];
+        var workshopblock1 = workshopblockObj[workshopblockProp];
         console.log(workshopblock);
         console.log(workshopblock1);
 
