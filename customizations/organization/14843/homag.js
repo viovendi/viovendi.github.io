@@ -26,18 +26,42 @@ var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuch
 var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"];
 
 
-var editAttendeeNumber;
+
+
+
+$('.workshops').on('click', function(e){
+    var prodWrapperElem = e.target.closest('.customization2_attendee');
+    var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
+    var prodWrapper = prodWrapperClassList[6];
+    console.log('prodWrapper');
+    console.log(prodWrapper);
+    var workshopblock = $(this).data('block');
+    console.log(workshopblock);
+    
+    $(workshopblock).each( function(i, element) {
+        console.log('each prodWrapper');
+        console.log(prodWrapper);
+        console.log('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product');
+        var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);
+        var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
+        console.log(element);
+        if($(product).hasClass('show')){
+          $(product).removeClass('show');
+        } else {
+         $(product).addClass('show');
+        }
+        if($(question).hasClass('show')){
+          $(question).removeClass('show');
+        } else {
+         $(question).addClass('show');
+        }
+    });
+});
 
 
 function showWorkshopblock(workshopblock){
-    var prodWrapper;
-    $(document).on('click', function(e){
-        var prodWrapperElem = e.target.closest('.customization2_attendee');
-        var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
-        prodWrapper = prodWrapperClassList[6];
-        console.log('prodWrapper');
-        console.log(prodWrapper);
-    });
+    //var prodWrapper;
+    /*
   $(workshopblock).each( function(i, element) {
     console.log('each prodWrapper');
     console.log(prodWrapper);
@@ -56,6 +80,7 @@ function showWorkshopblock(workshopblock){
     }
 
   });
+  */
 };
 
 
@@ -77,7 +102,7 @@ function main(wrapper){
     // var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"];
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
     $(product1).before('<p id="drop-down-header">Bitte unterstützen Sie uns bei der Organisation und teilen uns für den Tag Ihres Besuchs Ihre geplante Ankunfts- und Abreisezeit mit. Vielen Dank!</p><br/>');
-    $(product1).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock1);">Montag, 25. Oktober 2021 ▼</span>');
+    $(product1).before('<span class= "workshops" data-block="workshopblock1">Montag, 25. Oktober 2021 ▼</span>');
 
     console.log(product1);
 
@@ -85,7 +110,7 @@ function main(wrapper){
     // var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplanter Besuchsbeginn | 26. Oktober 2021","Geplantes Besuchsende | 26. Oktober 2021","26.10.21 | 13:00 Uhr - 14:00 Uhr | Software materialManager Advanced Workshop live"];
     product2 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 26. Oktober 2021');
     console.log(product2);
-    $(product2).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock2);">Dienstag, 26 Oktober 2021▼</span>');
+    $(product2).before('<span class= "workshops" data-block="workshopblock2">Dienstag, 26 Oktober 2021▼</span>');
 
     console.log(product2);
 
