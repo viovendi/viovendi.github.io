@@ -25,14 +25,13 @@ var workshopblock7 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuc
 var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"];
 var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"];
 
-
-
-$('.workshops').on('click', function(e){
+$( ".customization2_attendee-state_edit .workshops" ).on( "click", function(e) {
     console.log(e);
-    console.log(this);
+    console.log($(this));
 });
 
-$('.workshops').on('click', function(e){
+
+$('.customization2_attendee-state_edit .workshops').on('click', function(e){
     var prodWrapperElem = e.target.closest('.customization2_attendee');
     var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
     var prodWrapper = prodWrapperClassList[6];
@@ -63,6 +62,8 @@ $('.workshops').on('click', function(e){
 
 
 function showWorkshopblock(workshopblock){
+    console.log('11111');
+    
     //var prodWrapper;
     /*
   $(workshopblock).each( function(i, element) {
