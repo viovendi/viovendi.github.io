@@ -175,8 +175,8 @@ var insertionListener = function (event) {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
     console.log('event.target');
-    console.log(event.target);
-    var classList = event.target.attr('class')
+    console.log($(event.target));
+    var classList = $(event.target).attr('class');
     console.log(classList);
       
     editFunc(editAttendeeNumber);
