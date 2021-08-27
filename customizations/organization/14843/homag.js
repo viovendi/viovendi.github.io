@@ -169,17 +169,17 @@ function editFunc(wrapper){
 }
 
 
-
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    console.log('event.target');
-    console.log($(event.target));
-    var classList = $(event.target).attr('class');
-    console.log(classList);
+      // get current attendee wrapper
+    var classList = $(event.target).attr('class').split('');
       
-    editFunc(editAttendeeNumber);
+    console.log(classList);
+    console.log(classList[6]);
+      
+    editFunc(classList[6]);
   }
 };
 
