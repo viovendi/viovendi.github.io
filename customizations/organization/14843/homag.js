@@ -1,8 +1,8 @@
 console.log('Tag - Homag');
 
-$('.customization2_attendee_further-data_custom-question-1').show()
-$('.customization2_attendee_further-data_custom-question-2').show()
-$('.customization2_attendee_further-data_custom-question-3').show()
+$('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show()
+$('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show()
+$('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show()
 
 /*
 var workshopblock1,
@@ -117,8 +117,8 @@ main();
 function editFunc(){
   console.log('editFunc');
   
-  $('.customization2_attendee_further-data_custom-question').show();
-  $('.customization2_attendee_further-data_product').show();
+  $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').show();
+  $('.customization2_attendee-state_edit .customization2_attendee_further-data_product').show();
     
   console.log('editFunc + main');
   main();
