@@ -73,7 +73,7 @@ function main(wrapper){
     console.log(wrapper);
     var targetWrapper = 'customization2_attendee-state_edit';
     
-    if(wrapper){
+    if(!wrapper){
         wrapper = targetWrapper;
     }
     
