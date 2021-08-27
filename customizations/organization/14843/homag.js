@@ -27,7 +27,10 @@ var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Bes
 
 
 
-
+$('.workshops').on('click', function(e){
+    console.log(e);
+    console.log(this);
+});
 
 $('.workshops').on('click', function(e){
     var prodWrapperElem = e.target.closest('.customization2_attendee');
