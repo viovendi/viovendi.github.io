@@ -34,7 +34,7 @@ $(document).on('click', function(e){
     var element = e.target.closest('.customization2_attendee_view-action_edit');
     
     console.log(element);
-    console.log(element.prop('tagName');
+    console.log(element.prop('tagName'));
     console.log(element.hasClass('customization2_attendee_view-action_edit'));
     
     if(element.prop("tagName")=='button' && element.hasClass('customization2_attendee_view-action_edit')){
