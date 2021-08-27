@@ -41,6 +41,7 @@ var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Bes
 
 
 function clickListener(){
+    console.log(workshopblockObj);
     $('.customization2_attendee-state_edit .workshops').on('click', function(e){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
@@ -48,6 +49,7 @@ function clickListener(){
         console.log('prodWrapper');
         console.log(prodWrapper);
         var workshopblockProp = $(this).data('block');
+        console.log(workshopblockProp);
         var workshopblock = workshopblockObj.workshopblockProp;
         console.log(workshopblock);
 
@@ -117,13 +119,13 @@ function main(wrapper){
     // var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"];
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
     $(product1).before('<p id="drop-down-header">Bitte unterstützen Sie uns bei der Organisation und teilen uns für den Tag Ihres Besuchs Ihre geplante Ankunfts- und Abreisezeit mit. Vielen Dank!</p><br/>');
-    $(product1).before('<span class= "workshops" data-block=workshopblock1>Montag, 25. Oktober 2021 ▼</span>');
+    $(product1).before('<span class= "workshops" data-block="workshopblock1">Montag, 25. Oktober 2021 ▼</span>');
 
     // Workshopblock2
     // var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplanter Besuchsbeginn | 26. Oktober 2021","Geplantes Besuchsende | 26. Oktober 2021","26.10.21 | 13:00 Uhr - 14:00 Uhr | Software materialManager Advanced Workshop live"];
     product2 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 26. Oktober 2021');
     console.log(product2);
-    $(product2).before('<span class= "workshops" data-block=workshopblock2>Dienstag, 26 Oktober 2021▼</span>');
+    $(product2).before('<span class= "workshops" data-block="workshopblock2">Dienstag, 26 Oktober 2021▼</span>');
 
     //Mittwoch
     // var workshopblock3 = ["Teilnahme | Mittwoch, 27. Oktober 2021","27.10.21 | 10:00 Uhr - 12:00 Uhr | Digital Factory Workshop live – face to face","27.10.21 | 14:00 Uhr - 15:00 Uhr | Sichere Schnittqualität in der automatischen Produktion – SAWTEQ B-300 flexTec live","27.10.21 | 17:00 Uhr - 19:00 Uhr | Get together","Geplanter Besuchsbeginn | 27. Oktober 2021","Geplantes Besuchsende | 27. Oktober 2021"];
