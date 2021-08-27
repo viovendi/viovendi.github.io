@@ -103,7 +103,7 @@ function main(wrapper){
     // var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"];
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
     $(product1).before('<p id="drop-down-header">Bitte unterstützen Sie uns bei der Organisation und teilen uns für den Tag Ihres Besuchs Ihre geplante Ankunfts- und Abreisezeit mit. Vielen Dank!</p><br/>');
-    $(product1).before('<span class= "workshops" data-block="workshopblock1">Montag, 25. Oktober 2021 ▼</span>');
+    $(product1).before('<span class= "workshops" data-block=workshopblock1>Montag, 25. Oktober 2021 ▼</span>');
 
     console.log(product1);
 
@@ -111,7 +111,7 @@ function main(wrapper){
     // var workshopblock2 = ["Teilnahme | Dienstag, 26. Oktober 2021","Geplanter Besuchsbeginn | 26. Oktober 2021","Geplantes Besuchsende | 26. Oktober 2021","26.10.21 | 13:00 Uhr - 14:00 Uhr | Software materialManager Advanced Workshop live"];
     product2 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 26. Oktober 2021');
     console.log(product2);
-    $(product2).before('<span class= "workshops" data-block="workshopblock2">Dienstag, 26 Oktober 2021▼</span>');
+    $(product2).before('<span class= "workshops" data-block=workshopblock2>Dienstag, 26 Oktober 2021▼</span>');
 
     console.log(product2);
 
