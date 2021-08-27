@@ -37,10 +37,13 @@ function getTarget(){
 */
 
 var editAttendee;
-$('.customization2_attendee_view-action_edit').on('click', function(e){
+
+$('.customization2_attendee_view-action > div').on('click', function(e){
     console.log(e.target);
     var targetWrap = e.target.closest('.customization2_attendee-state_view');
+    console.log(targetWrap);
     var classList = $(targetWrap).attr('class').split(/\s+/);
+    console.log(classList);
     editAttendee = classList[6];
     console.log('editAttendee');
     console.log(editAttendee);
