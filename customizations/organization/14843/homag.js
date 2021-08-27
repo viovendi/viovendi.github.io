@@ -33,15 +33,16 @@ function showWorkshopblock(workshopblock){
     var prodWrapper;
     $(document).on('click', function(e){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
-        console.log(prodWrapperElem);    
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
-        console.log(prodWrapperClassList);
         prodWrapper = prodWrapperClassList[6];
+        console.log('prodWrapper');
         console.log(prodWrapper);
     });
   $(workshopblock).each( function(i, element) {
-    var product = $$('.'+prodWrapper+' .customization2_attendee_further-data_product').findField(element);
-    var question = $$('.'+prodWrapper+' .customization2_attendee_further-data_custom-question').findField(element);
+    console.log('each prodWrapper');
+    console.log(prodWrapper);
+    var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);.customization2_attendee-state_edit
+    var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
     console.log(element);
     if($(product).hasClass('show')){
       $(product).removeClass('show');
