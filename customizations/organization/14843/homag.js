@@ -25,41 +25,38 @@ var workshopblock7 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuc
 var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"];
 var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"];
 
-$( ".customization2_attendee-state_edit .workshops" ).on( "click", function(e) {
-    console.log(e);
-    console.log($(this));
-});
 
 
-$('.customization2_attendee-state_edit .workshops').on('click', function(e){
-    var prodWrapperElem = e.target.closest('.customization2_attendee');
-    var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
-    var prodWrapper = prodWrapperClassList[6];
-    console.log('prodWrapper');
-    console.log(prodWrapper);
-    var workshopblock = $(this).data('block');
-    console.log(workshopblock);
-    
-    $(workshopblock).each( function(i, element) {
-        console.log('each prodWrapper');
+function clickListener(){
+    $('.customization2_attendee-state_edit .workshops').on('click', function(e){
+        var prodWrapperElem = e.target.closest('.customization2_attendee');
+        var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
+        var prodWrapper = prodWrapperClassList[6];
+        console.log('prodWrapper');
         console.log(prodWrapper);
-        console.log('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product');
-        var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);
-        var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
-        console.log(element);
-        if($(product).hasClass('show')){
-          $(product).removeClass('show');
-        } else {
-         $(product).addClass('show');
-        }
-        if($(question).hasClass('show')){
-          $(question).removeClass('show');
-        } else {
-         $(question).addClass('show');
-        }
-    });
-});
+        var workshopblock = $(this).data('block');
+        console.log(workshopblock);
 
+        $(workshopblock).each( function(i, element) {
+            console.log('each prodWrapper');
+            console.log(prodWrapper);
+            console.log('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product');
+            var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);
+            var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
+            console.log(element);
+            if($(product).hasClass('show')){
+              $(product).removeClass('show');
+            } else {
+             $(product).addClass('show');
+            }
+            if($(question).hasClass('show')){
+              $(question).removeClass('show');
+            } else {
+             $(question).addClass('show');
+            }
+        });
+    });
+}
 
 function showWorkshopblock(workshopblock){
     console.log('11111');
@@ -155,6 +152,8 @@ function main(wrapper){
     // var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuchsbeginn | 05. November 2021","Geplantes Besuchsende | 05. November 2021"];
     product9 = $$('.'+wrapper+' .customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Freitag, 05. November 2021');
     $(product9).before('<span class= "workshops" onclick = "showWorkshopblock(workshopblock9);">Freitag, 05. November 2021 ▼</span>');
+    
+    clickListener();
 }
 main();
 
