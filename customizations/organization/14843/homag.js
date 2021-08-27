@@ -26,27 +26,29 @@ var workshopblock9 = ["Teilnahme | Freitag, 05. November 2021","Geplanter Besuch
 var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Besuchsbeginn | 04. November 2021","Geplantes Besuchsende | 04. November 2021","04.11.21 |13:00 Uhr - 14:00 Uhr | Neues Leistungsniveau in der vollautomatischen LG1-Produktion"];
 
 
-/*
-function getTarget(){
-    $(this).on('click', function(e){
-        console.log(e.target);
-        var target = e.target.closest('.');
-    });
-    return target;
-}
-*/
-
 var editAttendee;
 $(document).on('click', function(e){
     console.log(e);
     console.log(e.target);
+    
     var element = e.target.closest('.customization2_attendee_view-action_edit');
+    
     console.log(element);
-    if(element){
+    console.log(element.prop('tagName');
+    console.log(element.hasClass('customization2_attendee_view-action_edit'));
+    
+    if(element.prop("tagName")=='button' && element.hasClass('customization2_attendee_view-action_edit')){
+        console.log('edit button clicked');
+        
         var targetWrap = $(element).closest('.customization2_attendee-state_view');
+        var targetWrap1 = $('.customization2_attendee_view-action_edit').closest('.customization2_attendee');
         console.log(targetWrap);
+        console.log(targetWrap1);
+        
         var classList = $(targetWrap).attr('class').split(/\s+/);
+        
         console.log(classList);
+        
         editAttendee = classList[6];
         console.log('editAttendee');
         console.log(editAttendee);
@@ -171,6 +173,8 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
+    console.log('event.target');
+    console.log(event.target);
     console.log($(".customization2_attendee").length);
     editFunc();
   }
