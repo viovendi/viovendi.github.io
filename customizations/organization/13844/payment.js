@@ -1,5 +1,5 @@
 
-console.log('Start - 13844!');
+console.log('Start - 13844');
 
 // global var
 var isFuncUsed = false;
@@ -111,8 +111,10 @@ function stop_checking_page4() {
 }
 
 function checking_page2() {
+  console.log('checking_page2');
   id_page2 = requestAnimationFrame(checking_page2);
   if($('.customization-booking-area-wrapper-page2').length > 0){
+    console.log('checking_page26');
     if( $('.customization2_summary_total_price').text().trim() == '0,00 EUR' || $('.customization2_summary_total_price').length < 1){
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       localStorage.setItem('free_order', true);
@@ -123,8 +125,10 @@ function checking_page2() {
 checking_page2();
 
 function checking_page3() {
+  console.log('checking_page3');
   id_page3 = requestAnimationFrame(checking_page3);
   if($('.customization-booking-area-wrapper-page3').length > 0){
+      console.log('checking_page3+');
     rebuildPage();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
     stop_checking_page3();
@@ -133,9 +137,12 @@ function checking_page3() {
 checking_page3();
 
 function checking_page4() {
+  console.log('checking_page4');
   id_page4 = requestAnimationFrame(checking_page4);
   if ($('.customization-booking-area-wrapper-page4').length > 0){
-
+    
+    console.log('checking_page4+');
+    
     var payment_method = localStorage.getItem('payment_method');
 
     var free_order = localStorage.getItem('free_order');
@@ -175,57 +182,56 @@ $('.customization2_payment-description_none-selected').css('display','block');
 checking_page4();
 
 function rebuildPageInvoiceConfirm(){
-responseMessage('success');
+  responseMessage('success');
 }
 
 function addFrameListener(){
-if ( window.addEventListener ) {
-window.addEventListener('message', receiveMessage, false);
-} else if ( window.attachEvent ) {
-window.attachEvent('onmessage', receiveMessage);
-}
-
+  if ( window.addEventListener ) {
+    window.addEventListener('message', receiveMessage, false);
+  } else if ( window.attachEvent ) {
+    window.attachEvent('onmessage', receiveMessage);
+  }
 }
 
 function receiveMessage(event) {
-if (event.origin !== 'https://securepay.swmh.de'){
-return;
-}
-if(event.data.status === 'Success'){
-responseMessage('success');
-}else{
-responseMessage('error');
-}
+  if (event.origin !== 'https://securepay.swmh.de'){
+    return;
+  }
+  if(event.data.status === 'Success'){
+    responseMessage('success');
+  }else{
+    responseMessage('error');
+  }
 }
 
 
 function responseMessage(status){
-if( $('#payment_Frame').length ){
-$('#payment_Frame').remove();
-}
+  if( $('#payment_Frame').length ){
+    $('#payment_Frame').remove();
+  }
 
-var heading, message, message2, color;
+  var heading, message, message2, color;
 
-console.log(status);
+  console.log(status);
 
-if(status === 'success'){
-heading = 'Buchungsbestätigung';
-message = 'Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.';
-message2 = '';
-color = 'black';
-}else if(status === 'free-ticket'){
-var pathname = window.location.pathname;
-if (pathname.indexOf('71481') >=1){
-message = 'Vielen Dank für Ihre Anmeldung! Sie erhalten in Kürze Ihre Anmeldebestätigung per E-Mail.';
-}else{
-message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt.';
-}
-
-heading = 'Buchungsbestätigung';
+  if(status === 'success'){
+    heading = 'Buchungsbestätigung';
+    message = 'Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.';
+    message2 = '';
+    color = 'black';
+  }else if(status === 'free-ticket'){
+    var pathname = window.location.pathname;
+    if (pathname.indexOf('71481') >=1){
+      message = 'Vielen Dank für Ihre Anmeldung! Sie erhalten in Kürze Ihre Anmeldebestätigung per E-Mail.';
+    }else{
+      message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt.';
+    }
+  
+    heading = 'Buchungsbestätigung';
 //message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung mit dem Link zum Livestream wird Ihnen in Kürze per E-Mail zugestellt.';
-message2 = 'Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
-color = 'black';
-}else{
+    message2 = 'Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
+    color = 'black';
+  }else{
 heading = 'Hoppla! Da ist was schiefgelaufen. Bitte versuchen Sie es später erneut.';
 message = '';
 message2 = '';
