@@ -73,6 +73,17 @@ function addTextUnderQuestion(shortName, className, wrapperClass){
     });
   }
 
+function addTextUnderQuestionVIP(shortName, className, wrapperClass){
+    $('.'+wrapperClass+' .customization2_attendee_further-data .vv-nl-mb-lg').each(function(i, element) {
+      var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+
+      if(item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf(shortName) > -1){
+        $(this).find('.customization2_attendee_further-data_custom-question_label').css('font-size','12px') ;
+        $(this).after('<div class="addedtext" style="font-size: 12px; color: #343a3f; margin-top: 20px;margin-bottom: 30px;"><p>Die ausgewählten Partner erhalten meine Adress- und Kontaktdaten für die Bewerbung ihrer Produkte auch per E-Mail und Telefon sowie Daten zum Nachweis dieser Einwilligung, die diese in eigener Verantwortung verarbeiten. Du hast das Recht, diese Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen. Nutze dafür folgende Kontaktmöglichkeit <a href="eventservice@vogel.de" target="_blank">eventservice@vogel.de</a>. Sitzt einer der Partner außerhalb der EU, so weisen wir darauf hin, dass dort ggfs. ein niedrigeres Datenschutzniveau als in der EU besteht. Weitere Informationen zum Umgang mit personenbezogenen Daten siehe <a href="https://www.vogelitakademie.de/datenschutz" target="_blank">Datenschutzerklärung</a>.</p></div>');
+      }
+    });
+  }
+
 
    function init(name){
       addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
