@@ -101,11 +101,11 @@ $(checkboxGroup).find('input').change(function () {
             }
         }
     } else {
-        // $(field1).hide();
-        // $(field2).hide();
-        // $(field3).hide();
-        // $(field4).hide();
-        // $('.service').hide();;
+        $(field1).hide();
+        $(field2).hide();
+        $(field3).hide();
+        $(field4).hide();
+        $('.service').hide();;
     }
 })
 
