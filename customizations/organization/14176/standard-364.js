@@ -1,5 +1,5 @@
 //Activate Data Privacy Checkbox 
-$('.vv-radio').trigger('click');
+$('.customization2_attendee_further-data_custom-question_radio-line-1').trigger('click');
 console.log('clicked')
 
 //Add text below Data Privacy
