@@ -113,7 +113,7 @@ function main(wrapper){
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show();
-
+    $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4').show();
 
     // var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"];
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Montag, 25. Oktober 2021');
