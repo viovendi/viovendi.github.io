@@ -1,3 +1,3 @@
-$('.vv-checkbox').trigger('click');
-console.log('clicked');
+// $('.vv-checkbox').trigger('click');
+// console.log('clicked');
 
