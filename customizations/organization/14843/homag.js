@@ -117,7 +117,7 @@ function main(wrapper){
    // console.log("replaced");
     var textLiveHomag = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-4').find('.customization2_attendee_further-data_custom-question_label').text();
     var newtext = textLiveHomag.replace("live.homag.com", "<a target='_blank' href='https://live.homag.com/'>live.homag.com</a>");
-    $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-4').find('.customization2_attendee_further-data_custom-question_label').$(item).empty().html(newtext);
+    $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-4').find('.customization2_attendee_further-data_custom-question_label').empty().html(newtext);
 
     
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show();
