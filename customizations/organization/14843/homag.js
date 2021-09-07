@@ -110,6 +110,12 @@ function main(wrapper){
 
     console.log(wrapper);
 
+    //Add Link to text
+    var labelQuestion = $$('.customization2_attendee_further-data_custom-question_label').find("live.homag.com");
+    var textString1 = labelQuestion.replace("live.homag.com", "<a target='_blank' href='https://live.homag.com/'>live.homag.com</a>");
+    console.log("replaced");
+    
+    
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show();
