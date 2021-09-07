@@ -116,10 +116,7 @@ function main(wrapper){
     //element.replace("live.homag.com", "<a target='_blank' href='https://live.homag.com/'>live.homag.com</a>");
    // console.log("replaced");
     var textLiveHomag = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-4').find('.customization2_attendee_further-data_custom-question_label').text();
-    var textLiveHomag2 = $('.customization2_attendee_further-data_custom-question .customization2_attendee_further-data_custom-question-4').find('customization2_attendee_further-data_custom-question_label').text();
-
-    console.log(textLiveHomag);
-        console.log(textLiveHomag2);
+    textLiveHomag.replace("live.homag.com", "<a target='_blank' href='https://live.homag.com/'>live.homag.com</a>");
 
     
     
