@@ -43,6 +43,7 @@ function clickedEdit(name) {
 	addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Freiticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
+	addClassToField('Mit dem Freiticket stimmen Sie der Datenweitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
 	
 	addClassToField('Mit dem ermäßigten VIP-Ticket stimmen Sie der Datenweitergabe', 'check-boxes-wrapper', name);
@@ -90,6 +91,7 @@ function init(name) {
 	addClassToField('Mit dem Freiticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem VIP-Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Freiticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
+	addClassToField('Mit dem Freiticket stimmen Sie der Datenweitergabe', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
 	
 	addClassToField('Mit dem ermäßigten VIP-Ticket stimmen Sie der Datenweitergabe', 'check-boxes-wrapper', name);
@@ -99,8 +101,12 @@ function init(name) {
 	addTextUnderQuestion('Mit dem Ticket stimmst Du der Kontaktdaten-Weitergabe', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem ermäßigten VIP-Ticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem Ticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
-	addTextUnderQuestionVIP('Mit dem ermäßigten VIP-Ticket stimmen Sie', 'check-boxes-wrapper', name);
 	
+	addTextUnderQuestion('Mit dem Freiticket stimmst Du der Datenweitergabe', 'check-boxes-wrapper', name);
+	addTextUnderQuestion('Mit dem Freiticket stimmen Sie der Datenweitergabe', 'check-boxes-wrapper', name);
+	
+	
+	addTextUnderQuestionVIP('Mit dem ermäßigten VIP-Ticket stimmen Sie', 'check-boxes-wrapper', name);
 	addTextUnderQuestionVIP('Mit dem ermäßigten VIP-Ticket stimmst Du der Daten-Weitergabe', 'check-boxes-wrapper', name);
 
 	//addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
