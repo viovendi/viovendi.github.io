@@ -113,7 +113,7 @@ $(checkboxGroup).find('input').change(function () {
 
 
 
-prodCheked("Power Talk (vor Ort)", "Power Talk (online)");
-prodCheked("Power Talk (online)", "Power Talk (vor Ort)");
+prodCheked("Power Talks (vor Ort)", "Power Talks (online)");
+prodCheked("Power Talks (online)", "Power Talks (vor Ort)");
 prodCheked("Investment Forum (vor Ort)", "Investment Forum (online)");
 prodCheked("Investment Forum (online)", "Investment Forum (vor Ort)");
