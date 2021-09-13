@@ -127,7 +127,7 @@ function main(wrapper){
 
     // var workshopblock1 = ["Teilnahme | Montag, 25. Oktober 2021","Geplanter Besuchsbeginn | 25. Oktober 2021","Geplantes Besuchende | 25. Oktober 2021"];
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Participation | Monday, 25 October 2021');
-    $(product1).before('<p id="drop-down-header" style="color:#343a3f">Please assist us with the organization and let us know your scheduled arrival and departure time for the day of your visit. Thank you very much!</p><br/>');
+    $(product1).before('<p id="drop-down-header" style="color:#343a3f">Please assist us with the organization and let us know your planned arrival and departure time for the day of your visit. Thank you very much!</p><br/>');
     $(product1).before('<span class= "workshops" data-block="workshopblock1" style="color:#001941">Monday, 25 October 2021 ▼</span>');
 
     // Workshopblock2
