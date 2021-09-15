@@ -1,0 +1,24 @@
+function markAsChecked(name) {
+  //search all further questions
+  $('.customization2_attendee .customization2_attendee_further-data .vv-nl-mb-lg').each(function (i, element) {
+
+    // check all labels and check if it contains "Einwilligungserklärung"
+    var item = $(this).find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
+    console.log(item);
+    if (item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Hiermit erkläre ich mich') > -1) {
+      $('.' + name + ' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function () {
+        if (!$(this).hasClass('checked-manually')) {
+          $(this).trigger('click');
+          $(this).addClass('checked-manually');
+        }
+      });
+    }
+  })
+}
+  
+markAsChecked('customization2_attendee');
+console.log('clicked');
+//$('.customization2_booking-terms_checkbox .vv-checkbox__indicator').css("display", "none");
+//$('.customization2_booking-terms_text').css("position", "relative");
+//$('.customization2_booking-terms_text').css("left", "24px");
+console.log('hided')
