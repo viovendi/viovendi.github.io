@@ -1,7 +1,8 @@
 function markAsChecked(name) {
   //search all further questions
-  $('.customization2_attendee .customization2_attendee_further-data .vv-nl-mb-lg').each(function (i, element) {
+  $('.customization2_attendee_further-data_custom-question').each(function (i, element) {
 
+    //.customization2_attendee .customization2_attendee_further-data .vv-nl-mb-lg
     // check all labels and check if it contains "Einwilligungserklärung"
     var item = $(this).find('customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
     console.log(item);
