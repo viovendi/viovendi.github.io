@@ -8,7 +8,9 @@ function markAsChecked(name) {
 		if (item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Hiermit erkläre ich mich') > -1) {
 			console.log("Bedingung eingetreten" + item);
 			var parentElement = $(this).parent();
+			console.log(parentElement)
 			$(parentElement > div > div > vv-checkbox).trigger('click');
+			console.log("clicked")
 			$('.' + name + ' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function () {
 				console.log("aidihadsids");
 				}
