@@ -13,10 +13,10 @@ function markAsChecked(name) {
 				console.log(parentElement);
 				$(parentElement + " > div > div > vv-checkbox").trigger('click');
 				console.log("clicked");
-			};
-		};
-	};
-};
+			}
+		}
+	}
+}
 
 function hideAndMoveCheckbox() {
 	$('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
