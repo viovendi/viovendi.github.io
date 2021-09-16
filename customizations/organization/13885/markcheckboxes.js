@@ -7,6 +7,8 @@ function markAsChecked(name) {
 		var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace(/^\s+|\s+$/g, "");
 		if (item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Hiermit erkläre ich mich') > -1) {
 			console.log("Bedingung eingetreten" + item);
+			
+			//get parent element and move to vv-checkbox
 			var parentElement = $(this).parent();
 			console.log(parentElement);
 			$(parentElement + " > div > div > vv-checkbox").trigger('click');
