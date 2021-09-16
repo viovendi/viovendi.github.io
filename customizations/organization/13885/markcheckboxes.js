@@ -11,15 +11,17 @@ function markAsChecked(name) {
         if (!$(this).hasClass('checked-manually')) {
           $(this).trigger('click');
           $(this).addClass('checked-manually');
+          console.log('clicked');
         }
       });
     }
   })
 }
-  
+function hideAndMoveCheckbox() {
+$('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
+  $('.customization2_booking-terms_text').css("position", "relative");
+ $('.customization2_booking-terms_text').css("left", "24px");
+  console.log('hided')
+}
 markAsChecked('customization2_attendee');
-console.log('clicked');
-//$('.customization2_booking-terms_checkbox .vv-checkbox__indicator').css("display", "none");
-//$('.customization2_booking-terms_text').css("position", "relative");
-//$('.customization2_booking-terms_text').css("left", "24px");
-console.log('hided')
+hideAndMoveCheckbox();
