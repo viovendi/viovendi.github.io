@@ -8,15 +8,14 @@ function markAsChecked(name) {
 		if (item !== '' && item.replace(/^\s+|\s+$/g, "").indexOf('Hiermit erkläre ich mich') > -1) {
 			console.log("Bedingung eingetreten" + item);
 			
-			//get parent element and move to vv-checkbox
+			//get parent element and move to vv-checkbox to click it
 			var parentElement = $(this).parent();
 			console.log(parentElement);
 			$(parentElement + " > div > div > vv-checkbox").trigger('click');
 			console.log("clicked")
-			});
-		}
-	})
-}
+		});
+	};
+};
 
 function hideAndMoveCheckbox() {
 	$('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
