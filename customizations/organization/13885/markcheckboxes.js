@@ -11,9 +11,6 @@ function markAsChecked(name) {
 			console.log(parentElement);
 			$(parentElement + " > div > div > vv-checkbox").trigger('click');
 			console.log("clicked")
-			$('.' + name + ' .check-boxes-wrapper .customization2_attendee_further-data_custom-question_checkbox-group .vv-checkbox').each(function () {
-				console.log("aidihadsids");
-				}
 			});
 		}
 	})
