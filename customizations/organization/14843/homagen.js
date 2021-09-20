@@ -45,7 +45,7 @@ function clickListener(){
     $('.customization2_attendee-state_edit .workshops').on('click', function(e){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
-        var prodWrapper = prodWrapperClassList[6];
+        var prodWrapper = prodWrapperClassList[3];
         console.log('prodWrapper');
         console.log(prodWrapper);
         var workshopblockProp = $(this).data('block');
