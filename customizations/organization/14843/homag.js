@@ -49,25 +49,16 @@ var workshopblock8 = ["Teilnahme | Donnerstag, 04. November 2021","Geplanter Bes
 
 
 function clickListener(){
-    console.log(workshopblockObj);
     $('.customization2_attendee-state_edit .workshops').on('click', function(e){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
-        console.log(prodWrapperClassList);
         var prodWrapper = prodWrapperClassList[3];
-        console.log('prodWrapper');
-        console.log(prodWrapper);
         var workshopblockProp = $(this).data('block');
         var workshopblock = workshopblockObj[workshopblockProp];
-        console.log(workshopblock);
 
         $(workshopblock).each( function(i, element) {
-            console.log('each prodWrapper');
-            console.log(prodWrapper);
-            console.log('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product');
             var product = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_product').findField(element);
             var question = $$('.'+prodWrapper+'.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question').findField(element);
-            console.log(element);
             if($(product).hasClass('show')){
               $(product).removeClass('show');
             } else {
