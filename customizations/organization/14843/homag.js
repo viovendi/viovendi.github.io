@@ -53,6 +53,7 @@ function clickListener(){
     $('.customization2_attendee-state_edit .workshops').on('click', function(e){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
+        console.log(prodWrapperClassList);
         var prodWrapper = prodWrapperClassList[6];
         console.log('prodWrapper');
         console.log(prodWrapper);
@@ -197,7 +198,7 @@ var insertionListener = function (event) {
     //Insert your code here
     // get current attendee wrapper
     var classList = $(event.target).attr('class').split(' ');
-      
+      console.log(classList);
     editFunc(classList[6]);
   }
 };
