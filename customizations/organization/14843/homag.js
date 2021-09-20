@@ -54,7 +54,7 @@ function clickListener(){
         var prodWrapperElem = e.target.closest('.customization2_attendee');
         var prodWrapperClassList = $(prodWrapperElem).attr('class').split(' ');
         console.log(prodWrapperClassList);
-        var prodWrapper = prodWrapperClassList[6];
+        var prodWrapper = prodWrapperClassList[3];
         console.log('prodWrapper');
         console.log(prodWrapper);
         var workshopblockProp = $(this).data('block');
@@ -199,7 +199,7 @@ var insertionListener = function (event) {
     // get current attendee wrapper
     var classList = $(event.target).attr('class').split(' ');
       console.log(classList);
-    editFunc(classList[6]);
+    editFunc(classList[3]);
   }
 };
 
