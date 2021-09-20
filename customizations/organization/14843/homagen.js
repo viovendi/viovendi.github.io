@@ -190,7 +190,7 @@ var insertionListener = function (event) {
     // get current attendee wrapper
     var classList = $(event.target).attr('class').split(' ');
       
-    editFunc(classList[6]);
+    editFunc(classList[3]);
   }
 };
 
