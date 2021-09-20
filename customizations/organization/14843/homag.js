@@ -163,7 +163,7 @@ function main(wrapper){
     //Dienstag
     // var workshopblock6 = ["Teilnahme | Dienstag, 02. November 2021","Geplanter Besuchsbeginn | 02. November 2021","Geplantes Besuchsende | 02. November 2021","02.11.21 | 10:00 Uhr - 11:00 Uhr | Einstieg in den halbautomatischen Zuschnitt – Flexibilität und Leistung (B-130/B-200 inkl. PC Classic)"];
     product6 = $$('.'+wrapper+' .customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Teilnahme | Dienstag, 02. November 2021');
-    $(product6).before('<span class= "workshops" data-block="workshopblock6" style="color:#001941">Dienstag, 02. November 2021 ▼</span>');
+    $(product6).before('<span class= "workshops" data-block="workshopblock6" style="color:#001941">Dienstag, 02. November 2021 ▼ (AUSGEBUCHT)</span>');
 
     //Mittwoch
     // var workshopblock7 = ["Teilnahme | Mittwoch, 03. November 2021","Geplanter Besuchsbeginn | 03. November 2021","Geplantes Besuchsende | 03. November 2021","03.11.21 | 10:00 Uhr - 11:00 Uhr | Puffer woodStore 8 Lager","03.11.21 | 17:00 Uhr - 19:00 Uhr | Get together"];
