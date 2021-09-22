@@ -7,7 +7,7 @@ console.log('Tag - Homag');
 
 var product1,
     product2,
-    product3,
+    product3;
  
 
 var workshopblockObj = {
