@@ -1,9 +1,5 @@
 console.log("herzebrocken");
-console.log('Tag - Homag');
-
-// $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show()
-// $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show()
-// $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show()
+)
 
 
 var product1,
@@ -12,15 +8,15 @@ var product1,
   
 
 var workshopblockObj = {
-    workshopblock1 : ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 |2 pm - 3 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","17.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","17.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"],
-    workshopblock2 : ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 10 am - 11 am | Extended service solutions for the optimal use of your machine","18.11.21 | 1 pm - 2 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","18.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","18.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"],    
+    	workshopblock1 : ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 |2 pm - 3 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","17.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","17.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"],
+    	workshopblock2 : ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 10 am - 11 am | Extended service solutions for the optimal use of your machine","18.11.21 | 1 pm - 2 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","18.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","18.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"],    
 	workshopblock3 : ["Participation | Friday, 19 November 2021","Planned start of visit | 19 November 2021","Planned end of visit | 19 November 2021","19.11.21 |9.30 am - 10.30 am | Classic service concepts for woodworking shops and small and medium-sized businesses","19.11.21 | 10.45 am - 11.45 am | woodWOP 8.0: New functions. New possibilities.","19.11.21 | 1 pm - 2 pm | Apps and digital tools in skilled trades"],
 
 };
 
 var workshopblock1 = ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 |2 pm - 3 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","17.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","17.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"];
- var workshopblock2 = ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 10 am - 11 am | Extended service solutions for the optimal use of your machine","18.11.21 | 1 pm - 2 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","18.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","18.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"];   
-	var workshopblock3 = ["Participation | Friday, 19 November 2021","Planned start of visit | 19 November 2021","Planned end of visit | 19 November 2021","19.11.21 |9.30 am - 10.30 am | Classic service concepts for woodworking shops and small and medium-sized businesses","19.11.21 | 10.45 am - 11.45 am | woodWOP 8.0: New functions. New possibilities.","19.11.21 | 1 pm - 2 pm | Apps and digital tools in skilled trades"];
+var workshopblock2 = ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 10 am - 11 am | Extended service solutions for the optimal use of your machine","18.11.21 | 1 pm - 2 pm | Classic service concepts for woodworking shops and small and medium-sized businesses","18.11.21 | 4 pm - 5 pm | woodWOP 8.0: New functions. New possibilities.","18.11.21 | 5.15 pm - 7.15 pm | Apps and digital tools in skilled trades"];   
+var workshopblock3 = ["Participation | Friday, 19 November 2021","Planned start of visit | 19 November 2021","Planned end of visit | 19 November 2021","19.11.21 |9.30 am - 10.30 am | Classic service concepts for woodworking shops and small and medium-sized businesses","19.11.21 | 10.45 am - 11.45 am | woodWOP 8.0: New functions. New possibilities.","19.11.21 | 1 pm - 2 pm | Apps and digital tools in skilled trades"];
 
 
 
