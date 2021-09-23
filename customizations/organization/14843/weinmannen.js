@@ -104,7 +104,7 @@ function main(wrapper){
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show();
-    $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4').show();
+    //$('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4').show();
 
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Participation | Wednesday, 17 November 2021');
     $(product1).before('<p id="drop-down-header" style="color:#343a3f">Please assist us with the organization and let us know your planned arrival and departure time for the day of your visit. Thank you very much!</p><br/>');
