@@ -1,4 +1,4 @@
-console.log('git first page')
+console.log('14269 hidefirstpage.js - git first page')
 //rearange search-button INFO, overlaps on smartphone view
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
 
