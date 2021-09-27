@@ -1,15 +1,7 @@
-console.log('GTM Works Standard-230');
+console.log("Standard-436");
 
-var answer1 = '<div class="standard-230">I want to have my contact details shared within the Oerlikon Group and with Oerlikon’s partners of the 2021 AMTC conference listed in the <a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Oerlikon/2021/2021+AMTC+Conference+privacy+noticefor+website.pdf" target="_blank">Privacy Notice</a> in order to receive information about their services, products and invites to their events and conferences.</div>'
-$(".customization2_booking-terms_text").before(answer1)
-$(".standard-230").css({
-	"word-break": "break-word",
-	"font-size": "14.4px",
-	"font-family": "'Helvetica Neue LT Std-Th'",
-	"font-weight": "400",
-	"position": "absolute",
-	"margin-left": "25px",
-	"padding-bottom": "100px",
-	"padding-right": "25px",
-	"height": "auto",
-	"width": "85%
+
+$('.customization2_booking-terms .vv-mb-xxs').prepend('<p class="terms_new">AGB: Ich habe die <a src="https://eur03.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.rtl2.de%2Fallgemein%2Fagb&data=04%7C01%7CBenjamin.Bodner%40elcartelmedia.de%7Cba3693d2a58b429eb87808d97eb9de0f%7Cc5eaaa863ebd4d4db5bf1edd64cdb03e%7C0%7C0%7C637680159023375056%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=fAZ1J4WTmurU3In1N0AVa0jpW5dyvvyGKsZotfw0JyY%3D&reserved=0" target="_blank" >Allgemeinen Geschäftsbedingungen zu RTL2 Gewinnspielen</a> sowie die <a src="https://eur03.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.rtl2.de%2Fallgemein%2Fdatenschutz&data=04%7C01%7CBenjamin.Bodner%40elcartelmedia.de%7Cba3693d2a58b429eb87808d97eb9de0f%7Cc5eaaa863ebd4d4db5bf1edd64cdb03e%7C0%7C0%7C637680159023375056%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=JoD6fxPdUe%2F9Mpk%2BBVegNY5R%2BWxcvq7hR7lQoAYP1t8%3D&reserved=0" target="_blank" >Datenschutzerklärung</a> der RTL2 Fernsehen GmbH & Co. KG zur Kenntnis genommen und bin mit deren Geltung einverstanden.</p>')
+$('.terms_new').css({"font-size": "14px", "line-height": "25px", "max-width": "90%"});
+
+// By clicking on the 'Send' button, you agree that the data you entered will be used for the purpose of registration for the event. The data is collected by doo GmbH on behalf of SMA Solar Technology AG. The data is acquired by the provider doo GmbH. In addition, you agree to the SMA Data Protection Declaration. Any consent that you have given can be withdrawn at any time with effect for the future. In case of revocation, your data will be deleted immediately. Otherwise, your data will be erased when we have processed your request or the purpose of storage has ceased. You are entitled to request from us anytime information on the data stored about you. Further information on data protection can be found in the SMA Data Protection Declaration of this website.
