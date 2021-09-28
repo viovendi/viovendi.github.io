@@ -87,7 +87,7 @@ var checkboxGroup = $$('.customization2_attendee_further-data_custom-question').
 $(checkboxGroup).find('input').change(function () {
     if ($(this).is(":checked")) {
         const option = $(this).parent('label').text().trim();
-        if (option.includes('Ich benötige einen Shuttle-Service vom Flughafen zur Location')) {
+        if (option.includes('Ich benötige einen Shuttle-Service vom Flughafen zur Location')|| option.includes('I would like to use the shuttle-service from Frankfurt Airport to Event Location')) {
             $(field1).show();
             $(field2).show();
             $(field3).show();
