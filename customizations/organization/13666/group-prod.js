@@ -112,7 +112,12 @@ $(checkboxGroup).find('input').change(function () {
 
 
 
-
+//EN
+prodCheked("Power Talks (on-site)", "Power Talks (online)");
+prodCheked("Power Talks (online)", "Power Talks (on-site)");
+prodCheked("Investment Forum (on-site)", "Investment Forum (online)");
+prodCheked("Investment Forum (online)", "Investment Forum (on-site)");
+// DE
 prodCheked("Power Talks (vor Ort)", "Power Talks (online)");
 prodCheked("Power Talks (online)", "Power Talks (vor Ort)");
 prodCheked("Investment Forum (vor Ort)", "Investment Forum (online)");
