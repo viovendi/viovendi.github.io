@@ -82,21 +82,39 @@ $(field3).hide();
 var field4 = $$('.customization2_attendee_further-data_custom-question').findField('Abfahrts-/Abflugsort (optional)');
 $(field4).hide();
 
+
+var field1En = $$('.customization2_attendee_further-data_custom-question').findField('Date of arrival (optional)');
+$(field1En).hide();
+
+var field2En = $$('.customization2_attendee_further-data_custom-question').findField('Time of arrival (optional)');
+$(field2En).hide();
+
+var field3En = $$('.customization2_attendee_further-data_custom-question').findField('Arrival flight number / train number (optional)');
+$(field3En).hide();
+
+var field4En = $$('.customization2_attendee_further-data_custom-question').findField('Arriving from (city / country) (optional)');
+$(field4En).hide();
+
+
 var checkboxGroup = $$('.customization2_attendee_further-data_custom-question').findCheckboxGroup('Shuttle');
 
 $(checkboxGroup).find('input').change(function () {
     if ($(this).is(":checked")) {
         const option = $(this).parent('label').text().trim();
         if (option.includes('Ich benötige einen Shuttle-Service vom Flughafen zur Location')|| option.includes('I would like to use the shuttle-service from Frankfurt Airport to Event Location')) {
-            $(field1).show();
-            $(field2).show();
-            $(field3).show();
-            $(field4).show();
             if (locale === "de-de") {
+                $(field1).show();
+                $(field2).show();
+                $(field3).show();
+                $(field4).show();
                 $(checkboxGroup).after(`<p class="service"  style="margin-top: 20px;">Wenn Sie einen Shuttle-Service vom Flughafen zur Location benötigen, geben Sie hier bitte Ihre Anreisedaten an.</p>`)
             }
 
             if (locale === "en-us") {
+                $(field1En).show();
+                $(field2En).show();
+                $(field3En).show();
+                $(field4En).show();
                 $(checkboxGroup).after(`<p class="service" style="margin-top: 20px;">If you need a shuttle service from the airport to the location, please enter your arrival information here.</p>`)
             }
         }
