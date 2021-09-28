@@ -8,14 +8,14 @@ var product1,
   
 
 var workshopblockObj = {
-    workshopblock1 : ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 | 9.30 am | Fit for the future - Developing the right strategy for your success in timber construction."," 17.11.21 | 1.30 pm | Digital and sustainable - Ways out of the industry logic."],
-    workshopblock2 : ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 9.30 am | From modular construction to module."," 18.11.21 | 1.30 pm | What opportunities does multi-storey construction offer?"],    
+    workshopblock1 : ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 | 9.30 am | Fit for the future - Developing the right strategy for your success in timber construction.","17.11.21 | 1.30 pm | Digital and sustainable - Ways out of the industry logic."],
+    workshopblock2 : ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 9.30 am | From modular construction to module.","18.11.21 | 1.30 pm | What opportunities does multi-storey construction offer?"],    
 	  workshopblock3 : ["Participation | Friday, 19 November 2021","Planned start of visit | 19 November 2021","Planned end of visit | 19 November 2021","19.11.21 |9.30 am | From bream production to prefabricated elements - How do i position myself for the future?"],
 
 };
 
-   var workshopblock1 = ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 | 9.30 am | Fit for the future - Developing the right strategy for your success in timber construction."," 17.11.21 | 1.30 pm | Digital and sustainable - Ways out of the industry logic."];
-   var workshopblock2 = ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 9.30 am | From modular construction to module."," 18.11.21 | 1.30 pm | What opportunities does multi-storey construction offer?"];
+   var workshopblock1 = ["Participation | Wednesday, 17 November 2021","Planned start of visit | 17 November 2021","Planned end of visit | 17 November 2021","17.11.21 | 9.30 am | Fit for the future - Developing the right strategy for your success in timber construction.","17.11.21 | 1.30 pm | Digital and sustainable - Ways out of the industry logic."];
+   var workshopblock2 = ["Participation | Thursday, 18 November 2021","Planned start of visit | 18 November 2021","Planned end of visit | 18 November 2021","18.11.21 | 9.30 am | From modular construction to module.","18.11.21 | 1.30 pm | What opportunities does multi-storey construction offer?"];
 	 var workshopblock3 = ["Participation | Friday, 19 November 2021","Planned start of visit | 19 November 2021","Planned end of visit | 19 November 2021","19.11.21 |9.30 am | From bream production to prefabricated elements - How do i position myself for the future?"];
 
 
