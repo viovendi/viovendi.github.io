@@ -7,14 +7,14 @@ var product1,
  
 
 var workshopblockObj = {
-    workshopblock1 : ["Teilnahme | Mittwoch, 17. November 2021","Geplanter Besuchsbeginn | 17. November 2021","Geplantes Besuchende | 17. November 2021","17.11.21 | 09:30 Uhr | Fit für die Zukunft - Die richtige Strategie für Ihren Erfolg im Holzbau entwickeln."," 17.11.21 | 13:30 Uhr | Digital und nachhaltig - Wege aus der Branchenlogik."],
-    workshopblock2 : ["Teilnahme | Donnerstag, 18. November 2021","Geplanter Besuchsbeginn | 18. November 2021","Geplantes Besuchsende | 18. November 2021","18.11.21 | 09:30 Uhr | Vom modularen Bauen zum Modul."," 18.11.21 | 13:30 Uhr | Welche Chancen bietet der Mehrgeschossbau?"], 
+    workshopblock1 : ["Teilnahme | Mittwoch, 17. November 2021","Geplanter Besuchsbeginn | 17. November 2021","Geplantes Besuchende | 17. November 2021","17.11.21 | 09:30 Uhr | Fit für die Zukunft - Die richtige Strategie für Ihren Erfolg im Holzbau entwickeln.","17.11.21 | 13:30 Uhr | Digital und nachhaltig - Wege aus der Branchenlogik."],
+    workshopblock2 : ["Teilnahme | Donnerstag, 18. November 2021","Geplanter Besuchsbeginn | 18. November 2021","Geplantes Besuchsende | 18. November 2021","18.11.21 | 09:30 Uhr | Vom modularen Bauen zum Modul.","18.11.21 | 13:30 Uhr | Welche Chancen bietet der Mehrgeschossbau?"], 
 	  workshopblock3 : ["Teilnahme | Freitag, 19. November 2021","Geplanter Besuchsbeginn | 19. November 2021","Geplantes Besuchsende | 19. November 2021","19.11.21 | 09:30 Uhr | Vom Lohnabbund zum Elementefertiger - Wie stelle ich mich für die Zukunft auf?"],
 
 };
 
-   var workshopblock1 = ["Teilnahme | Mittwoch, 17. November 2021","Geplanter Besuchsbeginn | 17. November 2021","Geplantes Besuchende | 17. November 2021","17.11.21 | 09:30 Uhr | Fit für die Zukunft - Die richtige Strategie für Ihren Erfolg im Holzbau entwickeln."," 17.11.21 | 13:30 Uhr | Digital und nachhaltig - Wege aus der Branchenlogik."];
-   var workshopblock2 = ["Teilnahme | Donnerstag, 18. November 2021","Geplanter Besuchsbeginn | 18. November 2021","Geplantes Besuchsende | 18. November 2021","18.11.21 | 09:30 Uhr | Vom modularen Bauen zum Modul."," 18.11.21 | 13:30 Uhr | Welche Chancen bietet der Mehrgeschossbau?"];
+   var workshopblock1 = ["Teilnahme | Mittwoch, 17. November 2021","Geplanter Besuchsbeginn | 17. November 2021","Geplantes Besuchende | 17. November 2021","17.11.21 | 09:30 Uhr | Fit für die Zukunft - Die richtige Strategie für Ihren Erfolg im Holzbau entwickeln.","17.11.21 | 13:30 Uhr | Digital und nachhaltig - Wege aus der Branchenlogik."];
+   var workshopblock2 = ["Teilnahme | Donnerstag, 18. November 2021","Geplanter Besuchsbeginn | 18. November 2021","Geplantes Besuchsende | 18. November 2021","18.11.21 | 09:30 Uhr | Vom modularen Bauen zum Modul.","18.11.21 | 13:30 Uhr | Welche Chancen bietet der Mehrgeschossbau?"];
 	var workshopblock3 = ["Teilnahme | Freitag, 19. November 2021","Geplanter Besuchsbeginn | 19. November 2021","Geplantes Besuchsende | 19. November 2021","19.11.21 | 09:30 Uhr | Vom Lohnabbund zum Elementefertiger - Wie stelle ich mich für die Zukunft auf?"];
 
  
@@ -77,7 +77,7 @@ function main(wrapper){
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2').show();
     $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3').show();
-    //$('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4').show();
+    $('.customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-10').show();
 
     product1 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Teilnahme | Mittwoch, 17. November 2021');
     $(product1).before('<p id="drop-down-header" style="color:#343a3f">Bitte unterstützen Sie uns bei der Organisation und teilen uns für den Tag Ihres Besuchs Ihre geplante Ankunfts- und Abreisezeit mit. Vielen Dank!</p><br/>');
