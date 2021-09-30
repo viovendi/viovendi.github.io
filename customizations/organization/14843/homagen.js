@@ -23,7 +23,7 @@ workshopblock4 : ["Participation | Thursday, 28 October 2021","Planned start of 
 workshopblock5 : ["Participation | Friday, 29 October 2021","Planned start of visit | 29 October 2021","Planned end of visit | 29 October 2021","29.10.21 |10 am - 11 am | Software materialManager Advanced Workshop live"],
 workshopblock6 : ["Participation | Tuesday, 02 November 2021","Planned start of visit | 02 November 2021","Planned end of visit | 02 November 2021","02.11.21 |10 am - 11 am | Entry into semi-automatic cutting – flexibility and performance (B-130/B-200 incl. PC Classic)"],
 workshopblock7 : ["Participation | Wednesday, 03 November 2021","Planned start of visit | 03 November 2021","Planned end of visit | 03 November 2021","03.11.21 | 2 pm - 3 pm | Safe cutting quality in automatic production – SAWTEQ B-300 flexTec live","03.11.21 | 5 pm - 7 pm | Get together"],
-workshopblock9 : ["Participation | Friday, 05 November 2021","Planned start of visit | 05 November 2021","Planned end of visit | 05 November 2021"],
+workshopblock9 : ["Participation | Friday, 05 November 2021","Planned start of visit | 05 November 2021","Planned end of visit | 05 November 2021","05.11.21 |11 am - 12 pm | Entry into semi-automatic cutting – flexibility and performance (B-130/B-200 incl. PC Classic)"],
 workshopblock8 : ["Participation | Thursday, 04 November 2021","Planned start of visit | 04 November 2021","Planned end of visit | 04 November 2021","04.11.21 |1 pm - 2 pm | New performance level in fully automatic batch size 1 production","04.11.21 | 5 pm - 7 pm | Get together"],
 
 
@@ -35,7 +35,7 @@ var workshopblock4 = ["Participation | Thursday, 28 October 2021","Planned start
 var workshopblock5 = ["Participation | Friday, 29 October 2021","Planned start of visit | 29 October 2021","Planned end of visit | 29 October 2021","29.10.21 |10 am - 11 am | Software materialManager Advanced Workshop live"];
 var workshopblock6 = ["Participation | Tuesday, 02 November 2021","Planned start of visit | 02 November 2021","Planned end of visit | 02 November 2021","02.11.21 |10 am - 11 am | Entry into semi-automatic cutting – flexibility and performance (B-130/B-200 incl. PC Classic)"];
 var workshopblock7 = ["Participation | Wednesday, 03 November 2021","Planned start of visit | 03 November 2021","Planned end of visit | 03 November 2021","03.11.21 | 2 pm - 3 pm | Safe cutting quality in automatic production – SAWTEQ B-300 flexTec live","03.11.21 | 5 pm - 7 pm | Get together"];
-var workshopblock9 = ["Participation | Friday, 05 November 2021","Planned start of visit | 05 November 2021","Planned end of visit | 05 November 2021"];
+var workshopblock9 = ["Participation | Friday, 05 November 2021","Planned start of visit | 05 November 2021","Planned end of visit | 05 November 2021","05.11.21 |11 am - 12 pm | Entry into semi-automatic cutting – flexibility and performance (B-130/B-200 incl. PC Classic)"];
 var workshopblock8 = ["Participation | Thursday, 04 November 2021","Planned start of visit | 04 November 2021","Planned end of visit | 04 November 2021","04.11.21 |1 pm - 2 pm | New performance level in fully automatic batch size 1 production","04.11.21 | 5 pm - 7 pm | Get together"];
 
 
