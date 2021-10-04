@@ -199,7 +199,7 @@ function responseMessage(status){
 
   if(status === 'success'){
     heading = 'Buchungsbestätigung';
-    message = 'Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.';
+    message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt. Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
     message2 = '';
     color = 'black';
   }else if(status === 'free-ticket'){
@@ -207,7 +207,7 @@ function responseMessage(status){
     if (pathname.indexOf('71481') >=1){
       message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt. Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
     }else{
-      message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt.';
+      message = '';
     }
   
   //  heading = 'Buchungsbestätigung';
