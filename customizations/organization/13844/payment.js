@@ -199,22 +199,20 @@ function responseMessage(status){
 
   if(status === 'success'){
     heading = 'Buchungsbestätigung';
-    message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt. Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
+    message = 'Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.';
     message2 = '';
     color = 'black';
   }else if(status === 'free-ticket'){
     var pathname = window.location.pathname;
     if (pathname.indexOf('71481') >=1){
-      message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt. Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
+      message = 'Vielen Dank für Ihre Anmeldung! Sie erhalten in Kürze Ihre Anmeldebestätigung per E-Mail.';
     }else{
-      message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt. Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';';
+      message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung wird Ihnen in Kürze per E-Mail zugestellt.';
     }
   
-   // heading = 'Buchungsbestätigung';
-    heading = '';
-   // message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung mit dem Link zum Livestream wird Ihnen in Kürze per E-Mail zugestellt.';
-   // message2 = 'Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
-    message2 = '';
+    heading = 'Buchungsbestätigung';
+//message = 'Herzlichen Dank für Ihre Anmeldung. Die Anmeldebestätigung mit dem Link zum Livestream wird Ihnen in Kürze per E-Mail zugestellt.';
+    message2 = 'Sollten Sie die Anmeldebestätigung nicht erhalten, kontrollieren Sie bitte Ihren Spam Ordner und prüfen Sie, ob die Absenderadresse @doo.net oder @sz-erleben.de von Ihnen oder Ihrer Firewall geblockt wird oder wenden Sie sich gerne an uns unter veranstaltungen@sz-erleben.de.';
     color = 'black';
   }else{
     heading = 'Hoppla! Da ist was schiefgelaufen. Bitte versuchen Sie es später erneut.';
