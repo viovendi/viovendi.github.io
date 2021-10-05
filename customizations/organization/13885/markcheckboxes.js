@@ -11,8 +11,10 @@ function markAsChecked(name) {
 				//get parent element and move to vv-checkbox to click it
 				var parentElement = $(this).parent();
 				console.log(parentElement);
+				/*
 				$(parentElement + " > div > div > vv-checkbox").trigger('click');
 				console.log("clicked");
+				*/
 			}
 		});
 	}
