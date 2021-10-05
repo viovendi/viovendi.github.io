@@ -18,7 +18,7 @@ function markAsChecked(name) {
 	}
 
 function hideAndMoveCheckbox() {
-	$('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
+	// $('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
 	$('.customization2_booking-terms_text').css("position", "relative");
 	$('.customization2_booking-terms_text').css("left", "24px");
 	console.log('hided')
