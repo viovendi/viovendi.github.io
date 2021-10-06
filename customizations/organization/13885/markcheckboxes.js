@@ -25,5 +25,10 @@ function hideAndMoveCheckbox() {
 	$('.customization2_booking-terms_text').css("left", "24px");
 	console.log('hided')
 }
-markAsChecked('customization2_attendee');
-hideAndMoveCheckbox();
+// markAsChecked('customization2_attendee');
+// hideAndMoveCheckbox();
+
+if ($('.customization2_booking-terms').length > 0 ){
+	$('.customization2_booking-terms .customization2_booking-terms_checkbox').trigger('click');
+	$('.customization2_booking-terms').hide();
+}
