@@ -6,10 +6,6 @@ function checkAndHidePrivacy(){
     $('.customization2_booking-terms .vv-checkbox').on('click', function(e){
       e.preventDefault();
     });
-    
-    
-    
-    // $('.customization2_booking-terms').hide();
   }
 }
 checkAndHidePrivacy();
