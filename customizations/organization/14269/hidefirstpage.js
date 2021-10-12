@@ -88,9 +88,23 @@ forstReplaceText();
     });  
   }
   
-  hideEventInfo('Marktkunden');
-  hideEventInfo('Zielgruppe');
-  hideEventInfo('Datum');
+
+function stop_checking_page() {
+  cancelAnimationFrame(id_page);
+}
+
+
+function checking_page() {
+  id_page = requestAnimationFrame(checking_page2);
+  if($('.event-info__details').length > 0){
+    hideEventInfo('Marktkunden');
+    hideEventInfo('Zielgruppe');
+    hideEventInfo('Datum');
+    stop_checking_page();
+  }
+}
+checking_page();
+
 
 
 
