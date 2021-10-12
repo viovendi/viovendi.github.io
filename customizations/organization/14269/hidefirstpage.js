@@ -95,11 +95,16 @@ function stop_checking_page() {
 
 
 function checking_page() {
+ console.log('checking_page');
   id_page = requestAnimationFrame(checking_page);
   if($('.event-info__details').length > 0){
+    
+    console.log('element found!');
+   
     hideEventInfo('Marktkunden');
     hideEventInfo('Zielgruppe');
     hideEventInfo('Datum');
+   
     stop_checking_page();
   }
 }
