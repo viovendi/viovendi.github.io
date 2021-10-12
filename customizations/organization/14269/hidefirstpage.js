@@ -95,7 +95,7 @@ function stop_checking_page() {
 
 
 function checking_page() {
-  id_page = requestAnimationFrame(checking_page2);
+  id_page = requestAnimationFrame(checking_page);
   if($('.event-info__details').length > 0){
     hideEventInfo('Marktkunden');
     hideEventInfo('Zielgruppe');
