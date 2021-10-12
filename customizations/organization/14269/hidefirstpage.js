@@ -1,4 +1,4 @@
-console.log('14269 hidefirstpage.js - git first page')
+console.log('14269 hidefirstpage.js - git first page.')
 //rearange search-button INFO, overlaps on smartphone view
 //$('.d-flex.align-items-center.justify-content-end').css('margin-top', '-57px')
 
@@ -71,5 +71,33 @@ $('.vv-pagination__item').on('click', function(){
 
 
 forstReplaceText();
+
+
+/*
+  document.querySelector(".event-info__details > div:nth-child(3)").style.display = "none";
+  document.querySelector(".event-info__details > div:nth-child(4)").style.display = "none";
+  document.querySelector(".event-info__details > div:nth-child(5)").style.display = "none";
+*/
+  document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(1) > div.m-box--small").style.marginTop = "20px";
+  
+  // hide the details by name
+  
+  function hideEventInfo(name){
+    console.log('hideEventInfo');
+    console.log(name);
+    $('.event-info__details > .row').each(function(i, element) {
+      console.log($(this));
+      console.log($(this).find('.event-info__details__col-name').text());
+      if($(this).find('.event-info__details__col-name').text().indexOf(name) >= 0){
+        console.log('hide it');
+        $(this).addClass('hidden');
+      }
+    });  
+  }
+  
+  hideEventInfo('Marktkunden');
+  hideEventInfo('Zielgruppe');
+  hideEventInfo('Datum');
+
 
 
