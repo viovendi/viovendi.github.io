@@ -72,13 +72,6 @@ $('.vv-pagination__item').on('click', function(){
 
 forstReplaceText();
 
-
-/*
-  document.querySelector(".event-info__details > div:nth-child(3)").style.display = "none";
-  document.querySelector(".event-info__details > div:nth-child(4)").style.display = "none";
-  document.querySelector(".event-info__details > div:nth-child(5)").style.display = "none";
-*/
-  document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(1) > div.m-box--small").style.marginTop = "20px";
   
   // hide the details by name
   
