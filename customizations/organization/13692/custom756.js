@@ -141,6 +141,7 @@ console.log("git custom756");
       var payment_method = localStorage.getItem('payment_method');
       
       var free_order = localStorage.getItem('free_order');
+      console.log(free_order);
       if(free_order){
         console.log('free order');
         responseMessage('success');
