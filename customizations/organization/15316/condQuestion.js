@@ -34,7 +34,7 @@ function hideAll(){
 hideAll();
  console.log("noteInserted");
      
-     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Mit welchem Typ PKW sind Sie gefahren?');
+     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Mit welchem Verkehrsmittel sind sie heute angereist?');
      
      hideAll();
      
@@ -65,7 +65,7 @@ var insertionListener = function(event) {
    if (event.animationName === "nodeInserted") {
       console.log("noteInserted");
      
-     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Mit welchem Typ PKW sind Sie gefahren?');
+     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Mit welchem Verkehrsmittel sind sie heute angereist?');
      
      hideAll();
      
