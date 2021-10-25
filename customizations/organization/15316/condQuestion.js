@@ -27,7 +27,7 @@ function showQuestion(tag, name) {
 
 function hideAll(){
 //First hide all questions:
-     hideQuestion(".customization2_attendee_further-data_custom-question", "Mit welchem Typ PKW sind Sie gefahren?");
+     hideQuestion(".customization2_attendee_further-data_custom-question", "Mit welchem Typ PKW sind Sie gefahren? (optional)");
     }
 
 
