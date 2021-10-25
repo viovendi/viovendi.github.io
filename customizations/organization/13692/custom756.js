@@ -141,27 +141,19 @@ console.log("git custom756");
       var payment_method = localStorage.getItem('payment_method');
       
       var free_order = localStorage.getItem('free_order');
-      console.log(free_order);
       if(free_order && free_order == true){
-        console.log('free order');
         responseMessage('success');
       }else{
-	console.log('not free order');
-        console.log(invoice_payment_method_arr_options.indexOf(payment_method));
-        console.log(hub_payment_method_arr_options.indexOf(payment_method));
 	      
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-          console.log('invoice_payment_method');
           rebuildPageInvoiceConfirm();
         }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
-	  console.log('hub_payment_method');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
       }
       // if event w/o customization (payment system)
       if(!payment_method || payment_method ==''){
-        console.log('NO payment_method');
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
         $('.ew-confirmation__text-paragraph').css('display','block');
         $('.customization2_payment-description_organizer-bank-transfer').css('display','block');
@@ -265,15 +257,9 @@ console.log("git custom756");
   
   
   function sendRequest(object, oid, free_order){
-    console.log('sendRequest');
-    console.log(object);
-    console.log(oid);
-    console.log(free_order);
-    console.log(typeof free_order);
 	  
     isFuncUsed = true;
     if(!free_order || free_order === 'false'){
-    console.log('!free_order');
     $.ajax({
       url: domain_url+'/v1/integrations/swmh/payment/checkout/'+oid+'',
       type: 'post',
@@ -316,7 +302,6 @@ console.log("git custom756");
       }
     });
     }else{
-      console.log('--- free_order ---');
       loaderOn('off');
       responseMessage('success');
     }
