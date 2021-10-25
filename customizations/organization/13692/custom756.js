@@ -142,7 +142,7 @@ console.log("git custom756");
       
       var free_order = localStorage.getItem('free_order');
       console.log(free_order);
-      if(free_order){
+      if(free_order && free_order == true){
         console.log('free order');
         responseMessage('success');
       }else{
