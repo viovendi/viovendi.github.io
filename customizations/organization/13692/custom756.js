@@ -265,8 +265,15 @@ console.log("git custom756");
   
   
   function sendRequest(object, oid, free_order){
+    console.log('sendRequest');
+    console.log(object);
+    console.log(oid);
+    console.log(free_order);
+	  
+	  
     isFuncUsed = true;
     if(!free_order){
+    console.log('!free_order');
     $.ajax({
       url: domain_url+'/v1/integrations/swmh/payment/checkout/'+oid+'',
       type: 'post',
@@ -309,6 +316,7 @@ console.log("git custom756");
       }
     });
     }else{
+      console.log('--- free_order ---');
       loaderOn('off');
       responseMessage('success');
     }
