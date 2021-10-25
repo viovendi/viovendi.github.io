@@ -269,6 +269,7 @@ console.log("git custom756");
     console.log(object);
     console.log(oid);
     console.log(free_order);
+    console.log(typeof free_order);
 	  
     isFuncUsed = true;
     if(!free_order || free_order == false){
