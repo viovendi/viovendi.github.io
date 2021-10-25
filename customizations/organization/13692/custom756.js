@@ -270,9 +270,8 @@ console.log("git custom756");
     console.log(oid);
     console.log(free_order);
 	  
-	  
     isFuncUsed = true;
-    if(!free_order){
+    if(!free_order || free_order == false){
     console.log('!free_order');
     $.ajax({
       url: domain_url+'/v1/integrations/swmh/payment/checkout/'+oid+'',
