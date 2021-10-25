@@ -146,15 +146,22 @@ console.log("git custom756");
         console.log('free order');
         responseMessage('success');
       }else{
+	console.log('not free order');
+        console.log(invoice_payment_method_arr_options.indexOf(payment_method));
+        console.log(hub_payment_method_arr_options.indexOf(payment_method));
+	      
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+          console.log('invoice_payment_method');
           rebuildPageInvoiceConfirm();
         }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
+	  console.log('hub_payment_method');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
       }
       // if event w/o customization (payment system)
-      if(!payment_method || payment_method ==''){  
+      if(!payment_method || payment_method ==''){
+        console.log('NO payment_method');
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
         $('.ew-confirmation__text-paragraph').css('display','block');
         $('.customization2_payment-description_organizer-bank-transfer').css('display','block');
