@@ -6,8 +6,8 @@ const confirmed = _.find(dataLayer, { event: 'RegistrationConfirmed'});
 console.log(confirmed)
 const { purchase } = confirmed.ecommerce
 const doo = {
-    eventId: confirmed.eventId,
-    organizationId: confirmed.organizationId,
+    eventId: confirmed.doo.eventId,
+    organizationId: confirmed.doo.organizationId,
     bookingId: purchase.actionField.id,
     tickets: _.filter(purchase.products , { category: 'Ticket'})
 }
