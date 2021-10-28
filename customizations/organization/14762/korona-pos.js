@@ -2,5 +2,14 @@
 
 
 console.log("Tag Korona POS 2.0")
-const data = _.find(dataLayer, { event: 'RegistrationConfirmed'});
+const confirmed = _.find(dataLayer, { event: 'RegistrationConfirmed'});
 console.log(data)
+const { purchase } = confirmed.ecommerce
+const doo = {
+    eventId: confirmed.eventId,
+    organizationId: confirmed.organizationId,
+    bookingId: purchase.actionField.id,
+    tickets: _.filter(purchase.products , { category: 'Ticket'})
+}
+
+console.log(doo)
