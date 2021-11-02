@@ -1,8 +1,7 @@
 console.log('GTM github!');
 
 
-const headerText = '<h3>Einwilligung in die Veröffentlichung von personenbezogenen Daten für Veranstaltungen und  Arbeitsgruppen bzw. anders bezeichneten Gremien bzw. Teilveranstaltungen des Bundesamtes für die Sicherheit der Nuklearen Entsorgung im Rahmen der gesetzlichen Öffentlichkeitsbeteiligung per Livestream und Zoom (Vers. 005, 09/2021)
-</h3>';
+const headerText = '<h3>Einwilligung in die Veröffentlichung von personenbezogenen Daten für Veranstaltungen und  Arbeitsgruppen bzw. anders bezeichneten Gremien bzw. Teilveranstaltungen des Bundesamtes für die Sicherheit der Nuklearen Entsorgung im Rahmen der gesetzlichen Öffentlichkeitsbeteiligung per Livestream und Zoom (Vers. 005, 09/2021)</h3>';
 
 const modalText1 = 'Die Teilnahme an Veranstaltungen, Arbeitsgruppen oder anders bezeichneten Formaten, die das Bundesamt für die Sicherheit der nuklearen Entsorgung (BASE), Wegelystraße 8, 10623 Berlin, im Rahmen der gesetzlichen Öffentlichkeitsbeteiligung gem. § 5 StandAG veranstaltet, erfolgt mittels Livestream und unter Einsatz des Videokonferenztools Zoom der Zoom Video Communication Inc., 55 Almaden Blvd., 6th Floor, San José, 95113 CA. Anbieter der Zoom-Instanz und Auftragsverarbeiter des BASE ist die Connect4Video GmbH, Nibelungenstraße 28, 65428 Rüs-selsheim am Main, die Dienste für Videokommunikation anbietet und bei der Bundesnetzagen-tur als Betreiber öffentlich zugänglicher Telekommunikationsdienste gemeldet ist. Diese Ausge-staltung bietet Teilnehmern die Möglichkeit, sich entsprechend des gesetzlichen Auftrags des BASE nach § 5 StandAG aktiv an Veranstaltungen im Rahmen der Öffentlichkeitsbeteiligung zu beteiligen. Bei der aktiven Teilnahme am Livestream unter Einsatz des Videokonferenztools Zoom werden die nachfolgenden (besonderen) personenbezogenen Daten verarbeitet:';
 
