@@ -58,7 +58,7 @@ const popUp2modalText3 = 'Das Bundesamt für die Sicherheit der nuklearen Entsor
   function addClass(){
     $('.customization2_attendee .vv-checkbox__label-text').each(function(){
       var textLabel = $(this).text().trim();
-      var textTofind = 'Einwilligung zur Durchführung der Fachkonferenz Teilgebiete';
+      var textTofind = 'Einwilligung zur Veröffentlichung personenbezogener Daten';
 
       if(textLabel == textTofind){
         $(this).closest('label').addClass('popup');
