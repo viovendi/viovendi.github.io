@@ -112,7 +112,7 @@ function main(wrapper){
     // Workshopblock2
     product2 = $$('.'+wrapper+' .customization2_attendee_further-data_product').findField('Participation | Thursday, 18 November 2021');
     console.log(product2);
-    $(product2).before('<span class= "workshops" data-block="workshopblock2" style="color:#001941">Thursday, 18 November 2021 ▼</span>');
+    $(product2).before('<span class= "workshops" data-block="workshopblock2" style="color:#001941">Thursday, 18 November 2021 ▼ (BOOKED UP)</span>');
 
     //Mittwoch
     product3 = $$('.'+wrapper+' .customization2_attendee_further-data .customization2_attendee_further-data_product').findField('Participation | Friday, 19 November 2021');
