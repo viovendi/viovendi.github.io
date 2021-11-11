@@ -1,1 +1,1 @@
-console.log("github check_duplicates")
+console.log("clicked -> github check_duplicates.js")
