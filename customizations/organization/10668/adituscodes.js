@@ -3,7 +3,9 @@ console.log('Start working, Google Tag Manager')
   var pathname = window.location.pathname;
   var eventId = pathname.split('/')[3];
 
-  console.log(categoryName)
+  console.log("ticketcategory name: "+categoryName);
+  console.log("pathname: "+pathname);
+  console.log("event ID: "+ eventId);
 
   function getCode(categoryName, eventId){
     $.ajax({
