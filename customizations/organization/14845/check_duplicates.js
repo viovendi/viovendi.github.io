@@ -1,3 +1,6 @@
 console.log("-clicked -> github check_duplicates.js")
-var mail = $("input[type=email][name=email]").val();
-console.log("Email: "+mail);
+mails=[]
+$("input[type=email][name=email]").each(function() {
+    mails.push($(this).val());
+});
+console.log(mails);
