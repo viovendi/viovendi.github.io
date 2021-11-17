@@ -16,6 +16,9 @@ console.log(mails);
 //let fehler="";
 for(let i=0;i<mails.length;i++){
     for(let k=0;k<mails.length;k++){
-        if(mails[k]==mails[i]&&k!=i){console.log("Fehler: Mail:"+mails[k]+" kommt mehrfach vor!");}
+        if(mails[k]==mails[i]&&k!=i){
+            console.log("Fehler: Mail:"+mails[k]+" kommt mehrfach vor!");
+            $(".customization-button-next").prop("disabled",true);
+                                    }
  }
 }
