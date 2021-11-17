@@ -17,7 +17,7 @@ function getAllMails(){
    });
 console.log(mails);
 } 
-
+$(".customization2_attendee_contact-data_copy-link").on()
 getAllMails();
 
 attendeeDiv.find("input[type=email][name=email]").each(function() {
