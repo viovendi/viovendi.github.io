@@ -16,7 +16,7 @@ function getAllMails(){
     mails.push(mail);
    });
 console.log(mails);
-}
+} 
 
 getAllMails();
 
