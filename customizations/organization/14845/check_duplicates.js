@@ -21,7 +21,7 @@ console.log(mails);
 getAllMails();
 
 attendeeDiv.find("input[type=email][name=email]").each(function() {
-  $( "<p #errormail style='color:red;display:none;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(this);
+  $( "<p #errormail style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(this);
     $(this).on('input', function() {
         getAllMails();
         console.log($(this).val());
