@@ -51,8 +51,8 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
 }
 
 checkMails();
-$(".customization2_attendee_contact-data_copy-link").click(){
+$(".customization2_attendee_contact-data_copy-link").click(function() {
 checkMails();
-}
+});
 
 
