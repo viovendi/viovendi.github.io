@@ -18,14 +18,18 @@ console.log(mails);
 attendeeDiv.find("input[type=email][name=email]").each(function() {
     $(this).on('input', function() { 
         console.log($(this).val());
-      //for(let i=0;i<mails.length;i++){
-        //  if(mails[i]==$(this).val()){
-         //   console.log("Fehler:  kommt mehrfach vor!");
-            //$(".customization-button-next").prop("disabled",true);
-            //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
-        //Dann setze ich das this auf color rot und füge danach eine fehlermeldung ein
-        //  }
-     // } 
+        count =0;
+      for(let i=0;i<mails.length;i++){
+          if(mails[i]==$(this).val()){
+              count ++;
+          }
+      }
+        if(count>1){
+        console.log("Fehler:  kommt mehrfach vor!");
+              $(this).css({ 'color': 'red', 'background-color': 'pink' });
+            $(".customization-button-next").prop("disabled",true);
+            $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
+        }
    });
 });
 
