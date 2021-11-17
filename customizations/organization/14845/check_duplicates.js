@@ -1,8 +1,9 @@
 console.log("--clicked -> github check_duplicates.js")
 attendeeDiv= $(".customization2_attendees");
-mails=[]
+mails=[];
 
 function getAllMails(){
+  mails=[];
   attendeeDiv.find("input[type=email][name=email]").each(function() {
     mails.push($(this).val());
   });
@@ -32,6 +33,10 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
         if(count>1){
         console.log("Fehler:  kommt mehrfach vor!");
               $(this).css({ 'color': 'red', 'background-color': 'pink' });
+            $(".customization-button-next").prop("disabled",true);
+            $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
+        }else {
+        $(this).css({ 'color': 'black', 'background-color': 'white' });
             $(".customization-button-next").prop("disabled",true);
             $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
         }
