@@ -17,9 +17,10 @@ function getAllMails(){
    });
 console.log(mails);
 } 
-$(".customization2_attendee_contact-data_copy-link").on()
+
 getAllMails();
 
+function checkMails(){
 attendeeDiv.find("input[type=email][name=email]").each(function() {
   $( "<p #errormail style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(this);
     $(this).on('input', function() {
@@ -46,5 +47,11 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
         }
    });
 });
+}
+
+checkMails();
+$(".customization2_attendee_contact-data_copy-link").click(){
+checkMails();
+}
 
 
