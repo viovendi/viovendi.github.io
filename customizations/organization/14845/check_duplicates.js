@@ -10,7 +10,7 @@ $(".customization2_attendee_contact-data_email_value").each(function() {
     mail.replace(/\s/g,'');
     mail.replace(/\n/g,'');
     console.log(mail)
-    mails.push($(this).text());
+    mails.push(mail);
 });
 console.log(mails);
 //let fehler="";
