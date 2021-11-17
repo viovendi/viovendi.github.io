@@ -21,6 +21,7 @@ console.log(mails);
 getAllMails();
 
 attendeeDiv.find("input[type=email][name=email]").each(function() {
+  $( "<p #errormail style='color:red;display:none;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(this);
     $(this).on('input', function() {
         getAllMails();
         console.log($(this).val());
@@ -32,13 +33,14 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
       }
         if(count>1){
         console.log("Fehler:  kommt mehrfach vor!");
-              $(this).css({ 'color': 'red', 'background-color': 'pink' });
-              $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(this).
+              //$(this).css({ 'color': 'red', 'background-color': 'pink' });
+              $("#errormail").show();
             $(".customization-button-next").prop("disabled",true);
-            $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
+            //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
         }else {
-        $(this).css({ 'color': 'black', 'background-color': 'white' });
+          $("#errormail").hide();
+        //$(this).css({ 'color': 'black', 'background-color': 'white' });
             $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
         }
