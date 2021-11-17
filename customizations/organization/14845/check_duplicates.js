@@ -7,8 +7,8 @@ attendeDiv.find("input[type=email][name=email]").each(function() {
 attendeDiv.find(".customization2_attendee_contact-data_email_value").each(function() {
     console.log("exists");
     mail = $(this).text();
-    mail.replace(/\s/g,'');
-    mail.replace(/\n/g,'');
+    mail = mail.replace(/(\r\n|\n|\r)/gm, "");
+    mail=mail.replace(/\s/g,'');
     console.log(mail)
     mails.push(mail);
 });
