@@ -1,10 +1,10 @@
 console.log("-clicked -> github check_duplicates.js")
 attendeeDiv= $(".customization2_attendees");
 mails=[]
-attendeDiv.find("input[type=email][name=email]").each(function() {
+attendeeDiv.find("input[type=email][name=email]").each(function() {
     mails.push($(this).val());
 });
-attendeDiv.find(".customization2_attendee_contact-data_email_value").each(function() {
+attendeeDiv.find(".customization2_attendee_contact-data_email_value").each(function() {
     console.log("exists");
     mail = $(this).text();
     mail = mail.replace(/(\r\n|\n|\r)/gm, "");
