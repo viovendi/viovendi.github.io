@@ -19,6 +19,7 @@ for(let i=0;i<mails.length;i++){
         if(mails[k]==mails[i]&&k!=i){
             console.log("Fehler: Mail:"+mails[k]+" kommt mehrfach vor!");
             $(".customization-button-next").prop("disabled",true);
+            $( "<p>Fehler!</p>" ).insertAfter(attendeeDiv);
                                     }
  }
 }
