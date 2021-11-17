@@ -34,12 +34,12 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
         if(count>1){
         console.log("Fehler:  kommt mehrfach vor!");
               //$(this).css({ 'color': 'red', 'background-color': 'pink' });
-              $("#errormail").show();
+              $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").show();
             $(".customization-button-next").prop("disabled",true);
             //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
         }else {
-          $("#errormail").hide();
+          $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").hide();
         //$(this).css({ 'color': 'black', 'background-color': 'white' });
             $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
