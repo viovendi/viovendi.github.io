@@ -39,7 +39,7 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
             //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
         }else {
-          $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").hide();
+         // $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").hide();
         //$(this).css({ 'color': 'black', 'background-color': 'white' });
             $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
