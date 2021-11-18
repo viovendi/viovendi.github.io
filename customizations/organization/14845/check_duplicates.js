@@ -76,7 +76,7 @@ getAllMails();
 
 checkMails();
 $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
-  checkEmails();
+  checkMails();
 });
 
 
