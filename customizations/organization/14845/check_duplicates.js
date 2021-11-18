@@ -42,7 +42,7 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
           $(".customization-button-next").prop("disabled",true);
         //  $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
-          $(".customization2_attendee_edit-action_save").before("<span class=“error-message”>"+errorMssge+"</span>");
+          $(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
         }else {
           $("div.customization2_attendee_edit-action").find(".error-message").remove();
           console.log("kein Fehler");
