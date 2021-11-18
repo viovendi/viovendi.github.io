@@ -22,8 +22,10 @@ getAllMails();
 
 function checkMails(){
 attendeeDiv.find("input[type=email][name=email]").each(function() {
-  $( "<p #errormail style='color:red;'>Diese E-Mail ist bereits für diese Veranstaltung angemeldet.</p>" ).insertAfter(this).hide();
-    $(this).on('input', function() {
+  if($(this).nextAll('.start:first').attr('id')!="errormail")
+  $( "<p id='errormail' style='color:red;display:none;'>Diese E-Mail ist bereits für diese Veranstaltung angemeldet.</p>" ).insertAfter(this);
+    
+  $(this).on('input', function() {
         getAllMails();
         console.log($(this).val());
         count =0;
@@ -33,15 +35,16 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
           }
       }
         if(count>1){
+          $(this).prop("aria-invalid",true);
         console.log("Fehler:  kommt mehrfach vor!");
-              $(this).nextAll('.start:first').show();
+              $(this).nextAll('.start:first').css("display","inline");
             $(".customization-button-next").prop("disabled",true);
             //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
-          $(this).prop("aria-invalid",true);
+          
         }else {
           console.log("kein Fehler");
-          $(this).nextAll('.start:first').hide();
+          $(this).nextAll('.start:first').css("display","none");
         $(this).prop("aria-invalid",false);
             $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
