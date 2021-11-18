@@ -3,6 +3,10 @@ attendeeDiv= $(".customization2_attendees");
 mails=[];
 errorMssge="Diese E-Mail ist bereits für diese Veranstaltung angemeldet";
 
+/*
+This Method collects all email-addresses that are already entered in the form, 
+eighter still in their textinput field or if it already got saved the method takes the email which is displayed for the attendee 
+*/
 function getAllMails(){
   mails=[];
   attendeeDiv.find("input[type=email][name=email]").each(function() {
@@ -13,14 +17,19 @@ function getAllMails(){
     mail = $(this).text();
     mail = mail.replace(/(\r\n|\n|\r)/gm, "");
     mail=mail.replace(/\s/g,'');
-    //console.log(mail)
     mails.push(mail);
    });
 console.log(mails);
 } 
 
-getAllMails();
-
+/*
+This method goes through each currently active email-input-field and checks whether or not it is already entered 
+for another attendee. If that is the case, an error message gets displayed above the save-button. 
+The same thing will then also be checked each new keystroke of the email-input.
+That save button together with the submit button at the bottom of the page gets disabled.
+I first remove an already existing error message and than add a new one, this way it never gets displayed two times 
+if for some reason the error gets detected 2 times. 
+*/
 function checkMails(){
  attendeeDiv.find("input[type=email][name=email]").each(function() {
  
@@ -33,6 +42,7 @@ function checkMails(){
       if(count>1){
         $(".customization-button-next").prop("disabled",true);
         $(".customization2_attendee_edit-action_save").prop("disabled",true);
+        $("div.customization2_attendee_edit-action").find(".error-message").remove();
         $(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
       }else {
         $("div.customization2_attendee_edit-action").find(".error-message").remove();
@@ -40,7 +50,7 @@ function checkMails(){
         $(".customization2_attendee_edit-action_save").prop("disabled",false);
       }
    
-  $(this).on('input', function() {
+  $(this).on('change paste input', function() {
       getAllMails();
       count =0;
       for(let i=0;i<mails.length;i++){
@@ -51,6 +61,7 @@ function checkMails(){
         if(count>1){
           $(".customization-button-next").prop("disabled",true);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
+          $("div.customization2_attendee_edit-action").find(".error-message").remove();
           $(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
         }else {
           $("div.customization2_attendee_edit-action").find(".error-message").remove();
@@ -61,7 +72,10 @@ function checkMails(){
  });
 }
 
+getAllMails();
+
 checkMails();
+
 
 
 
