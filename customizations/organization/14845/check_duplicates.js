@@ -34,15 +34,14 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
       }
         if(count>1){
         console.log("Fehler:  kommt mehrfach vor!");
-              //$(this).css({ 'color': 'red', 'background-color': 'pink' });
-              $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").show();
+              $(this).nextAll('.start:first').show();
             $(".customization-button-next").prop("disabled",true);
             //$( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
           $(this).prop("aria-invalid",true);
         }else {
           console.log("kein Fehler");
-          $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").hide();
+          $(this).nextAll('.start:first').hide();
         $(this).prop("aria-invalid",false);
             $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
