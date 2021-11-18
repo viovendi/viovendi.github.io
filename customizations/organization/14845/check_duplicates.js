@@ -36,9 +36,9 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
           }
       }
         if(count>1){
-          $(this).prop("aria-invalid",true);
+        //  $(this).prop("aria-invalid",true);
           console.log("Fehler:  kommt mehrfach vor!");
-          $(this).nextAll('.start:first').css("display","inline");
+        //  $(this).nextAll('.start:first').css("display","inline");
           $(".customization-button-next").prop("disabled",true);
         //  $( "<p style='color:red;'>Fehler! Die Mail kommt mehrmals vor</p>" ).insertAfter(attendeeDiv);
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
@@ -46,7 +46,7 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
         }else {
           $("div.customization2_attendee_edit-action").find(".error-message").remove();
           console.log("kein Fehler");
-          $(this).nextAll('.start:first').css("display","none");
+         // $(this).nextAll('.start:first').css("display","none");
         //  $(this).prop("aria-invalid",false);
           $(".customization-button-next").prop("disabled",false);
           $(".customization2_attendee_edit-action_save").prop("disabled",false);
