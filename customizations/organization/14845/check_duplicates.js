@@ -22,7 +22,7 @@ getAllMails();
 
 function checkMails(){
 attendeeDiv.find("input[type=email][name=email]").each(function() {
-  $( "<p #errormail style='color:red;'>Diese E-Mail ist bereits für diese Veranstaltung angemeldet.</p>" ).insertAfter(this);
+  $( "<p #errormail style='color:red;'>Diese E-Mail ist bereits für diese Veranstaltung angemeldet.</p>" ).insertAfter(this).hide();
     $(this).on('input', function() {
         getAllMails();
         console.log($(this).val());
@@ -41,6 +41,7 @@ attendeeDiv.find("input[type=email][name=email]").each(function() {
           $(".customization2_attendee_edit-action_save").prop("disabled",true);
           $(this).prop("aria-invalid",true);
         }else {
+          console.log("kein Fehler");
           $(this).closest('.customization3_collapsible-wrapper_body').find("#errormail").hide();
         $(this).prop("aria-invalid",false);
             $(".customization-button-next").prop("disabled",false);
