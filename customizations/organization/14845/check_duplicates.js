@@ -41,13 +41,13 @@ function checkMails(){
     }
       if(count>1){
         $(".customization-button-next").prop("disabled",true);
-        $(".customization2_attendee_edit-action_save").prop("disabled",true);
-        $("div.customization2_attendee_edit-action").find(".error-message").remove();
-        $(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
+        $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",true);
+        $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
+        $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
       }else {
-        $("div.customization2_attendee_edit-action").find(".error-message").remove();
+        $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
         $(".customization-button-next").prop("disabled",false);
-        $(".customization2_attendee_edit-action_save").prop("disabled",false);
+       $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",false);
       }
    
   $(this).on('change paste input', function() {
@@ -60,13 +60,13 @@ function checkMails(){
       }
         if(count>1){
           $(".customization-button-next").prop("disabled",true);
-          $(".customization2_attendee_edit-action_save").prop("disabled",true);
-          $("div.customization2_attendee_edit-action").find(".error-message").remove();
-          $(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
+          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",true);
+          $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
+          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
         }else {
-          $("div.customization2_attendee_edit-action").find(".error-message").remove();
+          $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
           $(".customization-button-next").prop("disabled",false);
-          $(".customization2_attendee_edit-action_save").prop("disabled",false);
+          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",false);
         }
    });
  });
@@ -77,8 +77,12 @@ getAllMails();
 checkMails();
 $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
   checkMails();
+  $(".customization-button-next").prop("disabled",true);
+          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",true);
+          $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
+          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
+  console.log("clicked on copy-button");
 });
-
 
 
 
