@@ -7,10 +7,14 @@ console.log('Start working, Google Tag Manager')
   console.log("pathname: "+pathname);
   console.log("event ID: "+ eventId);
 
-  function getCode(categoryName, eventId){
+  function getCode(categoryName, eventId, key){
     console.log("getCode");
+    var urlWithKey = 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key;
+    console.log(urlWithKey)
     $.ajax({
-      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=10668_Test-Codes',
+      //TODO create URL with key
+      
+      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
       
      // headers: {
        // 'Accept': '*/*',
@@ -27,25 +31,25 @@ console.log('Start working, Google Tag Manager')
         if(res.aditus_code){
           setTimeout(function(){
             console.log("res.aditus_code :")
-            addCode(res.aditus_code, "Aditus Code")
+            addCode(res.aditus_code, "Aditus Code", key)
           }, 5000);
         } else if(res.payload) {
           console.log("res.payload :")
           console.log(res.payload.customCode)
           setTimeout(function(){
-            addCode(res.payload.customCode, "Aditus Code")
+            addCode(res.payload.customCode, "Aditus Code", key)
           }, 5000);
-          addCode(res.payload.customCode, "Aditus Code")
+          addCode(res.payload.customCode, "Aditus Code", key)
         } else {
           console.log("no response :")
-          addCode("no response", "Aditus Code")
+          addCode("no response", "Aditus Code", key)
         }
       }
     });
   }
 
 
-  function addCode(code, inputName) {
+  function addCode(code, inputName, key) {
 
     var elements = document.querySelectorAll(".customization2_attendee_further-data_custom-question");
 
@@ -64,9 +68,33 @@ console.log('Start working, Google Tag Manager')
         input.dispatchEvent(event)
       }
     }
+    
+    //mark Code as used
+    $.ajax({
+      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/mark-code-as-used',
+      
+      headers: {
+        //'Accept': '*/*',
+        'Content-Type': 'application/json',
+      },
+      type: 'post',
+      data: JSON.stringify({
+        "customCode": code,
+        "key": key,
+      }),
+      //dataType: 'json',
+      success: function (res) {
+        if(res){
+          setTimeout(function(){
+            console.log(res)
+        } else {
+          console.log("no response :")
+        }
+      }
+    });
 
   };
 
-  getCode(categoryName, eventId)
+  getCode(categoryName, eventId, '10668_Test-Codes')
 
 
