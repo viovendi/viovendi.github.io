@@ -11,9 +11,11 @@ function getTicketcategory(){
   console.log("ticketcategory name: "+categoryName);
   switch (categoryName){
     case 'Tagesticket':
-      return '10668_Test-Codes';
-   case 'somethingEsel':
-     return 'Test123--Codes';
+      return '10668_Test-Codes'
+    
+   case 'somethingElse':
+     return 'TODO';
+    
     default:
       return 'error';
   }
