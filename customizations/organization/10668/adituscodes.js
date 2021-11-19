@@ -51,7 +51,6 @@ console.log('Start working, Google Tag Manager')
 
     for (var i = 0; i < elements.length; i++) {
       var label = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_label')[0].textContent.trim();
-      console.log(label);
       if(label.indexOf(inputName) >= 0){
         var input = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_input')[0]
         input.value = code;
