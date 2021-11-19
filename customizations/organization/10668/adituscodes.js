@@ -9,11 +9,10 @@ console.log('Start working, Google Tag Manager')
 
   function getCode(categoryName, eventId, key){
     console.log("getCode");
-    var urlWithKey = 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key;
+    var urlWithKey = 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=' +key;
     console.log(urlWithKey)
     $.ajax({
       //TODO create URL with key
-      
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
       
      // headers: {
