@@ -13,8 +13,8 @@ function getTicketcategory(){
     case 'Tagesticket':
       return '10668_Test-Codes';
     
-   case 'somethingElse':
-     return 'TODO';
+   case 'Eintrittskartengutschein einlösen':
+     return '10668_Test-Codes';
     
     default:
       return 'error';
