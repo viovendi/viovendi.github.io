@@ -31,9 +31,10 @@ console.log('Start working, Google Tag Manager')
           }, 5000);
         } else if(res.payload) {
           console.log("res.payload :")
-          console.log(res.customCode)
+          console.log(res.payload.customCode)
+          console.log(res.payload.customCode)
           setTimeout(function(){
-            addCode(res.customCode, "Aditus Code")
+            addCode(res.payload, "Aditus Code")
           }, 5000);
           addCode(res.payload, "Aditus Code")
         } else {
