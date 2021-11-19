@@ -8,18 +8,21 @@ console.log('Start working, Google Tag Manager')
   console.log("event ID: "+ eventId);
 
   function getCode(categoryName, eventId){
+    console.log("getCode");
     $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=10668_Test-Codes',
-      headers: {
-        'Accept': '*/*',
-        'Content-Type': 'application/json',
-      },
+      
+     // headers: {
+       // 'Accept': '*/*',
+       // 'Content-Type': 'application/json',
+     // },
+           
       type: 'get',
       /*data: JSON.stringify({
         "event_id": eventId,
         "event_category_name": categoryName
       }),*/
-      dataType: 'json',
+      //dataType: 'json',
       success: function (res) {
         if(res.aditus_code){
           setTimeout(function(){
