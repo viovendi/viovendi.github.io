@@ -9,28 +9,32 @@ console.log('Start working, Google Tag Manager')
 
   function getCode(categoryName, eventId){
     $.ajax({
-      url: 'https://cs.doo.net/v1/integrations/aditus/get-code',
+      url: 'https://cs.doo.net/v1/integrations/custom-qr-codes/get-code?key=10668_Test-Codes',
       headers: {
         'Accept': '*/*',
         'Content-Type': 'application/json',
       },
-      type: 'post',
-      data: JSON.stringify({
+      type: 'get',
+      /*data: JSON.stringify({
         "event_id": eventId,
         "event_category_name": categoryName
-      }),
+      }),*/
       dataType: 'json',
       success: function (res) {
         if(res.aditus_code){
           setTimeout(function(){
+            console.log("res.aditus_code :")
             addCode(res.aditus_code, "Aditus Code")
           }, 5000);
         } else if(res.payload) {
+          console.log("res.payload :")
+          console.log(res.payload)
           setTimeout(function(){
             addCode(res.payload, "Aditus Code")
           }, 5000);
           addCode(res.payload, "Aditus Code")
         } else {
+          console.log("no response :")
           addCode("no response", "Aditus Code")
         }
       }
@@ -44,6 +48,7 @@ console.log('Start working, Google Tag Manager')
 
     for (var i = 0; i < elements.length; i++) {
       var label = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_label')[0].textContent.trim();
+      console.log(label);
       if(label.indexOf(inputName) >= 0){
         var input = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_input')[0]
         input.value = code;
