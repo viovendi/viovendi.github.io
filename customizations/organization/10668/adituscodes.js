@@ -9,7 +9,7 @@ console.log('Start working, Google Tag Manager')
 
   function getCode(categoryName, eventId){
     $.ajax({
-      url: 'https://cs.doo.net/v1/integrations/custom-qr-codes/get-code?key=10668_Test-Codes',
+      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=10668_Test-Codes',
       headers: {
         'Accept': '*/*',
         'Content-Type': 'application/json',
