@@ -32,11 +32,10 @@ console.log('Start working, Google Tag Manager')
         } else if(res.payload) {
           console.log("res.payload :")
           console.log(res.payload.customCode)
-          console.log(res.payload.customCode)
           setTimeout(function(){
-            addCode(res.payload, "Aditus Code")
+            addCode(res.payload.customCode, "Aditus Code")
           }, 5000);
-          addCode(res.payload, "Aditus Code")
+          addCode(res.payload.customCode, "Aditus Code")
         } else {
           console.log("no response :")
           addCode("no response", "Aditus Code")
