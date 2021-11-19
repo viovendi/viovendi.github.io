@@ -1,11 +1,21 @@
 console.log('Start working, Google Tag Manager')
-  var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+ // var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
   var pathname = window.location.pathname;
   var eventId = pathname.split('/')[3];
 
-  console.log("ticketcategory name: "+categoryName);
   console.log("pathname: "+pathname);
   console.log("event ID: "+ eventId);
+  
+function getTicketcategory(){
+  var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+  console.log("ticketcategory name: "+categoryName);
+  switch (categoryName){
+    case 'Tagesticket':
+      return '10668_Test-Codes';
+    default:
+      return 'error';
+  }
+}
 
   function getCode(categoryName, eventId, key){
     console.log("getCode");
@@ -97,6 +107,6 @@ console.log('Start working, Google Tag Manager')
 
   };
 
-  getCode(categoryName, eventId, '10668_Test-Codes')
+  getCode(categoryName, eventId, getTicketcategory)
 
 
