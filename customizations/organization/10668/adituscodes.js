@@ -85,7 +85,7 @@ console.log('Start working, Google Tag Manager')
       success: function (res) {
         if(res){
           setTimeout(function(){
-            console.log(res)
+            console.log(res));
         } else {
           console.log("no response :")
         }
