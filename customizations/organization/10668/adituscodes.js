@@ -10,11 +10,17 @@ function getTicketcategory(){
   var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
   console.log("ticketcategory name: "+categoryName);
   switch (categoryName){
+   
+    case 'Eintrittskartengutschein einlösen':
+     return '10668_Test-Codes';
+    case 'TODO':
+     return '10668_Test-Codes';
+    case 'TODO1':
+     return '10668_Test-Codes';
+    case 'TODO2':
+     return '10668_Test-Codes';
     case 'Tagesticket':
       return '10668_Test-Codes';
-    
-   case 'Eintrittskartengutschein einlösen':
-     return '10668_Test-Codes';
     
     default:
       return 'error';
