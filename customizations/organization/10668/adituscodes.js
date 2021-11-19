@@ -83,7 +83,6 @@ function getTicketcategory(){
     //mark Code as used
     $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/mark-code-as-used',
-      
       headers: {
         //'Accept': '*/*',
         'Content-Type': 'application/json',
@@ -106,6 +105,6 @@ function getTicketcategory(){
 
   };
 
-  getCode( eventId, getTicketcategory())
+  getCode(eventId, getTicketcategory())
 
 
