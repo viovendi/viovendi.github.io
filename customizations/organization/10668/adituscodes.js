@@ -93,7 +93,7 @@ function getTicketcategory(){
       //dataType: 'json',
       success: function (res) {
         if(res){
-            console.log("success);         
+            console.log("success");         
         }
         else {
           console.log("no response :")
