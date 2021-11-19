@@ -17,7 +17,7 @@ function getTicketcategory(){
   }
 }
 
-  function getCode(categoryName, eventId, key){
+  function getCode(eventId, key){
     console.log("getCode");
     var urlWithKey = 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=' +key;
     console.log(urlWithKey)
@@ -107,6 +107,6 @@ function getTicketcategory(){
 
   };
 
-  getCode(categoryName, eventId, getTicketcategory)
+  getCode( eventId, getTicketcategory())
 
 
