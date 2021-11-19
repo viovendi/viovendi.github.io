@@ -12,6 +12,8 @@ function getTicketcategory(){
   switch (categoryName){
     case 'Tagesticket':
       return '10668_Test-Codes';
+   case 'somethingEsel':
+     return 'Test123--Codes';
     default:
       return 'error';
   }
@@ -94,10 +96,7 @@ function getTicketcategory(){
       //dataType: 'json',
       success: function (res) {
         if(res){
-          setTimeout(function(){
-            console.log(res);
-          }
-                    )
+            console.log("success);         
         }
         else {
           console.log("no response :")
