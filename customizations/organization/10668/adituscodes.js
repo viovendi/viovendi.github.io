@@ -61,11 +61,13 @@ function getTicketcategory(){
       }),*/
       //dataType: 'json',
       success: function (res) {
+       // -------i think this can be deleted----
         if(res.aditus_code){
           setTimeout(function(){
             console.log("res.aditus_code :")
             addCode(res.aditus_code, "Aditus Code", key)
           }, 5000);
+         // ---------------
         } else if(res.payload) {
           console.log("res.payload :")
           console.log(res.payload.customCode)
@@ -117,10 +119,11 @@ function getTicketcategory(){
       //dataType: 'json',
       success: function (res) {
         if(res){
+         // maybe do something more than console.log...
             console.log("success");         
         }
         else {
-          console.log("no response :")
+          console.log("no response : ")
         }
       }
     });
