@@ -10,17 +10,35 @@ function getTicketcategory(){
   var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
   console.log("ticketcategory name: "+categoryName);
   switch (categoryName){
-   
-    case 'Eintrittskartengutschein einlösen':
-     return '10668_Test-Codes';
-    case 'TODO':
-     return '10668_Test-Codes';
-    case 'TODO1':
-     return '10668_Test-Codes';
-    case 'TODO2':
-     return '10668_Test-Codes';
+   //Testcode
+   // case 'Tagesticket':
+   //   return '10668_Test-Codes';
+    
     case 'Tagesticket':
-      return '10668_Test-Codes';
+     return '10668-day-tickets-c1';
+    
+    case 'Tagesticket ermäßigt':
+     return '10668-day-tickets-c1';
+    
+    case 'Nachmittagticket':
+     return '10668-afternoon-tickets-c2';
+    
+    case 'VIP Tagesticket':
+     return '10668-day-tickets-c1';
+    
+    case 'Eintrittskartengutschein einlösen':
+     return '10668-day-tickets-c1';
+    
+    case 'Presseticket':
+     return '10668-day-tickets-c1';
+    
+    case 'Ausstellerausweis':
+     return '10668-exhibitors-c3';
+    
+    case 'Auf- und Abbauausweis':
+     return '10668-setup-c4';
+    
+
     
     default:
       return 'error';
