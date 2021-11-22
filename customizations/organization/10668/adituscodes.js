@@ -1,10 +1,10 @@
 console.log('Start working, Google Tag Manager')
  // var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-  var pathname = window.location.pathname;
-  var eventId = pathname.split('/')[3];
+ // var pathname = window.location.pathname;
+ // var eventId = pathname.split('/')[3];
 
-  console.log("pathname: "+pathname);
-  console.log("event ID: "+ eventId);
+  
+
   
 function getTicketcategory(){
   var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
@@ -38,14 +38,12 @@ function getTicketcategory(){
     case 'Auf- und Abbauausweis':
      return '10668-setup-c4';
     
-
-    
     default:
       return 'error';
   }
 }
 
-  function getCode(eventId, key){
+  function getCode(key){
     $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
       
@@ -106,7 +104,7 @@ function getTicketcategory(){
       }
     }
     
-    //mark Code as used
+    // mark Code as used
     $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/mark-code-as-used',
       headers: {
@@ -133,6 +131,6 @@ function getTicketcategory(){
 
   };
 
-  getCode(eventId, getTicketcategory())
+  getCode(getTicketcategory())
 
 
