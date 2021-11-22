@@ -71,6 +71,8 @@ function getTicketcategory(){
         } else if(res.payload) {
           console.log("res.payload :")
           console.log(res.payload.customCode)
+         
+         // TODO - i have no idea why addCode is called 2 times, 1x with timeout
           setTimeout(function(){
             addCode(res.payload.customCode, "Aditus Code", key)
           }, 5000);
