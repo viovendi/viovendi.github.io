@@ -13,7 +13,6 @@ function getAllMails(){
     mails.push($(this).val());
   });
   attendeeDiv.find(".customization2_attendee_contact-data_email_value").each(function() {
-    console.log("exists");
     mail = $(this).text();
     mail = mail.replace(/(\r\n|\n|\r)/gm, "");
     mail=mail.replace(/\s/g,'');
@@ -30,7 +29,6 @@ I first remove an already existing error message and than add a new one, this wa
 if for some reason the error gets detected 2 times. 
 */
 function checkMails(){
- $(".view-actions_toggle-button").css("display","none");
  attendeeDiv.find("input[type=email][name=email]").each(function() {
  
    count =0;
