@@ -86,7 +86,7 @@ $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', fu
 });
 
 
-$(attendeeDiv).on('click', '.customization2_attendee_view-action_edit', function() {
+$(attendeeDiv).on('click', '.customization2_attendee_view-action', function() {
   getAllMails();
   checkMails();
   console.log("clicked on the edit button");
