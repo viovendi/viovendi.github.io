@@ -78,18 +78,11 @@ checkMails();
 $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
   getAllMails();
   checkMails();
- /* I should not need to set it manually if everything works as desired
-          $(".customization-button-next").prop("disabled",true);
-          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",true);
-          $(this).closest(".customization3_booking-participant_attendee").find("div.customization2_attendee_edit-action").find(".error-message").remove();
-          $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").before("<span class=error-message>"+errorMssge+"</span>");
- 
- */
  console.log("clicked on copy-button");
 });
 
 
-$(attendeeDiv).on('click', '.customization2_attendee_view-action', function() {
+$(attendeeDiv).on('click', 'button [customization=customization2_attendee_view-action_edit]', function() {
   getAllMails();
   checkMails();
   console.log("clicked on the edit button");
