@@ -14,6 +14,7 @@ function getTicketcategory(){
    // case 'Tagesticket':
    //   return '10668_Test-Codes';
     
+    // + -------------+ TODO change code to actual key +---------------+
     case 'Tagesticket':
      return '10668_Test-Codes';
      //return '10668-day-tickets-c1';
