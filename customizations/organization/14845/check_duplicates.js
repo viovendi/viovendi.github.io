@@ -82,24 +82,15 @@ $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', fu
 });
 
 
-$(attendeeDiv).on('click', 'vv-button', function() {
-  getAllMails();
-  checkMails();
-  console.log("clicked on the edit button1");
-});
-$(attendeeDiv).on('click', '.customization3_collapsible-wrapper_view-actions', function() {
+$(attendeeDiv).on('tap', '.customization3_collapsible-wrapper_view-actions', function() {
   getAllMails();
   checkMails();
   console.log("clicked on the edit button2");
 });
-$(attendeeDiv).on('click', '.vv-icon__size--sm', function() {
+$(attendeeDiv).on('tap', '.vv-icon__size--sm', function() {
   getAllMails();
   checkMails();
-  console.log("clicked on the edit button");
+  console.log("clicked on the edit button3");
 });
-$(attendeeDiv).on('click', '.booking-participant__actions', function() {
-  getAllMails();
-  checkMails();
-  console.log("clicked on the edit button");
-});
+
 
