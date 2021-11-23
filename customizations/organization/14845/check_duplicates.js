@@ -19,7 +19,6 @@ function getAllMails(){
     mail=mail.replace(/\s/g,'');
     mails.push(mail);
    });
-console.log(mails);
 } 
 
 /*
@@ -31,6 +30,7 @@ I first remove an already existing error message and than add a new one, this wa
 if for some reason the error gets detected 2 times. 
 */
 function checkMails(){
+ $(".view-actions_toggle-button").css("display","none");
  attendeeDiv.find("input[type=email][name=email]").each(function() {
  
    count =0;
@@ -73,24 +73,12 @@ function checkMails(){
 }
 
 getAllMails();
-
 checkMails();
+
+//If you copy the attendee-infos from the first attendee you automatically duplicate that email address
 $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
   getAllMails();
   checkMails();
- console.log("clicked on copy-button");
 });
 
-/*
-$(attendeeDiv).on('tap', '.customization3_collapsible-wrapper_view-actions', function() {
-  getAllMails();
-  checkMails();
-  console.log("clicked on the edit button2");
-});
-$(attendeeDiv).on('tap', '.vv-icon__size--sm', function() {
-  getAllMails();
-  checkMails();
-  console.log("clicked on the edit button3");
-});
-*/
 
