@@ -15,7 +15,8 @@ function getTicketcategory(){
    //   return '10668_Test-Codes';
     
     case 'Tagesticket':
-     return '10668-day-tickets-c1';
+     return '10668_Test-Codes';
+     //return '10668-day-tickets-c1';
     
     case 'Tagesticket ermäßigt':
      return '10668-day-tickets-c1';
