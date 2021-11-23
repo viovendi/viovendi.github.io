@@ -81,7 +81,7 @@ $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', fu
  console.log("clicked on copy-button");
 });
 
-
+/*
 $(attendeeDiv).on('tap', '.customization3_collapsible-wrapper_view-actions', function() {
   getAllMails();
   checkMails();
@@ -92,5 +92,5 @@ $(attendeeDiv).on('tap', '.vv-icon__size--sm', function() {
   checkMails();
   console.log("clicked on the edit button3");
 });
-
+*/
 
