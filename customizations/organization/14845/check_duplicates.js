@@ -76,6 +76,7 @@ getAllMails();
 
 checkMails();
 $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
+  getAllMails();
   checkMails();
   $(".customization-button-next").prop("disabled",true);
           $(this).closest(".customization3_booking-participant_attendee").find(".customization2_attendee_edit-action_save").prop("disabled",true);
@@ -84,5 +85,11 @@ $(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', fu
   console.log("clicked on copy-button");
 });
 
+
+$(attendeeDiv).on('click', '.customization2_attendee_contact-data_copy-link', function() {
+  getAllMails();
+  checkMails();
+  console.log("clicked on the edit button");
+});
 
 
