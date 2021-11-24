@@ -107,9 +107,13 @@ function getTicketcategory(){
              // i think here is the mistake... if empty -> put code in ; if not empty do nothing
              console.log("element.textContent.trim() = "+element.textContent.trim());
              console.log("textToReplace = " +textToReplace)
+             
+             element.value = code;
                     if (element.textContent.trim() === textToReplace) {
+                     console.log("in first if");
                       element.childNodes.forEach(node => {
                         if (node.textContent.trim() === textToReplace) {
+                         console.log("in second if");
                           node.textContent = textReplacement;
                         } 
                       })
