@@ -104,7 +104,7 @@ function getTicketcategory(){
             const element = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_input')[0]
             
             const replaceText = () => {
-             // i think here is the mistake... if empty -> put code in ; if not empty do nothing
+             
              console.log("element.textContent.trim() = "+element.textContent.trim());
              console.log("textToReplace = " +textToReplace)
              
