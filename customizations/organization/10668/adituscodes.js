@@ -108,8 +108,17 @@ function getTicketcategory(){
              console.log("element.textContent.trim() = "+element.textContent.trim());
              console.log("textToReplace = " +textToReplace)
              
-             //  ---------- @OLEG should this be in the first if? element.value = code; ?? ----------
+             //  ---------- @OLEG should this be in the first if? ?? ----------
              element.value = code;
+             var event;
+             if(typeof(Event) === 'function') {
+               event = new Event('input'); // for Chrome
+             }else{
+               event = document.createEvent('Event');
+               event.initEvent('input', true, true); // for IE
+             }
+             input.dispatchEvent(event)
+             //----------------------------------------
                     if (element.textContent.trim() === textToReplace) {
                      console.log("in first if");
                       element.childNodes.forEach(node => {
