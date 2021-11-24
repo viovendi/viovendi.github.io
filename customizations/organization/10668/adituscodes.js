@@ -75,9 +75,10 @@ function getTicketcategory(){
           console.log(res.payload.customCode)
          
          // TODO - i have no idea why addCode is called 2 times, 1x with timeout
-          setTimeout(function(){
+          /*setTimeout(function(){
             addCode(res.payload.customCode, "Aditus Code", key)
           }, 5000);
+          */
           addCode(res.payload.customCode, "Aditus Code", key)
         } else {
           console.log("no response :")
@@ -99,9 +100,10 @@ function getTicketcategory(){
       var label = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_label')[0].textContent.trim();
      
       if(label.indexOf(inputName) >= 0){
+            console.log(label)
             const element = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_input')[0]
-            console.log(element.textContent.trim())
             const replaceText = () => {
+             // i think here is the mistake... if empty -> put code in ; if not empty do nothing
                     if (element.textContent.trim() === textToReplace) {
                       element.childNodes.forEach(node => {
                         if (node.textContent.trim() === textToReplace) {
