@@ -117,7 +117,7 @@ function getTicketcategory(){
                event = document.createEvent('Event');
                event.initEvent('input', true, true); // for IE
              }
-             input.dispatchEvent(event)
+             element.dispatchEvent(event)
              //----------------------------------------
                     if (element.textContent.trim() === textToReplace) {
                      console.log("in first if");
