@@ -25,7 +25,7 @@ function getTicketcategory(){
     case 'Nachmittagticket':
      return '10668-afternoon-tickets-c2';
     
-    case 'VIP Tagesticket':
+    case 'Treff Tagesticket':
      return '10668-day-tickets-c1';
     
     //todo
@@ -89,7 +89,42 @@ function getTicketcategory(){
 
 
   function addCode(code, inputName, key) {
+   // ----------- NEW CODE ------------ 
+  const textToReplace = ''; 
+  const textReplacement = code; //'Marktauswahl';
+   // used to get the right input:
+   var elements = document.querySelectorAll(".customization2_attendee_further-data_custom-question");
 
+    for (var i = 0; i < elements.length; i++) {
+      var label = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_label')[0].textContent.trim();
+     
+      if(label.indexOf(inputName) >= 0){
+            const element = elements[i].querySelectorAll('.customization2_attendee_further-data_custom-question_input')[0]
+            console.log(element.textContent.trim())
+            const replaceText = () => {
+                    if (element.textContent.trim() === textToReplace) {
+                      element.childNodes.forEach(node => {
+                        if (node.textContent.trim() === textToReplace) {
+                          node.textContent = textReplacement;
+                        } 
+                      })
+                    }
+                  }
+
+            observer = new MutationObserver(replaceText);
+
+            observer.observe(element, { characterData: true, subtree: true, childList: true });
+
+            replaceText();
+        
+      }
+    }
+   
+  
+   // ----------- END NEW CODE ------------
+   
+   
+   /* ----------- OLD CODE ------------
     var elements = document.querySelectorAll(".customization2_attendee_further-data_custom-question");
 
     for (var i = 0; i < elements.length; i++) {
@@ -107,6 +142,7 @@ function getTicketcategory(){
         input.dispatchEvent(event)
       }
     }
+   ----------- END OLD CODE ----------- */ 
     
     // mark Code as used
     $.ajax({
