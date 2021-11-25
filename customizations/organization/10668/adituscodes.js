@@ -54,7 +54,8 @@ const element = document.querySelector('vv-additional-questions');
 const inputIs = () => {
     if (element) {
    const label =   $('p:contains("Aditus Code")');
-   console.log(label)
+   const input = label.closest('input');
+   console.log(input)
     }
 }
 observer = new MutationObserver(inputIs);
