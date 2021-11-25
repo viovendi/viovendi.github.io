@@ -26,7 +26,6 @@ function markCodeAsUsed(code, key) {
   })
 }
 
-
 function addCode(code, input) {
   let event;
   input.value = code
@@ -40,10 +39,9 @@ function addCode(code, input) {
     return input.value;
 }
 
-
 function getTicketCategory() {
-  var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-  // console.log("ticketcategory name: "+categoryName);
+  const categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+
   switch (categoryName) {
     //Testcode
     // case 'Tagesticket':
@@ -85,7 +83,6 @@ function getTicketCategory() {
 async function handler() {
   const element = document.querySelector('vv-additional-questions');
 
-
   const inputIs = () => {
     let input = null;
     if (element) {
@@ -104,16 +101,17 @@ async function handler() {
   });
 
   const input = inputIs();
+
   if (input) {
     const ticketCategory = getTicketCategory();
     const getCodeRes = await getCode(ticketCategory);
     const customCode = getCodeRes.payload.customCode;
     const codeAdded = addCode(customCode ,input[0]);
+
     if(codeAdded){
        markCodeAsUsed(customCode, ticketCategory)
     }
   }
-
 }
 
 handler();
