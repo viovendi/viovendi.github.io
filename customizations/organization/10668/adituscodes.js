@@ -83,7 +83,7 @@ observer.observe(element, {
  const input = inputIs();
  if(input){
  const ticketCategory = getTicketCategory();
- const code = await getCode(ticketCategory);
+ const code = getCode(ticketCategory);
  console.log(code);
  }
 
