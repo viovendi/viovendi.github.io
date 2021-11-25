@@ -48,17 +48,15 @@ function getTicketcategory() {
 }
 
 const inputName = 'Aditus Code'
-const elements = document.querySelectorAll('vv-additional-question-text .customization2_attendee_further-data_custom-question_label');
+const element = document.querySelector('vv-additional-questions');
 
 
-const inputIs = (element) => {
+const inputIs = () => {
     if (element) {
-      element.childNodes.forEach(node => {
-        console.log(node.textContent)
-        if (node.textContent.trim() === inputName) {
-          console.log(element)
-        }
-      });
+      console.log(element)
+      // element.childNodes.forEach(node => {
+      //   console.log(node.textContent)
+      // });
     }
 
 }
@@ -70,9 +68,8 @@ observer.observe(elements, {
   childList: true
 });
 
-elements.forEach(element => {
   inputIs(element)
-  })
+
 // function getCode(key){
 //   $.ajax({
 //     url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
