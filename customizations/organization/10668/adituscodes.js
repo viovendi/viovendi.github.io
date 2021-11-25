@@ -204,6 +204,6 @@ observer.observe(element, { characterData: true, subtree: true, childList: true 
 
   // };
 
-  getCode(getTicketcategory())
+  // getCode(getTicketcategory())
 
 
