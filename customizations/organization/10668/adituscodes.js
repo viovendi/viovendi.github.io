@@ -110,7 +110,7 @@ async function handler() {
     const getCodeRes = await getCode(ticketCategory);
     const customCode = getCodeRes.payload.customCode;
     console.log(input)
-    addCode(input[0]);
+    addCode(customCode ,input[0]);
   }
 
 }
