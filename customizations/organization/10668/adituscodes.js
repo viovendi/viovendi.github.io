@@ -5,8 +5,20 @@ console.log('Start working, Google Tag Manager')
 
 
 
+async function getCode(key) {
+  $.ajax({
+      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
+      type: 'get',
+      dataType: 'json',
+      success: await function(response){
+        console.log("getRecord response: "+JSON.stringify(response));
+        return response['data'];
+    }
+  });
+}
 
-function getTicketcategory() {
+
+function getTicketCategory() {
   var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
   // console.log("ticketcategory name: "+categoryName);
   switch (categoryName) {
@@ -69,7 +81,12 @@ observer.observe(element, {
 });
 
  const input = inputIs();
- console.log(input)
+ if(input){
+ const ticketCategory = getTicketCategory();
+ const code = await getCode(ticketCategory);
+ console.log(code);
+ }
+
 
 // function getCode(key){
 //   $.ajax({
