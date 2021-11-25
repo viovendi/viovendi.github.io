@@ -4,7 +4,6 @@ console.log('Start working, Google Tag Manager')
 // var eventId = pathname.split('/')[3];
 
 
-
 async function getCode(key) {
   $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
@@ -59,33 +58,39 @@ function getTicketCategory() {
   }
 }
 
-const inputName = 'Aditus Code'
-const element = document.querySelector('vv-additional-questions');
+async function handler(){
+  const inputName = 'Aditus Code'
+  const element = document.querySelector('vv-additional-questions');
 
 
-const inputIs = () => {
-  let input = null;
-    if (element) {
-   const label =   $('p:contains("Aditus Code")');
-    input = label.parent('label').find('input');
+  const inputIs = () => {
+    let input = null;
+      if (element) {
+     const label =   $('p:contains("Aditus Code")');
+      input = label.parent('label').find('input');
 
-    }
-    return input;
+      }
+      return input;
+  }
+  observer = new MutationObserver(inputIs);
+
+  observer.observe(element, {
+    characterData: true,
+    subtree: true,
+    childList: true
+  });
+
+   const input = await inputIs();
+   if(input){
+   const ticketCategory = getTicketCategory();
+   const code = getCode(ticketCategory);
+   console.log(code);
+   }
+
 }
-observer = new MutationObserver(inputIs);
 
-observer.observe(element, {
-  characterData: true,
-  subtree: true,
-  childList: true
-});
+handler();
 
- const input = inputIs();
- if(input){
- const ticketCategory = getTicketCategory();
- const code = getCode(ticketCategory);
- console.log(code);
- }
 
 
 // function getCode(key){
