@@ -48,20 +48,21 @@ function getTicketcategory() {
 }
 
 const inputName = 'Aditus Code'
-const element = document.querySelectorAll('vv-additional-question-text .customization2_attendee_further-data_custom-question_label');
-console.log(element)
+const elements = document.querySelectorAll('vv-additional-question-text .customization2_attendee_further-data_custom-question_label');
+console.log(elements)
 
 const inputIs = () => {
+  elements.forEach(element => {
     if (element) {
       element.childNodes.forEach(node => {
         console.log(node.textContent)
             if (node.textContent.trim() === inputName) {
-
               console.log(element)
             }
           });
         }
-      }
+  })
+}
           observer = new MutationObserver(inputIs);
 
           observer.observe(element, {
