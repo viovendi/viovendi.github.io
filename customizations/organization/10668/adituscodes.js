@@ -10,8 +10,7 @@ async function getCode(key) {
       type: 'get',
       dataType: 'json',
       success: await function(response){
-        console.log("getRecord response: "+JSON.stringify(response));
-        return response['data'];
+        return JSON.stringify(response);
     }
   });
 }
