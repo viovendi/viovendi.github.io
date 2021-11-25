@@ -10,7 +10,6 @@ async function getCode(key) {
       type: 'get',
       dataType: 'json',
       success: await function(response){
-        console.log(JSON.stringify(response))
         return response.payload.customCode;
     }
   });
