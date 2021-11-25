@@ -43,10 +43,8 @@ function getTicketCategory() {
     // case 'Tagesticket':
     //   return '10668_Test-Codes';
 
-    // + -------------+ TODO change code to actual key +---------------+
     case 'Tagesticket':
-      return '10668_Test-Codes';
-      //return '10668-day-tickets-c1';
+      return '10668-day-tickets-c1';
 
     case 'Tagesticket ermäßigt':
       return '10668-day-tickets-c1';
@@ -57,10 +55,8 @@ function getTicketCategory() {
     case 'Treff Tagesticket':
       return '10668-day-tickets-c1';
 
-      //todo
     case 'Eintrittskartengutschein einlösen':
-      return '10668_Test-Codes';
-      // return '10668-day-tickets-c1';
+      return '10668-day-tickets-c1';
 
     case 'Presseticket':
       return '10668-day-tickets-c1';
