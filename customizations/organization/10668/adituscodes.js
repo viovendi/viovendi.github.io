@@ -80,10 +80,10 @@ async function handler(){
     childList: true
   });
 
-   const input = await inputIs();
+   const input = inputIs();
    if(input){
    const ticketCategory = getTicketCategory();
-   const code = getCode(ticketCategory);
+   const code = await getCode(ticketCategory);
    console.log(code);
    }
 
