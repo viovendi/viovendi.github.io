@@ -53,10 +53,8 @@ const element = document.querySelector('vv-additional-questions');
 
 const inputIs = () => {
     if (element) {
-      console.log(element)
-      // element.childNodes.forEach(node => {
-      //   console.log(node.textContent)
-      // });
+    const  label  = $(element).find('.customization2_attendee_further-data_custom-question_label')
+console.log(label)
     }
 
 }
