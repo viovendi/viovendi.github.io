@@ -1,8 +1,4 @@
-console.log('Start working, Google Tag Manager')
-// var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-// var pathname = window.location.pathname;
-// var eventId = pathname.split('/')[3];
-
+console.log('Start working, Google Tag Manager');
 
 async function getCode(key) {
   return $.ajax({
