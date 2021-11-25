@@ -53,7 +53,7 @@ console.log(element)
 
 const inputIs = () => {
     if (element.textContent) {
-      consloe.log(element.textContent.trim())
+      console.log(element.textContent.trim())
       element.childNodes.forEach(node => {
         console.log(node.textContent.trim())
             if (node.textContent.trim() === inputName) {
