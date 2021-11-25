@@ -71,6 +71,7 @@ const inputIs = () => {
             childList: true
           });
 
+          inputIs();
           // function getCode(key){
           //   $.ajax({
           //     url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
