@@ -53,14 +53,15 @@ console.log(elements)
 
 const inputIs = () => {
   elements.forEach(element => {
-    if (element) {
-      element.childNodes.forEach(node => {
-        console.log(node.textContent)
-        if (node.textContent.trim() === inputName) {
-          console.log(element)
-        }
-      });
-    }
+    comsole.log(element)
+    // if (element) {
+    //   element.childNodes.forEach(node => {
+    //     console.log(node.textContent)
+    //     if (node.textContent.trim() === inputName) {
+    //       console.log(element)
+    //     }
+    //   });
+    // }
   })
 }
 observer = new MutationObserver(inputIs);
