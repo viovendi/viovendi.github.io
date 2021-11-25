@@ -48,9 +48,10 @@ function getTicketcategory(){
 }
 
 const inputName = 'Aditus Code'
-const inputIs = () =>{
-  const element = document.querySelector('.customization2_attendee_further-data_custom-question_label')
+const element = document.querySelector('.customization2_attendee_further-data_custom-question_label');
 
+
+const inputIs = () =>{
     if (element.textContent.trim() === inputName) {
 console.log(element)
     }
