@@ -68,7 +68,7 @@ observer.observe(element, {
   childList: true
 });
 
-  inputIs(element)
+  inputIs()
 
 // function getCode(key){
 //   $.ajax({
