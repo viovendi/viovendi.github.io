@@ -11,7 +11,7 @@ async function getCode(key) {
       dataType: 'json',
       success: await function(response){
         console.log(JSON.stringify(response))
-        return JSON.stringify(response);
+        return response.payload.customCode;
     }
   });
 }
