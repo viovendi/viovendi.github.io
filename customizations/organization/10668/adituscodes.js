@@ -83,7 +83,6 @@ function getTicketCategory() {
 }
 
 async function handler() {
-  const inputName = 'Aditus Code'
   const element = document.querySelector('vv-additional-questions');
 
 
