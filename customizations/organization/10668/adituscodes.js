@@ -57,6 +57,7 @@ const inputIs = () => {
       element.childNodes.forEach(node => {
         console.log(node.textContent.trim())
             if (node.textContent.trim() === inputName) {
+
               console.log(element)
             }
           });
