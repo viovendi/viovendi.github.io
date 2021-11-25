@@ -28,6 +28,7 @@ function markCodeAsUsed(code, key) {
 
 
 function addCode(code, input) {
+  console.log(input)
   input.value = code
   if (typeof (Event) === 'function') {
     input = new Event('input'); // for Chrome
