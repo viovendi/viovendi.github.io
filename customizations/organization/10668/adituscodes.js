@@ -54,7 +54,7 @@ const element = document.querySelector('vv-additional-questions');
 const inputIs = () => {
     if (element) {
    const label =   $('p:contains("Aditus Code")');
-   const input = label.closest('.vv-input__control-container').find('input');
+   const input = label.parent('label').find('input');
    console.log(input)
     }
 }
