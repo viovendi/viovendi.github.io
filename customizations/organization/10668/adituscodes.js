@@ -52,11 +52,13 @@ const element = document.querySelector('vv-additional-questions');
 
 
 const inputIs = () => {
+  let input = null;
     if (element) {
    const label =   $('p:contains("Aditus Code")');
-   const input = label.parent('label').find('input');
-   console.log(input)
+    input = label.parent('label').find('input');
+
     }
+    return input;
 }
 observer = new MutationObserver(inputIs);
 
@@ -66,7 +68,7 @@ observer.observe(element, {
   childList: true
 });
 
-  inputIs()
+ const input = inputIs();
 
 // function getCode(key){
 //   $.ajax({
