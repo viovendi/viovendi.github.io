@@ -5,14 +5,38 @@ console.log('Start working, Google Tag Manager')
 
 
 async function getCode(key) {
- return $.ajax({
-      url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
-      type: 'get',
-      dataType: 'json',
-      success: await function(response){
-        return response.payload.customCode;
-    }
+  return $.ajax({
+    url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key=' + key,
+    type: 'get',
+    dataType: 'json',
   });
+}
+
+function markCodeAsUsed(code, key) {
+  $.ajax({
+    url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/mark-code-as-used',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    type: 'post',
+    data: JSON.stringify({
+      "customCode": code,
+      "key": key,
+    }),
+  })
+}
+
+
+function addCode(code, input) {
+  input.value = code
+  if (typeof (Event) === 'function') {
+    input = new Event('input'); // for Chrome
+  } else {
+    input = document.createEvent('Event');
+    input.initEvent('input', true, true); // for IE
+  }
+  element.dispatchEvent(input)
+
 }
 
 
@@ -57,19 +81,19 @@ function getTicketCategory() {
   }
 }
 
-async function handler(){
+async function handler() {
   const inputName = 'Aditus Code'
   const element = document.querySelector('vv-additional-questions');
 
 
   const inputIs = () => {
     let input = null;
-      if (element) {
-     const label =   $('p:contains("Aditus Code")');
+    if (element) {
+      const label = $('p:contains("Aditus Code")');
       input = label.parent('label').find('input');
 
-      }
-      return input;
+    }
+    return input;
   }
   observer = new MutationObserver(inputIs);
 
@@ -79,12 +103,13 @@ async function handler(){
     childList: true
   });
 
-   const input = inputIs();
-   if(input){
-   const ticketCategory = getTicketCategory();
-   const code = await getCode(ticketCategory);
-   console.log(code);
-   }
+  const input = inputIs();
+  if (input) {
+    const ticketCategory = getTicketCategory();
+    const getCodeRes = await getCode(ticketCategory);
+    const customCode = getCodeRes.payload.customCode;
+    addCode(input);
+  }
 
 }
 
