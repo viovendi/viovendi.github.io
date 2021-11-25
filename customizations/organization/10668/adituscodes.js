@@ -69,6 +69,7 @@ observer.observe(element, {
 });
 
  const input = inputIs();
+ console.log(input)
 
 // function getCode(key){
 //   $.ajax({
