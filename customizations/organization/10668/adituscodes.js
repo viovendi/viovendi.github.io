@@ -62,7 +62,7 @@ const inputIs = () => {
 }
 observer = new MutationObserver(inputIs);
 
-observer.observe(elements, {
+observer.observe(element, {
   characterData: true,
   subtree: true,
   childList: true
