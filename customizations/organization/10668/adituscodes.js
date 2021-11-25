@@ -52,8 +52,7 @@ const element = document.querySelector('.customization2_attendee_further-data_cu
 console.log(element)
 
 const inputIs = () => {
-  console.log(element.textContent.trim())
-    if (element.textContent.trim() === inputName) {
+    if (element.textContent) {
       consloe.log(element.textContent.trim())
       element.childNodes.forEach(node => {
         console.log(node.textContent.trim())
