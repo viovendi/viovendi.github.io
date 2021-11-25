@@ -29,7 +29,6 @@ function markCodeAsUsed(code, key) {
 
 function addCode(code, input) {
   let event;
-  console.log(input.value, 'before')
   input.value = code
     if(typeof(Event) === 'function') {
       event = new Event('input'); // for Chrome
@@ -38,7 +37,6 @@ function addCode(code, input) {
       event.initEvent('input', true, true); // for IE
     }
     input.dispatchEvent(event)
-    console.log(input.value, 'after')
     return input.value;
 }
 
@@ -111,9 +109,9 @@ async function handler() {
     const ticketCategory = getTicketCategory();
     const getCodeRes = await getCode(ticketCategory);
     const customCode = getCodeRes.payload.customCode;
-    const result = addCode(customCode ,input[0]);
-    if(result){
-      // markCodeAsUsed(customCode, ticketCategory)
+    const codeAdded = addCode(customCode ,input[0]);
+    if(codeAdded){
+       markCodeAsUsed(customCode, ticketCategory)
     }
   }
 
