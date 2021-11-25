@@ -5,7 +5,7 @@ console.log('Start working, Google Tag Manager')
 
 
 async function getCode(key) {
-  $.ajax({
+ return $.ajax({
       url: 'https://cs.staging1.doo.net/v1/integrations/custom-qr-codes/get-code?key='+key,
       type: 'get',
       dataType: 'json',
