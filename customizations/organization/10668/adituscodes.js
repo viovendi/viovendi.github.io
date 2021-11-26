@@ -55,7 +55,7 @@ function getTicketCategory() {
     case 'Treff Tagesticket':
       return '10668-day-tickets-c1';
 
-    case 'Eintrittskartengutschein einlösen':
+    case 'Eintrittskarten-Gutschein einlösen':
       return '10668-day-tickets-c1';
 
     case 'Presseticket':
