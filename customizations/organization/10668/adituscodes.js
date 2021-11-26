@@ -66,6 +66,9 @@ function getTicketCategory() {
 
     case 'Auf- und Abbauausweis':
       return '10668-setup-c4';
+      
+    case 'Juniorticket':
+      return '10668-day-tickets-c1';
 
     default:
       return 'error';
