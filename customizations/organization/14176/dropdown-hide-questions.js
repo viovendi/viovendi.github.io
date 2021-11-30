@@ -8,12 +8,10 @@ function handler(){
     //option 2
     var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');//findField('Welche Funktion hast Du?');
     var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
-   // var select3 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
 
-    // if select2 == null -> select3
     
     $(funkton).css("display","none")   
-    $(funkton2).css("display","none") //Funkton
+    $(funkton2).css("display","none") 
 
        var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
        var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
