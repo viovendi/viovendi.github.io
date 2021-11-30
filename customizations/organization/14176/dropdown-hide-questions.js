@@ -3,8 +3,10 @@
 function handler(){
     var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
-    var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    
     var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du?');
+    var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    
     $(funkton).css("display","none")   
     $(funkton2).css("display","none") //Funkton
 
@@ -86,7 +88,6 @@ function handler(){
         if ( input == "") {
             $('.customization2_attendee_edit-action_save').attr('disabled', true);
             inputPosition2.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
-
         }
         else {    
             $('.customization2_attendee_edit-action_save').attr('disabled', false);
