@@ -6,6 +6,10 @@ function handler(){
     
     var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du?');
     var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    console.log(select2);
+   // var select3 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
+
+    // if select2 == null -> select3
     
     $(funkton).css("display","none")   
     $(funkton2).css("display","none") //Funkton
