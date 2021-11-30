@@ -1,12 +1,13 @@
 // Funktion to show and hide custom question
 
 function handler(){
+    //option 1
     var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
     
-    var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du?');
+    //option 2
+    var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');//findField('Welche Funktion hast Du?');
     var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
-    console.log(select2);
    // var select3 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
 
     // if select2 == null -> select3
@@ -40,10 +41,8 @@ function handler(){
               $(funkton).css("display","none") 
               inputPosition.val('')
             }
-         
 
        }
-                         
                         )
     
           inputPosition.change(function(){
@@ -81,10 +80,7 @@ function handler(){
         $(funkton2).css("display","none") 
         inputPosition2.val('')
       }
-   
-
- }
-                   
+ } 
                   )
 
     inputPosition2.change(function(){
