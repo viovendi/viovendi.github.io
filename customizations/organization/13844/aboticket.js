@@ -27,3 +27,4 @@ function getTicketName(categoryElement){
     ticketname = ticketname.replace(/(\r\n|\n|\r)/gm, "");
     ticketname=ticketname.replace(/\s/g,'');
  return  ticketname;
+}
