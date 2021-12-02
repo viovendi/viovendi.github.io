@@ -13,6 +13,6 @@ $('.event-category').each(function(){
 });
 
 
-function(categoryElement) isAboticket{
+function isAboticket(categoryElement){
  return  $(categoryElement).find("h3").text()=='Abo-Ticket';
 }
