@@ -1,6 +1,6 @@
 console.log('github code loaded customization 13844/aboticket.js');
 
-//hideNumberedAboTickets();
+hideNumberedAboTickets();
 addListenerToAboTicket();
 
 
