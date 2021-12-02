@@ -2,7 +2,18 @@ console.log('github code loaded customization 13844/aboticket.js');
 
 //hideNumberedAboTickets();
 addListenerToAboTicket();
+addListenerToNumberTickets();
 
+
+function addListenerToNumberTickets() {
+    $('.event-category').each(function () {
+        if (isAboticketNumbered($(this))) {
+           $(this).find("select").on('change', function () {
+                console.log('change detected on AboNumberTicket');
+            });
+        }
+    });
+}
 
 function addListenerToAboTicket() {
     $('.event-category').each(function () {
