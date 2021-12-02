@@ -1,5 +1,5 @@
 console.log('github code loaded')
-hideNumberedAboTickets();
+//hideNumberedAboTickets();
 $('.event-category').each(function(){
   if(isAboticket($(this))){
     $(this).find("select").on('change', function() {
