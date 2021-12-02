@@ -1,8 +1,9 @@
 console.log('github code loaded')
+hideNumberedAboTickets();
 $('.event-category').each(function(){
   if(isAboticket($(this))){
     $(this).find("select").on('change', function() {
-      setNumberedTickets($(this).val());
+      setNumberedAboTickets($(this).val());
     });
   }
   
@@ -10,15 +11,20 @@ $('.event-category').each(function(){
 //  console.log($(this).find("h3").text());
 });
 
-function setNumberedTickets(amount){
+function setNumberedAboTickets(amount){
   $('.event-category').each(function(){
   if(isAboticketNumbered($(this))){
   $(this).find("select").val(amount);
   }
 });
-  
 }
-
+function hideNumberedAboTickets(){
+  $('.event-category').each(function(){
+  if(isAboticketNumbered($(this))){
+  $(this).css('display','none');
+  }
+});
+}
 function isAboticket(categoryElement){
   var ticketname= getTicketName(categoryElement);
  return  ticketname=='Abo-Ticket';
