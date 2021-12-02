@@ -14,5 +14,6 @@ $('.event-category').each(function(){
 
 
 function isAboticket(categoryElement){
+  console.log($(categoryElement).find("h3").text());
  return  $(categoryElement).find("h3").text()=='Abo-Ticket';
 }
