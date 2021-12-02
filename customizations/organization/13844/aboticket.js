@@ -14,6 +14,10 @@ $('.event-category').each(function(){
 
 
 function isAboticket(categoryElement){
-  console.log($(categoryElement).find("h3").text()+$(categoryElement).find("h3").text()=='Abo-Ticket');
- return  $(categoryElement).find("h3").text()=='Abo-Ticket';
+  var ticketname= $(categoryElement).find("h3").text();
+    ticketname = ticketname.replace(/(\r\n|\n|\r)/gm, "");
+    ticketname=ticketname.replace(/\s/g,'');
+  
+  console.log(ticketname=='Abo-Ticket');
+ return  ticketname=='Abo-Ticket';
 }
