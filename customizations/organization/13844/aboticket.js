@@ -7,6 +7,7 @@ addListenerToAboTicket();
 function addListenerToAboTicket() {
     $('.event-category').each(function () {
         if (isAboticket($(this))) {
+            setNumberedAboTickets($(this).find("select").val());
             $(this).find("select").on('change', function () {
                 setNumberedAboTickets($(this).val());
             });
