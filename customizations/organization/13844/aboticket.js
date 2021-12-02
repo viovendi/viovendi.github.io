@@ -4,7 +4,8 @@ $('.event-category').each(function(){
     $(this).find("select").on('change', function() {
       console.log($(this).val());
     });
-  }else{
+  }
+  if(isAboticketNumbered($(this))){
   $(this).find("select").val(1);
   }
   
