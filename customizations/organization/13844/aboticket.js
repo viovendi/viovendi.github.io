@@ -19,6 +19,7 @@ function setNumberedAboTickets(amount) {
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
            $(this).find("select option[value="+amount+"]").attr('selected','selected');
+           $(this).find("select").change();
         }
     });
 }
