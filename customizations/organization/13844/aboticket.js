@@ -2,11 +2,8 @@ console.log('github code loaded')
 $('.event-category').each(function(){
   if(isAboticket($(this))){
     $(this).find("select").on('change', function() {
-      console.log($(this).val());
+      setNumberedTickets($(this).val());
     });
-  }
-  if(isAboticketNumbered($(this))){
-  $(this).find("select").val(1);
   }
   
 //  console.log("found category");
