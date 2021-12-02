@@ -13,6 +13,14 @@ $('.event-category').each(function(){
 //  console.log($(this).find("h3").text());
 });
 
+function setNumberedTickets(amount){
+  $('.event-category').each(function(){
+  if(isAboticketNumbered($(this))){
+  $(this).find("select").val(amount);
+  }
+});
+  
+}
 
 function isAboticket(categoryElement){
   var ticketname= getTicketName(categoryElement);
