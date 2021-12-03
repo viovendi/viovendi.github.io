@@ -4,6 +4,10 @@ console.log("in git");
 function handler() {
     //option 1
     var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
+    console.log(funkton);
+    
+    var test123 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
+       console.log(test123);
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
 
     //option 2
@@ -27,7 +31,7 @@ function handler() {
             $(funkton).find('vv-optional-text').css("display", "none");
             inputPosition.after('<span class="input-error-message error-text error-text--multiple">Bitte tragen Sie etwas in das Feld ein</span>');
 
-            var input = inputPosition.val().replace(/^\s+|\s+$/g, "")
+            var input = inputPosition.val().replace(/^\s+|\s+$/g, "");
             if (input == "") {
                 $('.customization2_attendee_edit-action_save').attr('disabled', true);
             } else {
