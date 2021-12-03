@@ -1,3 +1,4 @@
+console.log("in git");
 // Funktion to show and hide custom question
 
 function handler() {
