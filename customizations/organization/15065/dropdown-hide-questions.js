@@ -3,11 +3,7 @@ console.log("in git");
 
 function handler() {
     //option 1
-    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
-    console.log(funkton);
-    
-    var test123 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
-       console.log(test123);
+    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?');
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
 
     //option 2
