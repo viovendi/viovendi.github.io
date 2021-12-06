@@ -263,7 +263,7 @@ function getXMLHttpRequest (open) {
 };
 
 
-function sendRequest(object, oid){
+function sendRequest(object, oid, free_order){
   isFuncUsed = true;
   if(!free_order){
     $.ajax({
