@@ -29,8 +29,8 @@ function setNumberedAboTickets(amount) {
     console.log(amount)
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
-           $(this).find("select option[value="+amount+"]").prop('selected',true);
-            $(this).find("select option[value="+amount+"]").click();
+           $(this).find("select").val(amount);
+          //  $(this).find("select option[value="+amount+"]").click();
            $(this).find("select").change();
             var evt = document.createEvent("HTMLEvents");
             evt.initEvent("change", false, true);
