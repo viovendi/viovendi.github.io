@@ -33,12 +33,23 @@ function setNumberedAboTickets(amount) {
            $(this).find("select").change();
             var evt = document.createEvent("HTMLEvents");
             evt.initEvent("change", false, true);
-            $(this).dispatchEvent(evt);
+            addCode($(this).find("select"));
            
             // $('.event-category__ticket-count').focus();
             // $('.event-category__ticket-count').trigger('focusout');
         }
     });
+}
+function addCode(input) {
+  let event;
+    if(typeof(Event) === 'function') {
+      event = new Event('input'); // for Chrome
+    }else{
+      event = document.createEvent('Event');
+      event.initEvent('input', true, true); // for IE
+    }
+    input.dispatchEvent(event)
+    return input.value;
 }
 function hideNumberedAboTickets() {
     $('.event-category').each(function () {
