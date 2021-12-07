@@ -31,8 +31,10 @@ function setNumberedAboTickets(amount) {
         if (isAboticketNumbered($(this))) {
            $(this).find("select option[value="+amount+"]").prop('selected',true).change();
            $(this).find("select").change();
-            $(this).find("select").dispatchEvent('change');
-            $(this).find("select option[value="+amount+"]").dispatchEvent('change');
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            $(this).dispatchEvent(evt);
+           
             // $('.event-category__ticket-count').focus();
             // $('.event-category__ticket-count').trigger('focusout');
         }
