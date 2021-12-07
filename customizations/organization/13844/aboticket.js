@@ -33,7 +33,7 @@ function setNumberedAboTickets(amount) {
            $(this).find("select").change();
             var evt = document.createEvent("HTMLEvents");
             evt.initEvent("change", false, true);
-            addCode($(this).find("select"));
+            addCode($(this).find("select").get(0));
            
             // $('.event-category__ticket-count').focus();
             // $('.event-category__ticket-count').trigger('focusout');
