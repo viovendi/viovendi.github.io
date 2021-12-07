@@ -7,7 +7,7 @@ if(checkURL("92849")){
 
 function checkURL(word){
     var path = window.location.pathname;
-    console.log(path.includes(word))
+    return path.includes(word);
 }
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
