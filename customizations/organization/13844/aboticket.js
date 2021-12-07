@@ -3,8 +3,14 @@ console.log('github code loaded customization 13844/aboticket.js');
 hideNumberedAboTickets();
 addListenerToAboTicket();
 addListenerToNumberTickets();
+checkURL()
 
-
+function checkURL(){
+    var pathArray = window.location.pathname.split('/');
+    for (i = 0; i < pathArray.length; i++) {
+        console.log(i+" : "+pathArray[i]);
+    }
+}
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
