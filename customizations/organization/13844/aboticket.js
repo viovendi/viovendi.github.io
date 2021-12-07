@@ -1,9 +1,9 @@
 console.log('github code loaded customization 13844/aboticket.js');
-
-hideNumberedAboTickets();
-addListenerToAboTicket();
-addListenerToNumberTickets();
-checkURL("92849")
+if(checkURL("92849")){
+    hideNumberedAboTickets();
+    addListenerToAboTicket();
+    addListenerToNumberTickets();
+}
 
 function checkURL(word){
     var path = window.location.pathname;
