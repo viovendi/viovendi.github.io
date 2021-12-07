@@ -3,7 +3,7 @@ console.log('github code loaded customization 13844/aboticket.js');
 hideNumberedAboTickets();
 addListenerToAboTicket();
 addListenerToNumberTickets();
-checkURL("eventId=92849")
+checkURL("92849")
 
 function checkURL(word){
     var path = window.location.pathname;
