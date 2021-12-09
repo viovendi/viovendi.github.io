@@ -1,8 +1,11 @@
 console.log('github code loaded customization 13844/aboticket.js');
 if(checkURL("92849")){
-    hideNumberedAboTickets();
-    addListenerToAboTicket();
-    addListenerToNumberTickets();
+    setTimeout(() => {
+         hideNumberedAboTickets();
+         addListenerToAboTicket();
+         addListenerToNumberTickets();
+                     }, 1000);
+    
 }
 
 function checkURL(word){
