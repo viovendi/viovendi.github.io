@@ -18,7 +18,7 @@ function hideOverDueTickets(){
         var description = $(this).find(".customization-category-description").text();
         if(description.length>0){
             var dateParts = description.split('.');
-            var d = new Date(dateParts[2], dateParts[1], dateParts[0]);
+            var d = new Date(dateParts[2]-1, dateParts[1]-1, dateParts[0]-1);
             console.log(d.toString());
             if(d<new Date())$(this).css('display', 'none');
             else console.log('valides Datum');
