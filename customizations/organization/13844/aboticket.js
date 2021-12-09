@@ -4,7 +4,7 @@ if(checkURL("92849")){
          hideNumberedAboTickets();
          addListenerToAboTicket();
          addListenerToNumberTickets();
-                     }, 3000);
+                     }, 500);
     
 }
 
