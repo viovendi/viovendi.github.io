@@ -20,6 +20,8 @@ function hideOverDueTickets(){
             var dateParts = description.split('.');
             var d = new Date(dateParts[2], dateParts[1], dateParts[0]);
             console.log(d.toString());
+            if(d<new Date())$(this).css('display', 'none');
+            else console.log('valides Datum');
         }
     });
     
