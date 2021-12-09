@@ -1,6 +1,7 @@
 console.log('github code loaded customization 13844/aboticket.js');
 if(checkURL("92849")){
     setTimeout(() => {
+         hideOverDueTickets();
          hideNumberedAboTickets();
          addListenerToAboTicket();
          addListenerToNumberTickets();
@@ -11,6 +12,15 @@ if(checkURL("92849")){
 function checkURL(word){
     var path = window.location.pathname;
     return path.includes(word);
+}
+function hideOverDueTickets(){
+    $('.event-category').each(function () {
+        var description = $(this).find(".customization-category-description").text();
+        var dateParts = description.split('.');
+        var d = new Date(dateParts[2], dateParts[1], dateParts[0]);
+        console.log(d.toString());
+    });
+    
 }
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
