@@ -16,9 +16,11 @@ function checkURL(word){
 function hideOverDueTickets(){
     $('.event-category').each(function () {
         var description = $(this).find(".customization-category-description").text();
-        var dateParts = description.split('.');
-        var d = new Date(dateParts[2], dateParts[1], dateParts[0]);
-        console.log(d.toString());
+        if(description.length>0){
+            var dateParts = description.split('.');
+            var d = new Date(dateParts[2], dateParts[1], dateParts[0]);
+            console.log(d.toString());
+        }
     });
     
 }
