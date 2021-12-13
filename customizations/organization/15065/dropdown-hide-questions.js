@@ -8,7 +8,7 @@ function handler() {
     var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
 
     //option 2
-    var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)'); //findField('Welche Funktion hast Du?');
+    var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du?'); //findField('Welche Funktion hast Du?');
     var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
 
 
