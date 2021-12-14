@@ -22,7 +22,7 @@ const observer2 = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
     if ($(page2).is(':visible')) {
-        console.log("page 2 visible");
+        console.log($('.customization-button-next').text());
         if($('.customization-button-next').text().includes("Jetzt Buchen"))
         $('.customization-button-next').text('Jetzt vormerken');
         if($('.customization-button-next').text().includes("Book now"))
