@@ -17,6 +17,8 @@ function handler(){
    $(dropdown1).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
+  $(field1).find('vv-optional-text').css("display","none");
+
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -27,6 +29,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
      $(dropdown2).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
+  $(field1).find('vv-optional-text').css("display","none");
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -37,6 +40,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
      $(dropdown3).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field2).show()
+  $(field2).find('vv-optional-text').css("display","none");
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -47,6 +51,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
      $(dropdown4).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field2).show()
+  $(field2).find('vv-optional-text').css("display","none");
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
