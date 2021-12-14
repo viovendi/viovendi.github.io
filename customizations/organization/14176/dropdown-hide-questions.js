@@ -1,23 +1,71 @@
 // Funktion to show and hide custom question
 
 function handler(){
-    //option 1
-    var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
-    var select = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
     
-    //option 2
-    var funkton2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');//findField('Welche Funktion hast Du?');
-    var select2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    
+    var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)'');
+    $(field1).hide()
+    
+    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
+    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    var dropdown3 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
+    var dropdown4 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?');
+    
+   $(dropdown1).change(function() {
+if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+  $(field1).show()
+}else{
+  $(field1).hide()
+  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+}
+   }
+                     );
+    
+     $(dropdown2).change(function() {
+if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+  $(field1).show()
+}else{
+  $(field1).hide()
+  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+}
+   }
+                     );
+    
+     $(dropdown3).change(function() {
+if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+  $(field1).show()
+}else{
+  $(field1).hide()
+  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+}
+   }
+                     );
+    
+     $(dropdown4).change(function() {
+if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+  $(field1).show()
+}else{
+  $(field1).hide()
+  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+}
+   }
+                     );
+    
+    
+    
+    
+    //Frage, wenn andere dann zeigt
+ 
+    
+   /* var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
 
     
     $(funkton).css("display","none")   
-    $(funkton2).css("display","none") 
 
        var ddPosition = $(select).find('.customization2_attendee_further-data_custom-question_dropdown')
        var inputPosition = $(funkton).find('.customization2_attendee_further-data_custom-question_input')
 
        var ddPosition2 = $(select2).find('.customization2_attendee_further-data_custom-question_dropdown')
-       var inputPosition2 = $(funkton2).find('.customization2_attendee_further-data_custom-question_input')
 
        ddPosition.change(function(){
             var state = ddPosition.val().trim()
@@ -58,7 +106,7 @@ function handler(){
        }
                         )
     // Funktion im Unternehmen?*
-
+/*
     ddPosition2.change(function(){
       var state = ddPosition2.val().trim()
       if (state.includes("andere")) {
@@ -98,15 +146,14 @@ function handler(){
       $('customization2_attendee_view-action_edit').on( "click", function() {
   console.log( "clicked" );
 });
-
+*/
 /*
  Google Tag Manager JS Helpers used
 */
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
-
 var dropdown =  $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
-
+    
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field).show()
@@ -114,8 +161,8 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field).hide()
   $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
 }
-
-});
+   }
+                     );
 
  }
 handler();
