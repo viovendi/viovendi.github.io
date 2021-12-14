@@ -57,7 +57,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
     
     
     
-    //Frage, wenn andere dann zeigt
+    // ---------------- OLD UGLY CODE -----------------
  
     
    /* var funkton = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
