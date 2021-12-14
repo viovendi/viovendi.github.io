@@ -5,9 +5,12 @@ function handler(){
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     $(field1).hide()
+    var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
+    $(field2).hide()
     
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
     var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    
     var dropdown3 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
     var dropdown4 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?');
     
@@ -33,20 +36,20 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
     
      $(dropdown3).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
-  $(field1).show()
+  $(field2).show()
 }else{
-  $(field1).hide()
-  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $(field2).hide()
+  $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
 }
    }
                      );
     
      $(dropdown4).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
-  $(field1).show()
+  $(field2).show()
 }else{
-  $(field1).hide()
-  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $(field2).hide()
+  $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
 }
    }
                      );
