@@ -3,7 +3,7 @@
 function handler(){
     
     
-    var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)'');
+    var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     $(field1).hide()
     
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
