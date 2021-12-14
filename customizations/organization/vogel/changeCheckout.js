@@ -23,7 +23,7 @@ const observer2 = new MutationObserver((mutations, obs) => {
 
     if ($(page2).is(':visible')) {
         console.log($('.customization-button-next').text());
-        if($('.customization-button-next').text().includes("Jetzt Buchen"))
+        if($('.customization-button-next').text().includes("Jetzt buchen"))
         $('.customization-button-next').text('Jetzt vormerken');
         if($('.customization-button-next').text().includes("Book now"))
         $('.customization-button-next').text('Register now');
