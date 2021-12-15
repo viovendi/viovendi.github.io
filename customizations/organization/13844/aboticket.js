@@ -18,6 +18,7 @@ function hideOverDueTickets(){
         var description = $(this).find(".customization-category-description").text();
         if(description.length>0){
             var dateParts = description.split('.');
+            console.log(dateParts[0]+dateParts[1]+dateParts[2]);
             var d = new Date(dateParts[2]-1, dateParts[1]-1, dateParts[0]-1);
             
             if(d<new Date()){
