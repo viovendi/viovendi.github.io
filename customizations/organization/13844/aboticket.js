@@ -19,9 +19,12 @@ function hideOverDueTickets(){
         if(description.length>0){
             var dateParts = description.split('.');
             var d = new Date(dateParts[2]-1, dateParts[1]-1, dateParts[0]-1);
-            console.log(d.toString());
-            if(d<new Date())$(this).css('display', 'none');
-            else console.log('valides Datum');
+            
+            if(d<new Date()){
+                $(this).css('display', 'none');
+                console.log(d.toString()+' ist schon vorbei');
+            }
+            else console.log(d.toString()+' ist noch nicht vorbei');
         }
     });
     
