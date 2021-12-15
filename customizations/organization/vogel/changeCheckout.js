@@ -43,7 +43,6 @@ if ($('.customization-button-next').text().includes("Book now"))
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
         if ($(page2).is(':visible')) {
-            console.log("page 2 loaded")
             startCustomizationPage2();
             obs.disconnect();
             return;
@@ -53,7 +52,6 @@ if ($('.customization-button-next').text().includes("Book now"))
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
         if (!$(page2).is(':visible')) {
-            console.log("left page 2")
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
