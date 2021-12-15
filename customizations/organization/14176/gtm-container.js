@@ -31,7 +31,7 @@ async function getContainerId(eventId, locale) {
     }
 
   });
-  console.log(attribute[0])
+  
   return  attribute[0].data;
 }
 
