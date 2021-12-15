@@ -47,7 +47,7 @@ async function loadContainer() {
   // Append
   document.head.appendChild(s);
   document.body.appendChild(sc);
-
+  console.log('GTM-Tag appended');
 }
 
 loadContainer();
