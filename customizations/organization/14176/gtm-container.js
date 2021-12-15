@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager (Load different GTM-Container into the widget for each event)');
+console.log('Start working, load different GTM-Container into the widget for each event');
 async function makeRequest(options) {
   let result = null;
   try {
@@ -26,6 +26,7 @@ async function getContainerId(eventId, locale) {
   })
 
   const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    console.log(v);
     console.log(v.name);
     if(v.name){
       return v.name.includes('GTM-Container')
