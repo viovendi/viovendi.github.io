@@ -2,10 +2,10 @@
 
 function handler(){
     var styles = `
-        .error-state .vv-simple-select__control{
+        .error-state{
             border-color: #ea674d!important;
             background-color: #fff1ef!important;
-            position: relative;
+           
         }
   
         .error-state:after{
