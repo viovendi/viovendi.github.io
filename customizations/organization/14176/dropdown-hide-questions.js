@@ -7,17 +7,6 @@ function handler(){
             background-color: #fff1ef!important;
            
         }
-  
-        .error-state::after{
-            content:'Required';
-            display: block;
-            color: #ea674d;
-            font-size: 12px;
-            line-height: 1;
-            margin-top: 2px;
-            left: 0;
-            top: 100%;
-        }
         .error-message{
             display: block;
             color: #ea674d;
@@ -25,7 +14,7 @@ function handler(){
             line-height: 1;
             margin-bottom: 10px;
             left: 0;
-            top: 100%;
+            top: 3px;
         }
     `
     var styleSheet = document.createElement("style");
