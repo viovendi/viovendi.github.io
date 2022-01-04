@@ -5,7 +5,7 @@ function handler(){
         .error-state{
             border-color: #ea674d!important;
             background-color: #fff1ef!important;
-            position: absolute;
+           
         }
   
         .error-state::after{
@@ -15,7 +15,6 @@ function handler(){
             font-size: 12px;
             line-height: 1;
             margin-top: 2px;
-            position: absolute;
             left: 0;
             top: 100%;
         }
