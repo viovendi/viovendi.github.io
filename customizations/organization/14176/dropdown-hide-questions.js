@@ -72,7 +72,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field2).show()
   $(field2).find('vv-optional-text').css("display","none");
-    disableWhenEmpty(field2);
+  disableWhenEmpty(field2);
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -98,13 +98,15 @@ function disableWhenEmpty(field){
     
    $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
    $('.customization2_attendee_edit-action_save').prop("disabled", true);
-    $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
+   $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
+    
    $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function() {
-       console.log('text:'+ $(this).val());
+       
       if($(this).val().trim().length==0){
          $(this).addClass('error-state');
           $(field).find('.error-message').show();
          $('.customization2_attendee_edit-action_save').prop("disabled", true);
+          
        }else{
          $(this).removeClass('error-state');
            $(field).find('.error-message').hide();
@@ -217,7 +219,7 @@ var dropdown =  $$('.customization2_attendee_further-data_custom-question').find
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field).show()
-    
+  disableWhenEmpty(field);
 }else{
   $(field).hide()
   $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
