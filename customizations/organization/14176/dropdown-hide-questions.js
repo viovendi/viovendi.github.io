@@ -107,7 +107,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
     
 function disableWhenEmpty(field){
     
-   $(this).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
+   $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
    $('.customization2_attendee_edit-action_save').prop("disabled", true);
    $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function() {
        console.log('text:'+ $(this).val());
