@@ -114,6 +114,7 @@ function disableWhenEmpty(field){
       if($(this).val().trim().length==0){
          $(this).addClass('error-state');
          $('.customization2_attendee_edit-action_save').prop("disabled", true);
+          $(this).append( "<div class='error-message'>Required</div>" );
        }else{
          $(this).removeClass('error-state');
          $('.customization2_attendee_edit-action_save').prop("disabled", false);
