@@ -103,11 +103,11 @@ function disableWhenEmpty(field){
        console.log('text:'+ $(this).val());
       if($(this).val().trim().length==0){
          $(this).addClass('error-state');
-          $(this).closest('.error-message').show();
+          $(field).find('.error-message').show();
          $('.customization2_attendee_edit-action_save').prop("disabled", true);
        }else{
          $(this).removeClass('error-state');
-           $(this).closest('.error-message').hide();
+           $(field).find('.error-message').hide();
          $('.customization2_attendee_edit-action_save').prop("disabled", false);
        }
     });
