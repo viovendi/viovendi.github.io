@@ -64,9 +64,9 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
                      );
     
 function disableWhenEmpty(field){
-   $(field).find('input').change(function() {
-       console.log('text:'+ $(this).text());
-      if($(this).text().trim().length==0){
+   $(field).find('.customization2_attendee_further-data_custom-question_input').change(function() {
+       console.log('text:'+ $(this).val());
+      if($(this).val().trim().length==0){
          $(this).addClass('error-state');
          $('.customization2_attendee_edit-action_save').prop("disabled", true);
        }else{
