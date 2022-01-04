@@ -8,7 +8,7 @@ function handler(){
            
         }
   
-        .error-state:after{
+        .error-state::after{
             content:'Required';
             display: block;
             color: #ea674d;
