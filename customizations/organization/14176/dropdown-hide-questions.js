@@ -109,14 +109,16 @@ function disableWhenEmpty(field){
     
    $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
    $('.customization2_attendee_edit-action_save').prop("disabled", true);
-    $( "<p>Test</p>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
+    $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
    $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function() {
        console.log('text:'+ $(this).val());
       if($(this).val().trim().length==0){
          $(this).addClass('error-state');
+          $(this).find('.error-message').show();
          $('.customization2_attendee_edit-action_save').prop("disabled", true);
        }else{
          $(this).removeClass('error-state');
+           $(this).find('.error-message').hide();
          $('.customization2_attendee_edit-action_save').prop("disabled", false);
        }
     });
