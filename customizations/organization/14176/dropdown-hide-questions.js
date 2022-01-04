@@ -5,6 +5,7 @@ function handler(){
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     $(field1).hide()
+    
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
     $(field2).hide()
     
@@ -18,7 +19,7 @@ function handler(){
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
   $(field1).find('vv-optional-text').css("display","none");
-
+  disableWhenEmpty(field1);
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -30,6 +31,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
   $(field1).find('vv-optional-text').css("display","none");
+    disableWhenEmpty(field1);
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -41,6 +43,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field2).show()
   $(field2).find('vv-optional-text').css("display","none");
+    disableWhenEmpty(field2);
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -52,6 +55,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field2).show()
   $(field2).find('vv-optional-text').css("display","none");
+    disableWhenEmpty(field2);
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
@@ -59,7 +63,17 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
    }
                      );
     
-    
+function disableWhenEmpty(field){
+   $(field).change(function() {
+      if($(this).text().trim().length==0){
+         $(this).addClass('error-state');
+         $('.customization2_attendee_edit-action_save').prop("disabled", true);
+       }else{
+         $(this).removeClass('error-state');
+         $('.customization2_attendee_edit-action_save').prop("disabled", false);
+       }
+    });
+ }
     
     
     // ---------------- OLD UGLY CODE -----------------
