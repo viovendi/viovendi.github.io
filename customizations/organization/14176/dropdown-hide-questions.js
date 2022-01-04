@@ -64,7 +64,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
                      );
     
 function disableWhenEmpty(field){
-   $(field).change(function() {
+   $(field).find('input').change(function() {
        console.log('text:'+ $(this).text());
       if($(this).text().trim().length==0){
          $(this).addClass('error-state');
