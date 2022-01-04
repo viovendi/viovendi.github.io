@@ -1,7 +1,46 @@
 // Funktion to show and hide custom question
 
 function handler(){
-    
+    var styles = `
+        .error-state .vv-simple-select__control{
+            border-color: #ea674d!important;
+            background-color: #fff1ef!important;
+            position: relative;
+        }
+  
+        .error-state:after{
+            content:'Required';
+            display: block;
+            color: #ea674d;
+            font-size: 12px;
+            line-height: 1;
+            margin-top: 2px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+        .error-message{
+            display: block;
+            color: #ea674d;
+            font-size: 12px;
+            line-height: 1;
+            margin-bottom: 10px;
+            left: 0;
+            top: 100%;
+        }
+    `
+    var styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+
+    styleSheet.onreadystatechange = handlerS;
+    styleSheet.onload = handlerS;
+
+    document.head.appendChild(styleSheet);
+
+    function handlerS() {
+        console.log('style added');
+    }
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
     $(field1).hide()
@@ -23,6 +62,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
                      );
@@ -35,6 +75,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }else{
   $(field1).hide()
   $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
                      );
@@ -47,6 +88,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
                      );
@@ -59,6 +101,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }else{
   $(field2).hide()
   $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
                      );
@@ -180,9 +223,11 @@ var dropdown =  $$('.customization2_attendee_further-data_custom-question').find
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field).show()
+    
 }else{
   $(field).hide()
   $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
                      );
