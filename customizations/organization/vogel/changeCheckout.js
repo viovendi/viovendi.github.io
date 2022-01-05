@@ -1,3 +1,4 @@
+console.log('git changeCheckout.js loaded');
 const observer = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
 
