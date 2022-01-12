@@ -57,6 +57,7 @@ function handler() {
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
             $(field1).show()
+            disableWhenEmpty(field1)
             $(field1).find('vv-optional-text').css("display", "none");
         } else {
             $(field1).hide()
@@ -72,6 +73,7 @@ function handler() {
     $(dropdown2).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
             $(field2).show()
+            disableWhenEmpty(field2)
             $(field2).find('vv-optional-text').css("display", "none");
         } else {
              var innerValue=$(field2).find('.customization2_attendee_further-data_custom-question_dropdown');
@@ -88,10 +90,35 @@ function handler() {
 }
 handler();
 
+function disableWhenEmpty(field) {
+
+        if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').hasClass("error-state")) {
+            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+        }
+
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+        $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input change', function () {
+
+            if ($(this).val().trim().length == 0) {
+                $(this).addClass('error-state');
+                $(field).find('.error-message').show();
+                $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+            } else {
+                $(this).removeClass('error-state');
+                $(field).find('.error-message').hide();
+                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            }
+        });
+    }
+
+
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
-        //Inser your code here.
+        
         handler();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
