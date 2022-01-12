@@ -50,8 +50,9 @@ function handler() {
         } else {
             $(field1).hide()
             var innerValue=$(field1).find('.customization2_attendee_further-data_custom-question_input');
-            console.log(innerValue)
+            console.log($(innerValue).val())
             $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+            console.log($(innerValue).val())
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     }
@@ -64,9 +65,10 @@ function handler() {
             disableWhenEmpty(field2);
         } else {
              var innerValue=$(field2).find('.customization2_attendee_further-data_custom-question_input');
-            console.log(innerValue)
+            console.log($(innerValue).val())
             $(field2).hide()
             $(field2).find('.customization2_attendee_further-data_custom-question_input').val('Bitte auswählen')
+            console.log($(innerValue).val())
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     }
