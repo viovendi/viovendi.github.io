@@ -3,6 +3,18 @@ console.log("github -> /13369/hideOrShowQuestions")
 
 function handler() {
     var styles = `
+    
+    
+  @keyframes nodeInserted { 
+    from { opacity: 0.99; }
+    to { opacity: 1; } 
+  }
+  /*.customization2_attendee-state_edit{*/
+  .customization2_attendees .customization2_attendee-state_edit{
+    animation-duration: 0.1s;
+    animation-name: nodeInserted;
+  }
+  
         .error-state{
             border-color: #ea674d!important;
             background-color: #fff1ef!important;
