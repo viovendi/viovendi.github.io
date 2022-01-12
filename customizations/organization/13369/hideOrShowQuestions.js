@@ -49,9 +49,9 @@ function handler() {
             disableWhenEmpty(field1);
         } else {
             $(field1).hide()
-            var innerValue=$(field1).find('.customization2_attendee_further-data_custom-question_input');
+            var innerValue=$(field1).find('.customization2_attendee_further-data_custom-question_dropdown');
             console.log($(innerValue).val())
-            $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+            $(field1).find('.customization2_attendee_further-data_custom-question_dropdown').val('')
             console.log($(innerValue).val())
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
@@ -62,41 +62,18 @@ function handler() {
         if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
             $(field2).show()
             $(field2).find('vv-optional-text').css("display", "none");
-            disableWhenEmpty(field2);
         } else {
-             var innerValue=$(field2).find('.customization2_attendee_further-data_custom-question_input');
+             var innerValue=$(field2).find('.customization2_attendee_further-data_custom-question_dropdown');
             console.log($(innerValue).val())
             $(field2).hide()
-            $(field2).find('.customization2_attendee_further-data_custom-question_input').val('Bitte auswählen')
+            $(field2).find('.customization2_attendee_further-data_custom-question_dropdown').val('Bitte auswählen')
             console.log($(innerValue).val())
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     }
     );
 
-    function disableWhenEmpty(field) {
-
-        if (!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")) {
-            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
-        }
-
-        $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
-        $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-        $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function () {
-
-            if ($(this).val().trim().length == 0) {
-                $(this).addClass('error-state');
-                $(field).find('.error-message').show();
-                $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-            } else {
-                $(this).removeClass('error-state');
-                $(field).find('.error-message').hide();
-                $('.customization2_attendee_edit-action_save').prop("disabled", false);
-            }
-        });
-    }
+    
 }
 handler();
 
