@@ -46,7 +46,6 @@ function handler() {
         if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
             $(field1).show()
             $(field1).find('vv-optional-text').css("display", "none");
-            disableWhenEmpty(field1);
         } else {
             $(field1).hide()
             var innerValue=$(field1).find('.customization2_attendee_further-data_custom-question_dropdown');
