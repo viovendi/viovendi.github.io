@@ -33,10 +33,10 @@ function handler() {
 
     
 
-    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Wie reisen Sie an?');
+    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Wie reisen Sie an? (optional)');
     console.log(dropdown1)
     
-    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Hotelzimmer?');
+    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Hotelzimmer? (optional)');
     console.log(dropdown2)
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Shuttle? (optional)');
