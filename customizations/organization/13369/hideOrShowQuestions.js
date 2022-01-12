@@ -32,13 +32,18 @@ function handler() {
     }
 
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Shuttle? (optional)');
+    console.log(field1)
     $(field1).hide()
 
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Art des Zimmers? (optional)');
+    console.log(field2)
     $(field2).hide()
 
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Wie reisen Sie an?');
+    console.log(dropdown1)
+    
     var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Hotelzimmer?');
+    console.log(dropdown2)
 
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
