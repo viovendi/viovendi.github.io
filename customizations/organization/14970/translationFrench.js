@@ -55,7 +55,7 @@ observer2.observe(document, {
 });
 
 function startCustomizationPage2(){
-   
+   console.log('page 2 visible')
       $('.customization-button-next').text('Réserver maintenant');
 
     const observerThisPage = new MutationObserver((mutations, obs) => {
@@ -73,6 +73,7 @@ function startCustomizationPage2(){
 
   
         if (!$(page2).is(':visible')&&!$(page3).is(':visible')) {
+          console.log('page 2 not visible page 3 also not')
           $('.customization-button-next').text('Contineur');
             observerThisPage.observe(document, {
                 childList: true,
@@ -125,7 +126,7 @@ function startCustomizationPage3(){
         const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
     
         if (!$(page3).is(':visible')) {
-          
+          console.log('page 3 not visible')
          // $('.customization-button-next').text('Réserver maintenant');
             observerThisPage.observe(document, {
                 childList: true,
