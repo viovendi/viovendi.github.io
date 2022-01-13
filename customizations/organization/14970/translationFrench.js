@@ -127,7 +127,7 @@ function startCustomizationPage3(){
     
         if (!$(page3).is(':visible')) {
           console.log('page 3 not visible')
-         // $('.customization-button-next').text('Réserver maintenant');
+          $('.customization-button-next').text('Réserver maintenant');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
