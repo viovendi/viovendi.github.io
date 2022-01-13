@@ -69,10 +69,9 @@ function startCustomizationPage2(){
     });
     const observerOtherPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
-    const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
 
   
-        if (!$(page2).is(':visible')&&!$(page3).is(':visible')) {
+        if (!$(page2).is(':visible')) {
           console.log('page 2 not visible page 3 also not')
           $('.customization-button-next').text('Contineur');
             observerThisPage.observe(document, {
