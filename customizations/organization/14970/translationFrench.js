@@ -106,7 +106,7 @@ observer3.observe(document, {
 });
 
 function startCustomizationPage3(){
-   
+      console.log('page 3 visible');
       $('.customization-button-next').text('Réserver maintenant');
 
     const observerThisPage = new MutationObserver((mutations, obs) => {
