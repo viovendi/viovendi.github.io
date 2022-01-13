@@ -68,9 +68,11 @@ function startCustomizationPage2(){
         }
     });
     const observerOtherPage = new MutationObserver((mutations, obs) => {
-        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
-    
-        if (!$(page2).is(':visible')) {
+    const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+    const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+
+  
+        if (!$(page2).is(':visible')&&!$(page3).is(':visible')) {
           $('.customization-button-next').text('Contineur');
             observerThisPage.observe(document, {
                 childList: true,
@@ -124,7 +126,7 @@ function startCustomizationPage3(){
     
         if (!$(page3).is(':visible')) {
           
-          $('.customization-button-next').text('Réserver maintenant');
+         // $('.customization-button-next').text('Réserver maintenant');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
