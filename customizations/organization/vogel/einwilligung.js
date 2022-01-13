@@ -39,7 +39,7 @@ function startCustomizationPage2(){
     $('.customization-button-next').text('Jetzt vormerken');
 if ($('.customization-button-next').text().includes("Book now"))
     $('.customization-button-next').text('Register now');
-
+$('.customization2_booking-terms_text').text('Register now42');
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
