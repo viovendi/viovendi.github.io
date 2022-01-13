@@ -20,8 +20,7 @@ const observer = new MutationObserver((mutations, obs) => {
          console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
         var ticketID=$('.notice__booking-id span').text()
-        
-        changeTextTo('.notice__booking-id','Buchungsnummer: '+ticketID, 'Numéro de réservation: '+ticketID);  
+        $('.notice__booking-id').text('Buchungsnummer: '+ticketID); 
         obs.disconnect();
         return;
     }
