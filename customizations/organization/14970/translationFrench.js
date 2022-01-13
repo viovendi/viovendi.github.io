@@ -11,7 +11,7 @@ function changeTextTo(selector,originalText, newText){
 function handler(){
   changeTextTo('.customization2_attendee_further-data_custom-question_dropdown option','Bitte auswählen', 'Veuillez sélectionner');
   changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');  
-  
+   changeTextTo('.notice__booking-id','Buchungsnummer:', 'Numéro de réservation');  
 }
 
       
