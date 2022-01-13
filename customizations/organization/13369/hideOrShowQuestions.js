@@ -48,17 +48,17 @@ function handler() {
     //Shuttle
     var field1 = $('.customization2_attendee_further-data_custom-question-3');
     $(field1).hide()
-    console.log(field1);
+   // console.log(field1);
     //Art des Zimmers
     var field2 = $('.customization2_attendee_further-data_custom-question-5');
     $(field2).hide()
-    console.log(field1);
+   // console.log(field1);
     //Wie reisen Sie an
     var dropdown1 = $('.customization2_attendee_further-data_custom-question-2');
-    console.log(field1);
+   // console.log(field1);
     //Hotelzimmer ja nein
     var dropdown2 = $('.customization2_attendee_further-data_custom-question-4');  
-console.log(field1);
+   // console.log(field1);
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
             $(field1).show()
