@@ -13,7 +13,11 @@ function handler2(){
   changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');  
    
 }
+/*
 
+PAGE 4
+
+*/
 const observer = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
     if ($(page4).is(':visible')) {
@@ -30,7 +34,11 @@ observer.observe(document, {
     childList: true,
     subtree: true
 });
+/*
 
+PAGE 2
+
+*/
 const observer2 = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
@@ -77,6 +85,65 @@ function startCustomizationPage2(){
         subtree: true
     });
 }
+/*
+
+PAGE 3
+
+*/
+const observer3 = new MutationObserver((mutations, obs) => {
+    const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+
+    if ($(page3).is(':visible')) {
+        startCustomizationPage3();
+        obs.disconnect();
+        return;
+    }
+});
+
+observer3.observe(document, {
+    childList: true,
+    subtree: true
+});
+
+function startCustomizationPage3(){
+   
+      $('.customization-button-next').text('Réserver maintenant');
+
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if ($(page3).is(':visible')) {
+            startCustomizationPage3();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if (!$(page3).is(':visible')) {
+          //Text von Button auf Seite 3
+          $('.customization-button-next').text('ZAHLUNGSPFLICHTIG_BESTELLEN');
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+/*
+
+INSERTION LISTENER
+
+*/
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
