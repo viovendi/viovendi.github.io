@@ -17,6 +17,7 @@ function handler2(){
 const observer = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
     if ($(page4).is(':visible')) {
+         console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
         changeTextTo('.notice__booking-id','Buchungsnummer:', 'Numéro de réservation');  
         obs.disconnect();
