@@ -48,7 +48,7 @@ observer2.observe(document, {
 
 function startCustomizationPage2(){
    
-      $('.customization-button-next').text('Jetzt vormerken');
+      $('.customization-button-next').text('Réserver maintenant');
 
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
@@ -63,7 +63,7 @@ function startCustomizationPage2(){
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
         if (!$(page2).is(':visible')) {
-          $('.customization-button-next').text('weiterrrr');
+          $('.customization-button-next').text('Contineur');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
