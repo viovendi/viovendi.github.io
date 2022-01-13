@@ -19,7 +19,9 @@ const observer = new MutationObserver((mutations, obs) => {
     if ($(page4).is(':visible')) {
          console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
-        changeTextTo('.notice__booking-id','Buchungsnummer:', 'Numéro de réservation');  
+        var ticketID=$('.notice__booking-id span').text()
+        
+        changeTextTo('.notice__booking-id','Buchungsnummer: '+ticketID, 'Numéro de réservation: '+ticketID);  
         obs.disconnect();
         return;
     }
