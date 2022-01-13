@@ -45,18 +45,21 @@ function setup(){
 
 function handler() {
     
-    
+    //Shuttle
     var field1 = $('.customization2_attendee_further-data_custom-question-4');
     $(field1).hide()
     console.log(field1)
     
+    //Art des Zimmers
     var field2 = $('.customization2_attendee_further-data_custom-question-6');
     $(field2).hide()
     console.log(field2)
+    
     //Wie reisen Sie an
     var dropdown1 = $('.customization2_attendee_further-data_custom-question-3');
-    console.log(dropdown1);
-    //Hotelzimmer
+    console.log("WIe einreisen?"+dropdown1.find('option').filter(':selected').text().trim());
+    
+    //Hotelzimmer ja nein
     var dropdown2 = $('.customization2_attendee_further-data_custom-question-5');  
     console.log(dropdown2);
 
