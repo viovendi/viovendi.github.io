@@ -19,10 +19,12 @@ function myHelpers(elements) {
     Note: you are not required to use the entire field name only part of it
   */
   this.findField = function (lable) {
+    console.log(lable);
     this.lable = lable;
     this.field = null;
 
     elements.forEach((field) => {
+      console.log(field);
       if (field.querySelectorAll('label p')[0].innerText.trim().includes(this.lable)) {
         this.field = field;
       }
