@@ -1,13 +1,21 @@
 console.log("translating")
 
-function handler(){
-  $('.customization2_attendee_further-data_custom-question_dropdown option').each(function(){
-    if($(this).text().trim()=="Bitte auswählen"){
-        $(this).text("Veuillez sélectionner");
+function changeTextTo(selector,originalText, newText){
+  $(selector).each(function(){
+    if($(this).text().trim()==originalText){
+        $(this).text(newText);
     }
-  })
+  }) 
 }
 
+function handler(){
+  changeTextTo('.customization2_attendee_further-data_custom-question_dropdown option','Bitte auswählen', 'Veuillez sélectionner');
+  changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');  
+  
+}
+
+      
+    
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
