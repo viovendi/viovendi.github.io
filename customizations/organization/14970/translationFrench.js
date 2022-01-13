@@ -36,6 +36,61 @@ observer.observe(document, {
 });
 /*
 
+PAGE 1
+
+*/
+const observer1 = new MutationObserver((mutations, obs) => {
+    const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+
+    if ($(page1).is(':visible')) {
+        startCustomizationPage1();
+        obs.disconnect();
+        return;
+    }
+});
+
+observer1.observe(document, {
+    childList: true,
+    subtree: true
+});
+
+function startCustomizationPage1(){
+      console.log('page 1 visible');
+  //Text von Button auf Seite 1
+      $('.customization-button-next').text('Contineur');
+
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if ($(page1).is(':visible')) {
+            startCustomizationPage1();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if (!$(page1).is(':visible')) {
+          console.log('page 1 not visible')
+          $('.customization-button-next').text('Réserver maintenant');
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+/*
+
 PAGE 2
 
 */
