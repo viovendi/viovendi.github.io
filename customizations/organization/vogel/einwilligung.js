@@ -39,7 +39,8 @@ function startCustomizationPage2(){
     $('.customization-button-next').text('Jetzt vormerken');
 if ($('.customization-button-next').text().includes("Book now"))
     $('.customization-button-next').text('Register now');
-$('.customization2_booking-terms_text').text('Register now42');
+$('.customization2_booking-terms_text').html("Hier ist der <a href='privacy.vogel.de'>Link</a>.");
+    $('.customization2_booking-terms_list').hide();
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
