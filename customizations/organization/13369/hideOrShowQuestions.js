@@ -1,7 +1,6 @@
 console.log("github -> /13369/hideOrShowQuestions")
-// Funktion to show and hide custom question
-
-function handler() {
+// Function to show and hide custom question
+function setup(){
     var styles = `
     
     
@@ -42,6 +41,10 @@ function handler() {
     function handlerS() {
         console.log('style added');
     }
+}
+
+function handler() {
+    
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Shuttle? (optional)');
     $(field1).hide()
@@ -82,6 +85,8 @@ function handler() {
 
     
 }
+
+setup();
 handler();
 
 function disableWhenEmpty(field) {
