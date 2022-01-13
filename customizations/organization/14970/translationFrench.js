@@ -44,7 +44,7 @@ var insertionListener = function (event) {
         });
     }
 }
-handler();
+handler2();
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
