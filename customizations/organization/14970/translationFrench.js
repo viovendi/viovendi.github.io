@@ -8,11 +8,28 @@ function changeTextTo(selector,originalText, newText){
   }) 
 }
 
-function handler(){
+function handler2(){
   changeTextTo('.customization2_attendee_further-data_custom-question_dropdown option','Bitte auswählen', 'Veuillez sélectionner');
   changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');  
-   changeTextTo('.notice__booking-id','Buchungsnummer:', 'Numéro de réservation');  
+   
 }
+
+const observer = new MutationObserver((mutations, obs) => {
+    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
+    if ($(page4).is(':visible')) {
+        console.log("page 4 visible");
+        changeTextTo('.notice__booking-id','Buchungsnummer:', 'Numéro de réservation');  
+        obs.disconnect();
+        return;
+    }
+});
+
+observer.observe(document, {
+    childList: true,
+    subtree: true
+});
+
+
 
       
     
@@ -20,7 +37,7 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         
-        handler();
+        handler2();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
