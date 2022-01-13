@@ -46,17 +46,18 @@ function setup(){
 function handler() {
     
     
-    var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Shuttle? (optional)');
+    var field1 = $('.customization2_attendee_further-data_custom-question-4');
     $(field1).hide()
     console.log(field1)
     
-    var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Art des Zimmers? (optional)');
+    var field2 = $('.customization2_attendee_further-data_custom-question-6');
     $(field2).hide()
     console.log(field2)
-
-    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Wie reisen Sie an? (optional)');
+    //Wie reisen Sie an
+    var dropdown1 = $('.customization2_attendee_further-data_custom-question-3');
     console.log(dropdown1);
-    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Benötigen Sie ein Hotelzimmer? (optional)');  
+    //Hotelzimmer
+    var dropdown2 = $('.customization2_attendee_further-data_custom-question-5');  
     console.log(dropdown2);
 
     $(dropdown1).change(function () {
