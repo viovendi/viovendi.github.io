@@ -3,7 +3,7 @@ console.log("translating")
 function handler(){
   $('.customization2_attendee_further-data_custom-question_dropdown option').each(function(){
     if($(this).text().trim()=="Bitte auswählen"){
-        $(this).text("NEW TEXT");
+        $(this).text("Veuillez sélectionner");
     }
   })
 }
