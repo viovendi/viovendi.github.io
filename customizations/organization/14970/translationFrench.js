@@ -127,8 +127,8 @@ function startCustomizationPage2(){
 
   
         if (!$(page2).is(':visible')) {
-          console.log('page 2 not visible page 3 also not')
-          $('.customization-button-next').text('Contineur');
+          console.log('page 2 not visible')
+         // $('.customization-button-next').text('Contineur');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
