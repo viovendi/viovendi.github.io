@@ -107,7 +107,8 @@ observer3.observe(document, {
 
 function startCustomizationPage3(){
       console.log('page 3 visible');
-      $('.customization-button-next').text('Réserver maintenant');
+  //Text von Button auf Seite 3
+      $('.customization-button-next').text('ZAHLUNGSPFLICHTIG_BESTELLEN');
 
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
@@ -122,8 +123,8 @@ function startCustomizationPage3(){
         const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
     
         if (!$(page3).is(':visible')) {
-          //Text von Button auf Seite 3
-          $('.customization-button-next').text('ZAHLUNGSPFLICHTIG_BESTELLEN');
+          
+          $('.customization-button-next').text('Réserver maintenant');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
