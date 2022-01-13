@@ -31,10 +31,52 @@ observer.observe(document, {
     subtree: true
 });
 
+const observer2 = new MutationObserver((mutations, obs) => {
+    const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
+    if ($(page2).is(':visible')) {
+        startCustomizationPage2();
+        obs.disconnect();
+        return;
+    }
+});
 
-      
+observer2.observe(document, {
+    childList: true,
+    subtree: true
+});
+
+function startCustomizationPage2(){
+   
+      $('.customization-button-next').text('Jetzt vormerken');
+
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
+        if ($(page2).is(':visible')) {
+            startCustomizationPage2();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+    
+        if (!$(page2).is(':visible')) {
+          $('.customization-button-next').text('weiterrrr');
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
