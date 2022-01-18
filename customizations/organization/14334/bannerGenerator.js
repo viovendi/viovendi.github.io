@@ -25,7 +25,7 @@ function generator(){
     canvas.crossOrigin = "Anonymous";
     canvas.height = $('img').height();
     ctx.drawImage($('img').get(0), 0, 0);
-    ctx.font = "18pt Verdana";s
+    ctx.font = "18pt Verdana";
     $(document).on('input', '#halle_inp', function() {
         //redraw image
         ctx.clearRect(0, 0, canvas.width, canvas.height);
