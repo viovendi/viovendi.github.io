@@ -58,7 +58,24 @@ function startCustomizationPage1(){
       console.log('page 1 visible');
   //Text von Button auf Seite 1
       $('.customization-button-next').text('Contineur');
-  
+  const observerMwStText = new MutationObserver((mutations, obs) => {
+        const mwstText = $('ew-selection__sum-title').next();
+    
+        if (!$(mwstText).is(':visible')) {
+          console.log('mwstText visible');
+          var mwstTexts = $('.customization-order-sum').find('span:not([class])');
+          mwstTexts.each(function(){
+          console.log('Text : '+$(this).text())
+          $(this).on()
+         });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerMwStText.observe(document, {
+        childList: true,
+        subtree: true
+    });
   var mwstTexts = $('.customization-order-sum').find('span:not([class])');
   mwstTexts.each(function(){
     console.log('Text : '+$(this).text())
