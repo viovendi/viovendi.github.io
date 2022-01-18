@@ -53,12 +53,9 @@ function generator(){
         ctx.drawImage($('img').get(0), 0, 0);
         //refill text
         ctx.fillStyle = "black";
-        if($('halle_inp').val()!=undefined){
-        ctx.fillText($('halle_inp').val(), 65, 465);
-        }
-        if($('stand_inp').val()!=undefined){
+        ctx.fillText($('#halle_inp').val(), 65, 465);
         ctx.fillText($('#stand_inp').val(), 60, 530);
-            }
+            
     }
     function download() {
         var download = document.getElementById("download");
