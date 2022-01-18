@@ -66,7 +66,7 @@ function startCustomizationPage1(){
           var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
           $(mwstTextValue).contents().filter(function(){ 
               return this.nodeType == 3; 
-              })[0].nodeValue = "The text you want to replace with"
+              })[0].nodeValue = "TVA incluse ("
           
             obs.disconnect();
             return;
