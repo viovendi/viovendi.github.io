@@ -35,7 +35,20 @@ function generator(){
             setTextsHochkant();
         }
     });
-    
+    $(document).on('input change keyup paste', '#format_inp', function() {
+        if($(this).val()=='hochkant'){
+        $("#my_image").attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-schmal.png");
+        setTextsHochkant()
+        }
+        if($(this).val()=='querformat'){
+        $("#my_image").attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-quer.png");
+        setTextsQuerFormat()
+        }
+    });
+    function setTextsQuerFormat(){
+     console.log('changing to querformat')   
+        
+    }
     function setTextsHochkant(){
         
         ctx.clearRect(0, 0, canvas.width, canvas.height);
