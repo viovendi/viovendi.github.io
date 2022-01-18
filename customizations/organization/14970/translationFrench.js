@@ -62,7 +62,8 @@ function startCustomizationPage1(){
         const mwstText = $('ew-selection__sum-title').next();
     
         if (!$(mwstText).is(':visible')) {
-          console.log('mwstText visible');
+          console.log('mwstText visible Text: '+mwstText.text());
+          
           var mwstTexts = $('.customization-order-sum').find('span:not([class])');
           mwstTexts.each(function(){
           console.log('Text : '+$(this).text())
