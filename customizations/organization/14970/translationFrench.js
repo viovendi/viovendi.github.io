@@ -112,7 +112,10 @@ observer2.observe(document, {
 function startCustomizationPage2(){
    console.log('page 2 visible')
       $('.customization-button-next').text('Réserver maintenant');
-      console.log($('.ew-selection__sum-title').text());
+     var mwstTexts = $('.customization-order-sum').find('span:not([class])');
+  mwstTexts.each(function(){
+    console.log('Text : '+$(this).text())
+  });
   console.log($('.ew-selection__sum-title').next().html());
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
