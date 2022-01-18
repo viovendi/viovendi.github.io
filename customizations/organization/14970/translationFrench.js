@@ -63,7 +63,7 @@ function startCustomizationPage1(){
     
         if (!$(mwstText).is(':visible')) {
           console.log('mwstText visible');
-          var mwstTextValue = $('.customization-order-sum').find('span:not([class])')()[0];
+          var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
           mwstTextValue.contents().filter(function(){ 
               return this.nodeType == 3; 
               })[0].nodeValue = "The text you want to replace with"
