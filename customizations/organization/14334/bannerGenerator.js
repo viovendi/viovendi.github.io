@@ -9,7 +9,8 @@ script.onload = handlerQ;
 
 head.appendChild(script);
 
-
+var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d');
 /*
 After I added jQuery I add all the cusomizations
 */
@@ -18,8 +19,7 @@ function handlerQ() {
     generator();
 }
 function setupBannerImage(){
-    var canvas = document.getElementById('canvas'),
-        ctx = canvas.getContext('2d');
+    
     canvas.width = $('#banner_img').width();
     canvas.crossOrigin = "Anonymous";
     canvas.height = $('#banner_img').height();
@@ -27,7 +27,7 @@ function setupBannerImage(){
     ctx.font = "18pt Verdana";
 }
 function generator(){
-  
+    
     setupBannerImage();
     $(document).on('input change keyup paste', '#halle_inp', function() {
         setTextsHochkant()
