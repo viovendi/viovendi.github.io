@@ -9,8 +9,8 @@ script.onload = handlerQ;
 
 head.appendChild(script);
 
-var canvas = document.getElementById('canvas'),
-var ctx = canvas.getContext('2d');
+var canvas = document.getElementById('canvas')
+ ctx = canvas.getContext('2d');
 /*
 After I added jQuery I add all the cusomizations
 */
