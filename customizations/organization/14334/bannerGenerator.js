@@ -21,10 +21,10 @@ function handlerQ() {
 function generator(){
   var canvas = document.getElementById('canvas'),
         ctx = canvas.getContext('2d');
-    canvas.width = $('img').width();
+    canvas.width = $('#banner_img').width();
     canvas.crossOrigin = "Anonymous";
-    canvas.height = $('img').height();
-    ctx.drawImage($('img').get(0), 0, 0);
+    canvas.height = $('#banner_img').height();
+    ctx.drawImage($('#banner_img').get(0), 0, 0);
     ctx.font = "18pt Verdana";
     $(document).on('input change keyup paste', '#halle_inp', function() {
         setTextsHochkant()
