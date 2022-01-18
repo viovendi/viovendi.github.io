@@ -41,7 +41,7 @@ function generator(){
         
         ctx.fillStyle = "black";
         ctx.fillText($('#halle_inp').val(), 65, 465);
-        ctx.fillText($('#stand_inp').val(), 60, 530);
+        ctx.fillText($('#stand_inp').val(), 60-$('#stand_inp').val()*5, 530);
             
     }
     function download() {
