@@ -58,10 +58,11 @@ function startCustomizationPage1(){
       console.log('page 1 visible');
   //Text von Button auf Seite 1
       $('.customization-button-next').text('Contineur');
+  
   const observerMwStText = new MutationObserver((mutations, obs) => {
         const mwstText = $('ew-selection__sum-title').next();
     
-        if (!$(mwstText).is(':visible')) {
+        if ($(mwstText).is(':visible')) {
           console.log('mwstText visible');
           var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
           $(mwstTextValue).contents().filter(function(){ 
