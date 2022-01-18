@@ -61,10 +61,9 @@ function startCustomizationPage1(){
   
   const observerMwStText = new MutationObserver((mutations, obs) => {
         const mwstText = $('ew-selection__sum-title').next();
-    
-        if ($(mwstText).is(':visible')) {
+    var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
+        if ($(mwstTextValue).is(':visible')) {
           console.log('mwstText visible');
-          var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
           $(mwstTextValue).contents().filter(function(){ 
               return this.nodeType == 3; 
               })[0].nodeValue = "TVA incluse ("
