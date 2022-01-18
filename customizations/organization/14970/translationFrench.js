@@ -62,15 +62,12 @@ function startCustomizationPage1(){
         const mwstText = $('ew-selection__sum-title').next();
     
         if (!$(mwstText).is(':visible')) {
-          console.log('mwstText visible Text: '+mwstText.text());
-          mwstText.contents().filter(function(){ 
+          console.log('mwstText visible');
+          var mwstTextValue = $('.customization-order-sum').find('span:not([class])')()[0];
+          mwstTextValue.contents().filter(function(){ 
               return this.nodeType == 3; 
-              })[0].nodeValue = "The text you want to replace with" 
-          var mwstTexts = $('.customization-order-sum').find('span:not([class])');
-          mwstTexts.each(function(){
-          console.log('Text : '+$(this).text())
-          $(this).on()
-         });
+              })[0].nodeValue = "The text you want to replace with"
+          
             obs.disconnect();
             return;
         }
