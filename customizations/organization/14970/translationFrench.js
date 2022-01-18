@@ -63,7 +63,7 @@ function startCustomizationPage1(){
         const mwstText = $('ew-selection__sum-title').next();
     var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
         if ($(mwstTextValue).is(':visible')) {
-          console.log('mwstText visible');
+         // console.log('mwstText visible');
           $(mwstTextValue).contents().filter(function(){ 
               return this.nodeType == 3; 
               })[0].nodeValue = "TVA incluse ("
@@ -82,7 +82,7 @@ function startCustomizationPage1(){
  const observerNoMwStText = new MutationObserver((mutations, obs) => {
          var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
         if (!$(mwstTextValue).is(':visible')) {
-          console.log('mwst not visible')
+      //    console.log('mwst not visible')
             observerMwStText.observe(document, {
                 childList: true,
                 subtree: true
