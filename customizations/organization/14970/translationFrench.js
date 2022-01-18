@@ -76,11 +76,22 @@ function startCustomizationPage1(){
         childList: true,
         subtree: true
     });
-  var mwstTexts = $('.customization-order-sum').find('span:not([class])');
-  mwstTexts.each(function(){
-    console.log('Text : '+$(this).text())
-    $(this).on()
-  });
+ const observerNoMwStText = new MutationObserver((mutations, obs) => {
+         var mwstTextValue = $('.customization-order-sum').find('span:not([class])')[0];
+        if (!$(mwstTextValue).is(':visible')) {
+          console.log('mwst not visible')
+            observerMwStText.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerNoMwStText.observe(document, {
+        childList: true,
+        subtree: true
+    });
   
   
 
