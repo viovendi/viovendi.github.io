@@ -30,8 +30,10 @@ function generator(){
         setTextsHochkant()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
-        if($(this).val().length<8)
-        setTextsHochkant();
+        if($(this).val().length<8){
+        console.log('value length ok');
+            setTextsHochkant();
+        }
     });
     
     function setTextsHochkant(){
@@ -41,7 +43,7 @@ function generator(){
         
         ctx.fillStyle = "black";
         ctx.fillText($('#halle_inp').val(), 65, 465);
-        ctx.fillText($('#stand_inp').val(), 60-$('#stand_inp').val()*5, 530);
+        ctx.fillText($('#stand_inp').val(), 60-$('#stand_inp').val().length*5, 530);
             
     }
     function download() {
