@@ -67,7 +67,10 @@ function startCustomizationPage1(){
           $(mwstTextValue).contents().filter(function(){ 
               return this.nodeType == 3; 
               })[0].nodeValue = "TVA incluse ("
-          
+          observerNoMwStText.observe(document, {
+            childList: true,
+            subtree: true
+          });
             obs.disconnect();
             return;
         }
