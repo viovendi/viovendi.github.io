@@ -34,7 +34,7 @@ function generator(){
         ctx.fillStyle = "black";
         ctx.fillText($(this).val(), 65, 465);
     });
-    $(document).on('input', '#stand_inp', function() {
+    $(document).on('input change keyup paste', '#stand_inp', function() {
         //redraw image
         //ctx.clearRect(0, 0, canvas.width, canvas.height);
         //ctx.drawImage($('img').get(0), 0, 0);
