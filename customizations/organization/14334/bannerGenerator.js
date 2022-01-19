@@ -35,9 +35,9 @@ function setTexts(){
  }
 }
 function generator(){
-    
     setupBannerImage();
-    $(document).on('input change keyup paste', '#halle_inp', function() {
+}
+$(document).on('input change keyup paste', '#halle_inp', function() {
         setTexts()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
@@ -83,4 +83,3 @@ function generator(){
             .replace("image/png", "image/octet-stream");
         download.setAttribute("href", image);
     }
-}
