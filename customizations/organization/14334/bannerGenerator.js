@@ -65,7 +65,12 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
     });
     function setTextsQuerFormat(){
      console.log('changing to querformat')   
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage($('#banner_img').get(0), 0, 0);
         
+        ctx.fillStyle = "black";
+        ctx.fillText($('#halle_inp').val(), 365 , 65);
+        ctx.fillText($('#stand_inp').val(), 375 , 65);
     }
     function setTextsHochkant(){
         
