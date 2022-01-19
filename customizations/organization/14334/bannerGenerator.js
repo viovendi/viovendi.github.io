@@ -74,7 +74,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         
         ctx.fillStyle = "black";
         ctx.fillText($('#halle_inp').val(), 65, 465);
-        ctx.fillText($('#stand_inp').val(), 75-$('#stand_inp').val().length*6, 535);
+        ctx.fillText($('#stand_inp').val(), 80-$('#stand_inp').val().length*6, 535);
             
     }
     function download() {
