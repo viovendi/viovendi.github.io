@@ -30,11 +30,11 @@ function generator(){
     
     setupBannerImage();
     $(document).on('input change keyup paste', '#halle_inp', function() {
-        setTextsHochkant()
+      //  setTextsHochkant()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
         if($(this).val().length<11){
-            setTextsHochkant();
+       //     setTextsHochkant();
         }
     });
     $(document).on('input change keyup paste', '#format_inp', function() {
