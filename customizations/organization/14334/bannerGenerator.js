@@ -28,7 +28,7 @@ function setupBannerImage(){
 }
 function generator(){
     
-  //  setupBannerImage();
+    setupBannerImage();
     $(document).on('input change keyup paste', '#halle_inp', function() {
         setTextsHochkant()
     });
