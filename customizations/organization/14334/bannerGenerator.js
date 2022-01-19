@@ -38,7 +38,7 @@ function generator(){
     
     setupBannerImage();
     $(document).on('input change keyup paste', '#halle_inp', function() {
-        setText()
+        setTexts()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
         if($(this).val().length<11){
