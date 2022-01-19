@@ -51,6 +51,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
     });
     $(document).on('input change keyup paste', '#format_inp', function() {
         if($(this).val()=='hochkant'){
+            $('#banner_img').crossOrigin = "Anonymous"
         $('#banner_img').attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-schmal.png");
             $('#banner_img').on('load',function(){
                     setupBannerImage();
@@ -59,6 +60,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         
         }
         if($(this).val()=='querformat'){
+        $('#banner_img').crossOrigin = "Anonymous"
         $('#banner_img').attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-quer.png");
              $('#banner_img').on('load',function(){
                     setupBannerImage();
