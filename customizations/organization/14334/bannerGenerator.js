@@ -26,6 +26,11 @@ function setupBannerImage(){
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     ctx.font = "18pt Verdana";
+    if(canvas.width>canvas.height){   
+    ctx.font = "12pt Verdana";
+    }else{
+     ctx.font = "18pt Verdana";
+       }
 }
 function setTexts(){
  if(canvas.width>canvas.height){   
@@ -69,8 +74,8 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         ctx.drawImage($('#banner_img').get(0), 0, 0);
         
         ctx.fillStyle = "black";
-        ctx.fillText($('#halle_inp').val(), 365 , 65);
-        ctx.fillText($('#stand_inp').val(), 375 , 65);
+        ctx.fillText($('#halle_inp').val(), 235 , 48);
+        ctx.fillText($('#stand_inp').val(), 245 , 48);
     }
     function setTextsHochkant(){
         
