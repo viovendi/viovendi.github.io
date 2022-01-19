@@ -19,7 +19,8 @@ function handlerQ() {
     generator();
 }
 function setupBannerImage(){
-    
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d');
     canvas.width = $('#banner_img').width();
     canvas.crossOrigin = "Anonymous";
     canvas.height = $('#banner_img').height();
