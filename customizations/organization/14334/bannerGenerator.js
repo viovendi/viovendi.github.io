@@ -19,12 +19,17 @@ function handlerQ() {
     generator();
 }
 function setupBannerImage(){
+    console.log('setupBanner');
     canvas = document.getElementById('canvas')
     ctx = canvas.getContext('2d');
+    console.log('set canvas and ctx');
     canvas.width = $('#banner_img').width();
     canvas.crossOrigin = "Anonymous";
     canvas.height = $('#banner_img').height();
+        console.log('set width and height');
+
     ctx.drawImage($('#banner_img').get(0), 0, 0);
+    console.log('image drawn');
     ctx.font = "18pt Verdana";
 }
 function generator(){
