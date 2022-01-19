@@ -28,13 +28,12 @@ function setupBannerImage(){
 }
 function generator(){
     
-    setupBannerImage();
+  //  setupBannerImage();
     $(document).on('input change keyup paste', '#halle_inp', function() {
         setTextsHochkant()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
-        if($(this).val().length<12){
-        console.log('value length ok');
+        if($(this).val().length<11){
             setTextsHochkant();
         }
     });
