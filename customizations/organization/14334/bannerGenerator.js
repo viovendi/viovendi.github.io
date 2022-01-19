@@ -26,7 +26,7 @@ function setupBannerImage(){
     canvas.width = $('#banner_img').width();
     canvas.crossOrigin = "Anonymous";
     canvas.height = $('#banner_img').height();
-        console.log('set width and height');
+        console.log('set width and height to:'canvas.width+' , 'canvas.height);
 
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     console.log('image drawn');
