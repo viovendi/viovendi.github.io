@@ -73,8 +73,8 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         ctx.drawImage($('#banner_img').get(0), 0, 0);
         
         ctx.fillStyle = "black";
-        ctx.fillText($('#halle_inp').val(), 235 , 48);
-        ctx.fillText($('#stand_inp').val(), 250 , 48);
+        ctx.fillText($('#halle_inp').val(), 235 , 42);
+        ctx.fillText($('#stand_inp').val(), 265 , 42);
     }
     function setTextsHochkant(){
         
