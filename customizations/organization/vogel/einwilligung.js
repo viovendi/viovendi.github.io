@@ -39,6 +39,7 @@ function startCustomizationPage2(){
     $('.customization-button-next').text('Jetzt vormerken');
 if ($('.customization-button-next').text().includes("Book now"))
     $('.customization-button-next').text('Register now');
+    $('.vv-checkbox__indicator').attr('margin-bottom','88px');
 $('.customization2_booking-terms_text').html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden.<p>Bitte beachten Sie: Mit Ihrer Vormerkung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</p>");
     $('.customization2_booking-terms_list').hide();
     const observerThisPage = new MutationObserver((mutations, obs) => {
