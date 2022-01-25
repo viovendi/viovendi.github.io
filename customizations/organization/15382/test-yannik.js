@@ -1,1 +1,1 @@
-
+ $('#isTermsAccepted').click()
