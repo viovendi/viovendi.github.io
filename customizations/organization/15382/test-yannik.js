@@ -1,1 +1,2 @@
- $('#isTermsAccepted').click()
+console.log("removeCheckbox"); 
+$('#isTermsAccepted').click()
