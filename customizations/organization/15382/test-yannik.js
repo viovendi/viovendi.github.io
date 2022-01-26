@@ -1,1 +1,1 @@
-console.log("removeCheckbox");
+console.log("removeCheckbox ");
