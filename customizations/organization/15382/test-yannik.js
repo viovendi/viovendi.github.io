@@ -8,5 +8,5 @@ $(document).ready(function () {
         box2.val(box1.val());
         $('.customization2_attendee_contact-data_email-confirmation_input').focus();
     }
-    $('.customization2_attendee_contact-data_email_input').on('change', emailConfirmation);
+    $('.customization2_attendee_contact-data_email_input').on('input', emailConfirmation);
 });
