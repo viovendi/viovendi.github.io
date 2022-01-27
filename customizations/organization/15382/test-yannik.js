@@ -1,2 +1,3 @@
 console.log("removeCheckbox ");
-$('#isTermsAccepted').click()
+$('#isTermsAccepted').click();
+console.log("checkboxClicked");
