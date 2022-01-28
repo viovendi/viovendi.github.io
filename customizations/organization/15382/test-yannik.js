@@ -25,12 +25,18 @@ $.fn.swapWith = function(that) {
   return $this;
 };
 
+var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
+var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
+var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
+
 function replaceDOI() {
     // Replace DOI & Terms
-    console.log("DOI and Terms moved");
-    $(".customization2_booking-terms .vv-mb-xxs").appendTo(".customization2_booker_contact-data");
-    $(".customization2_booking-terms .vv-pl-lg").appendTo(".customization2_booker_contact-data");
-    $("vv-advanced-questions .customization2_opt-out-and-opt-in").appendTo(".customization2_booking-terms");
+    $('.customization2_booking-terms').empty();
+    $(doi).appendTo(".customization2_booking-terms");
+
+    $("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
+    $(termsLabel).appendTo(".customization2_booker_contact-data");
+    $(termsLink).appendTo(".customization2_booker_contact-data");
 
     // click Terms checkbox
     console.log("checkbox clicked");
@@ -53,8 +59,8 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
 
-        //replaceDOI();
-        $(".customization2_booking-terms").swapWith("vv-advanced-questions .customization2_opt-out-and-opt-in");
+        replaceDOI();
+        //$(".customization2_booking-terms").swapWith("vv-advanced-questions .customization2_opt-out-and-opt-in");
         console.log("event listener");
 
     }
