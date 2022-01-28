@@ -34,9 +34,7 @@ function replaceDOI() {
     $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
 };
 
-
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
-$('body').on('click', '.customization2_booker_view-action_edit', replaceDOI);
 
 replaceDOI();
                                                                  
