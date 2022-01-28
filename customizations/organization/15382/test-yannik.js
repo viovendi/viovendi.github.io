@@ -10,6 +10,21 @@ function emailConfirmation() {
     $('.customization2_booker_contact-data_email-confirmation_input').focus();
 }
 
+$.fn.swapWith = function(that) {
+  var $this = this;
+  var $that = $(that);
+  
+  // create temporary placeholder
+  var $temp = $("<div>");
+  
+  // 3-step swap
+  $this.before($temp);
+  $that.before($this);
+  $temp.before($that).remove();
+        
+  return $this;
+}
+
 function replaceDOI() {
     // Replace DOI & Terms
     console.log("DOI and Terms moved");
@@ -38,7 +53,8 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
 
-        replaceDOI();
+        //replaceDOI();
+        $(".customization2_booking-terms").swapWith(".customization2_opt-out-and-opt-in");
         console.log("event listener");
 
     }
