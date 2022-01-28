@@ -54,7 +54,7 @@ var insertionListener = function (event) {
         //Insert your code here
 
         //replaceDOI();
-        $(".customization2_booking-terms").swapWith(".customization2_opt-out-and-opt-in");
+        $(".customization2_booking-terms").swapWith("vv-advanced-questions .customization2_opt-out-and-opt-in");
         console.log("event listener");
 
     }
