@@ -10,30 +10,17 @@ function emailConfirmation() {
     $('.customization2_booker_contact-data_email-confirmation_input').focus();
 };
 
-$.fn.swapWith = function(that) {
-  var $this = this;
-  var $that = $(that);
-  
-  // create temporary placeholder
-  var $temp = $("<div>");
-  
-  // 3-step swap
-  $this.before($temp);
-  $that.before($this);
-  $temp.before($that).remove();
-        
-  return $this;
-};
-
 var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
 var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
 var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 
 function replaceDOI() {
-    // Replace DOI & Terms
+    // Rearrange DOI & Terms
+    console.log("DOI moved");
     $('.customization2_booking-terms').empty();
     $(doi).appendTo(".customization2_booking-terms");
 
+    console.log("Terms moved");
     $("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
     $(termsLabel).appendTo(".customization2_booker_contact-data");
     $(termsLink).appendTo(".customization2_booker_contact-data");
@@ -52,17 +39,14 @@ function replaceDOI() {
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
 // Hide Email Confirmation
-//$('.customization2_booker_contact-data_email-confirmation').attr('style', 'display: none');
+$('.customization2_booker_contact-data_email-confirmation').css({"visibility":"hidden");
 
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
-
-        replaceDOI();
-        //$(".customization2_booking-terms").swapWith("vv-advanced-questions .customization2_opt-out-and-opt-in");
         console.log("event listener");
-
+        replaceDOI();
     }
 };
 
