@@ -31,15 +31,11 @@ function replaceDOI() {
 
     // Remove Terms checkbox
     console.log("Checkbox removed");
-    $("vv-checkbox[name='isTermsAccepted']").attr('style', 'padding-top: 30px');
     $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
 };
 
 
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
-
-// Hide Email Confirmation
-$('.customization2_booker_contact-data_email-confirmation').css({"visibility":"hidden"});
 
 replaceDOI();
                                                                  
@@ -48,6 +44,9 @@ var insertionListener = function (event) {
         //Insert your code here
         console.log("event listener");
         replaceDOI();
+        
+        // Hide Email Confirmation
+        $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
     }
 };
 
