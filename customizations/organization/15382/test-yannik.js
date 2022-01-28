@@ -41,7 +41,8 @@ $('body').on('change', '.customization2_booker_contact-data_email_input', emailC
 // Hide Email Confirmation
 $('.customization2_booker_contact-data_email-confirmation').css({"visibility":"hidden");
 
-
+replaceDOI();
+                                                                 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
