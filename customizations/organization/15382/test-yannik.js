@@ -37,14 +37,15 @@ function replaceDOI() {
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
 replaceDOI();
+
+// Hide Email Confirmation
+$('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
                                                                  
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
         console.log("event listener");
         replaceDOI();
-        
-        // Hide Email Confirmation
         $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
     }
 };
