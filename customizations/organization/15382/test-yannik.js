@@ -39,7 +39,7 @@ function replaceDOI() {
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
 // Hide Email Confirmation
-$('.customization2_booker_contact-data_email-confirmation').css({"visibility":"hidden");
+$('.customization2_booker_contact-data_email-confirmation').css({"visibility":"hidden"});
 
 replaceDOI();
                                                                  
