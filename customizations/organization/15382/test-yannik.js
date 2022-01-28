@@ -36,6 +36,7 @@ function replaceDOI() {
 
 
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
+$('body').on('click', '.customization2_booker_view-action_edit', replaceDOI);
 
 replaceDOI();
                                                                  
