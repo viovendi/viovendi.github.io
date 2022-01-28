@@ -47,6 +47,7 @@ var insertionListener = function (event) {
         console.log("event listener");
         replaceDOI();
         $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
+        $(".customization2_booker_view-action_edit").click(replaceDOI);
     }
 };
 
