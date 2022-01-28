@@ -42,6 +42,7 @@ if ($('.customization-button-next').text().includes("Book now"))
     $('.vv-checkbox__indicator').css('margin-top', '-18%');
 $('.customization2_booking-terms_text').html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden.<br><br><p>Bitte beachten Sie: Mit Ihrer Vormerkung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</p>");
     $('.customization2_booking-terms_list').hide();
+    $('.text-after-ewe').hide();
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
