@@ -24,6 +24,7 @@ $(document).ready(function () {
     var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
     var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
     var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
+    var rechtlicherHinweis = $("<p></p>").text("Rechtlicher Hinweis");
 
     function moveTerms() {
 
@@ -32,7 +33,7 @@ $(document).ready(function () {
         $('.customization2_booking-terms_checkbox').click()
 
         // Add Terms after Booker data
-        $(".customization2_booking-terms_text").before("Rechtlicher Hinweis");
+        $(rechtlicherHinweis).appendTo(".customization2_booker_contact-data");
         $(termsLabel).appendTo(".customization2_booker_contact-data");
         $(termsLink).appendTo(".customization2_booker_contact-data");
 
