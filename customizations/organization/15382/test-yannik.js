@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     hideEmail();
     moveTerms();
-    moveDoi();
+    //moveDoi();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
@@ -70,7 +70,7 @@ $(document).ready(function () {
             console.log("event listener");
             hideEmail();
             moveTerms();
-            moveDoi();
+            //moveDoi();
         }
     };
 
