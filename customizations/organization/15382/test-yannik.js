@@ -14,7 +14,8 @@ function emailConfirmation() {
 function hideEmail() {
     console.log("hideEmail");
     $('.customization2_booker_contact-data_email-confirmation').css({
-        "opacity": "0"
+        "opacity": "0",
+        "height": "0px"
     });
 };
 
@@ -22,7 +23,7 @@ $(document).ready(function () {
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-    $('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
+    //$('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
 
     hideEmail();
 
