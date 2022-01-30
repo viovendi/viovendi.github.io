@@ -46,8 +46,8 @@ function replaceTerms() {
     //});
     
     // Remove Terms checkbox
-    //console.log("Checkbox removed");
-    //$("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
+    console.log("Checkbox removed");
+    $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
 };
 
 
