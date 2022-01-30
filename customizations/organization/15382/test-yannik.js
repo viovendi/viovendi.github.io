@@ -1,54 +1,59 @@
 $(document).ready(function () {
 
-// Email Confirmation 
-function copyEmail() {
-    var box1 = $('.customization2_booker_contact-data_email_input');
-    var box2 = $('.customization2_booker_contact-data_email-confirmation_input');
-    box2.val(box1.val());
-};
+    // Email Confirmation 
+    function copyEmail() {
+        var box1 = $('.customization2_booker_contact-data_email_input');
+        var box2 = $('.customization2_booker_contact-data_email-confirmation_input');
+        box2.val(box1.val());
+    };
 
-function emailConfirmation() {
-    copyEmail();
-    $('.customization2_booker_contact-data_email-confirmation_input').focus();
-    $('.customization2_booker_edit-action_save').focus();
-};
+    function emailConfirmation() {
+        copyEmail();
+        $('.customization2_booker_contact-data_email-confirmation_input').focus();
+        $('.customization2_booker_edit-action_save').focus();
+    };
 
-function hideEmail() {
-    console.log("hideEmail");
-    $('.customization2_booker_contact-data_email-confirmation').css({
-        "opacity": "0",
-        "height": "0px"
-    });
-};
+    function hideEmail() {
+        console.log("hideEmail");
+        $('.customization2_booker_contact-data_email-confirmation').css({
+            "opacity": "0",
+            "height": "0px"
+        });
+    };
 
-var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
-var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
-var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
+    var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
+    var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
+    var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 
-function moveTerms() {
-    // Rearrange DOI & Terms
-    //console.log("DOI moved");
-    //$('.customization2_booking-terms').empty();
-    //$(doi).appendTo(".customization2_booking-terms");
+    function moveTerms() {
 
-    // click Terms checkbox
-    console.log("checkbox clicked");
-    $('.customization2_booking-terms_checkbox').click()
-    
-    //console.log("Terms moved");
-    $(".customization2_booker_contact-data").after("Rechtlicher Hinweis");
-    $(termsLabel).appendTo(".customization2_booker_contact-data");
-    $(termsLink).appendTo(".customization2_booker_contact-data");
+        // Click Terms checkbox
+        console.log("checkbox clicked");
+        $('.customization2_booking-terms_checkbox').click()
 
-    // Remove Terms
-    $('.customization2_booking-terms .vv-mb-xxs, .customization2_booking-terms .vv-pl-lg').css({
-       "display": "none",
-    });
-    
-    // Remove Terms checkbox
-    console.log("Checkbox removed");
-    $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
-};
+        // Add Terms after Booker data
+        $(".customization2_booking-terms_text").before("Rechtlicher Hinweis");
+        $(termsLabel).appendTo(".customization2_booker_contact-data");
+        $(termsLink).appendTo(".customization2_booker_contact-data");
+
+        // Remove Terms in Terms sections
+        $('.customization2_booking-terms .vv-mb-xxs, .customization2_booking-terms .vv-pl-lg').css({
+            "display": "none",
+        });
+
+        // Remove Terms checkbox
+        console.log("Checkbox removed");
+        $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
+    };
+
+    function moveDoi() {
+        console.log("DOI moved");
+        $('vv-advanced-questions .customization2_opt-out-and-opt-in').css({
+            "display": "none",
+        });
+        $(doi).appendTo(".customization2_booking-terms");
+    };
+
 
 
 
@@ -56,6 +61,7 @@ function moveTerms() {
 
     hideEmail();
     moveTerms();
+    moveDoi();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
@@ -63,6 +69,7 @@ function moveTerms() {
             console.log("event listener");
             hideEmail();
             moveTerms();
+            moveDoi();
         }
     };
 
