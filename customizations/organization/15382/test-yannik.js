@@ -18,13 +18,15 @@ function hideEmail() {
 
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-$('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
+$('body').on('click', 'vv-button.customization2_booker_view-action_edit', hideEmail);
+
+hideEmail();
                                                                  
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
         console.log("event listener");
-        hideEmail()
+        hideEmail();
     }
 };
 
