@@ -23,25 +23,26 @@ var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
 var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
 var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 
-function replaceDOI() {
+function replaceTerms() {
     // Rearrange DOI & Terms
-    console.log("DOI moved");
+    //console.log("DOI moved");
     //$('.customization2_booking-terms').empty();
-    $('.customization2_booking-terms').css({
-        "opacity": "0",
-        "height": "0px"
-    });
-    $(doi).appendTo(".customization2_booking-terms");
-
-    console.log("Terms moved");
-    $("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
-    $(termsLabel).appendTo(".customization2_booker_contact-data");
-    $(termsLink).appendTo(".customization2_booker_contact-data");
+    //$(doi).appendTo(".customization2_booking-terms");
 
     // click Terms checkbox
     console.log("checkbox clicked");
     $('#isTermsAccepted').click();
+    
+    console.log("Terms moved");
+    //$("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
+    $(termsLabel).appendTo(".customization2_booker_contact-data");
+    $(termsLink).appendTo(".customization2_booker_contact-data");
 
+    $('.customization2_booking-terms').css({
+        "opacity": "0",
+        "height": "0px"
+    });
+    
     // Remove Terms checkbox
     //console.log("Checkbox removed");
     //$("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
