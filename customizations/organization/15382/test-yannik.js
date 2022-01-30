@@ -33,15 +33,15 @@ function replaceTerms() {
     console.log("checkbox clicked");
     $('#isTermsAccepted').click();
     
-    console.log("Terms moved");
+    //console.log("Terms moved");
     //$("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
-    $(termsLabel).appendTo(".customization2_booker_contact-data");
-    $(termsLink).appendTo(".customization2_booker_contact-data");
+    //$(termsLabel).appendTo(".customization2_booker_contact-data");
+    //$(termsLink).appendTo(".customization2_booker_contact-data");
 
-    $('.customization2_booking-terms').css({
-        "opacity": "0",
-        "height": "0px"
-    });
+    //$('.customization2_booking-terms').css({
+    //    "opacity": "0",
+    //    "height": "0px"
+    //});
     
     // Remove Terms checkbox
     //console.log("Checkbox removed");
@@ -52,17 +52,15 @@ $(document).ready(function () {
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-    //$('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
-
     hideEmail();
-    //replaceTerms();
+    replaceTerms();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
 
             console.log("event listener");
             hideEmail();
-            //replaceTerms();
+            replaceTerms();
         }
     };
 
