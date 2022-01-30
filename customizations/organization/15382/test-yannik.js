@@ -25,7 +25,7 @@ var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
 var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
 var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 
-function replaceTerms() {
+function moveTerms() {
     // Rearrange DOI & Terms
     //console.log("DOI moved");
     //$('.customization2_booking-terms').empty();
@@ -36,7 +36,7 @@ function replaceTerms() {
     $('.customization2_booking-terms_checkbox').click()
     
     //console.log("Terms moved");
-    //$("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
+    $(".customization2_booker_contact-data").after("Rechtlicher Hinweis");
     $(termsLabel).appendTo(".customization2_booker_contact-data");
     $(termsLink).appendTo(".customization2_booker_contact-data");
 
@@ -55,14 +55,14 @@ function replaceTerms() {
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
     hideEmail();
-    replaceTerms();
+    moveTerms();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
 
             console.log("event listener");
             hideEmail();
-            replaceTerms();
+            moveTerms();
         }
     };
 
