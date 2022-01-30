@@ -49,10 +49,10 @@ $(document).ready(function () {
 
     function moveDoi() {
         console.log("DOI moved");
-        $('vv-advanced-questions .customization2_opt-out-and-opt-in').css({
-            "display": "none",
-        });
         $(doi).appendTo(".customization2_booking-terms");
+        //$('vv-advanced-questions .customization2_opt-out-and-opt-in').css({
+        //    "display": "none",
+        //});
     };
 
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     hideEmail();
     moveTerms();
-    //moveDoi();
+    moveDoi();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
@@ -70,7 +70,7 @@ $(document).ready(function () {
             console.log("event listener");
             hideEmail();
             moveTerms();
-            //moveDoi();
+            moveDoi();
         }
     };
 
