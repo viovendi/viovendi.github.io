@@ -37,8 +37,8 @@ function replaceTerms() {
     
     //console.log("Terms moved");
     //$("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
-    //$(termsLabel).appendTo(".customization2_booker_contact-data");
-    //$(termsLink).appendTo(".customization2_booker_contact-data");
+    $(termsLabel).appendTo(".customization2_booker_contact-data");
+    $(termsLink).appendTo(".customization2_booker_contact-data");
 
     //$('.customization2_booking-terms').css({
     //    "opacity": "0",
