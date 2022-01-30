@@ -33,7 +33,7 @@ function replaceTerms() {
 
     // click Terms checkbox
     console.log("checkbox clicked");
-    $('#isTermsAccepted').click();
+    $('.customization2_booking-terms_checkbox').click()
     
     //console.log("Terms moved");
     //$("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
