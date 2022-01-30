@@ -40,10 +40,10 @@ function replaceTerms() {
     $(termsLabel).appendTo(".customization2_booker_contact-data");
     $(termsLink).appendTo(".customization2_booker_contact-data");
 
-    //$('.customization2_booking-terms').css({
-    //    "opacity": "0",
-    //    "height": "0px"
-    //});
+    // Remove Terms
+    $('.customization2_booking-terms .vv-mb-xxs, .customization2_booking-terms .vv-pl-lg').css({
+       "display": "none",
+    });
     
     // Remove Terms checkbox
     console.log("Checkbox removed");
