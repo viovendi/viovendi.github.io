@@ -57,8 +57,11 @@ $(document).ready(function () {
 
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
-
-
+    
+    $('body').on('change', '.customization2_booking-terms div vv-checkbox label .customization2_double-opt-in_checkbox', function(){
+    $('vv-advanced-questions div vv-checkbox label .customization2_double-opt-in_checkbox').click();
+    });
+    
     hideEmail();
     moveTerms();
     moveDoi();
