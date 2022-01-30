@@ -26,7 +26,11 @@ var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 function replaceDOI() {
     // Rearrange DOI & Terms
     console.log("DOI moved");
-    $('.customization2_booking-terms').empty();
+    //$('.customization2_booking-terms').empty();
+    $('.customization2_booking-terms').css({
+        "opacity": "0",
+        "height": "0px"
+    });
     $(doi).appendTo(".customization2_booking-terms");
 
     console.log("Terms moved");
