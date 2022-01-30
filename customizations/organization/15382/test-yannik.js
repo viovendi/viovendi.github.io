@@ -12,22 +12,19 @@ function emailConfirmation() {
 };
 
 function hideEmail() {
+    console.log("hideEmail");
     $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
 };
 
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-$('body').on('load', 'button.customization2_booker_view-action_edit', hideEmail);
-console.log("hideEmail");
-
-// Hide Email Confirmation
-//hideEmail();
+$('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
                                                                  
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
         console.log("event listener");
-        //hideEmail()
+        hideEmail()
     }
 };
 
