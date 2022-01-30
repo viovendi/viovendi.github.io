@@ -55,14 +55,14 @@ $(document).ready(function () {
     //$('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
 
     hideEmail();
-    replaceDOI();
+    replaceTerms();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
 
             console.log("event listener");
             hideEmail();
-            replaceDOI();
+            replaceTerms();
         }
     };
 
