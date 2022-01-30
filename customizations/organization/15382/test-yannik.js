@@ -13,23 +13,29 @@ function emailConfirmation() {
 
 function hideEmail() {
     console.log("hideEmail");
-    $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
+    $('.customization2_booker_contact-data_email-confirmation').css({
+        "opacity": "0"
+    });
 };
 
-$('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
+$(document).ready(function () {
 
-$('body').on('click', 'vv-button.customization2_booker_view-action_edit', hideEmail);
+    $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-hideEmail();
-                                                                 
-var insertionListener = function (event) {
-    if (event.animationName === "nodeInserted") {
-        //Insert your code here
-        console.log("event listener");
-        hideEmail();
-    }
-};
+    $('body').on('click', 'button.customization2_booker_view-action_edit', hideEmail);
 
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); //
+    hideEmail();
+
+    var insertionListener = function (event) {
+        if (event.animationName === "nodeInserted") {
+
+            console.log("event listener");
+            hideEmail();
+        }
+    };
+
+    document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+    document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+    document.addEventListener("webkitAnimationStart", insertionListener, false); //
+
+});
