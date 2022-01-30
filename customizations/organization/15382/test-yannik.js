@@ -8,46 +8,26 @@ function copyEmail() {
 function emailConfirmation() {
     copyEmail();
     $('.customization2_booker_contact-data_email-confirmation_input').focus();
+    $('.customization2_booker_edit-action_save').focus();
 };
 
-var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
-var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
-var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
-
-function replaceDOI() {
-    // Rearrange DOI & Terms
-    console.log("DOI moved");
-    $('.customization2_booking-terms').empty();
-    $(doi).appendTo(".customization2_booking-terms");
-
-    console.log("Terms moved");
-    $("vv-advanced-questions .customization2_opt-out-and-opt-in").remove();
-    $(termsLabel).appendTo(".customization2_booker_contact-data");
-    $(termsLink).appendTo(".customization2_booker_contact-data");
-
-    // click Terms checkbox
-    console.log("checkbox clicked");
-    $('#isTermsAccepted').click();
-
-    // Remove Terms checkbox
-    console.log("Checkbox removed");
-    $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
+function hideEmail() {
+    $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
 };
 
 $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
-replaceDOI();
+$('body').on('load', 'button.customization2_booker_view-action_edit', hideEmail);
+console.log("hideEmail");
 
 // Hide Email Confirmation
-$('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
+//hideEmail();
                                                                  
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //Insert your code here
         console.log("event listener");
-        replaceDOI();
-        $('.customization2_booker_contact-data_email-confirmation').css({"opacity":"0"});
-        $(".customization2_booker_view-action_edit").click(replaceDOI);
+        //hideEmail()
     }
 };
 
