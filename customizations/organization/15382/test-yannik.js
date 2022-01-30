@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 // Email Confirmation 
 function copyEmail() {
     var box1 = $('.customization2_booker_contact-data_email_input');
@@ -48,7 +50,7 @@ function replaceTerms() {
     //$("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
 };
 
-$(document).ready(function () {
+
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
 
