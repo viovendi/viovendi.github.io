@@ -8,4 +8,5 @@ $(document).ready(function () {
                 "display": "none",
                 });
         };
+        console.log("git over");
 });
