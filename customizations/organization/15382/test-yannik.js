@@ -24,7 +24,8 @@ $(document).ready(function () {
     var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
     var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
     var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
-    var rechtlicherHinweis = $("<p></p>").text("Rechtlicher Hinweis");
+    var rechtlicherHinweis = $("<p style="padding-bottom: 20px"></p>").text("Rechtlicher Hinweis");
+    var newsletterLabel = $("<p></p>").text("Newsletter");
 
     function moveTerms() {
 
@@ -45,6 +46,9 @@ $(document).ready(function () {
         // Remove Terms checkbox
         console.log("Checkbox removed");
         $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
+        
+        // Add Heading to DOI
+        $(newsletterLabel).prependTo("vv-advanced-questions .customization2_opt-out-and-opt-in");
     };
     
     function saveToBook() {        
