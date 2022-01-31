@@ -63,8 +63,7 @@ $(document).ready(function () {
     
     $('button.customization2_booker_edit-action_save').on('click', saveToBook);
     
-
-    
+    moveBookingButton();
     hideEmail();
     moveTerms();
 
@@ -75,7 +74,7 @@ $(document).ready(function () {
             hideEmail();
             moveTerms();
             $('button.customization2_booker_edit-action_save').on('click', saveToBook);
-            moveBookingButton()
+            moveBookingButton();
         }
     };
 
