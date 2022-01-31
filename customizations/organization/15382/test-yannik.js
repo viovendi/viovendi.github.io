@@ -47,24 +47,11 @@ $(document).ready(function () {
         $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
     };
 
-    function moveDoi() {
-        console.log("DOI moved");
-        $(doi).appendTo(".customization2_booking-terms");
-        //$('vv-advanced-questions .customization2_opt-out-and-opt-in').css({
-        //    "display": "none",
-        //});
-    };
-
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
-    /*$('body').on('change', '.customization2_booking-terms div vv-checkbox label .customization2_double-opt-in_checkbox', function(){
-    $('vv-advanced-questions div vv-checkbox label .customization2_double-opt-in_checkbox').click();
-    });*/
-    
     hideEmail();
     moveTerms();
-    moveDoi();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
@@ -72,7 +59,6 @@ $(document).ready(function () {
             console.log("event listener");
             hideEmail();
             moveTerms();
-            moveDoi();
         }
     };
 
