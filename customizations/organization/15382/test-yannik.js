@@ -53,7 +53,7 @@ $(document).ready(function () {
         $('.customization-button-next').click();
     };
     
-    $('vv-button[customization="customization-button-previous"] + div').css({"display": "none"});
+    $('vv-button[customization="customization-button-previous"] + div').css({"opacity": "0"});
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
