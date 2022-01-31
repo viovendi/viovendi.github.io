@@ -53,11 +53,12 @@ $(document).ready(function () {
         $('.customization-button-next').click();
     };
     
-    //$('vv-button[customization="customization-button-previous"] + div').css({"opacity": "0"});
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
     $('button.customization2_booker_edit-action_save').on('click', saveToBook);
+    
+    $('vv-button[customization="customization-button-previous"] + div').css({"opacity": "0"});
     
     hideEmail();
     moveTerms();
