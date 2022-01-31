@@ -37,6 +37,11 @@ $(document).ready(function () {
         $(rechtlicherHinweis).appendTo(".customization2_booker_contact-data");
         $(termsLabel).appendTo(".customization2_booker_contact-data");
         $(termsLink).appendTo(".customization2_booker_contact-data");
+        
+        $('.customization2_booker_contact-data > p').css({
+            "padding-bottom": "10px",
+            "padding-top": "20px",
+        });
 
         // Remove Terms in Terms sections
         $('.customization2_booking-terms').css({
