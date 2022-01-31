@@ -39,7 +39,7 @@ $(document).ready(function () {
         $(termsLink).appendTo(".customization2_booker_contact-data");
         
         $('.customization2_booker_contact-data > p').css({
-            "padding-bottom": "16px",
+            "padding-bottom": "10px",
             "padding-top": "20px",
         });
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
         $(newsletterLabel).prependTo("vv-advanced-questions .customization2_opt-out-and-opt-in");
         
         $('.customization2_opt-out-and-opt-in > .vv-mb-lg').css({
-            "margin-bottom": "0px",
+            "margin-bottom": "10px",
         });
         
     };
