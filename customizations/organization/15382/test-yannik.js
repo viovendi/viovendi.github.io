@@ -49,14 +49,13 @@ $(document).ready(function () {
     
     function saveToBook() {
         console.log("Speichern");
+        $('.customization-button-next').click();
     };
 
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
-    //$(document).on('click', 'button.customization2_booker_edit-action_save', function(){
-    //console.log("Speichern");
-    //});
+    $('button.customization2_booker_edit-action_save').on('click', saveToBook);
     
     hideEmail();
     moveTerms();
