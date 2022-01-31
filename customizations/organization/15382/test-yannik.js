@@ -46,13 +46,17 @@ $(document).ready(function () {
         console.log("Checkbox removed");
         $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
     };
+    
+    function saveToBook() {
+        console.log("Speichern");
+    };
 
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
-    $(document).on('click', 'button.customization2_booker_edit-action_save', function(){
-    console.log("Speichern");
-    });
+    //$(document).on('click', 'button.customization2_booker_edit-action_save', function(){
+    //console.log("Speichern");
+    //});
     
     hideEmail();
     moveTerms();
@@ -63,6 +67,7 @@ $(document).ready(function () {
             console.log("event listener");
             hideEmail();
             moveTerms();
+            $('button.customization2_booker_edit-action_save').on('click', saveToBook);
         }
     };
 
