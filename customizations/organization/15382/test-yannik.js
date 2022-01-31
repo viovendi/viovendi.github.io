@@ -24,7 +24,7 @@ $(document).ready(function () {
     var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
     var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
     var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
-    var rechtlicherHinweis = $("<p style="padding-bottom: 20px"></p>").text("Rechtlicher Hinweis");
+    var rechtlicherHinweis = $("<p></p>").text("Rechtlicher Hinweis");
     var newsletterLabel = $("<p></p>").text("Newsletter");
 
     function moveTerms() {
