@@ -54,6 +54,11 @@ $(document).ready(function () {
         
         // Add Heading to DOI
         $(newsletterLabel).prependTo("vv-advanced-questions .customization2_opt-out-and-opt-in");
+        
+        $('.customization2_opt-out-and-opt-in > .vv-mb-lg').css({
+            "margin-bottom": "0px",
+        });
+        
     };
     
     function saveToBook() {        
