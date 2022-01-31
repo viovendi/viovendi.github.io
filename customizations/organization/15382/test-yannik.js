@@ -49,6 +49,7 @@ $(document).ready(function () {
     
     function saveToBook() {
         console.log("Speichern");
+        $('.customization-button-next').focus();
         $('.customization-button-next').click();
     };
 
