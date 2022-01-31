@@ -53,12 +53,17 @@ $(document).ready(function () {
         $('.customization-button-next').click();
     };
     
+    function moveBookingButton() {
+        $('vv-button[customization="customization-button-previous"] + div').css({"opacity": "0"});
+        $(".customization2_booker_edit-action_save").html("Jetzt buchen");
+    };
+    
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
     $('button.customization2_booker_edit-action_save').on('click', saveToBook);
     
-    $('vv-button[customization="customization-button-previous"] + div').css({"opacity": "0"});
+
     
     hideEmail();
     moveTerms();
@@ -70,6 +75,7 @@ $(document).ready(function () {
             hideEmail();
             moveTerms();
             $('button.customization2_booker_edit-action_save').on('click', saveToBook);
+            moveBookingButton()
         }
     };
 
