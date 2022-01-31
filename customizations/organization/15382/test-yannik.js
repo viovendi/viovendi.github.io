@@ -38,7 +38,10 @@ $(document).ready(function () {
         $(termsLink).appendTo(".customization2_booker_contact-data");
 
         // Remove Terms in Terms sections
-        $('.customization2_booking-terms .vv-mb-xxs, .customization2_booking-terms .vv-pl-lg').css({
+        //$('.customization2_booking-terms .vv-mb-xxs, .customization2_booking-terms .vv-pl-lg').css({
+        //    "display": "none",
+        //});
+        $('.customization2_booking-terms').css({
             "display": "none",
         });
 
