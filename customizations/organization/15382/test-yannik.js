@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
-    $('body').on('click', '.customization2_booker_edit-action_save', function(){
+    $('body').on('click', 'vv-button.customization2_booker_edit-action_save', function(){
     console.log("Speichern");
     });
     
