@@ -4,9 +4,12 @@ $(document).ready(function () {
 
         function changeColorVeranstalter() {
                 console.log("changeColorVeranstalter");
-                $('.m-text').css({
+                $('div.event-article__event-info__details > div:nth-child(2) > div:nth-child(2)').css({
                 "display": "none",
                 });
         };
+        
+        changeColorVeranstalter();
+        
         console.log("git over");
 });
