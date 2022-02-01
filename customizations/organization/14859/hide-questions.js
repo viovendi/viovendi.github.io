@@ -3,7 +3,7 @@
 // edit checkbox and add link to text
 
 
-
+/*
 
 
 var answer1 = 'I want to have my contact details shared within the Oerlikon Group and with Oerlikon’s partners of the 2021 AMTC conference listed in the <a href="https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Oerlikon/2021/2021+AMTC+Conference+privacy+noticefor+website.pdf" target="_blank">Privacy Notice</a> in order to receive information about their services, products and invites to their events and conferences.'
@@ -99,3 +99,4 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
+*/
