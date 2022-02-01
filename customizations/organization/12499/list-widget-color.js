@@ -4,7 +4,7 @@ $(document).ready(function () {
 
         function changeColorVeranstalter() {
                 console.log("changeColorVeranstalter");
-                $('div.event-article__event-info__details > div:nth-child(2) > div:nth-child(2):contains('doo GmbH')').css({
+                $('div.event-article__event-info__details > div:nth-child(2) > div:nth-child(2)').css({
                 "background-color": "#FAB908",
                 });
         };
