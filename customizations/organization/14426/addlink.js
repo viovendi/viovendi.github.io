@@ -22,7 +22,7 @@ if(window.location.href.indexOf('88669') !== -1){
     const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
   radioLineLabel.html(`
     <span>I agree to the terms and conditions at the following link </span>
-    <a target='_blank' href='https://www.westfalenhallen.de/dataprotectionnotice-beretta'>www.westfalenhallen.de/dataprotectionnotice-beretta.</a>""
+    <a target='_blank' href='https://www.westfalenhallen.de/dataprotectionnotice-beretta'>www.westfalenhallen.de/dataprotectionnotice-beretta.</a>
     `);
   }
 }
