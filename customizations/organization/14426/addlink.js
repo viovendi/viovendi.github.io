@@ -1,7 +1,7 @@
 console.log('Start working, Google Tag Manager, Custom Tag 14426 Link');
 
 let params = (new URL(window.location.href)).searchParams;
-let token = params.get("eventId");
+let eventId = params.get("eventId");
 console.log(eventId)
 /*
 // CSS MISSING maybe because of empty()
