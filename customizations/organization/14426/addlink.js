@@ -9,14 +9,14 @@ if(href.indexOf('88669') !== -1){
     const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
   radioLineLabel.html(`
     <span>Ich bin mit den Bedingungen unter folgendem Link einverstanden </span>
-    <a target='_blank' href='https://www.jagd-und-hund.de/en/beretta/'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>""
+    <a target='_blank' href='https://www.jagd-und-hund.de/en/beretta/'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
     `);
   }
   if(href.indexOf('de-de') !== -1){
     const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
   radioLineLabel.html(`
     <span>Ich bin mit den Bedingungen unter folgendem Link einverstanden </span>
-    <a target='_blank' href='https://www.westfalenhallen.de/datenschutzhinweis-beretta'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>""
+    <a target='_blank' href='https://www.westfalenhallen.de/datenschutzhinweis-beretta'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
     `);
   }
   if(href.indexOf('en-us') !== -1){
