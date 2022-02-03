@@ -1,4 +1,4 @@
-console.log('git works');
+console.log('Start working, Google Tag Manager');
 
 /*
 // CSS MISSING maybe because of empty()
