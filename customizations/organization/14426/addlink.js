@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager');
+console.log('Start working, Google Tag Manager, Custom Tag 14426 Link');
 
 /*
 // CSS MISSING maybe because of empty()
