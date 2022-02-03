@@ -1,6 +1,8 @@
 console.log('Start working, Google Tag Manager, Custom Tag 14426 Link');
 
 let params = (new URL(window.location.href)).searchParams;
+console.log(window.location.href)
+console.log(params)
 let eventId = params.get("eventId");
 console.log(eventId)
 /*
