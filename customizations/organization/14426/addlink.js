@@ -1,10 +1,10 @@
 console.log('Start working, Google Tag Manager, Custom Tag 14426 Link');
 
-let params = (new URL(window.location.href)).searchParams;
-console.log(window.location.href)
-console.log(params)
-let eventId = params.get("eventId");
-console.log(eventId)
+const href = window.location.href
+
+if(href.indexOf('88669') !== -1){
+console.log('EID 88669')
+}
 /*
 // CSS MISSING maybe because of empty()
     var text = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-1').find('.customization2_attendee_further-data_custom-question_radio-line_label').text();
