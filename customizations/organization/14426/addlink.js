@@ -2,21 +2,21 @@ console.log('Start working, Google Tag Manager, Custom Tag 14426 Link');
 
 
 if(window.location.href.indexOf('88669') !== -1){
-  const href = window.location.href
+  const href = window.location.href;
     // Script works only for EID 88669
   if(href.indexOf('de-de') !== -1){
-    const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
-  radioLineLabel.html(`
+    const radioLineLabel1 = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
+  radioLineLabel1.html(`
     <span>Ich bin mit den Bedingungen unter folgendem Link einverstanden </span>
     <a target='_blank' href='https://www.jagd-und-hund.de/en/beretta/'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
     `);
-  }
-  if(href.indexOf('de-de') !== -1){
-    const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
-  radioLineLabel.html(`
-    <span>Ich bin mit den Bedingungen unter folgendem Link einverstanden </span>
-    <a target='_blank' href='https://www.westfalenhallen.de/datenschutzhinweis-beretta'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
-    `);
+
+    const radioLineLabel2 = $('.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_radio-line_label p');
+
+    radioLineLabel2.html(`
+      <span>Mit Ihrer Einwilligung erlauben Sie der Westfalenhallen Unternehmensgruppe GmbH, Ihre persönlichen Daten (z.B. Name, Vorname, E-Mail) an die Fabbrica D'Armi Pietro Beretta S.p.A. zu übermitteln, um Ihnen Werbe- oder Direktverkaufsmaterial zuzusenden, Marktforschung zu betreiben oder kommerzielle Kommunikation per E-Mail zu betreiben (Third Party Marketing). Bitte nutzen Sie den Link für weitere Informationen: </span>
+      <a target='_blank' href='https://www.westfalenhallen.de/datenschutzhinweis-beretta'>www.westfalenhallen.de/datenschutzhinweis-beretta</a>
+      `);
   }
   if(href.indexOf('en-us') !== -1){
     const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
@@ -24,6 +24,13 @@ if(window.location.href.indexOf('88669') !== -1){
     <span>I agree to the terms and conditions at the following link </span>
     <a target='_blank' href='https://www.westfalenhallen.de/dataprotectionnotice-beretta'>www.westfalenhallen.de/dataprotectionnotice-beretta.</a>
     `);
+
+    const radioLineLabel2 = $('.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_radio-line_label p');
+
+    radioLineLabel2.html(`
+      <span>By giving your consent, you allow Westfalenhallen Unternehmensgruppe GmbH to communicate your personal data (i.e. name, surname, email) to Fabbrica D’Armi Pietro Beretta S.p.A. for sending you advertising or direct sales material, for carrying out market research or commercial communication via email (Third party Marketing). please click the following link for more info: </span>
+      <a target='_blank' href='https://www.westfalenhallen.de/dataprotectionnotice-beretta'>https://www.westfalenhallen.de/dataprotectionnotice-beretta</a>
+      `);
   }
 }
 
