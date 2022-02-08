@@ -16,7 +16,7 @@ $(document).ready(function () {
                         "background-color": "#FAB908",
                         });
                        $(this).find('#event-article__date-container').attr('style', 'color: #FAB908 !important');
-                       
+                       $(this).find('#event-article__date-container').attr('style', 'border-right: 3px solid #FAB908');
                       }
                 });   
         };
