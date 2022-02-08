@@ -60,6 +60,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         
         }
         if($(this).val()=='querformat'){
+                canvas.crossOrigin = "anonymous";
          $('#banner_img').attr('crossOrigin','anonymous');
         $('#banner_img').attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-quer.png");
              $('#banner_img').on('load',function(){
