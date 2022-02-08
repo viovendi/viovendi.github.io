@@ -9,14 +9,10 @@ $(document).ready(function () {
                       var veranstalter =  $(this).find('div.event-article__event-info__details > div:nth-child(2) > div:nth-child(2)');
                       var text = veranstalter.text().trim();
                       if(text!="doo GmbH"){
-                       veranstalter.css({
-                        "background-color": "#FAB908",
-                        });
                        $(this).find('.button').css({
                         "background-color": "#FAB908",
                         });
-                       $(this).find('#event-article__date-container').attr('style', 'color: #FAB908 !important');
-                       $(this).find('#event-article__date-container').attr('style', 'border-right: 3px solid #FAB908');
+                       $(this).find('#event-article__date-container').attr('style', 'color: #FAB908 !important; border-right: 3px solid #FAB908');
                       }
                 });   
         };
