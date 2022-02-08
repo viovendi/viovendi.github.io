@@ -91,7 +91,11 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
     }
     function download() {
         var download = document.getElementById("download");
-        canvas.crossOrigin = "anonymous";
+        html2canvas(document.body, {
+    allowTaint: true,
+    foreignObjectRendering: true
+});
+        canvas.crossOrigin = "Anonymous";
         var image = canvas.toDataURL("image/png")
             .replace("image/png", "image/octet-stream");
         download.setAttribute("href", image);
