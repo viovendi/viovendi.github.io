@@ -22,7 +22,7 @@ function setupBannerImage(){
     canvas = document.getElementById('canvas')
     ctx = canvas.getContext('2d');
     canvas.width = $('#banner_img').width();
-    canvas.crossOrigin = "Anonymous";
+    canvas.crossOrigin = "anonymous";
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if(canvas.width>canvas.height){   
