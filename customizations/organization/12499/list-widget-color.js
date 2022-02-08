@@ -15,9 +15,8 @@ $(document).ready(function () {
                        $(this).find('.button').css({
                         "background-color": "#FAB908",
                         });
-                       $(this).find('event-article__date-container__day > span').css({
-                        "color": "#FAB908",
-                        });;
+                       $(this).find('#event-article__date-container').attr('style', 'color: #FAB908 !important');
+                       
                       }
                 });   
         };
