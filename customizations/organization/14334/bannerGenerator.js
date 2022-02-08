@@ -22,7 +22,7 @@ function setupBannerImage(){
     canvas = document.getElementById('canvas')
     ctx = canvas.getContext('2d');
     canvas.width = $('#banner_img').width();
-    canvas.crossOrigin = "Anonymous";
+    
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if(canvas.width>canvas.height){   
@@ -91,6 +91,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
     }
     function download() {
         var download = document.getElementById("download");
+        canvas.crossOrigin = "anonymous";
         var image = document.getElementById("canvas").toDataURL("image/png")
             .replace("image/png", "image/octet-stream");
         download.setAttribute("href", image);
