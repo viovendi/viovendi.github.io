@@ -22,7 +22,7 @@ function setupBannerImage(){
     canvas = document.getElementById('canvas')
     ctx = canvas.getContext('2d');
     canvas.width = $('#banner_img').width();
-    canvas.crossOrigin='anonymous';
+    canvas.crossOrigin='Anonymous';
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if(canvas.width>canvas.height){   
@@ -51,7 +51,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
     });
     $(document).on('input change keyup paste', '#format_inp', function() {
         if($(this).val()=='hochkant'){
-          $('#banner_img').attr('crossOrigin','anonymous');
+          $('#banner_img').attr('crossOrigin','Anonymous');
         $('#banner_img').attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-schmal.png");
             $('#banner_img').on('load',function(){
                     setupBannerImage();
@@ -61,7 +61,7 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
         }
         if($(this).val()=='querformat'){
                
-        $('#banner_img').attr('crossOrigin','anonymous');
+        $('#banner_img').attr('crossOrigin','Anonymous');
         $('#banner_img').attr("src","https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Westfalenhallen/CREATIVA-quer.png");
              $('#banner_img').on('load',function(){
                     setupBannerImage();
