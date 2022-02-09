@@ -69,6 +69,16 @@ function generator(){
 
             });
         }
+        // Social media banner
+         if($(this).val()=='facebook'){
+          $('#banner_img').attr('crossOrigin','Anonymous');
+        $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/facebook.png");
+            $('#banner_img').on('load',function(){
+                    setupBannerImage();
+                setTexts()
+            });  
+        
+        }
     });
     setupBannerImage();
 }
