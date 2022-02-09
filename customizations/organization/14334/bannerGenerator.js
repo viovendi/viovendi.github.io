@@ -41,9 +41,7 @@ function setTexts(){
  }
 }
 function generator(){
-    setupBannerImage();
-}
-$(document).on('input change keyup paste', '#halle_inp', function() {
+    $(document).on('input change keyup paste', '#halle_inp', function() {
         setTexts()
     });
     $(document).on('input change keyup paste', '#stand_inp', function() {
@@ -72,6 +70,9 @@ $(document).on('input change keyup paste', '#halle_inp', function() {
             });
         }
     });
+    setupBannerImage();
+}
+
     function setTextsQuerFormat(){
      console.log('changing to querformat')   
         ctx.clearRect(0, 0, canvas.width, canvas.height);
