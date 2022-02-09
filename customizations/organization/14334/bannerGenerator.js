@@ -16,6 +16,8 @@ After I added jQuery I add all the cusomizations
 */
 function handlerQ() {
     console.log('jquery added');
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
     generator();
 }
 function setupBannerImage(){
