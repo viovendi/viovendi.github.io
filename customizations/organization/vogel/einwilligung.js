@@ -35,15 +35,24 @@ observer2.observe(document, {
 });
 
 function startCustomizationPage2(){
-    if ($('.customization-button-next').text().includes("Jetzt buchen"))
-    $('.customization-button-next').text('Jetzt vormerken');
-if ($('.customization-button-next').text().includes("Book now"))
+    if ($('.customization-button-next').text().includes("Jetzt buchen")){
+        $('.customization-button-next').text('Jetzt vormerken');
+         $('.customization2_booking-terms_text').html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden.<br><br><p>Bitte beachten Sie: Mit Ihrer Vormerkung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</p>");
+
+    }
+    
+if ($('.customization-button-next').text().includes("Book now")){
     $('.customization-button-next').text('Register now');
+     $('.customization2_booking-terms_text').html("I consent to the use and processing of my personal data in accordance with <a href='https://privacy.vogel.de/'>declaration of consent</a>.<br><br><p>Please note: With your reservation for this event you will also receive the free editorial newsletter, which you can unsubscribe from at any time via the unsubscribe link in the newsletter.</p>");
+    
+}
     $('.vv-checkbox__indicator').css('margin-top', '-18%');
-$('.customization2_booking-terms_text').html("Ich bin mit der Verarbeitung und Nutzung meiner Daten gemäß <a href='https://privacy.vogel.de/'>Einwilligungserklärung</a> einverstanden.<br><br><p>Bitte beachten Sie: Mit Ihrer Vormerkung zu dieser Veranstaltung erhalten Sie zusätzlich den kostenlosen redaktionellen Newsletter, den Sie jederzeit über den Abmelde-Link im Newsletter abbestellen können.</p>");
+    
+
     $('.customization2_booking-terms_list').hide();
     $('div .vv-checkbox-group__control.customization2_attendee_further-data_custom-question_checkbox-group').hide();
     $('span .text-after-ewe').hide();
+    
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
