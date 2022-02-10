@@ -23,16 +23,11 @@ function setRadioGroup(radioGroup) {
     }
     
 
-    $(buttonToReset).prop('checked', false).change();
-
+  //  $(buttonToReset).prop('checked', false);
+  //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
     
-    $(buttonToSet).prop('checked', true).change();
-
-    
-    $(buttonToReset).val(['0']);
-    $(buttonToSet).val(['1']);
-
-    $(buttonToReset).get(0).dispatchEvent(new Event('change'));
+    $(buttonToSet).prop('checked', true);
+    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).click();
     
 
