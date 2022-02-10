@@ -29,8 +29,8 @@ function setRadioGroup(radioGroup) {
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).get(0).click();
-  //  $(buttonToSet).attr('disabled', 'disabled');
-
+    $(buttonToSet).attr('disabled', 'disabled');
+    $(buttonToReset).attr('disabled', 'disabled');
 }
 
 function isFirstRadioButton(radioGroup) {
