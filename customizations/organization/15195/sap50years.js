@@ -20,7 +20,9 @@ function changesForAttendeeForm(){
    $('.customization2_attendee_contact-data_copy-link').hide(); 
    console.log('hidden copy link');
    
-   $('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group').each(function(){
+   var firstRadioQuestion = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-1');
+   
+   $(firstRadioQuestion).each(function(){
         disableAndSet($(this));
    });
   
