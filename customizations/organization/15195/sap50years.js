@@ -19,7 +19,9 @@ function changesForAttendeeForm(){
    $('.customization2_attendee_contact-data_copy-link').hide(); 
    console.log('hidden copy link');
    
-   disableAndSet($('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group'));
+   $('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group').each(function(){
+        disableAndSet($(this));
+   });
   
    $('.vv-radio__input.customization2_attendee_further-data_custom-question_radio-line_button').click(function(){ radioButtonClicked($(this)); });
    
