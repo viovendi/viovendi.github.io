@@ -21,13 +21,13 @@ function setRadioGroup(radioGroup) {
         var buttonToSet = $(radioGroup).find('input[type=radio]').last()
         var buttonToReset = $(radioGroup).find('input[type=radio]').first()
     }
-    $(buttonToSet).prop('checked', true).change();
-//    $(buttonToSet).val(['1']);
+  //  $(buttonToSet).prop('checked', true).change();
+    $(buttonToSet).val(['1']);
     $(buttonToSet).focus();
     $(buttonToSet).trigger('focusout');
 
-    $(buttonToReset).prop('checked', false).change();
-//   $(buttonToReset).val(['0']);
+//    $(buttonToReset).prop('checked', false).change();
+   $(buttonToReset).val(['0']);
     $(buttonToReset).focus();
     $(buttonToReset).trigger('focusout');
     
