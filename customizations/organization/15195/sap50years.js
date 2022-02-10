@@ -1,4 +1,5 @@
 console.log("github customization loaded");
+var chosenDay=0;
 
 var insertionListener = function(event) {
    if (event.animationName === "nodeInserted") {
@@ -7,7 +8,15 @@ var insertionListener = function(event) {
    }
 }
 function setRadioGroup(radioGroup){
-   var buttonToSet = $(radioGroup).find('input[type=radio]').first()
+   if(chosenDay == 0){
+    return;  
+   }
+   if(chosenDay == 1){
+      var buttonToSet = $(radioGroup).find('input[type=radio]').first()
+   }
+   if(chosenDay == 2){
+      var buttonToSet = $(radioGroup).find('input[type=radio]').last()
+   }
    $(buttonToSet).prop('checked',true).change();
    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
    console.log('set value of first ') 
@@ -34,17 +43,13 @@ function disableAndSet(radioGroup){
    if(!isFirstRadioButton(radioGroup)){
          $(radioGroup).find('input[type=radio]').each(function(){
             $(this).attr('disabled', 'disabled');
-            //var nearestText = $(this).closest('.vv-radio__label-text')
-            
-          //  console.log($(this));
-
          })
-      
       setRadioGroup(radioGroup);
    }
 }
 function radioButtonClicked(radioButton){
-   console.log('clicked on radioButton')
+   console.log('clicked on radioButton');
+   chosenDay=1;
 }
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
