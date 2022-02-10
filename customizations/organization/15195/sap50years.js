@@ -30,7 +30,10 @@ function setRadioGroup(radioGroup) {
     $(buttonToReset).val(['0']);
     $(buttonToReset).focus();
     $(buttonToReset).trigger('focusout');
-    //$(buttonToSet).get(0).dispatchEvent(new Event('change'));
+    
+    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
+    $(buttonToReset).get(0).dispatchEvent(new Event('change'));
+
 }
 
 function isFirstRadioButton(radioGroup) {
