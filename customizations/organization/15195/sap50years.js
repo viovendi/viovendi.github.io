@@ -8,6 +8,7 @@ var insertionListener = function(event) {
 }
 function setRadioGroup(radioGroup){
    $(radioGroup).find('.vv-radio__input').first().val(['1']);
+   $(radioGroup).find('.vv-radio__input').first().get(0).dispatchEvent(new Event('change'));
       console.log('set value of first ') 
 }
 
