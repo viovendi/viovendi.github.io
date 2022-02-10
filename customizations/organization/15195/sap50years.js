@@ -6,9 +6,36 @@ var insertionListener = function(event) {
       changesForAttendeeForm();
    }
 }
+function setRadioGroup(radioGroup){
+   $(radioGroup).find('.vv-radio__input').first().val(['1']);
+      console.log('set value of first ') 
+}
+
+function isFirstRadioButton(radioGroup){
+   return false;
+}
+
 function changesForAttendeeForm(){
- $('.customization2_attendee_contact-data_copy-link').hide();  
-   console.log('hidden copy link')
+   $('.customization2_attendee_contact-data_copy-link').hide(); 
+   console.log('hidden copy link');
+   
+   disableAndSet($('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group'));
+  
+   $('.vv-radio__input.customization2_attendee_further-data_custom-question_radio-line_button').click(function(){ radioButtonClicked($(this)); });
+   
+}
+function disableAndSet(radioGroup){
+   if(!isFirstRadioButton(radioGroup)){
+         $(radioGroup).find('.vv-radio__input').each(function(){
+            $(this).attr('disabled', 'disabled');
+            var nearestText = $(this).closest('.vv-radio__label-text')
+            console.log('nearest Text: '+ nearestText.text())
+         })
+      setRadioGroup();
+   }
+}
+function() radioButtonClicked(radioButton){
+   console.log('clicked on radioButton')
 }
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
