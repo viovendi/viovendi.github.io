@@ -25,12 +25,13 @@ function setRadioGroup(radioGroup) {
 
   //  $(buttonToReset).prop('checked', false);
   //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
-    
+    if(typeof $(buttonToSet).get(0)!==undefined){
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).get(0).click();
     $(buttonToSet).attr('disabled', 'disabled');
     $(buttonToReset).attr('disabled', 'disabled');
+    }else console.log('undefined')
 }
 
 function isFirstRadioButton(radioGroup) {
