@@ -25,6 +25,7 @@ function setRadioGroup(radioGroup) {
 
   //  $(buttonToReset).prop('checked', false);
   //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
+    console.log($(buttonToSet).get(0));
     if(typeof $(buttonToSet).get(0)!==undefined){
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
