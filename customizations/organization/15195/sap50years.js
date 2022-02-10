@@ -23,18 +23,20 @@ function setRadioGroup(radioGroup) {
     }
     
 
-    $(buttonToReset).prop('checked', false).change();
-    $(buttonToReset).val(['0']).change();
-    $(buttonToReset).focus();
-    $(buttonToReset).trigger('focusout');
+//    $(buttonToReset).prop('checked', false).change();
     
-    $(buttonToSet).prop('checked', true).change();
-    $(buttonToSet).val(['1']).change();
-    $(buttonToSet).focus();
-    $(buttonToSet).trigger('focusout');
+//    $(buttonToReset).focus();
+//    $(buttonToReset).trigger('focusout');
     
-//    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
-//    $(buttonToReset).get(0).dispatchEvent(new Event('change'));
+//    $(buttonToSet).prop('checked', true).change();
+//    $(buttonToSet).focus();
+//    $(buttonToSet).trigger('focusout');
+    
+    $(buttonToReset).val(['0']);
+    $(buttonToSet).val(['1']);
+
+    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
+    $(buttonToReset).get(0).dispatchEvent(new Event('change'));
 
 }
 
