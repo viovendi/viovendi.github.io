@@ -35,6 +35,7 @@ function disableAndSet(radioGroup){
           //  $(this).attr('disabled', 'disabled');
             var nearestText = $(this).closest('.vv-radio__label-text')
             console.log($(this));
+            alert($(this).attr('checked'));
             $(this).val(['1']);
             $(this).attr('checked', 'checked');
             $(this).get(0).dispatchEvent(new Event('change'));
