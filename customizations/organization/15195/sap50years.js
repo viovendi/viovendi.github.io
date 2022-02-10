@@ -24,12 +24,12 @@ function setRadioGroup(radioGroup) {
     
 
     $(buttonToReset).prop('checked', false).change();
-    $(buttonToReset).val(['0']);
+    $(buttonToReset).val(['0']).change();
     $(buttonToReset).focus();
     $(buttonToReset).trigger('focusout');
     
     $(buttonToSet).prop('checked', true).change();
-    $(buttonToSet).val(['1']);
+    $(buttonToSet).val(['1']).change();
     $(buttonToSet).focus();
     $(buttonToSet).trigger('focusout');
     
