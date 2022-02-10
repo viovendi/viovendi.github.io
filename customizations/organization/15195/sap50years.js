@@ -7,9 +7,10 @@ var insertionListener = function(event) {
    }
 }
 function setRadioGroup(radioGroup){
-   //$(radioGroup).find('input[type=radio]').first().val(['1']);
-   //$(radioGroup).find('input[type=radio]').first().get(0).dispatchEvent(new Event('change'));
-  // console.log('set value of first ') 
+   var buttonToSet = $(radioGroup).find('input[type=radio]').first()
+   $(buttonToSet).prop('checked',true).change();
+   $(buttonToSet).get(0).dispatchEvent(new Event('change'));
+   console.log('set value of first ') 
 }
 
 function isFirstRadioButton(radioGroup){
@@ -32,15 +33,14 @@ function changesForAttendeeForm(){
 function disableAndSet(radioGroup){
    if(!isFirstRadioButton(radioGroup)){
          $(radioGroup).find('input[type=radio]').each(function(){
-          //  $(this).attr('disabled', 'disabled');
+            $(this).attr('disabled', 'disabled');
             //var nearestText = $(this).closest('.vv-radio__label-text')
-            $(this).prop('checked',true).change();
             
-           // $(this).get(0).dispatchEvent(new Event('change'));
-            console.log($(this));
+          //  console.log($(this));
 
          })
-      setRadioGroup();
+      
+      setRadioGroup(radioGroup);
    }
 }
 function radioButtonClicked(radioButton){
