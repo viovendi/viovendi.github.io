@@ -40,7 +40,9 @@ function changesForAttendeeForm(){
         disableAndSet($(this));
    });
   
-   $('.vv-radio__input.customization2_attendee_further-data_custom-question_radio-line_button').click(function(){ radioButtonClicked($(this)); });
+   $(firstRadioQuestion).find('.vv-radio__input.customization2_attendee_further-data_custom-question_radio-line_button').click(function(){ 
+      radioButtonClicked($(this)); 
+   });
    
 }
 function disableAndSet(radioGroup){
