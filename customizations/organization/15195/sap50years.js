@@ -36,7 +36,7 @@ function disableAndSet(radioGroup){
       setRadioGroup();
    }
 }
-function() radioButtonClicked(radioButton){
+function radioButtonClicked(radioButton){
    console.log('clicked on radioButton')
 }
 
