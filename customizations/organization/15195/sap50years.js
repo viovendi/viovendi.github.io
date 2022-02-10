@@ -22,8 +22,12 @@ function setRadioGroup(radioGroup) {
         var buttonToReset = $(radioGroup).find('input[type=radio]').first()
     }
     $(buttonToSet).prop('checked', true).change();
-    $(buttonToReset).prop('checked', false).change();
+    $(buttonToSet).focus();
+    $(buttonToSet).trigger('focusout');
 
+    $(buttonToReset).prop('checked', false).change();
+    $(buttonToReset).focus();
+    $(buttonToReset).trigger('focusout');
     //$(buttonToSet).get(0).dispatchEvent(new Event('change'));
 }
 
