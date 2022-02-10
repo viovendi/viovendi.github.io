@@ -3,9 +3,9 @@ var chosenDay = 0;
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-        console.log("nodeInserted");
+      //  console.log("nodeInserted");
         while(typeof $('input[type=radio]') == 'undefined'){
-         console.log('undefined')   
+      //   console.log('undefined')   
         }
         changesForAttendeeForm();
     }
@@ -15,12 +15,12 @@ function setRadioGroup(radioGroup) {
         return;
     }
     if (chosenDay == 1) {
-        console.log('chosen Day is 1')
+    //    console.log('chosen Day is 1')
         var buttonToSet = $(radioGroup).find('input[type=radio]').first()
         var buttonToReset = $(radioGroup).find('input[type=radio]').last()
     }
     if (chosenDay == 2) {
-        console.log('chosen Day is 2')
+    //    console.log('chosen Day is 2')
         var buttonToSet = $(radioGroup).find('input[type=radio]').last()
         var buttonToReset = $(radioGroup).find('input[type=radio]').first()
     }
@@ -28,27 +28,27 @@ function setRadioGroup(radioGroup) {
 
   //  $(buttonToReset).prop('checked', false);
   //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
-    console.log($(buttonToSet).get(0));
+  //  console.log($(buttonToSet).get(0));
     if(typeof $(buttonToSet).get(0)!=='undefined'){
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).get(0).click();
     $(buttonToSet).attr('disabled', 'disabled');
     $(buttonToReset).attr('disabled', 'disabled');
-    }else console.log('undefined')
+    } // else  console.log('undefined')
 }
 
 function isFirstRadioButton(radioGroup) {
     var attendeeField = $(radioGroup).closest('.booking-participant.booking-participant--attendee.customization3_booking-participant_attendee.vv-border-xs.vv-rounded-lg.vv-border-grey-light')[0];
     var firstAttendeeField = $('.booking-participant.booking-participant--attendee.customization3_booking-participant_attendee.vv-border-xs.vv-rounded-lg.vv-border-grey-light').first()[0];
     var isFirst = attendeeField == firstAttendeeField;
-    console.log('isFirst: ' + isFirst)
+   // console.log('isFirst: ' + isFirst)
     return isFirst;
 }
 
 function changesForAttendeeForm() {
     $('.customization2_attendee_contact-data_copy-link').hide();
-    console.log('hidden copy link');
+  //  console.log('hidden copy link');
 
     var firstRadioQuestion = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-1');
 
@@ -72,7 +72,7 @@ function disableAndSet(radioGroup) {
 }
 function radioButtonClicked(radioButton) {
     
-    console.log('clicked on radioButton');
+  //  console.log('clicked on radioButton');
     var parentOfBoth = $(radioButton).closest('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group');
     
     if ($(radioButton)[0] == $(parentOfBoth).find('input[type=radio]').first()[0]) {
