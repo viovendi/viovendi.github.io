@@ -53,18 +53,21 @@ function changesForAttendeeForm() {
 function disableAndSet(radioGroup) {
     if (!isFirstRadioButton(radioGroup)) {
         $(radioGroup).find('input[type=radio]').each(function () {
+            
             $(this).attr('disabled', 'disabled');
         })
         setRadioGroup(radioGroup);
     }
 }
 function radioButtonClicked(radioButton) {
+    
     console.log('clicked on radioButton');
     var parentOfBoth = $(radioButton).closest('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group');
+    
     if ($(radioButton)[0] == $(parentOfBoth).find('input[type=radio]').first()[0]) {
         chosenDay = 1
     } else chosenDay = 2
-    //chosenDay=(chosenDay +1)%2+1;
+    
     changesForAttendeeForm();
 }
 
