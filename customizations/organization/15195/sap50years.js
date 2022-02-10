@@ -59,7 +59,8 @@ function disableAndSet(radioGroup){
 }
 function radioButtonClicked(radioButton){
    console.log('clicked on radioButton');
-   chosenDay=1;
+   chosenDay=(chosenDay +1)%2+1;
+   changesForAttendeeForm();
 }
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
