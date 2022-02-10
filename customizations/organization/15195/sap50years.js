@@ -59,6 +59,11 @@ function disableAndSet(radioGroup){
 }
 function radioButtonClicked(radioButton){
    console.log('clicked on radioButton');
+   var parentOfBoth = $(radioButton).closest('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group');
+   if($(radioButton)[0]==$(parentOfBoth).find('input[type=radio]').first()[0]){
+    console.log('clicked on first day')  
+   }else     console.log('clicked on second day')  
+
    chosenDay=(chosenDay +1)%2+1;
    changesForAttendeeForm();
 }
