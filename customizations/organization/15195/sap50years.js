@@ -29,7 +29,7 @@ function setRadioGroup(radioGroup) {
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).get(0).click();
-    
+  //  $(buttonToSet).attr('disabled', 'disabled');
 
 }
 
@@ -60,7 +60,7 @@ function disableAndSet(radioGroup) {
     if (!isFirstRadioButton(radioGroup)) {
         $(radioGroup).find('input[type=radio]').each(function () {
             
-            $(this).attr('disabled', 'disabled');
+          //  $(this).attr('disabled', 'disabled');
         })
         setRadioGroup(radioGroup);
     }
