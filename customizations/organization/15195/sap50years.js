@@ -14,12 +14,16 @@ function setRadioGroup(radioGroup) {
     if (chosenDay == 1) {
         console.log('chosen Day is 1')
         var buttonToSet = $(radioGroup).find('input[type=radio]').first()
+        var buttonToReset = $(radioGroup).find('input[type=radio]').last()
     }
     if (chosenDay == 2) {
         console.log('chosen Day is 2')
         var buttonToSet = $(radioGroup).find('input[type=radio]').last()
+        var buttonToReset = $(radioGroup).find('input[type=radio]').first()
     }
     $(buttonToSet).prop('checked', true).change();
+    $(buttonToReset).prop('checked', false).change();
+
     //$(buttonToSet).get(0).dispatchEvent(new Event('change'));
 }
 
