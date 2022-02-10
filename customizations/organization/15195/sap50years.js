@@ -31,7 +31,7 @@ function changesForAttendeeForm(){
 }
 function disableAndSet(radioGroup){
    if(!isFirstRadioButton(radioGroup)){
-         $(radioGroup).find('.vv-radio__input').each(function(){
+         $(radioGroup).find('input[type=radio]').each(function(){
             $(this).attr('disabled', 'disabled');
             var nearestText = $(this).closest('.vv-radio__label-text')
             console.log('nearest Text: '+ nearestText.text())
