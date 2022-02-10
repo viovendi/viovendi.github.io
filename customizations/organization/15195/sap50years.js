@@ -35,8 +35,9 @@ function setRadioGroup(radioGroup) {
     $(buttonToReset).val(['0']);
     $(buttonToSet).val(['1']);
 
-    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToReset).get(0).dispatchEvent(new Event('change'));
+    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
+    
 
 }
 
