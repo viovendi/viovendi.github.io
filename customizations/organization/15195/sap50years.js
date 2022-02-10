@@ -20,7 +20,7 @@ function setRadioGroup(radioGroup) {
         var buttonToSet = $(radioGroup).find('input[type=radio]').last()
     }
     $(buttonToSet).prop('checked', true).change();
-    $(buttonToSet).get(0).dispatchEvent(new Event('change'));
+    //$(buttonToSet).get(0).dispatchEvent(new Event('change'));
 }
 
 function isFirstRadioButton(radioGroup) {
