@@ -4,6 +4,9 @@ var chosenDay = 0;
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("nodeInserted");
+        while(typeof $('input[type=radio]') == 'undefined'){
+         console.log('undefined')   
+        }
         changesForAttendeeForm();
     }
 }
@@ -26,7 +29,7 @@ function setRadioGroup(radioGroup) {
   //  $(buttonToReset).prop('checked', false);
   //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
     console.log($(buttonToSet).get(0));
-    if(typeof $(buttonToSet).get(0)!==undefined){
+    if(typeof $(buttonToSet).get(0)!=='undefined'){
     $(buttonToSet).prop('checked', true);
     $(buttonToSet).get(0).dispatchEvent(new Event('change'));
     $(buttonToSet).get(0).click();
