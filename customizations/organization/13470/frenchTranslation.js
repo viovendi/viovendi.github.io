@@ -8,10 +8,7 @@ function changeTextTo(selector,originalText, newText){
   }) 
 }
 
-function handler2(){
-  changeTextTo("p.vv-text.vv-text__size--md.vv-text__weight--regular.vv-color--cool-gray-500","erlaubte Formate:","Formats autorisés:");
-   
-}
+//function handler2(){ }
 
 
 /*
@@ -239,14 +236,14 @@ var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         
-        handler2();
+        //handler2();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
         });
     }
 }
-handler2();
+//handler2();
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
