@@ -1,4 +1,4 @@
-console.log("github -> /13369/hideOrShowQuestions")
+console.log("github -> /12275/hideOrShowQuestions")
 // Function to show and hide custom question
 function setup(){
     var styles = `
@@ -45,7 +45,7 @@ function setup(){
     var pathArray = window.location.pathname.split('/');
     
     for (i = 0; i < pathArray.length; i++) {
-        if(pathArray[i].includes("100"))console.log("is right eventID")
+        if(pathArray[i].includes("100745"))console.log("is right eventID")
      }
     
 }
