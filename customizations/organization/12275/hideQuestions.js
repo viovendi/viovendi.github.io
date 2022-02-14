@@ -45,7 +45,8 @@ function setup(){
     var pathArray = window.location.pathname.split('/');
     
     for (i = 0; i < pathArray.length; i++) {
-        if(pathArray[i].includes("100745"))console.log("is right eventID")
+        if(pathArray[i].includes("100745")) 
+            handler();
      }
     
 }
@@ -60,11 +61,56 @@ function handler() {
     var field2 = $('.customization2_attendee_further-data_custom-question-5');
     $(field2).hide()
    // console.log(field1);
-    //Wie reisen Sie an
-    var dropdown1 = $('.customization2_attendee_further-data_custom-question-2');
-   // console.log(field1);
-    //Hotelzimmer ja nein
-    var dropdown2 = $('.customization2_attendee_further-data_custom-question-4');  
+    
+    
+    //Arrival
+    var dropdownArrival = $('.customization2_attendee_further-data_custom-question-13');
+
+    //
+    var fieldArrivalFrom = $('.customization2_attendee_further-data_custom-question-14');
+    //
+    var fieldArrivalTo = $('.customization2_attendee_further-data_custom-question-15');
+    //
+    var fieldArrivalDate = $('.customization2_attendee_further-data_custom-question-16');
+    //
+    var fieldArrivalTime = $('.customization2_attendee_further-data_custom-question-17');
+    //
+    var fieldArrivalFlightNumber = $('.customization2_attendee_further-data_custom-question-18');
+    //
+    var dropdownArrivalShuttle = $('.customization2_attendee_further-data_custom-question-19');
+    //
+    var dropdownArrivalParking = $('.customization2_attendee_further-data_custom-question-20');
+    //
+    var fieldArrivalTrainNumber = $('.customization2_attendee_further-data_custom-question-21');
+
+  
+    //Departure
+    var dropdownDeparture = $('.customization2_attendee_further-data_custom-question-22');  
+    
+    //
+    var fieldDepartureFrom = $('.customization2_attendee_further-data_custom-question-23');
+    //
+    var fieldDepartureTo = $('.customization2_attendee_further-data_custom-question-24');
+    //
+    var fieldDepartureDate = $('.customization2_attendee_further-data_custom-question-25');
+    //
+    var fieldDepartureTime = $('.customization2_attendee_further-data_custom-question-26');
+    //
+    var fieldDepartureFlightNumber = $('.customization2_attendee_further-data_custom-question-27');
+    //
+    var dropdownDepartureShuttlePlane = $('.customization2_attendee_further-data_custom-question-28');
+    //
+    var dropdownDepartureShuttleTrain = $('.customization2_attendee_further-data_custom-question-29');
+    //
+    var fieldDepartureTrainNumber = $('.customization2_attendee_further-data_custom-question-30');
+    
+    //PCR Test
+    var dropdownTest = $('.customization2_attendee_further-data_custom-question-31');  
+    //
+    var fieldTestTime = $('.customization2_attendee_further-data_custom-question-32');
+    
+    
+    
    // console.log(field1);
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
@@ -96,7 +142,6 @@ function handler() {
 }
 
 setup();
-handler();
 
 function disableWhenEmpty(field) {
 
