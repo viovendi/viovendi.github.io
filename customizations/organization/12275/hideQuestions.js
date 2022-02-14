@@ -50,7 +50,11 @@ function setup(){
      }
     
 }
-
+function showField(field){
+    $(field).show()
+    disableWhenEmpty(field);
+    $(field).find('vv-optional-text').css("display", "none");
+}
 function handler() {
     
     //Shuttle
@@ -115,9 +119,39 @@ function handler() {
     $(dropdownArrival).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
             console.log("train selected")
-        } else {
-            console.log("train NOT selected")
-        }
+            showField($(fieldArrivalFrom));
+            showField($(fieldArrivalTo));
+            showField($(fieldArrivalDate));
+            showField($(fieldArrivalTime));
+            showField($(fieldArrivalTrainNumber));
+            showField($(dropdownArrivalShuttle));
+            $(fieldArrivalFlightNumber).hide();
+            $(dropdownArrivalParking).hide();
+        } 
+        if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
+            console.log("plane selected")
+            showField($(fieldArrivalFrom));
+            showField($(fieldArrivalTo));
+            showField($(fieldArrivalDate));
+            showField($(fieldArrivalTime));
+            showField($(fieldArrivalTrainNumber));
+            showField($(dropdownArrivalParking));
+            $(fieldArrivalFlightNumber).hide();
+            $(dropdownArrivalShuttle).hide();
+    }
+        if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
+            console.log("car selected")
+           
+            showField($(fieldArrivalDate));
+            showField($(fieldArrivalTime));
+            showField($(fieldArrivalTrainNumber));
+            showField($(dropdownArrivalParking));
+            $(fieldArrivalFlightNumber).hide();
+            $(dropdownArrivalShuttle).hide();
+            $(fieldArrivalTo).hide();
+            $(fieldArrivalFrom).hide();
+            $(fieldArrivalTrainNumber).hide();
+          
     }
     );
 /*
