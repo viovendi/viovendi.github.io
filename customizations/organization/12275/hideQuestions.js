@@ -134,9 +134,9 @@ function handler() {
             showField($(fieldArrivalTo));
             showField($(fieldArrivalDate));
             showField($(fieldArrivalTime));
-            showField($(fieldArrivalTrainNumber));
-            showField($(dropdownArrivalParking));
-            $(fieldArrivalFlightNumber).hide();
+            showField($(fieldArrivalFlightNumber));
+            $(dropdownArrivalParking).hide();
+            $(fieldArrivalTrainNumber).hide();
             $(dropdownArrivalShuttle).hide();
         }
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
