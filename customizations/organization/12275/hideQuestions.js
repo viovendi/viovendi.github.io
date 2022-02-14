@@ -69,23 +69,30 @@ function handler() {
     
     //Arrival
     var dropdownArrival = $('.customization2_attendee_further-data_custom-question-13');
-
     //
     var fieldArrivalFrom = $('.customization2_attendee_further-data_custom-question-14');
+    $(fieldArrivalFrom).hide();
     //
     var fieldArrivalTo = $('.customization2_attendee_further-data_custom-question-15');
+    $(fieldArrivalTo).hide();
     //
     var fieldArrivalDate = $('.customization2_attendee_further-data_custom-question-16');
+    $(fieldArrivalDate).hide();
     //
     var fieldArrivalTime = $('.customization2_attendee_further-data_custom-question-17');
+    $(fieldArrivalTime).hide();
     //
     var fieldArrivalFlightNumber = $('.customization2_attendee_further-data_custom-question-18');
+    $(fieldArrivalFlightNumber).hide();
     //
     var dropdownArrivalShuttle = $('.customization2_attendee_further-data_custom-question-19');
+    $(dropdownArrivalShuttle).hide();
     //
     var dropdownArrivalParking = $('.customization2_attendee_further-data_custom-question-20');
+    $(dropdownArrivalParking).hide();
     //
     var fieldArrivalTrainNumber = $('.customization2_attendee_further-data_custom-question-21');
+    $(fieldArrivalTrainNumber).hide();
 
   
     //Departure
@@ -93,25 +100,34 @@ function handler() {
     
     //
     var fieldDepartureFrom = $('.customization2_attendee_further-data_custom-question-23');
+    $(fieldDepartureFrom).hide();
     //
     var fieldDepartureTo = $('.customization2_attendee_further-data_custom-question-24');
+    $(fieldDepartureTo).hide();
     //
     var fieldDepartureDate = $('.customization2_attendee_further-data_custom-question-25');
+    $(fieldDepartureDate).hide();
     //
     var fieldDepartureTime = $('.customization2_attendee_further-data_custom-question-26');
+    $(fieldDepartureTime).hide();
     //
     var fieldDepartureFlightNumber = $('.customization2_attendee_further-data_custom-question-27');
+    $(fieldDepartureFlightNumber).hide();
     //
     var dropdownDepartureShuttlePlane = $('.customization2_attendee_further-data_custom-question-28');
+    $(dropdownDepartureShuttlePlane).hide();
     //
     var dropdownDepartureShuttleTrain = $('.customization2_attendee_further-data_custom-question-29');
+    $(dropdownDepartureShuttleTrain).hide();
     //
     var fieldDepartureTrainNumber = $('.customization2_attendee_further-data_custom-question-30');
+    $(fieldDepartureTrainNumber).hide();
     
     //PCR Test
     var dropdownTest = $('.customization2_attendee_further-data_custom-question-31');  
     //
     var fieldTestTime = $('.customization2_attendee_further-data_custom-question-32');
+    $(fieldTestTime).hide();
     
     
     
