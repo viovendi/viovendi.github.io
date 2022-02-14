@@ -225,6 +225,13 @@ function disableWhenEmpty(field) {
         }
 
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+    
+        if (!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")) {
+            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
+        }
+
+        $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
+    
         $('.customization2_attendee_edit-action_save').prop("disabled", true);
     
         
