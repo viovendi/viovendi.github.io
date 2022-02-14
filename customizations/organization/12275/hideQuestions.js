@@ -197,7 +197,8 @@ function handler() {
     
     setupConditionals(dropdownArrival, fieldArrivalFrom, fieldArrivalTo, fieldArrivalDate, fieldArrivalTime, fieldArrivalFlightNumber, fieldArrivalTrainNumber,
                                          dropdownArrivalShuttle, dropdownArrivalShuttle, dropdownArrivalParking);
-    
+    setupConditionals(dropdownDeparture, fieldDepartureFrom, fieldDepartureTo, fieldDepartureDate, fieldDepartureTime, fieldDepartureFlightNumber, fieldDepartureTrainNumber,
+                                         dropdownDepartureShuttleTrain, dropdownDepartureShuttlePlane, null);
 /*
     $(dropdown2).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
