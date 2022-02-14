@@ -41,6 +41,13 @@ function setup(){
     function handlerS() {
         console.log('style added');
     }
+    
+    var pathArray = window.location.pathname.split('/');
+    
+    for (i = 0; i < pathArray.length; i++) {
+        console.log(i+" "+pathArray[i]);
+     }
+    
 }
 
 function handler() {
