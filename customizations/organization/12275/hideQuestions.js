@@ -226,7 +226,7 @@ function disableWhenEmpty(field) {
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
         $('.customization2_attendee_edit-action_save').prop("disabled", true);
     
-        console.log('setting field: '+field)
+        console.log('setting field: '+$(field))
     
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input change', function () {
 
