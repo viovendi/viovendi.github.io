@@ -45,7 +45,7 @@ function setup(){
     var pathArray = window.location.pathname.split('/');
     
     for (i = 0; i < pathArray.length; i++) {
-        if(pathArray[i].contains("100"))console.log("is right eventID")
+        if(pathArray[i].includes("100"))console.log("is right eventID")
      }
     
 }
