@@ -135,16 +135,15 @@ function handler() {
             showField($(fieldArrivalDate));
             showField($(fieldArrivalTime));
             showField($(fieldArrivalFlightNumber));
+            showField($(dropdownArrivalShuttle));
             $(dropdownArrivalParking).hide();
             $(fieldArrivalTrainNumber).hide();
-            $(dropdownArrivalShuttle).hide();
         }
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
             console.log("car selected")
            
             showField($(fieldArrivalDate));
             showField($(fieldArrivalTime));
-            showField($(fieldArrivalTrainNumber));
             showField($(dropdownArrivalParking));
             $(fieldArrivalFlightNumber).hide();
             $(dropdownArrivalShuttle).hide();
