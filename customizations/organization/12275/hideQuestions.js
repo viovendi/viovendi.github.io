@@ -50,6 +50,7 @@ function setup(){
      }
     
 }
+
 function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
                                          dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
     console.log($(fieldFrom));
@@ -61,8 +62,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
     console.log($(dropdownTrainShuttle));
     console.log($(dropdownParking));
     
-    $(dropdown).change(function (fieldFrom,fieldTo,fieldDate,fieldTime,fieldFlightNumber,fieldTrainNumber,
-                                         dropdownTrainShuttle,dropdownPlaneShuttle,dropdownParking) {
+    $(dropdown).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
             console.log("train selected")
             showField($(fieldFrom));
@@ -113,7 +113,6 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
         }}}
     }
     );
-
 }
 function showField(field){
     $(field).show();
