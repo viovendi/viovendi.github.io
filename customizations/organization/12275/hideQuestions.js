@@ -51,7 +51,7 @@ function setup(){
     
 }
 function showField(field){
-    $(field).show()
+    $(field).show();
     disableWhenEmpty(field);
     $(field).find('vv-optional-text').css("display", "none");
 }
