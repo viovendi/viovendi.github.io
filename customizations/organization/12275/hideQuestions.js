@@ -52,6 +52,14 @@ function setup(){
 }
 function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
                                          dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
+    console.log($(fieldFrom));
+    console.log($(fieldTo));
+    console.log($(fieldDate));
+    console.log($(fieldTime));
+    console.log($(fieldFlightNumber));
+    console.log($(fieldTrainNumber));
+    console.log($(dropdownTrainShuttle));
+    console.log($(dropdownParking));
     
     $(dropdown).change(function (fieldFrom,fieldTo,fieldDate,fieldTime,fieldFlightNumber,fieldTrainNumber,
                                          dropdownTrainShuttle,dropdownPlaneShuttle,dropdownParking) {
