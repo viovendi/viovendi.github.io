@@ -50,6 +50,62 @@ function setup(){
      }
     
 }
+function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
+                                         dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
+    
+    $(dropdown).change(function (fieldFrom,fieldTo,fieldDate,fieldTime,fieldFlightNumber,fieldTrainNumber,
+                                         dropdownTrainShuttle,dropdownPlaneShuttle,dropdownParking) {
+        if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
+            console.log("train selected")
+            showField($(fieldFrom));
+            showField($(fieldTo));
+            showField($(fieldDate));
+            showField($(fieldTime));
+            $(fieldFlightNumber).hide();
+            showField($(fieldTrainNumber));
+            showField($(dropdownTrainShuttle));
+            $(dropdownParking).hide();
+        } else
+        if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
+            console.log("plane selected")
+            showField($(fieldFrom));
+            showField($(fieldTo));
+            showField($(fieldDate));
+            showField($(fieldTime));
+            showField($(fieldFlightNumber));
+            $(fieldTrainNumber).hide();
+            showField($(dropdownPlaneShuttle));
+            $(dropdownParking).hide();
+            
+        }   else
+        if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
+            console.log("car selected")
+            $(fieldFrom).hide();
+            $(fieldTo).hide();
+            showField($(fieldDate));
+            showField($(fieldTime));
+            $(fieldFlightNumber).hide();
+            $(fieldTrainNumber).hide();
+            $(dropdownPlaneShuttle).hide();
+            $(dropdownTrainShuttle).hide();
+            showField($(dropdownParking));
+          
+          
+        }   else{
+            $(fieldDate).hide();
+            $(fieldTime).hide();
+            $(dropdownParking).hide();
+            $(fieldFlightNumber).hide();
+            $(dropdownPlaneShuttle).hide();
+            $(dropdownTrainShuttle).hide();            
+            $(fieldTo).hide();
+            $(fieldFrom).hide();
+            $(fieldTrainNumber).hide();
+        }
+    }
+    );
+
+}
 function showField(field){
     $(field).show();
     disableWhenEmpty(field);
@@ -129,56 +185,9 @@ function handler() {
     var fieldTestTime = $('.customization2_attendee_further-data_custom-question-32');
     $(fieldTestTime).hide();
     
+    setupConditionals(dropdownArrival, fieldArrivalFrom, fieldArrivalTo, fieldArrivalDate, fieldArrivalTime, fieldArrivalFlightNumber, fieldArrivalTrainNumber,
+                                         dropdownArrivalShuttle, dropdownArrivalShuttle, dropdownArrivalParking);
     
-    
-     console.log(field1);
-    $(dropdownArrival).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
-            console.log("train selected")
-            showField($(fieldArrivalFrom));
-            showField($(fieldArrivalTo));
-            showField($(fieldArrivalDate));
-            showField($(fieldArrivalTime));
-            showField($(fieldArrivalTrainNumber));
-            showField($(dropdownArrivalShuttle));
-            $(fieldArrivalFlightNumber).hide();
-            $(dropdownArrivalParking).hide();
-        } else
-        if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
-            console.log("plane selected")
-            showField($(fieldArrivalFrom));
-            showField($(fieldArrivalTo));
-            showField($(fieldArrivalDate));
-            showField($(fieldArrivalTime));
-            showField($(fieldArrivalFlightNumber));
-            showField($(dropdownArrivalShuttle));
-            $(dropdownArrivalParking).hide();
-            $(fieldArrivalTrainNumber).hide();
-        }   else
-        if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
-            console.log("car selected")
-           
-            showField($(fieldArrivalDate));
-            showField($(fieldArrivalTime));
-            showField($(dropdownArrivalParking));
-            $(fieldArrivalFlightNumber).hide();
-            $(dropdownArrivalShuttle).hide();
-            $(fieldArrivalTo).hide();
-            $(fieldArrivalFrom).hide();
-            $(fieldArrivalTrainNumber).hide();
-          
-        }   else{
-            $(fieldArrivalDate).hide();
-            $(fieldArrivalTime).hide();
-            $(dropdownArrivalParking).hide();
-            $(fieldArrivalFlightNumber).hide();
-            $(dropdownArrivalShuttle).hide();
-            $(fieldArrivalTo).hide();
-            $(fieldArrivalFrom).hide();
-            $(fieldArrivalTrainNumber).hide();
-        }
-    }
-    );
 /*
     $(dropdown2).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
