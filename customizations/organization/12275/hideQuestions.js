@@ -143,7 +143,7 @@ function handler() {
             showField($(dropdownArrivalShuttle));
             $(fieldArrivalFlightNumber).hide();
             $(dropdownArrivalParking).hide();
-        } 
+        } else
         if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
             console.log("plane selected")
             showField($(fieldArrivalFrom));
@@ -154,7 +154,7 @@ function handler() {
             showField($(dropdownArrivalShuttle));
             $(dropdownArrivalParking).hide();
             $(fieldArrivalTrainNumber).hide();
-        }
+        }   else
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
             console.log("car selected")
            
@@ -167,6 +167,15 @@ function handler() {
             $(fieldArrivalFrom).hide();
             $(fieldArrivalTrainNumber).hide();
           
+        }   else{
+            $(fieldArrivalDate).hide();
+            $(fieldArrivalTime).hide();
+            $(dropdownArrivalParking).hide();
+            $(fieldArrivalFlightNumber).hide();
+            $(dropdownArrivalShuttle).hide();
+            $(fieldArrivalTo).hide();
+            $(fieldArrivalFrom).hide();
+            $(fieldArrivalTrainNumber).hide();
         }
     }
     );
