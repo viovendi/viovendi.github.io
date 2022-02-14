@@ -111,20 +111,16 @@ function handler() {
     
     
     
-   // console.log(field1);
-    $(dropdown1).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
-            $(field1).show()
-            disableWhenEmpty(field1)
-            $(field1).find('vv-optional-text').css("display", "none");
+     console.log(field1);
+    $(dropdownArrival).change(function () {
+        if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
+            console.log("train selected")
         } else {
-            $(field1).hide()
-            $(field1).find('.customization2_attendee_further-data_custom-question_dropdown').val('')
-            $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            console.log("train NOT selected")
         }
     }
     );
-
+/*
     $(dropdown2).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
             $(field2).show()
@@ -138,6 +134,7 @@ function handler() {
     }
     );
 
+*/
     
 }
 
