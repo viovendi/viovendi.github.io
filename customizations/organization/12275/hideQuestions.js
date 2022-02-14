@@ -220,24 +220,26 @@ setup();
 
 function disableWhenEmpty(field) {
 
-        if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').hasClass("error-state")) {
-            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
-        }
-
-        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
     
-        if (!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")) {
-            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
-        }
-
-        $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
-    
-        $('.customization2_attendee_edit-action_save').prop("disabled", true);
-    
+        var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');
         
+        if(!inputOfField){
+            console.log('is dropdown')
+            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
+        }
+        if(!inputOfField){
+                        console.log('is date')
 
+            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
+        }
+        
+        if (!$(inputOfField).hasClass("error-state")) {
+            $("<div class='error-message'>Erforderlich</div>").insertAfter($(inputOfField));
+        }
+        
+        $(inputOfField).addClass('error-state');
     
-        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input change', function () {
+        $(inputOfField).on('input change', function () {
 
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
@@ -251,20 +253,7 @@ function disableWhenEmpty(field) {
                 $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
-        $(field).find('.customization2_attendee_further-data_custom-question_input').on('input change', function () {
-
-            if ($(this).val().trim().length == 0) {
-                $(this).addClass('error-state');
-                $(field).find('.error-message').show();
-                $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-            } else {
-                console.log('value that isnt empty: '+$(this).val())
-                $(this).removeClass('error-state');
-                $(field).find('.error-message').hide();
-                $('.customization2_attendee_edit-action_save').prop("disabled", false);
-            }
-        });
+       
     }
 
 
