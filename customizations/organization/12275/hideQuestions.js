@@ -119,6 +119,8 @@ function showField(field){
     $(field).show();
     disableWhenEmpty(field);
     $(field).find('vv-optional-text').css("display", "none");
+    console.log('setting field:')
+    console.log($(field))
 }
 function handler() {
     
@@ -226,8 +228,7 @@ function disableWhenEmpty(field) {
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
         $('.customization2_attendee_edit-action_save').prop("disabled", true);
     
-        console.log('setting field:')
-        console.log($(field))
+        
 
     
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input change', function () {
