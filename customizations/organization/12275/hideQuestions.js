@@ -65,7 +65,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(fieldTrainNumber));
             showField($(dropdownTrainShuttle));
             $(dropdownParking).hide();
-        } else
+        } else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
             console.log("plane selected")
             showField($(fieldFrom));
@@ -77,7 +77,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(dropdownPlaneShuttle));
             $(dropdownParking).hide();
             
-        }   else
+        }   else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
             console.log("car selected")
             $(fieldFrom).hide();
@@ -92,6 +92,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
           
           
         }   else{
+            console.log('im letzten else');
             $(fieldDate).hide();
             $(fieldTime).hide();
             $(dropdownParking).hide();
@@ -101,7 +102,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             $(fieldTo).hide();
             $(fieldFrom).hide();
             $(fieldTrainNumber).hide();
-        }
+        }}}
     }
     );
 
