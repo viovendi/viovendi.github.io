@@ -1,4 +1,4 @@
-console.log("github -> /12275/hideOrShowQuestions")
+console.log("github -> /12275/hideQuestions")
 // Function to show and hide custom question
 function setup(){
     var styles = `
@@ -42,12 +42,7 @@ function setup(){
         console.log('style added');
     }
     
-    var pathArray = window.location.pathname.split('/');
     
-    for (i = 0; i < pathArray.length; i++) {
-        if(pathArray[i].includes("100745")) 
-            handler();
-     }
     
 }
 
@@ -199,25 +194,9 @@ function handler() {
                                          dropdownArrivalShuttle, dropdownArrivalShuttle, dropdownArrivalParking);
     setupConditionals(dropdownDeparture, fieldDepartureFrom, fieldDepartureTo, fieldDepartureDate, fieldDepartureTime, fieldDepartureFlightNumber, fieldDepartureTrainNumber,
                                          dropdownDepartureShuttleTrain, dropdownDepartureShuttlePlane, null);
-/*
-    $(dropdown2).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
-            $(field2).show()
-            disableWhenEmpty(field2)
-            $(field2).find('vv-optional-text').css("display", "none");
-        } else {
-            $(field2).hide()
-            $(field2).find('.customization2_attendee_further-data_custom-question_dropdown').val('')
-            $('.customization2_attendee_edit-action_save').prop("disabled", false);
-        }
-    }
-    );
 
-*/
     
 }
-
-setup();
 
 function disableWhenEmpty(field) {
 
@@ -257,22 +236,32 @@ function disableWhenEmpty(field) {
        
     }
 
-
-var insertionListener = function (event) {
-    if (event.animationName === "nodeInserted") {
-        console.log("Node has been inserted: ", event.target);
+function startCustomization(){
+    
+    setup();
+    handler();
+      var insertionListener = function (event) {
+        if (event.animationName === "nodeInserted") {
+         console.log("Node has been inserted: ", event.target);
         
-        handler();
+            handler();
 
-        $('customization2_attendee_view-action_edit').on("click", function () {
-            console.log("clicked");
-        });
-    }
+         $('customization2_attendee_view-action_edit').on("click", function () {
+             console.log("clicked");
+            });
+        }
+      }
+
+    document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+    document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+    document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 }
 
-
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+var pathArray = window.location.pathname.split('/');
+    
+for (i = 0; i < pathArray.length; i++) {
+     if(pathArray[i].includes("100745")) 
+            startCustomization();
+}
 
 
