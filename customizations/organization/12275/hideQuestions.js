@@ -152,17 +152,7 @@ function showField(field){
     console.log($(field))
 }
 function handler() {
-    
-    //Shuttle
-    var field1 = $('.customization2_attendee_further-data_custom-question-3');
-    $(field1).hide()
-   // console.log(field1);
-    //Art des Zimmers
-    var field2 = $('.customization2_attendee_further-data_custom-question-5');
-    $(field2).hide()
-   // console.log(field1);
-    
-    
+
     //Arrival
     var dropdownArrival = $('.customization2_attendee_further-data_custom-question-13');
     //
