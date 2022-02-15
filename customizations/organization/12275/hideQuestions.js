@@ -202,7 +202,8 @@ function disableWhenEmpty(field) {
 
     
         var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');
-        
+    console.log('inputis');    
+    console.log($(inputOfField))
         if(!inputOfField){
             console.log('is dropdown')
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
