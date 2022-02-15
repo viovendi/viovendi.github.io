@@ -203,11 +203,11 @@ function disableWhenEmpty(field) {
     
         var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
     
-        if(typeof $(inputOfField).get(0) !== 'undefined'){
+        if(typeof $(inputOfField).get(0) === 'undefined'){
             console.log('is dropdown')
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
         }
-          if(typeof $(inputOfField).get(0) !== 'undefined'){
+          if(typeof $(inputOfField).get(0) === 'undefined'){
                         console.log('is date')
 
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
