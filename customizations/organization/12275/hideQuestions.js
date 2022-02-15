@@ -49,7 +49,7 @@ function setup(){
 
 function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
                                          dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
-    console.log($(fieldFrom));
+  /*  console.log($(fieldFrom));
     console.log($(fieldTo));
     console.log($(fieldDate));
     console.log($(fieldTime));
@@ -57,7 +57,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
     console.log($(fieldTrainNumber));
     console.log($(dropdownTrainShuttle));
     console.log($(dropdownParking));
-    
+    */
     $(dropdown).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
