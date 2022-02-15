@@ -226,7 +226,7 @@ function disableWhenEmpty(field) {
      "mouseleave change select submit keydown keypress keyup error", function (event) {
             console.log('input changed')
             console.log(event)
-            console.log($(this).val())
+            $(this).click();
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
