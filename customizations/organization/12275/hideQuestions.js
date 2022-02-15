@@ -227,8 +227,8 @@ function disableWhenEmpty(field) {
         $(inputOfField).addClass('error-state');
         
         $(inputOfField).on("focusout", function (event) {
-            setTimeout($(this).click(), 5000);
-            setTimeout($(this).change(), 2500);
+            const myTimeout = setTimeout($(this).click(), 5000);
+            myTimeout = setTimeout($(this).change(), 2500);
         });
     
         $(inputOfField).on("click change input", function (event) {
