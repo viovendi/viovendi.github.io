@@ -231,10 +231,10 @@ function disableWhenEmpty(field) {
         
         $(inputOfField).addClass('error-state');
         
-        $(inputOfField).on("focusout blur", function (event) {
+        $(inputOfField).on("focusout blur", function () {
             myTimeout = setTimeout(function(){
-            $(this).get(0).dispatchEvent(new Event('change'));
-            $(this).get(0).click();
+            $(inputOfField).get(0).dispatchEvent(new Event('change'));
+            $(inputOfField).get(0).click();
                 console.log('fired click and change')
             }, 1000);
             
