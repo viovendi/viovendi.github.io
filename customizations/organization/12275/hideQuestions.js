@@ -227,8 +227,9 @@ function disableWhenEmpty(field) {
         $(inputOfField).addClass('error-state');
         
         $(inputOfField).on("focusout", function (event) {
-            console.log('fired click ')
+            console.log('fired click')
             $(this).get(0).click();
+            $(this).get(0).change();
         });
     
         $(inputOfField).on("click change input", function (event) {
