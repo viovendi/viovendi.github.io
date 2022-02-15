@@ -198,9 +198,9 @@ function handler() {
     $(dropdownTest).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Yes') 
             showField($(fieldTestTime));
-        } else{
+         else
         $(fieldTestTime).hide();      
-               }
+    }
 }
 
 function disableWhenEmpty(field) {
