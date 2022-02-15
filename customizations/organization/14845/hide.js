@@ -9,14 +9,14 @@ function main(){
   $(question1).addClass('hidden');
   $(question2).addClass('hidden');
 }
-main();
 
+setTimeout(main, 20);
   
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    setTimeout(main, 20);
+    main();
   }
 };
   
