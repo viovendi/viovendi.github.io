@@ -16,7 +16,7 @@ var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
     //Insert your code here
-    main();
+    setTimeout(main, 20);
   }
 };
   
