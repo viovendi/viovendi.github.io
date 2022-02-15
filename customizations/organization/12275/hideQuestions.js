@@ -221,9 +221,7 @@ function disableWhenEmpty(field) {
         
         $(inputOfField).addClass('error-state');
     
-        $(inputOfField).on("blur focus focusin focusout load resize scroll unload click " +
-    "dblclick mousedown mouseup mousemove mouseover mouseout mouseenter " + 
-     "mouseleave change select submit keydown keypress keyup error", function (event) {
+        $(inputOfField).on("focusout click change input", function (event) {
             console.log('input changed')
             console.log(event)
             $(this).click();
