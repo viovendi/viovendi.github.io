@@ -227,7 +227,7 @@ function disableWhenEmpty(field) {
         }else{
             if (!$(inputOfField).hasClass('error-state')) {
                 console.log('adding new message')
-                $("<div class='error-message'>Erforderlich</div>").insertAfter($(inputOfField));
+                $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
             }
         }
         
