@@ -221,7 +221,7 @@ function disableWhenEmpty(field) {
         
         $(inputOfField).addClass('error-state');
     
-        $(inputOfField).on('input change', function () {
+        $(inputOfField).on('input change paste', function () {
             console.log('input changed')
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
