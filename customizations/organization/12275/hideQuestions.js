@@ -200,7 +200,7 @@ function handler() {
             showField($(fieldTestTime));
          else
         $(fieldTestTime).hide();      
-    }
+    });
 }
 
 function disableWhenEmpty(field) {
