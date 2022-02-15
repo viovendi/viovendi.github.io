@@ -231,8 +231,7 @@ function disableWhenEmpty(field) {
         });
     
         $(inputOfField).on("click change input", function (event) {
-            
-            $(this).click();
+        
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
