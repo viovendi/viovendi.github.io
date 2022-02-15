@@ -60,6 +60,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
     
     $(dropdown).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
             console.log("train selected")
             showField($(fieldFrom));
             showField($(fieldTo));
@@ -71,6 +72,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             $(dropdownParking).hide();
         } else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
             console.log("plane selected")
             showField($(fieldFrom));
             showField($(fieldTo));
@@ -83,6 +85,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             
         }   else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
             console.log("car selected")
             $(fieldFrom).hide();
             $(fieldTo).hide();
@@ -197,10 +200,15 @@ function handler() {
                                          dropdownDepartureShuttleTrain, dropdownDepartureShuttlePlane, null);
 
     $(dropdownTest).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Yes') 
-            showField($(fieldTestTime));
-         else
-        $(fieldTestTime).hide();      
+        if ($(this).find('option').filter(':selected').text().trim() == 'Yes'){
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
+            showField($(fieldTestTime));    
+        }else{
+             $(fieldTestTime).hide();  
+              if($(".error-state").length==0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
+         }
+            
     });
 }
 
