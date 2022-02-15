@@ -1,4 +1,5 @@
 console.log("github -> /12275/hideQuestions")
+
 // Function to show and hide custom question
 function setup(){
     var styles = `
@@ -205,7 +206,6 @@ function handler() {
 
 function disableWhenEmpty(field) {
 
-    
         var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
     
         if(typeof $(inputOfField).get(0) === 'undefined'){
@@ -216,11 +216,6 @@ function disableWhenEmpty(field) {
                         console.log('is date')
 
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
-              
-              $(inputOfField).on("focusout", function (event) {
-            $(this).click();
-        });
-              
         }else{
             if (!$(inputOfField).hasClass("error-state")) {
                 $("<div class='error-message'>Erforderlich</div>").insertAfter($(inputOfField));
@@ -237,9 +232,6 @@ function disableWhenEmpty(field) {
           $(inputOfField).get(0).click();
                 console.log('fired click and change')
             }, 50);
-            
-                       
-
         });
     
         $(inputOfField).on("click change input", function (event) {
@@ -253,6 +245,7 @@ function disableWhenEmpty(field) {
                 console.log('value that isnt empty: '+$(this).val())
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
+                console.log($("error-state").length);
                 $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
