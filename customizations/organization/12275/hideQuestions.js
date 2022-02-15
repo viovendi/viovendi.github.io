@@ -211,6 +211,11 @@ function disableWhenEmpty(field) {
                         console.log('is date')
 
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
+              
+              $(inputOfField).on("focusout", function (event) {
+            $(this).click();
+        });
+              
         }else{
             if (!$(inputOfField).hasClass("error-state")) {
                 $("<div class='error-message'>Erforderlich</div>").insertAfter($(inputOfField));
@@ -220,10 +225,13 @@ function disableWhenEmpty(field) {
        
         
         $(inputOfField).addClass('error-state');
+        
+        $(inputOfField).on("focusout", function (event) {
+            $(this).click();
+        });
     
-        $(inputOfField).on("focusout click change input", function (event) {
-            console.log('input changed')
-            console.log(event)
+        $(inputOfField).on("click change input", function (event) {
+            
             $(this).click();
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
