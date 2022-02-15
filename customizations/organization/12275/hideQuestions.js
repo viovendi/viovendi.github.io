@@ -235,18 +235,18 @@ function disableWhenEmpty(field) {
         });
     
         $(inputOfField).on("click change input", function (event) {
-            console.log(event.type)
+            
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
 
             } else {
-                console.log('value that isnt empty: '+$(this).val())
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
-                console.log($(".error-state").length);
-                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+                
+                if($(".error-state").length==0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
     
