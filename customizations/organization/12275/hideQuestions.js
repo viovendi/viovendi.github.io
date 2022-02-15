@@ -222,7 +222,7 @@ function disableWhenEmpty(field) {
         $(inputOfField).addClass('error-state');
     
         $(inputOfField).on('input change', function () {
-
+            console.log('input changed')
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
@@ -236,20 +236,7 @@ function disableWhenEmpty(field) {
             }
         });
     
-          $(inputOfField).children().on('input change', function () {
-
-            if ($(this).val().trim().length == 0) {
-                $(inputOfField).addClass('error-state');
-                $(field).find('.error-message').show();
-                $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-            } else {
-                console.log('value that isnt empty: '+$(this).val())
-                $(inputOfField).removeClass('error-state');
-                $(field).find('.error-message').hide();
-                $('.customization2_attendee_edit-action_save').prop("disabled", false);
-            }
-        });
+        
        
     }
 
