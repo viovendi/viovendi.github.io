@@ -61,7 +61,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
     $(dropdown).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
-            console.log("train selected")
+         //   console.log("train selected")
             showField($(fieldFrom));
             showField($(fieldTo));
             showField($(fieldDate));
@@ -75,7 +75,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
         } else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
-            console.log("plane selected")
+        //    console.log("plane selected")
             showField($(fieldFrom));
             showField($(fieldTo));
             showField($(fieldDate));
@@ -93,7 +93,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
         }   else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
-            console.log("car selected")
+         //   console.log("car selected")
             
             $(fieldFrom).hide();
             $(fieldFrom).removeClass('error-state');
@@ -148,8 +148,8 @@ function showField(field){
     $(field).show();
     disableWhenEmpty(field);
     $(field).find('vv-optional-text').css("display", "none");
-    console.log('setting field:')
-    console.log($(field))
+   // console.log('setting field:')
+  //  console.log($(field))
 }
 function handler() {
 
@@ -240,16 +240,16 @@ function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
     
         if(typeof $(inputOfField).get(0) === 'undefined'){
-            console.log('is dropdown')
+         //   console.log('is dropdown')
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
         }
           if(typeof $(inputOfField).get(0) === 'undefined'){
-                        console.log('is date')
+               //         console.log('is date')
 
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
         }else{
             if (!$(inputOfField).hasClass('error-state')) {
-                console.log('adding new message')
+            //    console.log('adding new message')
                 $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
             }
         }
@@ -262,7 +262,7 @@ function disableWhenEmpty(field) {
             myTimeout = setTimeout(function(){
             $(inputOfField).get(0).dispatchEvent(new Event('change'));
           $(inputOfField).get(0).click();
-                console.log('fired click and change')
+           //     console.log('fired click and change')
             }, 50);
         });
     
@@ -276,7 +276,7 @@ function disableWhenEmpty(field) {
             } else {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
-                $(".error-state").each(function(){console.log($(this))});
+             //   $(".error-state").each(function(){console.log($(this))});
                 if($(".error-state").length==0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
