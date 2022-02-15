@@ -221,7 +221,7 @@ function handler() {
     
     //PCR Test
     var dropdownTest = $('.customization2_attendee_further-data_custom-question-31');  
-    $("<div class=''>Please check the entry and quarantine regulations for your home country.</div>").insertBefore($(dropdownTest));
+    $("<div class='vv-control-label vv-control-label--regular' style='line-height: 1 rem;'>Please check the entry and quarantine regulations for your home country.</div>").insertBefore($(dropdownTest));
     //
     var fieldTestTime = $('.customization2_attendee_further-data_custom-question-32');
     $(fieldTestTime).hide();
