@@ -195,7 +195,12 @@ function handler() {
     setupConditionals(dropdownDeparture, fieldDepartureFrom, fieldDepartureTo, fieldDepartureDate, fieldDepartureTime, fieldDepartureFlightNumber, fieldDepartureTrainNumber,
                                          dropdownDepartureShuttleTrain, dropdownDepartureShuttlePlane, null);
 
-    
+    $(dropdownTest).change(function () {
+        if ($(this).find('option').filter(':selected').text().trim() == 'Yes') 
+            showField($(fieldTestTime));
+        } else{
+        $(fieldTestTime).hide();      
+               }
 }
 
 function disableWhenEmpty(field) {
