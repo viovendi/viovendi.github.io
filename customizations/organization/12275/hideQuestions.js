@@ -232,11 +232,11 @@ function disableWhenEmpty(field) {
         $(inputOfField).addClass('error-state');
         
         $(inputOfField).on("focusout blur", function () {
-          //  myTimeout = setTimeout(function(){
-          //  $(inputOfField).get(0).dispatchEvent(new Event('change'));
+            myTimeout = setTimeout(function(){
+            $(inputOfField).get(0).dispatchEvent(new Event('change'));
           $(inputOfField).get(0).click();
                 console.log('fired click and change')
-          //  }, 1000);
+            }, 50);
             
                        
 
