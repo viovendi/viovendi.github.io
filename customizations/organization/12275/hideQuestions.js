@@ -284,7 +284,7 @@ function disableWhenEmpty(field) {
             } else {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
-                
+                $(".error-state").each(function(){console.log($(this))});
                 if($(".error-state").length==0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
