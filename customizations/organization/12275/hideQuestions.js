@@ -221,7 +221,7 @@ function disableWhenEmpty(field) {
         
         $(inputOfField).addClass('error-state');
     
-        $(inputOfField).on('input change paste click focus', function () {
+        $(inputOfField).on('input change paste click focusin focusout', function () {
             console.log('input changed')
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
