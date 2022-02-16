@@ -9,6 +9,32 @@ script.onload = handlerQ;
 
 head.appendChild(script);
 
+const imageNameAndURL = [
+  ['hochkant', 'https://viovendi.github.io/customizations/organization/14334/CREATIVA-schmal.png'],
+  ['querformat', 'https://viovendi.github.io/customizations/organization/14334/CREATIVA-quer.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/14334/facebook.png']
+];
+function setTexts(){
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage($('#banner_img').get(0), 0, 0);
+    ctx.fillStyle = "black";
+    
+    const value = $('#format_inp').val();
+    
+    if(value=='querformat'){
+        ctx.fillText($('#halle_inp').val(), 235 , 45);
+        ctx.fillText($('#stand_inp').val(), 260 , 45);
+    }
+    else if(value=='hochkant'){
+        ctx.fillText($('#halle_inp').val(), 65, 465);
+        ctx.fillText($('#stand_inp').val(), 80-$('#stand_inp').val().length*6, 535);
+    }
+    else if(value=='facebook'){
+        //
+    }
+}
+
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d');
 /*
@@ -33,24 +59,9 @@ function setupBannerImage(){
      ctx.font = "18pt Verdana";
        }
 }
-function setTexts(){
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage($('#banner_img').get(0), 0, 0);
-    ctx.fillStyle = "black";
-    console.log('format input value '+$('#format_inp').val());
-    
-    if(canvas.width>canvas.height){
-        //quer
-        ctx.fillText($('#halle_inp').val(), 235 , 45);
-        ctx.fillText($('#stand_inp').val(), 260 , 45);
-    }else{
-        //hoch
-        ctx.fillText($('#halle_inp').val(), 65, 465);
-        ctx.fillText($('#stand_inp').val(), 80-$('#stand_inp').val().length*6, 535);
- }
-}
+
 function generator(){
+    
     $(document).on('input change keyup paste', '#halle_inp', function() {
         setTexts()
     });
@@ -60,36 +71,20 @@ function generator(){
         }
     });
     $(document).on('input change keyup paste', '#format_inp', function() {
-        if($(this).val()=='hochkant'){
-          $('#banner_img').attr('crossOrigin','Anonymous');
-        $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/CREATIVA-schmal.png");
-            $('#banner_img').on('load',function(){
-                setupBannerImage();
-                setTexts()
-            });  
         
-        }
-        if($(this).val()=='querformat'){
-               
-        $('#banner_img').attr('crossOrigin','Anonymous');
-        $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/CREATIVA-quer.png");
-             $('#banner_img').on('load',function(){
+        for (let i = 0; i < imageNameAndURL.length; i++) {
+            if($(this).val()==imageNameAndURL[i][0]){
+                console.log(imageNameAndURL[i][0])
+                $('#banner_img').attr('crossOrigin','Anonymous');
+                $('#banner_img').attr("src",imageNameAndURL[i][1]);
+                $('#banner_img').on('load',function(){
                     setupBannerImage();
                     setTexts()
-            });
-        }
-        // Social media banner
-         if($(this).val()=='facebook'){
-             console.log('facebook');
-          $('#banner_img').attr('crossOrigin','Anonymous');
-        $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/facebook.png");
-            $('#banner_img').on('load',function(){
-                    setupBannerImage();
-                    setTexts()
-            });  
-        
+                });  
+            }
         }
     });
+    
     setupBannerImage();
 }
 
