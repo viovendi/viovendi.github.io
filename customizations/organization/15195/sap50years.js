@@ -63,10 +63,7 @@ function changesForAttendeeForm() {
 }
 function disableAndSet(radioGroup) {
     if (!isFirstRadioButton(radioGroup)) {
-        $(radioGroup).find('input[type=radio]').each(function () {
-            
-          //  $(this).attr('disabled', 'disabled');
-        })
+        
         setRadioGroup(radioGroup);
     }
 }
