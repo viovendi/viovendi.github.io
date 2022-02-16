@@ -34,10 +34,20 @@ function setupBannerImage(){
        }
 }
 function setTexts(){
- if(canvas.width>canvas.height){   
-    setTextsQuerFormat();
- }else{
-     setTextsHochkant();
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage($('#banner_img').get(0), 0, 0);
+    ctx.fillStyle = "black";
+    console.log('format input value '+$('#format_inp').val());
+    
+    if(canvas.width>canvas.height){
+        //quer
+        ctx.fillText($('#halle_inp').val(), 235 , 45);
+        ctx.fillText($('#stand_inp').val(), 260 , 45);
+    }else{
+        //hoch
+        ctx.fillText($('#halle_inp').val(), 65, 465);
+        ctx.fillText($('#stand_inp').val(), 80-$('#stand_inp').val().length*6, 535);
  }
 }
 function generator(){
@@ -54,7 +64,7 @@ function generator(){
           $('#banner_img').attr('crossOrigin','Anonymous');
         $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/CREATIVA-schmal.png");
             $('#banner_img').on('load',function(){
-                    setupBannerImage();
+                setupBannerImage();
                 setTexts()
             });  
         
@@ -65,8 +75,7 @@ function generator(){
         $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/CREATIVA-quer.png");
              $('#banner_img').on('load',function(){
                     setupBannerImage();
-                         setTexts()
-
+                    setTexts()
             });
         }
         // Social media banner
@@ -76,7 +85,7 @@ function generator(){
         $('#banner_img').attr("src","https://viovendi.github.io/customizations/organization/14334/facebook.png");
             $('#banner_img').on('load',function(){
                     setupBannerImage();
-                setTexts()
+                    setTexts()
             });  
         
         }
@@ -84,25 +93,6 @@ function generator(){
     setupBannerImage();
 }
 
-    function setTextsQuerFormat(){
-     console.log('changing to querformat')   
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage($('#banner_img').get(0), 0, 0);
-        
-        ctx.fillStyle = "black";
-        ctx.fillText($('#halle_inp').val(), 235 , 45);
-        ctx.fillText($('#stand_inp').val(), 260 , 45);
-    }
-    function setTextsHochkant(){
-        
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage($('#banner_img').get(0), 0, 0);
-        
-        ctx.fillStyle = "black";
-        ctx.fillText($('#halle_inp').val(), 65, 465);
-        ctx.fillText($('#stand_inp').val(), 80-$('#stand_inp').val().length*6, 535);
-            
-    }
     function download() {
         var download = document.getElementById("download");
         
