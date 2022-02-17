@@ -5,9 +5,9 @@ if(window.location.href.indexOf('88669') !== -1){
   const href = window.location.href;
     // Script works only for EID 88669
   if(href.indexOf('de-de') !== -1){
-    const radioLineLabel1 = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
-   const test = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenschutzhinweis');
-   console.log($(test).find('p.vv-radio__label-text'))
+    // const radioLineLabel1 = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
+   const radio1 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenschutzhinweis');
+   const radioLineLabel1 = $(radio1).find('p.vv-radio__label-text');
 
   radioLineLabel1.html(`
     <span>Ich bin mit den Bedingungen unter folgendem Link einverstanden </span>
