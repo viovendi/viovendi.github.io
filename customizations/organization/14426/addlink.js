@@ -5,7 +5,6 @@ if(window.location.href.indexOf('88669') !== -1){
   const href = window.location.href;
     // Script works only for EID 88669
   if(href.indexOf('de-de') !== -1){
-    // const radioLineLabel1 = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
    const radio1 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenschutzhinweis');
    const radioLineLabel1 = $(radio1).find('p.vv-radio__label-text');
 
@@ -23,13 +22,15 @@ if(window.location.href.indexOf('88669') !== -1){
       `);
   }
   if(href.indexOf('en-us') !== -1){
-    const radioLineLabel = $('.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line_label p');
+    const radio1 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Data protection notice');
+    const radioLineLabel = $(radio1).find('p.vv-radio__label-text');
   radioLineLabel.html(`
     <span>I agree to the terms and conditions at the following link </span>
     <a target='_blank' href='https://www.westfalenhallen.de/dataprotectionnotice-beretta'>www.westfalenhallen.de/dataprotectionnotice-beretta.</a>
     `);
 
-    const radioLineLabel2 = $('.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_radio-line_label p');
+    const radio2 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Data sharing');
+    const radioLineLabel2 = $(radio2).find('p.vv-radio__label-text');
 
     radioLineLabel2.html(`
       <span>By giving your consent, you allow Westfalenhallen Unternehmensgruppe GmbH to communicate your personal data (i.e. name, surname, email) to Fabbrica D’Armi Pietro Beretta S.p.A. for sending you advertising or direct sales material, for carrying out market research or commercial communication via email (Third party Marketing). please click the following link for more info: </span>
