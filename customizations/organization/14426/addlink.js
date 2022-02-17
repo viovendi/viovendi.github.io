@@ -14,7 +14,8 @@ if(window.location.href.indexOf('88669') !== -1){
     <a target='_blank' href='https://www.jagd-und-hund.de/en/beretta/'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
     `);
 
-    const radioLineLabel2 = $('.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_radio-line_label p');
+    const radio2 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenweitergabe');
+    const radioLineLabel2 = $(radio2).find('p.vv-radio__label-text');
 
     radioLineLabel2.html(`
       <span>Mit Ihrer Einwilligung erlauben Sie der Westfalenhallen Unternehmensgruppe GmbH, Ihre persönlichen Daten (z.B. Name, Vorname, E-Mail) an die Fabbrica D'Armi Pietro Beretta S.p.A. zu übermitteln, um Ihnen Werbe- oder Direktverkaufsmaterial zuzusenden, Marktforschung zu betreiben oder kommerzielle Kommunikation per E-Mail zu betreiben (Third Party Marketing). Bitte nutzen Sie den Link für weitere Informationen: </span>
