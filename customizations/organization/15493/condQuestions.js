@@ -43,15 +43,7 @@ function handler() {
             $(field1).show()
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
-        } else {
-            $(field1).hide()
-            $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
-            $('.customization2_attendee_edit-action_save').prop("disabled", false);
-        }
-    });
-
-    $(dropdown2).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
+        } if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
             $(field1).show()
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
@@ -63,33 +55,30 @@ function handler() {
     });
 
 
-    function disableWhenEmpty(field) {
-
-
-        if (!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")) {
-            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
-        }
-
-    }
-
-
-    /*
-     Google Tag Manager JS Helpers used
-    */
-    var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
-    $(field).hide()
-    var dropdown = $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
-
-    $(dropdown).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'andere') {
-            $(field).show()
-            disableWhenEmpty(field);
-        } else {
-            $(field).hide()
-            $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
-            $('.customization2_attendee_edit-action_save').prop("disabled", false);
-        }
+    function disableWhenEmpty(field){
+    
+   
+      if(!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")){
+         $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
+     }
+    
+        $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
+       $('.customization2_attendee_edit-action_save').prop("disabled", true);
+    
+   $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function() {
+       
+      if($(this).val().trim().length==0){
+         $(this).addClass('error-state');
+          $(field).find('.error-message').show();
+         $('.customization2_attendee_edit-action_save').prop("disabled", true);
+          
+       }else{
+         $(this).removeClass('error-state');
+           $(field).find('.error-message').hide();
+         $('.customization2_attendee_edit-action_save').prop("disabled", false);
+       }
     });
+ }
 
 }
 
