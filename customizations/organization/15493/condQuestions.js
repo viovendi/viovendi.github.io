@@ -40,17 +40,16 @@ function handler() {
 
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'PM3') {
-            console.log('PM3');
             $(field1).show()
+            $(field2).hide()
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
         } else if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
-            console.log('PW06 / Group Office');
+            $(field1).hide()
             $(field2).show()
             $(field2).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field2);
         } else {
-            console.log('other selection');
             $(field1).hide()
             $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
             $(field2).hide()
