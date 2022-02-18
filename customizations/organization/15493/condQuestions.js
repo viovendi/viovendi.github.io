@@ -82,7 +82,7 @@ function handler() {
 
 }
 
-handler();
+//handler();
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
