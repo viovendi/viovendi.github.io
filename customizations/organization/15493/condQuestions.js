@@ -44,7 +44,7 @@ function handler() {
             $(field1).show()
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
-        } if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
+        } else if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
             console.log('PW06 / Group Office');
             $(field2).show()
             $(field2).find('vv-optional-text').css("display", "none");
