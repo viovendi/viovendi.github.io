@@ -58,7 +58,7 @@ $(document).ready(function () {
         });
         
         $('.customization2_booker_contact-data ~ p a').css({
-            "color": "#3b9f9a",
+            "color": "#3b9f9a !important",
         });
         
         // Style DOI 
