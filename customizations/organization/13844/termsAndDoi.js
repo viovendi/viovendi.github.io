@@ -78,7 +78,7 @@ $(document).ready(function () {
 
 
 
-    $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationAttendee);
+    $('body').on('change', '.customization2_attendee_contact-data_email_input', emailConfirmationAttendee);
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
