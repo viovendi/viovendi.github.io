@@ -97,14 +97,14 @@ $($$('.customization2_attendee_further-data_custom-question').findField('Komment
 };
 
 handler();
-hideInternalFields();
+//hideInternalFields();
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         handler();
-        hideInternalFields();
+        //hideInternalFields();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
