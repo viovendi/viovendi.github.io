@@ -97,8 +97,6 @@ function customTerms () {
     }
 }
 
-var hotelField = $$('.customization2_attendee_further-data_custom-question').findField('Ich benötige einen Hoteltransfer');
-
 function addHotelDescription () {
     if(!$('.hotelText').length){
         console.log("Hotel description added");
@@ -106,9 +104,17 @@ function addHotelDescription () {
     }
 }
 
+function addPartnerWeitereAngaben () {
+    if(!$('.headerPartner').length){
+        console.log("Header added");
+        $($$('.customization2_attendee_further-data_custom-question').findField('Mein/e Partnerin wählt zum Dinner')).prepend('<div class="headerPartner" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
+    }
+}
+
 
 handler();
 addHotelDescription();
+addPartnerWeitereAngaben();
 customTerms();
 
 
@@ -118,6 +124,7 @@ var insertionListener = function (event) {
         //Inser your code here.
         handler();
         addHotelDescription();
+        addPartnerWeitereAngaben();
         customTerms();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
