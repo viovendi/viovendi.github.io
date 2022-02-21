@@ -1,13 +1,16 @@
 $(document).ready(function () {
-    console.log(" Start termsAndDoi");
+    console.log("Start termsAndDoi");
 
 
     // Email Confirmation Attendee
 
     function emailConfirmationAttendee() {
+        console.log("startEmailConfirmationAttendee");
         var attendeeEmail1 = $('.customization2_attendee_contact-data_email_input');
         var attendeeEmail2 = $('.customization2_attendee_contact-data_email-confirmation_input');
+        console.log("variables saved");
         attendeeEmail2.val(attendeeEmail1.val());
+        console.log("Email transferred");
         $('.customization2_attendee_contact-data_email-confirmation_input').focus();
         $('.customization2_attendee_edit-action_save').focus();
     };
@@ -33,9 +36,9 @@ $(document).ready(function () {
         });
     };
 
-    var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
-    var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
-    var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
+    //var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
+    //var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
+    //var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
 
 
     function moveTerms() {
