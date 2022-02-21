@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     function hideEmail() {
         console.log("hideEmail");
-        $('.customization2_booker_contact-data_email-confirmation').css({
+        $('.customization2_booker_contact-data_email-confirmation *').css({
             "opacity": "0",
             "height": "0px"
         });
@@ -44,6 +44,15 @@ $(document).ready(function () {
         // Remove Terms in Terms sections
         $('.customization2_booking-terms').css({
             "display": "none",
+        });
+        
+        // Style DOI 
+        $('.vv-checkbox__label--center').css({
+            "align-items": "start",
+        });
+        
+        $('.vv-checkbox__indicator').css({
+            "margin-top": "4px",
         });
 
        
