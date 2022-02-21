@@ -33,7 +33,7 @@ function handler() {
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Ich benötige ein Hotelzimmer (optional)');
     $(field1).hide()
 
-    var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Ich möchte wie folgt anreisen (optional)');
+    var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Ich möchte zu folgendem Datum anreisen (optional)');
     $(field2).hide()
 
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Werk / Standort');
