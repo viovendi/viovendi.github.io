@@ -33,14 +33,9 @@ $(document).ready(function () {
         });
     };
 
-    //var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
-    //var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
-    //var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
-
 
     function moveTerms() {
 
-        
 
         // Remove Terms in Terms sections
         $('.customization2_booking-terms').css({
@@ -48,12 +43,14 @@ $(document).ready(function () {
         });
 
         // Add Terms after Booker data
-        $(".customization2_booker_contact-data").after("<p>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+        if(!$('#45408464531').length){
+            $(".customization2_booker_contact-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
 
-        $('.customization2_booker_contact-data ~ p').css({
-            "padding-top": "20px",
-            "font-size": "14px",
-        });
+            $('.customization2_booker_contact-data ~ p').css({
+                "padding-top": "20px",
+                "font-size": "14px",
+            });
+        };
         
         
         // Style DOI 
