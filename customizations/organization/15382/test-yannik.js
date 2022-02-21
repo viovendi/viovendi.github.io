@@ -45,14 +45,7 @@ $(document).ready(function () {
             "display": "none",
         });
 
-        // Remove Terms checkbox
-        console.log("Checkbox removed");
-        $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
-        
-        
-        $('.customization2_opt-out-and-opt-in > .vv-mb-lg').css({
-            "margin-bottom": "10px",
-        });
+       
         
     };
     
