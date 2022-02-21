@@ -50,16 +50,13 @@ $(document).ready(function () {
         });
 
         // Add Terms after Booker data
-        $(".customization2_booker_contact-data").after("<p>Die <a href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+        $(".customization2_booker_contact-data").after("<p>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
 
         $('.customization2_booker_contact-data ~ p').css({
             "padding-top": "20px",
             "font-size": "14px",
         });
         
-        $('.customization2_booker_contact-data ~ p a').css({
-            "color": "#3b9f9a !important",
-        });
         
         // Style DOI 
         $('.vv-checkbox__label--center').css({
