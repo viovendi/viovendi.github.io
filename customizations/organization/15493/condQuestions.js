@@ -100,7 +100,7 @@ function customTerms () {
 var hotelField = $$('.customization2_attendee_further-data_custom-question').findField('Ich benötige einen Hoteltransfer');
 
 function addHotelDescription () {
-    if(!$(hotelField).length){
+    if(!$('.hotelText').length){
         console.log("Hotel description added");
         $(hotelField).prepend('<div class="hotelText" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den abrufbaren Hotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
     }
