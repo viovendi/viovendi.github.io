@@ -40,9 +40,7 @@ $(document).ready(function () {
 
     function moveTerms() {
 
-        // Click Terms checkbox
-        console.log("checkbox clicked");
-        $('.customization2_booking-terms_checkbox').click()
+        
 
         // Remove Terms in Terms sections
         $('.customization2_booking-terms').css({
@@ -75,6 +73,10 @@ $(document).ready(function () {
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
+    // Click Terms checkbox
+    console.log("checkbox clicked");
+    $('.customization2_booking-terms_checkbox').click()
+    
     hideEmail();
     moveTerms();
 
