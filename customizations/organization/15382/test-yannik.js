@@ -76,9 +76,9 @@ $(document).ready(function () {
 
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmation);
     
-    $('button.customization2_booker_edit-action_save').on('click', saveToBook);
+    //$('button.customization2_booker_edit-action_save').on('click', saveToBook);
     
-    moveBookingButtons();
+    //moveBookingButtons();
     hideEmail();
     moveTerms();
 
@@ -89,7 +89,7 @@ $(document).ready(function () {
             hideEmail();
             moveTerms();
             $('button.customization2_booker_edit-action_save').on('click', saveToBook);
-            moveBookingButtons();
+            //moveBookingButtons();
         }
     };
 
