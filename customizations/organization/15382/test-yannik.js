@@ -38,6 +38,7 @@ $(document).ready(function () {
         $('.customization2_booker_contact-data > p').css({
             "padding-bottom": "10px",
             "padding-top": "20px",
+            "font-size": "14px",
         });
 
         // Remove Terms in Terms sections
