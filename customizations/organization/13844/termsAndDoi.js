@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    console.log(" Start termsAndDoi");
+    
 
     // Email Confirmation 
     function copyEmail() {
