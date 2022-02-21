@@ -53,13 +53,12 @@ $(document).ready(function () {
         $(".customization2_booker_contact-data").after("<p>Die <a href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
 
         $('.customization2_booker_contact-data ~ p').css({
-            "padding-bottom": "10px",
             "padding-top": "20px",
             "font-size": "14px",
         });
         
         $('.customization2_booker_contact-data ~ p a').css({
-            "color": "#D8EFEC",
+            "color": "#3b9f9a",
         });
         
         // Style DOI 
