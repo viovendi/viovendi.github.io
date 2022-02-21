@@ -1,4 +1,4 @@
-/*$(document).ready(function () {
+$(document).ready(function () {
     console.log(" Start termsAndDoi");
 
 
@@ -79,14 +79,14 @@
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
-    hideEmail();
+    //hideEmail();
     moveTerms();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
 
             console.log("event listener");
-            hideEmail();
+            //hideEmail();
             moveTerms();
         }
     };
@@ -96,4 +96,3 @@
     document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
 });
-*/
