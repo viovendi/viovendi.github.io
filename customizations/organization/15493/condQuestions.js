@@ -40,8 +40,8 @@ function handler() {
 
     $(dropdown1).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'PM3') {
-            $(field1).show()
-            $(field2).hide()
+            $(field1).show();
+            $(field2).hide();
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
         } else if ($(this).find('option').filter(':selected').text().trim() == 'PW06 / Group Office') {
@@ -50,39 +50,39 @@ function handler() {
             $(field2).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field2);
         } else {
-            $(field1).hide()
-            $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
-            $(field2).hide()
-            $(field2).find('.customization2_attendee_further-data_custom-question_input').val('')
+            $(field1).hide();
+            $(field1).find('.customization2_attendee_further-data_custom-question_dropdown').val('');
+            $(field2).hide();
+            $(field2).find('.customization2_attendee_further-data_custom-question_dropdown').val('');
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     });
 
 
-    function disableWhenEmpty(field){
-    
-   
-      if(!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")){
-         $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
-     }
-    
-        $(field).find('.customization2_attendee_further-data_custom-question_input').addClass('error-state');
-       $('.customization2_attendee_edit-action_save').prop("disabled", true);
-    
-   $(field).find('.customization2_attendee_further-data_custom-question_input').on('input', function() {
-       
-      if($(this).val().trim().length==0){
-         $(this).addClass('error-state');
-          $(field).find('.error-message').show();
-         $('.customization2_attendee_edit-action_save').prop("disabled", true);
-          
-       }else{
-         $(this).removeClass('error-state');
-           $(field).find('.error-message').hide();
-         $('.customization2_attendee_edit-action_save').prop("disabled", false);
-       }
-    });
- }
+    function disableWhenEmpty(field) {
+
+
+        if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').hasClass("error-state")) {
+            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+        }
+
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+        $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input', function () {
+
+            if ($(this).val().trim().length == 0) {
+                $(this).addClass('error-state');
+                $(field).find('.error-message').show();
+                $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+            } else {
+                $(this).removeClass('error-state');
+                $(field).find('.error-message').hide();
+                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            }
+        });
+    }
 
 }
 
