@@ -59,7 +59,20 @@ function handler() {
         }
     });
     
-    
+    function customTerms () {
+        if(!$('.custom_terms_checkbox').length){
+            var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
+            $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
+            $('.custom_terms_checkbox').append(customBookingTerms);
+            $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+        }
+    }
+
+    function addHotelDescription () {
+        if(!$(hotelField).length){
+            $(hotelField).prepend('<div class="hotelText" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den abrufbaren Hotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
+        }
+    }
 
 
     function disableWhenEmpty(field) {
@@ -106,8 +119,6 @@ function addHotelDescription () {
 
 
 handler();
-customTerms();
-addHotelDescription();
 
 
 var insertionListener = function (event) {
@@ -115,9 +126,6 @@ var insertionListener = function (event) {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         handler();
-        customTerms();
-        addHotelDescription();
-
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
