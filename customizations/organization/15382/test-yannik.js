@@ -34,7 +34,6 @@ $(document).ready(function () {
         $('.customization2_booking-terms_checkbox').click()
 
         // Add Terms after Booker data
-        $(rechtlicherHinweis).appendTo(".customization2_booker_contact-data");
         $(termsLabel).appendTo(".customization2_booker_contact-data");
         $(termsLink).appendTo(".customization2_booker_contact-data");
         
@@ -52,8 +51,6 @@ $(document).ready(function () {
         console.log("Checkbox removed");
         $("vv-checkbox[name='isTermsAccepted'] .vv-checkbox .vv-checkbox__label.vv-checkbox__label--center.vv-checkbox__label--md .vv-checkbox__indicator").attr('style', 'display: none');
         
-        // Add Heading to DOI
-        $(newsletterLabel).prependTo("vv-advanced-questions .customization2_opt-out-and-opt-in");
         
         $('.customization2_opt-out-and-opt-in > .vv-mb-lg').css({
             "margin-bottom": "10px",
