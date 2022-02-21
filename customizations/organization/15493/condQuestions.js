@@ -57,6 +57,8 @@ function handler() {
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     });
+    
+    
 
 
     function disableWhenEmpty(field) {
@@ -86,13 +88,23 @@ function handler() {
 
 }
 
+function hideInternalFields() {
+$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 1: Hotelvergabe (optional)')).hide();
+$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 2: Buchungsnummer (optional)')).hide();
+$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 3: interner Ansprechpartner (optional)')).hide();
+$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 4: Tischnummer (optional)')).hide();
+$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 5: Sonstige Bemerkungen (optional)')).hide();
+};
+
 handler();
+hideInternalFields();
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         handler();
+        hideInternalFields();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
