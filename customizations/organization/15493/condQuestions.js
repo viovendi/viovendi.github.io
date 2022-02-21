@@ -104,17 +104,17 @@ function addHotelDescription () {
     }
 }
 
-function addPartnerWeitereAngaben () {
-    if(!$('.headerPartner').length){
-        console.log("Header added");
-        $($$('.customization2_attendee_further-data_custom-question').findField('Mein/e Partnerin wählt zum Dinner')).prepend('<div class="headerPartner" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
+function addEssenswahl () {
+    if(!$('.headerEssenswahl').length){
+        console.log("Essenswahl added");
+        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum Dinner')).prepend('<div class="headerEssenswahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Essenswahl</p></div>');
     }
 }
 
 
 handler();
 addHotelDescription();
-addPartnerWeitereAngaben();
+addEssenswahl();
 customTerms();
 
 
