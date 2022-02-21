@@ -88,23 +88,27 @@ function handler() {
 
 }
 
-function hideInternalFields() {
-$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 1: Hotelvergabe (optional)')).hide();
-$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 2: Buchungsnummer (optional)')).hide();
-$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 3: interner Ansprechpartner (optional)')).hide();
-$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 4: Tischnummer (optional)')).hide();
-$($$('.customization2_attendee_further-data_custom-question').findField('Kommentarfeld 5: Sonstige Bemerkungen (optional)')).hide();
-};
+function customTerms () {
+    if(!$('.custom_terms_checkbox').length){
+        var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
+        $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
+        $('.custom_terms_checkbox').append(customBookingTerms);
+        $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+    }
+}
+
 
 handler();
-//hideInternalFields();
+customTerms();
+
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         handler();
-        //hideInternalFields();
+        customTerms();
+
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
