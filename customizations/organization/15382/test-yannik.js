@@ -24,9 +24,8 @@ $(document).ready(function () {
     var doi = $("vv-advanced-questions .customization2_opt-out-and-opt-in").clone();
     var termsLabel = $(".customization2_booking-terms .vv-mb-xxs").clone();
     var termsLink = $(".customization2_booking-terms .vv-pl-lg").clone();
-    var rechtlicherHinweis = $("<p></p>").text("Rechtlicher Hinweis");
-    var newsletterLabel = $("<p></p>").text("Newsletter");
-
+    var rechtlicherHinweis = $("<p></p>").text("Die AGBs und Datenschutzerklärung habe ich zur Kenntnis genommen.");
+ 
     function moveTerms() {
 
         // Click Terms checkbox
@@ -34,8 +33,7 @@ $(document).ready(function () {
         $('.customization2_booking-terms_checkbox').click()
 
         // Add Terms after Booker data
-        $(termsLabel).appendTo(".customization2_booker_contact-data");
-        $(termsLink).appendTo(".customization2_booker_contact-data");
+        $(rechtlicherHinweis).appendTo(".customization2_booker_contact-data");
         
         $('.customization2_booker_contact-data > p').css({
             "padding-bottom": "10px",
