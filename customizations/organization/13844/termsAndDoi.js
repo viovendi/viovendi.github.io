@@ -1,4 +1,4 @@
-*/$(document).ready(function () {
+/*$(document).ready(function () {
     console.log(" Start termsAndDoi");
 
 
@@ -96,4 +96,4 @@
     document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
 });
-/*
++/
