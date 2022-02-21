@@ -33,7 +33,7 @@ $(document).ready(function () {
         $('.customization2_booking-terms_checkbox').click()
 
         // Add Terms after Booker data
-        $(rechtlicherHinweis).appendTo(".customization2_booker_contact-data");
+        $( ".customization2_booker_contact-data" ).after( "<p>Die <a href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>" );
         
         $('.customization2_booker_contact-data > p').css({
             "padding-bottom": "10px",
