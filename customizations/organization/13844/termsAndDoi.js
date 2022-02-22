@@ -118,4 +118,30 @@ $(document).ready(function () {
     document.addEventListener("MSAnimationStart", insertionListener, false); // IE
     document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if ($(page3).is(':visible')) {
+            console.log('on page 3')
+            checkAndHideTerms();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if (!$(page3).is(':visible')) {
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
 });
