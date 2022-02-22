@@ -35,31 +35,32 @@ $(document).ready(function () {
 
 
     function moveTerms() {
-
+        
+        var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>";
 
         // Remove Terms in Terms sections
-        //$('.customization2_booking-terms').css({
-        //    "display": "none",
-        //});
+        $('.customization2_booking-terms').css({
+            "display": "none",
+        });
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
             
             if($(".customization2_booker_further-data").length){
                 console.log("Adding terms after booker further data");
-                $(".customization2_booker_further-data").after("<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+                $(".customization2_booker_further-data").after(terms);
             
             } else if ($(".customization2_booker_contact-data").length){
                 console.log("Adding terms after booker contact data");
-                $(".customization2_booker_contact-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+                $(".customization2_booker_contact-data").after(terms);
             
-            } else if ($(".customization2_attendee_further-data").length){
+            } else if ($(".customization2_attendee_further-data").length && !$(".customization2_booker").length){
                 console.log("Adding terms after attendee further data");
-                $(".customization2_attendee_further-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+                $(".customization2_attendee_further-data").after(terms);
             
-            } else if ($(".customization2_attendee_contact-data").length){
+            } else if ($(".customization2_attendee_contact-data").length && !$(".customization2_booker").length){
                 console.log("Adding terms after attendee contact data");
-                $(".customization2_attendee_contact-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+                $(".customization2_attendee_contact-data").after(terms);
             }
         };
         
