@@ -78,7 +78,7 @@ $(document).ready(function () {
     };
     
     function checkAndHideTerms () {
-        if(!$('.customization2_booking-terms_checkbox').is("checked")){
+        if(!$('.customization2_booking-terms_checkbox').is(":checked")){
             
             // Click Terms checkbox
             console.log("checkbox clicked");
