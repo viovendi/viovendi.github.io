@@ -70,15 +70,15 @@ $(document).ready(function () {
         $('.vv-checkbox__label--center').css({
             "align-items": "start",
         });
-
+        
         $('.vv-checkbox__indicator').css({
             "margin-top": "4px",
         });
-
+        
     };
     
     function checkAndHideTerms () {
-        if(!$('.customization2_booking-terms_checkbox').is":checked"){
+        if(!$('.customization2_booking-terms_checkbox').is("checked")){
             
             // Click Terms checkbox
             console.log("checkbox clicked");
