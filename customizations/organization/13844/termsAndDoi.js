@@ -38,10 +38,6 @@ $(document).ready(function () {
         
         var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>";
 
-        // Remove Terms in Terms sections
-        //$('.customization2_booking-terms').css({
-        //    "display": "none",
-        //});
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
@@ -80,6 +76,21 @@ $(document).ready(function () {
         });
 
     };
+    
+    function checkAndHideTerms () {
+        if(!$('.customization2_booking-terms_checkbox').is":checked"){
+            
+            // Click Terms checkbox
+            console.log("checkbox clicked");
+            $('.customization2_booking-terms_checkbox').click()
+
+        }
+        
+        // Remove Terms in Terms sections
+        //$('.customization2_booking-terms').css({
+        //     "display": "none",
+        //});
+    }
 
 
 
@@ -87,12 +98,11 @@ $(document).ready(function () {
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
-    // Click Terms checkbox
-    console.log("checkbox clicked");
-    $('.customization2_booking-terms_checkbox').click()
+    
     
     hideEmail();
     moveTerms();
+    checkAndHideTerms();
 
     var insertionListener = function (event) {
         if (event.animationName === "nodeInserted") {
@@ -100,6 +110,7 @@ $(document).ready(function () {
             console.log("event listener");
             hideEmail();
             moveTerms();
+            checkAndHideTerms();
         }
     };
 
