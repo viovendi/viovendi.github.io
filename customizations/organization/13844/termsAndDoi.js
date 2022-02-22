@@ -39,9 +39,9 @@ $(document).ready(function () {
         var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>";
 
         // Remove Terms in Terms sections
-        $('.customization2_booking-terms').css({
-            "display": "none",
-        });
+        //$('.customization2_booking-terms').css({
+        //    "display": "none",
+        //});
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
