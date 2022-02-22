@@ -38,9 +38,9 @@ $(document).ready(function () {
 
 
         // Remove Terms in Terms sections
-        $('.customization2_booking-terms').css({
-            "display": "none",
-        });
+        //$('.customization2_booking-terms').css({
+        //    "display": "none",
+        //});
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
