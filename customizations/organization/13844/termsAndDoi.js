@@ -44,12 +44,22 @@ $(document).ready(function () {
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
+            if($(".customization2_booker_further-data").length){
+                $(".customization2_booker_further-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
+
+                $('.customization2_booker_further-data ~ p').css({
+                    "padding-top": "20px",
+                    "font-size": "14px",
+                    });
+            
+            } else {
             $(".customization2_booker_contact-data").after("<p id='45408464531' >Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>");
 
             $('.customization2_booker_contact-data ~ p').css({
                 "padding-top": "20px",
                 "font-size": "14px",
-            });
+                });
+            }
         };
         
         
