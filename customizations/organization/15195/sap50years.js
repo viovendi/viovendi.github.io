@@ -37,16 +37,13 @@ async function getTicketAmount(eventId) {
   return attribute[0];*/
   const amount = [result.ticket_categories[0].available_amount, result.ticket_categories[4].available_amount];
 
-
-  console.log("Samstag verfügbare Plätze: "+result.ticket_categories[0].available_amount);
-  console.log("Sonntag verfügbare Plätze: "+result.ticket_categories[4].available_amount);
   return amount;
 }
 
 async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
 
-  var element = $('.event-categories').after( "<p>amtountArray0"+amtountArray[0]+"amoint 1" +amtountArray[1]+"</p>" );
+  var element = $('.event-categories').after( "<p>verfügbare Tickets Samstag: "+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</p>" );
   
 }
 getInfo();
