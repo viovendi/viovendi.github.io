@@ -42,8 +42,9 @@ getInfo();
 
 function hideStuff(name){
   var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  if (!(ticketTitle == "Kind" || ticketTitle == "something else") ) {
+  if (ticketTitle == "Kind" ) {
       $('.'+name+' .customization2_attendee_contact-data_email').hide();
+      $('.'+name+' .customization2_attendee_contact-data_email-confirmation').hide();
       console.log("hide");
   }
      /*if(calcCheckboxes(name) < 1 ){
