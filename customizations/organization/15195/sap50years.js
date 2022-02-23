@@ -35,6 +35,7 @@ async function getContainerId(eventId) {
 
   });
   return attribute[0];*/
+  console.log(result);
   console.log(result.total_amount);
   return result.total_amount;
 }
