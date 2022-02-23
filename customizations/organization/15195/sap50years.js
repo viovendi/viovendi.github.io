@@ -97,7 +97,7 @@ var insertionListener = function (event) {
         while (typeof $('input[type=radio]') == 'undefined') {
             //   console.log('undefined')   
         }
-        changesForAttendeeForm();
+        //changesForAttendeeForm();
       init('customization2_attendee');
     }
 }
