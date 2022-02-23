@@ -2,17 +2,6 @@ console.log("github customization loaded");
 var chosenDay = 0;
 
 
-function resetOtherTicket(ticketBlock) {
-    
-    $(".event-category").each(
-        function () {
-            if ($(this) != $(ticketBlock)) {
-                $(this).find("select").val(0);
-                $(this).find("select").get(0).dispatchEvent(new Event('change'));
-            }
-        }
-    );
-}
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //  console.log("nodeInserted");
@@ -95,7 +84,9 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
-addListenerToTickets();
+// CUSTOMIZATION ON PAGE 1
+
+
 
 function addListenerToTickets() {
    console.log( $(".event-categories"));
@@ -107,3 +98,16 @@ function addListenerToTickets() {
         });
     });
 }
+function resetOtherTicket(ticketBlock) {
+    
+    $(".event-category").each(
+        function () {
+            if ($(this) != $(ticketBlock)) {
+                $(this).find("select").val(0);
+                $(this).find("select").get(0).dispatchEvent(new Event('change'));
+            }
+        }
+    );
+}
+
+addListenerToTickets();
