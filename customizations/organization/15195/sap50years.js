@@ -9,15 +9,14 @@ function addListenerToTickets(){
     })
     );
 }
-function addListenerToAboTicket() {
-    $('.event-category').each(function () {
-        if (isAboticket($(this))) {
-            setNumberedAboTickets($(this).find("select").val());
-            $(this).find("select").on('change', function () {
-                setNumberedAboTickets($(this).val());
-            });
+
+function resetOtherTicket(ticketBlock) {
+   $('.event-category!event-category--child').each(
+       if($(this)!=$(ticketBlock)){
+             $(this).find("select").val(0);
+             $(this).find("select").get(0).dispatchEvent(new Event('change'));
         }
-    });
+    );
 }
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
