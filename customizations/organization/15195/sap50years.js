@@ -4,8 +4,9 @@ addListenerToTickets();
 
 function addListenerToTickets(){
     $('.event-category').not('.event-category--child').each(
-        console.log('here');
+        
         function () {
+            console.log('here');
         $(this).find("select").on('change', function () {
             console.log('changed');
             resetOtherTicket($(this));
