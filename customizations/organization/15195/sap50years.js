@@ -16,7 +16,7 @@ console.log(eventId);
 
 
 
-async function getContainerId(eventId) {
+async function getTicketAmount(eventId) {
   const result = await makeRequest({
     url: `https://api.doo.net/v1/events/${eventId}`,
     type: 'get',
@@ -40,10 +40,10 @@ async function getContainerId(eventId) {
   return result.total_amount;
 }
 
-async function insertContainer() {
-  const containerId = await getContainerId(eventId);
+async function getInfo() {
+  const containerId = await getTicketAmount(eventId);
 }
-insertContainer();
+getInfo();
 
 //--- check each ticketcategory, if child, hide some stuff---
 
