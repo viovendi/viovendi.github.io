@@ -6,12 +6,7 @@ function addListenerToTickets() {
     console.log('here')
         $('.event-category').each(function () {
             console.log('found categorie');
-        if (isAboticket($(this))) {
-            setNumberedAboTickets($(this).find("select").val());
-            $(this).find("select").on('change', function () {
-                setNumberedAboTickets($(this).val());
-            });
-        }
+        
     });
 }
 
