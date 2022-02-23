@@ -3,6 +3,7 @@ var chosenDay = 0;
 
 
 function resetOtherTicket(ticketBlock) {
+    
     $(".event-category").each(
         function () {
             if ($(this) != $(ticketBlock)) {
@@ -97,7 +98,7 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 addListenerToTickets();
 
 function addListenerToTickets() {
-    
+   console.log( $(".event-categories"));
     $(".event-category").each(function () {
         console.log('found categorie');
         $(this).find("select").on('change', function () {
