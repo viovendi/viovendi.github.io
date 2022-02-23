@@ -1,4 +1,3 @@
-/*
 console.log('Start-Git');
   
   var categoriesNamesDe = {
@@ -314,8 +313,6 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   });
   
   /* polyfill for IE custom event support*/
-
-/*
 (function () {
   if ( typeof window.CustomEvent === "function" ) return false; //If not IE
 
