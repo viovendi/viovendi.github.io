@@ -11,6 +11,9 @@ var insertionListener = function (event) {
         changesForAttendeeForm();
     }
 }
+// OLD Code
+
+/*
 function setRadioGroup(radioGroup) {
     if (chosenDay == 0) {
         return;
@@ -79,6 +82,10 @@ function radioButtonClicked(radioButton) {
 
     changesForAttendeeForm();
 }
+
+*/
+
+
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
