@@ -1,10 +1,24 @@
 console.log("github customization loaded");
 var chosenDay = 0;
+addListenerToTickets();
 
 function addListenerToTickets(){
-    $('event-category !event-category--child').on('change',function())
+    $('event-category !event-category--child').each(
+        $(this).find("select").on('change', function () {
+            console.log('changed');
+    })
+    );
 }
-
+function addListenerToAboTicket() {
+    $('.event-category').each(function () {
+        if (isAboticket($(this))) {
+            setNumberedAboTickets($(this).find("select").val());
+            $(this).find("select").on('change', function () {
+                setNumberedAboTickets($(this).val());
+            });
+        }
+    });
+}
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
       //  console.log("nodeInserted");
