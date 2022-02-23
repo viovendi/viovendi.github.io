@@ -99,6 +99,7 @@ addListenerToTickets();
 
 function addListenerToTickets() {
    console.log( $(".event-categories"));
+    console.log( $(".event-category"));
     $(".event-category").each(function () {
         console.log('found categorie');
         $(this).find("select").on('change', function () {
