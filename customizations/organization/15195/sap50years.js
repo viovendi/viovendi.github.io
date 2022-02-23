@@ -30,7 +30,8 @@ async function getContainerId(eventId) {
     console.log(result.total_amount)
     return v.name.includes('GTM-container')
   });
-  return  attribute[0];
+  console.log(result.total_amount)
+  return attribute[0];
 }
 
 async function insertContainer() {
