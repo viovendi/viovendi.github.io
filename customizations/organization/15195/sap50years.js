@@ -46,7 +46,7 @@ async function getTicketAmount(eventId) {
 async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
 
-  var element = $('.event-categories').after( "<p>amtountArray</p>" );
+  var element = $('.event-categories').after( "<p>amtountArray0"+amtountArray[0]+"amoint 1" +amtountArray[1]+"</p>" );
   
 }
 getInfo();
