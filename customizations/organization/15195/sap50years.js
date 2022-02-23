@@ -1,5 +1,27 @@
 console.log("github customization loaded");
+var pathname = window.location.pathname;
+var eventId = pathname.split('/')[3]
+console.log(eventId);
 
+
+
+async function getContainerId(eventId) {
+  const result = await makeRequest({
+    url: `https://api.doo.net/v1/events/${eventId}`,
+    type: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    dataType: 'json',
+  })
+
+  const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    console.log(result)
+    return v.name.includes('GTM-container')
+  });
+  return  attribute[0].data;
+}
+const containerId = await getContainerId(eventId)
 
 //--- check each ticketcategory, if child, hide some stuff---
 
