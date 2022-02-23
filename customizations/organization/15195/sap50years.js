@@ -4,8 +4,8 @@ addListenerToTickets();
 
 function addListenerToTickets() {
     console.log('here')
-    console.log($('.event-categories'));
-        $('.event-category').each(function () {
+    console.log($(".event-categories"));
+        $(".event-category").each(function () {
             console.log('found categorie');
         
     });
