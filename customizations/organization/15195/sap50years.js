@@ -43,10 +43,15 @@ async function getTicketAmount(eventId) {
 async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
 
-  var element = $('.event-categories').after( "<p>verfügbare Tickets Samstag: "+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</p>" );
+  var element = $('.customization3_tab-group_tabs').after( "<p>verfügbare Tickets Samstag: "+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</p>" );
   
 }
 getInfo();
+
+document.querySelector('customization3_tab-group_tabs').addEventListener('load', function(){
+  // The image is ready!
+  getInfo();
+});
 
 //--- check each ticketcategory, if child, hide some stuff---
 
