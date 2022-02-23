@@ -25,7 +25,7 @@ async function getContainerId(eventId) {
     },
     dataType: 'json',
   })
-
+/*
    const attribute = $.grep(result.event_attributes.attributes, function (v) {
     if(v.data){
       console.log(result);
@@ -34,7 +34,9 @@ async function getContainerId(eventId) {
     }
 
   });
-  return attribute[0];
+  return attribute[0];*/
+  console.log(result.total_amount);
+  return result.total_amount;
 }
 
 async function insertContainer() {
