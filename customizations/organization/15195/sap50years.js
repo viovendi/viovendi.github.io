@@ -3,16 +3,17 @@ var chosenDay = 0;
 addListenerToTickets();
 
 function addListenerToTickets() {
-    console.log('here')
-    console.log($(".event-categories"));
-        $(".event-category").each(function () {
-            console.log('found categorie');
-        
+    
+    $(".event-category").each(function () {
+        console.log('found categorie');
+        $(this).find("select").on('change', function () {
+             resetOtherTicket($(this));
+        });
     });
 }
 
 function resetOtherTicket(ticketBlock) {
-    $('.event-category').each(
+    $(".event-category").each(
         function () {
             if ($(this) != $(ticketBlock)) {
                 $(this).find("select").val(0);
