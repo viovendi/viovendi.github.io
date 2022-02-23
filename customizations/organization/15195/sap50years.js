@@ -4,6 +4,7 @@ addListenerToTickets();
 
 function addListenerToTickets(){
     $('.event-category').not('.event-category--child').each(
+        console.log('here');
         function () {
         $(this).find("select").on('change', function () {
             console.log('changed');
