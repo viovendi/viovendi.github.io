@@ -47,6 +47,8 @@ function hideStuff(name){
       $('.'+name+' .customization2_attendee_contact-data_email-confirmation').hide();
       console.log("hide");
   }
+  
+  
      /*if(calcCheckboxes(name) < 1 ){
        $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
        if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){
