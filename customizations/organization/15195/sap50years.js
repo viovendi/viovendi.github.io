@@ -3,7 +3,7 @@ var chosenDay = 0;
 addListenerToTickets();
 
 function addListenerToTickets(){
-    $('event-category !event-category--child').each(
+    $('.event-category!event-category--child').each(
         $(this).find("select").on('change', function () {
             console.log('changed');
     })
