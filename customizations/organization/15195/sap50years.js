@@ -26,8 +26,8 @@ async function getContainerId(eventId) {
     dataType: 'json',
   })
 
-  const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    console.log(result)
+  const attribute = $.grep(result.total_amount, function (v) {
+    console.log(result.total_amount)
     return v.name.includes('GTM-container')
   });
   return  attribute[0].data;
