@@ -4,19 +4,22 @@ addListenerToTickets();
 
 function addListenerToTickets(){
     $('.event-category').not('.event-category--child').each(
+        function () {
         $(this).find("select").on('change', function () {
             console.log('changed');
             resetOtherTicket($(this));
     })
-    );
+        });
 }
 
 function resetOtherTicket(ticketBlock) {
    $('.event-category').not('.event-category--child').each(
+       function () {
        if($(this)!=$(ticketBlock)){
              $(this).find("select").val(0);
              $(this).find("select").get(0).dispatchEvent(new Event('change'));
         }
+       }
     );
 }
 var insertionListener = function (event) {
