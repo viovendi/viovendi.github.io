@@ -35,10 +35,8 @@ async function getContainerId(eventId) {
 
   });
   return attribute[0];*/
-  console.log(result);
-  console.log(result.ticket_categories[0].available_amount);
-  console.log(result.ticket_categories[1].available_amount);
-  console.log(result.ticket_categories[2].available_amount);
+  console.log("Samstag verfügbare Plätze: "+result.ticket_categories[0].available_amount);
+  console.log("Sonntag verfügbare Plätze: "+result.ticket_categories[3].available_amount);
   return result.total_amount;
 }
 
