@@ -1,6 +1,10 @@
 console.log("github customization loaded");
 var chosenDay = 0;
 
+function addListenerToTickets(){
+    $('event-category !event-category--child').on('change',function())
+}
+
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
       //  console.log("nodeInserted");
