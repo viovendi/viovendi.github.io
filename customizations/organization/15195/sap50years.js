@@ -11,7 +11,7 @@ function addListenerToTickets(){
 }
 
 function resetOtherTicket(ticketBlock) {
-   $('.event-category!event-category--child').each(
+   $('.event-category').not('.event-category--child').each(
        if($(this)!=$(ticketBlock)){
              $(this).find("select").val(0);
              $(this).find("select").get(0).dispatchEvent(new Event('change'));
