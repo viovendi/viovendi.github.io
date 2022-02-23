@@ -3,7 +3,7 @@ var chosenDay = 0;
 addListenerToTickets();
 
 function addListenerToTickets(){
-    $('.event-category').not('.event-category--child').each(
+    $('.event-category').each(
         
         function () {
             console.log('here');
@@ -15,7 +15,7 @@ function addListenerToTickets(){
 }
 
 function resetOtherTicket(ticketBlock) {
-   $('.event-category').not('.event-category--child').each(
+   $('.event-category').each(
        function () {
        if($(this)!=$(ticketBlock)){
              $(this).find("select").val(0);
