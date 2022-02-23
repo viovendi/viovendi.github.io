@@ -26,11 +26,14 @@ async function getContainerId(eventId) {
     dataType: 'json',
   })
 
-  const attribute = $.grep(result.total_amount, function (v) {
-    console.log(result.total_amount)
-    return v.name.includes('GTM-container')
+   const attribute = $.grep(result.event_attributes.attributes, function (v) {
+    if(v.data){
+      console.log(result);
+      console.log(result.total_amount);
+      return v.data.includes('GTM-')
+    }
+
   });
-  console.log(result.total_amount)
   return attribute[0];
 }
 
