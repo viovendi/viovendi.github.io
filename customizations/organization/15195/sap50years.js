@@ -1,16 +1,6 @@
 console.log("github customization loaded");
 var chosenDay = 0;
-addListenerToTickets();
 
-function addListenerToTickets() {
-    
-    $(".event-category").each(function () {
-        console.log('found categorie');
-        $(this).find("select").on('change', function () {
-             resetOtherTicket($(this));
-        });
-    });
-}
 
 function resetOtherTicket(ticketBlock) {
     $(".event-category").each(
@@ -103,3 +93,15 @@ function radioButtonClicked(radioButton) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
+
+addListenerToTickets();
+
+function addListenerToTickets() {
+    
+    $(".event-category").each(function () {
+        console.log('found categorie');
+        $(this).find("select").on('change', function () {
+             resetOtherTicket($(this));
+        });
+    });
+}
