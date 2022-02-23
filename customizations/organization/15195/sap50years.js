@@ -48,10 +48,6 @@ async function getInfo() {
 }
 getInfo();
 
-document.querySelector('customization3_tab-group_tabs').addEventListener('load', function(){
-  // The image is ready!
-  getInfo();
-});
 
 //--- check each ticketcategory, if child, hide some stuff---
 
