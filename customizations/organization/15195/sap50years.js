@@ -1,4 +1,78 @@
 console.log("github customization loaded");
+
+
+//--- check each ticketcategory, if child, hide some stuff---
+
+function hideStuff(name){
+  var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+  if (!(ticketTitle == "Kind" || ticketTitle == "something else") ) {
+      $('.'+name+' .customization2_attendee_contact-data_email').hide();
+      console.log("hide");
+  }
+     /*if(calcCheckboxes(name) < 1 ){
+       $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
+       if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){
+        console.log(language)
+         if (language == "en-us"){
+        $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Please select a date</span>');
+        //$('.'+name+' .customization2_attendee_further-data_headline').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+         }
+         else {
+           $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
+         }
+         // this removes the error message in state_view
+         $('.customization2_attendee-state_view .button-error-message').remove();
+
+       }
+     }else{
+       $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', false);
+       $('.'+name+' .button-error-message').remove();
+     }
+    }*/
+}
+
+function init(name) {
+  hideStuff(name)
+}
+
+init('customization2_attendee');
+
+var insertionListener = function (event) {
+    if (event.animationName === "nodeInserted") {
+        console.log('bookerNodeInserted')
+        customization()
+
+      // Added this so that this works for every attendee
+        init('customization2_attendee');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var chosenDay = 0;
 
 
