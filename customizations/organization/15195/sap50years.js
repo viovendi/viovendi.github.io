@@ -4,14 +4,14 @@ addListenerToTickets();
 
 function addListenerToTickets() {
     console.log('here')
-        $('.event-category').each(function () {
+        $('div.event-category').each(function () {
             console.log('found categorie');
         
     });
 }
 
 function resetOtherTicket(ticketBlock) {
-    $('.event-category').each(
+    $('div.event-category').each(
         function () {
             if ($(this) != $(ticketBlock)) {
                 $(this).find("select").val(0);
