@@ -98,6 +98,7 @@ var insertionListener = function (event) {
             //   console.log('undefined')   
         }
         changesForAttendeeForm();
+      init('customization2_attendee');
     }
 }
 // OLD Code
