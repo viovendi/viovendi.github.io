@@ -45,11 +45,8 @@ async function getTicketAmount(eventId) {
 
 async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
-  var tag = document.createElement("p");
-  var text = document.createTextNode("Tutorix is the best e-learning platform");
-  tag.appendChild(text);
-  var element = $('.customization3_edit-booking_main');
-  element.appendChild(tag);
+
+  var element = $('.event-categories').after( "<p>amtountArray</p>" );
   
 }
 getInfo();
