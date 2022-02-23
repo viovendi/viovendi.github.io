@@ -35,13 +35,22 @@ async function getTicketAmount(eventId) {
 
   });
   return attribute[0];*/
+  const amount = [result.ticket_categories[0].available_amount, result.ticket_categories[4].available_amount];
+
+
   console.log("Samstag verfügbare Plätze: "+result.ticket_categories[0].available_amount);
   console.log("Sonntag verfügbare Plätze: "+result.ticket_categories[4].available_amount);
-  return result.total_amount;
+  return amount;
 }
 
 async function getInfo() {
-  const containerId = await getTicketAmount(eventId);
+  const amtountArray = await getTicketAmount(eventId);
+  var tag = document.createElement("p");
+  var text = document.createTextNode("Tutorix is the best e-learning platform");
+  tag.appendChild(text);
+  var element = $('.customization3_edit-booking_main');
+  element.appendChild(tag);
+  
 }
 getInfo();
 
