@@ -25,25 +25,14 @@ async function getTicketAmount(eventId) {
     },
     dataType: 'json',
   })
-/*
-   const attribute = $.grep(result.event_attributes.attributes, function (v) {
-    if(v.data){
-      console.log(result);
-      console.log(result.total_amount);
-      return v.data.includes('GTM-')
-    }
-
-  });
-  return attribute[0];*/
   const amount = [result.ticket_categories[0].available_amount, result.ticket_categories[4].available_amount];
-
   return amount;
 }
 
 async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
-
-  var element = $('.customization3_tab-group_tabs').after( "<p>verfügbare Tickets Samstag: "+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</p>" );
+//TODO
+  //var element = $('.customization3_tab-group_tabs').after( "<p>verfügbare Tickets Samstag: "+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</p>" );
   
 }
 getInfo();
@@ -94,28 +83,6 @@ var insertionListener = function (event) {
         init('customization2_attendee');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
