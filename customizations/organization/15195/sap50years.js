@@ -21,7 +21,11 @@ async function getContainerId(eventId) {
   });
   return  attribute[0].data;
 }
-const containerId = await getContainerId(eventId)
+
+async function insertContainer() {
+  const containerId = await getContainerId(eventId);
+}
+insertContainer();
 
 //--- check each ticketcategory, if child, hide some stuff---
 
