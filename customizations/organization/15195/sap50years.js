@@ -51,7 +51,7 @@ function hideStuff(name){
   if (ticketTitle == "Partner" ) {
     $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
     $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
-    $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" >Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
+    $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="color:#343a3f">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
   
   
