@@ -51,6 +51,7 @@ function hideStuff(name){
   if (ticketTitle == "Partner" ) {
     $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
     $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
+    $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "title_before_text" >Flight Plan Adventure Part 1 - Focus: Value Creation Program</span><br><br><span class= "workshops" >Workshopslot 1 (16:15-16:35) ▼</span>');
   }
   
   
