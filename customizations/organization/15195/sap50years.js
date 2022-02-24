@@ -45,8 +45,8 @@ async function getInfo() {
 function hideStuff(name){
   var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" ) {
-      $('.'+name+' .customization2_attendee_contact-data_email').parentElement.hide();
-      $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parentElement.hide();
+      $('.'+name+' .customization2_attendee_contact-data_email').parentNode.hide();
+      $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parentNode.hide();
       console.log("hide");
   }
   
