@@ -33,7 +33,7 @@ async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
   console.log(amtountArray);
 //TODO
-  var element = $('.customization3_edit-booking_header').after(  '<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">"+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</span>'
+  var element = $('.customization3_edit-booking_header').after('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">"verfügbare Tickets Sonntag:'+amtountArray[0]+" --- verfügbare Tickets Sonntag: " +amtountArray[1]+"</span>'
 );
   
 }
