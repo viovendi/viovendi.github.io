@@ -86,6 +86,7 @@ init('customization2_attendee');
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         //  console.log("nodeInserted");
+      console.log("main actions");
         while (typeof $('input[type=radio]') == 'undefined') {
             //   console.log('undefined')   
         }
