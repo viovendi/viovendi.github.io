@@ -48,6 +48,11 @@ function hideStuff(name){
       console.log("hide");
   }
   
+  if (ticketTitle == "Partner" ) {
+    $('.'+name+' .customization2_attendee_contact-data_email .span').hide();
+    $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
+  }
+  
   
      /*if(calcCheckboxes(name) < 1 ){
        $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
