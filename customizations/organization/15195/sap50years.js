@@ -197,7 +197,7 @@ function addListenerToTickets() {
         console.log('found categorie');
         $(this).find("select").on('change', function () {
           console.log("change");
-             resetOtherTicket($(this));
+            // resetOtherTicket($(this));
         });
     });
 }
