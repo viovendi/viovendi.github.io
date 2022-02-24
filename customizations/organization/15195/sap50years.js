@@ -49,7 +49,7 @@ function hideStuff(name){
   }
   
   if (ticketTitle == "Partner" ) {
-    $('.'+name+' .customization2_attendee_contact-data_email .span').hide();
+    $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
     $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
   }
   
