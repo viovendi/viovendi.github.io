@@ -190,10 +190,10 @@ function radioButtonClicked(radioButton) {
 
 
 function addListenerToTickets() {
-    
+  console.log("addListenerToTickets");
    console.log( $(".event-category__ticket-count"));
    console.log( $(".event-category__ticket-count-wrap"));
-    $(".event-category__ticket-count").each(function () {
+    $(".event-category__ticket-count-wrap").each(function () {
         console.log('found categorie');
         $(this).find("select").on('change', function () {
           console.log("change");
