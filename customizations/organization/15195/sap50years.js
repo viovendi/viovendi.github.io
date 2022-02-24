@@ -79,23 +79,6 @@ init('customization2_attendee');
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-        console.log('bookerNodeInserted')
-        customization()
-
-      // Added this so that this works for every attendee
-        init('customization2_attendee');
-    }
-}
-
-
-
-
-
-var chosenDay = 0;
-
-
-var insertionListener = function (event) {
-    if (event.animationName === "nodeInserted") {
         //  console.log("nodeInserted");
         while (typeof $('input[type=radio]') == 'undefined') {
             //   console.log('undefined')   
@@ -104,6 +87,26 @@ var insertionListener = function (event) {
       init('customization2_attendee');
     }
 }
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); //
+/*var insertionListener = function (event) {
+    if (event.animationName === "nodeInserted") {
+        console.log('bookerNodeInserted')
+        customization()
+
+      // Added this so that this works for every attendee
+        init('customization2_attendee');
+    }
+}
+
+*/
+
+//var chosenDay = 0;
+
+
+
 // OLD Code
 
 /*
@@ -180,9 +183,7 @@ function radioButtonClicked(radioButton) {
 
 
 
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); //
+
 
 // CUSTOMIZATION ON PAGE 1
 
@@ -190,11 +191,12 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
 function addListenerToTickets() {
     
-   console.log( $(".event-categories"));
-    console.log( $(".event-category"));
-    $(".event-category").each(function () {
+   console.log( $(".event-category__ticket-count"));
+   console.log( $(".event-category__ticket-count-wrap"));
+    $(".event-category__ticket-count").each(function () {
         console.log('found categorie');
         $(this).find("select").on('change', function () {
+          console.log("change");
              resetOtherTicket($(this));
         });
     });
@@ -212,3 +214,5 @@ function resetOtherTicket(ticketBlock) {
 }
 
 addListenerToTickets();
+
+
