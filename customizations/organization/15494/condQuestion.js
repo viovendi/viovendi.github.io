@@ -16,7 +16,7 @@ function handler() {
             left: 0;
             top: 3px;
         }
-    `
+ `   
     var styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = styles;
