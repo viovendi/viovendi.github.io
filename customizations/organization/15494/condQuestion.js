@@ -53,7 +53,7 @@ function handler() {
 
 
         if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').hasClass("error-state")) {
-            $("<div class='error-message'>Bitte auswählen</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+            $("<div class='error-message'>Bitte ausfüllen</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
         }
 
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
