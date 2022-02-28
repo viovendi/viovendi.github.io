@@ -8,10 +8,10 @@ console.log("GTM Git loaded");
 var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input");
 placeholder.attr("placeholder", "S\u00f6k efter nyckelord");
 
-var placeholderStartDate = $("vv-input-calender[formcontrolname='fromDate'] input");
+var placeholderStartDate = $("vv-input-calendar[formcontrolname='fromDate'] input");
 placeholderStartDate.attr("placeholder", "Startdatum");
 
-var placeholderEndDate = $("vv-input-calender[formcontrolname='toDate'] input");
+var placeholderEndDate = $("vv-input-calendar[formcontrolname='toDate'] input");
 placeholderEndDate.attr("placeholder", "Slutdatum");
 //
 function translateDates() {
