@@ -13,6 +13,8 @@ placeholderStartDate.attr("placeholder", "Startdatum");
 
 var placeholderEndDate = $("vv-input-calendar[formcontrolname='toDate'] input");
 placeholderEndDate.attr("placeholder", "Slutdatum");
+
+$('vv-custom-filters p.vv-selection-input__placeholder').text('Välj');
 //
 function translateDates() {
 	$("table > thead > tr > th:nth-child(1) > span").text('Sö');
