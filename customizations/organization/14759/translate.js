@@ -7,6 +7,12 @@ console.log("GTM Git loaded");
 // replace placeholder on first page:
 var placeholder = $("#event-list-widget > vv-events-search > vv-search > form > div.row.vv-mb-lg > div.col-md-8.col-sm-6 > div > div:nth-child(1) > vv-input > label > div > input")
 placeholder.attr("placeholder", "S\u00f6k efter nyckelord");
+
+var placeholderStartDate = $("vv-input-calender[formcontrolname='fromDate'] input")
+placeholder.attr("placeholder", "Startdatum");
+
+var placeholderEndDate = $("vv-input-calender[formcontrolname='toDate'] input")
+placeholder.attr("placeholder", "Slutdatum");
 //
 function translateDates() {
 	$("table > thead > tr > th:nth-child(1) > span").text('Sö');
