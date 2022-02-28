@@ -18,9 +18,23 @@ $(document).ready(function () {
                       }
                 });   
         };
+        function changeLinkVeranstalter() {
+                console.log("changeColorVeranstalter");
+                var events = $('.event-article');
+                events.each(function() {
+                        //todo
+                      var veranstalter =  $(this).find('div.event-article__event-info__details > div:nth-child(3) > div:nth-child(3)');
+                      console.log($(veranstalter));
+                      var text = veranstalter.text().trim();
+                      if(text){
+                       $(this).find('.button').attr("href", text);
+                      }
+                });   
+        };
         
         changeColorVeranstalter();
-        
+        changeLinkVeranstalter();
+
         console.log("git over");
 });
 
