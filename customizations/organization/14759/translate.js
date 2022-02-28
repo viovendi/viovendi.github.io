@@ -253,8 +253,7 @@ $('.p-datepicker-prev').click(function () {
 			$('.ew-confirmation__organizer-contact span.text--grey').text('Om du har några frågor, vänligen kontakta');
 		
 			//
-			var bookingId = $(".notice__booking-id span").text();
-			$(".notice__booking-id").html("Boknings-ID: " + bookingId);
+			$('.notice__booking-id').contents()[0].nodeValue = 'Boknings-ID: ';
 
 	}, 3000);
 		//99 available Replace the word
