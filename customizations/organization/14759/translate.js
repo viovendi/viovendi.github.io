@@ -88,14 +88,14 @@ $('.p-datepicker-prev').click(function () {
 
 
 
-			//Start Date
-			$('.ng-tns-c47-0').attr("placeholder", "Startdatum");
-
-			//End Date
-			$('.ng-tns-c47-1').attr("placeholder", "Slutdatum");
-
+		
 			//Organizer contact
 			$('.customization-event-info-contact-label').text('Kontakta arrangör');
+		
+		
+			// Booking Portal Link
+			$('vv-booking-editing-prompt vv-text span').text('Har du redan bokat?');
+			$('vv-booking-editing-prompt vv-button button').text('Klicka här för att komma till din bokning.');
 
 
 
@@ -211,7 +211,7 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
 			//Change selection
-			$('.customization-button-previous').text('<- Tillbaka till urval');
+			$('.customization-button-previous').text('Tillbaka till urval');
 
 			//Back button (Back to Overview)
 			$('.button-back').text('Tillbaka till översikt');
@@ -235,17 +235,22 @@ $('.p-datepicker-prev').click(function () {
 			//page 3 Confirmation
 
 			//Booking confirmation
-			$('.customization-confirmation-label').text('Bokningsbekräftelse');
+			$('.ew-confirmation__header p').text('Bokningsbekräftelse');
 
 			//Thank you for your booking. You will shortly receive your confirmation by email.
 			$('.customization-confirmation-description').text('Tack för din bokning! Inom kort skickar vi en bekräftelse med din eventbiljett till den e-postadress du uppgivit.');
 
 			//Details and documents are available in the booking portal:
 			$('.customization-client-portal-description').text('Information om eventet hittar du även i bokningsportalen:');
+		
+			//
+			$('p.ew-confirmation__text-paragraph').text('Du kan se och hantera din bokning när som helst i bokningsportalen. För att komma åt din bokning behöver du ditt boknings-ID och den e-postadress du använt vid bokningen.');
 
 			//Your Booking Portal
 			$('.customization-client-portal-link').text('Klicka här för att komma till din bokning i bokningsportalen.'); $('.customization-client-portal-link').css('color', '#F99D27');
 
+			//
+			$('.ew-confirmation__organizer-contact span.text--grey').text('Om du har några frågor, vänligen kontakta');
 
 	}, 3000);
 		//99 available Replace the word
