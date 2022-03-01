@@ -47,7 +47,7 @@ function setup(){
     
 }
 function hide(field){
-        $(field).removeClass("error-state");
+        $(field[0]).removeClass("error-state");
         $(field).hide(); 
 
 }
