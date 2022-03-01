@@ -48,6 +48,11 @@ function setup(){
 }
 function hide(field){
     if(field[0].hasClass("error-state"))console.log("error state detected");
+    
+    if(field.hasClass("error-state"))console.log("error state detected");
+    
+    if($(field)[0].hasClass("error-state"))console.log("error state detected");
+    
         $(field[0]).removeClass("error-state");
         $(field).hide(); 
 
