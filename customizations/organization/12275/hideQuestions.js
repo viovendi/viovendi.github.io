@@ -47,6 +47,7 @@ function setup(){
     
 }
 function hide(field){
+    console.log(field);
     if(field[0].hasClass("error-state"))console.log("error state detected");
     
     if(field.hasClass("error-state"))console.log("error state detected");
