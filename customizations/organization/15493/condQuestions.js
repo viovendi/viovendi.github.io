@@ -107,7 +107,7 @@ function addHotelDescription () {
 function addEssenswahl () {
     if(!$('.headerEssenswahl').length){
         console.log("Essenswahl added");
-        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum Dinner')).prepend('<div class="headerEssenswahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Essenswahl</p></div>');
+        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum intergalaktischen Dinner')).prepend('<div class="headerEssenswahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Essenswahl</p></div>');
     }
 }
 
