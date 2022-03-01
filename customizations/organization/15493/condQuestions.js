@@ -123,6 +123,7 @@ function addWeitereAngabenTeilnehmerHeader () {
 handler();
 addHotelDescription();
 customTerms();
+addWeitereAngabenTeilnehmerHeader();
 
 
 
@@ -134,6 +135,7 @@ var insertionListener = function (event) {
         handler();
         addHotelDescription();
         customTerms();
+        addWeitereAngabenTeilnehmerHeader();
    
 
 
