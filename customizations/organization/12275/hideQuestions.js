@@ -280,6 +280,7 @@ function disableWhenEmpty(field) {
              //   $(".error-state").each(function(){console.log($(this))});
                 if($(".error-state").length==0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
+                else console.log($(".error-state"))
             }
         });
     
