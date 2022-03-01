@@ -122,9 +122,8 @@ function addWeitereAngabenTeilnehmerHeader () {
 
 handler();
 addHotelDescription();
-addEssenswahl();
 customTerms();
-addWeitereAngabenTeilnehmerHeader();
+
 
 
 
@@ -134,9 +133,8 @@ var insertionListener = function (event) {
         //Inser your code here.
         handler();
         addHotelDescription();
-        addEssenswahl();
         customTerms();
-        addWeitereAngabenTeilnehmerHeader();
+   
 
 
         $('customization2_attendee_view-action_edit').on("click", function () {
