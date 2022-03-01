@@ -130,6 +130,7 @@ addHotelDescription();
 addEssenswahl();
 customTerms();
 addWeitereAngabenTeilnehmerHeader();
+addWeitereAngabenBegleitungHeader();
 
 
 var insertionListener = function (event) {
@@ -141,6 +142,7 @@ var insertionListener = function (event) {
         addEssenswahl();
         customTerms();
         addWeitereAngabenTeilnehmerHeader();
+        addWeitereAngabenBegleitungHeader();
 
         $('customization2_attendee_view-action_edit').on("click", function () {
             console.log("clicked");
