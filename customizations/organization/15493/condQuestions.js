@@ -107,7 +107,7 @@ function addHotelDescription () {
 function addEssenswahl () {
     if(!$('.headerEssenswahl').length){
         console.log("Essenswahl added");
-        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum intergalaktischen Dinner')).prepend('<div class="headerEssenswahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Essenswahl</p></div>');
+        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum intergalaktischen Dinner')).prepend('<div class="hotelText" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den Partnerhotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
     }
 }
 
