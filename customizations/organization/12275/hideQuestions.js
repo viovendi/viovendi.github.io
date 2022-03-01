@@ -208,8 +208,8 @@ function handler() {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
             showField($(fieldTestTime));    
         }else if ($(this).find('option').filter(':selected').text().trim() == 'No'){
-            $(fieldTestTime).removeClass("error-state");
-             $(fieldTestTime).hide();  
+            
+             hide($(fieldTestTime));  
               if($(".error-state").length==0)
               $('.customization2_attendee_edit-action_save').prop("disabled", false);
             else console.log($(".error-state"))
