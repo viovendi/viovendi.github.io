@@ -46,7 +46,11 @@ function setup(){
     
     
 }
+function hide(field){
+        $(field).removeClass("error-state");
+        $(field).hide(); 
 
+}
 function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
                                          dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
   /*  console.log($(fieldFrom));
@@ -66,12 +70,10 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(fieldTo));
             showField($(fieldDate));
             showField($(fieldTime));
-            $(fieldFlightNumber).hide();
-            $(fieldFlightNumber).removeClass('error-state');
+            hide($(fieldFlightNumber));
             showField($(fieldTrainNumber));
             showField($(dropdownTrainShuttle));
-            $(dropdownParking).hide();
-            $(dropdownParking).removeClass('error-state');
+            hide($(dropdownParking));
         } else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
@@ -81,65 +83,37 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(fieldDate));
             showField($(fieldTime));
             showField($(fieldFlightNumber));
-            
-            $(fieldTrainNumber).hide();
-            $(fieldTrainNumber).removeClass('error-state');
-            
+            hide($(fieldTrainNumber));
+            hide($(dropdownParking));
             showField($(dropdownPlaneShuttle));
-            
-            $(dropdownParking).hide();
-            $(dropdownParking).removeClass('error-state');
 
         }   else{
         if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
          //   console.log("car selected")
-            
-            $(fieldFrom).hide();
-            $(fieldFrom).removeClass('error-state');
-            
-            $(fieldTo).hide();
-            $(fieldTo).removeClass('error-state');
-            
+            hide($(fieldFrom));
+            hide($(fieldTo));
+            hide($(fieldFlightNumber));
+            hide($(fieldTrainNumber));
+            hide($(dropdownPlaneShuttle));
+            hide($(dropdownTrainShuttle));
             showField($(fieldDate));
             showField($(fieldTime));
-            
-            $(fieldFlightNumber).hide();
-            $(fieldFlightNumber).removeClass('error-state');
-            
-            $(fieldTrainNumber).hide();
-            $(fieldTrainNumber).removeClass('error-state');
-            
-            $(dropdownPlaneShuttle).hide();
-            $(dropdownPlaneShuttle).removeClass('error-state');
-            
-            $(dropdownTrainShuttle).hide();
-            $(dropdownTrainShuttle).removeClass('error-state');
-            
             showField($(dropdownParking));
           
           
         }   else{
-            console.log('im letzten else');
-            $(fieldDate).hide();
-            $(fieldTime).hide();
-            $(dropdownParking).hide();
-            $(fieldFlightNumber).hide();
-            $(dropdownPlaneShuttle).hide();
-            $(dropdownTrainShuttle).hide();            
-            $(fieldTo).hide();
-            $(fieldFrom).hide();
-            $(fieldTrainNumber).hide();
             
-            $(fieldDate).removeClass('error-state');
-            $(fieldTime).removeClass('error-state');
-            $(dropdownParking).removeClass('error-state');
-            $(fieldFlightNumber).removeClass('error-state');
-            $(dropdownPlaneShuttle).removeClass('error-state');
-            $(dropdownTrainShuttle).removeClass('error-state');           
-            $(fieldTo).removeClass('error-state');
-            $(fieldFrom).removeClass('error-state');
-            $(fieldTrainNumber).removeClass('error-state');
+            hide($(fieldFrom));
+            hide($(fieldTo));
+            hide($(fieldFlightNumber));
+            hide($(fieldTrainNumber));
+            hide($(dropdownPlaneShuttle));
+            hide($(dropdownTrainShuttle));
+            hide($(fieldDate));
+            hide($(fieldTime));
+            hide($(dropdownParking));
+      
         }}}
     }
     );
@@ -227,7 +201,7 @@ function handler() {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
             showField($(fieldTestTime));    
         }else if ($(this).find('option').filter(':selected').text().trim() == 'No'){
-            $(fieldTestTime).removeClass('error-state');
+            $(fieldTestTime).removeClass("error-state");
              $(fieldTestTime).hide();  
               if($(".error-state").length==0)
               $('.customization2_attendee_edit-action_save').prop("disabled", false);
