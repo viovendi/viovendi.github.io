@@ -111,6 +111,15 @@ function addEssenswahl () {
     }
 }
 
+function addWeitereAngabenTeilnehmerHeader () {
+    if(!$('.weitereAngabenTeilnehmer').length){
+        console.log("Weitere Angaben added");
+        $($$('.customization2_attendee_further-data_custom-question').findField('Werk / Standort')).prepend('<div class="weitereAngabenTeilnehmer" style="margin-bottom:10px">
+                                                                                                            <p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p>
+                                                                                                            </div>');
+    }
+}
+
 
 handler();
 addHotelDescription();
