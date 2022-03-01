@@ -47,13 +47,20 @@ function setup(){
     
 }
 function hide(field){
-    console.log(field);
+    var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
     
-    if(field.hasClass("error-state"))console.log("error state detected");
+        if(typeof $(inputOfField).get(0) === 'undefined'){
+        
+            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
+        }
+          if(typeof $(inputOfField).get(0) === 'undefined'){
+          
+            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
+        }
     
-    if($(field[0]).hasClass("error-state"))console.log("error state detected");
+    if($(inputOfField).hasClass("error-state"))console.log("error state detected");
     
-        $(field[0]).removeClass("error-state");
+        $(inputOfField).removeClass("error-state");
         $(field).hide(); 
 
 }
