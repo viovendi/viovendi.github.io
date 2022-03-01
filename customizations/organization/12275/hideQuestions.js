@@ -236,7 +236,7 @@ function disableWhenEmpty(field) {
 
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
         }else{
-            if (!$(inputOfField).hasClass('error-state')) {
+            if (!$(inputOfField).next().hasClass("error-message")) {
             //    console.log('adding new message')
                 $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
             }
