@@ -231,6 +231,7 @@ function handler() {
              $(fieldTestTime).hide();  
               if($(".error-state").length==0)
               $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            else console.log($(".error-state"))
          }
             
     });
