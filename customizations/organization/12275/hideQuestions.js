@@ -62,7 +62,7 @@ function hide(field){
     
         $(inputOfField).removeClass("error-state");
         $(field).hide(); 
-
+        $(inputOfField).val('');
 }
 function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, fieldFlightNumber, fieldTrainNumber,
                                          dropdownTrainShuttle, dropdownPlaneShuttle, dropdownParking){
