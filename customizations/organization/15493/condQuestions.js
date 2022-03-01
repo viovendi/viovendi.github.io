@@ -121,7 +121,7 @@ function addWeitereAngabenTeilnehmerHeader () {
 function addWeitereAngabenBegleitungHeader () {
     if(!$('.weitereAngabenBegleitung').length){
         console.log("Weitere Angaben added");
-        $($$('.customization2_attendee_further-data_custom-question').findField('Meine Begleitung wählt zum intergalaktischen Dinner')).prepend('<div class="weitereAngabenBegleitung" style="margin-bottom:10px; margin-top: 14px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
+        $($$('.customization2_attendee_further-data_custom-question_label').findField('Meine Begleitung wählt zum intergalaktischen Dinner')).prepend('<div class="weitereAngabenBegleitung" style="margin-bottom:10px; margin-top: 14px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
     }
 }
 
