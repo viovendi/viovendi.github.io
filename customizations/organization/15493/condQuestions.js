@@ -1,9 +1,9 @@
 
 
 const observer = new MutationObserver((mutations, obs) => {
-    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
-    if ($(page4).is(':visible')) {
-        console.log("page 4 visible");
+    const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    if ($(page3).is(':visible')) {
+        console.log("page 3 visible");
         var ticketID=$('.notice__booking-id span').text()
         $('.notice__booking-id').text('Registrierungsnummer: '+ticketID); 
         obs.disconnect();
