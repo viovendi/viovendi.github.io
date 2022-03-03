@@ -11,6 +11,11 @@ const observer = new MutationObserver((mutations, obs) => {
     }
 });
 
+observer.observe(document, {
+    childList: true,
+    subtree: true
+});
+
 function handler() {
     var styles = `
         .error-state{
