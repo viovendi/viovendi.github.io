@@ -1,4 +1,15 @@
-// Funktion to show and hide custom question
+
+
+const observer = new MutationObserver((mutations, obs) => {
+    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
+    if ($(page4).is(':visible')) {
+        console.log("page 4 visible");
+        var ticketID=$('.notice__booking-id span').text()
+        $('.notice__booking-id').text('Registrierungsnummer: '+ticketID); 
+        obs.disconnect();
+        return;
+    }
+});
 
 function handler() {
     var styles = `
