@@ -85,6 +85,10 @@ $('.p-datepicker-prev').click(function () {
 			$('.event-info__details').hide();
 			$('.customization-event-info-address-label').hide();
 			$('.customization-event-info-contact').hide();
+		
+				
+			// Search Placholder
+			$('.vv-multiple-select-dropdown__search-input').attr("placeholder", "Sök");
 
 
 
@@ -132,13 +136,18 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_attendee_contact-data_headline').text('Kontaktuppgifter');
 
 			//FIRST NAME
-			$('.customization2_attendee_contact-data_first-name_label').text('Förnamn (valfritt)');
+			$('.customization2_attendee_contact-data_first-name_label').text('Förnamn');
+			$('.customization2_attendee_contact-data_first-name_error').text('Obligatorisk');
 
 			//LAST NAME
-			$('.customization2_attendee_contact-data_last-name_label').text('Efternamn (valfritt)');
+			$('.customization2_attendee_contact-data_last-name_label').text('Efternamn');
+			$('.customization2_attendee_contact-data_last-name_error').text('Obligatorisk');
 
 			//Accept
 			$('.customization2_attendee_edit-action_save').text('Jag har fyllt i mina uppgifter');
+		
+			//Copy details from attendee 1
+			$(".customization2_attendee_contact-data_copy-link").text($(".customization2_attendee_contact-data_copy-link").text().replace("Copy details from attendee 1", "Kopiera information från deltagare 1"));
 
 			//Cancel
 			var canceltext = $(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text();
