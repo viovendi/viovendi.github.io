@@ -288,10 +288,10 @@ $('.p-datepicker-prev').click(function () {
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
 
-const observer = new MutationObserver((mutations, obs) => {
+const observerBookingId = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
     if ($(page4).is(':visible')) {
-         console.log($('.notice__booking-id').text())
+        console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
         var ticketID=$('.notice__booking-id span').text()
         $('.notice__booking-id').text('Boknings-ID: '+ticketID); 
@@ -300,7 +300,7 @@ const observer = new MutationObserver((mutations, obs) => {
     }
 });
 
-observer.observe(document, {
+observerBookingId.observe(document, {
     childList: true,
     subtree: true
 });
