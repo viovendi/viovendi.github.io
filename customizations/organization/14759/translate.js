@@ -288,9 +288,10 @@ $('.p-datepicker-prev').click(function () {
 			$('.ew-confirmation__organizer-contact span.text--grey').text('Om du har några frågor, vänligen kontakta');
 		
 			//
-			if($('.notice__booking-id').text().indexOf("Boknings") == -1){
-				$('.notice__booking-id').contents()[0].nodeValue = 'Boknings-ID: '
-			};
+			//if($('.notice__booking-id').text().indexOf("Boknings") == -1){
+			//	var ticketID=$('.notice__booking-id span').text()
+        		//	$('.notice__booking-id').text('Boknings-ID: '+ticketID); 
+			//};
 
 	}, 3000);
 		//99 available Replace the word
