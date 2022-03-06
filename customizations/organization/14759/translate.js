@@ -229,9 +229,11 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_booker_edit-action_save').text('Jag har fyllt i mina uppgifter');
 
 			//Cancel
-			var canceltext = $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text();
-			var replacecancel = canceltext.replace("Cancel", "X Avbryt"); $(".customization2_booker_edit-action_cancel .vv-button-text-blue").text(replacecancel);
-			//   if(!typeof canceltext === "undefined"){}
+			$('button.customization2_attendee_edit-action_cancel').each(function() {
+    				var text = $(this).text();
+    				$(this).text(text.replace('Cancel', 'Avbryt')); 
+			});
+		
 			//Email addresses not matching
 			$('.customization2_booker_contact-data_email-confirmation_error').text('E-postadresserna överensstämmer inte med varandra');
 
