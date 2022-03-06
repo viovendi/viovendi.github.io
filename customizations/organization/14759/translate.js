@@ -288,8 +288,8 @@ $('.p-datepicker-prev').click(function () {
 			$('.ew-confirmation__organizer-contact span.text--grey').text('Om du har några frågor, vänligen kontakta');
 		
 			//
-			var ticketID=$('.notice__booking-id span').text()
-        		$('.notice__booking-id').text('Boknings-ID: '+ticketID); 
+			//var ticketID=$('.notice__booking-id span').text()
+        		//$('.notice__booking-id').text('Boknings-ID: '+ticketID); 
 
 	}, 3000);
 		//99 available Replace the word
