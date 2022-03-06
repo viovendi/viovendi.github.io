@@ -135,6 +135,18 @@ $('.p-datepicker-prev').click(function () {
 			//CONTACT
 			$('.customization2_attendee_contact-data_headline').text('Kontaktuppgifter');
 
+			//ATTENDEE COUNT
+			$('p.customization2_attendee_count').each(function() {
+    				var text = $(this).text();
+    				$(this).text(text.replace('Attendee', 'Deltagare')); 
+			});
+		
+			$('p.customization2_attendee_count').each(function() {
+    				var text = $(this).text();
+    				$(this).text(text.replace('of', 'av')); 
+			});
+
+		
 			//FIRST NAME
 			$('.customization2_attendee_contact-data_first-name_label').text('Förnamn');
 			$('.customization2_attendee_contact-data_first-name_error').text('Obligatorisk');
@@ -170,7 +182,7 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_booker_contact-data_headline').text('Kontaktperson: ');
 
 			//Dropdown
-			$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
+			//$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
 			$(".customization2_booker_contact-data_booker-attendee-relation_different-attendee").text('Fyll i alternativa uppgifter');
 
 			//First name
