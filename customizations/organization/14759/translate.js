@@ -280,7 +280,8 @@ $('.p-datepicker-prev').click(function () {
 			$('.ew-confirmation__organizer-contact span.text--grey').text('Om du har några frågor, vänligen kontakta');
 		
 			//
-			//$('.notice__booking-id').contents()[0].nodeValue = 'Boknings-ID: ';
+			var ticketID=$('.notice__booking-id span').text()
+        		$('.notice__booking-id').text('Boknings-ID: '+ticketID); 
 
 	}, 3000);
 		//99 available Replace the word
@@ -288,20 +289,4 @@ $('.p-datepicker-prev').click(function () {
 		//var res = available.replace("available", "tillgängliga platser");
 		//$('.event-category__amount').text(res);
 
-const observerBookingId = new MutationObserver((mutations, obs) => {
-    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
-    if ($(page4).is(':visible')) {
-        console.log($('.notice__booking-id').text())
-        console.log("page 4 visible");
-        var ticketID=$('.notice__booking-id span').text()
-        $('.notice__booking-id').text('Boknings-ID: '+ticketID); 
-        obs.disconnect();
-        return;
-    }
-});
-
-observerBookingId.observe(document, {
-    childList: true,
-    subtree: true
-});
 
