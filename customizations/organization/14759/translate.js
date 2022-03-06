@@ -182,7 +182,11 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_booker_contact-data_headline').text('Kontaktperson: ');
 
 			//Dropdown
-			//$(".customization2_booker_contact-data_booker-attendee-relation_attendee-1").text('Samma uppgifter som “deltagare 1"');
+			$('select.customization2_booker_contact-data_booker-attendee-relation_input option').each(function() {
+    				var text = $(this).text();
+    				$(this).text(text.replace('Use details from attendee', 'Samma uppgifter som deltagare')); 
+			});
+		
 			$(".customization2_booker_contact-data_booker-attendee-relation_different-attendee").text('Fyll i alternativa uppgifter');
 
 			//First name
