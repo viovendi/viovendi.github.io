@@ -57,7 +57,7 @@ observer1.observe(document, {
 function startCustomizationPage1(){
       console.log('page 1 visible');
   //Text von Button auf Seite 1
-      $('.customization-button-next').text('Contineur');
+      $('.customization-button-next').text('CONTINUER');
   
   const observerMwStText = new MutationObserver((mutations, obs) => {
         const mwstText = $('ew-selection__sum-title').next();
@@ -168,7 +168,7 @@ function startCustomizationPage2(){
   
         if (!$(page2).is(':visible')) {
           console.log('page 2 not visible')
-         // $('.customization-button-next').text('Contineur');
+         // $('.customization-button-next').text('CONTINUER');
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
