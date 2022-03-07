@@ -159,7 +159,11 @@ $('.p-datepicker-prev').click(function () {
 			$('.customization2_attendee_edit-action_save').text('Jag har fyllt i mina uppgifter');
 		
 			//Copy details from attendee 1
-			$(".customization2_attendee_contact-data_copy-link").text($(".customization2_attendee_contact-data_copy-link").text().replace("Copy details from attendee 1", "Kopiera information från deltagare 1"));
+			//$(".customization2_attendee_contact-data_copy-link").text($(".customization2_attendee_contact-data_copy-link").text().replace("Copy details from attendee 1", "Kopiera information från deltagare 1"));
+			$('.customization2_attendee_contact-data_copy-link').each(function() {
+    				var text = $(this).text();
+    				$(this).text(text.replace("Copy details from attendee 1", "Kopiera information från deltagare 1")); 
+			});
 
 			//Cancel
 			var canceltext = $(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text();
