@@ -30,8 +30,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 113, 43);
-        ctx.fillText($('#stand_inp').val(), 146, 43);
+        ctx.fillText($('#halle_inp').val(), 313, 47);
+        ctx.fillText($('#stand_inp').val(), 346, 47);
     }
 }
 
