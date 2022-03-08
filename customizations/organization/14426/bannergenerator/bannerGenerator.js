@@ -24,8 +24,8 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'querformat') {
-        ctx.fillText($('#halle_inp').val(), 13, 42);
-        ctx.fillText($('#stand_inp').val(), 46, 42);
+        ctx.fillText($('#halle_inp').val(), 13, 43);
+        ctx.fillText($('#stand_inp').val(), 46, 43);
     } else if (value == 'hochkant') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 6, 578);
@@ -54,7 +54,7 @@ function setupBannerImage() {
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if (canvas.width > canvas.height) {
-        ctx.font = "15pt Verdana";
+        ctx.font = "14pt Verdana";
     } else {
         ctx.font = "18pt Verdana";
     }
