@@ -31,7 +31,7 @@ function setTexts() {
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
     } else if (value == 'facebook') {
         ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 46);
-        ctx.fillText($('#stand_inp').val(), 414, 46);
+        ctx.fillText($('#stand_inp').val(), 420, 46);
     }
 }
 
