@@ -54,7 +54,7 @@ function setupBannerImage() {
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if (canvas.width > canvas.height) {
-        ctx.font = "13pt Verdana";
+        ctx.font = "15pt Verdana";
     } else {
         ctx.font = "18pt Verdana";
     }
