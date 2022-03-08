@@ -138,7 +138,7 @@ function showField(field){
 }
 function handler() {
 
-    let questionNumber = 7;
+    let questionNumber = 6;
     //Arrival
     var dropdownArrival = $('.customization2_attendee_further-data_custom-question-'+questionNumber++);
     //
