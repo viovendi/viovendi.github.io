@@ -199,6 +199,9 @@ function handler() {
     var dropdownTest = $('.customization2_attendee_further-data_custom-question-'+questionNumber++);  
     $("<div class='vv-control-label vv-control-label--regular' style='line-height: 1 rem;'>Please check the entry and quarantine regulations for your home country.</div>").insertBefore($(dropdownTest));
     //
+    var fieldTestDay = $('.customization2_attendee_further-data_custom-question-'+questionNumber++);
+    $(fieldTestDay).hide();
+    //
     var fieldTestTime = $('.customization2_attendee_further-data_custom-question-'+questionNumber++);
     $(fieldTestTime).hide();
     
@@ -210,10 +213,11 @@ function handler() {
     $(dropdownTest).change(function () {
         if ($(this).find('option').filter(':selected').text().trim() == 'Yes'){
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
-            showField($(fieldTestTime));    
+            showField($(fieldTestDay));    
+            showField($(fieldTestTime));  
         }else if ($(this).find('option').filter(':selected').text().trim() == 'No'){
-            
-             hide($(fieldTestTime));  
+              hide($(fieldTestDay));  
+              hide($(fieldTestTime));  
               if($(".error-state").length==0)
               $('.customization2_attendee_edit-action_save').prop("disabled", false);
          }
