@@ -24,8 +24,8 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'querformat') {
-        ctx.fillText($('#halle_inp').val(), 235, 45);
-        ctx.fillText($('#stand_inp').val(), 260, 45);
+        ctx.fillText($('#halle_inp').val(), 30, 45);
+        ctx.fillText($('#stand_inp').val(), 10, 45);
     } else if (value == 'hochkant') {
         ctx.fillText($('#halle_inp').val(), 75 - $('#halle_inp').val().length * 2, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 6, 578);
