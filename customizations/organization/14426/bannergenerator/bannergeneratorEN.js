@@ -24,13 +24,13 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'querformat') {
-        ctx.fillText($('#halle_inp').val(), 13 - $('#halle_inp').val().length * 6, 43);
+        ctx.fillText($('#halle_inp').val(), 25 - $('#halle_inp').val().length * 6, 43);
         ctx.fillText($('#stand_inp').val(), 46, 43);
     } else if (value == 'hochkant') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 388 - $('#halle_inp').val().length * 6, 46);
+        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 46);
         ctx.fillText($('#stand_inp').val(), 414, 46);
     }
 }
@@ -55,7 +55,7 @@ function setupBannerImage() {
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
     if (canvas.width > canvas.height) {
-        ctx.font = "12pt Verdana";
+        ctx.font = "13pt Verdana";
     } else {
         ctx.font = "18pt Verdana";
     }
