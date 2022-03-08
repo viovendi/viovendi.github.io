@@ -27,8 +27,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 235, 45);
         ctx.fillText($('#stand_inp').val(), 260, 45);
     } else if (value == 'hochkant') {
-        ctx.fillText($('#halle_inp').val(), 72, 515);
-        ctx.fillText($('#stand_inp').val(), 80 - $('#stand_inp').val().length * 6, 575);
+        ctx.fillText($('#halle_inp').val(), 72, 520);
+        ctx.fillText($('#stand_inp').val(), 80 - $('#stand_inp').val().length * 6, 580);
     } else if (value == 'facebook') {
         //
     }
