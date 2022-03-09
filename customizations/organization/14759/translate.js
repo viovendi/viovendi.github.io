@@ -305,6 +305,9 @@ setInterval(function () {
 
     // Booking-ID
     $('form[name="bookingEditingAuthForm"] vv-input[name="bookingId"] label p').text('Boknings-ID');
+	
+	// Booking_ID required
+	$('.booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text').text('Ange ett giltigt boknings-ID.');
 
     // Email address
     $('form[name="bookingEditingAuthForm"] vv-input[name="email"] label p').text('E-postadress');
