@@ -109,6 +109,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
   
   function removeOptional(filedLabel){
+	 console.log("function:removeOptional");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
       var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
       
@@ -121,6 +122,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function hideShowField(fieldName, action){
+	  console.log("function:hideShowField");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
       var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
       
@@ -136,6 +138,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function changeParentCat(parentCatNameVisibleLang){
+	  console.log("function:changeParentCat");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
       var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
       var currParentCat;
@@ -164,6 +167,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function checkIfChildSelected(parentCatNameVisibleLang){
+	  console.log("function:checkifChildselected");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
       var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
       var currParentCat;
@@ -183,6 +187,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   
   //function createChildCatOptions(elem, parentCatName){
   function createChildCatOptions(elemId, parentCatName){
+	  console.log("function:createChildCatOptions");
     
     var childCategories = childCatNames[parentCatName];
     
@@ -191,13 +196,16 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
     var select = document.createElement('select');
     select.id = 'childCatSelect';
     select.classList.add('vv-simple-select__control', 'customization2_attendee_further-data_custom-question_dropdown');
-    
+    console.log("function:createChildCatOptions -> select created");
+	    
     var selectLabel = document.createElement("div");
     selectLabel.id = 'selectMainContainer';
     selectLabel.innerHTML ='<label class="vv-simple-select"><span class="vv-control-label vv-control-label--regular customization2_attendee_further-data_custom-question_label">'+parentCatName+'</span><vv-optional-text><vv-text color="grey-light" inline=""><span class="vv-text vv-text__size--md vv-text__weight--regular vv-color--grey-light"> (optional)</span></vv-text></vv-optional-text><div class="vv-simple-select__control-container" id="selectContainer"><i name="dropdown" class="vv-simple-select__dropdown-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="vv-icon vv-icon__size--sm"><path d="M11.357 14.228c.355.426.926.432 1.286 0l3.082-3.698C16.43 9.685 16.113 9 15 9H9c-1.105 0-1.426.688-.725 1.53l3.082 3.698z" fill="currentColor"></path></svg></i></div></label>';
-      
+      console.log("function:createChildCatOptions -> select label created");
+	    
       document.getElementsByClassName(elemId)[0].appendChild(selectLabel);      
       document.getElementById('selectContainer').appendChild(select);
+	    console.log("function:createChildCatOptions -> select container added");
       
     var optionEmpty = document.createElement("option");
       optionEmpty.value = '';
