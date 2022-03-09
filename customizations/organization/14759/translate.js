@@ -356,7 +356,7 @@ setInterval(function () {
 	
 	// Edit tooltip
 	$('vv-button[customization="customization2_attendee_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
-	
+	$('vv-button[customization="customization2_booker_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
 	
 	// Further actions tooltip
 	$('vv-dropdown.booking-participant__actions-dropdown + div.vv-tooltip__content').text('Ytterligare åtgärder');
@@ -374,6 +374,7 @@ setInterval(function () {
 	
 	
 	// Quantity
+	$('.customization3_invoice-box_quantity_label').text('KVANTITET');
 	
 	
 	// EVENT
@@ -387,12 +388,15 @@ setInterval(function () {
 	
 	
 	// Event Organizer
+	$('.customization3_edit-booking_event_organizer > div > div:first-child > .data-item__label').text('Arrangör av evenemang');
 	
 	
 	// Contact
+	$('.customization3_edit-booking_event_organizer > div > div:nth-child(2) > .data-item__label').text('Kontakta');
 	
 	
 	// Booking terms and conditions
+	$('.customization3_edit-booking_event_organizer .terms__label').text('Villkor för bokning');
 	
 	
 	
