@@ -1,0 +1,51 @@
+<div>
+  <form>
+   <select name="format" size="1" id="format_inp">
+    <option value="hochkant">
+     upright
+    </option>
+    <option value="querformat">
+     landscape
+    </option>
+    <option value="facebook">
+     facebook
+    </option>
+   </select>
+   <img style="display:none" id="banner_img" crossorigin="anonymous" src="https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_160x600_GB.png">
+   <select name="halle" size="1" id="halle_inp">
+    <option value=" ">
+    </option>
+    <option value="3B">
+     3B
+    </option>
+    <option value="4">
+     4
+    </option>
+    <option value="5">
+     5
+    </option>
+    <option value="6">
+     6
+    </option>
+    <option value="7">
+     7
+    </option>
+    <option value="8">
+     8
+    </option>
+   </select>
+   <input type="text" id="stand_inp">
+   <button type="submit">
+    Clear
+   </button>
+   <a id="download" download="Banner.png">
+    <button type="button" onclick="download()">
+     Download
+    </button>
+   </a>
+  </form>
+  <canvas id="canvas" crossorigin="anonymous">
+  </canvas>
+ </div>
+ <script src="https://viovendi.github.io/customizations/organization/14426/bannergenerator/bannergeneratorEN.js">
+ </script>
