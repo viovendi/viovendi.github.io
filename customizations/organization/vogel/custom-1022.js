@@ -151,7 +151,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
 		console.log("element found");
           addValToHiddenField();
           
-          currParentCat = $(this).children("option:selected").val();
+          currParentCat = $(this).text();
 		console.log(currParentCat);
           
           addErrorState(currParentCat);
