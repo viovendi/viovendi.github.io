@@ -145,7 +145,10 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
       
       if( labelText.indexOf(parentCatNameVisibleLang) != -1){
         console.log("function:changeParentCat -> if ");
+	console.log(parentCatNameVisibleLang);
         $(this).find('select').not('#childCatSelect').on('change', function(){
+		
+		console.log("element found");
           addValToHiddenField();
           
           currParentCat = $(this).children("option:selected").val();
