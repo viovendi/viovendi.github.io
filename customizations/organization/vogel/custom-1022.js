@@ -152,6 +152,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
           addValToHiddenField();
           
           currParentCat = $(this).children("option:selected").val();
+		console.log(currParentCat);
           
           addErrorState(currParentCat);
           checkIsFormFilledIn();
