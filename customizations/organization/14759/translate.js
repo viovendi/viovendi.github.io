@@ -368,9 +368,14 @@ function replaceDay(selector) {
 	
 	// Date (booked on)
 	replaceMonth('.customization3_edit-booking_main_booked-on_value');
+	$('.customization3_edit-booking_main_booked-on_value').text($('.customization3_edit-booking_main_booked-on_value').text().replace('at', 'kl.'))
 	
 	
 	//Booking ID
+	if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Boknings") == -1) {
+        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
+        $('.customization3_edit-booking_main_booking-id_label').text('Boknings-ID: ' + ticketID);
+    };
 	
 	
 	//Booking completed
@@ -382,6 +387,7 @@ function replaceDay(selector) {
 	// Event Date
 	replaceMonth('.customization3_edit-booking_main_event_dates');
 	replaceDay('.customization3_edit-booking_main_event_dates');
+	$('.customization3_edit-booking_main_event_dates').text($('.customization3_edit-booking_main_event_dates').text().replace('from', 'klockan'))
 	
 
     	//Download ticket
@@ -425,6 +431,7 @@ function replaceDay(selector) {
 	// Event Date
 	replaceMonth('.customization3_edit-booking_event_dates');
 	replaceDay('.customization3_edit-booking_event_dates');
+	$('.customization3_edit-booking_event_dates').text($('.customization3_edit-booking_event_dates').text().replace('from', 'klockan'))
 	
 	
 	// Event Address
