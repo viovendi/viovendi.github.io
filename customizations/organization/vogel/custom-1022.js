@@ -145,7 +145,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
       
       if( labelText.indexOf(parentCatNameVisibleLang) != -1){
         console.log("function:changeParentCat -> if ");
-	console.log(parentCatNameVisibleLang);
+	console.log(this);
         $(this).find('.vv-selection-input__value').not('#childCatSelect').on('change', function(){
 		
 		console.log("element found");
