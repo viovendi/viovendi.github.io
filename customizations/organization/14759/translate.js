@@ -308,6 +308,9 @@ setInterval(function () {
 
     // Email address
     $('form[name="bookingEditingAuthForm"] vv-input[name="email"] label p').text('E-postadress');
+	
+    // Email address required
+    $('.booking-editing-auth vv-input[type="email"] + vv-show-errors .error-text').text('Obligatorisk');
 
     // Go to selection
     $('form[name="bookingEditingAuthForm"] button[type="button"]').text('Gå till urval');
@@ -326,9 +329,45 @@ setInterval(function () {
     $('.customization3_edit-booking_header_logout span').text('Logga ut');
 	
 	// Booked on
+	$('.customization3_edit-booking_main_booking-date_label').text('Bokad på');
+	
+	function replaceMonth(selector) {
+    var months = {
+        'January': 'Januari',
+        'February': 'Februari',
+        'March': 'Mars',
+        'April': 'April',
+        'May': 'Mai',
+        'June': 'Juni',
+        'July': 'Juli',
+        'August': 'Augusti',
+        'September': 'September',
+        'October': 'Oktober',
+        'November': 'November',
+        'December': 'December',
+    };
+
+    $(selector).text($(selector).text().replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, function (match) { return months[match]; }))
+};
+
+function replaceDay(selector) {
+    var days = {
+        'Monday': 'Måndag',
+        'Tuesday': 'Tisdag',
+        'Wednesday': 'Onsdag',
+        'Thursday': 'Torsdag',
+        'Friday': 'Fredag',
+        'Saturday': 'Lördag',
+        'Sunday': 'Söndag',
+    };
+
+    $(selector).text($(selector).text().replace(/Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday/g, function (match) { return days[match]; }))
+
+};
 	
 	
 	// Date (booked on)
+	replaceMonth('.customization3_edit-booking_main_booked-on_value');
 	
 	
 	//Booking ID
@@ -341,6 +380,8 @@ setInterval(function () {
 	
 	
 	// Event Date
+	replaceMonth('.customization3_edit-booking_main_event_dates');
+	replaceDay('.customization3_edit-booking_main_event_dates');
 	
 
     	//Download ticket
@@ -382,10 +423,12 @@ setInterval(function () {
 	
 	
 	// Event Date
+	replaceMonth('.customization3_edit-booking_event_dates');
+	replaceDay('.customization3_edit-booking_event_dates');
 	
 	
 	// Event Address
-	
+	$('.location-pointer_address').text($('.location-pointer_address').text().replace('Schweden', 'Sverige'))
 	
 	// Event Organizer
 	$('.customization3_edit-booking_event_organizer > div > div:first-child > .data-item__label').text('Arrangör av evenemang');
