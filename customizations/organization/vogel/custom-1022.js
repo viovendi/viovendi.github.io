@@ -144,7 +144,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
       var currParentCat;
       
       if( labelText.indexOf(parentCatNameVisibleLang) != -1){
-        
+        console.log("function:changeParentCat -> if ");
         $(this).find('select').not('#childCatSelect').on('change', function(){
           addValToHiddenField();
           
@@ -159,7 +159,9 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
             createChildCatOptions('parentElem', currParentCat);
             //createChildCatOptions($(this).closest('.vv-nl-mb-lg'), currParentCat);
           }else{
+		  console.log("function:changeParentCat -> else");
             clearSubInduxtryField();
+		 
           }
         });
       }
@@ -232,6 +234,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function addValToHiddenField(childCat){
+	  console.log("function:addValToHiddenField");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
         var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
         if( labelText.indexOf(parentCatNameCurrLang) != -1 ){
@@ -273,6 +276,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function addErrorState(val){
+	  console.log("function:addErrorState");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
         var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
         if( labelText.indexOf(parentCatNameVisibleLang) != -1 ){
@@ -293,6 +297,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   addErrorState();
   
   function clearSubInduxtryField(){
+	  console.log("function:clearSubInduxtryField");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
         var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
         if( labelText.indexOf(parentCatNameCurrLang) != -1 ){
@@ -302,6 +307,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
   }
   
   function checkIsFormFilledIn(event){
+	  console.log("function:checkIsFormFilledIn");
     $('.customization2_attendee_further-data .vv-nl-mb-lg').each(function(){
         var labelText = $(this).find('.customization2_attendee_further-data_custom-question_label').text().trim();
         if( labelText.indexOf(parentCatNameVisibleLang) != -1 ){
