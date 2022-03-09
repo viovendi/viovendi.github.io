@@ -175,6 +175,7 @@ var categoriesNamesEn = {'Plant Engineering': ['Plant Design', 'Refrigeration / 
         currParentCat = $(this).children("option:selected").val();
         if(currParentCat !='' ){
           $(this).closest('.vv-nl-mb-lg').addClass('parentElem1');
+	  console.log("parentElem1 added");
           createChildCatOptions('parentElem1', currParentCat);
           //createChildCatOptions($(this).closest('.vv-nl-mb-lg'), currParentCat);
         }else{
