@@ -65,7 +65,7 @@ $('.p-datepicker-prev').click(function () {
 setInterval(function () {
 
 
-    $('.p-datepicker-next').click(function () {});
+    $('.p-datepicker-next').click(function () { });
 
 
     //replace available
@@ -305,13 +305,13 @@ setInterval(function () {
 
     // Booking-ID
     $('form[name="bookingEditingAuthForm"] vv-input[name="bookingId"] label p').text('Boknings-ID');
-	
-	// Booking_ID required
-	$('.booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text').text('Ange ett giltigt boknings-ID.');
+
+    // Booking_ID required
+    $('.booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text').text('Ange ett giltigt boknings-ID.');
 
     // Email address
     $('form[name="bookingEditingAuthForm"] vv-input[name="email"] label p').text('E-postadress');
-	
+
     // Email address required
     $('.booking-editing-auth vv-input[type="email"] + vv-show-errors .error-text').text('Obligatorisk');
 
@@ -330,129 +330,131 @@ setInterval(function () {
 
     //Log out
     $('.customization3_edit-booking_header_logout span').text('Logga ut');
-	
-	// Booked on
-	$('.customization3_edit-booking_main_booking-date_label').text('Bokad på');
-	
-	function replaceMonth(selector) {
-    var months = {
-        'January': 'Januari',
-        'February': 'Februari',
-        'March': 'Mars',
-        'April': 'April',
-        'May': 'Mai',
-        'June': 'Juni',
-        'July': 'Juli',
-        'August': 'Augusti',
-        'September': 'September',
-        'October': 'Oktober',
-        'November': 'November',
-        'December': 'December',
+
+    // Booked on
+    $('.customization3_edit-booking_main_booking-date_label').text('Bokad på');
+
+    function replaceMonth(selector) {
+        var months = {
+            'January': 'Januari',
+            'February': 'Februari',
+            'March': 'Mars',
+            'April': 'April',
+            'May': 'Mai',
+            'June': 'Juni',
+            'July': 'Juli',
+            'August': 'Augusti',
+            'September': 'September',
+            'October': 'Oktober',
+            'November': 'November',
+            'December': 'December',
+        };
+
+        $(selector).text($(selector).text().replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, function (match) { return months[match]; }))
     };
 
-    $(selector).text($(selector).text().replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, function (match) { return months[match]; }))
-};
+    function replaceDay(selector) {
+        var days = {
+            'Monday': 'Måndag',
+            'Tuesday': 'Tisdag',
+            'Wednesday': 'Onsdag',
+            'Thursday': 'Torsdag',
+            'Friday': 'Fredag',
+            'Saturday': 'Lördag',
+            'Sunday': 'Söndag',
+        };
 
-function replaceDay(selector) {
-    var days = {
-        'Monday': 'Måndag',
-        'Tuesday': 'Tisdag',
-        'Wednesday': 'Onsdag',
-        'Thursday': 'Torsdag',
-        'Friday': 'Fredag',
-        'Saturday': 'Lördag',
-        'Sunday': 'Söndag',
+        $(selector).text($(selector).text().replace(/Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday/g, function (match) { return days[match]; }))
+
     };
 
-    $(selector).text($(selector).text().replace(/Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday/g, function (match) { return days[match]; }))
 
-};
-	
-	
-	// Date (booked on)
-	replaceMonth('.customization3_edit-booking_main_booked-on_value');
-	$('.customization3_edit-booking_main_booked-on_value').text($('.customization3_edit-booking_main_booked-on_value').text().replace('at', 'kl.'))
-	
-	
-	//Booking ID
-	if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Boknings") == -1) {
+    // Date (booked on)
+    replaceMonth('.customization3_edit-booking_main_booked-on_value');
+    $('.customization3_edit-booking_main_booked-on_value').text($('.customization3_edit-booking_main_booked-on_value').text().replace('at', 'kl.'))
+
+
+    //Booking ID
+    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Boknings") == -1) {
         var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
         $('.customization3_edit-booking_main_booking-id_label').text('Boknings-ID: ' + ticketID);
     };
-	
-	
-	//Booking completed
-	
-	
-	//Live
-	
-	
-	// Event Date
-	replaceMonth('.customization3_edit-booking_main_event_dates');
-	replaceDay('.customization3_edit-booking_main_event_dates');
-	$('.customization3_edit-booking_main_event_dates').text($('.customization3_edit-booking_main_event_dates').text().replace('from', 'klockan'))
-	
 
-    	//Download ticket
-	$('.customization3_edit-booking_main_actions_download-ticket').text('Hämta biljett');
-	
-	// Cancel booking
-	$('.customization3_edit-booking_main_actions_cancel-booking').text('Avbryt bokning');
-	
-	
-	// ATTENDEES
-	$('.customization3_tab-group_tabs button:first-of-type span').text('DELTAGARE');
-	
-	
-	// Edit tooltip
-	$('vv-button[customization="customization2_attendee_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
-	$('vv-button[customization="customization2_booker_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
-	
-	// Further actions tooltip
-	$('vv-dropdown.booking-participant__actions-dropdown + div.vv-tooltip__content').text('Ytterligare åtgärder');
-	
-	
-	// BOOKING
-	$('.customization3_tab-group_tabs button:nth-of-type(3) span').text('BOKNING');
-	
-	
-	// Summary
-	$('.customization3_invoice-box_header_title').text('Sammanfattning');
-	
-	// Description
-	$('.customization3_invoice-box_category_label').text('BESKRIVNING');
-	
-	
-	// Quantity
-	$('.customization3_invoice-box_quantity_label').text('KVANTITET');
-	
-	
-	// EVENT
-	$('.customization3_tab-group_tabs button:nth-of-type(4) span').text('EVENEMANG');
-	
-	
-	// Event Date
-	replaceMonth('.customization3_edit-booking_event_dates');
-	replaceDay('.customization3_edit-booking_event_dates');
-	$('.customization3_edit-booking_event_dates').text($('.customization3_edit-booking_event_dates').text().replace('from', 'klockan'))
-	
-	
-	// Event Address
-	$('.location-pointer_address').text($('.location-pointer_address').text().replace('Schweden', 'Sverige'))
-	
-	// Event Organizer
-	$('.customization3_edit-booking_event_organizer > div > div:first-child > .data-item__label').text('Arrangör av evenemang');
-	
-	
-	// Contact
-	$('.customization3_edit-booking_event_organizer > div > div:nth-child(2) > .data-item__label').text('Kontakta');
-	
-	
-	// Booking terms and conditions
-	$('.customization3_edit-booking_event_organizer .terms__label').text('Villkor för bokning');
-	
-	
-	
+
+    //Booking Status
+    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Bokning slutförd');
+    $('.booking-status.booking-status--cancelled.customization3_edit-booking_main_booking-status').text('Bokning avbokad');
+
+
+    // Event Date
+    replaceMonth('.customization3_edit-booking_main_event_dates');
+    replaceDay('.customization3_edit-booking_main_event_dates');
+    $('.customization3_edit-booking_main_event_dates').text($('.customization3_edit-booking_main_event_dates').text().replace('from', 'klockan'))
+
+
+    //Download ticket
+    $('.customization3_edit-booking_main_actions_download-ticket').text('Hämta biljett');
+
+    // Cancel booking
+    $('.customization3_edit-booking_main_actions_cancel-booking').text('Avbryt bokning');
+
+
+    // ATTENDEES
+    $('.customization3_tab-group_tabs button:first-of-type span').text('DELTAGARE');
+
+
+    // Edit tooltip
+    $('vv-button[customization="customization2_attendee_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
+    $('vv-button[customization="customization2_booker_view-action_edit"] + div.vv-tooltip__content').text('Redigera');
+
+    // Further actions tooltip
+    $('vv-dropdown.booking-participant__actions-dropdown + div.vv-tooltip__content').text('Ytterligare åtgärder');
+
+
+    // BOOKING
+    $('.customization3_tab-group_tabs button:nth-of-type(3) span').text('BOKNING');
+
+
+    // Summary
+    $('.customization3_invoice-box_header_title').text('Sammanfattning');
+
+    // Description
+    $('.customization3_invoice-box_category_label').text('BESKRIVNING');
+
+
+    // Quantity
+    $('.customization3_invoice-box_quantity_label').text('KVANTITET');
+
+
+    // EVENT
+    $('.customization3_tab-group_tabs button:nth-of-type(4) span').text('EVENEMANG');
+
+
+    // Event Date
+    replaceMonth('.customization3_edit-booking_event_dates');
+    replaceDay('.customization3_edit-booking_event_dates');
+    $('.customization3_edit-booking_event_dates').text($('.customization3_edit-booking_event_dates').text().replace('from', 'klockan'))
+
+
+    // Event Address
+    $('.location-pointer_address').text($('.location-pointer_address').text().replace('Schweden', 'Sverige'))
+
+    // Event Organizer
+    $('.customization3_edit-booking_event_organizer > div > div:first-child > .data-item__label').text('Arrangör av evenemang');
+
+
+    // Contact
+    $('.customization3_edit-booking_event_organizer > div > div:nth-child(2) > .data-item__label').text('Kontakta');
+
+
+    // Booking terms and conditions
+    $('.customization3_edit-booking_event_organizer .terms__label').text('Villkor för bokning');
+
+    // This Booking has been canceled
+    if ($('.guidance-title').text().trim() == 'This booking has been canceled.') { $('.guidance-title').text('Den här bokningen har avbokats.') }
+
+
+
 
 
 }, 3000);
