@@ -75,6 +75,9 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
+   $(document).on("DOMSubtreeModified", "#test", function () {
+    alert("Paragraph changed");
+});
     var observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
     });
