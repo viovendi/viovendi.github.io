@@ -238,7 +238,7 @@ function disableWhenEmpty(field){
 */
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
-var dropdown =  $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
+var dropdown =  findDropDownByLabel('Welcher Branche');
     
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
