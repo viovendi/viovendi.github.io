@@ -2,7 +2,6 @@ function getValueFromDropDown(dropDown){
    const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
    console.log(valueText);
    const value = $(valueText).text().trim();
-  
    return value;
 }
 function getValueTagFromDropDown(dropDown){
@@ -76,14 +75,26 @@ function handler(){
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-    console.log('dropdown1 changed');
+      console.log('changed this:-'+$(this));
+      
+   if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+         $(field1).show()
+         $(field1).find('vv-optional-text').css("display","none");
+         disableWhenEmpty(field1);
+      }else{
+         $(field1).hide()
+         $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+         $('.customization2_attendee_edit-action_save').prop("disabled", false);
+      }
    });
+   
+   /*
     var observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
     });
    dropdown1
    
-   /*
+   
    console.log(dropdown1);
    console.log($(dropdown1).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)).get(0));
@@ -91,10 +102,12 @@ function handler(){
       console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
 
    observer1.observe(dropdown1,{characterData: true, childList: true});
-   */
+   
    
    observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0),{characterData: true, childList: true});
-/*
+*/
+   
+   
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
@@ -147,7 +160,7 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }
    }
                      );
-    */
+    
    
 function disableWhenEmpty(field){
     
