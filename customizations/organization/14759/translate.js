@@ -451,7 +451,19 @@ setInterval(function () {
     $('.customization3_edit-booking_event_organizer .terms__label').text('Villkor för bokning');
 
     // This Booking has been canceled
-    if ($('.guidance-title').text().trim() == 'This booking has been canceled.') { $('.guidance-title').text('Den här bokningen har avbokats.') }
+    if ($('.guidance-title').text().trim() == 'This booking has been canceled.') { $('.guidance-title').text('Den här bokningen har avbokats.') };
+    
+    
+    // Cancel Popup
+    if ($('.confirmation-dialog__title').text().trim() == 'Cancel booking') { $('.confirmation-dialog__title').text('Avbryt bokningen') };
+    if ($('.confirmation-dialog__message').text().trim() == 'Are you sure that you will not attend the event? You can only cancel the entire booking. The cancellation cannot be undone.') { $('.confirmation-dialog__message').text('Är du säker på att du inte kommer att delta i evenemanget? Du kan bara avboka hela bokningen. Det går inte att ångra avbokningen.') };
+    
+    $('vv-cancel-button-content').each(function () {
+        var text = $(this).text();
+        $(this).text(text.replace('Cancel', 'Avbryt'));
+    });
+    
+    if ($('.confirmation-dialog__content > div > button').text().trim() == 'Cancel booking') { $('.confirmation-dialog__content > div > button').text('Avbryt bokningen') }
 
 
 
