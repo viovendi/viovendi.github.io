@@ -75,7 +75,7 @@ function handler(){
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-      console.log('changed this:-'+$(this));
+      console.log('changed this:-'+$(this).text());
       
    if($(this).find('option').filter(':selected').text().trim() == 'andere'){
          $(field1).show()
