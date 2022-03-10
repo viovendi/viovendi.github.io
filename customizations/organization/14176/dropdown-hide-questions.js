@@ -81,7 +81,6 @@ function handler(){
         alert('dropdown 1 changed')
     }.bind(this));
    
-    this.observer1.observe(getValueTagFromDropDown($(dropdown1)), {characterData: true, childList: true});
    this.observer1.observe(getValueTagFromDropDown($(dropdown1)).get(0), {characterData: true, childList: true});
 
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
