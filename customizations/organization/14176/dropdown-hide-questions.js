@@ -1,6 +1,7 @@
 function getValueFromDropDown(dropDown){
-
-   const value = $(dropDown).find('.vv-selection-input__value.m-ellipsis').text();
+   const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
+   console.log(valueText);
+   const value = $(valueText).text();
    console.log(value);
 }
 function findDropDownByLabel(label){
