@@ -5,15 +5,17 @@ function getValueFromDropDown(dropDown){
    console.log(value);
 }
 function findDropDownByLabel(label){
+   var found = null;
    $(".vv-selection-input").each(function(){
       console.log('I')
       const labelText = $(this).find(".vv-control-label").text();
       console.log(labelText.trim()+ ' : '+label.trim());
       if(labelText.trim()==label.trim()){
          console.log('found label: '+label.trim());
-         return this;
+          found =this;
       }
    });
+   return found;
 }
 
 
