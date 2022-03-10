@@ -18,12 +18,10 @@ function hideDefaultOption(selector, originalText){
   })
 }
 
-$('.vv-selection-input__value').each(function(){$('.vv-selection-input__value').on('DOMSubtreeModified', hideDefaultOption('.vv-selection-input__value', 'Bitte auswählen'))});
-
 function handler2(){
   changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
   changeTextTo('.vv-single-select-option','Bitte auswählen', 'Veuillez sélectionner');
-  hideDefaultOption('.vv-selection-input__value', 'Bitte auswählen');
+  //hideDefaultOption('.vv-selection-input__value', 'Bitte auswählen');
   
    
 }
