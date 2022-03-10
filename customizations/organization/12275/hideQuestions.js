@@ -221,13 +221,28 @@ function handler() {
 }
 
 function disableWhenEmpty(field) {
+        var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis');
+        if(inputOfField!=undefined){
+        $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+           if ($(this).text().trim().length == 0) {
+                $(this).addClass('error-state');
+                $(field).find('.error-message').show();
+                $('.customization2_attendee_edit-action_save').prop("disabled", true);
 
-        var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
-    
-        if(typeof $(inputOfField).get(0) === 'undefined'){
-         //   console.log('is dropdown')
-            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_dropdown');
+            } else {
+                $(this).removeClass('error-state');
+                $(field).find('.error-message').hide();
+             //   $(".error-state").each(function(){console.log($(this))});
+                if($(".error-state").length==0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            }
+        });
+            
+        return;
         }
+    
+         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
+
           if(typeof $(inputOfField).get(0) === 'undefined'){
                //         console.log('is date')
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
