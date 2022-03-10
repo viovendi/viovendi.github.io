@@ -83,7 +83,7 @@ function handler(){
    
     this.observer1.observe(getValueTagFromDropDown($(dropdown1)), {characterData: true, childList: true});
    this.observer1.observe(getValueTagFromDropDown($(dropdown1)).get(0), {characterData: true, childList: true});
-});
+
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
