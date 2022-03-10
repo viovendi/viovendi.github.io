@@ -9,8 +9,8 @@ function changeTextTo(selector,originalText, newText){
 }
 
 function handler2(){
-  changeTextTo('.customization2_attendee_further-data_custom-question_dropdown option','Bitte auswählen', 'Veuillez sélectionner');
-  changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');  
+  changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
+  changeTextTo('.vv-single-select-option','Bitte auswählen', 'Veuillez sélectionner');
    
 }
 /*
