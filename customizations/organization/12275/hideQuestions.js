@@ -210,7 +210,7 @@ function handler() {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
             showField($(fieldTestDay));    
             showField($(fieldTestTime));  
-        }else if ($(this).find('option').filter(':selected').text().trim() == 'No'){
+        }else if ($(this).text().trim() == 'No'){
               hide($(fieldTestDay));  
               hide($(fieldTestTime));  
               if($(".error-state").length==0)
@@ -224,7 +224,7 @@ function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis');
         if(inputOfField!=undefined){
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
-           if ($(this).text().trim().length == 0) {
+           if ($(this).text().trim().length == 0ﬂ) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
