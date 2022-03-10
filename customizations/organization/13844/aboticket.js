@@ -53,9 +53,9 @@ function setNumberedAboTickets(amount) {
     console.log(amount)
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
+
             $(this).find(".vv-selection-input__control").click();
-            
-            $(this).find(".vv-single-select-option").find(el => $(el).text().includes('Prof.')).click()
+            $(this).find(".vv-single-select-option").find(el => el.textContent.includes('Prof.')).click()
 
           /*  $(this).find("select option[value="+amount+"]").click();
            $(this).find("select").change();
@@ -67,6 +67,7 @@ function setNumberedAboTickets(amount) {
            */
             // $('.event-category__ticket-count').focus();
             // $('.event-category__ticket-count').trigger('focusout');
+            
         }
     });
 }
