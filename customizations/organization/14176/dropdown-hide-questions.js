@@ -55,12 +55,12 @@ function handler(){
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
    console.log('field: '+field1);
-    $(field1).hide()
+   // $(field1).hide()
     
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
       console.log('field: '+field2);
 
-    $(field2).hide()
+   // $(field2).hide()
     
     var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
     console.log('Dropdown 1 :'+dropdown1);
@@ -238,7 +238,7 @@ function disableWhenEmpty(field){
  Google Tag Manager JS Helpers used
 */
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
-$(field).hide()
+//$(field).hide()
 var dropdown =  findDropDownByLabel('Welcher Branche');
     
    $(dropdown).change(function() {
