@@ -3,7 +3,13 @@ function getValueFromDropDown(dropDown){
    const value = $(dropDown).find('.vv-selection-input__value.m-ellipsis').text();
    console.log(value);
 }
-
+function findDropDownByLabel(label){
+   $(".vv-selection-input").each(function(){
+      const labelText = $(this).find(".vv-control-label").text();
+      console.log("Found Label: "+labelText);
+      if(labelText.trim()==label.trim())return this;
+   });
+}
 
 
 
@@ -45,13 +51,13 @@ function handler(){
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
     $(field2).hide()
     
-    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
+    var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
     console.log(dropdown1);
-    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
+    var dropdown2 = findDropDownByLabel('Position im Unternehmen');
     console.log(dropdown2);
-    var dropdown3 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
+    var dropdown3 = findDropDownByLabel('Funktion im Unternehmen');
     console.log(dropdown3);
-    var dropdown4 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?');
+    var dropdown4 = findDropDownByLabel('Funktion im Unternehmen?');
     console.log(dropdown4);
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
