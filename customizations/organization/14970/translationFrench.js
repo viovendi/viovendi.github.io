@@ -8,9 +8,20 @@ function changeTextTo(selector,originalText, newText){
   }) 
 }
 
+function hideDefaultOption(selector, originalText){
+  $(selector).each(function(){
+    if($(this).text().trim()==originalText){
+        $(this).hide()
+    }else{
+        $(this).show()
+    }
+  })
+}
+
 function handler2(){
   changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
   changeTextTo('.vv-single-select-option','Bitte auswählen', 'Veuillez sélectionner');
+  hideDefaultOption('.vv-selection-input__value', 'Bitte auswählen');
    
 }
 /*
