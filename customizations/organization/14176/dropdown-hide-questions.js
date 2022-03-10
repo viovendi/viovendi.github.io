@@ -74,10 +74,8 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
-   $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-      console.log('changed this:-'+$(this).text());
-      
-   if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+   $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'andere'){
          $(field1).show()
          $(field1).find('vv-optional-text').css("display","none");
          disableWhenEmpty(field1);
@@ -122,10 +120,10 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
    }
                      );
     
-     $(dropdown2).change(function() {
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
-  $(field1).show()
-  $(field1).find('vv-optional-text').css("display","none");
+  $(dropdown2).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'andere'){
+   $(field1).show()
+   $(field1).find('vv-optional-text').css("display","none");
     disableWhenEmpty(field1);
 }else{
   $(field1).hide()
@@ -135,8 +133,8 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
    }
                      );
     
-     $(dropdown3).change(function() {
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+     $(dropdown3).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'andere'){
   $(field2).show()
   $(field2).find('vv-optional-text').css("display","none");
   disableWhenEmpty(field2);
@@ -148,8 +146,8 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
    }
                      );
     
-     $(dropdown4).change(function() {
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+ $(dropdown4).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'andere'){
   $(field2).show()
   $(field2).find('vv-optional-text').css("display","none");
     disableWhenEmpty(field2);
@@ -275,11 +273,11 @@ function disableWhenEmpty(field){
  Google Tag Manager JS Helpers used
 */
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
-//$(field).hide()
+$(field).hide()
 var dropdown =  findDropDownByLabel('Welcher Branche');
     
-   $(dropdown).change(function() {
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+$(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'andere'){
   $(field).show()
   disableWhenEmpty(field);
 }else{
