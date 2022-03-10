@@ -24,7 +24,8 @@ function myHelpers(elements) {
     this.field = null;
 
     elements.forEach((field) => {
-      if (field.querySelector('label p').innerText.trim().includes(this.lable)) {
+
+      if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.lable)) {
         this.field = field;
       }
     });
