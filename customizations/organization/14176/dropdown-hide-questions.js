@@ -1,3 +1,12 @@
+function getValueFromDropDown(dropDown){
+
+   const value = $(dropDown).find('.vv-selection-input__value.m-ellipsis').text();
+   console.log(value);
+}
+
+
+
+
 // Funktion to show and hide custom question
 
 function handler(){
@@ -37,10 +46,15 @@ function handler(){
     $(field2).hide()
     
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
+    console.log(dropdown1);
     var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
-    
+    console.log(dropdown2);
     var dropdown3 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
+    console.log(dropdown3);
     var dropdown4 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?');
+    console.log(dropdown4);
+    
+    console.log('Value: '+getValueFromDropDown(dropdown1));
     
    $(dropdown1).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
