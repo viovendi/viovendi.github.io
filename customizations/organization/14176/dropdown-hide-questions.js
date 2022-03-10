@@ -79,7 +79,7 @@ function handler(){
         console.log('dropdown1 changed');
     }.bind(this));
    console.log(dropdown1);
-   console.log($(dropdown1)).get(0));
+   console.log($(dropdown1).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)));
       console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
