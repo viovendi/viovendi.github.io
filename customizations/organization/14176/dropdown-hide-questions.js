@@ -84,6 +84,7 @@ function handler(){
    console.log(getValueTagFromDropDown($(dropdown1)));
       console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
 
+   observer1.observe(dropdown1,{characterData: true, childList: true});
    
    observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0),{characterData: true, childList: true});
 /*
