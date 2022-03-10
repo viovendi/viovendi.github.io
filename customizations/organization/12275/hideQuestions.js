@@ -3,8 +3,6 @@ console.log("github -> /12275/hideQuestions")
 // Function to show and hide custom question
 function setup(){
     var styles = `
-    
-    
   @keyframes nodeInserted { 
     from { opacity: 0.99; }
     to { opacity: 1; } 
@@ -42,9 +40,6 @@ function setup(){
     function handlerS() {
         console.log('style added');
     }
-    
-    
-    
 }
 function hide(field){
     var inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
@@ -73,10 +68,11 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
     console.log($(dropdownTrainShuttle));
     console.log($(dropdownParking));
     */
-    $(dropdown).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'By train') {
+    
+    $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+   if($(this).text().trim() == 'By train'){
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
-         //   console.log("train selected")
+       //     console.log("train selected")
             showField($(fieldFrom));
             showField($(fieldTo));
             showField($(fieldDate));
@@ -86,7 +82,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(dropdownTrainShuttle));
             hide($(dropdownParking));
         } else{
-        if ($(this).find('option').filter(':selected').text().trim() == 'By plane') {
+        if ($(this).text().trim() == 'By plane') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
         //    console.log("plane selected")
             showField($(fieldFrom));
@@ -99,7 +95,7 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
             showField($(dropdownPlaneShuttle));
 
         }   else{
-        if ($(this).find('option').filter(':selected').text().trim() == 'By car') {
+        if ($(this).text().trim() == 'By car') {
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
          //   console.log("car selected")
             hide($(fieldFrom));
@@ -114,7 +110,6 @@ function setupConditionals(dropdown, fieldFrom, fieldTo, fieldDate, fieldTime, f
           
           
         }   else{
-            
             hide($(fieldFrom));
             hide($(fieldTo));
             hide($(fieldFlightNumber));
@@ -210,8 +205,8 @@ function handler() {
     setupConditionals(dropdownDeparture, fieldDepartureFrom, fieldDepartureTo, fieldDepartureDate, fieldDepartureTime, fieldDepartureFlightNumber, fieldDepartureTrainNumber,
                                          dropdownDepartureShuttleTrain, dropdownDepartureShuttlePlane, null);
 
-    $(dropdownTest).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Yes'){
+   $(dropdownTest).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+        if($(this).text().trim() == 'Yes'){
             $('.customization2_attendee_edit-action_save').prop("disabled", true);
             showField($(fieldTestDay));    
             showField($(fieldTestTime));  
@@ -235,7 +230,6 @@ function disableWhenEmpty(field) {
         }
           if(typeof $(inputOfField).get(0) === 'undefined'){
                //         console.log('is date')
-
             inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
         }else{
             if (!$(inputOfField).next().hasClass("error-message")) {
