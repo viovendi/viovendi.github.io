@@ -75,9 +75,11 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
-    const observer1 = new MutationObserver( function(mutations) {
+    var observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
     });
+   
+   /*
    console.log(dropdown1);
    console.log($(dropdown1).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)).get(0));
@@ -85,6 +87,7 @@ function handler(){
       console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
 
    observer1.observe(dropdown1,{characterData: true, childList: true});
+   */
    
    observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0),{characterData: true, childList: true});
 /*
