@@ -59,7 +59,7 @@ function handler(){
 
     $(field2).hide()
     
-    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
+    var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
     console.log('Dropdown 1 :'+dropdown1);
     var dropdown2 = findDropDownByLabel('Position im Unternehmen');
     console.log('Dropdown 2 :'+dropdown2);
