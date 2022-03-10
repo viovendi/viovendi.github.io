@@ -18,21 +18,23 @@ function hideDefaultOption(selector, originalText){
   })
 }
 
-document.querySelectorAll(".vv-selection-input__value").forEach(el => {
-  if (el.innerText === 'Bitte auswählen') {el.innerText = 'Veuillez sélectionner'}
-})
 
-addEventListener('click', e => {
+
+function handler2(){
+  changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
+  changeTextTo('.vv-single-select-option','Bitte auswählen', 'Veuillez sélectionner');
+  
+  document.querySelectorAll(".vv-selection-input__value").forEach(el => {
+  if (el.innerText === 'Bitte auswählen') {el.innerText = 'Veuillez sélectionner'}
+  });
+
+  addEventListener('click', e => {
     if (e.target.classList.contains('vv-single-select-option')) {
         let selectContainer = e.target.closest('.vv-selection');
         let valueElement = selectContainer.getElementsByClassName('vv-selection-input__value')[0];
         valueElement.innerText = e.target.textContent.trim().replace('<br>', '');
     }
-})
-
-function handler2(){
-  changeTextTo('.vv-button-text-blue','Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
-  changeTextTo('.vv-single-select-option','Bitte auswählen', 'Veuillez sélectionner');
+});
    
 }
 /*
