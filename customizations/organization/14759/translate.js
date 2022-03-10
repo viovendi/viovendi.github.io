@@ -409,6 +409,9 @@ setInterval(function () {
 
     // Further actions tooltip
     $('vv-dropdown.booking-participant__actions-dropdown + div.vv-tooltip__content').text('Ytterligare åtgärder');
+    
+    // Download PDF ticket
+    if ($('.dropdown-item__text a').text().trim() == 'Download PDF ticket') { $('.dropdown-item__text a').text('Ladda ner PDF-biljett') }
 
 
     // BOOKING
