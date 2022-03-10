@@ -20,16 +20,12 @@ function findDropDownByLabel(label){
    return found;
 }
 
-
-
 // Funktion to show and hide custom question
-
 function handler(){
     var styles = `
         .error-state{
             border-color: #ea674d!important;
             background-color: #fff1ef!important;
-           
         }
         .error-message{
             display: block;
@@ -91,47 +87,42 @@ function handler(){
         console.log('dropdown1 changed');
     });
    dropdown1
-   
-   
+
    console.log(dropdown1);
    console.log($(dropdown1).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)));
-      console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
+   console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
 
    observer1.observe(dropdown1,{characterData: true, childList: true});
-   
-   
+ 
    observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0),{characterData: true, childList: true});
 */
-   
-   
+
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
-if($(this).find('option').filter(':selected').text().trim() == 'andere'){
-  $(field1).show()
-  $(field1).find('vv-optional-text').css("display","none");
-  disableWhenEmpty(field1);
-}else{
-  $(field1).hide()
-  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
-  $('.customization2_attendee_edit-action_save').prop("disabled", false);
-}
-   }
-                     );
+      if($(this).find('option').filter(':selected').text().trim() == 'andere'){
+         $(field1).show();
+         $(field1).find('vv-optional-text').css("display","none");
+         disableWhenEmpty(field1);
+      }else{
+         $(field1).hide();
+         $(field1).find('.customization2_attendee_further-data_custom-question_input').val('');
+         $('.customization2_attendee_edit-action_save').prop("disabled", false);
+      }
+   });
     
   $(dropdown2).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
    if($(this).text().trim() == 'andere'){
-   $(field1).show()
-   $(field1).find('vv-optional-text').css("display","none");
-    disableWhenEmpty(field1);
-}else{
-  $(field1).hide()
-  $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
-  $('.customization2_attendee_edit-action_save').prop("disabled", false);
-}
-   }
-                     );
+      $(field1).show();
+      $(field1).find('vv-optional-text').css("display","none");
+      disableWhenEmpty(field1);
+   }else{
+      $(field1).hide()
+      $(field1).find('.customization2_attendee_further-data_custom-question_input').val('')
+      $('.customization2_attendee_edit-action_save').prop("disabled", false);
+      }
+   });
     
      $(dropdown3).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
    if($(this).text().trim() == 'andere'){
@@ -161,7 +152,6 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
     
    
 function disableWhenEmpty(field){
-    
    
    if(!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")){
        $( "<div class='error-message'>Erforderlich</div>" ).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
@@ -278,11 +268,11 @@ var dropdown =  findDropDownByLabel('Welcher Branche');
     
 $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
    if($(this).text().trim() == 'andere'){
-  $(field).show()
+  $(field).show();
   disableWhenEmpty(field);
 }else{
-  $(field).hide()
-  $(field).find('.customization2_attendee_further-data_custom-question_input').val('')
+  $(field).hide();
+  $(field).find('.customization2_attendee_further-data_custom-question_input').val('');
   $('.customization2_attendee_edit-action_save').prop("disabled", false);
 }
    }
