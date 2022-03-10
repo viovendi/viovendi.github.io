@@ -6,8 +6,11 @@ function getValueFromDropDown(dropDown){
 function findDropDownByLabel(label){
    $(".vv-selection-input").each(function(){
       const labelText = $(this).find(".vv-control-label").text();
-      console.log("Found Label: "+labelText);
-      if(labelText.trim()==label.trim())return this;
+      
+      if(labelText.trim()==label.trim()){
+         console.log('found label');
+         return this;
+      }
    });
 }
 
