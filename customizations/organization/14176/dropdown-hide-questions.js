@@ -77,7 +77,7 @@ function handler(){
    
     const observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
-    }.bind(this));
+    });
    console.log(dropdown1);
    console.log($(dropdown1).get(0));
    console.log(getValueTagFromDropDown($(dropdown1)).get(0));
