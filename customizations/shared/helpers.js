@@ -19,6 +19,9 @@ function myHelpers(elements) {
     Note: you are not required to use the entire field name only part of it
   */
   this.findField = function (lable) {
+    
+    console.log('Elements: ' + elements);
+    
     this.lable = lable;
     this.field = null;
 
