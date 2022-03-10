@@ -74,6 +74,7 @@ function handler(){
     console.log('Value: '+getValueFromDropDown(dropdown1));
     
    $(dropdown1).change(function() {
+      console.log('change detected on dropdown 1');
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
   $(field1).find('vv-optional-text').css("display","none");
