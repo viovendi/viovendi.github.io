@@ -51,13 +51,13 @@ function handler(){
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
     $(field2).hide()
     
-    var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
+    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
     console.log(dropdown1);
-    var dropdown2 = findDropDownByLabel('Position im Unternehmen');
+    var dropdown2 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen');
     console.log(dropdown2);
-    var dropdown3 = findDropDownByLabel('Funktion im Unternehmen');
+    var dropdown3 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen');
     console.log(dropdown3);
-    var dropdown4 = findDropDownByLabel('Funktion im Unternehmen?');
+    var dropdown4 = $$('.customization2_attendee_further-data_custom-question').findField('Funktion im Unternehmen?');
     console.log(dropdown4);
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
@@ -238,7 +238,7 @@ function disableWhenEmpty(field){
 */
 var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
 $(field).hide()
-var dropdown =  findDropDownByLabel('Welcher Branche');
+var dropdown =  $$('.customization2_attendee_further-data_custom-question').findField('Welcher Branche');
     
    $(dropdown).change(function() {
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
