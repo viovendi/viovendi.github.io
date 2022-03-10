@@ -50,9 +50,12 @@ function handler(){
     }
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
+   console.log('field: '+field1);
     $(field1).hide()
     
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
+      console.log('field: '+field2);
+
     $(field2).hide()
     
     var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
