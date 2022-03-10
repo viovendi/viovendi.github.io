@@ -12,9 +12,7 @@ function getValueTagFromDropDown(dropDown){
 function findDropDownByLabel(label){
    var found = null;
    $(".vv-selection-input").each(function(){
-      console.log('I')
       const labelText = $(this).find(".vv-control-label").text();
-      console.log(labelText.trim()+ ' : '+label.trim());
       if(labelText.trim()==label.trim()){
          console.log('found label: '+label.trim());
           found =this;
@@ -59,12 +57,12 @@ function handler(){
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
    console.log('field: '+field1);
-   // $(field1).hide()
+    $(field1).hide()
     
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
       console.log('field: '+field2);
 
-   // $(field2).hide()
+    $(field2).hide()
     
     var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
     console.log('Dropdown 1 :'+dropdown1);
@@ -77,13 +75,13 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
-    this.observer1 = new MutationObserver( function(mutations) {
+    const observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
     }.bind(this));
    
    
-   this.observer1.observe($(dropdown1).get(0), {characterData: true, childList: true});
-
+   observer1.observe($(dropdown1).get(0), {characterData: true, childList: true});
+/*
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
@@ -136,7 +134,8 @@ if($(this).find('option').filter(':selected').text().trim() == 'andere'){
 }
    }
                      );
-    
+    */
+   
 function disableWhenEmpty(field){
     
    
