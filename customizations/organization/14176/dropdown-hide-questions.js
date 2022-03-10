@@ -55,14 +55,14 @@ function handler(){
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
     $(field2).hide()
     
-    var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
-    console.log(dropdown1);
+    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Position im Unternehmen?');
+    console.log('Dropdown 1 :'+dropdown1);
     var dropdown2 = findDropDownByLabel('Position im Unternehmen');
-    console.log(dropdown2);
+    console.log('Dropdown 2 :'+dropdown2);
     var dropdown3 = findDropDownByLabel('Funktion im Unternehmen');
-    console.log(dropdown3);
+    console.log('Dropdown 3 :'+dropdown3);
     var dropdown4 = findDropDownByLabel('Funktion im Unternehmen?');
-    console.log(dropdown4);
+    console.log('Dropdown 4 :'+dropdown4);
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
     
