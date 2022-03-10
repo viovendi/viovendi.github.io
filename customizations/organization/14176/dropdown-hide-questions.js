@@ -85,7 +85,7 @@ function handler(){
       console.log($(getValueTagFromDropDown($(dropdown1))).get(0));
 
    
-   observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0));
+   observer1.observe($(getValueTagFromDropDown($(dropdown1))).get(0),{characterData: true, childList: true});
 /*
    $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
