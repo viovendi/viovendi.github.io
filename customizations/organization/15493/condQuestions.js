@@ -17,6 +17,14 @@ observer.observe(document, {
 });
 
 function handler() {
+    
+    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
+    
+    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
+        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
+        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
+    };
+    
     var styles = `
         .error-state{
             border-color: #ea674d!important;
