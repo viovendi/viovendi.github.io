@@ -5,6 +5,10 @@ function getValueFromDropDown(dropDown){
   
    return value;
 }
+function getValueTagFromDropDown(dropDown){
+   const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
+   return valueText;
+}
 function findDropDownByLabel(label){
    var found = null;
    $(".vv-selection-input").each(function(){
@@ -73,7 +77,7 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
     
-   $(dropdown1).change(function() {
+   $(getValueTagFromDropDown($(dropdown1))).change(function() {
       console.log('change detected on dropdown 1');
 if($(this).find('option').filter(':selected').text().trim() == 'andere'){
   $(field1).show()
