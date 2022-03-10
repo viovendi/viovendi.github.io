@@ -2,7 +2,7 @@ console.log('github code loaded customization 13844/aboticket.js');
 if(checkURL("92849")){
     setTimeout(() => {
          hideOverDueTickets();
-         hideNumberedAboTickets();
+       //  hideNumberedAboTickets();
          addListenerToAboTicket();
          addListenerToNumberTickets();
                      }, 200);
@@ -32,7 +32,7 @@ function hideOverDueTickets(){
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
-           $(this).find("select").on('change', function () {
+            $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
                 console.log('change detected on AboNumberTicket');
             });
         }
@@ -43,8 +43,8 @@ function addListenerToAboTicket() {
     $('.event-category').each(function () {
         if (isAboticket($(this))) {
             setNumberedAboTickets($(this).find("select").val());
-            $(this).find("select").on('change', function () {
-                setNumberedAboTickets($(this).val());
+            $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+                setNumberedAboTickets($(this).text().trim());
             });
         }
     });
@@ -53,8 +53,10 @@ function setNumberedAboTickets(amount) {
     console.log(amount)
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
-           $(this).find("select").val(amount);
-            $(this).find("select").get(0).dispatchEvent(new Event('change'))
+            $(this).find(".vv-selection-input__control").click();
+            
+            $(this).find(".vv-selection-input__control").find(el => el.textContent.includes('Prof.')).click()
+
           /*  $(this).find("select option[value="+amount+"]").click();
            $(this).find("select").change();
             var evt = document.createEvent("HTMLEvents");
