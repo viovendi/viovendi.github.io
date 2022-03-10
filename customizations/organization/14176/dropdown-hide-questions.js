@@ -75,12 +75,13 @@ function handler(){
     
     console.log('Value: '+getValueFromDropDown(dropdown1));
    
-   $(document).on("DOMSubtreeModified", "#test", function () {
-    alert("Paragraph changed");
-});
+   $(document).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+    console.log('dropdown1 changed');
+   });
     var observer1 = new MutationObserver( function(mutations) {
         console.log('dropdown1 changed');
     });
+   dropdown1
    
    /*
    console.log(dropdown1);
