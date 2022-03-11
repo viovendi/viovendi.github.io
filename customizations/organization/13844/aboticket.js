@@ -60,7 +60,6 @@ function setNumberedAboTickets(amount) {
 	});
         await  $(this).find(".vv-single-select-option").find(el => 
             el.textContent.trim()==amount).click();
-        );
   
         return
     }
