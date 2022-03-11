@@ -222,6 +222,8 @@ function handler() {
 
 function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis');
+                console.log("inputOfField: "+inputOfField)
+
         if(inputOfField!=undefined){
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
             console.log("change detected: "+$(this).text())
