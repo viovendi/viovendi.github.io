@@ -227,7 +227,7 @@ function disableWhenEmpty(field) {
         if(inputOfField!=undefined){
             $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
             if (!$(inputOfField).next().hasClass("error-message")) {
-                $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
+                $("<div class='error-message'> Please complete </div>").insertAfter( $(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
             }
             
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
@@ -238,7 +238,7 @@ function disableWhenEmpty(field) {
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
 
             } else {
-                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
                 $(field).find('.error-message').hide();
              //   $(".error-state").each(function(){console.log($(this))});
                 if($(".error-state").length==0)
