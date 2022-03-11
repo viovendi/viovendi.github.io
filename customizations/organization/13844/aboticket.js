@@ -54,12 +54,13 @@ function setNumberedAboTickets(amount) {
     const updateTicket = async ticket=>{
         
         await  $(this).find(".vv-selection-input__control").click();
-	await  $(this).find(".vv-single-select-option").each(el => {
+		console.log(ticket);
+	    await  $(this).find(".vv-single-select-option").each(el => {
             console.log(el.text());
 	    console.log(el);
 	});
-        await  $(this).find(".vv-single-select-option").find(el => 
-            el.textContent.trim()==amount).click();
+     //   await  $(this).find(".vv-single-select-option").find(el => 
+     //       el.textContent.trim()==amount).click();
   
         return
     }
