@@ -205,6 +205,7 @@ function radioButtonClicked(radioButton) {
 function addListenerToTickets() {
     $(".event-category").each(function () {
         console.log('found categorie');
+      // This no longer works since last Update !!!!!!!!!!!!!!!!!!!!!! 
         $(this).find("select").on('change', function () {
           console.log("change count wrap");
             // resetOtherTicket($(this));
