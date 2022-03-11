@@ -47,30 +47,31 @@ function addListenerToAboTicket() {
             });
         }
     });
-}
+}	
 function setNumberedAboTickets(amount) {
     console.log(amount);
-    
+    	
     const updateTicket = async ticket=>{
         
         await  $(ticket).find(".vv-selection-input__control").click();
-	console.log(ticket);
+	console.log($(ticket).find(".vv-single-select-option"));
+	    
 	await  $(ticket).find(".vv-single-select-option").each(el => {
             console.log(el.text());
 	    console.log(el);
 	});
      //   await  $(this).find(".vv-single-select-option").find(el => 
      //       el.textContent.trim()==amount).click();
-  
+  	
         return
-    }
+    }	
     const run = async (tickets) =>{
      await tickets.get().reduce(async (memo, ticket) => {
 		    await memo;
             if (isAboticketNumbered($(ticket))) 
 		    await updateTicket(ticket);
 	    }, undefined); 
-    }
+    }	
 
     run($('.event-category'));
     
