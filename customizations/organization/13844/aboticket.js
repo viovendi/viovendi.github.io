@@ -26,7 +26,6 @@ function hideOverDueTickets(){
             else console.log(d.toString()+' ist noch nicht vorbei');
         }
     });
-    
 }
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
