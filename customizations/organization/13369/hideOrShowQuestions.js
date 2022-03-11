@@ -60,7 +60,7 @@ function handler() {
     var dropdown2 = $('.customization2_attendee_further-data_custom-question-4');  
    // console.log(field1);
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-        if ($(this).text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
+        if ($(this).text().trim() == 'Zug' || $(this).text().trim() == 'Flugzeug') {
             $(field1).show()
             disableWhenEmpty(field1)
             $(field1).find('vv-optional-text').css("display", "none");
@@ -97,7 +97,7 @@ function disableWhenEmpty(field) {
 
         if(inputOfField!=undefined){
             $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
-            if (!$(inputOfField).next().hasClass("error-message")) {
+            if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
                 $("<div class='error-message'> Please complete </div>").insertAfter( $(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
             }
             
