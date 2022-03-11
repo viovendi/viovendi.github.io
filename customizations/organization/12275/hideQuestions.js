@@ -224,7 +224,7 @@ function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis');
         if(inputOfField!=undefined){
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
-           if ($(this).text().trim().length == 0ﬂ) {
+           if ($(this).text().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
