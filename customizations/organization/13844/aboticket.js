@@ -2,7 +2,7 @@ console.log('github code loaded customization 13844/aboticket.js');
 if(checkURL("92849")){
     	setTimeout(() => {
     	hideOverDueTickets();
-       //  hideNumberedAboTickets();
+        hideNumberedAboTickets();
         addListenerToAboTicket();
         addListenerToNumberTickets();
                      }, 200);
