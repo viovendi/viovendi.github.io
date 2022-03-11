@@ -64,7 +64,7 @@ function setNumberedAboTickets(amount) {
         return
     }
     const run = async (tickets) =>{
-     await tickets.reduce(async (memo, ticket) => {
+     await tickets.get().reduce(async (memo, ticket) => {
 		    await memo;
             if (isAboticketNumbered($(ticket))) 
 		    await updateTemplate(ticket);
