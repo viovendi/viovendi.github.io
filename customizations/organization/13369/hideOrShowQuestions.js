@@ -59,8 +59,8 @@ function handler() {
     //Hotelzimmer ja nein
     var dropdown2 = $('.customization2_attendee_further-data_custom-question-4');  
    // console.log(field1);
-    $(dropdown1).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
+    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+        if ($(this).text().trim() == 'Zug' || $(this).find('option').filter(':selected').text().trim() == 'Flugzeug') {
             $(field1).show()
             disableWhenEmpty(field1)
             $(field1).find('vv-optional-text').css("display", "none");
@@ -72,8 +72,8 @@ function handler() {
     }
     );
 
-    $(dropdown2).change(function () {
-        if ($(this).find('option').filter(':selected').text().trim() == 'Ja') {
+    $(dropdown2).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+        if ($(this).text().trim() == 'Ja') {
             $(field2).show()
             disableWhenEmpty(field2)
             $(field2).find('vv-optional-text').css("display", "none");
