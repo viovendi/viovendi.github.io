@@ -6,7 +6,6 @@ if(checkURL("92849")){
          addListenerToAboTicket();
          addListenerToNumberTickets();
                      }, 200);
-    
 }
 
 function checkURL(word){
@@ -50,13 +49,29 @@ function addListenerToAboTicket() {
     });
 }
 function setNumberedAboTickets(amount) {
-    console.log(amount)
-    $('.event-category').each(function () {
-        if (isAboticketNumbered($(this))) {
+    console.log(amount);
+    
+    const updateTicket = async ticket=>{
+        
+        await  $(this).find(".vv-selection-input__control").click();
+        await  $(this).find(".vv-single-select-option").find(el => {
+            console.log(el.textContent);
+            console.log(el);
+            el.textContent.trim()==amount).click();
+        }
+  
+        return
+    }
+    const run = async (tickets) =>{
+     await templates.reduce(async (memo, ticket) => {
+		    await memo;
+            if (isAboticketNumbered($(ticket))) 
+		    await updateTemplate(ticket);
+	    }, undefined); 
+    }
 
-            $(this).find(".vv-selection-input__control").click();
-            $(this).find(".vv-single-select-option").find(el => el.textContent.includes('Prof.')).click()
-
+    run($('.event-category'));
+    
           /*  $(this).find("select option[value="+amount+"]").click();
            $(this).find("select").change();
             var evt = document.createEvent("HTMLEvents");
@@ -68,8 +83,6 @@ function setNumberedAboTickets(amount) {
             // $('.event-category__ticket-count').focus();
             // $('.event-category__ticket-count').trigger('focusout');
             
-        }
-    });
 }
 function addCode(input) {
   let event;
