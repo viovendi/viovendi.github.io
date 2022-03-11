@@ -12,6 +12,7 @@ function checkURL(word){
     var path = window.location.pathname;
     return path.includes(word);
 }
+
 function hideOverDueTickets(){
     $('.event-category').each(function () {
         var description = $(this).find(".customization-category-description").text();
@@ -27,6 +28,7 @@ function hideOverDueTickets(){
         }
     });
 }
+
 function addListenerToNumberTickets() {
     $('.event-category').each(function () {
         if (isAboticketNumbered($(this))) {
@@ -47,16 +49,18 @@ function addListenerToAboTicket() {
         }
     });
 }	
+
 function setNumberedAboTickets(amount) {
+
     console.log(amount);
-    	
+
     const updateTicket = async ticket=>{
         
         await  $(ticket).find(".vv-selection-input__control").click();
 	console.log($(ticket).find(".vv-single-select-option"));
 	    
 	await  $(ticket).find(".vv-single-select-option").each(el => {
-            console.log(el.text());
+            //console.log(el.text());
 	    console.log(el);
 	});
      //   await  $(this).find(".vv-single-select-option").find(el => 
