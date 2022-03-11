@@ -1,10 +1,10 @@
 console.log('github code loaded customization 13844/aboticket.js');
 if(checkURL("92849")){
-    setTimeout(() => {
-         hideOverDueTickets();
+    	setTimeout(() => {
+    	hideOverDueTickets();
        //  hideNumberedAboTickets();
-         addListenerToAboTicket();
-         addListenerToNumberTickets();
+        addListenerToAboTicket();
+        addListenerToNumberTickets();
                      }, 200);
 }
 
@@ -53,9 +53,9 @@ function setNumberedAboTickets(amount) {
     
     const updateTicket = async ticket=>{
         
-        await  $(this).find(".vv-selection-input__control").click();
-		console.log(ticket);
-	    await  $(this).find(".vv-single-select-option").each(el => {
+        await  $(ticket).find(".vv-selection-input__control").click();
+	console.log(ticket);
+	await  $(ticket).find(".vv-single-select-option").each(el => {
             console.log(el.text());
 	    console.log(el);
 	});
