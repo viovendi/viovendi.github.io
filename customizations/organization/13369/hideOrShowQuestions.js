@@ -92,16 +92,59 @@ setup();
 handler();
 
 function disableWhenEmpty(field) {
+        var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
+                console.log("inputOfField: "+inputOfField)
 
-        if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').hasClass("error-state")) {
-            $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+        if(inputOfField!=undefined){
+            $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+            if (!$(inputOfField).next().hasClass("error-message")) {
+                $("<div class='error-message'> Please complete </div>").insertAfter( $(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+            }
+            
+        $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+            console.log("change detected: "+$(this).text())
+           if ($(this).text().trim() == "Please select") {
+                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+                $(field).find('.error-message').show();
+                $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+            } else {
+                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
+                $(field).find('.error-message').hide();
+             //   $(".error-state").each(function(){console.log($(this))});
+                if($(".error-state").length==0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            }
+        });
+            
+        return;
         }
+    
+         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
 
-        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
-        $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').on('input change', function () {
-
+          if(typeof $(inputOfField).get(0) === 'undefined'){
+               //         console.log('is date')
+            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
+        }else{
+            if (!$(inputOfField).next().hasClass("error-message")) {
+                $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
+            }
+        }
+        
+       
+        
+        $(inputOfField).addClass('error-state');
+        
+        $(inputOfField).on("focusout blur", function () {
+            myTimeout = setTimeout(function(){
+            $(inputOfField).get(0).dispatchEvent(new Event('change'));
+          $(inputOfField).get(0).click();
+           //     console.log('fired click and change')
+            }, 50);
+        });
+    
+        $(inputOfField).on("click change input", function (event) {
+            
             if ($(this).val().trim().length == 0) {
                 $(this).addClass('error-state');
                 $(field).find('.error-message').show();
@@ -110,9 +153,14 @@ function disableWhenEmpty(field) {
             } else {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
-                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+             //   $(".error-state").each(function(){console.log($(this))});
+                if($(".error-state").length==0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
+    
+       
+       
     }
 
 
