@@ -59,11 +59,8 @@ function setNumberedAboTickets(amount) {
         await  $(ticket).find(".vv-selection-input__control").click();
 	console.log($(ticket).find(".vv-single-select-option"));
 	    
-	await  $(ticket).find(".vv-single-select-option").each(el => {
-            //console.log(el.text());
-	    console.log(el==amount);
-		if(el==amount) el.click();
-	});
+	await  $(ticket).find(".vv-single-select-option").filter(el => el==amount).click();
+        
      //   await  $(this).find(".vv-single-select-option").find(el => 
      //       el.textContent.trim()==amount).click();
   	
