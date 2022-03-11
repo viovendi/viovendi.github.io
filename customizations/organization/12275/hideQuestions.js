@@ -221,7 +221,7 @@ function handler() {
 }
 
 function disableWhenEmpty(field) {
-        var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis');
+        var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
                 console.log("inputOfField: "+inputOfField)
 
         if(inputOfField!=undefined){
