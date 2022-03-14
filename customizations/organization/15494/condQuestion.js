@@ -46,7 +46,7 @@ function handler() {
     var field1 = findDropDownByLabel('Ist eine Verpflegung für den/die Fahrer:in gewünscht? (optional)');
     $(field1).hide()
 
-    var dropdown1 = findDropDownByLabel.findField('Kommen Sie mit einem(r) Fahrer(in)?');
+    var dropdown1 = findDropDownByLabel('Kommen Sie mit einem(r) Fahrer(in)?');
     
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'Ja') {
