@@ -1,5 +1,18 @@
 // Funktion to show and hide custom question
 
+function findDropDownByLabel(label) {
+    var found = null;
+    $(".vv-selection-input").each(function () {
+        const labelText = $(this).find(".vv-control-label").text().replace(/\s+/g, ' ');
+
+        if (labelText.trim() == label.trim()) {
+            console.log('found label: ' + label.trim());
+            found = this;
+        }
+    });
+    return found;
+};
+
 function handler() {
     var styles = `
         .error-state{
@@ -30,10 +43,10 @@ function handler() {
         console.log('style added');
     }
 
-    var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Ist eine Verpflegung für den/die Fahrer:in gewünscht? (optional)');
+    var field1 = findDropDownByLabel('Ist eine Verpflegung für den/die Fahrer:in gewünscht? (optional)');
     $(field1).hide()
 
-    var dropdown1 = $$('.customization2_attendee_further-data_custom-question').findField('Kommen Sie mit einem(r) Fahrer(in)?');
+    var dropdown1 = findDropDownByLabel.findField('Kommen Sie mit einem(r) Fahrer(in)?');
     
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'Ja') {
