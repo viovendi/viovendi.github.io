@@ -207,6 +207,34 @@ customTerms();
 addWeitereAngabenTeilnehmerHeader();
 editBookingPortal();
 
+const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+    
+        if ($(page2).is(':visible')) {
+            editBookingPortal();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+    const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+
+  
+        if (!$(page2).is(':visible')) {
+          console.log('page 2 not visible')
+         // $('.customization-button-next').text('CONTINUER');
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
 
 
 
