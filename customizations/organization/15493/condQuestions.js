@@ -1,7 +1,7 @@
 function findDropDownByLabel(label){
    var found = null;
    $(".vv-selection-input").each(function(){
-      const labelText = $(this).find(".vv-control-label").text();
+      const labelText = $(this).find(".vv-control-label").text().trim();
       console.log("current label: "+labelText)
       if(labelText.trim()==label.trim()){
          console.log('found label: '+label.trim());
