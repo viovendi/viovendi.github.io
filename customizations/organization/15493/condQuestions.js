@@ -71,7 +71,7 @@ function handler() {
     $(field2).hide()
 
     var dropdown1 = findDropDownByLabel('Werk / Standort');
-    
+    console.log(dropdown1);
 
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
         if ($(this).text().trim() == 'PM3') {
