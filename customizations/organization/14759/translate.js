@@ -163,6 +163,8 @@ setInterval(function () {
         var text = $(this).text();
         $(this).text(text.replace("Copy details from attendee 1", "Kopiera information från deltagare 1"));
     });
+    
+    
 
     //Cancel
     var canceltext = $(".customization2_attendee_edit-action_cancel .vv-button-text-blue").text();
@@ -189,6 +191,11 @@ setInterval(function () {
         var text = $(this).text();
         $(this).text(text.replace('Use details from attendee', 'Samma uppgifter som deltagare'));
     });
+    
+    document.querySelectorAll(".vv-selection-input__value").forEach(el => {
+        if (el.innerText === 'Use details from attendee 1') {
+            el.innerText = 'Samma uppgifter som deltagare 1'}
+        });
 
     $(".customization2_booker_contact-data_booker-attendee-relation_different-attendee .vv-single-select-option").text('Fyll i alternativa uppgifter');
 
