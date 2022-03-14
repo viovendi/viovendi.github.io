@@ -1,22 +1,127 @@
-function findDropDownByLabel(label){
-   var found = null;
-   $(".vv-selection-input").each(function(){
-      const labelText = $(this).find(".vv-control-label").text().replace(/\s+/g, ' ');
-      
-      if(labelText.trim()==label.trim()){
-         console.log('found label: '+label.trim());
-          found =this;
-      }
-   });
-   return found;
-}
+function findDropDownByLabel(label) {
+    var found = null;
+    $(".vv-selection-input").each(function () {
+        const labelText = $(this).find(".vv-control-label").text().replace(/\s+/g, ' ');
+
+        if (labelText.trim() == label.trim()) {
+            console.log('found label: ' + label.trim());
+            found = this;
+        }
+    });
+    return found;
+};
+
+function disableWhenEmpty(field) {
+    var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
+
+    if (inputOfField != undefined) {
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+        if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
+            $("<div class='error-message'> Please complete </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+        }
+
+        $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+
+            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
+                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+                $(field).find('.error-message').show();
+                $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+            } else {
+                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
+                $(field).find('.error-message').hide();
+                //   $(".error-state").each(function(){console.log($(this))});
+                if ($(".error-state").length == 0)
+                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            }
+        });
+
+        return;
+    }
+
+    inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');
+
+    if (typeof $(inputOfField).get(0) === 'undefined') {
+        //         console.log('is date')
+        inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
+    } else {
+        if (!$(inputOfField).next().hasClass("error-message")) {
+            $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
+        }
+    }
+    $(inputOfField).addClass('error-state');
+
+    $(inputOfField).on("focusout blur", function () {
+        myTimeout = setTimeout(function () {
+            $(inputOfField).get(0).dispatchEvent(new Event('change'));
+            $(inputOfField).get(0).click();
+            //     console.log('fired click and change')
+        }, 50);
+    });
+
+    $(inputOfField).on("click change input", function (event) {
+
+        if ($(this).val().trim().length == 0) {
+            $(this).addClass('error-state');
+            $(field).find('.error-message').show();
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+        } else {
+            $(this).removeClass('error-state');
+            $(field).find('.error-message').hide();
+            //   $(".error-state").each(function(){console.log($(this))});
+            if ($(".error-state").length == 0)
+                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+        }
+    });
+};
+
+function customTerms() {
+    if (!$('.custom_terms_checkbox').length) {
+        console.log("Terms added");
+        var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
+        $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
+        $('.custom_terms_checkbox').append(customBookingTerms);
+        $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+    }
+};
+
+function addHotelDescription() {
+    if (!$('.hotelText').length) {
+        console.log("Hotel description added");
+        $(findDropDownByLabel('Ich benötige einen Hoteltransfer')).prepend('<div class="hotelText" style="margin-bottom:10px"><p style="font-size:1.2rem; font-weight: 600; color: #343a3f;">Weitere Informationen</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den Partnerhotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
+    }
+};
+
+function addEssenswahl() {
+    if (!$('.headerEssenswahl').length) {
+        console.log("Essenswahl added");
+        $(findDropDownByLabel('Ich wähle zum intergalaktischen Dinner')).prepend('<div class="headerEssenwahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den Partnerhotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
+    }
+};
+
+function addWeitereAngabenTeilnehmerHeader() {
+    if (!$('.weitereAngabenTeilnehmer').length) {
+        console.log("Weitere Angaben added");
+        $(findDropDownByLabel('Werk / Standort')).prepend('<div class="weitereAngabenTeilnehmer" style="margin-bottom:10px; margin-top: 14px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
+    }
+};
+
+function editBookingPortal() {
+    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
+
+    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
+        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
+        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
+    };
+};
 
 const observer = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
     if ($(page4).is(':visible')) {
         console.log("page 4 visible");
-        var ticketID=$('.notice__booking-id span').text()
-        $('.notice__booking-id').text('Registrierungsnummer: '+ticketID); 
+        var ticketID = $('.notice__booking-id span').text()
+        $('.notice__booking-id').text('Registrierungsnummer: ' + ticketID);
         obs.disconnect();
         return;
     }
@@ -28,30 +133,23 @@ observer.observe(document, {
 });
 
 function handler() {
-    
-    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
-    
-    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
-        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
-        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
-    };
-    
+
     var styles = `
-        .error-state{
-            border-color: #ea674d!important;
-            background-color: #fff1ef!important;
-           
-        }
-        .error-message{
-            display: block;
-            color: #ea674d;
-            font-size: 12px;
-            line-height: 1;
-            margin-bottom: 10px;
-            left: 0;
-            top: 3px;
-        }
-    `
+         .error-state{
+             border-color: #ea674d!important;
+             background-color: #fff1ef!important;
+            
+         }
+         .error-message{
+             display: block;
+             color: #ea674d;
+             font-size: 12px;
+             line-height: 1;
+             margin-bottom: 10px;
+             left: 0;
+             top: 3px;
+         }
+     `
     var styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = styles;
@@ -72,9 +170,9 @@ function handler() {
     $(field2).hide()
 
     var dropdown1 = findDropDownByLabel('Werk / Standort');
-    
 
-    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
+
+    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'PM3') {
             $(field1).show();
             $(field2).hide();
@@ -93,105 +191,13 @@ function handler() {
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
         }
     });
-    
+
 
 }
 
-function disableWhenEmpty(field) {
-        var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
 
-        if(inputOfField!=undefined){
-            $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
-            if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
-                $("<div class='error-message'> Please complete </div>").insertAfter( $(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
-            }
-            
-        $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
-            
-           if ($(this).text().trim() == "Please select"||$(this).text().trim() == "Bitte auswählen") {
-                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
-                $(field).find('.error-message').show();
-                $('.customization2_attendee_edit-action_save').prop("disabled", true);
 
-            } else {
-                $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
-                $(field).find('.error-message').hide();
-             //   $(".error-state").each(function(){console.log($(this))});
-                if($(".error-state").length==0)
-                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
-            }
-        });
-            
-        return;
-        }
-    
-         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_input');   
 
-          if(typeof $(inputOfField).get(0) === 'undefined'){
-               //         console.log('is date')
-            inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
-        }else{
-            if (!$(inputOfField).next().hasClass("error-message")) {
-                $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
-            }
-        }
-        $(inputOfField).addClass('error-state');
-        
-        $(inputOfField).on("focusout blur", function () {
-            myTimeout = setTimeout(function(){
-            $(inputOfField).get(0).dispatchEvent(new Event('change'));
-          $(inputOfField).get(0).click();
-           //     console.log('fired click and change')
-            }, 50);
-        });
-    
-        $(inputOfField).on("click change input", function (event) {
-            
-            if ($(this).val().trim().length == 0) {
-                $(this).addClass('error-state');
-                $(field).find('.error-message').show();
-                $('.customization2_attendee_edit-action_save').prop("disabled", true);
-
-            } else {
-                $(this).removeClass('error-state');
-                $(field).find('.error-message').hide();
-             //   $(".error-state").each(function(){console.log($(this))});
-                if($(".error-state").length==0)
-                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
-            }
-        }); 
-    }
-
-function customTerms () {
-    if(!$('.custom_terms_checkbox').length){
-        console.log("Terms added");
-        var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
-        $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
-        $('.custom_terms_checkbox').append(customBookingTerms);
-        $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
-    }
-}
-
-function addHotelDescription () {
-    if(!$('.hotelText').length){
-        console.log("Hotel description added");
-        $(findDropDownByLabel('Ich benötige einen Hoteltransfer')).prepend('<div class="hotelText" style="margin-bottom:10px"><p style="font-size:1.2rem; font-weight: 600; color: #343a3f;">Weitere Informationen</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den Partnerhotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
-    }
-}
-
-function addEssenswahl () {
-    if(!$('.headerEssenswahl').length){
-        console.log("Essenswahl added");
-        $($$('.customization2_attendee_further-data_custom-question').findField('Ich wähle zum intergalaktischen Dinner')).prepend('<div class="headerEssenwahl" style="margin-bottom:10px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hotel</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Wir haben für Sie Zimmerkontingente in Hotels der Region optioniert, die bis XX.XX.XX abrufbar sind. Von diesen Partnerhotels werden auch Bustransfers zur Veranstaltungslocation angeboten. Bitte beachten Sie, dass die Hotelkosten und Extras von Ihnen getragen werden. In Ihrer Anmeldebestätigung senden wir Ihnen den Link zu den Partnerhotels.</p><br><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Hoteltransfer</p><p style="font-size:.875rem; line-height: 1.37rem; font-weight: 400; color: #343a3f;">Bitte beachten Sie, dass wir einen Hoteltransfer nur von unseren Partnerhotels anbieten können.</p> </div>');
-    }
-}
-
-function addWeitereAngabenTeilnehmerHeader () {
-    if(!$('.weitereAngabenTeilnehmer').length){
-        console.log("Weitere Angaben added");
-        $(findDropDownByLabel('Werk / Standort')).prepend('<div class="weitereAngabenTeilnehmer" style="margin-bottom:10px; margin-top: 14px"><p style="font-size:1rem; font-weight: 600; color: #343a3f;">Weitere Angaben</p></div>');
-    }
-}
 
 
 
@@ -199,6 +205,7 @@ handler();
 addHotelDescription();
 customTerms();
 addWeitereAngabenTeilnehmerHeader();
+editBookingPortal();
 
 
 
@@ -211,7 +218,8 @@ var insertionListener = function (event) {
         addHotelDescription();
         customTerms();
         addWeitereAngabenTeilnehmerHeader();
-   
+        editBookingPortal();
+
 
 
         $('customization2_attendee_view-action_edit').on("click", function () {
