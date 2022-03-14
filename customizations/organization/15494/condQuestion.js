@@ -6,7 +6,6 @@ function findDropDownByLabel(label) {
         const labelText = $(this).find(".vv-control-label").text().replace(/\s+/g, ' ');
 
         if (labelText.trim() == label.trim()) {
-            console.log('found label: ' + label.trim());
             found = this;
         }
     });
@@ -63,7 +62,6 @@ function handler() {
 
     function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
-                console.log("inputOfField: "+inputOfField)
 
         if(inputOfField!=undefined){
             $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
@@ -72,7 +70,6 @@ function handler() {
             }
             
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
-            console.log("change detected: "+$(this).text())
            if ($(this).text().trim() == "Please select"||$(this).text().trim() == "Bitte auswählen") {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
