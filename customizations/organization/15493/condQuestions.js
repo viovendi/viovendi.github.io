@@ -66,10 +66,10 @@ function handler() {
 
     var field1 = findDropDownByLabel('Ich benötige ein Hotelzimmer (optional)');
     $(field1).hide()
-
+console.log(field1);
     var field2 = findDropDownByLabel('Ich möchte zu folgendem Datum anreisen (optional)');
     $(field2).hide()
-
+console.log(field2);
     var dropdown1 = findDropDownByLabel('Werk / Standort');
     console.log(dropdown1);
 
