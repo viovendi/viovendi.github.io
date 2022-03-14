@@ -202,7 +202,8 @@ setInterval(function () {
         let selectContainer = e.target.closest('.vv-selection');
         let valueElement = selectContainer.getElementsByClassName('vv-selection-input__value')[0];
         valueElement.innerText = e.target.textContent.trim().replace('<br>', '');
-    };
+    }
+    });
 
     $(".customization2_booker_contact-data_booker-attendee-relation_different-attendee .vv-single-select-option").text('Fyll i alternativa uppgifter');
 
