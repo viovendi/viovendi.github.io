@@ -196,6 +196,13 @@ setInterval(function () {
         if (el.innerText === 'Use details from attendee 1') {
             el.innerText = 'Samma uppgifter som deltagare 1'}
         });
+    
+    addEventListener('click', e => {
+    if (e.target.classList.contains('vv-single-select-option')) {
+        let selectContainer = e.target.closest('.vv-selection');
+        let valueElement = selectContainer.getElementsByClassName('vv-selection-input__value')[0];
+        valueElement.innerText = e.target.textContent.trim().replace('<br>', '');
+    };
 
     $(".customization2_booker_contact-data_booker-attendee-relation_different-attendee .vv-single-select-option").text('Fyll i alternativa uppgifter');
 
