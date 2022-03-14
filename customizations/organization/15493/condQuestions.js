@@ -2,7 +2,7 @@ function findDropDownByLabel(label){
    var found = null;
    $(".vv-selection-input").each(function(){
       const labelText = $(this).find(".vv-control-label").text().replace(/\s+/g, ' ');
-      console.log("current label: "+labelText)
+      
       if(labelText.trim()==label.trim()){
          console.log('found label: '+label.trim());
           found =this;
@@ -67,12 +67,12 @@ function handler() {
 
     var field1 = findDropDownByLabel('Ich benötige ein Hotelzimmer (optional)');
     $(field1).hide()
-console.log(field1);
+
     var field2 = findDropDownByLabel('Ich möchte zu folgendem Datum anreisen (optional)');
     $(field2).hide()
-console.log(field2);
+
     var dropdown1 = findDropDownByLabel('Werk / Standort');
-    console.log(dropdown1);
+    
 
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
         if ($(this).text().trim() == 'PM3') {
@@ -99,7 +99,6 @@ console.log(field2);
 
 function disableWhenEmpty(field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
-                console.log("inputOfField: "+inputOfField)
 
         if(inputOfField!=undefined){
             $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
@@ -108,7 +107,7 @@ function disableWhenEmpty(field) {
             }
             
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
-            console.log("change detected: "+$(this).text())
+            
            if ($(this).text().trim() == "Please select"||$(this).text().trim() == "Bitte auswählen") {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
