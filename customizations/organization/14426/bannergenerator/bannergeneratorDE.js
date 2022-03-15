@@ -11,11 +11,11 @@ head.appendChild(script);
 
 const imageNameAndURL = [
   ['vertikal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_160x600_DE.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_180x60_DE.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/email.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_468x60_DE.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_180x60_DE.png'],
   ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/instagrampost.png'],
   ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/instagramstory.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_468x60_DE.png']
+  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/facebook.png']
 ];
 
 function setTexts() {
@@ -27,15 +27,15 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 25 - $('#halle_inp').val().length * 6, 43);
-        ctx.fillText($('#stand_inp').val(), 46, 43);
+        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 46);
+        ctx.fillText($('#stand_inp').val(), 420, 46);
     } else if (value == 'vertikal') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
 
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
+        ctx.fillText($('#halle_inp').val(), 25 - $('#halle_inp').val().length * 6, 43);
+        ctx.fillText($('#stand_inp').val(), 46, 43);
     } else if (value == 'instagrampost') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
