@@ -136,14 +136,18 @@ function addListenerToTickets() {
   
 }
 function resetOtherTicket(ticketBlock) {
-    $(".event-category").each(
-        function () {
+	
+     const run = async (tickets) =>{
+        await tickets.get().reduce(async (memo, ticket) => {
+	    await memo;
             if ($(this) != $(ticketBlock)) {
 		    console.log('updating ticket')
               updateTicket($(this));
             }
-        }
-    );
+	}, undefined); 
+    }	
+
+    run($('.event-category'));
 }
 
 
