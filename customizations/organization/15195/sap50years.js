@@ -142,6 +142,8 @@ function resetOtherTicket(ticketBlock) {
 	    console.log('.');
             console.log(ticket);	
 		console.log(ticketBlock.get(0));
+		console.log('____');
+		console.log(ticket != ticketBlock);
 		console.log('.');
             if (ticket != ticketBlock) {
 		console.log('updating ticket')
