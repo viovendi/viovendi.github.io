@@ -1,11 +1,5 @@
 console.log("github customization loaded");
 
-function getValueFromDropDown(dropDown){
-   const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
-   const value = $(valueText).text().trim();
-   return value;
-}
-
 async function updateTicket (ticket){ 
 	console.log('updating')
   await  $(ticket).find(".vv-selection-input__control").click();
@@ -133,8 +127,8 @@ function addListenerToTickets() {
      $('.event-category').each(function () {
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
 		    
-		    console.log('value input:'+$(this).text());
-                if(getValueFromDropDown($(this))!=0){
+		    console.log('value input:'+$(this).text().trim());
+                if($(this).text().trim()!=0){
                 resetOtherTicket($(this));
                 }
             });
