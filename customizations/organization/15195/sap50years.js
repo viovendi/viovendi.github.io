@@ -140,9 +140,9 @@ function resetOtherTicket(ticketBlock) {
      const run = async (tickets) =>{
         await tickets.get().reduce(async (memo, ticket) => {
 	    await memo;
-            if ($(this) != $(ticketBlock)) {
+            if ($(ticket) != $(ticketBlock)) {
 		console.log('updating ticket')
-              	await updateTicket($(this));
+              	await updateTicket($(ticket));
             }
 	}, undefined); 
     }	
