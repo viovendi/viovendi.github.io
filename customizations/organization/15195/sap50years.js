@@ -1,5 +1,19 @@
 console.log("github customization loaded");
 
+function getValueFromDropDown(dropDown){
+   const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
+   console.log(valueText);
+   const value = $(valueText).text().trim();
+   return value;
+}
+
+async function updateTicket (ticket){ 
+  await  $(ticket).find(".vv-selection-input__control").click();
+	console.log($(ticket).find(".vv-single-select-option"));
+	await  $(ticket).find(".vv-single-select-option").filter(el => el==0).click();
+  return
+}	
+
 async function makeRequest(options) {
   let result = null;
   try {
@@ -116,23 +130,20 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
 function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
-    $('.event-category').each(function () {
-        console.log('found categorie');
-       
-        $(this).find("select").on('change', function () {
-          console.log("change count wrap");
-            // resetOtherTicket($(this));
-        });
+     $('.event-category').each(function () {
+            $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+                if(getValueFromDropDown($(this))!=0){
+                resetOtherTicket($(this));
+                }
+            });
     });
   
 }
 function resetOtherTicket(ticketBlock) {
-    
     $(".event-category").each(
         function () {
             if ($(this) != $(ticketBlock)) {
-                $(this).find("select").val(0);
-                $(this).find("select").get(0).dispatchEvent(new Event('change'));
+              updateTicket($(this));
             }
         }
     );
