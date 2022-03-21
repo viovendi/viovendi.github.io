@@ -4,7 +4,7 @@ async function updateTicket (ticket){
 	console.log('updating')
   await  $(ticket).find(".vv-selection-input__control").click();
 	console.log($(ticket).find(".vv-single-select-option"));
-	await  $(ticket).find(".vv-single-select-option").filter(el => el.trim()=='0').click();
+	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
   return
 }	
 
