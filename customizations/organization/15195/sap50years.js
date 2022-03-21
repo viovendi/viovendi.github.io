@@ -83,7 +83,7 @@ function init(name) {
   hideStuff(name)
   setTimeout(function (){
                 addListenerToTickets()
-              }, 500);  
+              }, 300);  
 }
 
 init('customization2_attendee');
