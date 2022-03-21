@@ -141,7 +141,7 @@ function resetOtherTicket(ticketBlock) {
 	    await memo;
 	    console.log('.');
             console.log(ticket);	
-		console.log(ticketBlock);
+		console.log(ticketBlock.get(0));
 		console.log('.');
             if (ticket != ticketBlock) {
 		console.log('updating ticket')
