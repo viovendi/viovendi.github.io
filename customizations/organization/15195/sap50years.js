@@ -22,8 +22,6 @@ var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
 console.log(eventId);
 
-
-
 async function getTicketAmount(eventId) {
   const result = await makeRequest({
     url: `https://api.doo.net/v1/events/${eventId}`,
@@ -125,11 +123,12 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
      $('.event-category').each(function () {
+	     const ticket = this;
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
 		    
 		    console.log('value input:'+$(this).text().trim());
                 if($(this).text().trim()!=0){
-                resetOtherTicket($(this));
+                resetOtherTicket($(ticket));
                 }
             });
     });
