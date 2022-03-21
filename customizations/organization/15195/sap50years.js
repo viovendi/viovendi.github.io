@@ -81,6 +81,7 @@ function hideStuff(name){
 
 function init(name) {
   hideStuff(name)
+  addListenerToTickets()
 }
 
 init('customization2_attendee');
@@ -226,6 +227,6 @@ function resetOtherTicket(ticketBlock) {
     );
 }
 
-addListenerToTickets();
+
 
 
