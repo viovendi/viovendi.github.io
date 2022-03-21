@@ -97,7 +97,7 @@ function init(name) {
   hideStuff(name)
   setTimeout(function (){
                 addListenerToTickets()
-              }, 300);  
+              }, 600);  
 }
 
 init('customization2_attendee');
