@@ -132,7 +132,8 @@ function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
      $('.event-category').each(function () {
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-		    console.log('value input:'+getValueFromDropDown($(this)));
+		    
+		    console.log('value input:'$(this).text());
                 if(getValueFromDropDown($(this))!=0){
                 resetOtherTicket($(this));
                 }
