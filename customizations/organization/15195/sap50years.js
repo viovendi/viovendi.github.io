@@ -81,7 +81,9 @@ function hideStuff(name){
 
 function init(name) {
   hideStuff(name)
-  addListenerToTickets()
+  setTimeout(function (){
+                addListenerToTickets()
+              }, 500);  
 }
 
 init('customization2_attendee');
@@ -105,6 +107,39 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
+
+
+
+// CUSTOMIZATION ON PAGE 1
+
+
+
+function addListenerToTickets() {
+  console.log("adding listener to tickets"+$('.event-category').length);
+    $('.event-category').each(function () {
+        console.log('found categorie');
+       
+        $(this).find("select").on('change', function () {
+          console.log("change count wrap");
+            // resetOtherTicket($(this));
+        });
+    });
+  
+}
+function resetOtherTicket(ticketBlock) {
+    
+    $(".event-category").each(
+        function () {
+            if ($(this) != $(ticketBlock)) {
+                $(this).find("select").val(0);
+                $(this).find("select").get(0).dispatchEvent(new Event('change'));
+            }
+        }
+    );
+}
+
+
+
 /*var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log('bookerNodeInserted')
@@ -194,39 +229,6 @@ function radioButtonClicked(radioButton) {
 }
 
 */
-
-
-
-
-
-// CUSTOMIZATION ON PAGE 1
-
-
-
-function addListenerToTickets() {
-  console.log("adding listener to tickets"+$('.event-category').length);
-    $('.event-category').each(function () {
-        console.log('found categorie');
-       
-        $(this).find("select").on('change', function () {
-          console.log("change count wrap");
-            // resetOtherTicket($(this));
-        });
-    });
-  
-}
-function resetOtherTicket(ticketBlock) {
-    
-    $(".event-category").each(
-        function () {
-            if ($(this) != $(ticketBlock)) {
-                $(this).find("select").val(0);
-                $(this).find("select").get(0).dispatchEvent(new Event('change'));
-            }
-        }
-    );
-}
-
 
 
 
