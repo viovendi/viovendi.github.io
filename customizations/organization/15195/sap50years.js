@@ -1,7 +1,6 @@
 console.log("github customization loaded");
 
 async function updateTicket (ticket){ 
-	console.log('updating')
   await  $(ticket).find(".vv-selection-input__control").click();
 	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
   return
@@ -137,7 +136,6 @@ function resetOtherTicket(ticketBlock) {
         await tickets.get().reverse().reduce(async (memo, ticket) => {
 	    await memo;
             if (ticket != ticketBlock.get(0)) {
-		console.log('updating ticket')
               	await updateTicket($(ticket));
             }
 	}, undefined); 
