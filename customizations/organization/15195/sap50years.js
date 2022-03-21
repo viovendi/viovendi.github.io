@@ -89,7 +89,7 @@ function init(name) {
   hideStuff(name)
   setTimeout(function (){
                 addListenerToTickets()
-              }, 600);  
+              }, 800);  
 }
 
 init('customization2_attendee');
@@ -139,7 +139,10 @@ function resetOtherTicket(ticketBlock) {
      const run = async (tickets) =>{
         await tickets.get().reduce(async (memo, ticket) => {
 	    await memo;
-            console.log($(ticket) != $(ticketBlock));	
+	    console.log('.');
+            console.log(ticket);	
+		console.log(ticketBlock);
+		console.log('.');
             if (ticket != ticketBlock) {
 		console.log('updating ticket')
               	await updateTicket($(ticket));
