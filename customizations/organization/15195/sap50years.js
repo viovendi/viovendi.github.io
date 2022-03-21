@@ -3,7 +3,6 @@ console.log("github customization loaded");
 async function updateTicket (ticket){ 
 	console.log('updating')
   await  $(ticket).find(".vv-selection-input__control").click();
-	console.log($(ticket).find(".vv-single-select-option"));
 	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
   return
 }	
@@ -125,8 +124,6 @@ function addListenerToTickets() {
      $('.event-category').each(function () {
 	     const ticket = this;
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-		    
-		    console.log('value input:'+$(this).text().trim());
                 if($(this).text().trim()!=0){
                 resetOtherTicket($(ticket));
                 }
@@ -139,12 +136,6 @@ function resetOtherTicket(ticketBlock) {
      const run = async (tickets) =>{
         await tickets.get().reduce(async (memo, ticket) => {
 	    await memo;
-	    console.log('.');
-            console.log(ticket);	
-		console.log(ticketBlock.get(0));
-		console.log('____');
-		console.log(ticket != ticketBlock.get(0));
-		console.log('.');
             if (ticket != ticketBlock.get(0)) {
 		console.log('updating ticket')
               	await updateTicket($(ticket));
