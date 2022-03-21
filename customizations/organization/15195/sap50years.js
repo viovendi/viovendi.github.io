@@ -204,8 +204,8 @@ function radioButtonClicked(radioButton) {
 
 
 function addListenerToTickets() {
-  console.log("adding listener to tickets"+$(".event-category").length);
-    $(".event-category").each(function () {
+  console.log("adding listener to tickets"+$('.event-category').length);
+    $('.event-category').each(function () {
         console.log('found categorie');
        
         $(this).find("select").on('change', function () {
