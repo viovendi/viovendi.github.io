@@ -134,7 +134,7 @@ function addListenerToTickets() {
 function resetOtherTicket(ticketBlock) {
 	
      const run = async (tickets) =>{
-        await tickets.get().reduce(async (memo, ticket) => {
+        await tickets.get().reverse().reduce(async (memo, ticket) => {
 	    await memo;
             if (ticket != ticketBlock.get(0)) {
 		console.log('updating ticket')
