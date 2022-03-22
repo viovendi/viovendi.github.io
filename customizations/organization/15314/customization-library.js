@@ -4,10 +4,12 @@ function getValueFromDropDown(dropDown) {
     const value = $(valueText).text().trim();
     return value;
 }
+
 function getValueTagFromDropDown(dropDown) {
     const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
     return valueText;
 }
+
 function findDropDownByLabel(label) {
     var found = null;
     $(".vv-selection-input").each(function () {
@@ -19,6 +21,7 @@ function findDropDownByLabel(label) {
     });
     return found;
 }
+
 function findQuestionByLabel(label) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
     if (field == undefined) {
@@ -31,17 +34,19 @@ function setValueToTextInput(inputLabel, value) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     $(field).find('.customization2_attendee_further-data_custom-question_input').val(value);
 }
+
 function getValueFromTextInput(inputLabel) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
 }
+
 async function setValueToDropdown(dropdownLabel, value) {
     const dropdown = findDropDownByLabel(dropdownLabel);
     await $(dropdown).find(".vv-selection-input__control").click();
     await $(dropdown).find(".vv-single-select-option").filter(el => el == value).click();
-    return
-}	
+    return	
 }
+
 function setValueToDropdownArray(dropdownLabelArray, valueArray) {
     if (dropdownLabelArray.length != valueArray.length) {
         console.log('array size not equal');
@@ -53,9 +58,9 @@ function setValueToDropdownArray(dropdownLabelArray, valueArray) {
             await setValueToDropdown(label, valueArray[idx]);
         }, undefined);
     }
-
     run(dropdownLabelArray);
 }
+
 function condQuestionDropdown(dropdownLabel, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
 
     var dropdown = findDropDownByLabel(dropdownLabel);
@@ -83,8 +88,8 @@ function condQuestionDropdown(dropdownLabel, value, arrayOfLabelsToShow, arrayOf
             if (disableSaveOnValueSelected)
                 $('.customization2_attendee_edit-action_save').prop("disabled", false);
         });
-
 }
+                   
 function addErrorStyles() {
     var styles = `
         .error-state{
