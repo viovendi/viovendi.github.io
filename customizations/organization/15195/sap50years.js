@@ -143,7 +143,12 @@ function resetOtherTicket(ticketBlock) {
 
     run($('.event-category'));
 }
-
+function addTextToAmountOfTickets(){
+$('.event-category__amount').each(function(){
+	console.log($(this).text())
+});	
+	
+}
 
 
 /*var insertionListener = function (event) {
