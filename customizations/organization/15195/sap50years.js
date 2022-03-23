@@ -86,7 +86,8 @@ function hideStuff(name){
 function init(name) {
   hideStuff(name)
   setTimeout(function (){
-                addListenerToTickets()
+                addListenerToTickets();
+	  	addTextToAmountOfTickets();
               }, 800);  
 }
 
