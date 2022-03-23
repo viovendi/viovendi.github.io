@@ -159,7 +159,6 @@ function addTextToAmountOfTickets(){
 		}
 	});		
 }
-function 
 
 /*var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
