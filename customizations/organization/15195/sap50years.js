@@ -86,8 +86,7 @@ function hideStuff(name){
 function init(name) {
   hideStuff(name)
   setTimeout(function (){
-                addListenerToTickets();
-	  	addTextToAmountOfTickets();
+        startCustomizationPage1();
               }, 800);  
 }
 
@@ -118,6 +117,36 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 // CUSTOMIZATION ON PAGE 1
 
 
+function startCustomizationPage1(){
+	const observerPage1 = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if ($(page1).is(':visible')) {
+            startCustomizationPage1();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerNotPage1 = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if (!$(page1).is(':visible')) {
+            observerPage1.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerNotPage1.observe(document, {
+        childList: true,
+        subtree: true
+    });
+
+	addListenerToTickets();
+	addTextToAmountOfTickets();
+}
 
 function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
