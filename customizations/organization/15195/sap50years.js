@@ -145,12 +145,21 @@ function resetOtherTicket(ticketBlock) {
     run($('.event-category'));
 }
 function addTextToAmountOfTickets(){
-$('.event-category__amount').each(function(){
-	console.log($(this).text().trim().split(" ")[0])
-});	
-	
+	$('.event-category__amount').each(function(){
+		const amount = $(this).text().trim().split(" ")[0];
+		if(amount>5000){
+			$(this).text('genügend Plätze vorhanden');
+			$(this).css('color', 'green');
+		}else if(amount >1000){
+			$(this).text('wenige Plätze verfügbar');
+			$(this).css('color', 'orange');
+		}else if(amount >200){
+			$(this).text('nur noch wenige Plätze verfügbar');
+			$(this).css('color', 'red');
+		}
+	});		
 }
-
+function 
 
 /*var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
