@@ -36,14 +36,14 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 28 - $('#halle_inp').val().length * 6, 43);
         ctx.fillText($('#stand_inp').val(), 49, 43);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1025);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1025);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 7, 578);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 46);
-        ctx.fillText($('#stand_inp').val(), 420, 46);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     }
 }
 
@@ -76,9 +76,9 @@ function setupBannerImage() {
     } else if (value == 'email') {
         ctx.font = "13pt Verdana";
     } else if (value == 'instagrampost') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "26pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "26pt Verdana";
     } else if (value == 'facebook') {
         ctx.font = "26pt Verdana";
     };
