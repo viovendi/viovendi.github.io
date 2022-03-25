@@ -68,10 +68,21 @@ function setupBannerImage() {
     canvas.crossOrigin = 'Anonymous';
     canvas.height = $('#banner_img').height();
     ctx.drawImage($('#banner_img').get(0), 0, 0);
-    if (canvas.width > canvas.height) {
+
+    const value = $('#format_inp').val();
+    
+    if (value == 'horizontal') {
         ctx.font = "13pt Verdana";
-    } else {
-        ctx.font = "18pt Verdana";
+    } else if (value == 'vertikal') {
+        ctx.font = "13pt Verdana";
+    } else if (value == 'email') {
+        ctx.font = "13pt Verdana";
+    } else if (value == 'instagrampost') {
+        ctx.font = "13pt Verdana";
+    } else if (value == 'instagramstory') {
+        ctx.font = "13pt Verdana";
+    } else if (value == 'facebook') {
+        ctx.font = "13pt Verdana";
     }
 }
 
