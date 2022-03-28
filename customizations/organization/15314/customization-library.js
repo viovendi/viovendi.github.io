@@ -64,41 +64,39 @@ function myHelpers(elements) {
         }
     });
     return this.field;
-}
-  return this
-}
-
-/*
- selector - is the CSS class of the parent input field that you want to change
- for example $$('.customization2_attendee_further-data_custom-question')
-*/
-function $$(selector) {
-  const elements = document.querySelectorAll(selector);
-  return new myHelpers(elements);
-}
-
-
-/*
-param: dropDown is a parent element from the dropdown input
-*/
-this.getValueFromDropDown = function (dropDown) {
+  }
+  this.setValueToDropdown = async function(lable, value) {
+    const dropdown = this.findDropDown(lable);
+    await $(dropdown).find(".vv-selection-input__control").click();
+    await $(dropdown).find(".vv-single-select-option").filter(el => el == value).click();
+    return	
+  }
+  /*
+  param: dropDown is a parent element from the dropdown input
+  */
+  this.getValueFromDropDown = function (lable) {
+    const dropDown = this.findDropDown(lable);
     const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
     const value = $(valueText).text().trim();
     return value;
-}
-
-function findDropDownByLabel(label) {
-    var found = null;
-    $(".vv-selection-input").each(function () {
-        const labelText = $(this).find(".vv-control-label").text();
-        if (labelText.trim().includes(label)) {
-            found = this;
-        }
-    });
-    return found;
-}
-
-function findQuestionByLabel(label) {
+  }
+  /*
+  TODO : Testing
+  */
+  this.setValueToDropdownArray = function (dropdownLabelArray, valueArray) {
+    if (dropdownLabelArray.length != valueArray.length) {
+        console.log('array size not equal');
+        return
+    }
+    const run = async (dropDownLables) => {
+        await dropDownLables.reduce(async (memo, label [, idx[, dropDownLables]]) => {
+            await memo;
+            await this.setValueToDropdown(label, valueArray[idx]);
+        }, undefined);
+    }
+    run(dropdownLabelArray);
+  }
+  this.findQuestionByLabel = function(label) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
     if (field == undefined) {
         field = findDropDownByLabel(label);
@@ -106,40 +104,23 @@ function findQuestionByLabel(label) {
     return label;
 }
 
-function setValueToTextInputByLabel(inputLabel, value) {
+this.setValueToTextInputByLabel = function(inputLabel, value) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     $(field).find('.customization2_attendee_further-data_custom-question_input').val(value);
 }
 
-function getValueFromTextInputByLabel(inputLabel) {
+this.getValueFromTextInputByLabel = function(inputLabel) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
 }
 
-async function setValueToDropdown(dropdownLabel, value) {
-    const dropdown = findDropDownByLabel(dropdownLabel);
-    await $(dropdown).find(".vv-selection-input__control").click();
-    await $(dropdown).find(".vv-single-select-option").filter(el => el == value).click();
-    return	
-}
 
-function setValueToDropdownArray(dropdownLabelArray, valueArray) {
-    if (dropdownLabelArray.length != valueArray.length) {
-        console.log('array size not equal');
-        return
-    }
-    const run = async (dropDowns) => {
-        await dropDowns.get().reduce(async (memo, label[, idx[, dropDowns]]) => {
-            await memo;
-            await setValueToDropdown(label, valueArray[idx]);
-        }, undefined);
-    }
-    run(dropdownLabelArray);
-}
 
-function condQuestionDropdown(dropdownLabel, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
 
-    var dropdown = findDropDownByLabel(dropdownLabel);
+
+this.condQuestionDropdown = function(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+
+    var dropdown = this.findDropDown(dropdownLable);
 
     const questionsToShow = [];
     for (let i = 0; i < arrayOfLabelsToShow.length; i++)
@@ -166,7 +147,7 @@ function condQuestionDropdown(dropdownLabel, value, arrayOfLabelsToShow, arrayOf
         });
 }
                    
-function addErrorStyles() {
+this.addErrorStyles = function() {
     var styles = `
         .error-state{
             border-color: #ea674d!important;
@@ -196,7 +177,7 @@ function addErrorStyles() {
     }
 }
 
-function disableWhenEmpty(field) {
+this.disableWhenEmpty = function(field) {
 
     if (!$(field).find('.customization2_attendee_further-data_custom-question_input').hasClass("error-state")) {
         $("<div class='error-message'>Erforderlich</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_input'));
@@ -219,3 +200,19 @@ function disableWhenEmpty(field) {
         }
     });
 }
+  return this
+}
+
+/*
+ selector - is the CSS class of the parent input field that you want to change
+ for example $$('.customization2_attendee_further-data_custom-question')
+*/
+function $$(selector) {
+  const elements = document.querySelectorAll(selector);
+  return new myHelpers(elements);
+}
+
+
+
+
+
