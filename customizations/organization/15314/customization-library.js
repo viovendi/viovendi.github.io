@@ -1,10 +1,15 @@
+/*
+param: dropDown is a parent element from the dropdown input
+*/
 function getValueFromDropDown(dropDown) {
     const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
     console.log(valueText);
     const value = $(valueText).text().trim();
     return value;
 }
-
+/*
+param: dropDown is a parent element from the dropdown input
+*/
 function getValueTagFromDropDown(dropDown) {
     const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
     return valueText;
@@ -14,8 +19,7 @@ function findDropDownByLabel(label) {
     var found = null;
     $(".vv-selection-input").each(function () {
         const labelText = $(this).find(".vv-control-label").text();
-        if (labelText.trim() == label.trim()) {
-            console.log('found label: ' + label.trim());
+        if (labelText.trim().includes(label)) {
             found = this;
         }
     });
@@ -30,12 +34,12 @@ function findQuestionByLabel(label) {
     return label;
 }
 
-function setValueToTextInput(inputLabel, value) {
+function setValueToTextInputByLabel(inputLabel, value) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     $(field).find('.customization2_attendee_further-data_custom-question_input').val(value);
 }
 
-function getValueFromTextInput(inputLabel) {
+function getValueFromTextInputByLabel(inputLabel) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
 }
