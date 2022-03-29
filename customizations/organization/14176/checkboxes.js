@@ -130,8 +130,8 @@ var insertionListener = function (event) {
 
 			if (className.indexOf('customization2_attendee-') > -1) {
 				clickedEdit(className);	
-				if(calcCheckboxes(name)==0)
-					markAsChecked(name)
+				if(calcCheckboxes(className)==0)
+					markAsChecked(className)
 				return false;
 			}
 		}
