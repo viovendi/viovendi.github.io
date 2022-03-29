@@ -126,7 +126,7 @@ var insertionListener = function (event) {
 
 		for (var i = 0; i < classNames.length; i++) {
 			var className = classNames[i];
-			console.log(className)
+			console.log('className: '+className)
 
 			if (className.indexOf('customization2_attendee-') > -1) {
 				clickedEdit(className);
