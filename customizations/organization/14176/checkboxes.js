@@ -129,7 +129,9 @@ var insertionListener = function (event) {
 			console.log('className: '+className)
 
 			if (className.indexOf('customization2_attendee-') > -1) {
-				clickedEdit(className);
+				clickedEdit(className);	
+				if(calcCheckboxes(name)==0)
+					markAsChecked(name)
 				return false;
 			}
 		}
