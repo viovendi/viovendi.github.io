@@ -1,6 +1,6 @@
 function getValueFromDropDown(dropDown){
    const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
-   console.log(valueText);
+  
    const value = $(valueText).text().trim();
    return value;
 }
@@ -60,15 +60,9 @@ function handler(){
     $(field2).hide()
     
     var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
-    console.log('Dropdown 1 :'+dropdown1);
     var dropdown2 = findDropDownByLabel('Position im Unternehmen');
-    console.log('Dropdown 2 :'+dropdown2);
     var dropdown3 = findDropDownByLabel('Funktion im Unternehmen');
-    console.log('Dropdown 3 :'+dropdown3);
     var dropdown4 = findDropDownByLabel('Funktion im Unternehmen?');
-    console.log('Dropdown 4 :'+dropdown4);
-    
-    console.log('Value: '+getValueFromDropDown(dropdown1));
    
    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
    if($(this).text().trim() == 'andere'){
