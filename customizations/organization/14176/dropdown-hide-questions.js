@@ -13,7 +13,6 @@ function findDropDownByLabel(label){
    $(".vv-selection-input").each(function(){
       const labelText = $(this).find(".vv-control-label").text();
       if(labelText.trim()==label.trim()){
-         console.log('found label: '+label.trim());
           found =this;
       }
    });
