@@ -1,14 +1,5 @@
 /*
-"name": "Google Tag Manager JS Helpers",
-"version": "1.0.0",
-"author": "Stetsko Oleg",
-*/
-
-/*
-How to Connect
-
-As an external script in GTM
-<script src="https://viovendi.github.io/customizations/shared/helpers.js"></script>
+This is the first iteration of our extended helpers.js library
 */
 
 function myHelpers(elements) {
@@ -113,11 +104,9 @@ this.getValueFromTextInputByLabel = function(inputLabel) {
     var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
     return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
 }
-
-
-
-
-
+/*
+Needs testing
+*/
 this.condQuestionDropdown = function(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
 
     var dropdown = this.findDropDown(dropdownLable);
