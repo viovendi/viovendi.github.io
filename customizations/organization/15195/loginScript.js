@@ -1,3 +1,5 @@
+var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+console.log(CognitoUserPool)
 cognitoUser.getUserAttributes(function(err, result) {
 	if (err) {
 		alert(err.message || JSON.stringify(err));
