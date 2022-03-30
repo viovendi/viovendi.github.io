@@ -6,7 +6,7 @@ var poolData = {
 };
 var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 var userData = {
-	Username: 'username',
+	Username: '2d0826a3-9eb0-4936-aeda-71391486bece',
 	Pool: userPool,
 };
 var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
