@@ -40,11 +40,11 @@ function markAsChecked(name) {
 }
 
 function clickedEdit(name) {
+	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Freiticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
-
 
 	//addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
