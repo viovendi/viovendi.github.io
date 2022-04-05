@@ -117,15 +117,19 @@ var insertionListener = function (event) {
     console.log("nodeSelfBooking");
      getInfo();
   }
+if (event.animationName === "nodeInserted2") {
+      init('customization2_attendee');
+  }
 }
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
-var insertionListener2 = function (event) {
+
+
+/*var insertionListener2 = function (event) {
   if (event.animationName === "nodeInserted2") {
-      console.log("yannik test");
       init('customization2_attendee');
   }
 };
@@ -133,7 +137,7 @@ var insertionListener2 = function (event) {
 
 document.addEventListener("animationstart", insertionListener2, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener2, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener2, false); // Chrome + Safari
+document.addEventListener("webkitAnimationStart", insertionListener2, false); // Chrome + Safari */
 
 // CUSTOMIZATION ON PAGE 1
 
