@@ -123,7 +123,17 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
 
+var insertionListener2 = function (event) {
+  if (event.animationName === "nodeInserted2") {
+      console.log("yannik test");
+      hideStuff('customization2_attendee');
+  }
+};
 
+
+document.addEventListener("animationstart", insertionListener2, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener2, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener2, false); // Chrome + Safari
 
 // CUSTOMIZATION ON PAGE 1
 
