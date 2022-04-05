@@ -126,7 +126,7 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); //
 var insertionListener2 = function (event) {
   if (event.animationName === "nodeInserted2") {
       console.log("yannik test");
-      hideStuff('customization2_attendee');
+      init('customization2_attendee');
   }
 };
 
