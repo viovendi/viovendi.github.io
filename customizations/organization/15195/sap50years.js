@@ -47,7 +47,7 @@ async function getInfo() {
 //--- check each ticketcategory, if child, hide some stuff---
 
 function hideStuff(name){
-  var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
+  var ticketTitle = $('.customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" || ticketTitle == "Child" ) {
       $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
       $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
