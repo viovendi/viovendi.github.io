@@ -48,7 +48,7 @@ async function getInfo() {
 
 function hideStuff(name){
   var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  if (ticketTitle == "Kind" ) {
+  if (ticketTitle == "Kind" || ticketTitle == "Child" ) {
       $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
       $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
   }
@@ -63,6 +63,8 @@ if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter*in"  ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_headline').hide();
+	
+	//TODO hide if view state: .customization2_attendee-state_view
 	$('.'+name+' .customization2_attendee-state_view customization2_attendee_further-data').hide();
 	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data').hide();
 	
