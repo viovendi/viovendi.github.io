@@ -51,7 +51,6 @@ function hideStuff(name){
   if (ticketTitle == "Kind" ) {
       $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
       $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
-      console.log("hide");
   }
   
   if (ticketTitle == "Partner" ) {
@@ -59,6 +58,11 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
+	
+if (ticketTitle == "Mitarbeiter*in" ) {
+    	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+}	
   
   
      /*if(calcCheckboxes(name) < 1 ){
