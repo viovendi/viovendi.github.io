@@ -59,7 +59,7 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 	
-if (ticketTitle == "Mitarbeiter*in" ) {
+if (ticketTitle == "Employee" ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
 	console.log("mitarbeiter hide");
