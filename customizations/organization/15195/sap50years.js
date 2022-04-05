@@ -62,6 +62,8 @@ function hideStuff(name){
 if (ticketTitle == "Employee" ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_headline').hide();
+	
 	console.log("mitarbeiter hide");
 }	
   
