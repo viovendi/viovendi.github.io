@@ -22,7 +22,16 @@ var nameArray = {
     "On-site participation - Steering Committee / General Council": "new name 1", 
     "Online Participation - Steering Committee / General Council": "new name 2", 
     "On-site participation - ONLY Commissions / Working Groups":"new name 3",
-    "Accompanying person package":"new name 4"
+    "Accompanying person package":"new name 4",
+    "A1) International Notarial Cooperation Commission (CCNI)": "A1)", 
+    "A2) Advisory Commission (CC)": "A2)", 
+    "A3) WG «Partnerships with International Organizations»":"A3)",
+    "B1) Human Rights Commission (CDH)":"B1)",
+    "B2) WG «Prevention of Money Laundering»": "B2)", 
+    "B3) WG «Authentic Act» + WG «New Technologies»": "B3)", 
+    "C1) Notarial Deontology Commission (CDN)":"C1)",
+    "C2) Themes and Congresses Commission (CTC)":"C2)",
+    "C3) Permanent Notarial Office for International Exchanges (ONPI)":"C3)"
 };
 
 function translateTicketNames() {
