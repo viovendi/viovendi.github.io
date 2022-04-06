@@ -232,6 +232,7 @@ function startCustomizationPage2() {
     console.log('page 2 visible')
     translateTicketNames()
     $('.vv-checkbox__label').click(function () {
+        console.log('clicked');
         translateTicketNames()
     });
 
