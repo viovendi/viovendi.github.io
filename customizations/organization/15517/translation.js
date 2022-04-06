@@ -169,6 +169,9 @@ observer2.observe(document, {
 
 function startCustomizationPage2(){
    console.log('page 2 visible')
+  $('vv-checkbox__indicator').each(function(){
+        console.log('count');
+     });
         $('vv-checkbox__indicator').click(function(){
         console.log('clicked');
      });
