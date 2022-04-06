@@ -43,6 +43,7 @@ var nameArray = {
 function translateTicketNames() {
     $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function () {
         var text = $(this).text().trim();
+        console.log(text)
         for (var key in nameArray) {
             if (text.includes(key)) {
                 $(this).text(nameArray[key])
