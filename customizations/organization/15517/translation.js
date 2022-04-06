@@ -21,7 +21,7 @@ function hideDefaultOption(selector, originalText) {
 var nameArray = {
     "On-site participation - Steering Committee / General Council": "new name 1", 
     "Online Participation - Steering Committee / General Council": "new name 2", 
-    "On-site participation - ONLY Commissions / Working Groups":"new name 3",
+    "On-site participation - ONLY Commissions  /  Working Groups":"new name 3",
     "Accompanying person package":"new name 4",
     "A1) International Notarial Cooperation Commission (CCNI)": "A1)", 
     "A2) Advisory Commission (CC)": "A2)", 
