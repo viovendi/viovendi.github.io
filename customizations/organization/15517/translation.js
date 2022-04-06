@@ -235,8 +235,10 @@ function startCustomizationPage2() {
         console.log('clicked');
         translateTicketNames()
     });
-
-
+ $('.customization2_summary_box').on("DOMSubtreeModified", ".customization2_summary_item_name", function () { 
+      console.log('change');
+      console.log($(this).text);
+ });
     console.log($('.ew-selection__sum-title').next().html());
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
