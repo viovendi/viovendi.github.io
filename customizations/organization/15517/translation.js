@@ -1,6 +1,8 @@
 console.log('git')
 console.log("translating")
-
+$('vv-checkbox__indicator').click(function(){
+        console.log('clicked');
+     });
 function changeTextTo(selector,originalText, newText){
   $(selector).each(function(){
     if($(this).text().trim()==originalText){
