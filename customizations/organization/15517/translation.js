@@ -31,7 +31,13 @@ var nameArray = {
     "B3) WG «Authentic Act» + WG «New Technologies»": "B3)", 
     "C1) Notarial Deontology Commission (CDN)":"C1)",
     "C2) Themes and Congresses Commission (CTC)":"C2)",
-    "C3) Permanent Notarial Office for International Exchanges (ONPI)":"C3)"
+    "C3) Permanent Notarial Office for International Exchanges (ONPI)":"C3)",
+    "D1) Welcome Reception | Thursday, 26 May 2022": "D1)", 
+    "D2) Full-day trip Herrenchiemsee | Friday, 27 May 2022": "D2)", 
+    "D3) Munich City Tour | Saturday, 28 May 2022":"D3)",
+    "D4) Gala Dinner - Delegate | 27 May 2022":"D4)",
+    "D5) I will be accompanied to the Gala Dinner":"D5)",
+    
 };
 
 function translateTicketNames() {
