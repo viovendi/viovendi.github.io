@@ -37,7 +37,9 @@ var nameArray = {
     "D3) Munich City Tour | Saturday, 28 May 2022":"D3)",
     "D4) Gala Dinner - Delegate | 27 May 2022":"D4)",
     "D5) I will be accompanied to the Gala Dinner":"D5)",
-    
+    "E1) Welcome Reception | Thursday, 26 May 2022": "E1)", 
+    "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2)", 
+    "E3) Munich City Tour | Saturday, 28 May 2022":"E3)"
 };
 
 function translateTicketNames() {
