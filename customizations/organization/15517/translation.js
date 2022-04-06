@@ -21,8 +21,8 @@ function hideDefaultOption(selector, originalText) {
 var nameArray = {
     "On-site participation - Steering Committee / General Council": "new name 1", 
     "Online Participation - Steering Committee / General Council": "new name 2", 
-    "On-site participation - ONLY Commissions / Working Groups":"new name 2",
-    "Accompanying person package":"new name 3"
+    "On-site participation - ONLY Commissions / Working Groups":"new name 3",
+    "Accompanying person package":"new name 4"
 };
 
 function translateTicketNames() {
