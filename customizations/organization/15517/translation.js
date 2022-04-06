@@ -238,6 +238,7 @@ function startCustomizationPage2() {
  $('.customization2_summary_box').on("DOMSubtreeModified", ".customization2_summary_item_name", function () { 
       console.log('change');
       console.log($(this).text);
+        translateTicketNames()
  });
     console.log($('.ew-selection__sum-title').next().html());
     const observerThisPage = new MutationObserver((mutations, obs) => {
