@@ -170,7 +170,12 @@ observer2.observe(document, {
 function startCustomizationPage2(){
    console.log('page 2 visible')
       $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function(){
-        console.log($(this).text())
+        
+        var text = $(this).text().trim();
+        console.log(text)
+        if(text.contains("On-site participation - Steering Committee / General Council")){
+          $(this).text("NEW TICKETNAME")
+        }
       });
      
   console.log($('.ew-selection__sum-title').next().html());
