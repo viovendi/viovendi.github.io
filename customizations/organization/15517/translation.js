@@ -173,7 +173,7 @@ function startCustomizationPage2(){
         
         var text = $(this).text().trim();
         console.log(text)
-        if(text.contains("On-site participation - Steering Committee / General Council")){
+        if(text.includes("On-site participation - Steering Committee / General Council")){
           $(this).text("NEW TICKETNAME")
         }
       });
