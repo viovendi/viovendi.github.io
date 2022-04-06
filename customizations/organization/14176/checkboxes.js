@@ -48,8 +48,6 @@ function clickedEdit(name) {
 	addClassToField('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
-	addClassToField('Mit dem ausgew', 'check-boxes-wrapper', name);
-	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
@@ -94,13 +92,15 @@ function init(name) {
 	addClassToField('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
+	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	
 
 	addTextUnderQuestion('Mit dem Freiticket', 'check-boxes-wrapper', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
-	
+	addTextUnderQuestion('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', 'check-boxes-wrapper', name);
+
 	
 	
 	//addTextUnderQuestionVIP('Mit dem ermäßigten VIP-Ticket stimmen Sie', 'check-boxes-wrapper', name);
