@@ -1,8 +1,9 @@
 function addClassToField(shortName, className, wrapperClass) {
+	console.log('shortName: '+shortName);
 	$(`.${wrapperClass} .customization2_attendee_further-data .vv-nl-mb-lg`).each(function (i, element) {
 		var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace('(optional)', '').trim();
-		console.log('item: '+item);
-		console.log('shortName: '+shortName);
+		//console.log('item: '+item);
+		
 		if (item !== '' && item.includes(shortName)) {
 			console.log(item);
 			$(this).closest('.vv-nl-mb-lg').addClass(className);
@@ -48,7 +49,7 @@ function clickedEdit(name) {
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
-	
+	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Ticket stimmst', 'check-boxes-wrapper', name);
