@@ -170,7 +170,7 @@ observer2.observe(document, {
 function startCustomizationPage2(){
    console.log('page 2 visible')
       $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function(){
-        console.log($(this).tex())
+        console.log($(this).text())
       });
      
   console.log($('.ew-selection__sum-title').next().html());
