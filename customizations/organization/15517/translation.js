@@ -172,8 +172,9 @@ function startCustomizationPage2(){
         $('vv-checkbox__indicator').click(function(){
         console.log('clicked');
      });
-        
-        
+        $('vv-checkbox__label').click(function(){
+        console.log('clicked');
+     });
       $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function(){
         
         var text = $(this).text().trim();
