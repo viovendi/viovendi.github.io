@@ -20,9 +20,8 @@ function hideDefaultOption(selector, originalText) {
 }
 function translateTicketNames() {
     $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function () {
-
         var text = $(this).text().trim();
-        console.log(text)
+        
         if (text.includes("On-site participation - Steering Committee / General Council")) {
             $(this).text("NEW TICKETNAME")
         }
@@ -232,12 +231,9 @@ function startCustomizationPage2() {
     console.log('page 2 visible')
     translateTicketNames()
     $('.vv-checkbox__label').click(function () {
-        console.log('clicked');
         translateTicketNames()
     });
  $('.customization2_summary_box').on("DOMSubtreeModified", ".customization2_summary_item_name", function () { 
-      console.log('change');
-      console.log($(this).text);
         translateTicketNames()
  });
     console.log($('.ew-selection__sum-title').next().html());
