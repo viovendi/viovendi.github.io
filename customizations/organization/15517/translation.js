@@ -18,12 +18,20 @@ function hideDefaultOption(selector, originalText) {
         }
     })
 }
+var nameArray = {
+    "On-site participation - Steering Committee / General Council": "new name 1", 
+    "Online Participation - Steering Committee / General Council": "new name 2", 
+    "On-site participation - ONLY Commissions / Working Groups":"new name 2",
+    "Accompanying person package":"new name 3"
+};
+
 function translateTicketNames() {
     $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function () {
         var text = $(this).text().trim();
-        
-        if (text.includes("On-site participation - Steering Committee / General Council")) {
-            $(this).text("NEW TICKETNAME")
+        for (var key in nameArray) {
+            if (text.includes(key)) {
+                $(this).text(nameArray[key])
+            }
         }
     });
 }
