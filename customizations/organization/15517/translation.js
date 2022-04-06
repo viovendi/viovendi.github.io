@@ -169,13 +169,13 @@ observer2.observe(document, {
 
 function startCustomizationPage2(){
    console.log('page 2 visible')
-  $('vv-checkbox__indicator').each(function(){
+  $('.vv-checkbox__indicator').each(function(){
         console.log('count');
      });
-        $('vv-checkbox__indicator').click(function(){
+        $('.vv-checkbox__indicator').click(function(){
         console.log('clicked');
      });
-        $('vv-checkbox__label').click(function(){
+        $('.vv-checkbox__label').click(function(){
         console.log('clicked');
      });
       $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function(){
