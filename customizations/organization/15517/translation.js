@@ -66,6 +66,58 @@ observer.observe(document, {
     childList: true,
     subtree: true
 });
+
+/*
+
+PAGE 3
+
+*/
+const observer3 = new MutationObserver((mutations, obs) => {
+    const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+
+    if ($(page3).is(':visible')) {
+        startCustomizationPage3();
+        obs.disconnect();
+        return;
+    }
+});
+
+observer3.observe(document, {
+    childList: true,
+    subtree: true
+});
+
+function startCustomizationPage3(){
+      translateTicketNames();
+
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if ($(page3).is(':visible')) {
+            startCustomizationPage3();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+    
+        if (!$(page3).is(':visible')) {
+          console.log('page 3 not visible')
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
+
 /*
 PAGE 1
 */
