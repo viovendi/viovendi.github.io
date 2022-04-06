@@ -1,8 +1,6 @@
 console.log('git')
 console.log("translating")
-$('vv-checkbox__indicator').click(function(){
-        console.log('clicked');
-     });
+
 function changeTextTo(selector,originalText, newText){
   $(selector).each(function(){
     if($(this).text().trim()==originalText){
@@ -171,6 +169,11 @@ observer2.observe(document, {
 
 function startCustomizationPage2(){
    console.log('page 2 visible')
+        $('vv-checkbox__indicator').click(function(){
+        console.log('clicked');
+     });
+        
+        
       $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function(){
         
         var text = $(this).text().trim();
