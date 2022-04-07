@@ -33,8 +33,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
         ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 40 - $('#halle_inp').val().length * 6, 30);
-        ctx.fillText($('#stand_inp').val(), 40 - $('#halle_inp').val().length * 6, 47);
+        ctx.fillText($('#halle_inp').val(), 41 - $('#halle_inp').val().length * 6, 29);
+        ctx.fillText($('#stand_inp').val(), 41 - $('#halle_inp').val().length * 6, 46);
     } else if (value == 'instagrampost') {
         ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 993);
         ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 993);
@@ -72,9 +72,9 @@ function setupBannerImage() {
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "10pt Verdana";
+        ctx.font = "13pt Verdana";
     } else if (value == 'email') {
-        ctx.font = "8pt Verdana";
+        ctx.font = "7pt Verdana";
     } else if (value == 'instagrampost') {
         ctx.font = "26pt Verdana";
     } else if (value == 'instagramstory') {
