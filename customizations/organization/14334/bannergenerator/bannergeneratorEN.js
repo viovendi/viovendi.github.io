@@ -27,23 +27,23 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 45);
-        ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 5, 45);
+        ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 6, 31);
+        ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 5, 49);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 578);
+        ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
+        ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 28 - $('#halle_inp').val().length * 6, 43);
         ctx.fillText($('#stand_inp').val(), 49, 43);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1025);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1025);
+        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 993);
+        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 993);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
     }
 }
 
@@ -72,7 +72,7 @@ function setupBannerImage() {
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "10pt Verdana";
     } else if (value == 'email') {
         ctx.font = "13pt Verdana";
     } else if (value == 'instagrampost') {
