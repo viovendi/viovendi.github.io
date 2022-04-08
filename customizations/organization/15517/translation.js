@@ -49,7 +49,9 @@ const spanishArray = {
 };
 const spanishTicketNumber= "";
 const spanishPleaseSelect="";
-
+const nameArray;
+const ticketNumber;
+const pleaseSelect;
 
 const url=window.location.href;
 
