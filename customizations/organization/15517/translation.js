@@ -1,7 +1,7 @@
 const url=window.location.href;
 
 console.log(url);
-console.log(url.includes('configName=booking-15517-33051'));
+console.log(url.includes('booking-15517-33051'));
 console.log("translating")
 
 function changeTextTo(selector, originalText, newText) {
