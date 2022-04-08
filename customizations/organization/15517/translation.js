@@ -324,9 +324,11 @@ function startCustomizationPage2() {
     console.log('page 2 visible')
     translateTicketNames()
     translateTicketNamesPage2()
+    /*
     $('.vv-checkbox__label').click(function () {
         translateTicketNames()
     });
+    */
  $('.customization2_summary_box').on("DOMSubtreeModified", ".customization2_summary_item_name", function () { 
         translateTicketNames()
  });
