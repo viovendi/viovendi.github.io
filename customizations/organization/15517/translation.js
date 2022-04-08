@@ -1,28 +1,4 @@
-const url=window.location.href;
-
-console.log(url);
-console.log(url.includes('booking-15517-33051'));
-console.log("translating")
-
-function changeTextTo(selector, originalText, newText) {
-    $(selector).each(function () {
-        if ($(this).text().trim() == originalText) {
-            $(this).text(newText);
-        }
-    })
-}
-
-function hideDefaultOption(selector, originalText) {
-    $(selector).each(function () {
-        if ($(this).text().trim() == originalText) {
-            $(this).hide()
-        } else {
-            $(this).show()
-        }
-    })
-}
-
-var nameArray = {
+const frenchArray = {
     "On-site participation - Steering Committee / General Council": "Participation sur place - Comité directeur / Conseil général", 
     "Online Participation - Steering Committee / General Council": "Participation en ligne - Comité directeur / Conseil général", 
     "On-site participation - ONLY Commissions  /  Working Groups":"Participation sur place - UNIQUEMENT Commissions / Groupes de travail",
@@ -45,6 +21,74 @@ var nameArray = {
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursion d'une journée à Herrenchiemsee Délégués ", 
     "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022"
 };
+const frenchTicketNumber = 'Numéro de réservation: ';
+const frenchPleaseSelect = 'Veuillez sélectionner';
+
+const spanishArray = {
+    "On-site participation - Steering Committee / General Council": "Participation sur place - Comité directeur / Conseil général", 
+    "Online Participation - Steering Committee / General Council": "Participation en ligne - Comité directeur / Conseil général", 
+    "On-site participation - ONLY Commissions  /  Working Groups":"Participation sur place - UNIQUEMENT Commissions / Groupes de travail",
+    "Accompanying person package":"Forfait pour la personne accompagnante",
+    "A1) International Notarial Cooperation Commission (CCNI)": "A1) Commission de coopération notariale internationale (CCNI)", 
+    "A2) Advisory Commission (CC)": "A2) Commission consultative (CC)", 
+    "A3) WG «Partnerships with International Organizations»":"A3) Groupe de travail 'Partenariats avec les organisations internationales'",
+    "B1) Human Rights Commission (CDH)":"B1) Commission des droits de l'homme (CDH)",
+    "B2) WG «Prevention of Money Laundering»": "B2) GT ' Prévention du blanchiment d'argent'", 
+    "B3) WG «Authentic Act» + WG «New Technologies»": "B3) WG «Authentic Act» + WG «New Technologies»", 
+    "C1) Notarial Deontology Commission (CDN)":"C1) Commission de déontologie notariale (CDN)",
+    "C2) Themes and Congresses Commission (CTC)":"C2) Commission Thèmes et Congrès (CTC)",
+    "C3) Permanent Notarial Office for International Exchanges (ONPI)":"C3) Office notarial permanent pour les échanges internationaux (ONPI)",
+    "D1) Welcome Reception | Thursday, 26 May 2022": "D1) Réception de bienvenue | Jeudi, 26 mai 2022", 
+    "D2) Full-day trip Herrenchiemsee | Friday, 27 May 2022": "D2) Excursion d'une journée à Herrenchiemsee | Vendredi, 27 mai 2022", 
+    "D3) Munich City Tour | Saturday, 28 May 2022":"D3) Visite de la ville de Munich | Samedi, 28 mai 2022",
+    "D4) Gala Dinner - Delegate | 27 May 2022":"D4) Dîner de gala - Délégué | 27 mai 2022",
+    "D5) I will be accompanied to the Gala Dinner":"D5) Je serai accompagné(e) au Dîner de Gala",
+    "E1) Welcome Reception | Thursday, 26 May 2022": "E1) Réception de bienvenue | Jeudi, 26 mai 2022", 
+    "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursion d'une journée à Herrenchiemsee Délégués ", 
+    "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022"
+};
+const spanishTicketNumber= "";
+const spanishPleaseSelect="";
+
+
+const url=window.location.href;
+
+console.log(url);
+console.log(url.includes('booking-15517-33051'));
+if(url.includes('booking-15517-33051')){
+    console.log("french");
+    const nameArray= frenchArray;
+    const ticketNumber = frenchTicketNumber;
+    const pleaseSelect = frenchPleaseSelect;
+} else if(url.includes('booking-15517-33051')){
+    console.log("spanish");
+    const nameArray= spanishArray;
+    const ticketNumber = spanishTicketNumber;
+    const pleaseSelect = spanishPleaseSelect;
+} else{
+console.log("ERROR: Unknown widget id")
+}
+console.log("translating")
+
+function changeTextTo(selector, originalText, newText) {
+    $(selector).each(function () {
+        if ($(this).text().trim() == originalText) {
+            $(this).text(newText);
+        }
+    })
+}
+
+function hideDefaultOption(selector, originalText) {
+    $(selector).each(function () {
+        if ($(this).text().trim() == originalText) {
+            $(this).hide()
+        } else {
+            $(this).show()
+        }
+    })
+}
+
+
 
 function translateTicketNames() {
     $('.vv-text.vv-text__size--lg.vv-text__weight--regular.vv-color--text.customization2_summary_item_name').each(function () {
@@ -61,10 +105,10 @@ function translateTicketNames() {
 
 function handler2() {
     changeTextTo('.vv-button-text-blue', 'Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
-    changeTextTo('.vv-single-select-option', 'Bitte auswählen', 'Veuillez sélectionner');
+    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
-        if (el.innerText === 'Bitte auswählen') { el.innerText = 'Veuillez sélectionner' }
+        if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
     });
 
     addEventListener('click', e => {
@@ -85,7 +129,7 @@ const observer = new MutationObserver((mutations, obs) => {
         console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
         var ticketID = $('.notice__booking-id span').text()
-        $('.notice__booking-id').text('Numéro de réservation: ' + ticketID);
+        $('.notice__booking-id').text(ticketNumber + ticketID);
         obs.disconnect();
         return;
     }
@@ -167,8 +211,6 @@ observer1.observe(document, {
 
 function startCustomizationPage1() {
     console.log('page 1 visible');
-    //Text von Button auf Seite 1
-    //     $('.customization-button-next').text('CONTINUER');
 
     const observerMwStText = new MutationObserver((mutations, obs) => {
         const mwstText = $('ew-selection__sum-title').next();
