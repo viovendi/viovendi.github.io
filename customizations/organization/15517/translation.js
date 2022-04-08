@@ -49,9 +49,9 @@ const spanishArray = {
 };
 const spanishTicketNumber= "";
 const spanishPleaseSelect="";
-const nameArray;
-const ticketNumber;
-const pleaseSelect;
+var nameArray;
+var ticketNumber;
+var pleaseSelect;
 
 const url=window.location.href;
 
@@ -59,15 +59,15 @@ console.log(url);
 console.log(url.includes('booking-15517-33051'));
 if(url.includes('booking-15517-33051')){
     console.log("french");
-    const nameArray= frenchArray;
-    const ticketNumber = frenchTicketNumber;
-    const pleaseSelect = frenchPleaseSelect;
+     nameArray= frenchArray;
+     ticketNumber = frenchTicketNumber;
+     pleaseSelect = frenchPleaseSelect;
     console.log("french");
 } else if(url.includes('booking-15517-32622')){
     console.log("spanish");
-    const nameArray= spanishArray;
-    const ticketNumber = spanishTicketNumber;
-    const pleaseSelect = spanishPleaseSelect;
+     nameArray= spanishArray;
+     ticketNumber = spanishTicketNumber;
+     pleaseSelect = spanishPleaseSelect;
 } else{
 console.log("ERROR: Unknown widget id")
 }
