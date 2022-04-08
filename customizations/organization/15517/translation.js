@@ -101,7 +101,7 @@ $('.customization2_attendee_title').each(function () {
                 try{
                     $(this).text(nameArray[key])
                 }catch(error) {
-                    console.error(error);
+                    console.error('.');
                 }            
             }
         }
@@ -116,7 +116,7 @@ function translateTicketNames() {
                 try{
                     $(this).text(nameArray[key])
                 }catch(error) {
-                    console.error(error);
+                    console.error('.');
                 }
             }
         }
