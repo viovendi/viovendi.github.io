@@ -47,8 +47,8 @@ const spanishArray = {
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursión de día completo Herrenchiemsee Delegados | Viernes, 27 de mayo de 2022", 
     "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visita a la ciudad de Múnich | Sábado, 28 de mayo de 2022"
 };
-const spanishTicketNumber= "";
-const spanishPleaseSelect="";
+const spanishTicketNumber= "Número de reserva: ";
+const spanishPleaseSelect="Por favor, seleccione";
 var nameArray;
 var ticketNumber;
 var pleaseSelect;
