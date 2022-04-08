@@ -52,6 +52,7 @@ const spanishPleaseSelect="Por favor, seleccione";
 var nameArray;
 var ticketNumber;
 var pleaseSelect;
+var mwstText;
 
 const url=window.location.href;
 
@@ -62,12 +63,13 @@ if(url.includes('booking-15517-33051')){
      nameArray= frenchArray;
      ticketNumber = frenchTicketNumber;
      pleaseSelect = frenchPleaseSelect;
-    console.log("french");
+    mwstText = "TVA incluse ("
 } else if(url.includes('booking-15517-32622')){
     console.log("spanish");
      nameArray= spanishArray;
      ticketNumber = spanishTicketNumber;
      pleaseSelect = spanishPleaseSelect;
+    mwstText = "IVA incluido ("
 } else{
 console.log("ERROR: Unknown widget id")
 }
@@ -93,7 +95,6 @@ function hideDefaultOption(selector, originalText) {
 
 function translateTicketNamesPage2(){
 $('.customization2_attendee_title').each(function () {
-        console.log("hhghhhhh")
         var text = $(this).text().trim();
         console.log(text)
         for (var key in nameArray) {
@@ -240,7 +241,7 @@ function startCustomizationPage1() {
             // console.log('mwstText visible');
             $(mwstTextValue).contents().filter(function () {
                 return this.nodeType == 3;
-            })[0].nodeValue = "TVA incluse ("
+            })[0].nodeValue = mwstText
             observerNoMwStText.observe(document, {
                 childList: true,
                 subtree: true
