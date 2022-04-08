@@ -93,6 +93,7 @@ function hideDefaultOption(selector, originalText) {
 
 function translateTicketNamesPage3(){
 $('.customization2_attendee_title').each(function () {
+        console.log("hhghhhhh")
         var text = $(this).text().trim();
         console.log(text)
         for (var key in nameArray) {
