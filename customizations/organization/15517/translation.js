@@ -34,7 +34,7 @@ const spanishArray = {
     "A3) WG «Partnerships with International Organizations»":"A3) GT 'Asociaciones con organizaciones internacionales'",
     "B1) Human Rights Commission (CDH)":"B1) Comisión de Derechos Humanos (CDH)",
     "B2) WG «Prevention of Money Laundering»": "B2) GT 'Prevención del blanqueo de capitales'", 
-    "B3) WG «Authentic Act» + WG «New Technologies»": "B3) GT "Auténtico" + GT "Nuevas Tecnologías"", 
+    "B3) WG «Authentic Act» + WG «New Technologies»": "B3) GT 'Auténtico' + GT 'Nuevas Tecnologías'", 
     "C1) Notarial Deontology Commission (CDN)":"C1) Comisión de Deontología Notarial (CDN)",
     "C2) Themes and Congresses Commission (CTC)":"C2) Comisión de Temas y Congresos (CTC)",
     "C3) Permanent Notarial Office for International Exchanges (ONPI)":"C3) Oficina Notarial Permanente para Intercambios Internacionales (ONPI)",
