@@ -174,8 +174,8 @@ observer3.observe(document, {
 });
 
 function startCustomizationPage3(){
-      translateTicketNames();
-
+    translateTicketNames();
+    translateTicketNamesPage3()
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
     
