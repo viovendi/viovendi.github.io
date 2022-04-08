@@ -98,7 +98,11 @@ $('.customization2_attendee_title').each(function () {
         console.log(text)
         for (var key in nameArray) {
             if (text.includes(key)) {
-                $(this).text(nameArray[key])
+                try{
+                    $(this).text(nameArray[key])
+                }catch(error) {
+                    console.error(error);
+                }            
             }
         }
     });
@@ -109,7 +113,11 @@ function translateTicketNames() {
         var text = $(this).text().trim();
         for (var key in nameArray) {
             if (text.includes(key)) {
-                $(this).text(nameArray[key])
+                try{
+                    $(this).text(nameArray[key])
+                }catch(error) {
+                    console.error(error);
+                }
             }
         }
     });
