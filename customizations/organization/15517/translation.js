@@ -91,7 +91,7 @@ function hideDefaultOption(selector, originalText) {
     })
 }
 
-function translateTicketNamesPage3(){
+function translateTicketNamesPage2(){
 $('.customization2_attendee_title').each(function () {
         console.log("hhghhhhh")
         var text = $(this).text().trim();
@@ -175,7 +175,7 @@ observer3.observe(document, {
 
 function startCustomizationPage3(){
     translateTicketNames();
-    translateTicketNamesPage3()
+    
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
     
@@ -315,6 +315,7 @@ observer2.observe(document, {
 function startCustomizationPage2() {
     console.log('page 2 visible')
     translateTicketNames()
+    translateTicketNamesPage2()
     $('.vv-checkbox__label').click(function () {
         translateTicketNames()
     });
