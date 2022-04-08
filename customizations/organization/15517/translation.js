@@ -60,6 +60,7 @@ if(url.includes('booking-15517-33051')){
     const nameArray= frenchArray;
     const ticketNumber = frenchTicketNumber;
     const pleaseSelect = frenchPleaseSelect;
+    console.log("french");
 } else if(url.includes('booking-15517-33051')){
     console.log("spanish");
     const nameArray= spanishArray;
