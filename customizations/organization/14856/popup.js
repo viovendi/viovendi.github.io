@@ -15,7 +15,7 @@ const modalText5 = 'Sofern Sie Ihre Einwilligung in die Verarbeitung dieser Date
 
 const buttonText = 'Ich willige ein';
 const linkText = 'Einwilligungserklärung zum Herunterladen';
-const linkSource = 'https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/BASE/Einwilligung+in+die+Vero%CC%88ffentlichung+von+personenbezogenen+Daten_fin.pdf';
+const linkSource = 'https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/BASE/Einwilligung+in+die+Vero%CC%88ffentlichung+von+personenbezogenen+Daten+V005-05-2022.pdf';
 
 const popUp2headerText = '<h3>Einwilligung Bildnutzung Internet, Social Media</h3>';
 
