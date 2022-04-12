@@ -39,8 +39,11 @@ function checkAndHidePrivacy(){
   }
 }
 
+markAsChecked('customization2_attendee');
+	hideAndMoveCheckbox();
+	checkAndHidePrivacy();
 
-startCustomizationPage3();
+//startCustomizationPage3();
 
 function startCustomizationPage3(){
       
