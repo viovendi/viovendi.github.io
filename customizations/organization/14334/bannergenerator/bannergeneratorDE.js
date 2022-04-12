@@ -33,8 +33,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
         ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 28 - $('#halle_inp').val().length * 6, 43);
-        ctx.fillText($('#stand_inp').val(), 49, 43);
+        ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
+        ctx.fillText($('#stand_inp').val(), 43, 46);
     } else if (value == 'instagrampost') {
         ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 993);
         ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 993);
