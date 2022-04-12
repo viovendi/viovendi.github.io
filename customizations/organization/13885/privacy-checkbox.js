@@ -1,3 +1,4 @@
+console.log("triggered privacy-checkbox.js")
 function checkAndHidePrivacy(){
   console.log('checkAndHidePrivacy');
   if ($('.customization2_booking-terms').length > 0 ){
