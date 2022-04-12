@@ -40,26 +40,26 @@ function checkAndHidePrivacy(){
   }
 }
 
-startCustomizationPage3();
+startCustomizationPage2();
 
-function startCustomizationPage3(){
+function startCustomizationPage2(){
       
 	markAsChecked('customization2_attendee');
 	hideAndMoveCheckbox();
 	checkAndHidePrivacy();
     const observerThisPage = new MutationObserver((mutations, obs) => {
-        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
-        if ($(page3).is(':visible')) {
-            startCustomizationPage3();
+        if ($(page2).is(':visible')) {
+            startCustomizationPage2();
             obs.disconnect();
             return;
         }
     });
     const observerOtherPage = new MutationObserver((mutations, obs) => {
-        const page3 = document.getElementsByClassName('customization-booking-area-wrapper-page3');
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
-        if (!$(page3).is(':visible')) {
+        if (!$(page2).is(':visible')) {
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
