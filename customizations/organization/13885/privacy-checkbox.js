@@ -10,7 +10,7 @@ function checkAndHidePrivacy(){
 }
 
 //startCustomizationPage3();
-
+checkAndHidePrivacy();
 function startCustomizationPage3(){
   checkAndHidePrivacy();
     const observerThisPage = new MutationObserver((mutations, obs) => {
