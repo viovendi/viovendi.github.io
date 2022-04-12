@@ -1,3 +1,4 @@
+console.log("triggered markcheckboxes.js")
 function markAsChecked(name) {
 	//search all further questions
 	$('.customization2_attendee_further-data_custom-question').each(function (i, element) {
