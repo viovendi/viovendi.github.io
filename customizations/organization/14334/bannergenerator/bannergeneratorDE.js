@@ -101,6 +101,7 @@ function generator() {
                 console.log(imageNameAndURL[i][0])
                 $('#banner_img').attr('crossOrigin', 'Anonymous');
                 $('#banner_img').attr("src", imageNameAndURL[i][1]);
+                $('#banner_img').attr("style", "width: 400px");
                 $('#banner_img').on('load', function () {
                     setupBannerImage();
                     setTexts()
