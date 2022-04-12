@@ -50,7 +50,7 @@ function changeTextTo(selector, originalText, newText) {
 };
 
 function translatePleaseSelect() {
-    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Bitte auswählen', pleaseSelect);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
         if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
