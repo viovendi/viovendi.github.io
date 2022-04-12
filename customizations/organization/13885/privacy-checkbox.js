@@ -6,7 +6,7 @@ function checkAndHidePrivacy(){
   //  $('.customization2_booking-terms .vv-checkbox__indicator').css('display', 'none');
  //   $('.customization2_booking-terms .vv-checkbox').on('click', function(e){
  //     e.preventDefault();
-    });
+ //   });
   }
 }
 
