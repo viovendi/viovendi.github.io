@@ -77,7 +77,7 @@ function disableWhenEmpty(field) {
 
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
 
-            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
+            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen"|| $(this).text().trim() == pleaseSelect) {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
