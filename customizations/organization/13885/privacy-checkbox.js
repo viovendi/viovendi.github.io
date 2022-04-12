@@ -9,7 +9,7 @@ function checkAndHidePrivacy(){
   }
 }
 
-startCustomizationPage3();
+//startCustomizationPage3();
 
 function startCustomizationPage3(){
   checkAndHidePrivacy();
