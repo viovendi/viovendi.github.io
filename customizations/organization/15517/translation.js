@@ -1,4 +1,8 @@
 const frenchArray = {
+    "mwstText":"TVA incluse (",
+    "different address":"Indiquer une adresse de facturation différente",
+    "ticket number":"Numéro de réservation: ",
+    "please select":"Veuillez sélectionner",  
     "On-site participation - Steering Committee / General Council": "Participation sur place - Comité directeur / Conseil général", 
     "Online Participation - Steering Committee / General Council": "Participation en ligne - Comité directeur / Conseil général", 
     "On-site participation - ONLY Commissions  /  Working Groups":"Participation sur place - UNIQUEMENT Commissions / Groupes de travail",
@@ -23,8 +27,12 @@ const frenchArray = {
 };
 const frenchTicketNumber = 'Numéro de réservation: ';
 const frenchPleaseSelect = 'Veuillez sélectionner';
-
+'Indiquer une adresse de facturation différente'
 const spanishArray = {
+    "mwstText":"IVA incluido ",
+    "different address":"TODO TRANSLATE !!!!!!!!",
+    "ticket number":"Número de reserva: ",
+    "please select":"Por favor, seleccione",  
     "On-site participation - Steering Committee / General Council": "Participación in situ - Comité Directivo / Consejo General", 
     "Online Participation - Steering Committee / General Council": "Participación en línea - Comité Directivo / Consejo General", 
     "On-site participation - ONLY Commissions  /  Working Groups":"Participación in situ - SOLO Comisiones / Grupos de Trabajo",
@@ -126,11 +134,11 @@ function translateTicketNames() {
 
 
 function handler2() {
-    changeTextTo('.vv-button-text-blue', 'Abweichende Rechnungsadresse angeben', 'Indiquer une adresse de facturation différente');
-    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
+    changeTextTo('.vv-button-text-blue', 'Abweichende Rechnungsadresse angeben', nameArray["different address"]);
+    changeTextTo('.vv-single-select-option', 'Please select', nameArray["please select"]);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
-        if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Please select') { el.innerText = nameArray["please select"] }
     });
 
     addEventListener('click', e => {
@@ -151,7 +159,7 @@ const observer = new MutationObserver((mutations, obs) => {
         console.log($('.notice__booking-id').text())
         console.log("page 4 visible");
         var ticketID = $('.notice__booking-id span').text()
-        $('.notice__booking-id').text(ticketNumber + ticketID);
+        $('.notice__booking-id').text(nameArray["ticket number"] + ticketID);
         obs.disconnect();
         return;
     }
@@ -241,7 +249,7 @@ function startCustomizationPage1() {
             // console.log('mwstText visible');
             $(mwstTextValue).contents().filter(function () {
                 return this.nodeType == 3;
-            })[0].nodeValue = mwstText
+            })[0].nodeValue = nameArray["mwstText"];
             observerNoMwStText.observe(document, {
                 childList: true,
                 subtree: true
@@ -348,8 +356,7 @@ function startCustomizationPage2() {
 
 
         if (!$(page2).is(':visible')) {
-            console.log('page 2 not visible')
-            // $('.customization-button-next').text('CONTINUER');
+           // console.log('page 2 not visible')
             observerThisPage.observe(document, {
                 childList: true,
                 subtree: true
