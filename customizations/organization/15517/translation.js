@@ -1,6 +1,6 @@
 const frenchArray = {
     "mwstText":"TVA incluse (",
-    "different address":"Indiquer une adresse de facturation différente",
+    "different address":"Proporcionar una dirección de facturación diferente",
     "ticket number":"Numéro de réservation: ",
     "please select":"Veuillez sélectionner",  
     "On-site participation - Steering Committee / General Council": "Participation sur place - Comité directeur / Conseil général", 
