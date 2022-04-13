@@ -30,6 +30,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
 console.log("translating")
 
 var checkboxSelected=false;
+console.log(checkboxSelected)
 
 function findDropDownByLabel(label) {
     var found = null;
