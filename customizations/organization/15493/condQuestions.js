@@ -142,6 +142,9 @@ function customTerms() {
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+        if(checkboxSelected){
+            $('.custom_terms_checkbox').click();
+        }
         $('.custom_terms_checkbox').on('click',function(e){
             if(e.target.name!=undefined&&e.target.name=='isTermsAccepted'){
                 checkboxSelected=!checkboxSelected;
@@ -272,9 +275,6 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
 
     if ($(page2).is(':visible')) {
         console.log('page 2 visible')
-        if(checkboxSelected){
-            $('.custom_terms_checkbox').click();
-        }
         editBookingPortal();
         obs.disconnect();
         return;
