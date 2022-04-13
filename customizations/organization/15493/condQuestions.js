@@ -29,7 +29,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
 }
 console.log("translating")
 
-checkboxSelected=true;
+checkboxSelected=false;
 console.log(checkboxSelected)
 
 function findDropDownByLabel(label) {
@@ -272,6 +272,9 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
 
     if ($(page2).is(':visible')) {
         console.log('page 2 visible')
+        if(checkboxSelected){
+            $('.custom_terms_checkbox').click();
+        }
         editBookingPortal();
         obs.disconnect();
         return;
