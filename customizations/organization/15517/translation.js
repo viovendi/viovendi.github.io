@@ -25,8 +25,6 @@ const frenchArray = {
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursion d'une journée à Herrenchiemsee Délégués ", 
     "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022"
 };
-const frenchTicketNumber = 'Numéro de réservation: ';
-const frenchPleaseSelect = 'Veuillez sélectionner';
 const spanishArray = {
     "mwstText":"IVA incluido ",
     "different address":"Proporcionar una dirección de facturación diferente",
@@ -54,8 +52,6 @@ const spanishArray = {
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursión de día completo Herrenchiemsee Delegados | Viernes, 27 de mayo de 2022", 
     "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visita a la ciudad de Múnich | Sábado, 28 de mayo de 2022"
 };
-const spanishTicketNumber= "Número de reserva: ";
-const spanishPleaseSelect="Por favor, seleccione";
 var nameArray;
 var ticketNumber;
 var pleaseSelect;
@@ -68,15 +64,19 @@ console.log(url.includes('booking-15517-33051'));
 if(url.includes('booking-15517-33051')){
     console.log("french");
      nameArray= frenchArray;
+    /*
      ticketNumber = frenchTicketNumber;
      pleaseSelect = frenchPleaseSelect;
     mwstText = "TVA incluse ("
+    */
 } else if(url.includes('booking-15517-32622')){
     console.log("spanish");
      nameArray= spanishArray;
+    /*
      ticketNumber = spanishTicketNumber;
      pleaseSelect = spanishPleaseSelect;
     mwstText = "IVA incluido ("
+    */
 } else{
 console.log("ERROR: Unknown widget id")
 }
