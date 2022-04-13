@@ -136,8 +136,10 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
+    console.log(checkBoxSelected)
     if (!$('.custom_terms_checkbox').length) {
         console.log("Terms added");
+        console.log(checkBoxSelected)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
