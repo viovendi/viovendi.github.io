@@ -146,13 +146,13 @@ function customTerms() {
         if(checkboxSelected){
             $('div.custom_terms_checkbox > vv-checkbox > label > div').click();
         }else{
-            $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
         }
         $('.custom_terms_checkbox').on('click',function(e){
             if(e.target.name!=undefined&&e.target.name=='isTermsAccepted'){
                 checkboxSelected=!checkboxSelected;
                 if(!checkboxSelected){
-                    $('.customization2_attendee_edit-action_save').prop("disabled", false);
+                    $('.customization2_attendee_edit-action_save').prop("disabled", true);
                 }
                 console.log(checkboxSelected);
             }
