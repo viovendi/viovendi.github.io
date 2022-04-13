@@ -146,7 +146,7 @@ function customTerms() {
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
         console.log($('.custom_terms_checkbox').length)
         $('.custom_terms_checkbox').on('click',function(e){
-            console.log(e);
+            console.log(e.target);
             checkboxSelected=!checkboxSelected;
             console.log(checkboxSelected)
         })
