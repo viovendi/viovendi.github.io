@@ -27,10 +27,9 @@ const frenchArray = {
 };
 const frenchTicketNumber = 'Numéro de réservation: ';
 const frenchPleaseSelect = 'Veuillez sélectionner';
-'Indiquer une adresse de facturation différente'
 const spanishArray = {
     "mwstText":"IVA incluido ",
-    "different address":"TODO TRANSLATE !!!!!!!!",
+    "different address":"Proporcionar una dirección de facturación diferente",
     "ticket number":"Número de reserva: ",
     "please select":"Por favor, seleccione",  
     "On-site participation - Steering Committee / General Council": "Participación in situ - Comité Directivo / Consejo General", 
