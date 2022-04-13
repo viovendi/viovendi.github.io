@@ -139,8 +139,8 @@ function handler2() {
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
         if (el.innerText === 'Please select') { el.innerText = nameArray["please select"] }
     });
+    //TODO: refactore into own function
     $('.customization2_attendee_further-data_product_name').each(function () {
-        console.log('.');
         var text = $(this).text().trim();
         for (var key in nameArray) {
             if (text.includes(key)) {
