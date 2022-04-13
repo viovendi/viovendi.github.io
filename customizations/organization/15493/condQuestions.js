@@ -290,6 +290,10 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
         console.log('page 2 visible')
         editBookingPortal();
         customTerms()
+        observerOtherPage.observe(document, {
+            childList: true,
+            subtree: true
+        });
         obs.disconnect();
         return;
     }
