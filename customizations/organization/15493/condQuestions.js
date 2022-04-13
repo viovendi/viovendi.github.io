@@ -1,6 +1,7 @@
 var ticketNumber;
 var pleaseSelect;
 
+
 const url = window.location.href;
 
 if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) {
@@ -27,6 +28,8 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     console.log("ERROR: Unknown widget id")
 }
 console.log("translating")
+
+var checkboxSelected=false;
 
 function findDropDownByLabel(label) {
     var found = null;
@@ -138,6 +141,11 @@ function customTerms() {
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+        $('.custom_terms_checkbox').on('click',function(){
+            console.log('clicked');
+            checkboxSelected=!checkboxSelected;
+            console.log(checkBoxSelected)
+        })
     }
 };
 
