@@ -1,4 +1,9 @@
 const frenchArray = {
+    "A) Commissions / Working Groups | 25 May 2022":"A) Commissions / Groupes de travail | 25 mai 2022",
+    "B) Commissions / Working Groups | 26 May 2022 - morning":"B) Commissions / Groupes de travail | 26 mai 2022 - matinée",
+    "C) Commissions / Working Groups | 26 May 2022 - afternoon":"C) Commissions / Groupes de travail | 26 mai 2022 - après-midi",
+    "D) Social programme - Delegates":"D) Programme social - Délégués",
+    "E) Social programme - Accompanying persons":"E) Programme social - Personnes accompagnantes",
     "mwstText":"TVA incluse (",
     "different address":"Proporcionar una dirección de facturación diferente",
     "ticket number":"Numéro de réservation: ",
@@ -26,6 +31,11 @@ const frenchArray = {
     "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022"
 };
 const spanishArray = {
+    "A) Commissions / Working Groups | 25 May 2022":"A) Comisiones / Grupos de Trabajo | 25 de mayo de 2022",
+    "B) Commissions / Working Groups | 26 May 2022 - morning":"B) Comisiones / Grupos de Trabajo | 26 de mayo de 2022 - mañana",
+    "C) Commissions / Working Groups | 26 May 2022 - afternoon":"C) Comisiones / Grupos de Trabajo | 26 de mayo de 2022 - tarde",
+    "D) Social programme - Delegates":"D) Programa social - Delegados",
+    "E) Social programme - Accompanying persons":"E) Programa social - Acompañantes",
     "mwstText":"IVA incluido ",
     "different address":"Proporcionar una dirección de facturación diferente",
     "ticket number":"Número de reserva: ",
@@ -141,6 +151,18 @@ function handler2() {
     });
     //TODO: refactore into own function
     $('.customization2_attendee_further-data_product_name').each(function () {
+        var text = $(this).text().trim();
+        for (var key in nameArray) {
+            if (text.includes(key)) {
+                try{
+                    $(this).text(nameArray[key])
+                }catch(error) {
+                    console.log('.');
+                }
+            }
+        }
+    });
+    $('.question-group__title').each(function () {
         var text = $(this).text().trim();
         for (var key in nameArray) {
             if (text.includes(key)) {
