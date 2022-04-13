@@ -28,7 +28,15 @@ const frenchArray = {
     "D5) I will be accompanied to the Gala Dinner":"D5) Je serai accompagné(e) au Dîner de Gala",
     "E1) Welcome Reception | Thursday, 26 May 2022": "E1) Réception de bienvenue | Jeudi, 26 mai 2022", 
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursion d'une journée à Herrenchiemsee Délégués ", 
-    "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022"
+    "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visite de la ville de Munich | Samedi, 28 mai 2022",
+    "25 May 2022 |14:30 to 18:00":"25 mai 2022 |14:30 à 18:00",
+    "25 May 2022 |14:30 to 19:00":"25 mai 2022 |14:30 à 19:00",
+    "26 May 2022 |9:30 to 13:00":"26 mai 2022 |9:30 à 13:00",
+    "26 May 2022 |14:30 to 18:00":"26 mai 2022 |14:30 à 18:00",
+    "from 19:30 Venue: BMW Welt München":"à partir de 19:30 Lieu : BMW Welt München",
+    "Only for delegates who will not participate in the General Council on Friday!":"Uniquement pour les délégués qui ne participeront pas au Conseil général du vendredi !",
+    "after lunch, bus tour and Hofbräuhaus brewery":"après le déjeuner, visite du bus et de la brasserie Hofbräuhaus",
+    "19:30 p.m. Venue: Schloss Nymphenburg":"19 h 30 Lieu : Schloss Nymphenburg"
 };
 const spanishArray = {
     "A) Commissions / Working Groups | 25 May 2022":"A) Comisiones / Grupos de Trabajo | 25 de mayo de 2022",
@@ -60,7 +68,15 @@ const spanishArray = {
     "D5) I will be accompanied to the Gala Dinner":"D5) Me acompañarán a la Cena de Gala",
     "E1) Welcome Reception | Thursday, 26 May 2022": "E1) Recepción de bienvenida | Jueves, 26 de mayo de 2022", 
     "E2) Full-day trip Herrenchiemsee Delegates | Friday,": "E2) Excursión de día completo Herrenchiemsee Delegados | Viernes, 27 de mayo de 2022", 
-    "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visita a la ciudad de Múnich | Sábado, 28 de mayo de 2022"
+    "E3) Munich City Tour | Saturday, 28 May 2022":"E3) Visita a la ciudad de Múnich | Sábado, 28 de mayo de 2022",
+    "25 May 2022 |14:30 to 18:00":"25 de mayo de 2022 |14:30 a 18:00",
+    "25 May 2022 |14:30 to 19:00":"25 de mayo de 2022 |14:30 a 19:00",
+    "26 May 2022 |9:30 to 13:00":"26 de mayo de 2022 |9:30 a 13:00",
+    "26 May 2022 |14:30 to 18:00":"26 de mayo de 2022 |14:30 a 18:00",
+    "from 19:30 Venue: BMW Welt München":"a partir de las 19:30 horas Lugar: BMW Welt München",
+    "Only for delegates who will not participate in the General Council on Friday!":"Sólo para los delegados que no participen en el Consejo General del viernes",
+    "after lunch, bus tour and Hofbräuhaus brewery":"Después del almuerzo, visita en autobús y a la cervecería Hofbräuhaus",
+    "19:30 p.m. Venue: Schloss Nymphenburg":"19:30 p.m. Lugar: Schloss Nymphenburg"
 };
 var nameArray;
 var ticketNumber;
@@ -163,6 +179,18 @@ function handler2() {
         }
     });
     $('.question-group__title').each(function () {
+        var text = $(this).text().trim();
+        for (var key in nameArray) {
+            if (text.includes(key)) {
+                try{
+                    $(this).text(nameArray[key])
+                }catch(error) {
+                    console.log('.');
+                }
+            }
+        }
+    });
+    $('.customization2_attendee_further-data_product_description').each(function () {
         var text = $(this).text().trim();
         for (var key in nameArray) {
             if (text.includes(key)) {
