@@ -136,10 +136,10 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
-    console.log(checkBoxSelected)
+    console.log(pleaseSelect)
     if (!$('.custom_terms_checkbox').length) {
         console.log("Terms added");
-        console.log(checkBoxSelected)
+        console.log(pleaseSelect)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
@@ -147,7 +147,7 @@ function customTerms() {
         $('.custom_terms_checkbox').on('click',function(){
             console.log('clicked');
             checkboxSelected=!checkboxSelected;
-            console.log(checkBoxSelected)
+            console.log(pleaseSelect)
         })
     }
 };
