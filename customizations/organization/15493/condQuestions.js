@@ -148,6 +148,11 @@ function customTerms() {
         }else{
             $('.customization-button-next').prop("disabled", true);
         }
+        $('.customization2_attendee_edit-action_save').on('click',function(e){
+                if(!checkboxSelected){
+                    $('.customization-button-next').prop("disabled", true);
+                }
+            });
         $('.custom_terms_checkbox').on('click',function(e){
             if(e.target.name!=undefined&&e.target.name=='isTermsAccepted'){
                 checkboxSelected=!checkboxSelected;
