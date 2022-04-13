@@ -289,6 +289,7 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
     if ($(page2).is(':visible')) {
         console.log('page 2 visible')
         editBookingPortal();
+        customTerms()
         obs.disconnect();
         return;
     }
