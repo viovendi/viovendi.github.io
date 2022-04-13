@@ -139,7 +139,18 @@ function handler2() {
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
         if (el.innerText === 'Please select') { el.innerText = nameArray["please select"] }
     });
-
+    $('.vv-control-label .vv-checkbox__label-text .customization2_attendee_further-data_product_name').each(function () {
+        var text = $(this).text().trim();
+        for (var key in nameArray) {
+            if (text.includes(key)) {
+                try{
+                    $(this).text(nameArray[key])
+                }catch(error) {
+                    console.log('.');
+                }
+            }
+        }
+    });
     addEventListener('click', e => {
         if (e.target.classList.contains('vv-single-select-option')) {
             let selectContainer = e.target.closest('.vv-selection');
