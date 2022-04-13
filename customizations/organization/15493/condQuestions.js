@@ -153,6 +153,8 @@ function customTerms() {
                 checkboxSelected=!checkboxSelected;
                 if(!checkboxSelected){
                     $('.customization-button-next').prop("disabled", true);
+                }else{
+                    $('.customization-button-next').prop("disabled", false);
                 }
                 console.log(checkboxSelected);
             }
