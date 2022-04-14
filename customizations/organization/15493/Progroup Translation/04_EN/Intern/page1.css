@@ -18,17 +18,17 @@ vv-booking-editing-prompt button {
 }
 
 ul.event-categories li:nth-of-type(1) .customization-category-name:after {
-    content: "49";
+    content: "I’m coming on my own";
     font-size: 1rem;
 }
 
 ul.event-categories li:nth-of-type(2) .customization-category-name:after {
-    content: "50";
+    content: "I’m coming with a guest";
     font-size: 1rem;
 }
 
 ul.event-categories:after {
-    content: "51";
+    content: "You and your guest are warmly invited. Participation is free.";
     font-size: 16px;
     display: block;
     margin: 20px;
@@ -37,20 +37,17 @@ ul.event-categories:after {
 }
 
 .customization-encrypted-connection:after {
-    content: "53";
+    content: "Encrypted connection";
     font-size:14px
 }
 
 vv-booking-editing-prompt span:after {
-    content: "54";
+    content: "Already registered? You can log in here.";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "54";
+    content: "Already registered? You can log in here.";
 }
-
-
-
