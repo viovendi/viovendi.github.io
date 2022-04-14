@@ -3,11 +3,11 @@
 }
 
 .customization-booking-area-wrapper-page1 .customization-button-next:after{
-    content:"Next";
+    content:"Continuer";
     font-size: 16px;
 }
 
 .customization-booking-area-wrapper-page2 .customization-button-next:after{
-    content:"Register now";
+    content:"S'inscrire maintenant";
     font-size: 16px;
 }
