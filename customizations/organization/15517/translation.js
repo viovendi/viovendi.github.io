@@ -75,7 +75,7 @@ const spanishArray = {
     "26 May 2022 |14:30 to 18:00":"26 de mayo de 2022 |14:30 a 18:00",
     "from 19:30 Venue: BMW Welt München":"A partir de las 19:30. Ubicación: BMW Welt München",
     "Only for delegates who will not participate in the General Council on Friday!":"Sólo para los delegados que no participarán en el Consejo General el viernes.",
-    "after lunch, bus tour and Hofbräuhaus brewery":"Después del almuerzo: Visita en autobús a la cervecería "Hofbräuhaus",
+    "after lunch, bus tour and Hofbräuhaus brewery":"Después del almuerzo: Visita en autobús a la cervecería Hofbräuhaus",
     "19:30 p.m. Venue: Schloss Nymphenburg":"19:30. Ubicación: Castillo de Nymphenburg"
 };
 var nameArray;
