@@ -50,7 +50,7 @@ const spanishArray = {
     "please select":"Por favor, seleccione",  
     "On-site participation - Steering Committee / General Council": "Participación presencial – Consejo de Dirección / Consejo General", 
     "Online participation - Steering Committee / General Council": "Participación en línea – Consejo de Dirección/Consejo General", 
-    "On-site participation - ONLY Commissions  /  Working Groups":"Participation presencial – SÓLO Comisiones / Grupos de trabjo",
+    "On-site participation - ONLY Commissions  /  Working Groups":"Participación presencial – SÓLO Comisiones / Grupos de trabjo",
     "Accompanying person package":"Paquete para acompañantes",
     "A1) International Notarial Cooperation Commission (CCNI)": "A1) Comisión de Cooperación Notarial Internaciona (CCNI)", 
     "A2) Advisory Commission (CC)": "A2) Comisión Consultiva (CC)", 
