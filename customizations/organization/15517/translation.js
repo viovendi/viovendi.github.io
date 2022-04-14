@@ -3,7 +3,7 @@ const frenchArray = {
     "B) Commissions / Working Groups | 26 May 2022 - morning":"B) Commissions / Groupes de travail | 26 mai 2022 - matinée",
     "C) Commissions / Working Groups | 26 May 2022 - afternoon":"C) Commissions / Groupes de travail | 26 mai 2022 - après-midi",
     "D) Social programme - Delegates":"D) Programme social - Participants",
-    "E) Social programme - Accompanying persons":"E) Programme social - Personnes accompagnantes",
+    "E) Social programme - Accompanying persons":"E) Programme social - Accompagnateur",
     "mwstText":"TVA incluse (",
     "different address":"Proporcionar una dirección de facturación diferente",
     "ticket number":"Numéro de réservation: ",
