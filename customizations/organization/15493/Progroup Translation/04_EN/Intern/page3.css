@@ -13,28 +13,28 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 .ew-confirmation__header .header__label:after {
-    content: "172";
+    content: "Registration confirmation";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-confirmation-description:after {
-	content: "174";
+	content: "Thank you for your registration. You will shortly receive your confirmation by e-mail.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .ew-confirmation__text-paragraph:after {
-	content: "178";
+	content: "You can view and manage your registration in the portal at any time. To log in there, you require your registration number and your e-mail address.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-client-portal-link:after {
-    content: "180";
+    content: "To the registration portal";
     text-indent: 0;
     display: block;
     line-height: normal;
@@ -42,7 +42,7 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
-	content: "182";
+	content: "If you have any questions at any time, please e-mail events@progroup.ag";
 	text-indent: 0;
 	line-height: normal;
 	font-size: 14px;
