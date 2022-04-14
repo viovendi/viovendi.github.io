@@ -81,7 +81,6 @@ const spanishArray = {
     "25 May 2022 |14:30 to 19:00":"25 de mayo de 2022 |14:30 a 19:00",
     "26 May 2022 |9:30 to 13:00":"26 de mayo de 2022 |9:30 a 13:00",
     "26 May 2022 |14:30 to 18:00":"26 de mayo de 2022 |14:30 a 18:00",
-    "after lunch, bus tour and Hofbräuhaus brewery":"- [ ] Después del almuerzo: Visita en autobús y a la cervecería Hofbräuhaus",
     "from 19:30 Venue: BMW Welt München":"A partir de las 19:30 Ubicación: BMW Welt München",
     "Only for delegates who will not participate in the General Council on Friday!":"Sólo para los delegados que no participarán en el Consejo General el viernes.",
     "after lunch, bus tour and Hofbräuhaus brewery":"Después del almuerzo: Visita en autobús y a la cervecería Hofbräuhaus",
