@@ -42,14 +42,14 @@ ul.event-categories:after {
 }
 
 vv-booking-editing-prompt span:after {
-    content: "Déjà connecté(e) ? Tu peux te connecter ici.";
+    content: "Déjà connecté(e)? Tu peux te connecter ici.";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "54";
+    content: "Déjà connecté(e)? Tu peux te connecter ici.";
 }
 
 
