@@ -55,7 +55,7 @@
 .customization2_attendee_contact-data_last-name_error:after,
 .customization2_attendee_contact-data_first-name_error:after,
 .customization2_attendee_contact-data_salutation_error:after{
-    content: "Missing 3";
+    content: "Vyplňte prosím";
     text-indent: 0;
     display: block;
     line-height: initial;
@@ -69,39 +69,39 @@
 }
 
 .customization2_attendee-1 .customization2_attendee_title:after {
-    content: "64";
+    content: "PŘIJDU SÁM";
     font-size: 16px;
 }
 
 .customization2_attendee_contact-data_headline::after {
-    content: "66";
+    content: "Osobní údaje";
     text-indent: 0px;
     display: block;
     line-height: initial;
 }
 
 .customization2_attendee_contact-data_salutation_label:after {
-    content: "67";
+    content: "Oslovení";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_title_label:after {
-    content: "73";
+    content: "Titul (volitelně)";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_first-name_label:after {
-    content: "72";
+    content: "Jméno";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_last-name_label:after {
-    content: "76";
+    content: "Příjmení";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_street:before {
-    content: "78";
+    content: "Soukromá adresa";
     display: block;
     margin-top: 24px;
     font-size: 1rem;
@@ -110,7 +110,7 @@
 }
 
 .customization2_attendee_contact-data_street > vv-input::before {
-    content: "79";
+    content: "(Pro poštovní zasílání dokumentů, jako je vstupenka, program a další informace)";
     display: block;
     padding-bottom: 16px;
     font-size: 14px;
@@ -118,47 +118,47 @@
 }
 
 .customization2_attendee_contact-data_street_label:after {
-    content: "80";
+    content: "Ulice";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_street-number_label:after {
-    content: "81";
+    content: "Čís.";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_zip_label:after {
-    content: "82";
+    content: "PSČ";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_city_label:after {
-    content: "83";
+    content: "Místo";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_country_label:after {
-    content: "84";
+    content: "Země";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_email_label:after {
-    content: "88";
+    content: "E-mailová adresa";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_email-confirmation_label:after {
-    content: "90";
+    content: "E-mailová adresa Potvrzení";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
-    content: "92";
+    content: "Telefon (volitelně)";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_email:before {
-    content: "94";
+    content: "Další údaje";
     display: block;
     margin-top: 24px;
     padding-bottom: 16px;
@@ -168,112 +168,112 @@
 }
 
 .weitereAngabenTeilnehmer p:after{
-    content: "94";
+    content: "Další údaje";
     font-size: 1rem !important;
 }
 
 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
-    content: "96";
+    content: "Závod/Pobočka";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
-    content: "99";
+    content: "Rád bych přijel k následujícímu datu";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
-    content: "Missing 1";
+    content: "Potřebuji hotelový pokoj";
     font-size: 14px;
 }
 
 .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
-    content: "102";
+    content: "Volím intergalaktickou večeři:";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
-    content: "128";
+    content: "Můj doprovod vybírá pro intergalaktickou večeři";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
-    content: "103";
+    content: "Masové menu";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
-    content: "104";
+    content: "Vegetariánské menu";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
-    content: "105";
+    content: "Intolerance (volitelně)";
     font-size: 14px;
 }
 
 .customization2_attendee_edit-action_save:after {
-    content: "107";
+    content: "Uložit";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_title:after {
-    content: "110";
+    content: "PŘIJDU S DOPROVODEM";
     font-size: 16px;
 }
 
 .customization-button-previous:after {
-    content: "170";
+    content: "Zpracovat výběr";
     font-size: 16px;
 }
 
 .customization2_attendee_edit-action_cancel:after {
-    content: "Missing 2";
+    content: "Zrušit";
     font-size: 16px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
-    content: "330";
+    content: "Můj doprovod vybírá pro intergalaktickou večeři";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
-    content: "331";
+    content: "Masové menu";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
-    content: "332";
+    content: "Vegetariánské menu";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
-    content: "334";
+    content: "Intolerance (volitelně)";
     font-size: 14px;
 }
 
 .custom_terms_checkbox .customization2_booking-terms_text:after {
-    content: "352";
+    content: "Vzal jsem na vědomí, že akce bude probíhat v souladu s předpisy koronavirové pandemie spolkové země Sasko platnými v době konání akce. Zajistím, abych mohl v den konání akce předložit všechna potřebná osvědčení.";
     font-size: 14px
 }
 
 .customization2_booking-terms_text:after {
-    content: "353";
+    content: "Souhlasím s následujícími podmínkami:";
     font-size: 14px
 }
 
 .customization2_booking-terms_custom-term-1:after {
-    content: "354";
+    content: "Upozornění na filmování a fotografování";
     font-size: 14px;
 }
 
 .customization2_booking-terms_custom-term-2:after {
-    content: "355";
+    content: "Ochrana dat";
     font-size: 14px;
 }
 
 .customization2_booking-terms_custom-term-3:after {
-    content: "356";
+    content: "Soulad s předpisy";
     font-size: 14px;
 }
 
