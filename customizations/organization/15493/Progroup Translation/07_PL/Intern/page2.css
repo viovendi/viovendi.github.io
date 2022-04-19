@@ -55,7 +55,7 @@
 .customization2_attendee_contact-data_last-name_error:after,
 .customization2_attendee_contact-data_first-name_error:after,
 .customization2_attendee_contact-data_salutation_error:after{
-    content: "Missing 3";
+    content: "Proszę wypełnić";
     text-indent: 0;
     display: block;
     line-height: initial;
@@ -69,29 +69,29 @@
 }
 
 .customization2_attendee-1 .customization2_attendee_title:after {
-    content: "64";
+    content: "PRZYBĘDĘ BEZ OSOBY TOWARZYSZĄCEJ";
     font-size: 16px;
 }
 
 .customization2_attendee_contact-data_headline::after {
-    content: "66";
+    content: "Dane osobowe";
     text-indent: 0px;
     display: block;
     line-height: initial;
 }
 
 .customization2_attendee_contact-data_salutation_label:after {
-    content: "67";
+    content: "Zwrot grzecznościowy";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_title_label:after {
-    content: "73";
+    content: "Tytuł (opcjonalnie)";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_first-name_label:after {
-    content: "72";
+    content: "Imię";
     font-size: 14px;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .customization2_attendee_contact-data_street:before {
-    content: "78";
+    content: "Nazwisko";
     display: block;
     margin-top: 24px;
     font-size: 1rem;
@@ -110,7 +110,7 @@
 }
 
 .customization2_attendee_contact-data_street > vv-input::before {
-    content: "79";
+    content: "(Do wysłania pocztą tradycyjną dokumentów, np. biletu, programu i innych informacji)";
     display: block;
     padding-bottom: 16px;
     font-size: 14px;
@@ -118,42 +118,42 @@
 }
 
 .customization2_attendee_contact-data_street_label:after {
-    content: "80";
+    content: "Ulica";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_street-number_label:after {
-    content: "81";
+    content: "Numer domu";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_zip_label:after {
-    content: "82";
+    content: "Kod pocztowy";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_city_label:after {
-    content: "83";
+    content: "Miejscowość";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_country_label:after {
-    content: "84";
+    content: "Kraj";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_email_label:after {
-    content: "88";
+    content: "Adres e-mail";
     font-size: 14px;
 }
 
 .customization2_attendee_contact-data_email-confirmation_label:after {
-    content: "90";
+    content: "Potwierdzenie adresu e-mail";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
-    content: "92";
+    content: "Telefon (opcjonalnie)";
     font-size: 14px;
 }
 
@@ -168,112 +168,112 @@
 }
 
 .weitereAngabenTeilnehmer p:after{
-    content: "94";
+    content: "Pozostałe informacje";
     font-size: 1rem !important;
 }
 
 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
-    content: "96";
+    content: "Zakład/lokalizacja";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
-    content: "99";
+    content: "Planuję przyjechać w dniu";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
-    content: "Missing 1";
+    content: "Potrzebuję pokoju w hotelu";
     font-size: 14px;
 }
 
 .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
-    content: "102";
+    content: "Na kolację międzygalaktyczną wybieram:";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
-    content: "128";
+    content: "Pozostałe informacje";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
-    content: "103";
+    content: "Zestaw mięsny";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
-    content: "104";
+    content: "Zestaw wegetariański";
     font-size: 14px;
 }
 
 .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
-    content: "105";
+    content: "Nietolerancja pokarmowa (opcjonalnie)";
     font-size: 14px;
 }
 
 .customization2_attendee_edit-action_save:after {
-    content: "107";
+    content: "Zapisz";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_title:after {
-    content: "110";
+    content: "PRZEBĘDĘ Z OSOBĄ TOWARZYSZĄCĄ";
     font-size: 16px;
 }
 
 .customization-button-previous:after {
-    content: "170";
+    content: "Modyfikuj wybór";
     font-size: 16px;
 }
 
 .customization2_attendee_edit-action_cancel:after {
-    content: "Missing 2";
+    content: "Anuluj";
     font-size: 16px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
-    content: "330";
+    content: "Moja osoba towarzysząca wybiera na kolację międzygalaktyczną:";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
-    content: "331";
+    content: "Zestaw mięsny";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
-    content: "332";
+    content: "Zestaw wegetariański";
     font-size: 14px;
 }
 
 .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
-    content: "334";
+    content: "Nietolerancja pokarmowa (opcjonalnie)";
     font-size: 14px;
 }
 
 .custom_terms_checkbox .customization2_booking-terms_text:after {
-    content: "352";
+    content: "Potwierdzam przyjęcie do wiadomości, że impreza zostanie zorganizowana w reżimie obostrzeń pandemicznych, jakie będą obowiązywać w danym momencie w Saksonii. Zadbam osobiście o posiadanie w dniu imprezy wszystkich niezbędnych certyfikatów.";
     font-size: 14px
 }
 
 .customization2_booking-terms_text:after {
-    content: "353";
+    content: "Akceptuję następujące warunki:";
     font-size: 14px
 }
 
 .customization2_booking-terms_custom-term-1:after {
-    content: "354";
+    content: "Informacja o filmowaniu i fotografowaniu";
     font-size: 14px;
 }
 
 .customization2_booking-terms_custom-term-2:after {
-    content: "355";
+    content: "Ochrona danych osobowych";
     font-size: 14px;
 }
 
 .customization2_booking-terms_custom-term-3:after {
-    content: "356";
+    content: "Zgodność z przepisami";
     font-size: 14px;
 }
 
