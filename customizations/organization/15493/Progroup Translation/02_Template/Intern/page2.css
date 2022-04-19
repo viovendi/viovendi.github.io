@@ -56,10 +56,8 @@
 .customization2_attendee_contact-data_first-name_error:after,
 .customization2_attendee_contact-data_salutation_error:after{
     content: "Missing 3";
-    text-indent: 0;
-    display: block;
-    line-height: initial;
-    margin-top: -15px;
+    font-size: 12px;
+    margin-top: 0px;
 }
 
 
