@@ -3,11 +3,11 @@
 }
 
 .customization-booking-area-wrapper-page1 .customization-button-next:after{
-    content:"59";
+    content:"Dále";
     font-size: 16px;
 }
 
 .customization-booking-area-wrapper-page2 .customization-button-next:after{
-    content:"171";
+    content:"Přihlásit se hned teď.";
     font-size: 16px;
 }
