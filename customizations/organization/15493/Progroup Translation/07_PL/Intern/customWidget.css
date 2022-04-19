@@ -272,12 +272,7 @@ form[name="form"] {
 	line-height: 0;
 }
 
-.customization2_attendee_contact-data_headline:after {
-	content: "Persönliche Angaben";
-	text-indent: 0;
-	display: block;
-	line-height: initial;
-}
+
 
 .customization2_attendee_further-data_headline {
     display: none;
