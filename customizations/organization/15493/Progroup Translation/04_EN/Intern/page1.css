@@ -42,14 +42,14 @@ ul.event-categories:after {
 }
 
 vv-booking-editing-prompt span:after {
-    content: "Already registered? You can log in here.";
+    content: "Already registered?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "Already registered? You can log in here.";
+    content: "You can log in here.";
     font-size: 14px;
     line-height: normal;
     text-indent: 0;

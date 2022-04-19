@@ -42,7 +42,7 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
-	content: "If you have any questions at any time, please e-mail events@progroup.ag";
+	content: "If you have any questions at any time, please e-mail";
 	text-indent: 0;
 	line-height: normal;
 	font-size: 14px;
