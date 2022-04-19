@@ -49,15 +49,7 @@
 }
 
 .customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
-    content:"ENCORE xxx JOURS";
-    text-indent: 0;
-	line-height: normal;
-	font-size:14px;
-    display:block;
-}
-
-.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(2):after{
-    content:"ENCORE xxx JOURS";
+    content:"JOURS RESTANTS";
     text-indent: 0;
 	line-height: normal;
 	font-size:14px;
@@ -169,6 +161,15 @@
 .terms__label:after{
 	content:"Conditions de réservation";
 	font-size: 13px;
+}
+
+.customization3_invoice-box_quantity_value .grid-element__label {
+    font-size: 0;
+}
+
+.customization3_invoice-box_quantity_value .grid-element__label:after {
+    content: "Quantité";
+    font-size: 12px;
 }
 
 .booking-editing-auth vv-heading,

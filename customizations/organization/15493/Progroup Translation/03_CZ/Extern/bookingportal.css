@@ -169,6 +169,15 @@
 	font-size: 13px;
 }
 
+.customization3_invoice-box_quantity_value .grid-element__label {
+    font-size: 0;
+}
+
+.customization3_invoice-box_quantity_value .grid-element__label:after {
+    content: "Množství";
+    font-size: 12px;
+}
+
 .booking-editing-auth vv-heading,
 .booking-editing-auth vv-input[name="bookingId"] label p,
 .booking-editing-auth vv-input[name="email"] label p,
