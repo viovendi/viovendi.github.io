@@ -1,5 +1,5 @@
 .booking-editing-auth vv-heading:after{
-    content:"55";
+    content:"Inserisci i tuoi dati di registrazione";
     text-indent: 0;
 	line-height: normal;
 	font-size:16px;
@@ -8,7 +8,7 @@
 }
 
 .booking-editing-auth vv-input[name="bookingId"] label p:after {
-    content:"56";
+    content:"Numero di registro";
     text-indent: 0;
 	line-height: normal;
 	font-size:16px;
@@ -16,12 +16,12 @@
 }
 
 .booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text:after {
-    content:"Missing 4";
+    content:"Si prega di inserire un numero di prenotazione valido";
 	font-size:12px;
 }
 
 .booking-editing-auth vv-input[name="email"] label p:after {
-    content:"57";
+    content:"Indirizzo e-mail";
     text-indent: 0;
 	line-height: normal;
 	font-size:16px;
@@ -29,27 +29,27 @@
 }
 
 .booking-editing-auth vv-input[name="email"] + vv-show-errors .error-text:after {
-    content:"Missing 5";
+    content:"Inserisci un indirizzo email valido";
 	font-size:12px;
 }
 
 .booking-editing-auth vv-button:nth-of-type(1) button:after {
-    content:"58";
+    content:"Vai alla selezione";
 	font-size:16px;
 }
 
 .booking-editing-auth vv-button:nth-of-type(2) button:after {
-    content:"59";
+    content:"Avanti";
 	font-size:16px;
 }
 
 .customization3_edit-booking_header_title:after{
-    content:"191";
+    content:"Il mio portale prenotazioni";
 	font-size:14px;
 }
 
 .customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
-    content:"192";
+    content:"ANCORA xxx GIORNI";
     text-indent: 0;
 	line-height: normal;
 	font-size:14px;
@@ -57,7 +57,7 @@
 }
 
 .customization3_edit-booking_header_days-to-go vv-text:nth-of-type(2):after{
-    content:"192";
+    content:"ANCORA xxx GIORNI";
     text-indent: 0;
 	line-height: normal;
 	font-size:14px;
@@ -65,109 +65,109 @@
 }
 
 .customization3_edit-booking_header_logout:after{
-    content:"Missing 6";
+    content:"Cancella l'iscrizione a";
 	font-size:14px;
 }
 
 .customization3_edit-booking_main_booking-date_label:after{
-    content:"194";
+    content:"Prenotato il";
 	font-size:13px;
 }
 
 .booking-status--paid.customization3_edit-booking_main_booking-status:after{
-    content:"197";
+    content:"Registrazione conclusa";
 	font-size:16px;
 }
 
 
 
 .customization3_edit-booking_main_event_dates:after{
-    content:"234";
+    content:"Sabato 5 novembre, ore 16:30 fino al 6 novembre 2022, ore 3:00";
 	font-size:13px;
 }
 
 .customization3_tab-group_tab:nth-of-type(1) .customization3_tab-group-mobile_tab_label_text:after{
-    content:"201";
+    content:"Partecipanti";
 	font-size:14px;
 }
 
 .customization3_tab-group_tab:nth-of-type(2) .customization3_tab-group-mobile_tab_label_text:after{
-    content:"221";
+    content:"Persona che ha effettuato la prenotazione";
 	font-size:14px;
 }
 
 .customization3_tab-group_tab:nth-of-type(3) .customization3_tab-group-mobile_tab_label_text:after{
-    content:"225";
+    content:"Prenotazione";
 	font-size:14px;
 }
 
 .customization3_tab-group_tab:nth-of-type(4) .customization3_tab-group-mobile_tab_label_text:after{
-    content:"233";
+    content:"EVENTO";
 	font-size:14px;
 }
 
 .customization2_attendee-1 .customization3_attendee_ticket-category_title:after{
-    content:"228";
+    content:"Vengo da solo";
 	font-size:14px;
 }
 
 .customization2_attendee-2 .customization3_attendee_ticket-category_title:after{
-    content:"230";
+    content:"Vengo accompagnato";
 	font-size:14px;
 }
 
 .customization2_booker_contact-data_headline:after{
-    content:"222";
+    content:"Persona di riferimento";
 	font-size:16px;
 }
 
 .customization3_invoice-box_header_title:after{
-    content:"226";
+    content:"Riassunto";
 	font-size:16px;
 }
 
 .customization3_invoice-box_category_label:after{
-    content:"227";
+    content:"QUALIFICA";
 	font-size:14px;
 }
 
 .customization3_invoice-box_quantity_label:after{
-    content:"229";
+    content:"Numero";
 	font-size:14px;
 }
 
 .customization3_invoice-box_table-body tr:nth-of-type(1) .customization3_invoice-box_category_value .grid-element__value:after{
-    content:"228";
+    content:"Vengo da solo";
 	font-size:13px;
 }
 
 .customization3_invoice-box_table-body tr:nth-of-type(2) .customization3_invoice-box_category_value .grid-element__value:after{
-    content:"230";
+    content:"Vengo accompagnato";
 	font-size:13px;
 }
 
 .customization3_edit-booking_event_dates:after{
-    content:"234";
+    content:"Sabato 5 novembre, ore 16:30 fino al 6 novembre 2022, ore 3:00";
 	font-size:14px;
 }
 
 .customization3_edit-booking_event_organizer > div:first-of-type > div:first-of-type .data-item__label:after {
-	content:"233";
+	content:"EVENTO";
 	font-size: 13px;
 }
 
 .organizer__name.data-item__value:after {
-	content:"237";
+	content:"Progroup-Space-Crew";
 	font-size: 16px;
 }
 
 .event__contact.data-item .data-item__label:after{
-	content:"239";
+	content:"Contatti";
 	font-size: 13px;
 }
 
 .terms__label:after{
-	content:"242";
+	content:"Condizioni di prenotazione";
 	font-size: 13px;
 }
 
