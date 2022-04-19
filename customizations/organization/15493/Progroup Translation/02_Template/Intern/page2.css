@@ -232,6 +232,26 @@
     font-size: 16px;
 }
 
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+    content: "330";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+    content: "331";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+    content: "332";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+    content: "334";
+    font-size: 14px;
+}
+
 .custom_terms_checkbox .customization2_booking-terms_text:after {
     content: "352";
     font-size: 14px
