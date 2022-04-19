@@ -79,10 +79,7 @@
 	font-size:16px;
 }
 
-.status__color--live.status__background--live.customization3_edit-booking_main_event-status:after{
-    content:"Missing 7";
-	font-size:12px;
-}
+
 
 .customization3_edit-booking_main_event_dates:after{
     content:"234";
@@ -188,7 +185,6 @@ vv-show-errors .error-text,
 .customization3_edit-booking_header_logout,
 .customization3_edit-booking_main_booking-date_label,
 .booking-status--paid.customization3_edit-booking_main_booking-status,
-.status__color--live.status__background--live.customization3_edit-booking_main_event-status,
 .customization3_tab-group-mobile_tab_label_text,
 .customization3_attendee_ticket-category_title,
 .customization2_booker_contact-data_headline,
