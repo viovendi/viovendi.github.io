@@ -18,17 +18,17 @@ vv-booking-editing-prompt button {
 }
 
 ul.event-categories li:nth-of-type(1) .customization-category-name:after {
-    content: "254";
+    content: "Przebędę bez osoby towarzyszącej";
     font-size: 1rem;
 }
 
 ul.event-categories li:nth-of-type(2) .customization-category-name:after {
-    content: "255";
+    content: "Przebędę z osobą towarzyszącą";
     font-size: 1rem;
 }
 
 ul.event-categories:after {
-    content: "256";
+    content: "Serdecznie zapraszamy wraz z osobą towarzyszącą. Udział jest nieodpłatny.";
     font-size: 16px;
     display: block;
     margin: 20px;
@@ -37,17 +37,17 @@ ul.event-categories:after {
 }
 
 .customization-encrypted-connection:after {
-    content: "258";
+    content: "Połączenie szyfrowane";
     font-size:14px
 }
 
 vv-booking-editing-prompt span:after {
-    content: "259";
+    content: "Masz już rejestrację za sobą?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "260";
+    content: "Tutaj przejdziesz do swojej rejestracji";
 }

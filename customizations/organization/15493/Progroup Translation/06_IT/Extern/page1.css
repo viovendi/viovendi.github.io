@@ -18,17 +18,17 @@ vv-booking-editing-prompt button {
 }
 
 ul.event-categories li:nth-of-type(1) .customization-category-name:after {
-    content: "254";
+    content: "Vengo da solo";
     font-size: 1rem;
 }
 
 ul.event-categories li:nth-of-type(2) .customization-category-name:after {
-    content: "255";
+    content: "Vengo accompagnato";
     font-size: 1rem;
 }
 
 ul.event-categories:after {
-    content: "256";
+    content: "Lei e il suo accompagnatore siete invitati di cuore. La partecipazione è gratuita.";
     font-size: 16px;
     display: block;
     margin: 20px;
@@ -37,17 +37,17 @@ ul.event-categories:after {
 }
 
 .customization-encrypted-connection:after {
-    content: "258";
+    content: "Collegamento cifrato";
     font-size:14px
 }
 
 vv-booking-editing-prompt span:after {
-    content: "259";
+    content: "Già registrato?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "260";
+    content: "Clicchi qui per accedere alla sua registrazione";
 }

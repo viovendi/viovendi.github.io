@@ -13,28 +13,28 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 .ew-confirmation__header .header__label:after {
-    content: "359";
+    content: "Conferma di registrazione";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-confirmation-description:after {
-	content: "360";
+	content: "Grazie mille per la sua registrazione. A breve riceverà la sua conferma via E-mail.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .ew-confirmation__text-paragraph:after {
-	content: "362";
+	content: "Potrà vedere e gestire in ogni momento la sua registrazione dal portale. Per effettuare il login avrà bisogno del suo numero di registrazione e del suo indirizzo e-mail.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-client-portal-link:after {
-    content: "363";
+    content: "Al portale di registrazione";
     text-indent: 0;
     display: block;
     line-height: normal;
@@ -42,7 +42,7 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
-	content: "364";
+	content: "In caso di domande può sempre rivolgersi a";
 	text-indent: 0;
 	line-height: normal;
 	font-size: 14px;

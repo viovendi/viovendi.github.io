@@ -7,7 +7,7 @@
 }
 
 .selection .progress-point__label:after {
-    content: "60";
+    content: "Sélection";
     text-indent: 0;
     font-size: 14px;
     display: block;
@@ -17,7 +17,7 @@
 }
 
 .information .progress-point__label:after {
-    content: "61";
+    content: "Données";
     text-indent: 0;
     font-size: 14px;
     display: block;
@@ -27,7 +27,7 @@
 }
 
 .confirmation .progress-point__label:after {
-    content: "62";
+    content: "Confirmation";
     text-indent: 0;
     font-size: 14px;
     display: block;

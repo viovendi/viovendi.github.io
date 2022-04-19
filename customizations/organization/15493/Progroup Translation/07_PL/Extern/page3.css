@@ -13,28 +13,28 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 .ew-confirmation__header .header__label:after {
-    content: "359";
+    content: "Potwierdzenie rejestracji";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-confirmation-description:after {
-	content: "360";
+	content: "Dziękujemy za zarejestrowanie się. Wkrótce otrzymasz mailem potwierdzenie.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .ew-confirmation__text-paragraph:after {
-	content: "362";
+	content: "Korzystając z portalu, możesz w każdej chwili przeglądać i zarządzać swoimi danymi. Aby się zalogować, musisz podać swój numer zgłoszeniowy i adres e-mail.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-client-portal-link:after {
-    content: "363";
+    content: "Do portalu logowania";
     text-indent: 0;
     display: block;
     line-height: normal;
@@ -42,7 +42,7 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
-	content: "364";
+	content: "W razie pytań zawsze możesz zwrócić się na adres";
 	text-indent: 0;
 	line-height: normal;
 	font-size: 14px;

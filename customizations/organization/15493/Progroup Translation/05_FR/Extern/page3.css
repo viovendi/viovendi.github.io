@@ -13,28 +13,28 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 .ew-confirmation__header .header__label:after {
-    content: "359";
+    content: "Confirmation de l'inscription";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-confirmation-description:after {
-	content: "360";
+	content: "Merci de votre inscription. Vous recevrez sous peu votre confirmation par courriel.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .ew-confirmation__text-paragraph:after {
-	content: "362";
+	content: "Vous pouvez consulter et gérer votre inscription à tout moment sur le portail. Pour vous connecter à cette plate-forme, vous avez besoin de votre numéro d'enregistrement et de votre adresse e-mail.";
 	text-indent: 0;
 	display: block;
 	line-height: normal;
 }
 
 .customization-client-portal-link:after {
-    content: "363";
+    content: "Vers le portail d'enregistrement";
     text-indent: 0;
     display: block;
     line-height: normal;
@@ -42,7 +42,7 @@ p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
 }
 
 p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
-	content: "364";
+	content: "En cas de questions, vous pouvez vous adresser à tout moment à";
 	text-indent: 0;
 	line-height: normal;
 	font-size: 14px;
