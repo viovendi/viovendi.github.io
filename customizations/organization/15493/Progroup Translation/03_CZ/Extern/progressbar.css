@@ -7,7 +7,7 @@
 }
 
 .selection .progress-point__label:after {
-    content: "60";
+    content: "Výběr";
     text-indent: 0;
     font-size: 14px;
     display: block;
@@ -17,7 +17,7 @@
 }
 
 .information .progress-point__label:after {
-    content: "61";
+    content: "Údaje";
     text-indent: 0;
     font-size: 14px;
     display: block;
@@ -27,7 +27,7 @@
 }
 
 .confirmation .progress-point__label:after {
-    content: "62";
+    content: "Potvrzení";
     text-indent: 0;
     font-size: 14px;
     display: block;
