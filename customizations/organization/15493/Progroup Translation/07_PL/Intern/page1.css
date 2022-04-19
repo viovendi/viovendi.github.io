@@ -42,14 +42,14 @@ ul.event-categories:after {
 }
 
 vv-booking-editing-prompt span:after {
-    content: "Masz już rejestrację za sobą? Tutaj przejdziesz do rejestracji.";
+    content: "Masz już rejestrację za sobą?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "Masz już rejestrację za sobą? Tutaj przejdziesz do rejestracji.";
+    content: "Tutaj przejdziesz do rejestracji.";
     font-size: 14px;
     line-height: normal;
     text-indent: 0;
