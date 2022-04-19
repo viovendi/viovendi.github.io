@@ -1,3 +1,4 @@
-div.vv-tooltip__content {
+.collapsible-wrapper_toggle-action div.vv-tooltip__content,
+.collapsible-wrapper__view-actions div.vv-tooltip__content {
 	display:none !important
 }

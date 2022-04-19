@@ -16,7 +16,7 @@
 }
 
 .booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text:after {
-    content:"Missing 4";
+    content:"Please fill in";
 	font-size:12px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .booking-editing-auth vv-input[name="email"] + vv-show-errors .error-text:after {
-    content:"Missing 5";
+    content:"Please fill in";
 	font-size:12px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .customization3_edit-booking_header_days-to-go vv-text:nth-of-type(2):after{
-    content:"xxx DAYS TO GO";
+    content:"DAYS TO GO";
     text-indent: 0;
 	line-height: normal;
 	font-size:14px;
@@ -65,7 +65,7 @@
 }
 
 .customization3_edit-booking_header_logout:after{
-    content:"Missing 6";
+    content:"Log out";
 	font-size:14px;
 }
 
