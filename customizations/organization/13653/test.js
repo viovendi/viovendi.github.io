@@ -189,29 +189,26 @@ function handler() {
 
   if (name == "Teilnehmeranmeldung" ) {
     // hide other day when 1 day is selected
-    hideProd("P1", "2 tägiger WS Mo und Di")
     console.log("hidesomething");
     
 
     // show only the products/Workshop that happen on the selected day
     //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
     // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
-    if (ischecked("P1")) {
+    if (ischecked("2Tage")) {
       console.log("checked");
-      showProduct("Workshop 1");
-      showProduct("Workshop 1.1");
-      showProduct("Workshop 1.2");
+      hideProduct("P2");
+      
       
     } 
     else if (!ischecked("Montag")) {
       console.log("notchecked");
-      hideProduct("Workshop 1");
-      hideProduct("Workshop 1.1");
-      hideProduct("Workshop 1.2");
+      showProduct("P2");
+
       
+      //todo
       uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
+      
     }
 
     if (ischecked("Dienstag")) {
