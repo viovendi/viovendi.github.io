@@ -207,7 +207,7 @@ function handler() {
 
       
       //todo
-      uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+     // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       
     }
 
