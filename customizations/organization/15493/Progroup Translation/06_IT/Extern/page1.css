@@ -50,4 +50,7 @@ vv-booking-editing-prompt span:after {
 
 vv-booking-editing-prompt button:after {
     content: "Clicchi qui per accedere alla sua registrazione";
+    font-size: 14px;
+    line-height: normal;
+    text-indent: 0;
 }
