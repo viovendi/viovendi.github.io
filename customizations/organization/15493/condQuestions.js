@@ -7,6 +7,7 @@ var dropdownHerr;
 var dropdownFrau;
 
 ticketNumber = "Registrierungsnummer: ";
+pleaseSelect = "Bitte ausfüllen";
 
 const url = window.location.href;
 
