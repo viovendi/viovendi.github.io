@@ -2,6 +2,8 @@ var ticketNumber;
 var pleaseSelect;
 var checkboxSelected;
 
+ticketNumber = "Registrierungsnummer: ";
+
 const url = window.location.href;
 
 if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) {
@@ -54,10 +56,10 @@ function changeTextTo(selector, originalText, newText) {
 };
 
 function translatePleaseSelect() {
-    changeTextTo('.vv-single-select-option', 'Bitte auswählen', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
-        if (el.innerText === 'Bitte auswählen') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
     });
 
     addEventListener('click', e => {
@@ -194,7 +196,7 @@ function editBookingPortal() {
 
     if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
         var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
-        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
+        $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
     };
 };
 
