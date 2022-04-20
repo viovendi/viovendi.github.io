@@ -1,6 +1,10 @@
 var ticketNumber;
 var pleaseSelect;
 var checkboxSelected;
+var dropdownYes;
+var dropdownNo;
+var dropdownHerr;
+var dropdownFrau;
 
 ticketNumber = "Registrierungsnummer: ";
 
@@ -10,22 +14,42 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     console.log("FR");
     ticketNumber = "Numéro d'enregistrement: ";
     pleaseSelect = "Veuillez sélectionner";
+    dropdownYes = "Oui";
+    dropdownNo = "Non";
+    dropdownHerr = "Monsieur";
+    dropdownFrau = "Madame";
 } else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
     console.log("IT");
     ticketNumber = "Numero di registrazione: ";
     pleaseSelect = "Si prega di selezionare";
+    dropdownYes = "Sì";
+    dropdownNo = "No";
+    dropdownHerr = "Signore";
+    dropdownFrau = "Signora";
 } else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
     console.log("PL");
     ticketNumber = "Numer zgłoszeniowy: ";
     pleaseSelect = "Prosimy wybrać";
+    dropdownYes = "";
+    dropdownNo = "";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Pani";
 } else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
     console.log("CZ");
     ticketNumber = "Registrační číslo: ";
     pleaseSelect = "Prosím zvolte";
+    dropdownYes = "Tak";
+    dropdownNo = "Nie";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Paní";
 } else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
     console.log("EN");
     ticketNumber = "Registration number: ";
     pleaseSelect = "Please select";
+    dropdownYes = "Ano";
+    dropdownNo = "Ne";
+    dropdownHerr = "Mr";
+    dropdownFrau = "Ms/Mrs";
 } else {
     console.log("ERROR: Unknown widget id")
 }
@@ -57,9 +81,17 @@ function changeTextTo(selector, originalText, newText) {
 
 function translatePleaseSelect() {
     changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Ja', dropdownYes);
+    changeTextTo('.vv-single-select-option', 'Nein', dropdownNo);
+    changeTextTo('.vv-single-select-option', 'Mr.', dropdownHerr);
+    changeTextTo('.vv-single-select-option', 'Ms.', dropdownFrau);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
         if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Ja') { el.innerText = dropdownYes }
+        if (el.innerText === 'Nein') { el.innerText = dropdownNo }
+        if (el.innerText === 'Mr.') { el.innerText = dropdownHerr }
+        if (el.innerText === 'Ms.') { el.innerText = dropdownFrau }
     });
 
     addEventListener('click', e => {
