@@ -45,6 +45,8 @@
     display:none
 }
 
+.customization2_attendee_contact-data_company_error:after,
+.customization2_attendee_contact-data_country_error:after,
 .customization2_attendee_further-data_custom-question_error:after,
 .customization2_attendee_contact-data_city_error:after,
 .customization2_attendee_contact-data_zip_error:after,
