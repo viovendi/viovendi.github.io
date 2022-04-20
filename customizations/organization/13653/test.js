@@ -206,9 +206,8 @@ function handler() {
       
     }
 
-    if (ischecked("Dienstag")) {
-      
-      showProduct("Workshop 2");
+    if (ischecked("P2")) {
+      uncheckProduct("2Tage");
       
     } 
     else {
