@@ -195,8 +195,7 @@ function handler() {
    if (ischecked("2Tage")) {
       console.log("checked");
       hideProduct("P2");
-      uncheckProduct2whenProduct1Isunchecked("2Tage","P2");
-      
+      uncheckProd("P2");
     } 
     else if (!ischecked("2Tage")) {
       console.log("notchecked");
@@ -207,7 +206,7 @@ function handler() {
     }
 
     if (ischecked("P2")) {
-      uncheckProduct("2Tage");
+      uncheckProd("2Tage");
       
     } 
     else {
