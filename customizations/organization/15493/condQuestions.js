@@ -5,9 +5,10 @@ var dropdownYes;
 var dropdownNo;
 var dropdownHerr;
 var dropdownFrau;
+var dropdownError;
 
 ticketNumber = "Registrierungsnummer: ";
-pleaseSelect = "Bitte ausfüllen";
+dropdownError = "<div class='error-message'> Bitte ausfüllen </div>";
 
 const url = window.location.href;
 
@@ -19,6 +20,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownNo = "Non";
     dropdownHerr = "Monsieur";
     dropdownFrau = "Madame";
+    dropdownError = "<div class='error-message'> Veuillez sélectionner </div>";
 } else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
     console.log("IT");
     ticketNumber = "Numero di registrazione: ";
@@ -27,6 +29,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownNo = "No";
     dropdownHerr = "Signore";
     dropdownFrau = "Signora";
+    dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
 } else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
     console.log("PL");
     ticketNumber = "Numer zgłoszeniowy: ";
@@ -35,6 +38,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownNo = "";
     dropdownHerr = "Pan";
     dropdownFrau = "Pani";
+    dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
 } else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
     console.log("CZ");
     ticketNumber = "Registrační číslo: ";
@@ -43,6 +47,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownNo = "Nie";
     dropdownHerr = "Pan";
     dropdownFrau = "Paní";
+    dropdownError = "<div class='error-message'> Prosím zvolte </div>";
 } else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
     console.log("EN");
     ticketNumber = "Registration number: ";
@@ -51,6 +56,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownNo = "Ne";
     dropdownHerr = "Mr";
     dropdownFrau = "Ms/Mrs";
+    dropdownError = "<div class='error-message'> Please select </div>";
 } else {
     console.log("ERROR: Unknown widget id")
 }
@@ -111,7 +117,7 @@ function disableWhenEmpty(field) {
     if (inputOfField != undefined) {
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
         if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
-            $("<div class='error-message'>" pleaseSelect "</div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+            $(dropdownError).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
         }
 
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
@@ -140,7 +146,7 @@ function disableWhenEmpty(field) {
         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
     } else {
         if (!$(inputOfField).next().hasClass("error-message")) {
-            $("<div class='error-message'>" pleaseSelect "</div>").insertAfter($(inputOfField));
+            $(dropdownError).insertAfter($(inputOfField));
         }
     }
     $(inputOfField).addClass('error-state');
