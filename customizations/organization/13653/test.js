@@ -48,6 +48,16 @@ function disableProd(disable){
     });
    }
 
+function enableProd(disable){
+    $('.customization2_attendee_further-data_product').each(function(i, element) {
+          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+             if(checkboxName.indexOf(disable) >= 0){
+                checkbox.prop( "disabled", false )
+             }
+    });
+   }
+
 
 // this hides or shows another product when checked or unchecked
 function hideProdWhenChecked(shortName, hide) {
@@ -192,15 +202,14 @@ function handler() {
     // hide other day when 1 day is selected
    if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
       console.log("checked");
-      hideProduct("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      disableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
       uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      hideProduct("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      disableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
       uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
     } 
     else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
       console.log("notchecked");
-      showProduct("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      showProduct("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      ensableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
 
      // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       
