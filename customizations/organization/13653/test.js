@@ -78,13 +78,15 @@ function uncheckProduct2whenProduct1Isunchecked(product1, product2){
     //checkbox.change(function () {
       if (!checkbox.is(':checked')) {
         if (checkboxName.includes(product1)) {
-          console.log("uncheck" + product2 +" if " +product1 +" is checked");
+          console.log("uncheck" + product2 +" if " +product1 +" is unchecked");
           uncheckProd(product2)
         }
       } 
     //})
   })
 }
+
+
 
 function hideProd(shortName, hide) {
   $('.customization2_attendee_further-data_product').each(function (i, element) {
@@ -190,23 +192,16 @@ function handler() {
   if (name == "Teilnehmeranmeldung" ) {
     // hide other day when 1 day is selected
     console.log("hidesomething");
-    
-
-    // show only the products/Workshop that happen on the selected day
-    //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
-    // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
-    if (ischecked("2Tage")) {
+   if (ischecked("2Tage")) {
       console.log("checked");
       hideProduct("P2");
-      
+      uncheckProduct2whenProduct1Isunchecked("2Tage","P2");
       
     } 
-    else if (!ischecked("Montag")) {
+    else if (!ischecked("2Tage")) {
       console.log("notchecked");
       showProduct("P2");
 
-      
-      //todo
      // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       
     }
