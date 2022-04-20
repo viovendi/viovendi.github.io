@@ -1,6 +1,14 @@
 var ticketNumber;
 var pleaseSelect;
 var checkboxSelected;
+var dropdownYes;
+var dropdownNo;
+var dropdownHerr;
+var dropdownFrau;
+var dropdownError;
+
+ticketNumber = "Registrierungsnummer: ";
+dropdownError = "<div class='error-message'> Bitte ausfüllen </div>";
 
 const url = window.location.href;
 
@@ -8,22 +16,47 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     console.log("FR");
     ticketNumber = "Numéro d'enregistrement: ";
     pleaseSelect = "Veuillez sélectionner";
+    dropdownYes = "Oui";
+    dropdownNo = "Non";
+    dropdownHerr = "Monsieur";
+    dropdownFrau = "Madame";
+    dropdownError = "<div class='error-message'> Veuillez sélectionner </div>";
 } else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
     console.log("IT");
     ticketNumber = "Numero di registrazione: ";
     pleaseSelect = "Si prega di selezionare";
+    dropdownYes = "Sì";
+    dropdownNo = "No";
+    dropdownHerr = "Signore";
+    dropdownFrau = "Signora";
+    dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
 } else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
     console.log("PL");
     ticketNumber = "Numer zgłoszeniowy: ";
     pleaseSelect = "Prosimy wybrać";
+    dropdownYes = "";
+    dropdownNo = "";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Pani";
+    dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
 } else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
     console.log("CZ");
     ticketNumber = "Registrační číslo: ";
     pleaseSelect = "Prosím zvolte";
+    dropdownYes = "Tak";
+    dropdownNo = "Nie";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Paní";
+    dropdownError = "<div class='error-message'> Prosím zvolte </div>";
 } else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
     console.log("EN");
     ticketNumber = "Registration number: ";
     pleaseSelect = "Please select";
+    dropdownYes = "Ano";
+    dropdownNo = "Ne";
+    dropdownHerr = "Mr";
+    dropdownFrau = "Ms/Mrs";
+    dropdownError = "<div class='error-message'> Please select </div>";
 } else {
     console.log("ERROR: Unknown widget id")
 }
@@ -54,10 +87,18 @@ function changeTextTo(selector, originalText, newText) {
 };
 
 function translatePleaseSelect() {
-    changeTextTo('.vv-single-select-option', 'Bitte auswählen', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Ja', dropdownYes);
+    changeTextTo('.vv-single-select-option', 'Nein', dropdownNo);
+    changeTextTo('.vv-single-select-option', 'Mr.', dropdownHerr);
+    changeTextTo('.vv-single-select-option', 'Ms.', dropdownFrau);
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
-        if (el.innerText === 'Bitte auswählen') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Ja') { el.innerText = dropdownYes }
+        if (el.innerText === 'Nein') { el.innerText = dropdownNo }
+        if (el.innerText === 'Mr.') { el.innerText = dropdownHerr }
+        if (el.innerText === 'Ms.') { el.innerText = dropdownFrau }
     });
 
     addEventListener('click', e => {
@@ -76,7 +117,7 @@ function disableWhenEmpty(field) {
     if (inputOfField != undefined) {
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
         if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
-            $("<div class='error-message'> Please complete </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+            $(dropdownError).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
         }
 
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
@@ -105,7 +146,7 @@ function disableWhenEmpty(field) {
         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
     } else {
         if (!$(inputOfField).next().hasClass("error-message")) {
-            $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
+            $(dropdownError).insertAfter($(inputOfField));
         }
     }
     $(inputOfField).addClass('error-state');
@@ -194,7 +235,7 @@ function editBookingPortal() {
 
     if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
         var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
-        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
+        $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
     };
 };
 

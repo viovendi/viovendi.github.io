@@ -16,7 +16,7 @@
 }
 
 .booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text:after {
-    content:"Missing 4";
+    content:"Veuillez saisir un numéro de réservation valide";
 	font-size:12px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .booking-editing-auth vv-input[name="email"] + vv-show-errors .error-text:after {
-    content:"Missing 5";
+    content:"Veuillez saisir une adresse e-mail valide";
 	font-size:12px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .customization3_edit-booking_header_logout:after{
-    content:"Missing 6";
+    content:"Se désinscrire";
 	font-size:14px;
 }
 

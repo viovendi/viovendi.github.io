@@ -42,14 +42,14 @@ ul.event-categories:after {
 }
 
 vv-booking-editing-prompt span:after {
-    content: "Jsi již přihlášen? Zde přejdeš k Přihlášení.";
+    content: "Jsi již přihlášen?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "Jsi již přihlášen? Zde přejdeš k Přihlášení.";
+    content: "Zde přejdeš k Přihlášení.";
     font-size: 14px;
     line-height: normal;
     text-indent: 0;

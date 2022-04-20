@@ -42,14 +42,14 @@ ul.event-categories:after {
 }
 
 vv-booking-editing-prompt span:after {
-    content: "Già registrato? Clicca qui per accedere alla tua registrazione.";
+    content: "Già registrato?";
     text-indent: 0;
     font-size: 14px;
     line-height: normal;
 }
 
 vv-booking-editing-prompt button:after {
-    content: "Già registrato? Clicca qui per accedere alla tua registrazione.";
+    content: "Clicca qui per accedere alla tua registrazione.";
     font-size: 14px;
     line-height: normal;
     text-indent: 0;
