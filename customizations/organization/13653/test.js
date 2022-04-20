@@ -1,5 +1,4 @@
-console.log("git");
-console.log('Start working, Google Tag Manager (WHUG)');
+console.log("git sommerakademie");
 
 
 
