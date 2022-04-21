@@ -60,13 +60,13 @@ function hideStuff(name){
   }
 	
 if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter*in"  ) {
-    	//$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
-	//$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
-	//$('.'+name+' .customization2_attendee_further-data_headline').hide();
+    	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_headline').hide();
 	
 	//TODO hide if view state: .customization2_attendee-state_view
-	//$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
-	//$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
+	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
+	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
 	
 	console.log("mitarbeiter hide");
 }	
