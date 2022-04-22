@@ -12,7 +12,7 @@ function handler(){
   arrayOfLabelsToHide = ["1","3","5","7"];
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
-  value = "B";
+  value = "C";
   arrayOfLabelsToShow = ["3","6"];
   arrayOfLabelsToHide = ["1","2","4","5","7"];
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
