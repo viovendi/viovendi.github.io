@@ -241,9 +241,3 @@ function myHelpers(elements) {
         const elements = document.querySelectorAll(selector);
         return new myHelpers(elements);
     }
-    /*
-     
-    */
-     function $$() {
-        return new myHelpers(null);
-    }
