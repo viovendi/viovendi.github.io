@@ -188,7 +188,7 @@ function myHelpers(elements) {
                     $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
                     $(field).find('.error-message').hide();
                     //   $(".error-state").each(function(){console.log($(this))});
-                    console.log('error-state length: '+$(".error-state").length);
+                    
                     if ($(".error-state").length == 0)
                         $('.customization2_attendee_edit-action_save').prop("disabled", false);
                 }
@@ -229,6 +229,7 @@ function myHelpers(elements) {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
                 //   $(".error-state").each(function(){console.log($(this))});
+                console.log('error-state length: '+$(".error-state").length);
                 if ($(".error-state").length == 0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
