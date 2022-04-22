@@ -49,6 +49,7 @@ function myHelpers(elements) {
         this.field = null;
         elements.forEach((field) => {
             const labelText = $(field).find(".vv-control-label").text();
+            console.log('Label Texts: '+labelText)
             if (labelText.trim().includes(lable)) {
                 this.field = field;
             }
