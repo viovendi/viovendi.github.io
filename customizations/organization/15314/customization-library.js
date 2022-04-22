@@ -126,7 +126,7 @@ function myHelpers(elements) {
                 for (let i = 0; i < questionsToShow.length; i++) {
                     $(questionsToShow[i]).show()
                     $(questionsToShow[i]).find('vv-optional-text').css("display", "none");
-                    this.disableWhenEmpty(questionsToShow[i]);
+                    disableWhenEmpty(questionsToShow[i]);
                 }
                 for (let i = 0; i < questionsToHide.length; i++) {
                     $(questionsToHide[i]).hide()
