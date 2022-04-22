@@ -90,7 +90,7 @@ function myHelpers(elements) {
     this.findQuestionByLabel = function (label) {
         var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
         if (field == undefined) {
-            field = findDropDownByLabel(label);
+            field = this.findDropDownByLabel(label);
         }
         return label;
     }
