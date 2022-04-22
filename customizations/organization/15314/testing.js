@@ -6,6 +6,17 @@ function handler(){
   var arrayOfLabelsToHide = ["B","C","B C"];
   var disableSaveOnValueSelected = true;
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  
+  value = "B";
+  var arrayOfLabelsToShow = ["B","A B","B C","A B C"];
+  var arrayOfLabelsToHide = ["A","C","A C"];
+  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+
+  value = "B";
+  var arrayOfLabelsToShow = ["C","A C","B C","A B C"];
+  var arrayOfLabelsToHide = ["A","B","A B"];
+  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+
 }
 
 handler();
