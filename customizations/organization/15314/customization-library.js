@@ -233,11 +233,17 @@ function myHelpers(elements) {
         });
     }
 }
-/*
+    /*
      selector - is the CSS class of the parent input field that you want to change
      for example $$('.customization2_attendee_further-data_custom-question')
     */
      function $$(selector) {
         const elements = document.querySelectorAll(selector);
         return new myHelpers(elements);
+    }
+    /*
+     
+    */
+     function $$() {
+        return new myHelpers(null);
     }
