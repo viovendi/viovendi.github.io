@@ -2,19 +2,19 @@ console.log('test');
 function handler(){
   var dropdownLable = "Dropdown1";
   var value = "A";
-  var arrayOfLabelsToShow = ["A","A B","A C","A B C"];
-  var arrayOfLabelsToHide = ["B","C","B C"];
+  var arrayOfLabelsToShow = ["1","3","5","7"];
+  var arrayOfLabelsToHide = ["2","4","6"];
   var disableSaveOnValueSelected = true;
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
   
   value = "B";
-  var arrayOfLabelsToShow = ["B","A B","B C","A B C"];
-  var arrayOfLabelsToHide = ["A","C","A C"];
+  arrayOfLabelsToShow = ["2","4","6"];
+  arrayOfLabelsToHide = ["1","3","5","7"];
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   value = "B";
-  var arrayOfLabelsToShow = ["C","A C","B C","A B C"];
-  var arrayOfLabelsToHide = ["A","B","A B"];
+  arrayOfLabelsToShow = ["3","6"];
+  arrayOfLabelsToHide = ["1","2","4","5","7"];
   $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
 }
