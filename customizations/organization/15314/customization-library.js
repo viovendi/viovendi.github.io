@@ -93,7 +93,7 @@ function myHelpers(elements) {
         if (field == undefined) {
             field = $$('.customization2_attendee_further-data_custom-question').findDropDown(label);
         }
-        return label;
+        return field;
     }
 
     this.setValueToTextInputByLabel = function (inputLabel, value) {
