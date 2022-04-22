@@ -113,11 +113,11 @@ function myHelpers(elements) {
 
         const questionsToShow = [];
         for (let i = 0; i < arrayOfLabelsToShow.length; i++)
-            questionsToShow[i] = findQuestionByLabel(arrayOfLabelsToShow[i]);
+            questionsToShow[i] = this.findQuestionByLabel(arrayOfLabelsToShow[i]);
 
         const questionsToHide = [];
         for (let i = 0; i < arrayOfLabelsToHide.length; i++)
-            questionsToHide[i] = findQuestionByLabel(arrayOfLabelsToHide[i]);
+            questionsToHide[i] = this.findQuestionByLabel(arrayOfLabelsToHide[i]);
 
         $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
             if ($(this).text().trim() == value) {
@@ -125,7 +125,7 @@ function myHelpers(elements) {
                 for (let i = 0; i < questionsToShow.length; i++) {
                     $(questionsToShow[i]).show()
                     $(questionsToShow[i]).find('vv-optional-text').css("display", "none");
-                    disableWhenEmpty(questionsToShow[i]);
+                    this.disableWhenEmpty(questionsToShow[i]);
                 }
                 for (let i = 0; i < questionsToHide.length; i++) {
                     $(questionsToHide[i]).hide()
