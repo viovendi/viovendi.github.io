@@ -114,11 +114,11 @@ function myHelpers(elements) {
         console.log(dropdown)
         const questionsToShow = [];
         for (let i = 0; i < arrayOfLabelsToShow.length; i++)
-            questionsToShow[i] = this.findQuestionByLabel(arrayOfLabelsToShow[i]);
+            questionsToShow[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToShow[i]);
         console.log(questionsToShow)
         const questionsToHide = [];
         for (let i = 0; i < arrayOfLabelsToHide.length; i++)
-            questionsToHide[i] = this.findQuestionByLabel(arrayOfLabelsToHide[i]);
+            questionsToHide[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToHide[i]);
         console.log(questionsToHide)
         $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
             if ($(this).text().trim() == value) {
