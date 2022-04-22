@@ -109,7 +109,7 @@ function myHelpers(elements) {
     Needs testing
     */
     this.condQuestionDropdown = function (dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
-
+        this.addErrorStyles();
         var dropdown = this.findDropDown(dropdownLable);
         console.log(dropdown)
         const questionsToShow = [];
