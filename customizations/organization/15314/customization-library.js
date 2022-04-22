@@ -110,15 +110,15 @@ function myHelpers(elements) {
     this.condQuestionDropdown = function (dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
 
         var dropdown = this.findDropDown(dropdownLable);
-
+        console.log(dropdown)
         const questionsToShow = [];
         for (let i = 0; i < arrayOfLabelsToShow.length; i++)
             questionsToShow[i] = this.findQuestionByLabel(arrayOfLabelsToShow[i]);
-
+        console.log(questionsToShow)
         const questionsToHide = [];
         for (let i = 0; i < arrayOfLabelsToHide.length; i++)
             questionsToHide[i] = this.findQuestionByLabel(arrayOfLabelsToHide[i]);
-
+        console.log(questionsToHide)
         $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
             if ($(this).text().trim() == value) {
 
