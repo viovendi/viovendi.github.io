@@ -1,6 +1,6 @@
 console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
 
-  function disableProd(disable){
+  function disableProd2(disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
           var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
@@ -26,7 +26,7 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
       var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
       var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
       if(checkbox.is(':checked')){
-        disableProd(checkboxName)
+        disableProd2(checkboxName)
       }
     })
    }
@@ -38,7 +38,7 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
       checkbox.change(function(){
         if(checkbox.is(':checked')){
           console.log('checked')
-             disableProd(checkboxName)
+             disableProd2(checkboxName)
         }else if(!checkbox.is(':checked')){
              enableProd(checkboxName)
           }
