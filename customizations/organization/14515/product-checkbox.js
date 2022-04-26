@@ -45,7 +45,7 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
     })
   }
 
-function handler(){
+function handler2(){
   var pathname = window.location.pathname;
   var eventId = pathname.split('/')[3];
   if (eventId == 105260) {
@@ -57,5 +57,5 @@ function handler(){
   prodCheked();
   }
 }
-handler();
+handler2();
  
