@@ -44,5 +44,16 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
       })
     })
   }
-  isCheked()
+
+function handler(){
+  var eventId = pathname.split('/')[3];
+  if (eventId == 105260) {
+  console.log("do nothing");
+  }
+  else{
+     isCheked()
   prodCheked()
+  }
+}
+handler();
+ 
