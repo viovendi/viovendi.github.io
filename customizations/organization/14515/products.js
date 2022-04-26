@@ -26,7 +26,7 @@ $('.customization2_attendee_further-data_product').each(function(i, element) {
      if(checkbox.is(':checked')){
          if(checkboxName.indexOf(shortName) >= 0){
            //todo show product group
-           document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").show();
+           $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").show();
            console.log(checkboxName + "clicked / unchecked");
          }
        }
