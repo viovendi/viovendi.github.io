@@ -14,30 +14,6 @@ init('customization2_attendee');
 handler();
 
 
-
-
-
-//hides Products
-function hideProduct(shortName) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.includes(shortName)) {
-      $(this).hide();
-    }
-  });
-}
-
-// show Products
-function showProduct(shortName) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(shortName) >= 0) {
-      $(this).show();
-    }
-  });
-}
-
 function disableProd(disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
           var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
@@ -59,78 +35,6 @@ function enableProd(disable){
    }
 
 
-// this hides or shows another product when checked or unchecked
-function hideProdWhenChecked(shortName, hide) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    checkbox.change(function () {
-      if (checkbox.is(':checked')) {
-        if (checkboxName.includes(shortName)) {
-          hideProduct(hide)
-        }
-      } else if (!checkbox.is(':checked')) {
-        if (checkboxName.includes(shortName)) {
-          showProduct(hide);
-        }
-      }
-    })
-  })
-}
-
-function uncheckProduct2whenProduct1Isunchecked(product1, product2){
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    //checkbox.change(function () {
-      if (!checkbox.is(':checked')) {
-        if (checkboxName.includes(product1)) {
-          console.log("uncheck" + product2 +" if " +product1 +" is unchecked");
-          uncheckProd(product2)
-        }
-      } 
-    //})
-  })
-}
-
-
-
-function hideProd(shortName, hide) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    if (checkbox.is(':checked')) {
-      if (checkboxName.includes(shortName)) {
-        hideProduct(hide)
-      }
-    } 
-  })
-}
-
-
-function showProdWhenChecked(shortName, show) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    checkbox.change(function () {
-      if (checkbox.is(':checked')) {
-        if (checkboxName.indexOf(shortName) >= 0) {
-          showProduct(show)
-        }
-      } else if (!checkbox.is(':checked')) {
-        if (checkboxName.indexOf(shortName) >= 0) {
-          hideProduct(show)
-        }
-      }
-    })
-  })
-}
-
-
 
 function uncheckProd(shortName){
 $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -146,28 +50,28 @@ $('.customization2_attendee_further-data_product').each(function(i, element) {
  }
                                                       )};
 
+function disablenaduncheck(shortName){
+$('.customization2_attendee_further-data_product').each(function(i, element) {
+     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+     if(checkboxName.indexOf(shortName) >= 0){
+                checkbox.prop( "disabled", true )
+             });
+
+     if(checkbox.is(':checked')){
+         if(checkboxName.indexOf(shortName) >= 0){
+            checkbox.trigger('click');
+           console.log(checkboxName + "clicked / unchecked");
+         }
+       }
+ }
+                                                      )
+  
+};
 
 
 
-function markAsChecked(name) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(name) >= 0) {
-      checkbox.prop('checked', true);
-    }
-  });
-}
 
-function markAsUnChecked(name) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(name) >= 0) {
-      checkbox.prop('checked', false);
-    }
-  });
-}
 
 // return true if checkbox is checked, returns false is checkbox is NOT checked
 // checks all checkboxes, filter by shortName
@@ -194,15 +98,20 @@ function handler() {
     console.log("1");
    if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
      console.log("2");
-      disableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      disableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
-      uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      disablenaduncheck("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      //uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+     // uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+     // uncheckProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+     
+     
     } 
     else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
       console.log("notchecked");
       enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
       enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      enableProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
 
 
      // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
@@ -253,3 +162,121 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+
+
+//hides Products
+/*function hideProduct(shortName) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+    if (checkboxName.includes(shortName)) {
+      $(this).hide();
+    }
+  });
+}
+
+// show Products
+function showProduct(shortName) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+    if (checkboxName.indexOf(shortName) >= 0) {
+      $(this).show();
+    }
+  });
+}*/
+
+
+/*function markAsChecked(name) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+    if (checkboxName.indexOf(name) >= 0) {
+      checkbox.prop('checked', true);
+    }
+  });
+}
+
+function markAsUnChecked(name) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+    if (checkboxName.indexOf(name) >= 0) {
+      checkbox.prop('checked', false);
+    }
+  });
+}*/
+
+
+
+// this hides or shows another product when checked or unchecked
+/*function hideProdWhenChecked(shortName, hide) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+    checkbox.change(function () {
+      if (checkbox.is(':checked')) {
+        if (checkboxName.includes(shortName)) {
+          hideProduct(hide)
+        }
+      } else if (!checkbox.is(':checked')) {
+        if (checkboxName.includes(shortName)) {
+          showProduct(hide);
+        }
+      }
+    })
+  })
+}
+
+function uncheckProduct2whenProduct1Isunchecked(product1, product2){
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+    //checkbox.change(function () {
+      if (!checkbox.is(':checked')) {
+        if (checkboxName.includes(product1)) {
+          console.log("uncheck" + product2 +" if " +product1 +" is unchecked");
+          uncheckProd(product2)
+        }
+      } 
+    //})
+  })
+}
+*/
+
+
+/*function hideProd(shortName, hide) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+    if (checkbox.is(':checked')) {
+      if (checkboxName.includes(shortName)) {
+        hideProduct(hide)
+      }
+    } 
+  })
+}*/
+
+
+/*function showProdWhenChecked(shortName, show) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+    checkbox.change(function () {
+      if (checkbox.is(':checked')) {
+        if (checkboxName.indexOf(shortName) >= 0) {
+          showProduct(show)
+        }
+      } else if (!checkbox.is(':checked')) {
+        if (checkboxName.indexOf(shortName) >= 0) {
+          hideProduct(show)
+        }
+      }
+    })
+  })
+}*/
+
+
