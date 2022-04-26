@@ -56,7 +56,7 @@ function disablenaduncheck(shortName){
           var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
           
           //disable
-             if(checkboxName.indexOf(disable) >= 0){
+             if(checkboxName.indexOf(shortName) >= 0){
                 checkbox.prop( "disabled", true )
              }
       //uncheck:
