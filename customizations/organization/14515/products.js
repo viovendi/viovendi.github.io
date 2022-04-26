@@ -14,7 +14,7 @@ init('customization2_attendee');
 handler();
 
 //hide product group
-document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").hide();
+$("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").hide();
 
 
 
