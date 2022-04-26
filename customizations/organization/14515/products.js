@@ -118,8 +118,8 @@ function handler() {
       
     }
 
-    if (ischecked("P2")) {
-      
+    if (ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")) {
+      disablenaduncheck("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial");
       
     } 
     else {
