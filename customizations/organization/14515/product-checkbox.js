@@ -5,6 +5,7 @@ console.log('Start working, Google Tag Manager Tag CUSTOM-1434')
           var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
              if(checkboxName.indexOf(disable) == -1){
+               console.log("disable");
                 checkbox.prop( "disabled", true )
              }
     });
