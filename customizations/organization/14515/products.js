@@ -190,18 +190,16 @@ function ischecked(shortName) {
 // handler is called every time a checkbox is "changed" 
 function handler() {
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-
-  if (name == "Fortbildungsanmeldung" ) {
     // hide other day when 1 day is selected
     console.log("1");
-   if (ischecked("Zweitägig: Mo / Di")) {
+   if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
      console.log("2");
       disableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
       uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
       disableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
       uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
     } 
-    else if (!ischecked("Zweitägig: Mo / Di")) {
+    else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
       console.log("notchecked");
       enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
       enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
@@ -219,7 +217,7 @@ function handler() {
       
       
     }
-  }
+  
 }
 
 // function pretty similar to handler(); is called when attendee is editing his data
