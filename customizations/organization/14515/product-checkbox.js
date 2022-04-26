@@ -52,8 +52,9 @@ function handler(){
   console.log("do nothing");
   }
   else{
-     isCheked()
-  prodCheked()
+  console.log("call functions");
+  isCheked();
+  prodCheked();
   }
 }
 handler();
