@@ -191,7 +191,7 @@ function ischecked(shortName) {
 function handler() {
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
 
-  if (name == "Teilnehmeranmeldung" ) {
+  if (name == "Fortbildungsanmeldung" ) {
     // hide other day when 1 day is selected
    if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
       disableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
@@ -227,7 +227,7 @@ function inEditMode(){
   
   // name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene" || name == "Gruppenticket" || name == "Schwerbehinderten Ticket" || name == "Begleitperson"
     
-  if (name == "Tagesticket Presse") {
+  if (name == "Fortbildungsanmeldung") {
         //TODO
         if (ischecked("Montag")) {
         //TODO (copy from above)
