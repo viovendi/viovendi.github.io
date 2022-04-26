@@ -13,6 +13,25 @@ init('customization2_attendee');
 
 handler();
 
+//hide product group
+document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").hide();
+
+
+
+function showProductGroup(shortName){
+$('.customization2_attendee_further-data_product').each(function(i, element) {
+     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+     if(checkbox.is(':checked')){
+         if(checkboxName.indexOf(shortName) >= 0){
+           //todo show product group
+           document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(8)").show();
+           console.log(checkboxName + "clicked / unchecked");
+         }
+       }
+ }
+                                                      )};
 
 function disableProd(disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -93,6 +112,7 @@ function ischecked(shortName) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
+  showProductGroup("13:30 – 17:30 Uhr: LET´S TALK - Service & Beratung ganz individuell zum Unterrichtshilfeportal (UHP) MV");
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
     // hide other day when 1 day is selected
     console.log("1");
