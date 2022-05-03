@@ -54,10 +54,11 @@ async function getPage(page) {
       console.log("document is already ready");
 
       await getPage("page2");
-      console.log('custom codes')
-     const code = await getCode("88669_list1")
-     console.log(code)
-     console.log(window.location)
+     if(window.location.pathname.includes("106131")){
+      console.log('Custom codes for Event 106131')
+      const code = await getCode("88669_list1")
+      console.log(code)
+     }
 
     }
   }
