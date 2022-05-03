@@ -40,6 +40,13 @@ async function getPage(page) {
     });
   }
 
+  async function getCode(key) {
+    return $.ajax({
+      url: 'https://cs.doo.net/v1/integrations/custom-qr-codes/get-code?key=' + key,
+      type: 'get',
+      dataType: 'json',
+    });
+  }
 
 
   async function hendler() {
@@ -48,6 +55,7 @@ async function getPage(page) {
 
       await getPage("page2");
       console.log('custom codes')
+      await getCode("88669_list1")
 
     }
   }
