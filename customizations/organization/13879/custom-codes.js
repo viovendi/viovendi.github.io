@@ -55,7 +55,8 @@ async function getPage(page) {
 
       await getPage("page2");
       console.log('custom codes')
-      await getCode("88669_list1")
+     const code = await getCode("88669_list1")
+     console.log(code)
 
     }
   }
