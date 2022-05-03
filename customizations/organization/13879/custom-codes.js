@@ -57,6 +57,7 @@ async function getPage(page) {
       console.log('custom codes')
      const code = await getCode("88669_list1")
      console.log(code)
+     console.log(window.location)
 
     }
   }
