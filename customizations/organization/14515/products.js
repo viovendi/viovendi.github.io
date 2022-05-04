@@ -200,7 +200,7 @@ disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
 disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
-disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+disablenaduncheck("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 disablenaduncheck('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
@@ -224,7 +224,7 @@ enableProd("10:00 – 17:00 Uhr: Qigong mit Kindern");
 enableProd("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
-enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+enableProd("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 enableProd('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
@@ -304,8 +304,8 @@ enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpo
     if (ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")){
 enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
         }
-    if (ischecked("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")){
-enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+    if (ischecked("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")){
+enableProd("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
         }
     if (ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")){
 enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
@@ -347,7 +347,7 @@ disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
 disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
-disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+disablenaduncheck("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 //disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 //disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
@@ -382,8 +382,8 @@ enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpo
     if (ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")){
 enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
         }
-    if (ischecked("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")){
-enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+    if (ischecked("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")){
+enableProd("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
         }
     if (ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")){
 enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
