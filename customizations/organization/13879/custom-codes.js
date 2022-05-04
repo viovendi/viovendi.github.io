@@ -49,6 +49,21 @@ async function getPage(page) {
   }
 
 
+  function markCodeAsUsed(code, key) {
+    $.ajax({
+      url: 'https://cs.doo.net/v1/integrations/custom-qr-codes/mark-code-as-used',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      type: 'post',
+      data: JSON.stringify({
+        "customCode": code,
+        "key": key,
+      }),
+    })
+  }
+
+
   async function hendler() {
     if (document.readyState !== "loading") {
       console.log("document is already ready");
