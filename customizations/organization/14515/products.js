@@ -112,7 +112,7 @@ function ischecked(shortName) {
 
 // handler is called every time a checkbox is "changed" 
 function handler() {
-  showProductGroup("13:30 – 17:30 Uhr: LET´S TALK - Service & Beratung ganz individuell zum Unterrichtshilfeportal (UHP) MV");
+  showProductGroup("04.07.22 13:30 – 17:30 Uhr: LET´S TALK - Service & Beratung ganz individuell zum Unterrichtshilfeportal (UHP) MV");
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
     // hide other day when 1 day is selected
     console.log("1");
