@@ -329,8 +329,8 @@ disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
-disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
-disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+//disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+//disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
 disablenaduncheck("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
@@ -338,8 +338,8 @@ disablenaduncheck("10:00 – 16:00: Von der Brennnessel zum T-Shirt");
 disablenaduncheck("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen");
 disablenaduncheck("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion");
 disablenaduncheck("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
-disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
-disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
+//disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+//disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
 disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
     
     if (ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")){
