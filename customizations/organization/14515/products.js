@@ -389,6 +389,22 @@ enableProd("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - 
     if (ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")){
 enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
         } 
+    if (ischecked("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln")){
+enableProd("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+        } 
+    if (ischecked("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke")){
+enableProd("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
+        } 
+    if (ischecked("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten")){
+enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+        } 
+    if (ischecked("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung")){
+enableProd("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+        } 
+
+    
+
+    
     
   }
   
