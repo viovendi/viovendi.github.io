@@ -5,7 +5,9 @@ console.log("git sommerakademie");
 // call handler whenever a checkbox is clicked/changed
 function init(name) {
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
-    $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
+   // $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
+    $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > vv-additional-question-radio > div").hide();
+    $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
     handler();
   });
 }
@@ -26,12 +28,27 @@ $('.customization2_attendee_further-data_product').each(function(i, element) {
      if(checkbox.is(':checked')){
          if(checkboxName.indexOf(shortName) >= 0){
            //todo show product group
-           $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").show();
+            $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > vv-additional-question-radio > div").show();
            console.log(checkboxName + "clicked / unchecked");
          }
        }
  }
                                                       )};
+function showProductGroup2(shortName){
+$('.customization2_attendee_further-data_product').each(function(i, element) {
+     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+
+     if(checkbox.is(':checked')){
+         if(checkboxName.indexOf(shortName) >= 0){
+           //todo show product group
+        $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").show();
+           console.log(checkboxName + "clicked / unchecked");
+         }
+       }
+ }
+                                                      )};
+
 
 function disableProd(disable){
     $('.customization2_attendee_further-data_product').each(function(i, element) {
@@ -113,6 +130,7 @@ function ischecked(shortName) {
 // handler is called every time a checkbox is "changed" 
 function handler() {
   showProductGroup("04.07.22 13:30 – 17:30 Uhr: LET´S TALK - Service & Beratung ganz individuell zum Unterrichtshilfeportal (UHP) MV");
+  showProductGroup2("06.07.22 09:00 – 16:00 Uhr: Stand up-Paddeln im außerschulischen Sport");
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
     // hide other day when 1 day is selected
     console.log("1");
@@ -439,7 +457,8 @@ var insertionListener = function (event) {
     handler();
     inEditMode();
     $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
-
+     $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > vv-additional-question-radio > div").hide();
+    $("#widgetContainer > vv-widget-master > div > div > vv-booking-standard > div:nth-child(3) > div > div > div:nth-child(4) > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
   }
 };
 
