@@ -242,6 +242,7 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")) {
   
   console.log("irgendeins ischecked");
+    disablenaduncheck("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern";
 disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
 disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
 disablenaduncheck("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
