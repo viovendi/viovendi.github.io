@@ -172,7 +172,7 @@ enableProd("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
     }
 
  
-   if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
+   if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")|| ischecked("Zweitägig: Mo / Di 14:00 - 17:00 Uhr 10:00 - 17:00 Uhr: Performatives Arbeiten im Unterricht - Darstellendes Spiel")) {
      console.log("2");
       disablenaduncheck("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
 disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
@@ -197,7 +197,7 @@ disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestal
 disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
      
     } 
-    else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
+    else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial") || !ischecked("Zweitägig: Mo / Di 14:00 - 17:00 Uhr 10:00 - 17:00 Uhr: Performatives Arbeiten im Unterricht - Darstellendes Spiel")) {
       enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
 enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
 enableProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
