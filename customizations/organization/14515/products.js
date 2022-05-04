@@ -231,7 +231,7 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen")
 || ischecked("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern")
 || ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")
-|| ischecked("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
+|| ischecked("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
 || ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")
 || ischecked("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten")
 || ischecked("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden")
@@ -239,10 +239,11 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen")
 || ischecked("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion")
 || ischecked("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine")
-|| ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")) {
+|| ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")
+     || ischecked("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern")) {
   
   console.log("irgendeins ischecked");
-    disablenaduncheck("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+disablenaduncheck("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
 disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
 disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
 disablenaduncheck("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
@@ -250,7 +251,7 @@ disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
 disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
-disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+disablenaduncheck("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 disablenaduncheck("05.07.22 10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 disablenaduncheck('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
