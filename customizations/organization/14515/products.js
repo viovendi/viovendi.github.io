@@ -184,7 +184,7 @@ disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg un
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
-disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+disablenaduncheck('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
 disablenaduncheck("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
@@ -208,7 +208,7 @@ enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpo
 enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
-enableProd("14:00 – 17:00 Uhr: Neues Lernen braucht das Land - BNE-Werkstatt zur Unterrichtsentwicklung");
+enableProd('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 enableProd("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
 enableProd("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
@@ -252,7 +252,7 @@ disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg un
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 disablenaduncheck("05.07.22 10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
-disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+disablenaduncheck('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
 disablenaduncheck("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
@@ -318,7 +318,7 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
   
   if (ischecked("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln") ||
 ischecked("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke") || ischecked("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten")
- || ischecked("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung")) {
+ || ischecked('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung')) {
   
   console.log("irgendeins ischecked");
 disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
@@ -399,8 +399,8 @@ enableProd("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten –
     if (ischecked("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten")){
 enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
         } 
-    if (ischecked("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung")){
-enableProd("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+    if (ischecked('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung')){
+enableProd('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
         } 
 
     
