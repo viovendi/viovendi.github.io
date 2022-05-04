@@ -63,6 +63,19 @@ async function getPage(page) {
     })
   }
 
+  function addCode(code, input) {
+    let event;
+    input.value = code
+      if(typeof(Event) === 'function') {
+        event = new Event('input'); // for Chrome
+      }else{
+        event = document.createEvent('Event');
+        event.initEvent('input', true, true); // for IE
+      }
+      input.dispatchEvent(event)
+      return input.value;
+  }
+
 
   async function hendler() {
     if (document.readyState !== "loading") {
@@ -72,6 +85,8 @@ async function getPage(page) {
      if(window.location.pathname.includes("106131")){
       console.log('Custom codes for Event 106131')
       const code = await getCode("88669_list1")
+
+      addCode(code, input)
       console.log(code)
      }
 
