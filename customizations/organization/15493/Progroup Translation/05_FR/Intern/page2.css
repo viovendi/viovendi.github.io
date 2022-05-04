@@ -1,0 +1,280 @@
+.customization2_attendee_title,
+.customization2_summary_headline,
+.customization2_attendee_count,
+.customization2_attendee_contact-data_headline,
+.customization2_attendee_contact-data_title_label,
+.customization2_attendee_contact-data_salutation_label,
+.customization2_attendee_contact-data_salutation_error,
+.customization2_attendee_contact-data_first-name_label,
+.customization2_attendee_contact-data_first-name_error,
+.customization2_attendee_contact-data_last-name_label,
+.customization2_attendee_contact-data_last-name_error,
+.customization2_attendee_contact-data_email_label,
+.customization2_attendee_contact-data_email_error,
+.customization2_attendee_contact-data_email-confirmation_label,
+.customization2_attendee_contact-data_email-confirmation_error,
+.customization2_attendee_further-data_headline,
+.customization2_attendee_contact-data_street_label,
+.customization2_attendee_contact-data_street_error,
+.customization2_attendee_contact-data_street-number_label,
+.customization2_attendee_contact-data_street-number_error,
+.customization2_attendee_contact-data_zip_label,
+.customization2_attendee_contact-data_zip_error,
+.customization2_attendee_contact-data_city_label,
+.customization2_attendee_contact-data_city_error,
+.customization2_attendee_contact-data_country_label,
+.customization2_attendee_contact-data_country_error,
+.customization2_attendee_contact-data_company_label,
+.customization2_attendee_contact-data_company_error,
+.customization2_attendee_further-data_custom-question_error,
+.customization2_attendee_edit-action_save,
+.customization2_attendee_edit-action_cancel,
+.customization-button-previous,
+.customization2_attendee_further-data_custom-question_label,
+.customization2_attendee_further-data_custom-question_label *,
+.customization2_booking-terms_custom-term,
+.customization2_booking-terms_text,
+.weitereAngabenTeilnehmer p,
+.customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label,
+.customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label  {
+    font-size: 0 !important;
+}
+
+.customization2_attendee_contact-data_title_label *,
+.customization2_attendee_contact-data_email_label * {
+    display:none
+}
+
+.customization2_attendee_contact-data_company_error:after,
+.customization2_attendee_contact-data_country_error:after,
+.customization2_attendee_further-data_custom-question_error:after,
+.customization2_attendee_contact-data_city_error:after,
+.customization2_attendee_contact-data_zip_error:after,
+.customization2_attendee_contact-data_street-number_error:after,
+.customization2_attendee_contact-data_street_error:after,
+.customization2_attendee_contact-data_email-confirmation_error:after,
+.customization2_attendee_contact-data_email_error:after,
+.customization2_attendee_contact-data_last-name_error:after,
+.customization2_attendee_contact-data_first-name_error:after,
+.customization2_attendee_contact-data_salutation_error:after{
+    content: "Veuillez remplir le formulaire";
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+
+.customization2_attendee_contact-data_headline {
+    text-indent: -9999px;
+    line-height: 0;
+}
+
+.customization2_attendee-1 .customization2_attendee_title:after {
+    content: "JE VIENS SEUL(E)";
+    font-size: 16px;
+}
+
+.customization2_attendee_contact-data_headline::after {
+    content: "Informations personnelles";
+    text-indent: 0px;
+    display: block;
+    line-height: initial;
+}
+
+.customization2_attendee_contact-data_salutation_label:after {
+    content: "Civilité";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_title_label:after {
+    content: "Titre (en option)";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_first-name_label:after {
+    content: "Prénom";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_last-name_label:after {
+    content: "Nom";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_street:before {
+    content: "Adresse privée";
+    display: block;
+    margin-top: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343a3f;
+}
+
+.customization2_attendee_contact-data_street > vv-input::before {
+    content: "(pour l'envoi postal de documents, comme ton ticket, le programme et d'autres informations)";
+    display: block;
+    padding-bottom: 16px;
+    font-size: 14px;
+    color: rgb(52, 58, 63);
+}
+
+.customization2_attendee_contact-data_street_label:after {
+    content: "Rue";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_street-number_label:after {
+    content: "N°";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_zip_label:after {
+    content: "Code postal";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_city_label:after {
+    content: "Ville";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_country_label:after {
+    content: "Pays";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_email_label:after {
+    content: "Adresse e-mail";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_email-confirmation_label:after {
+    content: "Confirmation de l'adresse e-mail";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Téléphone (en option)";
+    font-size: 14px;
+}
+
+.customization2_attendee_contact-data_email:before {
+    content: "Autres informations";
+    display: block;
+    margin-top: 24px;
+    padding-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343a3f;
+}
+
+.weitereAngabenTeilnehmer p:after{
+    content: "Autres informations";
+    font-size: 1rem !important;
+}
+
+.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Usine/site";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Je souhaite arriver à la date suivante";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+    content: "J'ai besoin d'une chambre d'hôtel";
+    font-size: 14px;
+}
+
+.customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Pour le dîner intergalactique, je choisis:";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Pour le dîner intergalactique, mon/ma partenaire choisit:";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+    content: "Menu à base de viande";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+    content: "Menu végétarien";
+    font-size: 14px;
+}
+
+.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Intolérances (en option)";
+    font-size: 14px;
+}
+
+.customization2_attendee_edit-action_save:after {
+    content: "Enregistrer";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_title:after {
+    content: "JE VIENS ACCOMPAGNÉ(E)";
+    font-size: 16px;
+}
+
+.customization-button-previous:after {
+    content: "Modifier la sélection";
+    font-size: 16px;
+}
+
+.customization2_attendee_edit-action_cancel:after {
+    content: "Annuler";
+    font-size: 16px;
+}
+
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Pour le dîner intergalactique, mon/ma partenaire choisit :";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+    content: "Menu à base de viande";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+    content: "Menu végétarien";
+    font-size: 14px;
+}
+
+.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+    content: "Intolérances (en option)";
+    font-size: 14px;
+}
+
+.custom_terms_checkbox .customization2_booking-terms_text:after {
+    content: "J'ai pris connaissance du fait que l'événement a lieu conformément aux prescriptions relatives au coronavirus alors en vigueur dans le Land de Saxe au moment de l'événement. Je veille à être en mesure de présenter tous les certificats nécessaires au jour de l'événement.";
+    font-size: 14px
+}
+
+.customization2_booking-terms_text:after {
+    content: "J'accepte les conditions suivantes:";
+    font-size: 14px
+}
+
+.customization2_booking-terms_custom-term-1:after {
+    content: "Note concernant les films et les photographies";
+    font-size: 14px;
+}
+
+.customization2_booking-terms_custom-term-2:after {
+    content: "Protection des données";
+    font-size: 14px;
+}
+
+.customization2_booking-terms_custom-term-3:after {
+    content: "Conformité";
+    font-size: 14px;
+}
+

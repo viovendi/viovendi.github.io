@@ -1,0 +1,49 @@
+.ew-confirmation__header .header__label,
+.customization-confirmation-description,
+.ew-confirmation__text-paragraph {
+    text-indent: -9999px;
+	line-height: 0;
+}
+
+a.ew-confirmation__link.customization-client-portal-link,
+p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
+	text-indent: -9999px;
+	line-height: 0;
+	font-size: 0;
+}
+
+.ew-confirmation__header .header__label:after {
+    content: "Potvrzení přihlášení";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.customization-confirmation-description:after {
+	content: "Srdečně děkujeme za tvé přihlášení. Brzy obdržíš potvrzení e-mailem.";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.ew-confirmation__text-paragraph:after {
+	content: "Svou registraci můžete kdykoli zobrazit a spravovat na portálu. K přihlášení potřebujete své registrační číslo a e-mailovou adresu.";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.customization-client-portal-link:after {
+    content: "K přihlašovacímu portálu";
+    text-indent: 0;
+    display: block;
+    line-height: normal;
+    font-size: 16px;
+}
+
+p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
+	content: "V případě dotazů se kdykoliv obraťte na";
+	text-indent: 0;
+	line-height: normal;
+	font-size: 14px;
+}

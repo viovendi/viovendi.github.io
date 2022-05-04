@@ -1,4 +1,4 @@
-console.log('Start-14780-git');
+console.log('Start-14780-git-1');
   
   // global var
   var isFuncUsed = false;
@@ -48,16 +48,27 @@ console.log('Start-14780-git');
   
   function check_country(){
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
+	  
+    console.log('invoice_radio_group');
+    console.log(invoice_radio_group);
+
     // var invoice_radio_group = $('.customization2_booker_further-data_custom-question-4 .customization2_booker_further-data_custom-question_radio-group');
     var countries = ['AT', 'DE', 'CH'];
     var curr_country = $('.customization2_booker_contact-data_country select').children("option:selected").val();
     
+    console.log('curr_country');
+    console.log(curr_country);
+	  
     if(countries.indexOf(curr_country) != -1 ){
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
     
     $('.customization2_booker_contact-data_country select').on('change', function(e){
+	    
       var country = $(this).children("option:selected").val();
+	    
+      console.log('on change country');
+      console.log(country);
       
       if(countries.indexOf(country) != -1){
         invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();

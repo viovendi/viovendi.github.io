@@ -1,6 +1,6 @@
 function getValueFromDropDown(dropDown){
    const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
-   console.log(valueText);
+  
    const value = $(valueText).text().trim();
    return value;
 }
@@ -13,7 +13,6 @@ function findDropDownByLabel(label){
    $(".vv-selection-input").each(function(){
       const labelText = $(this).find(".vv-control-label").text();
       if(labelText.trim()==label.trim()){
-         console.log('found label: '+label.trim());
           found =this;
       }
    });
@@ -51,24 +50,16 @@ function handler(){
     }
     
     var field1 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Position hast Du? (optional)');
-   console.log('field: '+field1);
     $(field1).hide()
     
     var field2 = $$('.customization2_attendee_further-data_custom-question').findField('Welche Funktion hast Du? (optional)');
-      console.log('field: '+field2);
 
     $(field2).hide()
     
     var dropdown1 = findDropDownByLabel('Position im Unternehmen?');
-    console.log('Dropdown 1 :'+dropdown1);
     var dropdown2 = findDropDownByLabel('Position im Unternehmen');
-    console.log('Dropdown 2 :'+dropdown2);
     var dropdown3 = findDropDownByLabel('Funktion im Unternehmen');
-    console.log('Dropdown 3 :'+dropdown3);
     var dropdown4 = findDropDownByLabel('Funktion im Unternehmen?');
-    console.log('Dropdown 4 :'+dropdown4);
-    
-    console.log('Value: '+getValueFromDropDown(dropdown1));
    
    $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {  
    if($(this).text().trim() == 'andere'){

@@ -1,0 +1,13 @@
+.customization-button-next {
+    font-size: 0;
+}
+
+.customization-booking-area-wrapper-page1 .customization-button-next:after{
+    content:"Continuer";
+    font-size: 16px;
+}
+
+.customization-booking-area-wrapper-page2 .customization-button-next:after{
+    content:"S'inscrire maintenant";
+    font-size: 16px;
+}

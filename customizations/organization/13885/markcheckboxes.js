@@ -1,3 +1,4 @@
+console.log("triggered markcheckboxes.js")
 function markAsChecked(name) {
 	//search all further questions
 	$('.customization2_attendee_further-data_custom-question').each(function (i, element) {
@@ -25,18 +26,50 @@ function hideAndMoveCheckbox() {
 	$('.customization2_booking-terms_text').css("left", "24px");
 	console.log('hided')
 }
-markAsChecked('customization2_attendee');
-hideAndMoveCheckbox();
+
 
 /* check and hide privacy checkbox */
 function checkAndHidePrivacy(){
   console.log('checkAndHidePrivacy');
   if ($('.customization2_booking-terms').length > 0 ){
     $('.customization2_booking-terms .customization2_booking-terms_checkbox').trigger('click');
-    $('.customization2_booking-terms .vv-checkbox__indicator').css('display', 'none');
+  //  $('.customization2_booking-terms .vv-checkbox__indicator').css('display', 'none');
     $('.customization2_booking-terms .vv-checkbox').on('click', function(e){
       e.preventDefault();
     });
   }
 }
-checkAndHidePrivacy();
+
+startCustomizationPage2();
+
+function startCustomizationPage2(){
+      
+	markAsChecked('customization2_attendee');
+	hideAndMoveCheckbox();
+	checkAndHidePrivacy();
+    const observerThisPage = new MutationObserver((mutations, obs) => {
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+    
+        if ($(page2).is(':visible')) {
+            startCustomizationPage2();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerOtherPage = new MutationObserver((mutations, obs) => {
+        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
+    
+        if (!$(page2).is(':visible')) {
+            observerThisPage.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerOtherPage.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}

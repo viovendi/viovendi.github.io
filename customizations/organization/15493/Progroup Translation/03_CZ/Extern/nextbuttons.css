@@ -1,0 +1,13 @@
+.customization-button-next {
+    font-size: 0;
+}
+
+.customization-booking-area-wrapper-page1 .customization-button-next:after{
+    content:"Dále";
+    font-size: 16px;
+}
+
+.customization-booking-area-wrapper-page2 .customization-button-next:after{
+    content:"Přihlásit se hned teď.";
+    font-size: 16px;
+}

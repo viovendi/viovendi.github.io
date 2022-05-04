@@ -1,6 +1,9 @@
 function addClassToField(shortName, className, wrapperClass) {
+	console.log('shortName: '+shortName);
 	$(`.${wrapperClass} .customization2_attendee_further-data .vv-nl-mb-lg`).each(function (i, element) {
 		var item = $(this).find('.customization2_attendee_further-data_custom-question_label').text().replace('(optional)', '').trim();
+		//console.log('item: '+item);
+		
 		if (item !== '' && item.includes(shortName)) {
 			console.log(item);
 			$(this).closest('.vv-nl-mb-lg').addClass(className);
@@ -40,12 +43,12 @@ function markAsChecked(name) {
 }
 
 function clickedEdit(name) {
+	
 	addClassToField('Mit dem Freiticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
-
-
+	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Freiticket stimmst Du widerruflich der Weitergabe Deiner Kontaktdaten', 'check-boxes-wrapper', name);
 	//addClassToField('Mit dem Ticket stimmst', 'check-boxes-wrapper', name);
@@ -89,13 +92,15 @@ function init(name) {
 	addClassToField('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addClassToField('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
+	addClassToField('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', name);
 	
 
 	addTextUnderQuestion('Mit dem Freiticket', 'check-boxes-wrapper', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem VIP-Ticket', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem Ticket', 'check-boxes-wrapper', name);
 	addTextUnderQuestion('Mit dem ermäßigten VIP-Ticket', 'check-boxes-wrapper', name);
-	
+	addTextUnderQuestion('Mit dem ausgewählten Ticket', 'check-boxes-wrapper', 'check-boxes-wrapper', name);
+
 	
 	
 	//addTextUnderQuestionVIP('Mit dem ermäßigten VIP-Ticket stimmen Sie', 'check-boxes-wrapper', name);
@@ -126,10 +131,12 @@ var insertionListener = function (event) {
 
 		for (var i = 0; i < classNames.length; i++) {
 			var className = classNames[i];
-			console.log(className)
+			console.log('className: '+className)
 
 			if (className.indexOf('customization2_attendee-') > -1) {
-				clickedEdit(className);
+				clickedEdit(className);	
+				if(calcCheckboxes(className)==0)
+					markAsChecked(className)
 				return false;
 			}
 		}

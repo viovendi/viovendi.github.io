@@ -1,0 +1,203 @@
+.booking-editing-auth vv-heading:after{
+    content:"55";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+	color: rgb(52, 58, 63);
+	font-weight:700;	
+}
+
+.booking-editing-auth vv-input[name="bookingId"] label p:after {
+    content:"56";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+    display:block;
+}
+
+.booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text:after {
+    content:"Missing 4";
+	font-size:12px;
+}
+
+.booking-editing-auth vv-input[name="email"] label p:after {
+    content:"57";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+    display:block;
+}
+
+.booking-editing-auth vv-input[name="email"] + vv-show-errors .error-text:after {
+    content:"Missing 5";
+	font-size:12px;
+}
+
+.booking-editing-auth vv-button:nth-of-type(1) button:after {
+    content:"58";
+	font-size:16px;
+}
+
+.booking-editing-auth vv-button:nth-of-type(2) button:after {
+    content:"59";
+	font-size:16px;
+}
+
+.customization3_edit-booking_header_title:after{
+    content:"191";
+	font-size:14px;
+}
+
+.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
+    content:"192";
+    text-indent: 0;
+	line-height: normal;
+	font-size:14px;
+    display:block;
+}
+
+.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(2):after{
+    content:"192";
+    text-indent: 0;
+	line-height: normal;
+	font-size:14px;
+    display:block;
+}
+
+.customization3_edit-booking_header_logout:after{
+    content:"Missing 6";
+	font-size:14px;
+}
+
+.customization3_edit-booking_main_booking-date_label:after{
+    content:"194";
+	font-size:13px;
+}
+
+.booking-status--paid.customization3_edit-booking_main_booking-status:after{
+    content:"197";
+	font-size:16px;
+}
+
+
+
+.customization3_edit-booking_main_event_dates:after{
+    content:"234";
+	font-size:13px;
+}
+
+.customization3_tab-group_tab:nth-of-type(1) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"201";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(2) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"221";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(3) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"225";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(4) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"233";
+	font-size:14px;
+}
+
+.customization2_attendee-1 .customization3_attendee_ticket-category_title:after{
+    content:"228";
+	font-size:14px;
+}
+
+.customization2_attendee-2 .customization3_attendee_ticket-category_title:after{
+    content:"230";
+	font-size:14px;
+}
+
+.customization2_booker_contact-data_headline:after{
+    content:"222";
+	font-size:16px;
+}
+
+.customization3_invoice-box_header_title:after{
+    content:"226";
+	font-size:16px;
+}
+
+.customization3_invoice-box_category_label:after{
+    content:"227";
+	font-size:14px;
+}
+
+.customization3_invoice-box_quantity_label:after{
+    content:"229";
+	font-size:14px;
+}
+
+.customization3_invoice-box_table-body tr:nth-of-type(1) .customization3_invoice-box_category_value .grid-element__value:after{
+    content:"228";
+	font-size:13px;
+}
+
+.customization3_invoice-box_table-body tr:nth-of-type(2) .customization3_invoice-box_category_value .grid-element__value:after{
+    content:"230";
+	font-size:13px;
+}
+
+.customization3_edit-booking_event_dates:after{
+    content:"234";
+	font-size:14px;
+}
+
+.customization3_edit-booking_event_organizer > div:first-of-type > div:first-of-type .data-item__label:after {
+	content:"233";
+	font-size: 13px;
+}
+
+.organizer__name.data-item__value:after {
+	content:"237";
+	font-size: 16px;
+}
+
+.event__contact.data-item .data-item__label:after{
+	content:"239";
+	font-size: 13px;
+}
+
+.terms__label:after{
+	content:"242";
+	font-size: 13px;
+}
+
+.booking-editing-auth vv-heading,
+.booking-editing-auth vv-input[name="bookingId"] label p,
+.booking-editing-auth vv-input[name="email"] label p,
+.customization3_edit-booking_header_days-to-go p{
+	text-indent: -9999px;
+	line-height: 0;
+}
+
+.booking-editing-auth vv-button button,
+vv-show-errors .error-text,
+.customization3_edit-booking_header_title,
+.customization3_edit-booking_header_logout,
+.customization3_edit-booking_main_booking-date_label,
+.booking-status--paid.customization3_edit-booking_main_booking-status,
+
+.customization3_tab-group-mobile_tab_label_text,
+.customization3_attendee_ticket-category_title,
+.customization2_booker_contact-data_headline,
+.customization3_invoice-box_header_title,
+.customization3_invoice-box_category_label,
+.customization3_invoice-box_quantity_label,
+.customization3_invoice-box_category_value,
+.customization3_edit-booking_main_event_dates,
+.customization3_edit-booking_event_dates,
+.customization3_edit-booking_event_organizer > div:first-of-type > div:first-of-type .data-item__label,
+.organizer__name.data-item__value,
+.event__contact.data-item .data-item__label,
+.terms__label {
+    font-size: 0 !important;
+}

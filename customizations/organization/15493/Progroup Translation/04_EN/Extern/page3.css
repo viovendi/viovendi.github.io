@@ -1,0 +1,49 @@
+.ew-confirmation__header .header__label,
+.customization-confirmation-description,
+.ew-confirmation__text-paragraph {
+    text-indent: -9999px;
+	line-height: 0;
+}
+
+a.ew-confirmation__link.customization-client-portal-link,
+p.ew-confirmation__organizer-contact > span:nth-of-type(1) {
+	text-indent: -9999px;
+	line-height: 0;
+	font-size: 0;
+}
+
+.ew-confirmation__header .header__label:after {
+    content: "Registration confirmation";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.customization-confirmation-description:after {
+	content: "Thank you for your registration. You will shortly receive your confirmation by e-mail.";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.ew-confirmation__text-paragraph:after {
+	content: "You can view and manage your registration in the portal at any time. To log in there, you require your registration number and your e-mail address.";
+	text-indent: 0;
+	display: block;
+	line-height: normal;
+}
+
+.customization-client-portal-link:after {
+    content: "To the registration portal";
+    text-indent: 0;
+    display: block;
+    line-height: normal;
+    font-size: 16px;
+}
+
+p.ew-confirmation__organizer-contact span:nth-of-type(1):after {
+	content: "If you have any questions at any time, please e-mail";
+	text-indent: 0;
+	line-height: normal;
+	font-size: 14px;
+}

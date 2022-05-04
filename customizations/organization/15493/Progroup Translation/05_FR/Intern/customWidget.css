@@ -1,0 +1,316 @@
+.vv-button {
+    border-radius: 0;
+}
+
+.vv-button-primary {
+    width:auto;
+	background: #ce0058 !important;
+    border: 2px solid;
+}
+
+.vv-button-primary:hover,
+.vv-button-primary:focus{
+    background: white !important;
+    color:#ce0058 !important;
+    border: 2px solid;
+}
+
+.customization-button-next {
+    border-radius: 0px;
+    font-weight: 200 !important;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-shadow:none;
+    width:auto;
+}
+
+.customization-button-next {
+    background: #ce0058 !important;
+    border: 2px solid;
+}
+
+.customization-button-next:hover,
+.customization-button-next:focus{
+    background: white !important;
+    color:#ce0058 !important;
+    border: 2px solid;
+}
+
+button.vv-button.vv-button-secondary{
+    border-color: #ce0058;
+    color: #ce0058;
+}
+
+button.vv-button.vv-button-secondary:hover{
+    border-color: #ce0058;
+    color: white;
+    background-color: #ce0058;
+}
+
+.col-md-6.col-lg-7 > vv-navigation > div {
+    justify-content: flex-end !important;
+}
+
+vv-button[customization="customization-button-previous"] {
+    margin-right: 10px
+}
+
+.vv-selection-input__control,
+.vv-input__control,
+.vv-textarea__control,
+.vv-radio-group__control{
+    border-radius: 0px !important;
+    border-color: #808080 !important;
+}
+
+.vv-selection-input__control {
+    background: none !important;
+}
+
+.vv-selection-input__control:not(.vv-selection-input__control--disabled) {
+    background: url(https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Progroup/dropdown.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: 20px !important;
+    background-position: right center !important;
+}
+
+.event-category__ticket-count-wrap > select {
+    border-radius: 0px !important;
+    border-color: #afafaf !important;
+    color: #afafaf;
+}
+
+select.event-category__ticket-count {
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-color: #808080 !important;
+}
+
+vv-icon.vv-selection-input__dropdown-icon {
+    display: none
+}
+
+.vv-selection-input__control,
+.vv-input__control{
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-color: #808080 !important;
+}
+
+.vv-radio-group__control {
+    border: none;
+}
+
+.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated,
+.customization-booking-area-wrapper,
+.vv-border-grey-light {
+    border: none;
+}
+
+.vv-rounded-lg {
+    border-radius: 0px;
+}
+
+.event-category__separator {
+    display: none;
+}
+
+.ew-selection__further.ew-selection__further--valid-or-empty {
+    padding-top: 20px !important;
+    border-top: 3px solid;
+    border-color: #808080;
+}
+
+.vv-link,
+.vv-button-text-blue {
+    color: #ce0058 !important;
+}
+
+.vv-link:hover {
+    color: #ce0058 !important;
+}
+
+.vv-bg-grayscale-1,
+form {
+    background: none !important;
+}
+
+.event-booking-widget {
+    background: none !important;
+}
+
+.customization-booking-area-wrapper-page2 {
+    background-color: transparent !important;
+}
+
+.vv-bg-bg {
+    background: none;
+}
+
+.event-category {
+    padding: 0px !important;
+    padding-bottom: 20px !important;
+}
+
+vv-icon[name="lock"],
+vv-icon[name="lock"] + vv-text {
+    display: none;
+}
+
+.ew-selection__further.ew-selection__further--valid-or-empty {
+    padding: 0px;
+}
+
+vv-booking-editing-prompt > div {
+    padding: 0px !important;
+}
+
+.ew-selection__badges > div {
+    justify-content: center;
+}
+
+form[name="form"] {
+    padding-bottom: 10px
+}
+
+.event-booking-widget .ew-header__progress-container .progress-point:not(.disabled) .icon-container {
+    background-color: #ce0058;
+}
+
+.event-booking-widget .ew-header__progress-container .progress-point .progress-point__label{
+    color: #ce0058
+}
+
+.event-booking-widget .ew-header__progress-container .progress-point::before {
+    border: 1px solid #ce0058;
+}
+
+.col-md-6.col-lg-7 {
+    padding: 0px !important;
+    flex:none;
+    max-width:none;
+}
+
+.collapsible-wrapper_body--separated {
+    padding: 0px !important;
+}
+
+.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-sm-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+
+.col-sm-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+}
+
+.vv-sm-mt-none {
+    margin-top: 0;
+}
+
+.customization3_collapsible-wrapper_header {
+    padding: 0px !important;
+}
+
+.customization2_booking-terms {
+    border-top: 3px solid;
+    border-top-color: #808080
+}
+
+.customization2_attendees_title {
+    display: none;
+}
+
+.customization3_booking-participant_attendee {
+    padding: 0px !important;
+}
+
+.col-md-6.col-lg-5 {
+    padding: 0px;
+}
+
+.vv-mb-xxl {
+    margin: 0px;
+}
+
+.ew-header__event-logo--stepper-active:after {
+    background: none;
+}
+
+.customization2_attendee_contact-data_copy-link {
+    display: none;
+}
+
+.customization2_summary_box {
+    padding-top: 0px;
+}
+
+.customization2_booking-terms {
+    padding-left: 0px;
+}
+
+.vv-control-label {
+    margin-bottom: 0px;
+}
+
+.customization2_attendee_count {
+    display:none;
+}
+
+.customization2_summary {
+    display: none;
+}
+
+.customization2_attendee_contact-data_headline {
+	text-indent: -9999px;
+	line-height: 0;
+}
+
+
+
+.customization2_attendee_further-data_headline {
+    display: none;
+}
+
+.customization2_attendee_further-data {
+    margin-top: 24px;
+}
+
+.row.vv-mb-lg {
+    align-items: flex-end;
+}
+
+.customization2_attendee_title {
+    color: #ce0058;
+    font-weight: 600
+}
+
+.customization3_attendee_title {
+    text-transform: uppercase
+}
+
+vv-textarea {
+    display: none;
+}
+
+.ew-confirmation__header svg.vv-icon.vv-icon__size--sm {
+    fill: #ce0058;
+}
+
+.ew-confirmation__link.customization-client-portal-link{
+    color: #ce0058;
+}
+
+.ew-confirmation__organizer-contact a {
+    color: #ce0058;
+}
+
+.ew-confirmation.customization-booking-area-wrapper.customization-booking-area-wrapper-page4 {
+    border: none;
+}

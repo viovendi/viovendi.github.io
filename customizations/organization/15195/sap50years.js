@@ -1,5 +1,11 @@
 console.log("github customization loaded");
 
+async function updateTicket (ticket){ 
+  await  $(ticket).find(".vv-selection-input__control").click();
+	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
+  return
+}	
+
 async function makeRequest(options) {
   let result = null;
   try {
@@ -13,8 +19,6 @@ async function makeRequest(options) {
 var pathname = window.location.pathname;
 var eventId = pathname.split('/')[3]
 console.log(eventId);
-
-
 
 async function getTicketAmount(eventId) {
   const result = await makeRequest({
@@ -43,11 +47,10 @@ async function getInfo() {
 //--- check each ticketcategory, if child, hide some stuff---
 
 function hideStuff(name){
-  var ticketTitle = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-  if (ticketTitle == "Kind" ) {
+  var ticketTitle = $('.customization2_attendee_title').text().trim()
+  if (ticketTitle == "Kind" || ticketTitle == "Child" ) {
       $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
       $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
-      console.log("hide");
   }
   
   if (ticketTitle == "Partner" ) {
@@ -55,6 +58,18 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
+	
+if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter*in"  ) {
+    	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+	$('.'+name+' .customization2_attendee_further-data_headline').hide();
+	
+	//TODO hide if view state: .customization2_attendee-state_view
+	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
+	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
+	
+	console.log("mitarbeiter hide");
+}	
   
   
      /*if(calcCheckboxes(name) < 1 ){
@@ -81,6 +96,9 @@ function hideStuff(name){
 
 function init(name) {
   hideStuff(name)
+  setTimeout(function (){
+        startCustomizationPage1();
+              }, 800);  
 }
 
 init('customization2_attendee');
@@ -99,11 +117,93 @@ var insertionListener = function (event) {
     console.log("nodeSelfBooking");
      getInfo();
   }
+if (event.animationName === "nodeInserted2") {
+      init('customization2_attendee');
+  }
 }
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); //
+
+// CUSTOMIZATION ON PAGE 1
+
+
+function startCustomizationPage1(){
+	const observerPage1 = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if ($(page1).is(':visible')) {
+            startCustomizationPage1();
+            obs.disconnect();
+            return;
+        }
+    });
+    const observerNotPage1 = new MutationObserver((mutations, obs) => {
+        const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+    
+        if (!$(page1).is(':visible')) {
+            observerPage1.observe(document, {
+                childList: true,
+                subtree: true
+            });
+            obs.disconnect();
+            return;
+        }
+    });
+    observerNotPage1.observe(document, {
+        childList: true,
+        subtree: true
+    });
+
+	addListenerToTickets();
+	addTextToAmountOfTickets();
+}
+
+function addListenerToTickets() {
+  console.log("adding listener to tickets"+$('.event-category').length);
+     $('.event-category').each(function () {
+	     const ticket = this;
+            $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
+                if($(this).text().trim()!=0){
+                resetOtherTicket($(ticket));
+                }
+            });
+    });
+  
+}
+function resetOtherTicket(ticketBlock) {
+	
+     const run = async (tickets) =>{
+        await tickets.get().reverse().reduce(async (memo, ticket) => {
+	    await memo;
+            if (ticket != ticketBlock.get(0)) {
+              	await updateTicket($(ticket));
+            }
+	}, undefined); 
+    }	
+
+    run($('.event-category'));
+}
+function addTextToAmountOfTickets(){
+	$('.event-category__amount').each(function(){
+		const amount = $(this).text().trim().split(" ")[0];
+		if(amount>5000){
+			$(this).text('genügend Plätze vorhanden');
+			$(this).css('color', 'green');
+		}else if(amount >1000){
+			$(this).text('wenige Plätze verfügbar');
+			$(this).css('color', 'orange');
+		}else if(amount >200){
+			$(this).text('nur noch wenige Plätze verfügbar');
+			$(this).css('color', 'red');
+		}else{
+			$(this).text('weniger als 200 Plätze verfügbar');
+			$(this).css('color', 'red');
+		}
+	});		
+}
+
 /*var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log('bookerNodeInserted')
@@ -194,37 +294,5 @@ function radioButtonClicked(radioButton) {
 
 */
 
-
-
-
-
-// CUSTOMIZATION ON PAGE 1
-
-
-
-function addListenerToTickets() {
-    $(".event-category").each(function () {
-        console.log('found categorie');
-      // This no longer works since last Update !!!!!!!!!!!!!!!!!!!!!! 
-        $(this).find("select").on('change', function () {
-          console.log("change count wrap");
-            // resetOtherTicket($(this));
-        });
-    });
-  
-}
-function resetOtherTicket(ticketBlock) {
-    
-    $(".event-category").each(
-        function () {
-            if ($(this) != $(ticketBlock)) {
-                $(this).find("select").val(0);
-                $(this).find("select").get(0).dispatchEvent(new Event('change'));
-            }
-        }
-    );
-}
-
-addListenerToTickets();
 
 

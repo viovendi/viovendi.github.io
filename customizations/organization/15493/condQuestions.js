@@ -1,3 +1,70 @@
+var ticketNumber;
+var pleaseSelect;
+var checkboxSelected;
+var dropdownYes;
+var dropdownNo;
+var dropdownHerr;
+var dropdownFrau;
+var dropdownError;
+
+ticketNumber = "Registrierungsnummer: ";
+dropdownError = "<div class='error-message'> Bitte ausfüllen </div>";
+
+const url = window.location.href;
+
+if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) {
+    console.log("FR");
+    ticketNumber = "Numéro d'enregistrement: ";
+    pleaseSelect = "Veuillez sélectionner";
+    dropdownYes = "Oui";
+    dropdownNo = "Non";
+    dropdownHerr = "Monsieur";
+    dropdownFrau = "Madame";
+    dropdownError = "<div class='error-message'> Veuillez sélectionner </div>";
+} else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
+    console.log("IT");
+    ticketNumber = "Numero di registrazione: ";
+    pleaseSelect = "Si prega di selezionare";
+    dropdownYes = "Sì";
+    dropdownNo = "No";
+    dropdownHerr = "Signore";
+    dropdownFrau = "Signora";
+    dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
+} else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
+    console.log("PL");
+    ticketNumber = "Numer zgłoszeniowy: ";
+    pleaseSelect = "Prosimy wybrać";
+    dropdownYes = "";
+    dropdownNo = "";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Pani";
+    dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
+} else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
+    console.log("CZ");
+    ticketNumber = "Registrační číslo: ";
+    pleaseSelect = "Prosím zvolte";
+    dropdownYes = "Tak";
+    dropdownNo = "Nie";
+    dropdownHerr = "Pan";
+    dropdownFrau = "Paní";
+    dropdownError = "<div class='error-message'> Prosím zvolte </div>";
+} else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
+    console.log("EN");
+    ticketNumber = "Registration number: ";
+    pleaseSelect = "Please select";
+    dropdownYes = "Ano";
+    dropdownNo = "Ne";
+    dropdownHerr = "Mr";
+    dropdownFrau = "Ms/Mrs";
+    dropdownError = "<div class='error-message'> Please select </div>";
+} else {
+    console.log("ERROR: Unknown widget id")
+}
+console.log("translating")
+
+checkboxSelected=false;
+console.log(checkboxSelected)
+
 function findDropDownByLabel(label) {
     var found = null;
     $(".vv-selection-input").each(function () {
@@ -11,18 +78,51 @@ function findDropDownByLabel(label) {
     return found;
 };
 
+function changeTextTo(selector, originalText, newText) {
+    $(selector).each(function () {
+        if ($(this).text().trim() == originalText) {
+            $(this).text(newText);
+        }
+    })
+};
+
+function translatePleaseSelect() {
+    changeTextTo('.vv-single-select-option', 'Please select', pleaseSelect);
+    changeTextTo('.vv-single-select-option', 'Ja', dropdownYes);
+    changeTextTo('.vv-single-select-option', 'Nein', dropdownNo);
+    changeTextTo('.vv-single-select-option', 'Mr.', dropdownHerr);
+    changeTextTo('.vv-single-select-option', 'Ms.', dropdownFrau);
+
+    document.querySelectorAll(".vv-selection-input__value").forEach(el => {
+        if (el.innerText === 'Please select') { el.innerText = pleaseSelect }
+        if (el.innerText === 'Ja') { el.innerText = dropdownYes }
+        if (el.innerText === 'Nein') { el.innerText = dropdownNo }
+        if (el.innerText === 'Mr.') { el.innerText = dropdownHerr }
+        if (el.innerText === 'Ms.') { el.innerText = dropdownFrau }
+    });
+
+    addEventListener('click', e => {
+        if (e.target.classList.contains('vv-single-select-option')) {
+            let selectContainer = e.target.closest('.vv-selection');
+            let valueElement = selectContainer.getElementsByClassName('vv-selection-input__value')[0];
+            valueElement.innerText = e.target.textContent.trim().replace('<br>', '');
+        }
+    });
+
+};
+
 function disableWhenEmpty(field) {
     var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
 
     if (inputOfField != undefined) {
         $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
         if (!$(field).find('.customization2_attendee_further-data_custom-question_dropdown').next().hasClass("error-message")) {
-            $("<div class='error-message'> Please complete </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
+            $(dropdownError).insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
         }
 
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
 
-            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
+            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen"|| $(this).text().trim() == pleaseSelect) {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
@@ -46,7 +146,7 @@ function disableWhenEmpty(field) {
         inputOfField = $(field).find('.customization2_attendee_further-data_custom-question_date');
     } else {
         if (!$(inputOfField).next().hasClass("error-message")) {
-            $("<div class='error-message'> Please complete </div>").insertAfter($(inputOfField));
+            $(dropdownError).insertAfter($(inputOfField));
         }
     }
     $(inputOfField).addClass('error-state');
@@ -79,10 +179,33 @@ function disableWhenEmpty(field) {
 function customTerms() {
     if (!$('.custom_terms_checkbox').length) {
         console.log("Terms added");
+        console.log("Checkbox selected: "+checkboxSelected)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
+        if(checkboxSelected){
+            console.log($('div.custom_terms_checkbox > vv-checkbox > label'))
+            $('div.custom_terms_checkbox > vv-checkbox > label').click();
+        }else{
+            $('.customization-button-next').prop("disabled", true);
+        }
+        $('.customization2_attendee_edit-action_save').on('click',function(e){
+                if(!checkboxSelected){
+                    $('.customization-button-next').prop("disabled", true);
+                }
+            });
+        $('.custom_terms_checkbox').on('click',function(e){
+            if(e.target.name!=undefined&&e.target.name=='isTermsAccepted'){
+                checkboxSelected=!checkboxSelected;
+                if(!checkboxSelected){
+                    $('.customization-button-next').prop("disabled", true);
+                }else{
+                    $('.customization-button-next').prop("disabled", false);
+                }
+                console.log(checkboxSelected);
+            }
+        })
     }
 };
 
@@ -112,7 +235,7 @@ function editBookingPortal() {
 
     if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
         var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
-        $('.customization3_edit-booking_main_booking-id_label').text('Registrierungsnummer: ' + ticketID);
+        $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
     };
 };
 
@@ -121,7 +244,7 @@ const observer = new MutationObserver((mutations, obs) => {
     if ($(page4).is(':visible')) {
         console.log("page 4 visible");
         var ticketID = $('.notice__booking-id span').text()
-        $('.notice__booking-id').text('Registrierungsnummer: ' + ticketID);
+        $('.notice__booking-id').text(ticketNumber + ticketID);
         obs.disconnect();
         return;
     }
@@ -195,49 +318,48 @@ function handler() {
 
 }
 
-
-
-
-
-
-
 handler();
 addHotelDescription();
 customTerms();
 addWeitereAngabenTeilnehmerHeader();
 editBookingPortal();
+translatePleaseSelect();
 
 const observerThisPage = new MutationObserver((mutations, obs) => {
-        const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
-    
-        if ($(page2).is(':visible')) {
-            console.log('page 2 visible')
-            editBookingPortal();
-            obs.disconnect();
-            return;
-        }
-    });
-    const observerOtherPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
-  
-        if (!$(page2).is(':visible')) {
-          console.log('page 2 not visible')
-         // $('.customization-button-next').text('CONTINUER');
-            observerThisPage.observe(document, {
-                childList: true,
-                subtree: true
-            });
-            obs.disconnect();
-            return;
-        }
-    });
-    observerOtherPage.observe(document, {
-        childList: true,
-        subtree: true
-    });
+    if ($(page2).is(':visible')) {
+        console.log('page 2 visible')
+        editBookingPortal();
+        customTerms()
+        observerOtherPage.observe(document, {
+            childList: true,
+            subtree: true
+        });
+        obs.disconnect();
+        return;
+    }
+});
+
+const observerOtherPage = new MutationObserver((mutations, obs) => {
+    const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
 
+    if (!$(page2).is(':visible')) {
+        console.log('page 2 not visible')
+        observerThisPage.observe(document, {
+            childList: true,
+            subtree: true
+        });
+        obs.disconnect();
+        return;
+    }
+});
+
+observerOtherPage.observe(document, {
+    childList: true,
+    subtree: true
+});
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
@@ -248,15 +370,9 @@ var insertionListener = function (event) {
         customTerms();
         addWeitereAngabenTeilnehmerHeader();
         editBookingPortal();
-
-
-
-        $('customization2_attendee_view-action_edit').on("click", function () {
-            console.log("clicked");
-        });
+        translatePleaseSelect();
     }
 }
-
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE

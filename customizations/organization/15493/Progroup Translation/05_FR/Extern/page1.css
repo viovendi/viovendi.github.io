@@ -1,0 +1,56 @@
+.customization-promo-code-label,
+.customization-access-code-label,
+ul.event-categories li .customization-category-name,
+ul.event-categories li .customization-category-description,
+.customization-encrypted-connection{
+    font-size: 0 !important;
+}
+
+vv-booking-editing-prompt span {
+    text-indent: -9999px;
+    line-height: 0 !important;
+    font-size: 0 !important;
+}
+
+vv-booking-editing-prompt button {
+    text-indent: -9999px;
+    line-height: 0;
+}
+
+ul.event-categories li:nth-of-type(1) .customization-category-name:after {
+    content: "Je viens seul(e)";
+    font-size: 1rem;
+}
+
+ul.event-categories li:nth-of-type(2) .customization-category-name:after {
+    content: "Je viens accompagné(e)";
+    font-size: 1rem;
+}
+
+ul.event-categories:after {
+    content: "Vous êtes chaleureusement invité(e), vous et votre partenaire. La participation est gratuite.";
+    font-size: 16px;
+    display: block;
+    margin: 20px;
+    left:50%;
+    text-align:center;
+}
+
+.customization-encrypted-connection:after {
+    content: "Connexion sécurisée";
+    font-size:14px
+}
+
+vv-booking-editing-prompt span:after {
+    content: "Déjà inscrit(e) ?";
+    text-indent: 0;
+    font-size: 14px;
+    line-height: normal;
+}
+
+vv-booking-editing-prompt button:after {
+    content: "Vous pouvez vous inscrire ici";
+    font-size: 14px;
+    line-height: normal;
+    text-indent: 0;
+}

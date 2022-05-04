@@ -1,0 +1,37 @@
+.selection .progress-point__label,
+.information .progress-point__label,
+.confirmation .progress-point__label {
+    text-indent: -9999px;
+    line-height: 0 !important;
+    font-size: 0 !important;
+}
+
+.selection .progress-point__label:after {
+    content: "Výběr";
+    text-indent: 0;
+    font-size: 14px;
+    display: block;
+    line-height: normal;
+    position: relative;
+    margin-top: -19px;
+}
+
+.information .progress-point__label:after {
+    content: "Údaje";
+    text-indent: 0;
+    font-size: 14px;
+    display: block;
+    line-height: normal;
+    position: relative;
+    margin-top: -19px;
+}
+
+.confirmation .progress-point__label:after {
+    content: "Potvrzení";
+    text-indent: 0;
+    font-size: 14px;
+    display: block;
+    line-height: normal;
+    position: relative;
+    margin-top: -19px;
+}

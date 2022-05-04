@@ -1,0 +1,211 @@
+.booking-editing-auth vv-heading:after{
+    content:"Podaj swoje dane do rejestracji";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+	color: rgb(52, 58, 63);
+	font-weight:700;	
+}
+
+.booking-editing-auth vv-input[name="bookingId"] label p:after {
+    content:"Numer zgłoszeniowy";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+    display:block;
+}
+
+.booking-editing-auth vv-input[name="bookingId"] + vv-show-errors .error-text:after {
+    content:"Wprowadź prawidłowy numer rezerwacji";
+	font-size:12px;
+}
+
+.booking-editing-auth vv-input[name="email"] label p:after {
+    content:"Adres e-mail";
+    text-indent: 0;
+	line-height: normal;
+	font-size:16px;
+    display:block;
+}
+
+.booking-editing-auth vv-input[name="email"] + vv-show-errors .error-text:after {
+    content:"Wprowadź prawidłowy adres e-mail";
+	font-size:12px;
+}
+
+.booking-editing-auth vv-button:nth-of-type(1) button:after {
+    content:"Do wyboru";
+	font-size:16px;
+}
+
+.booking-editing-auth vv-button:nth-of-type(2) button:after {
+    content:"Dalej";
+	font-size:16px;
+}
+
+.customization3_edit-booking_header_title:after{
+    content:"Mój portal rezerwacyjny";
+	font-size:14px;
+}
+
+.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
+    content:"JESZCZE xxx DNI";
+    text-indent: 0;
+	line-height: normal;
+	font-size:14px;
+    display:block;
+}
+
+.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(2):after{
+    content:"JESZCZE xxx DNI";
+    text-indent: 0;
+	line-height: normal;
+	font-size:14px;
+    display:block;
+}
+
+.customization3_edit-booking_header_logout:after{
+    content:"Zrezygnuj z subskrypcji";
+	font-size:14px;
+}
+
+.customization3_edit-booking_main_booking-date_label:after{
+    content:"Rezerwacji dokonano w dniu";
+	font-size:13px;
+}
+
+.booking-status--paid.customization3_edit-booking_main_booking-status:after{
+    content:"Rejestracja zakończona";
+	font-size:16px;
+}
+
+
+
+.customization3_edit-booking_main_event_dates:after{
+    content:"Sobota, 5 listopada, godz. 16:30 do 6 listopada 2022 r., godz. 3:00";
+	font-size:13px;
+}
+
+.customization3_tab-group_tab:nth-of-type(1) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"Uczestnicy";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(2) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"Osoba dokonująca rezerwacji";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(3) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"Rezerwacja";
+	font-size:14px;
+}
+
+.customization3_tab-group_tab:nth-of-type(4) .customization3_tab-group-mobile_tab_label_text:after{
+    content:"WYDARZENIE";
+	font-size:14px;
+}
+
+.customization2_attendee-1 .customization3_attendee_ticket-category_title:after{
+    content:"Przebędę bez osoby towarzyszącej";
+	font-size:14px;
+}
+
+.customization2_attendee-2 .customization3_attendee_ticket-category_title:after{
+    content:"Przebędę z osobą towarzyszącą";
+	font-size:14px;
+}
+
+.customization2_booker_contact-data_headline:after{
+    content:"Osoba kontaktowa";
+	font-size:16px;
+}
+
+.customization3_invoice-box_header_title:after{
+    content:"Podsumowanie";
+	font-size:16px;
+}
+
+.customization3_invoice-box_category_label:after{
+    content:"NAZWA";
+	font-size:14px;
+}
+
+.customization3_invoice-box_quantity_label:after{
+    content:"Liczba";
+	font-size:14px;
+}
+
+.customization3_invoice-box_table-body tr:nth-of-type(1) .customization3_invoice-box_category_value .grid-element__value:after{
+    content:"Przebędę bez osoby towarzyszącej";
+	font-size:13px;
+}
+
+.customization3_invoice-box_table-body tr:nth-of-type(2) .customization3_invoice-box_category_value .grid-element__value:after{
+    content:"Przebędę z osobą towarzyszącą";
+	font-size:13px;
+}
+
+.customization3_edit-booking_event_dates:after{
+    content:"Sobota, 5 listopada, godz. 16:30 do 6 listopada 2022 r., godz. 3:00";
+	font-size:14px;
+}
+
+.customization3_edit-booking_event_organizer > div:first-of-type > div:first-of-type .data-item__label:after {
+	content:"WYDARZENIE";
+	font-size: 13px;
+}
+
+.organizer__name.data-item__value:after {
+	content:"Załoga kosmiczna Progroup";
+	font-size: 16px;
+}
+
+.event__contact.data-item .data-item__label:after{
+	content:"Kontakt";
+	font-size: 13px;
+}
+
+.terms__label:after{
+	content:"Warunki rezerwacji";
+	font-size: 13px;
+}
+
+.customization3_invoice-box_quantity_value .grid-element__label {
+    font-size: 0;
+}
+
+.customization3_invoice-box_quantity_value .grid-element__label:after {
+    content: "Ilość";
+    font-size: 12px;
+}
+
+.booking-editing-auth vv-heading,
+.booking-editing-auth vv-input[name="bookingId"] label p,
+.booking-editing-auth vv-input[name="email"] label p,
+.customization3_edit-booking_header_days-to-go p{
+	text-indent: -9999px;
+	line-height: 0;
+}
+
+.booking-editing-auth vv-button button,
+vv-show-errors .error-text,
+.customization3_edit-booking_header_title,
+.customization3_edit-booking_header_logout,
+.customization3_edit-booking_main_booking-date_label,
+.booking-status--paid.customization3_edit-booking_main_booking-status,
+.customization3_tab-group-mobile_tab_label_text,
+.customization3_attendee_ticket-category_title,
+.customization2_booker_contact-data_headline,
+.customization3_invoice-box_header_title,
+.customization3_invoice-box_category_label,
+.customization3_invoice-box_quantity_label,
+.customization3_invoice-box_category_value,
+.customization3_edit-booking_main_event_dates,
+.customization3_edit-booking_event_dates,
+.customization3_edit-booking_event_organizer > div:first-of-type > div:first-of-type .data-item__label,
+.organizer__name.data-item__value,
+.event__contact.data-item .data-item__label,
+.terms__label {
+    font-size: 0 !important;
+}
