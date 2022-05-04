@@ -117,16 +117,13 @@ function handler() {
     // hide other day when 1 day is selected
     console.log("1");
      if (ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")) {
-      disablenaduncheck("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial");
       
     } 
     else if(!ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")){
       
-      
     }
-   if (ischecked("Zweitägig: Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer")) {
-     console.log("2");
-      disablenaduncheck("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+  
+   if (ischecked("Zweitägig: Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer") || ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")) {
 disablenaduncheck("09:00 - 16:00 Uhr: Gespräche erfolgreich führen");
 disablenaduncheck("2-teilig: 10:00 - 12:00 Uhr und 13:30 – 16:00 Uhr: Gender* und Co – Geschlechtersensible Pädagogik und Diversity in meinem Unterricht umsetzen – Herausforderungen und praktische Anwendungen");
 disablenaduncheck("09:00 - 16:00 Uhr: Verbraucherbildung ist Bildung für nachhaltige Entwicklung");
@@ -148,7 +145,7 @@ disablenaduncheck("09:00 – 11:00 Uhr: Die Pflege der niederdeutschen Sprache a
 disablenaduncheck("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
      
     } 
-    else if (!ischecked("Zweitägig: Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer")) {
+    else if (!ischecked("Zweitägig: Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer") || !ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")) {
       console.log("notchecked");
       enableProd("09:00 - 16:00 Uhr: Gespräche erfolgreich führen");
 enableProd("2-teilig: 10:00 - 12:00 Uhr und 13:30 – 16:00 Uhr: Gender* und Co – Geschlechtersensible Pädagogik und Diversity in meinem Unterricht umsetzen – Herausforderungen und praktische Anwendungen");
@@ -170,7 +167,6 @@ enableProd("09:00 – 15:00 Uhr: Schüler*innen drehen eigene Videos im Unterric
 enableProd("09:00 – 11:00 Uhr: Die Pflege der niederdeutschen Sprache als Bildungs- und Entwicklungsziel: Grundlagen und Perspektiven");
 enableProd("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
 
-
      // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
       
     }
@@ -178,47 +174,51 @@ enableProd("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
  
    if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
      console.log("2");
-      disablenaduncheck("09:00 - 16:00 Uhr: Gespräche erfolgreich führen");
-disablenaduncheck("2-teilig: 10:00 - 12:00 Uhr und 13:30 – 16:00 Uhr: Gender* und Co – Geschlechtersensible Pädagogik und Diversity in meinem Unterricht umsetzen – Herausforderungen und praktische Anwendungen");
-disablenaduncheck("09:00 - 16:00 Uhr: Verbraucherbildung ist Bildung für nachhaltige Entwicklung");
-disablenaduncheck("09:00 – 16:00 Uhr: Diskriminierung im Schulalltag - erkennen und begegnen");
-disablenaduncheck("09:00 - 16:00 Uhr: Stressabbau im Alltag");
-disablenaduncheck("09:00 - 16:00 Uhr: Praktische Selbstbehauptung/Selbstverteidigung für Lehrer und Erzieher");
-disablenaduncheck("09:00 – 14:00 Uhr: Aufsichts- und Haftungsrecht in der Schule");
-disablenaduncheck("10:00 – 12:30 Uhr: Verschwörungserzählungen – eine Gefahr für die Demokratie?");
-disablenaduncheck("09:00 – 15:00 Uhr: Gefährliche Projektion – Antisemitismus, eine Realität in der Mitte der Gesellschaft");
-disablenaduncheck("10:00 - 15:00 Uhr: Transformative Wasserbildung");
-disablenaduncheck("10:00 – 13:00 Uhr: Auf den Acker - fertig - los! Die GemüseAckerdemie: Das Bildungsprogramm für mehr Nachhaltigkeit und Ernährungskompetenz");
-disablenaduncheck("09:00 – 16:00 Uhr: Naturprojekt Gänseblümchen - mit Kindern die Natur erleben");
-disablenaduncheck("09:00 – 12:30 Uhr: Schnupperkurs Line Dance");
-disablenaduncheck("09:00 – 16:00 Uhr: Stand up-Paddeln im außerschulischen Sport");
-disablenaduncheck("09:00 – 15:00 Uhr: Outdoor-Aktivitäten mit Lerngruppen");
-disablenaduncheck("10:00 – 15:00 Uhr: Chorleitung und chorische Stimmbildung");
-disablenaduncheck("09:00 – 15:00 Uhr: Schüler*innen drehen eigene Videos im Unterricht");
-disablenaduncheck("09:00 – 11:00 Uhr: Die Pflege der niederdeutschen Sprache als Bildungs- und Entwicklungsziel: Grundlagen und Perspektiven");
-disablenaduncheck("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
+      disablenaduncheck("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+disablenaduncheck("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
+disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
+disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
+disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
+disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
+disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
+disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
+disablenaduncheck("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
+disablenaduncheck("10:00 – 16:00: Von der Brennnessel zum T-Shirt");
+disablenaduncheck("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen");
+disablenaduncheck("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion");
+disablenaduncheck("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
+disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
+disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
      
     } 
     else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
-      enableProd("09:00 - 16:00 Uhr: Gespräche erfolgreich führen");
-enableProd("2-teilig: 10:00 - 12:00 Uhr und 13:30 – 16:00 Uhr: Gender* und Co – Geschlechtersensible Pädagogik und Diversity in meinem Unterricht umsetzen – Herausforderungen und praktische Anwendungen");
-enableProd("09:00 - 16:00 Uhr: Verbraucherbildung ist Bildung für nachhaltige Entwicklung");
-enableProd("09:00 – 16:00 Uhr: Diskriminierung im Schulalltag - erkennen und begegnen");
-enableProd("09:00 - 16:00 Uhr: Stressabbau im Alltag");
-enableProd("09:00 - 16:00 Uhr: Praktische Selbstbehauptung/Selbstverteidigung für Lehrer und Erzieher");
-enableProd("09:00 – 14:00 Uhr: Aufsichts- und Haftungsrecht in der Schule");
-enableProd("10:00 – 12:30 Uhr: Verschwörungserzählungen – eine Gefahr für die Demokratie?");
-enableProd("09:00 – 15:00 Uhr: Gefährliche Projektion – Antisemitismus, eine Realität in der Mitte der Gesellschaft");
-enableProd("10:00 - 15:00 Uhr: Transformative Wasserbildung");
-enableProd("10:00 – 13:00 Uhr: Auf den Acker - fertig - los! Die GemüseAckerdemie: Das Bildungsprogramm für mehr Nachhaltigkeit und Ernährungskompetenz");
-enableProd("09:00 – 16:00 Uhr: Naturprojekt Gänseblümchen - mit Kindern die Natur erleben");
-enableProd("09:00 – 12:30 Uhr: Schnupperkurs Line Dance");
-enableProd("09:00 – 16:00 Uhr: Stand up-Paddeln im außerschulischen Sport");
-enableProd("09:00 – 15:00 Uhr: Outdoor-Aktivitäten mit Lerngruppen");
-enableProd("10:00 – 15:00 Uhr: Chorleitung und chorische Stimmbildung");
-enableProd("09:00 – 15:00 Uhr: Schüler*innen drehen eigene Videos im Unterricht");
-enableProd("09:00 – 11:00 Uhr: Die Pflege der niederdeutschen Sprache als Bildungs- und Entwicklungsziel: Grundlagen und Perspektiven");
-enableProd("09:00 – 12:30 Uhr: Erklärfilme für Grundschüler*innen");
+      enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+enableProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+enableProd("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
+enableProd("10:00 – 17:00 Uhr: Qigong mit Kindern");
+enableProd("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
+enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
+enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
+enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+enableProd("14:00 – 17:00 Uhr: Neues Lernen braucht das Land - BNE-Werkstatt zur Unterrichtsentwicklung");
+enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
+enableProd("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
+enableProd("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
+enableProd("10:00 – 16:00: Von der Brennnessel zum T-Shirt");
+enableProd("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen");
+enableProd("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion");
+enableProd("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
+enableProd("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+enableProd("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
+enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 
 
      // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
