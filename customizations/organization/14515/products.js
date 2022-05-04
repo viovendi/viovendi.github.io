@@ -232,8 +232,6 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern")
 || ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")
 || ischecked("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
-|| ischecked("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten")
-|| ischecked("14:00 – 17:00 Uhr: Neues Lernen braucht das Land - BNE-Werkstatt zur Unterrichtsentwicklung")
 || ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")
 || ischecked("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten")
 || ischecked("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden")
@@ -241,12 +239,10 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen")
 || ischecked("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion")
 || ischecked("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine")
-|| ischecked("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln")
-|| ischecked("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke")
 || ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")) {
   
   console.log("irgendeins ischecked");
-    disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
 disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
 disablenaduncheck("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
 disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
@@ -254,7 +250,7 @@ disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 disablenaduncheck("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
-disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+//disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 //disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
@@ -263,9 +259,48 @@ disablenaduncheck("10:00 – 16:00: Von der Brennnessel zum T-Shirt");
 disablenaduncheck("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen");
 disablenaduncheck("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion");
 disablenaduncheck("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
-disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+//disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
 //disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
 disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
+    
+    if (ischecked("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen")
+|| ischecked("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst")
+|| ischecked("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer")
+|| ischecked("10:00 – 17:00 Uhr: Qigong mit Kindern")
+|| ischecked("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen")
+|| ischecked("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern")
+|| ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")
+|| ischecked("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
+|| ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")
+|| ischecked("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten")
+|| ischecked("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden")
+|| ischecked("10:00 – 16:00: Von der Brennnessel zum T-Shirt")
+|| ischecked("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen")
+|| ischecked("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion")
+|| ischecked("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine")
+|| ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")) {
+       enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+enableProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+enableProd("Di / Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: Kopfkino und Herzenswünsche -Mentales Training für Lehrerinnen und Lehrer");
+enableProd("10:00 – 17:00 Uhr: Qigong mit Kindern");
+enableProd("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
+enableProd("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
+enableProd("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
+enableProd("10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+enableProd("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
+enableProd("14:00 – 17:00 Uhr: Neues Lernen braucht das Land - BNE-Werkstatt zur Unterrichtsentwicklung");
+enableProd("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
+enableProd("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
+enableProd("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden");
+enableProd("10:00 – 16:00: Von der Brennnessel zum T-Shirt");
+enableProd("10:00 - 17:00 Uhr: Gerätturnen im Schulsport Klasse 1 bis 6 – Sicherheit und methodische Reihen");
+enableProd("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, Bodypercussion");
+enableProd("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
+enableProd("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
+enableProd("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
+enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
+    }
   }
   
 }
