@@ -146,6 +146,27 @@ function handler() {
       
       
     }
+   if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
+     console.log("2");
+      disablenaduncheck("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      //uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      disablenaduncheck("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+     // uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      disablenaduncheck("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+     // uncheckProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+     
+     
+    } 
+    else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
+      console.log("notchecked");
+      enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+      enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
+      enableProd("10:00 – 17:00 Uhr: Wandern - Der Weg zu sich selbst");
+
+
+     // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
+      
+    }
   
 }
 
