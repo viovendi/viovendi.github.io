@@ -309,7 +309,7 @@ enableProd("10:00 - 17:00 Uhr: Finde deinen Rhythmus - Konnakol, Rahmentrommel, 
 enableProd("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - Der Kreislauf der Gesteine");
         }
     if (ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")){
-enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen"));
+enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
         } 
     
   }
