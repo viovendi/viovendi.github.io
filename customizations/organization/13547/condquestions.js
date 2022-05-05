@@ -104,7 +104,7 @@ var insertionListener = function(event) {
           var inputsVertreter =  $(radioGroupVertreter).find('input');
           inputsVertreter.each(function( i, element ) {
               $(element).change(function(input2) {
-                  if($(input2.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Ja')){
+                  if($(input2.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Nein')){
                     console.log('Nein');
                     //hide everything
                     hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
