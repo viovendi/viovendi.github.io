@@ -43,7 +43,7 @@ function myHelpers(elements) {
         });
         return this.field;
     }
-    
+
     this.findDropDown = function (lable) {
         this.lable = lable;
         this.field = null;
@@ -65,7 +65,7 @@ function myHelpers(elements) {
     this.setValueToDropdown = async function (lable, value) {
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
-        await $(dropdown).find(".vv-single-select-option").each(new function(){console.log($(this));})
+        await $(dropdown).find(".vv-single-select-option").each(() => { console.log('values: '+$(this)) })
         //await $(dropdown).find(".vv-single-select-option").filter(new function(){console.log($(this).text().trim());$(this).text().trim() == value}).click();
         return
     }
@@ -87,14 +87,14 @@ function myHelpers(elements) {
             return
         }
         const run = async (dropDownLables) => {
-            await dropDownLables.reduce(async (memo, label , idx) => {
+            await dropDownLables.reduce(async (memo, label, idx) => {
                 await memo;
-               await this.setValueToDropdown(label, valueArray[idx]);
-           }, undefined);
+                await this.setValueToDropdown(label, valueArray[idx]);
+            }, undefined);
         }
         run(dropdownLabelArray);
     }
-    
+
 
     this.setValueToTextInputByLabel = function (inputLabel, value) {
         var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
@@ -188,7 +188,7 @@ function myHelpers(elements) {
                     $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
                     $(field).find('.error-message').hide();
                     //   $(".error-state").each(function(){console.log($(this))});
-                    
+
                     if ($(".error-state").length == 0)
                         $('.customization2_attendee_edit-action_save').prop("disabled", false);
                 }
@@ -229,22 +229,22 @@ function myHelpers(elements) {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
                 //   $(".error-state").each(function(){console.log($(this))});
-                console.log('error-state length: '+$(".error-state").length);
+                console.log('error-state length: ' + $(".error-state").length);
                 if ($(".error-state").length == 0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
     }
 }
-    /*
-     selector - is the CSS class of the parent input field that you want to change
-     for example $$('.customization2_attendee_further-data_custom-question')
-    */
-     function $$(selector) {
-        const elements = document.querySelectorAll(selector);
-        return new myHelpers(elements);
-    }
-    function $$() {
-        const elements = document.querySelectorAll('.customization2_attendee_further-data_custom-question');
-        return new myHelpers(elements);
-    }
+/*
+ selector - is the CSS class of the parent input field that you want to change
+ for example $$('.customization2_attendee_further-data_custom-question')
+*/
+function $$(selector) {
+    const elements = document.querySelectorAll(selector);
+    return new myHelpers(elements);
+}
+function $$() {
+    const elements = document.querySelectorAll('.customization2_attendee_further-data_custom-question');
+    return new myHelpers(elements);
+}
