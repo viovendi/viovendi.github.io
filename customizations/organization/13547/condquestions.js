@@ -15,7 +15,7 @@ function hideQuestion(tag, name) {
 function showQuestion(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find("label");
+    var label = item.find("label, p");
 
     if (label.text().trim().includes(name)) {
       console.log(label.text().trim())
