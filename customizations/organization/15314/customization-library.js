@@ -65,7 +65,7 @@ function myHelpers(elements) {
     this.setValueToDropdown = async function (lable, value) {
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
-        await $(dropdown).find(".vv-single-select-option").each((e) => { console.log(this.get(0)) })
+        await $(dropdown).find(".vv-single-select-option").each((e) => { console.log(this) })
         //await $(dropdown).find(".vv-single-select-option").filter(new function(){console.log($(this).text().trim());$(this).text().trim() == value}).click();
         return
     }
