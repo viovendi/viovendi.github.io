@@ -49,12 +49,18 @@ function myHelpers(elements) {
         this.field = null;
         elements.forEach((field) => {
             const lableText = $(field).find(".vv-control-label").text();
-            console.log('Lable Texts: '+lableText)
             if (lableText.trim().includes(lable)) {
                 this.field = field;
             }
         });
         return this.field;
+    }
+    this.findQuestionByLabel = function (label) {
+        var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
+        if (field == undefined) {
+            field = $$('.customization2_attendee_further-data_custom-question').findDropDown(label);
+        }
+        return field;
     }
     this.setValueToDropdown = async function (lable, value) {
         const dropdown = this.findDropDown(lable);
@@ -87,13 +93,7 @@ function myHelpers(elements) {
         }
         run(dropdownLabelArray);
     }
-    this.findQuestionByLabel = function (label) {
-        var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
-        if (field == undefined) {
-            field = $$('.customization2_attendee_further-data_custom-question').findDropDown(label);
-        }
-        return field;
-    }
+    
 
     this.setValueToTextInputByLabel = function (inputLabel, value) {
         var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
