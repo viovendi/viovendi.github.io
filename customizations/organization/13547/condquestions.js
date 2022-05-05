@@ -18,6 +18,7 @@ function showQuestion(tag, name) {
     var label = item.find("label");
 
     if (label.text().trim().includes(name)) {
+      console.log(label.text().trim())
       $(item).show();    }
   });
 }
