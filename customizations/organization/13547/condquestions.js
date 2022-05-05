@@ -5,7 +5,7 @@ console.log("git");
 function hideQuestion(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find("label");
+    var label = item.find("label, p");
 
     if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
       $(item).hide();    }
