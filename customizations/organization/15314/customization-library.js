@@ -243,3 +243,7 @@ function myHelpers(elements) {
         const elements = document.querySelectorAll(selector);
         return new myHelpers(elements);
     }
+    function $$() {
+        const elements = document.querySelectorAll('.customization2_attendee_edit-action_save');
+        return new myHelpers(elements);
+    }
