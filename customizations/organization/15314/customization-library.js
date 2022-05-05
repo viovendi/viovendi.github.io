@@ -4,7 +4,7 @@ This is the first iteration of our extended helpers.js library
 
 function myHelpers(elements) {
     /*
-     label - is the name of the field you want to get the (string: 'Branche (optional)' )
+     lable - is the name of the field you want to get the (string: 'Branche (optional)' )
       for example  var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
       Note: you are not required to use the entire field name only part of it
     */
@@ -43,7 +43,7 @@ function myHelpers(elements) {
         });
         return this.field;
     }
-    //Maybe useless because findField works now? should be checked
+    
     this.findDropDown = function (lable) {
         this.lable = lable;
         this.field = null;
@@ -59,7 +59,7 @@ function myHelpers(elements) {
     this.setValueToDropdown = async function (lable, value) {
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
-        await $(dropdown).find(".vv-single-select-option").filter(el => el == value).click();
+        await $(dropdown).find(".vv-single-select-option").filter(() => $(this).text().trim() == value).click();
         return
     }
     /*
@@ -80,11 +80,10 @@ function myHelpers(elements) {
             return
         }
         const run = async (dropDownLables) => {
-            console.log("not implemented!!!!!!!!!");
-        //    await dropDownLables.reduce(async (memo, label [, idx[, dropDownLables]]) => {
-        //        await memo;
-         //       await this.setValueToDropdown(label, valueArray[idx]);
-        //    }, undefined);
+            await dropDownLables.reduce(async (memo, label , idx) => {
+                await memo;
+               await this.setValueToDropdown(label, valueArray[idx]);
+           }, undefined);
         }
         run(dropdownLabelArray);
     }
