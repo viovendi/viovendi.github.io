@@ -26,7 +26,7 @@ function showQuestion(tag, name) {
 function hideQuestionExactWording(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find("label");
+    var label = item.find("label, p");
 
     if (label.text().replace(/^\s+|\s+$/g, "") == name) {
       $(item).hide();    }
@@ -36,7 +36,7 @@ function hideQuestionExactWording(tag, name) {
 function showQuestionExactWording(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    var label = item.find("label");
+    var label = item.find("label, p");
 
     if (label.text().replace(/^\s+|\s+$/g, "") == name) {
       $(item).show();    }
@@ -88,6 +88,8 @@ var insertionListener = function(event) {
             }
             else{
                $('.customization2_attendee_further-data_custom-question-2').hide();
+               hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+
               console.log('hide');
             }
            });
