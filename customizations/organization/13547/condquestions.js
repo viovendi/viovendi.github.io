@@ -16,7 +16,6 @@ function showQuestion(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label, p");
-
     if (label.text().trim().includes(name)) {
       console.log(label.text().trim())
       $(item).show();    }
@@ -108,12 +107,12 @@ var insertionListener = function(event) {
                   if($(input2.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Ja')){
                     console.log('Nein');
                     //hide everything
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                    hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+                    hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie?");
 
 
                    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
@@ -133,11 +132,11 @@ var insertionListener = function(event) {
                               var state = dropDownQuestion.val().trim()
                               if (state.includes("1")) {
                                  console.log('1');
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
@@ -149,11 +148,11 @@ var insertionListener = function(event) {
                               }
                               else if (state.includes("2")) {
                                 console.log('2');
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
@@ -164,11 +163,11 @@ var insertionListener = function(event) {
                               }
                               else if (state.includes("3")) {
                                   console.log('3');
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
@@ -179,11 +178,11 @@ var insertionListener = function(event) {
                               }
                               else if (state.includes("4")) {
                                   console.log('4');
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
@@ -192,11 +191,11 @@ var insertionListener = function(event) {
                                  $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
                               }
                               else if (state.includes("5")) {
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  showQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
@@ -205,11 +204,11 @@ var insertionListener = function(event) {
                                  $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').show();
                               }
                               else if (state.includes("Bitte")) {
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 1");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 2");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
-                                  hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+                                  hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
