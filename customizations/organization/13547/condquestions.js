@@ -80,7 +80,7 @@ var insertionListener = function(event) {
         $(element).change(function(input) {
           console.log("changed");
             //on change show these 2 questions
-            console.log($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text())
+            console.log($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast'))
            if($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().replace(/^\s+|\s+$/g, "").indexOf('Gast')){
              $('.customization2_attendee_further-data_custom-question-2').show();
               console.log('show');
