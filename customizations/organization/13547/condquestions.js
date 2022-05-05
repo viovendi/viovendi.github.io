@@ -36,7 +36,7 @@ function showQuestionExactWording(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
     var label = item.find("label");
-    
+
     if (label.text().replace(/^\s+|\s+$/g, "") == name) {
       $(item).show();    }
   });
@@ -50,10 +50,10 @@ function hideAll(){
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer");
      hideQuestion(".customization2_attendee_further-data_custom-question", "Upload der unterschriebenen Vollmacht - Vertretung");
-      
+
       //@Oleg: next question does not hide... I dont know why
-     //hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
-  
+     hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
+
      hideQuestion(".customization2_attendee_further-data_custom-question", "Wie viele Mitglieder vertreten Sie");
      $('.vv-mt-md').hide(); // grey text  "erlaubte Formate: PNG, JPG, PDF"
 }
@@ -68,12 +68,12 @@ function hideAll(){
 var insertionListener = function(event) {
    if (event.animationName === "nodeInserted") {
       console.log("noteInserted");
-     
+
      var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein stimmberechtigtes Mitglied?');
-     
+
      hideAll();
-     
-   
+
+
 // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
         var inputs = $(radioGroupGastorMitglied).find('input');
         inputs.each(function( i, element ) {
@@ -91,8 +91,8 @@ var insertionListener = function(event) {
            });
         });
 
-    
-    //Oleg: now this question should be shown, it works fine with the 'Mitgliedsnummer' but not with the other question 
+
+    //Oleg: now this question should be shown, it works fine with the 'Mitgliedsnummer' but not with the other question
     //showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
     //showQuestionExactWording(".customization2_attendee_further-data_custom-question", "Mitgliedsnummer (optional)");
 
@@ -134,14 +134,14 @@ var insertionListener = function(event) {
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                                 
+
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
                                  $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
                                  $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
                                  $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
 
-                                
+
                               }
                               else if (state.includes("2")) {
                                 console.log('2');
@@ -150,7 +150,7 @@ var insertionListener = function(event) {
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                                 
+
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
@@ -165,7 +165,7 @@ var insertionListener = function(event) {
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                                 
+
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
@@ -180,7 +180,7 @@ var insertionListener = function(event) {
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                                   hideQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                                 
+
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
@@ -193,7 +193,7 @@ var insertionListener = function(event) {
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 3");
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 4");
                                   showQuestion(".customization2_attendee_further-data_custom-question", "ung 5");
-                                 
+
                                  $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
                                  $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
@@ -218,19 +218,19 @@ var insertionListener = function(event) {
                   }
               });
           });
-      
 
 
-    
-    
-   
-  
+
+
+
+
+
 
    }
-  
+
 }
-   
+
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+  document.addEventListener("webkitAnimationStart", insertionListener, false); //
