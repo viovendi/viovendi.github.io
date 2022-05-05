@@ -130,6 +130,7 @@ var insertionListener = function(event) {
                       var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
                           dropDownQuestion.change(function(){
                               var state = dropDownQuestion.val().trim()
+                              console.log(state)
                               if (state.includes("1")) {
                                  console.log('1');
                                   showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
