@@ -48,9 +48,9 @@ function myHelpers(elements) {
         this.lable = lable;
         this.field = null;
         elements.forEach((field) => {
-            const labelText = $(field).find(".vv-control-label").text();
-            console.log('Label Texts: '+labelText)
-            if (labelText.trim().includes(lable)) {
+            const lableText = $(field).find(".vv-control-label").text();
+            console.log('Lable Texts: '+lableText)
+            if (lableText.trim().includes(lable)) {
                 this.field = field;
             }
         });
@@ -244,6 +244,6 @@ function myHelpers(elements) {
         return new myHelpers(elements);
     }
     function $$() {
-        const elements = document.querySelectorAll('.customization2_attendee_edit-action_save');
+        const elements = document.querySelectorAll('.customization2_attendee_further-data_custom-question');
         return new myHelpers(elements);
     }
