@@ -7,7 +7,7 @@ function hideQuestion(tag, name) {
     var item = $(this);
     var label = item.find("label, p");
 
-    if (label.text().replace(/^\s+|\s+$/g, "").indexOf(name) > -1) {
+    if (label.text().trim().includes(name)) {
       $(item).hide();    }
   });
 }
@@ -28,7 +28,7 @@ function hideQuestionExactWording(tag, name) {
     var item = $(this);
     var label = item.find("label, p");
 
-    if (label.text().replace(/^\s+|\s+$/g, "") == name) {
+    if (label.text().trim().includes(name)) {
       $(item).hide();    }
   });
 }
@@ -38,7 +38,7 @@ function showQuestionExactWording(tag, name) {
     var item = $(this);
     var label = item.find("label, p");
 
-    if (label.text().replace(/^\s+|\s+$/g, "") == name) {
+    if (label.text().trim().includes(name)) {
       $(item).show();    }
   });
 }
