@@ -127,7 +127,7 @@ var insertionListener = function(event) {
                       // show 1-5 question depending on the selected number:
                       var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
 
-                      var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
+                      var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown > p')
 
                           $(dropDownQuestion).change(function(){
                               var state = dropDownQuestion.val().trim()
