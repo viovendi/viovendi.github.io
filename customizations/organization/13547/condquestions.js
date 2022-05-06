@@ -127,12 +127,12 @@ var insertionListener = function(event) {
                       // show 1-5 question depending on the selected number:
                       var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
 
-                      console.log(question)
-                      $(question).change(function(){
-                        console.log("change")
-                      })
-                      var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown > p')
-                      console.log(dropDownQuestion[0])
+                      var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
+                      $(dropDownQuestion).toggleClass('.vv-selection-input__control--focus').trigger('change')
+
+                      $(dropDownQuestion).on('change', function() {
+                        console.log('change')
+                      });
                           $(dropDownQuestion[0]).change(function(){
                             console.log("change")
                               var state = dropDownQuestion.val().trim()
