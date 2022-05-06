@@ -236,8 +236,12 @@ function myHelpers(elements) {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
                 //   $(".error-state").each(function(){console.log($(this))});
-                console.log('error-state length: ' + $(".error-state").length);
-                if ($(".error-state").length == 0)
+                console.log('error-state length: ' + $(".error-state").filter(function(){
+                    return $(this).is(':visible');
+                }).length);
+                if ($(".error-state").filter(function(){
+                    return $(this).is(':visible');
+                }).length == 0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
@@ -252,6 +256,5 @@ function $$(selector) {
     return new myHelpers(elements);
 }
 function $$() {
-    const elements = document.querySelectorAll('.customization2_attendee_further-data_custom-question');
-    return new myHelpers(elements);
+    return new myHelpers();
 }

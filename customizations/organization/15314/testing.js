@@ -2,7 +2,7 @@ console.log('test');
 function handler(){
 
   
-  //$$().hideQuestionsByLabel(["3","6","1","2","4","5","7"])
+  $$().hideQuestionsByLabel(["3","6","1","2","4","5","7"])
 
 
   var dropdownLable = "Dropdown1";
