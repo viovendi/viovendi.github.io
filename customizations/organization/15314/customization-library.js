@@ -4,51 +4,51 @@ This is the first iteration of our extended helpers.js library
 
 function myHelpers(elements) {
     /*
-     lable - is the name of the field you want to get the (string: 'Branche (optional)' )
+     label - is the name of the field you want to get the (string: 'Branche (optional)' )
       for example  var field = $$('.customization2_attendee_further-data_custom-question').findField('Branche (optional)');
       Note: you are not required to use the entire field name only part of it
     */
-    this.findField = function (lable) {
+    this.findField = function (label) {
 
-        this.lable = lable;
+        this.label = label;
         this.field = null;
 
         elements.forEach((field) => {
-            if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.lable)) {
+            if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.label)) {
                 this.field = field;
             }
         });
         return this.field;
     }
-    this.findRadioGroup = function (lable) {
-        this.lable = lable;
+    this.findRadioGroup = function (label) {
+        this.label = label;
         this.field = null;
 
         elements.forEach((field) => {
-            if ($(field.querySelectorAll('.vv-radio-group > p')[0]).text().trim().includes(this.lable)) {
+            if ($(field.querySelectorAll('.vv-radio-group > p')[0]).text().trim().includes(this.label)) {
                 this.field = field;
             }
         });
         return this.field;
     }
-    this.findCheckboxGroup = function (lable) {
-        this.lable = lable;
+    this.findCheckboxGroup = function (label) {
+        this.label = label;
         this.field = null;
 
         elements.forEach((field) => {
-            if ($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim().includes(this.lable)) {
+            if ($(field.querySelectorAll('.vv-checkbox-group > p')[0]).text().trim().includes(this.label)) {
                 this.field = field;
             }
         });
         return this.field;
     }
 
-    this.findDropDown = function (lable) {
-        this.lable = lable;
+    this.findDropDown = function (label) {
+        this.label = label;
         this.field = null;
         elements.forEach((field) => {
-            const lableText = $(field).find(".vv-control-label").text();
-            if (lableText.trim().includes(lable)) {
+            const labelText = $(field).find(".vv-control-label").text();
+            if (labelText.trim().includes(label)) {
                 this.field = field;
             }
         });
@@ -59,26 +59,25 @@ function myHelpers(elements) {
     return:
         The div containing the label and the input itself
     */
-    this.findQuestionByLabel = function (lable) {
-        var field = this.findField(lable);
+    this.findQuestionByLabel = function (label) {
+        var field = this.findField(label);
         if (field == undefined) {
-            field = this.findDropDown(lable);
+            field = this.findDropDown(label);
         }
         if (field == undefined) {
-            field = this.findCheckboxGroup(lable);
+            field = this.findCheckboxGroup(label);
         }
         if (field == undefined) {
-            field = this.findRadioGroup(lable);
+            field = this.findRadioGroup(label);
         }
         return field;
     }
     /*
     param:
         value = the answer text 
-
     */
-    this.setValueToDropdown = async function (lable, value) {
-        const dropdown = this.findDropDown(lable);
+    this.setValueToDropdown = async function (label, value) {
+        const dropdown = this.findDropDown(label);
         await $(dropdown).find(".vv-selection-input__control").click();
         await $(dropdown).find(".vv-single-select-option").filter(function () {
             return $(this).text().trim() == value
@@ -88,8 +87,8 @@ function myHelpers(elements) {
     /*
     param: dropDown is a parent element from the dropdown input
     */
-    this.getValueFromDropDown = function (lable) {
-        const dropDown = this.findDropDown(lable);
+    this.getValueFromDropDown = function (label) {
+        const dropDown = this.findDropDown(label);
         const valueText = $(dropDown).find('.vv-selection-input__value.m-ellipsis');
         const value = $(valueText).text().trim();
         return value;
@@ -97,7 +96,7 @@ function myHelpers(elements) {
     /*
     This method is needed for selecting answers on multiple dropdowns at once because of synchronization requirements
     params:
-        dropdownLabelArray= array of strings containing the lables of the dropdowns
+        dropdownLabelArray= array of strings containing the labels of the dropdowns
         valueArray = Array of the answer texts
     */
     this.setValueToDropdownArray = function (dropdownLabelArray, valueArray) {
@@ -105,8 +104,8 @@ function myHelpers(elements) {
             console.log('array size not equal');
             return
         }
-        const run = async (dropDownLables) => {
-            await dropDownLables.reduce(async (memo, label, idx) => {
+        const run = async (dropDownLabels) => {
+            await dropDownLabels.reduce(async (memo, label, idx) => {
                 await memo;
                 await this.setValueToDropdown(label, valueArray[idx]);
             }, undefined);
@@ -124,26 +123,26 @@ function myHelpers(elements) {
         var field = this.findField(inputLabel);
         return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
     }
-    this.hideQuestionByLabel = function (lable) {
-            $(this.findQuestionByLabel(lable)).hide();
+    this.hideQuestionByLabel = function (label) {
+            $(this.findQuestionByLabel(label)).hide();
     }
-    this.hideMultipleQuestionsByLabel = function (lableArray) {
-        lableArray.forEach(lable => {
-            this.hideQuestionByLabel(lable);
+    this.hideMultipleQuestionsByLabel = function (labelArray) {
+        labelArray.forEach(label => {
+            this.hideQuestionByLabel(label);
         });
     }
     /*
     Implements the conditional questions for a dropdown -> Depending on the selection we show different questions or hide them
     params:
-        dropdownLable   = lable of the dropdown we specify this for  
+        dropdownLabel   = label of the dropdown we specify this for  
         value   =   answer text we specify this for
-        arrayOfLabelsToShow =   all lables that should be visible when the value is selected
-        arrayOfLabelsToHide =   all lables that should not be visible when the value is selected
+        arrayOfLabelsToShow =   all labels that should be visible when the value is selected
+        arrayOfLabelsToHide =   all labels that should not be visible when the value is selected
         disableSaveOnValueSelected  = boolean that is true if the save button should be disabled when the value is selected
     */
-    this.condQuestionDropdown = function (dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+    this.condQuestionDropdown = function (dropdownLabel, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
         this.addErrorStyles();
-        var dropdown = this.findDropDown(dropdownLable);
+        var dropdown = this.findDropDown(dropdownLabel);
         //console.log(dropdown)
         const questionsToShow = [];
         for (let i = 0; i < arrayOfLabelsToShow.length; i++)
