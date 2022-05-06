@@ -309,7 +309,8 @@ var insertionListener = function (event) {
       });
     });
     observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {
-      childList: true
+      childList: true,
+      subtree: true
     });
   }
 
