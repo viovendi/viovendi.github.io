@@ -257,6 +257,6 @@ function $$(selector) {
     const elements = document.querySelectorAll(selector);
     return new myHelpers(elements);
 }
-function $$() {
+function $$NoParams() {
     return new myHelpers();
 }
