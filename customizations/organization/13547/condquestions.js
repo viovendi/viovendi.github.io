@@ -224,6 +224,7 @@ var insertionListener = function (event) {
         console.log(mutation)
 
         const state = mutation.target.innerText;
+        console.log(state)
         if (state.includes("1")) {
           console.log('1');
           showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
