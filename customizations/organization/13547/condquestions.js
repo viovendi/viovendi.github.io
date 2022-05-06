@@ -221,10 +221,11 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-conslo.log(mutation)
+const ppp = $('.customization2_attendee_further-data_custom-question_dropdown p').text()
+console.log(ppp)
       });
     });
-    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p'), {attributes:true});
+    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {attributes:true});
   }
 
 }
