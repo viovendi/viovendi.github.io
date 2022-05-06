@@ -42,6 +42,46 @@ function showQuestionExactWording(tag, name) {
 }
 
 
+
+
+
+
+async function claassChanges(selector) {
+
+  return new Promise(function (resolve, reject) {
+    try {
+      const element = document.querySelector("body");
+
+      var observer = new MutationObserver(pageLoaded);
+
+      function pageLoaded(mutations) {
+        mutations.forEach((mutation) => {
+          var classList = mutation.target.classList
+            ? [...mutation.target.classList]
+            : [];
+          if (
+            mutation.type === "childList" &&
+            classList.indexOf(selector) != -1
+          ) {
+            resolve({
+              selector: document.querySelector("." + selector),
+              dataLayer: dataLayer,
+            });
+          }
+        });
+      }
+
+      observer.observe(element, {
+        characterData: true,
+        subtree: true,
+        childList: true,
+      });
+    } catch (error) {
+      reject(new Error(error));
+    }
+  });
+}
+
 function hideAll(){
 //First hide all questions:
      hideQuestion(".customization2_attendee_further-data_custom-question", "Organisation - Vertretung");
@@ -64,7 +104,7 @@ function hideAll(){
 
 
 
-var insertionListener = function(event) {
+var insertionListener = async function(event) {
    if (event.animationName === "nodeInserted") {
       console.log("noteInserted");
 
@@ -128,11 +168,7 @@ var insertionListener = function(event) {
                       var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
 
                       var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
-console.log($(dropDownQuestion).hasClass('vv-selection-input__control--focus'))
-
-                      $(dropDownQuestion).on('change', function() {
-                        console.log('change')
-                      });
+                     const el = await claassChanges('vv-selection-input__control--focus')
                           $(dropDownQuestion[0]).change(function(){
                             console.log("change")
                               var state = dropDownQuestion.val().trim()
@@ -228,13 +264,6 @@ console.log($(dropDownQuestion).hasClass('vv-selection-input__control--focus'))
                   }
               });
           });
-
-
-
-
-
-
-
 
    }
 
