@@ -63,18 +63,20 @@ function myHelpers(elements) {
         return field;
     }
     this.setValueToDropdown = async function (lable, value) {
-        console.log('Setting '+value+' on '+lable);
+        console.log('Setting ' + value + ' on ' + lable);
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
         await $(dropdown).find(".vv-single-select-option").each(
-            function() {
-               console.log($( this ).text())
-          })
-          await $(dropdown).find(".vv-single-select-option").each(
-            function() {
-               console.log($( this ))
-          })
-        //await $(dropdown).find(".vv-single-select-option").filter(new function(){console.log($(this).text().trim());$(this).text().trim() == value}).click();
+            function () {
+                console.log($(this).text().trim() == value)
+            })
+        await $(dropdown).find(".vv-single-select-option").each(
+            function () {
+                console.log($(this))
+            })
+        await $(dropdown).find(".vv-single-select-option").filter(function () {
+            return $(this).text().trim() == value
+        }).click();
         return
     }
     /*
