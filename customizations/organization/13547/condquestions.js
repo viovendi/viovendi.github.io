@@ -221,10 +221,11 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        console.log(mutation)
-const ppp = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p')
-const state = ppp.textContent;
-  console.log(state)
+
+if ($(mutation.target).hasClass('vv-selection-input__control--focus')) {
+  const ppp = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p')
+  const state = ppp.textContent;
+
   if (state.includes("1")) {
     console.log('1');
     showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
@@ -306,9 +307,11 @@ const state = ppp.textContent;
     $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
     $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
   }
+}
+
       });
     });
-    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p'), {attributes:true});
+    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {attributes:true});
   }
 
 }
