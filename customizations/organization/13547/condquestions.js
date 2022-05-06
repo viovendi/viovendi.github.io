@@ -221,13 +221,10 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        console.log($(mutation.target))
-        if ($(mutation.target).hasClass('vv-selection-input__control--focus')) {
-console.log("mutation")
-        }
+conslo.log(mutation)
       });
     });
-    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {attributes:true});
+    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p'), {attributes:true});
   }
 
 }
