@@ -105,6 +105,11 @@ function myHelpers(elements) {
         var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
         return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
     }
+    this.hideQuestionsByLabel = function (lableArray) {
+        lableArray.forEach(lable => {
+            console.log(this.findQuestionByLabel(lable));
+        });
+    }
     /*
     Needs testing
     */
