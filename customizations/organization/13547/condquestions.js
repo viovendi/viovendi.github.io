@@ -221,7 +221,7 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        console.log(mutation)
+        console.log($(mutation.target))
         if ($(mutation.target).hasClass('vv-selection-input__control--focus')) {
 console.log("mutation")
         }
