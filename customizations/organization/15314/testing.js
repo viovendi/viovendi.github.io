@@ -2,9 +2,16 @@ console.log('test');
 function handler(){
 
   
-  $$().hideQuestionsByLabel(["3","6","1","2","4","5","7"])
+  //$$().hideQuestionsByLabel(["3","6","1","2","4","5","7"])
+
 
   var dropdownLable = "Dropdown1";
+  
+  value = "Bitte auswählen";
+  arrayOfLabelsToShow = [];
+  arrayOfLabelsToHide = ["3","6","1","2","4","5","7"];
+  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown(dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  
   var value = "A";
   var arrayOfLabelsToShow = ["1","3","5","7"];
   var arrayOfLabelsToHide = ["2","4","6"];
