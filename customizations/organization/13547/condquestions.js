@@ -219,96 +219,98 @@ var insertionListener = function (event) {
       });
     });
 
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
         console.log(mutation)
-const ppp = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p')
-const state = ppp.textContent;
-  console.log(state)
-  if (state.includes("1")) {
-    console.log('1');
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
+        const state = mutation.target.innerText;
+        console.log(state)
+        if (state.includes("1")) {
+          console.log('1');
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
 
 
-  } else if (state.includes("2")) {
-    console.log('2');
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+        } else if (state.includes("2")) {
+          console.log('2');
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
 
-  } else if (state.includes("3")) {
-    console.log('3');
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+        } else if (state.includes("3")) {
+          console.log('3');
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
 
-  } else if (state.includes("4")) {
-    console.log('4');
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+        } else if (state.includes("4")) {
+          console.log('4');
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-  } else if (state.includes("5")) {
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
+        } else if (state.includes("5")) {
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').show();
-  } else if (state.includes("Bitte")) {
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-    hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').show();
+        } else if (state.includes("Bitte")) {
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
+          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
 
-    $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-    $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-  }
+          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
+          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
+        }
       });
     });
-    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p'), {attributes:true});
+    observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {
+      attributes: true
+    });
   }
 
 }
