@@ -249,7 +249,7 @@ enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
 || ischecked("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen")
 || ischecked("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern")
 || ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb")
-|| ischecked("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
+|| ischecked("05.07.22 10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht")
 || ischecked("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten")
 || ischecked("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten")
 || ischecked("10:00 – 17:00: NATUR & KUNST - mit Hundertwasser Kunst und Natur verbinden")
@@ -285,8 +285,8 @@ disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg un
 if(!ischecked("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb"))
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
 
-if(!ischecked("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht"))
-disablenaduncheck("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+if(!ischecked("05.07.22 10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht"))
+disablenaduncheck("05.07.22 10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 
 if(!ischecked("05.07.22 10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten"))
 disablenaduncheck("05.07.22 10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
@@ -340,7 +340,7 @@ disablenaduncheck("10:00 – 17:00 Uhr: Qigong mit Kindern");
 disablenaduncheck("10:00 – 16:00 Uhr: Datenschutzrecht in Schulen");
 disablenaduncheck("10:00 – 16:00 Uhr: Eine jüdische Straße in Mecklenburg und Vorpommern");
 disablenaduncheck("10:00 – 15:00 Uhr: Förderung von Kindern mit Schwierigkeiten beim Schriftspracherwerb");
-disablenaduncheck("05.07.22 10:00 - 16:00 Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
+disablenaduncheck("05.07.22 10:00 - 16:00  Uhr: Geschichte ist überall - Spuren lesen und pädagogische Ideen zur Einbindung in den Unterricht");
 
 if(ischecked("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln"))
     disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
