@@ -128,8 +128,7 @@ var insertionListener = function(event) {
                       var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
 
                       var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
-                      $(dropDownQuestion).hasClass('.vv-selection-input__control--focus')
-console.log($(dropDownQuestion).hasClass('.vv-selection-input__control--focus'))
+console.log($(dropDownQuestion).hasClass('vv-selection-input__control--focus'))
 
                       $(dropDownQuestion).on('change', function() {
                         console.log('change')
