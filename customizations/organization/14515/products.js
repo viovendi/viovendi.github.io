@@ -346,7 +346,7 @@ if(ischecked("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vi
 disablenaduncheck("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten");
 
 if(ischecked("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke"))
-disablenaduncheck("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung");
+disablenaduncheck('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung');
 
 disablenaduncheck("10:00 – 17:00 Uhr: „So, das ist jetzt Ihr Schulgarten!“ Und nun? - Kickstarterkurs Gärtnern im Schulgarten");
 disablenaduncheck("10:00 – 16:00 Uhr: Globales Lernen im Schulgarten");
@@ -359,7 +359,7 @@ disablenaduncheck("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobac
 if(ischecked("10:00 – 13:00 Uhr: Wie kann ich Nachhaltigkeit an meiner Schule stärken? - Einführung in die BNE, globale Schulpartnerschaften und nachhaltige Klassenfahrten"))
 disablenaduncheck("10:00 – 13:00 Uhr: Berufsorientierung - Strukturen für einen vielfältigen BO-Unterricht entwickeln");
 
-if(ischecked("14:00 – 17:00 Uhr: Neues Lernen braucht das Land\ - BNE-Werkstatt zur Unterrichtsentwicklung"))
+if(ischecked('05.07.22 14:00 – 17:00 Uhr: "Neues Lernen braucht das Land" - BNE-Werkstatt zur Unterrichtsentwicklung'))
 disablenaduncheck("14:00 – 17:00 Uhr: Berufliche Orientierung gemeinsam gestalten – rechtliche Grundlagen, Konzept und Netzwerke");
 
 disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
