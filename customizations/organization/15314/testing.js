@@ -1,9 +1,7 @@
 console.log('test');
 function handler(){
-
   
   $$('.customization2_attendee_further-data_custom-question').hideQuestionsByLabel(["3","6","1","2","4","5","7"])
-
 
   var dropdownLable = "Dropdown1";
   

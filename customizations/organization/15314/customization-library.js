@@ -13,6 +13,8 @@ function myHelpers(elements) {
         this.lable = lable;
         this.field = null;
 
+        console.log(elements);
+
         elements.forEach((field) => {
 
             if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.lable)) {
@@ -109,7 +111,7 @@ function myHelpers(elements) {
     }
     this.hideQuestionsByLabel = function (lableArray) {
         lableArray.forEach(lable => {
-            $(this.findQuestionByLabel(lable)).hide();
+            $($$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(lable)).hide();
         });
     }
     /*
