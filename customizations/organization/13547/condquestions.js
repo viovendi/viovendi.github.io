@@ -221,7 +221,7 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-const ppp = $('.customization2_attendee_further-data_custom-question_dropdown p').text()
+const ppp = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p')
 console.log(ppp)
       });
     });
