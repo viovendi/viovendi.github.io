@@ -221,8 +221,8 @@ var insertionListener = function (event) {
 
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-
-        if (!!$(mutation.target).hasClass('vv-selection-input__control--focus')) {
+console.log(mutation)
+        if (!$(mutation.target)) {
           const ppp = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown > p')
           const state = ppp.textContent;
           console.log(state)
