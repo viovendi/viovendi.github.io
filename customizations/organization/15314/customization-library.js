@@ -63,10 +63,12 @@ function myHelpers(elements) {
         return field;
     }
     this.setValueToDropdown = async function (lable, value) {
+        console.log('Setting ' + value + ' on ' + lable);
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
-        await $(dropdown).find(".vv-single-select-option").each((e) => { console.log(e) })
-        //await $(dropdown).find(".vv-single-select-option").filter(new function(){console.log($(this).text().trim());$(this).text().trim() == value}).click();
+        await $(dropdown).find(".vv-single-select-option").filter(function () {
+            return $(this).text().trim() == value
+        }).click();
         return
     }
     /*
@@ -79,7 +81,7 @@ function myHelpers(elements) {
         return value;
     }
     /*
-    TODO : Testing
+    
     */
     this.setValueToDropdownArray = function (dropdownLabelArray, valueArray) {
         if (dropdownLabelArray.length != valueArray.length) {
@@ -104,6 +106,11 @@ function myHelpers(elements) {
     this.getValueFromTextInputByLabel = function (inputLabel) {
         var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
         return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
+    }
+    this.hideQuestionsByLabel = function (lableArray) {
+        lableArray.forEach(lable => {
+            $(this.findQuestionByLabel(lable)).hide();
+        });
     }
     /*
     Needs testing
@@ -229,8 +236,12 @@ function myHelpers(elements) {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
                 //   $(".error-state").each(function(){console.log($(this))});
-                console.log('error-state length: ' + $(".error-state").length);
-                if ($(".error-state").length == 0)
+                console.log('error-state length: ' + $(".error-state").filter(function(){
+                    return $(this).is(':visible');
+                }).length);
+                if ($(".error-state").filter(function(){
+                    return $(this).is(':visible');
+                }).length == 0)
                     $('.customization2_attendee_edit-action_save').prop("disabled", false);
             }
         });
@@ -245,6 +256,5 @@ function $$(selector) {
     return new myHelpers(elements);
 }
 function $$() {
-    const elements = document.querySelectorAll('.customization2_attendee_further-data_custom-question');
-    return new myHelpers(elements);
+    return new myHelpers();
 }
