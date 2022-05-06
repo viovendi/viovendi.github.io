@@ -58,9 +58,9 @@ function myHelpers(elements) {
         return this.field;
     }
     this.findQuestionByLabel = function (label) {
-        var field = this.findField(label);
+        var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
         if (field == undefined) {
-            field = this.findDropDown(label);
+            field = $$('.customization2_attendee_further-data_custom-question').findDropDown(label);
         }
         return field;
     }
