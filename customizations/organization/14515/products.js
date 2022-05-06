@@ -331,6 +331,10 @@ enableProd("10:00 – 17:00 Uhr: Naturwissenschaft beginnt mit dem Beobachten - 
     if (ischecked("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen")){
 enableProd("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeugen");
         } 
+    if (ischecked("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern")){
+enableProd("05.07.22 10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
+        } 
+    
     
   }
   
