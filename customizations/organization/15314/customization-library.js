@@ -58,9 +58,9 @@ function myHelpers(elements) {
         return this.field;
     }
     this.findQuestionByLabel = function (label) {
-        var field = $$('.customization2_attendee_further-data_custom-question').findField(label);
+        var field = this.findField(label);
         if (field == undefined) {
-            field = $$('.customization2_attendee_further-data_custom-question').findDropDown(label);
+            field = this.findDropDown(label);
         }
         return field;
     }
@@ -101,17 +101,17 @@ function myHelpers(elements) {
 
 
     this.setValueToTextInputByLabel = function (inputLabel, value) {
-        var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
+        var field = this.findField(inputLabel);
         $(field).find('.customization2_attendee_further-data_custom-question_input').val(value);
     }
 
     this.getValueFromTextInputByLabel = function (inputLabel) {
-        var field = $$('.customization2_attendee_further-data_custom-question').findField(inputLabel);
+        var field = this.findField(inputLabel);
         return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
     }
     this.hideQuestionsByLabel = function (lableArray) {
         lableArray.forEach(lable => {
-            $($$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(lable)).hide();
+            $(this.findQuestionByLabel(lable)).hide();
         });
     }
     /*
@@ -257,6 +257,6 @@ function $$(selector) {
     const elements = document.querySelectorAll(selector);
     return new myHelpers(elements);
 }
-function $$() {
+function $$NoParams() {
     return new myHelpers();
 }
