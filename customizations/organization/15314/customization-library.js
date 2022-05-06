@@ -13,10 +13,7 @@ function myHelpers(elements) {
         this.lable = lable;
         this.field = null;
 
-        console.log(elements);
-
         elements.forEach((field) => {
-
             if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.lable)) {
                 this.field = field;
             }
@@ -57,15 +54,30 @@ function myHelpers(elements) {
         });
         return this.field;
     }
-    this.findQuestionByLabel = function (label) {
-        var field = this.findField(label);
+    /*
+    This method combines the search for any inputs of the attendee form 
+    return:
+        The div containing the label and the input itself
+    */
+    this.findQuestionByLabel = function (lable) {
+        var field = this.findField(lable);
         if (field == undefined) {
-            field = this.findDropDown(label);
+            field = this.findDropDown(lable);
+        }
+        if (field == undefined) {
+            field = this.findCheckboxGroup(lable);
+        }
+        if (field == undefined) {
+            field = this.findRadioGroup(lable);
         }
         return field;
     }
+    /*
+    param:
+        value = the answer text 
+
+    */
     this.setValueToDropdown = async function (lable, value) {
-        console.log('Setting ' + value + ' on ' + lable);
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
         await $(dropdown).find(".vv-single-select-option").filter(function () {
@@ -83,7 +95,10 @@ function myHelpers(elements) {
         return value;
     }
     /*
-    
+    This method is needed for selecting answers on multiple dropdowns at once because of synchronization requirements
+    params:
+        dropdownLabelArray= array of strings containing the lables of the dropdowns
+        valueArray = Array of the answer texts
     */
     this.setValueToDropdownArray = function (dropdownLabelArray, valueArray) {
         if (dropdownLabelArray.length != valueArray.length) {
@@ -109,26 +124,35 @@ function myHelpers(elements) {
         var field = this.findField(inputLabel);
         return $(field).find('.customization2_attendee_further-data_custom-question_input').val();
     }
-    this.hideQuestionsByLabel = function (lableArray) {
-        lableArray.forEach(lable => {
+    this.hideQuestionByLabel = function (lable) {
             $(this.findQuestionByLabel(lable)).hide();
+    }
+    this.hideMultipleQuestionsByLabel = function (lableArray) {
+        lableArray.forEach(lable => {
+            this.hideQuestionByLabel(lable);
         });
     }
     /*
-    Needs testing
+    Implements the conditional questions for a dropdown -> Depending on the selection we show different questions or hide them
+    params:
+        dropdownLable   = lable of the dropdown we specify this for  
+        value   =   answer text we specify this for
+        arrayOfLabelsToShow =   all lables that should be visible when the value is selected
+        arrayOfLabelsToHide =   all lables that should not be visible when the value is selected
+        disableSaveOnValueSelected  = boolean that is true if the save button should be disabled when the value is selected
     */
     this.condQuestionDropdown = function (dropdownLable, value, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
         this.addErrorStyles();
         var dropdown = this.findDropDown(dropdownLable);
-        console.log(dropdown)
+        //console.log(dropdown)
         const questionsToShow = [];
         for (let i = 0; i < arrayOfLabelsToShow.length; i++)
             questionsToShow[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToShow[i]);
-        console.log(questionsToShow)
+        //console.log(questionsToShow)
         const questionsToHide = [];
         for (let i = 0; i < arrayOfLabelsToHide.length; i++)
             questionsToHide[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToHide[i]);
-        console.log(questionsToHide)
+        //console.log(questionsToHide)
         $(dropdown).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
             if ($(this).text().trim() == value) {
 
@@ -146,6 +170,9 @@ function myHelpers(elements) {
             };
         });
     }
+    /*
+    Adds the error styles needed for the conditional questions
+    */
     this.addErrorStyles = function () {
         var styles = `
         .error-state{
@@ -176,9 +203,15 @@ function myHelpers(elements) {
         }
     }
 
+    /*
+    This method handles empty inputs for the condQuestionDropdown(), it adds the error styles to the inputs and disables the save button accordingly
+
+    params:
+        field is an element containing the input
+    */
     this.disableWhenEmpty = function (field) {
         var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
-        console.log("inputOfField: " + inputOfField)
+       // console.log("inputOfField: " + inputOfField)
 
         if (inputOfField != undefined) {
             $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
@@ -237,10 +270,7 @@ function myHelpers(elements) {
             } else {
                 $(this).removeClass('error-state');
                 $(field).find('.error-message').hide();
-                //   $(".error-state").each(function(){console.log($(this))});
-                console.log('error-state length: ' + $(".error-state").filter(function(){
-                    return $(this).is(':visible');
-                }).length);
+
                 if ($(".error-state").filter(function(){
                     return $(this).is(':visible');
                 }).length == 0)
