@@ -66,7 +66,14 @@ function myHelpers(elements) {
         console.log('Setting '+value+' on '+lable);
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
-        await $(dropdown).find(".vv-single-select-option").each((e) => { console.log(e) })
+        await $(dropdown).find(".vv-single-select-option").each(
+            function() {
+               console.log($( this ).text())
+          })
+          await $(dropdown).find(".vv-single-select-option").each(
+            function() {
+               console.log($( this ))
+          })
         //await $(dropdown).find(".vv-single-select-option").filter(new function(){console.log($(this).text().trim());$(this).text().trim() == value}).click();
         return
     }
