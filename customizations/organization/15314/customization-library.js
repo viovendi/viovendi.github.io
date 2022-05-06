@@ -63,6 +63,7 @@ function myHelpers(elements) {
         return field;
     }
     this.setValueToDropdown = async function (lable, value) {
+        console.log('Setting '+value+' on '+lable);
         const dropdown = this.findDropDown(lable);
         await $(dropdown).find(".vv-selection-input__control").click();
         await $(dropdown).find(".vv-single-select-option").each((e) => { console.log(e) })
@@ -107,6 +108,7 @@ function myHelpers(elements) {
     }
     this.hideQuestionsByLabel = function (lableArray) {
         lableArray.forEach(lable => {
+            console.log('test');
             console.log(this.findQuestionByLabel(lable));
         });
     }
