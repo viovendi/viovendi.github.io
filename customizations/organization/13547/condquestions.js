@@ -225,6 +225,7 @@ var insertionListener = function (event) {
 
        console.log( $('.customization2_attendee_further-data_custom-question_dropdown').text())
         console.log(mutation)
+        const state = 0;
         if (state.includes("1")) {
           console.log('1');
           showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
