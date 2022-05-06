@@ -128,8 +128,8 @@ var insertionListener = function(event) {
                       var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
 
                       var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
-                      console.log(dropDownQuestion)
-                          dropDownQuestion.change(function(){
+
+                          $(dropDownQuestion).change(function(){
                               var state = dropDownQuestion.val().trim()
                               console.log(state)
                               if (state.includes("1")) {
