@@ -230,7 +230,7 @@ console.log("mutation")
         }
       });
     });
-    observer.observe(dropDownQuestion, {attributes:true});
+    observer.observe(question, {attributes:true});
   }
 
 }
