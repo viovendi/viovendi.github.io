@@ -222,6 +222,15 @@ var insertionListener = function (event) {
     var question = $$('.customization2_attendee_further-data_custom-question').findField('Wie viele Mitglieder vertreten Sie?');
     var dropDownQuestion = $(question).find('.customization2_attendee_further-data_custom-question_dropdown')
     console.log(dropDownQuestion)
+
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if ($(mutation.target).hasClass('vv-selection-input__control--focus')) {
+console.log("mutation")
+        }
+      });
+    });
+    observer.observe(dropDownQuestion, {attributes:true});
   }
 
 }
