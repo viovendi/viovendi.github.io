@@ -223,8 +223,8 @@ var insertionListener = function (event) {
       mutations.forEach(function (mutation) {
         console.log(mutation)
 
-        const state = mutation.target.innerText;
-        console.log(state)
+        //const state = mutation.target.innerText;
+        console.log(mutation)
         if (state.includes("1")) {
           console.log('1');
           showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
@@ -309,7 +309,7 @@ var insertionListener = function (event) {
       });
     });
     observer.observe(document.querySelector('.customization2_attendee_further-data_custom-question_dropdown'), {
-      attributes: true
+      characterData: true
     });
   }
 
