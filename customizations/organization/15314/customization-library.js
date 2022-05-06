@@ -109,8 +109,7 @@ function myHelpers(elements) {
     }
     this.hideQuestionsByLabel = function (lableArray) {
         lableArray.forEach(lable => {
-            console.log('test');
-            console.log(this.findQuestionByLabel(lable));
+            $(this.findQuestionByLabel(lable)).hide();
         });
     }
     /*
