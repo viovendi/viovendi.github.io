@@ -13,6 +13,8 @@ function myHelpers(elements) {
         this.lable = lable;
         this.field = null;
 
+        console.log(elements);
+        
         elements.forEach((field) => {
 
             if (field.querySelector('label p') && field.querySelector('label p').innerText.trim().includes(this.lable)) {
