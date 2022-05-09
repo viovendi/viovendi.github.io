@@ -61,15 +61,16 @@ function hideAll() {
 }
 
 
-async function selectionChanged(selector) {
-  return new Promise(function (resolve, reject) {
+ function selectionChanged(selector) {
+  // return new Promise(function (resolve, reject) {
     try {
       const element = document.querySelector(`.${selector}`);
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-          resolve(
-            mutation.target.textContent,
-          );
+          console.log(mutation.target.textContent)
+          // resolve(
+          //   mutation.target.textContent,
+          // );
         });
       });
 
@@ -81,13 +82,13 @@ async function selectionChanged(selector) {
     } catch (error) {
       // reject(new Error(error));
     }
-  });
+  // });
 }
 
 
 
 async function handler() {
-  const state = await selectionChanged('customization2_attendee_further-data_custom-question_dropdown')
+  const state = selectionChanged('customization2_attendee_further-data_custom-question_dropdown')
 
   if (state.includes("1")) {
     console.log('1');
