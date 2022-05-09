@@ -187,6 +187,7 @@ function resetOtherTicket(ticketBlock) {
 }
 function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
+    console.log("text: "+$(this).text())
 		const amount = $(this).text().trim().split(" ")[0];
 		if(amount>5000){
 			$(this).text('genügend Plätze vorhanden');
