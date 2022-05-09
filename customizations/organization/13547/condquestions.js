@@ -64,7 +64,7 @@ function hideAll() {
 async function selectionChanged(selector) {
   return new Promise(function (resolve, reject) {
     try {
-      const element = document.querySelector('.vv-selection-input__value');
+      const element = document.querySelector('.vv-additional-question-dropdown .vv-selection-input__value');
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
           console.log(mutation)
@@ -95,7 +95,10 @@ async function selectionChanged(selector) {
 
 
 
-
+async function handler() {
+  const selection = await selectionChanged('')
+  console.log(selection)
+ }
 
 
 
@@ -106,6 +109,7 @@ var insertionListener = function (event) {
     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein stimmberechtigtes Mitglied?');
 
     hideAll();
+    handler()
 
 
     // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
@@ -254,10 +258,7 @@ var insertionListener = function (event) {
 
 }
 
-async function handler() {
- const selection = await selectionChanged('')
- console.log(selection)
-}
+
 handler()
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
