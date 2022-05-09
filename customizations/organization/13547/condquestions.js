@@ -226,6 +226,7 @@ var insertionListener = function (event) {
        console.log( $('.customization2_attendee_further-data_custom-question_dropdown').text())
         console.log(mutation)
         const state = 0;
+
         if (state.includes("1")) {
           console.log('1');
           showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
@@ -309,10 +310,7 @@ var insertionListener = function (event) {
         }
       });
     });
-    observer.observe(document.querySelector('body'), {
-      childList: true,
-      subtree: true
-    });
+    observer.observe(document.querySelector('.vv-additional-question-dropdown .vv-selection-input__value'), { characterData: true, subtree: true, childList: true });
   }
 
 }
