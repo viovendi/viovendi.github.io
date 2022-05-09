@@ -68,19 +68,19 @@ async function selectionChanged(selector) {
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             resolve({
-              selector: mutation.data,
-              dataLayer: dataLayer,
+              selector: mutation,
             });
 
         });
       });
+
       observer.observe(element, {
         characterData: true,
         subtree: true,
         childList: true
       });
     } catch (error) {
-      reject(new Error(error));
+     // reject(new Error(error));
     }
   });
 }
