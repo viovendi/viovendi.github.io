@@ -143,7 +143,7 @@ function startCustomizationPage1(){
 
 function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
-     $('.event-category').not('.event-category--child').each(function () {
+     $('.event-category').each(function () {
 	     const ticket = this;
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
                 if($(this).text().trim()!=0){
@@ -164,7 +164,7 @@ function resetOtherTicket(ticketBlock) {
 	}, undefined); 
     }	
 
-    run($('.event-category').not('.event-category--child'));
+    run($('.event-category'));
 }
 function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
