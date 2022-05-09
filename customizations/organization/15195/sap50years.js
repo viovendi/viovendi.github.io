@@ -164,7 +164,7 @@ function resetOtherTicket(ticketBlock) {
 	}, undefined); 
     }	
 
-    run($('.event-category'));
+    run($('.event-category').not('.event-category--child'));
 }
 function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
