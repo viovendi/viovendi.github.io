@@ -10,9 +10,9 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_160x600_DE.png'],
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intersupply/2022_IS_Banner_Aussteller_160x600_D.png'],
   ['horizontal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040422_BOE22_Ausstellerbanner_468x60_DE.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040422_BOE22_Ausstellerbanner_180x60_DE.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intersupply/2022_IS_Banner_Aussteller_180x60_D.png'],
   ['instagrampost', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_1080x1080_DE.png'],
   ['instagramstory', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_1080x1350_DE.png'],
   ['facebook', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_1080x1350_DE.png']
