@@ -145,7 +145,6 @@ function addListenerToTickets() {
   console.log("adding listener to tickets"+$('.event-category').length);
      $('.event-category').each(function () {
 	     const ticket = this;
-       console.log(ticket);
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
                 if($(this).text().trim()!=0){
                 resetOtherTicket($(ticket));
@@ -158,6 +157,7 @@ function resetOtherTicket(ticketBlock) {
      const run = async (tickets) =>{
         await tickets.get().reverse().reduce(async (memo, ticket) => {
 	    await memo;
+      console.log(ticket);
             if (ticket != ticketBlock.get(0)) {
               	await updateTicket($(ticket));
             }
