@@ -67,9 +67,9 @@ async function selectionChanged(selector) {
       const element = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown');
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            resolve({
-              selector: mutation,
-            });
+          resolve(
+            mutation.target.textContent,
+          );
 
         });
       });
@@ -80,7 +80,7 @@ async function selectionChanged(selector) {
         childList: true
       });
     } catch (error) {
-     // reject(new Error(error));
+      // reject(new Error(error));
     }
   });
 }
@@ -90,7 +90,7 @@ async function selectionChanged(selector) {
 async function handler() {
   const selection = await selectionChanged('')
   console.log(selection)
- }
+}
 
 
 
