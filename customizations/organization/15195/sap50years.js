@@ -168,8 +168,8 @@ function resetOtherTicket(ticketBlock) {
 }
 function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
-    console.log("text: "+$(this).text())
 		const amount = $(this).text().trim().split(" ")[0];
+    console.log("text: "+amount)
     if(amount=="weniger"){
 
     }else
