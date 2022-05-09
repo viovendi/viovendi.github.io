@@ -59,7 +59,7 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 	
-if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter*in"  ) {
+if (ticketTitle == "Employee" || ticketTitle == "Samstag. den 16.07.2022"  || ticketTitle == "Sonntag. den 17.07.2022" ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_headline').hide();
@@ -72,26 +72,7 @@ if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter*in"  ) {
 }	
   
   
-     /*if(calcCheckboxes(name) < 1 ){
-       $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', true);
-       if( $('.'+name+' .customization2_attendee_edit-action .button-error-message').length < 1 ){
-        console.log(language)
-         if (language == "en-us"){
-        $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Please select a date</span>');
-        //$('.'+name+' .customization2_attendee_further-data_headline').after('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
-         }
-         else {
-           $('.'+name+' .customization2_attendee_further-data_product-1').before('<span class="button-error-message error-text error-text--multiple">Bitte wählen Sie einen Termin an dem Sie die Messe besuchen möchten aus.</span>');
-         }
-         // this removes the error message in state_view
-         $('.customization2_attendee-state_view .button-error-message').remove();
-
-       }
-     }else{
-       $('.'+name+' .customization2_attendee_edit-action_save').attr('disabled', false);
-       $('.'+name+' .button-error-message').remove();
-     }
-    }*/
+    
 }
 
 function init(name) {
