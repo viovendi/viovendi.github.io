@@ -61,6 +61,38 @@ function hideAll() {
 }
 
 
+async function selectionChanged(selector) {
+  return new Promise(function (resolve, reject) {
+    try {
+      const element = document.querySelector('.vv-selection-input__value');
+      var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          console.log(mutation)
+          // var classList = mutation.target.classList ?
+          //   [...mutation.target.classList] :
+          //   [];
+          // if (
+          //   mutation.type === "childList" &&
+          //   classList.indexOf(selector) != -1
+          // ) {
+          //   resolve({
+          //     selector: document.querySelector("." + selector),
+          //     dataLayer: dataLayer,
+          //   });
+          // }
+        });
+      });
+      observer.observe(element, {
+        characterData: true,
+        subtree: true,
+        childList: true
+      });
+    } catch (error) {
+      reject(new Error(error));
+    }
+  });
+}
+
 
 
 
@@ -218,103 +250,15 @@ var insertionListener = function (event) {
         }
       });
     });
-
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        console.log(mutation)
-
-       console.log( $('.customization2_attendee_further-data_custom-question_dropdown').text())
-        console.log(mutation)
-        const state = 0;
-
-        if (state.includes("1")) {
-          console.log('1');
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-
-
-        } else if (state.includes("2")) {
-          console.log('2');
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-
-        } else if (state.includes("3")) {
-          console.log('3');
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-
-        } else if (state.includes("4")) {
-          console.log('4');
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-        } else if (state.includes("5")) {
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          showQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').show();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').show();
-        } else if (state.includes("Bitte")) {
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 1");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 2");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 3");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 4");
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Vertretung 5");
-
-          $('.customization2_attendee_further-data_custom-question-7').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-10').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-13').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-16').parent().find('.vv-mt-md').hide();
-          $('.customization2_attendee_further-data_custom-question-19').parent().find('.vv-mt-md').hide();
-        }
-      });
-    });
-    observer.observe(document.querySelector('.vv-additional-question-dropdown .vv-selection-input__value'), { characterData: true, subtree: true, childList: true });
   }
 
 }
 
+async function handler() {
+ const selection = await selectionChanged('')
+ console.log(selection)
+}
+handler()
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
