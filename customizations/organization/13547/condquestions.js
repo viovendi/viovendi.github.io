@@ -64,7 +64,7 @@ function hideAll() {
 async function selectionChanged(selector) {
   return new Promise(function (resolve, reject) {
     try {
-      const element = document.querySelector('.vv-additional-question-dropdown .vv-selection-input__value');
+      const element = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown');
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
           console.log(mutation)
