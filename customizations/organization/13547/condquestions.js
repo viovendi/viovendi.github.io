@@ -67,19 +67,11 @@ async function selectionChanged(selector) {
       const element = document.querySelector('.customization2_attendee_further-data_custom-question_dropdown');
       var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-          console.log(mutation)
-          // var classList = mutation.target.classList ?
-          //   [...mutation.target.classList] :
-          //   [];
-          // if (
-          //   mutation.type === "childList" &&
-          //   classList.indexOf(selector) != -1
-          // ) {
-          //   resolve({
-          //     selector: document.querySelector("." + selector),
-          //     dataLayer: dataLayer,
-          //   });
-          // }
+            resolve({
+              selector: mutation.data,
+              dataLayer: dataLayer,
+            });
+
         });
       });
       observer.observe(element, {
