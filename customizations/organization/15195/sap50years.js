@@ -180,7 +180,7 @@ function addTextToAmountOfTickets(){
 		}else if(amount >200){
 			$(this).text('nur noch wenige Plätze verfügbar');
 			$(this).css('color', 'red');
-		}else if(amount!="weniger"){
+		}else if(amount<=200){
 			$(this).text('weniger als 200 Plätze verfügbar');
 			$(this).css('color', 'red');
 		}
