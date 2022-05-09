@@ -188,14 +188,12 @@ var insertionListener = function (event) {
       $(element).change(function (input) {
         console.log("changed");
         //on change show these 2 questions
-        if ($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Gast')) {
+        if ($(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim().includes('Stimmberechtigtes Mitglied')) {
           $('.customization2_attendee_further-data_custom-question-2').show();
           console.log('show');
           showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
         } else {
-          $('.customization2_attendee_further-data_custom-question-2').hide();
-          hideQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
-
+          hideAll();
           console.log('hide');
         }
       });
