@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_160x600_ES.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_468x60_ES.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_180x60_ES.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1080_ES.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_ES.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_ES.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15342/bannergenerator/cakeandbake_2023_banner_aussteller_160x600_de.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_468x60_D.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_180x60_D.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1080_D.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_D.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_D.png']
 ];
 
 function setTexts() {
@@ -27,11 +27,11 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 45);
+        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 35);
         ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 512);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 572);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 497);
+        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 565);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 44);
         ctx.fillText($('#stand_inp').val(), 43, 44);
@@ -72,7 +72,7 @@ function setupBannerImage() {
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "15pt Verdana";
     } else if (value == 'email') {
         ctx.font = "13pt Verdana";
     } else if (value == 'instagrampost') {
