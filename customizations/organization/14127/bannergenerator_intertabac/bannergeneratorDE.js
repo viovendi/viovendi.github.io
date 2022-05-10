@@ -27,8 +27,8 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 100 - $('#halle_inp').val().length * 4, 49);
-        ctx.fillText($('#stand_inp').val(), 200 - $('#stand_inp').val().length * 4, 49);
+        ctx.fillText($('#halle_inp').val(), 350 - $('#halle_inp').val().length * 4, 49);
+        ctx.fillText($('#stand_inp').val(), 400 - $('#stand_inp').val().length * 4, 49);
     } else if (value == 'vertikal') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 512);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 572);
@@ -42,8 +42,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1225);
         ctx.fillText($('#stand_inp').val(), 837 - $('#stand_inp').val().length * 9, 1225);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1225);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1225);
     }
 }
 
