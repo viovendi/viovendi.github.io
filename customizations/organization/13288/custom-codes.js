@@ -42,8 +42,15 @@
       const code = await getCode("13879")
       const input = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
     //   addCode(code, input)
-      console.log(code, input)
+    var insertionListener = function(event) {
+        if (event.animationName === "nodeInserted") {
+            console.log(code, input)
+        }}
      }
+
+     document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+     document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+     document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
   }
 
   hendler();
