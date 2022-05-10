@@ -41,13 +41,9 @@
     //   const code = await getCode("13288")13879
       const code = await getCode("13879")
       const input = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
-    //   addCode(code, input)
-    console.log(code, input)
+    addCode(code, input)
      }
   }
-
-  hendler();
-
 
   var insertionListener = function(event) {
     if (event.animationName === "nodeInserted") {
