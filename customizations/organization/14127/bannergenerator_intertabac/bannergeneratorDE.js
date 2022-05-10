@@ -30,17 +30,17 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 4, 31);
         ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 4, 49);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 85 - $('#halle_inp').val().length * 6, 515);
-        ctx.fillText($('#stand_inp').val(), 85 - $('#stand_inp').val().length * 5, 575);
+        ctx.fillText($('#halle_inp').val(), 80 - $('#halle_inp').val().length * 6, 514);
+        ctx.fillText($('#stand_inp').val(), 80 - $('#stand_inp').val().length * 5, 574);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
-        ctx.fillText($('#stand_inp').val(), 43, 46);
+        ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 44);
+        ctx.fillText($('#stand_inp').val(), 43, 44);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 993);
-        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 993);
+        ctx.fillText($('#halle_inp').val(), 550 - $('#halle_inp').val().length * 6, 1015);
+        ctx.fillText($('#stand_inp').val(), 770 - $('#stand_inp').val().length * 9, 1015);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 550 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 770 - $('#stand_inp').val().length * 9, 1233);
     } else if (value == 'facebook') {
         ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
         ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
