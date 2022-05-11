@@ -64,6 +64,7 @@
           hendler();
       }
       if (event.animationName === "nodeInserted2") {
+       $("h4:contains('Weitere Angaben zum Teilnehmer')").hide();
        const qrCode = $( "p:contains('QR-Code Nummer')" ).closest('.customization2_attendee_further-data_custom-question');
        console.log(qrCode)
        qrCode.hide()
