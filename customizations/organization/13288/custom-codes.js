@@ -43,6 +43,7 @@
       const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
      const input = $(qrCode).find('input')
       console.log(input)
+      console.log(code)
     addCode(code.payload.code, input[0])
      }
   }
