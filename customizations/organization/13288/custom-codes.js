@@ -65,9 +65,7 @@
       }
       if (event.animationName === "nodeInserted2") {
           console.log("nodeInserted2")
-        const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
-        console.log(qrCode)
-        $(qrCode).hide()
+        $( "p:contains('QR-Code Nummer')" ).hide()
     }
   }
 
