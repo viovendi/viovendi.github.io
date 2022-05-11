@@ -64,9 +64,9 @@
           hendler();
       }
       if (event.animationName === "nodeInserted2") {
-       const qrCode = $( "p:contains('QR-Code Nummer')" ).parent().parent();
+       const qrCode = $( "p:contains('QR-Code Nummer')" ).closest('.customization2_attendee_further-data_custom-question');
        console.log(qrCode)
-       $(qrCode).hiden()
+       qrCode.hiden()
     }
   }
 
