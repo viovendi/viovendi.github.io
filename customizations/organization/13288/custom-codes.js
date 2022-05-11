@@ -64,10 +64,10 @@
   var insertionListener = function (event) {
       if (event.animationName === "nodeInserted") {
           hendler();
+          $('.customization2_attendee_further-data_headline').hide()
       }
   }
-  const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer')
-  $(qrCode).hide()
+
 
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
