@@ -65,7 +65,7 @@
       }
       if (event.animationName === "nodeInserted2") {
           console.log("nodeInserted2")
-        $( "div:contains('QR-Code Nummer')" ).hide()
+        $( "p:contains('QR-Code Nummer')" ).hide()
     }
   }
 
