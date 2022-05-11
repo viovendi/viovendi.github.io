@@ -41,10 +41,18 @@
           //   const code = await getCode("13288")13879
           const code = await getCode("TEST")
           const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
-          const input = $(qrCode).find('input')
+          const {
+              customCode
+          } = code.payload
+          const input = $(qrCode).find('input')[0]
 
 
-          addCode(code.payload.customCode, input[0])
+          const result = addCode(customCode, input)
+          if (result) {
+              console.log(result)
+              markCodeAsUsed(customCode, 'TEST')
+          }
+
       }
   }
 
