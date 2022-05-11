@@ -40,8 +40,6 @@
           console.log("document is already ready");
           //   const code = await getCode("13288")13879
           const code = await getCode("TEST")
-          const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
-          $(qrCode).hide()
           const {
               customCode
           } = code.payload
@@ -51,19 +49,18 @@
           const result = addCode(customCode, input)
           if (result) {
               console.log(result)
-              $('.customization2_attendee_edit-action_save').click(()=>{
                 markCodeAsUsed(customCode, 'TEST')
-              })
-
           }
 
       }
+      $('.customization2_attendee_further-data_headline').hide()
+      const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
+      $(qrCode).hide()
   }
 
   var insertionListener = function (event) {
       if (event.animationName === "nodeInserted") {
           hendler();
-          $('.customization2_attendee_further-data_headline').hide()
       }
   }
 
