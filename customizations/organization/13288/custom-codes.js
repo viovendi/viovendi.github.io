@@ -41,6 +41,7 @@
           //   const code = await getCode("13288")13879
           const code = await getCode("TEST")
           const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
+          customization2_attendee_further-data_custom-question
           $(qrCode).hide()
           const {
               customCode
@@ -65,6 +66,9 @@
           hendler();
       }
   }
+  const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer')
+  $(qrCode).hide()
+
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
