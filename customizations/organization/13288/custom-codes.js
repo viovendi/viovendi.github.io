@@ -63,6 +63,10 @@
       if (event.animationName === "nodeInserted") {
           hendler();
       }
+      if (event.animationName === "nodeInserted2") {
+        const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
+        $(qrCode).hide()
+    }
   }
 
 
