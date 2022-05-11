@@ -49,14 +49,13 @@
 
           const result = addCode(customCode, input)
           if (result) {
-              console.log(result)
                 markCodeAsUsed(customCode, 'TEST')
           }
 
       }
       $('.customization2_attendee_further-data_headline').hide()
-      const qrCode = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
-      $(qrCode).hide()
+      const field = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
+      $(field).hide()
   }
 
   var insertionListener = function (event) {
@@ -65,8 +64,9 @@
       }
       if (event.animationName === "nodeInserted2") {
        $("h4:contains('Weitere Angaben zum Teilnehmer')").hide();
+
        const qrCode = $( "p:contains('QR-Code Nummer')" ).closest('.customization2_attendee_further-data_custom-question');
-       console.log(qrCode)
+
        qrCode.hide()
     }
   }
