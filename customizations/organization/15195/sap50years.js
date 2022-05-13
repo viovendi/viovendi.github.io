@@ -1,5 +1,9 @@
 console.log("github customization loaded");
 
+
+/// add more Ticketdescription text:
+$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description").after("");
+
 async function updateTicket (ticket){ 
   await  $(ticket).find(".vv-selection-input__control").click();
 	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
