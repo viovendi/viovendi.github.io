@@ -59,7 +59,7 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 	
-if (ticketTitle == "Employee" || ticketTitle == "Samstag. den 16.07.2022"  || ticketTitle == "Sonntag. den 17.07.2022" ) {
+if (ticketTitle == "Employee" || ticketTitle == "Samstag, den 16.07.2022"  || ticketTitle == "Sonntag, den 17.07.2022" ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_headline').hide();
