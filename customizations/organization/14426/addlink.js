@@ -13,7 +13,7 @@ if(window.location.href.indexOf('88669') !== -1){
     <a target='_blank' href='https://www.jagd-und-hund.de/en/beretta/'>www.westfalenhallen.de/datenschutzhinweis-beretta.</a>
     `);
 
-    const radio2 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenweitergabe');
+    const radio2 = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Datenweitergabe Beretta');
     const radioLineLabel2 = $(radio2).find('p.vv-radio__label-text');
 
     radioLineLabel2.html(`

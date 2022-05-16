@@ -1,5 +1,9 @@
 console.log("github customization loaded");
 
+
+/// add more Ticketdescription text:
+//$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
+//$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
 async function updateTicket (ticket){ 
   await  $(ticket).find(".vv-selection-input__control").click();
 	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
@@ -59,7 +63,7 @@ function hideStuff(name){
     $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 	
-if (ticketTitle == "Employee" || ticketTitle == "Samstag. den 16.07.2022"  || ticketTitle == "Sonntag. den 17.07.2022" ) {
+if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter:in | Samstag. den 16.07.2022"  || ticketTitle == "Mitarbeiter:in | Sonntag. den 17.07.2022" ) {
     	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
 	$('.'+name+' .customization2_attendee_further-data_headline').hide();
