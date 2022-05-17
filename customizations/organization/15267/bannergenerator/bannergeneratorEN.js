@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/15342/bannergenerator/cakeandbake_2023_banner_aussteller_160x600_en.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_468x60_GB.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_180x60_GB.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1080_GB.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_GB.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14127/bannergenerator_intertabac/2022_IT_Banner_Aussteller_1080x1350_GB.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_160x600_E.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_468x60_E.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_180x60_E.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1080_E.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1350_E.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1350_E.png']
 ];
 
 function setTexts() {
