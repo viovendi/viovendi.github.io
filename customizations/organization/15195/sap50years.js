@@ -1,6 +1,6 @@
 console.log("github customization loaded");
 
-$(".cursor-pointer").on('click', function(event){
+$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > a").on('click', function(event){
 	console.log("onclick");
     event.stopPropagation();
     event.stopImmediatePropagation();
