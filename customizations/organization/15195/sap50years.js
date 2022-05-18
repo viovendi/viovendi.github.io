@@ -88,7 +88,6 @@ if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter:in | Samstag. den 1
 
 function init(name) {
   hideStuff(name);
-addText();	
 	
   setTimeout(function (){
         startCustomizationPage1();
