@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     function moveTerms() {
         
-        var terms = "<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb' target='_blank' rel='noopener noreferrer'>AGBs</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzerklärung</a> habe ich zur Kenntnis genommen.</p>";
+        var terms = "<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb' target='_blank' rel='noopener noreferrer'>AGB</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> habe ich zur Kenntnis genommen.</p>";
 
 
         // Add Terms after Booker data
