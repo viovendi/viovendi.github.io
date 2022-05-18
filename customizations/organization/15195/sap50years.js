@@ -1,9 +1,9 @@
 console.log("github customization loaded");
 
+
+document.querySelector("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").text("child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-dechild(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-dechild(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-de");
 $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > a").on('click', function(event){
 	console.log("onclick");
-    event.stopPropagation();
-    event.stopImmediatePropagation();
 	
 $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
 $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
