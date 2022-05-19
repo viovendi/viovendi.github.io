@@ -57,7 +57,7 @@ console.log("git custom756");
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
     
-    $('.customization2_booker_contact-data_country select').on('change', function(e){
+    $('.customization2_booker_contact-data_country_input').on('DOMSubtreeModified', function(e){
       var country = $(".customization2_booker_contact-data_country_input").text().trim();
       
       if(countries.indexOf(country) != -1){
