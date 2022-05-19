@@ -50,15 +50,15 @@ console.log("git custom756");
 	  console.log("check-country");
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
     // var invoice_radio_group = $('.customization2_booker_further-data_custom-question-3 .customization2_booker_further-data_custom-question_radio-group');
-    var countries = ['AT', 'DE', 'CH'];
-    var curr_country = $('.customization2_booker_contact-data_country select').children("option:selected").val();
+    var countries = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
+    var country = $(".customization2_booker_contact-data_country_input").text().trim();
     
     if(countries.indexOf(curr_country) != -1 ){
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
     
     $('.customization2_booker_contact-data_country select').on('change', function(e){
-      var country = $(this).children("option:selected").val();
+      var country = $(".customization2_booker_contact-data_country_input").text().trim();
       
       if(countries.indexOf(country) != -1){
 	      console.log("Show both");
