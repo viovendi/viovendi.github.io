@@ -1,6 +1,16 @@
 console.log("github customization loaded");
 
+function getWidgetLang(){
+  var lang = $('html').attr('lang');
+  return lang;
+}
 
+console.log(getWidgetLang());
+
+
+var pathname = window.location.pathname;
+var eventId = pathname.split('/')[3]
+var locale = window.location.pathname.split('/')[1]
 
 
 
@@ -178,7 +188,6 @@ function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
 		const amount = $(this).text().trim().split(" ")[0];
     console.log("text: "+amount)
-    
 		if(amount>5000){
 			$(this).text('genügend Plätze vorhanden');
 			$(this).css('color', 'green');
