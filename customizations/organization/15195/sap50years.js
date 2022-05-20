@@ -1,5 +1,5 @@
 console.log("github customization loaded");
-
+let changedBackToSite1 = false;
 function getWidgetLang(){
   var lang = $('html').attr('lang');
   return lang;
@@ -128,6 +128,7 @@ function startCustomizationPage1(){
         const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
     
         if ($(page1).is(':visible')) {
+          changedBackToSite1=true;
             startCustomizationPage1();
             obs.disconnect();
             return;
@@ -160,6 +161,9 @@ function addListenerToTickets() {
 	     const ticket = this;
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
                 if($(this).text().trim()!=0){
+                  if(changedBackToSite1){
+                    changedBackToSite1=false;
+                  }else
                 resetOtherTicket($(ticket));
                 }
             });
