@@ -1,9 +1,15 @@
 console.log("github customization loaded");
 
+function getWidgetLang(){
+  var lang = $('html').attr('lang');
+  return lang;
+}
 
-/// add more Ticketdescription text:
-//$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
-//$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").after('<p>Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
+if(getWidgetLang() == 'de'){
+$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
+}
+
+
 async function updateTicket (ticket){ 
   await  $(ticket).find(".vv-selection-input__control").click();
 	await  $(ticket).find(".vv-single-select-option").filter(el => el=='0').click();
@@ -53,26 +59,28 @@ async function getInfo() {
 function hideStuff(name){
   var ticketTitle = $('.customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" || ticketTitle == "Child" ) {
-      $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
-      $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
+	  //nothing to hide for children
+     // $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
+     // $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
   }
   
   if (ticketTitle == "Partner" ) {
-    $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
-    $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
-    $('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
+   // since SAP changed so much, there are no question to hide for Partner
+	  // $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
+   // $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
+    //$('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 	
-if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter:in | Samstag. den 16.07.2022"  || ticketTitle == "Mitarbeiter:in | Sonntag. den 17.07.2022" ) {
-    	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
-	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
-	$('.'+name+' .customization2_attendee_further-data_headline').hide();
+if (ticketTitle.indexOf("Saturday, 07/16/2022") >= 0 || ticketTitle.indexOf("Sunday, 07/17/2022") >= 0  || ticketTitle == "Mitarbeiter:in | Samstag. den 16.07.2022"  || ticketTitle == "Mitarbeiter:in | Sonntag. den 17.07.2022" ) {
+    	// done by css via DAT
+	//$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
+	//$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+	//$('.'+name+' .customization2_attendee_further-data_headline').hide();
 	
 	//TODO hide if view state: .customization2_attendee-state_view
-	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
-	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
+	//$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
+	//$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
 	
-	console.log("mitarbeiter hide");
 }	
   
   
@@ -80,7 +88,8 @@ if (ticketTitle == "Employee" || ticketTitle == "Mitarbeiter:in | Samstag. den 1
 }
 
 function init(name) {
-  hideStuff(name)
+ // hideStuff(name);
+	
   setTimeout(function (){
         startCustomizationPage1();
               }, 800);  
@@ -157,6 +166,18 @@ function addListenerToTickets() {
     });
 }
 function resetOtherTicket(ticketBlock) {
+  
+	if(getWidgetLang() == 'en'){
+	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="https://www.google.de/" target="_blank">email</a>.</p>');
+	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="https://www.google.de/" target="_blank">email</a>.</p>');
+	
+	}
+	else{
+	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden und Stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
+	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden und Stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
+	}
+		//jonas code
+  console.log(ticketBlock.get(0))
      const run = async (tickets) =>{
         await tickets.get().reverse().reduce(async (memo, ticket) => {
 	    await memo;
@@ -173,7 +194,25 @@ function addTextToAmountOfTickets(){
 	$('.event-category__amount').each(function(){
 		const amount = $(this).text().trim().split(" ")[0];
     console.log("text: "+amount)
-    
+		
+		
+		if(getWidgetLang() == 'en'){
+		if(amount>5000){
+			$(this).text('TODO ENGgenügend Plätze vorhanden');
+			$(this).css('color', 'green');
+		}else if(amount >1000){
+			$(this).text('TODO wenige Plätze verfügbar');
+			$(this).css('color', 'orange');
+		}else if(amount >200){
+			$(this).text('TODOnur noch wenige Plätze verfügbar');
+			$(this).css('color', 'red');
+		}else if(amount<=200){
+			$(this).text('TODO weniger als 200 Plätze verfügbar');
+			$(this).css('color', 'red');
+		}
+		}
+		else{
+		
 		if(amount>5000){
 			$(this).text('genügend Plätze vorhanden');
 			$(this).css('color', 'green');
@@ -186,6 +225,7 @@ function addTextToAmountOfTickets(){
 		}else if(amount<=200){
 			$(this).text('weniger als 200 Plätze verfügbar');
 			$(this).css('color', 'red');
+		}
 		}
 	});		
 }
