@@ -166,7 +166,7 @@ function addListenerToTickets() {
     });
 }
 function resetOtherTicket(ticketBlock) {
-  
+
 	if(getWidgetLang() == 'en'){
 	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="https://www.google.de/" target="_blank">email</a>.</p>');
 	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="https://www.google.de/" target="_blank">email</a>.</p>');
@@ -177,6 +177,7 @@ function resetOtherTicket(ticketBlock) {
 	$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden und Stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="https://www.google.de/" target="_blank">hier</a> anmelden</p>');
 	}
 		//jonas code
+    console.log("resetting all other then:")
   console.log(ticketBlock.get(0))
      const run = async (tickets) =>{
         await tickets.get().reverse().reduce(async (memo, ticket) => {
