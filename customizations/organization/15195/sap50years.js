@@ -70,15 +70,14 @@ function hideStuff(name){
   }
 	
 if (ticketTitle.indexOf("Saturday, 07/16/2022") >= 0 || ticketTitle.indexOf("Sunday, 07/17/2022") >= 0  || ticketTitle == "Mitarbeiter:in | Samstag. den 16.07.2022"  || ticketTitle == "Mitarbeiter:in | Sonntag. den 17.07.2022" ) {
-    	$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
-	$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
-	$('.'+name+' .customization2_attendee_further-data_headline').hide();
+    	//$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
+	//$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
+	//$('.'+name+' .customization2_attendee_further-data_headline').hide();
 	
 	//TODO hide if view state: .customization2_attendee-state_view
 	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
 	$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
 	
-	console.log("mitarbeiter hide");
 }	
   
   
