@@ -1,8 +1,8 @@
 //What runs on every new attendee form
 function handler(){
   console.log("hide Quelle");
-  $( ".customization2_attendee_further-data_custom-question:contains('Quelle')" ).hide();
-  $( ".customization2_booker_further-data_custom-question:contains('Quelle')" ).hide();
+  $($$('.customization2_attendee_further-data_custom-question').findField('Quelle')).hide();
+  $($$('.customization2_booker_further-data_custom-question').findField('Quelle')).hide()
   }
 
 handler();
