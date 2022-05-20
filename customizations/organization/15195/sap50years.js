@@ -182,7 +182,7 @@ function resetOtherTicket(ticketBlock) {
      const run = async (tickets) =>{
         await tickets.get().reverse().reduce(async (memo, ticket) => {
 	    await memo;
-      console.log(ticket);
+     // console.log(ticket);
             if (ticket != ticketBlock.get(0)) {
               	await updateTicket($(ticket));
             }
