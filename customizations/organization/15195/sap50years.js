@@ -6,7 +6,7 @@ function getWidgetLang(){
 }
 
 if(getWidgetLang() == 'de'){
-$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").textContent("Hier geht es zu deiner Buchung");
+$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
 }
 
 
