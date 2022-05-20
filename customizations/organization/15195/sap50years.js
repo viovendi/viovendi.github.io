@@ -5,7 +5,7 @@ function getWidgetLang(){
   return lang;
 }
 
-
+$("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
 
 
 
