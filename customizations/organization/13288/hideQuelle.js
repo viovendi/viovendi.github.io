@@ -5,11 +5,6 @@ function handler(){
   $($$('.customization2_booker_further-data_custom-question').findField('Quelle')).hide();
   };
 
-observer2.observe(document, {
-    childList: true,
-    subtree: true
-});*/
-
 handler();
 //Insert here, what should run once
 //
