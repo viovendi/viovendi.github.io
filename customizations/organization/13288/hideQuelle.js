@@ -40,8 +40,11 @@ handler();
 //
 var insertionListener = function(event) {  
   if (event.animationName === "nodeInserted") {    
-    console.log("Node has been inserted: ", event.target);    
-    handler(); 
+    console.log("Node has been inserted: ", event.target);
+    console.log("hide attendee Quelle");
+    $($$('.customization2_attendee_further-data_custom-question').findField('Quelle')).hide();
+    console.log("hide booker Quelle");
+    $($$('.customization2_booker_further-data_custom-question').findField('Quelle')).hide();
   }
 }
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox  
