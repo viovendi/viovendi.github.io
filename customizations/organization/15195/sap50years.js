@@ -162,9 +162,11 @@ function addListenerToTickets() {
             $(this).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
                 if($(this).text().trim()!=0){
                   if(changedBackToSite1){
+                    console.log('blocked reset')
                     changedBackToSite1=false;
-                  }else
-                resetOtherTicket($(ticket));
+                  }else{
+                    resetOtherTicket($(ticket));
+                  }
                 }
             });
     });
