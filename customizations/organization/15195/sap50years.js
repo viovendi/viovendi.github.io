@@ -53,11 +53,10 @@ async function getInfo() {
   );
 
 }
-//getInfo();
 
 
 //--- check each ticketcategory, if child, hide some stuff---
-
+/*
 function hideStuff(name) {
   var ticketTitle = $('.customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" || ticketTitle == "Child") {
@@ -84,7 +83,7 @@ function hideStuff(name) {
     //$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
 
   }
-
+*/
 
 
 }
@@ -212,32 +211,32 @@ function addTextToAmountOfTickets() {
 
     if (getWidgetLang() == 'en') {
       if (amount > 5000) {
-        $(this).text('TODO ENGgenügend Plätze vorhanden');
+        $(this).text('Tickets still available');
         $(this).css('color', 'green');
       } else if (amount > 1000) {
-        $(this).text('TODO wenige Plätze verfügbar');
+        $(this).text('Some tickets still available');
         $(this).css('color', 'orange');
       } else if (amount > 200) {
-        $(this).text('TODOnur noch wenige Plätze verfügbar');
+        $(this).text('Just few tickets available');
         $(this).css('color', 'red');
       } else if (amount <= 200) {
-        $(this).text('TODO weniger als 200 Plätze verfügbar');
+        $(this).text('Less than 200 tickets available');
         $(this).css('color', 'red');
       }
     }
     else {
 
       if (amount > 5000) {
-        $(this).text('genügend Plätze vorhanden');
+        $(this).text('genügend Tickets vorhanden');
         $(this).css('color', 'green');
       } else if (amount > 1000) {
-        $(this).text('wenige Plätze verfügbar');
+        $(this).text('wenige Tickets verfügbar');
         $(this).css('color', 'orange');
       } else if (amount > 200) {
-        $(this).text('nur noch wenige Plätze verfügbar');
+        $(this).text('nur noch wenige Tickets verfügbar');
         $(this).css('color', 'red');
       } else if (amount <= 200) {
-        $(this).text('weniger als 200 Plätze verfügbar');
+        $(this).text('weniger als 200 Tickets verfügbar');
         $(this).css('color', 'red');
       }
     }
