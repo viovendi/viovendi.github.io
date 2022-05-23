@@ -8,7 +8,7 @@ function handler(){
 const observer1 = new MutationObserver((mutations, obs) => {
     const page2attendee = document.getElementsByClassName('customization2_attendee-state_edit');
 
-    if ($(page1attendee).is(':visible')) {
+    if ($(page2attendee).is(':visible')) {
         handler();
         obs.disconnect();
         return;
