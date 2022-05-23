@@ -55,7 +55,7 @@ async function getInfo() {
 }
 
 
-}
+
 
 function init(name) {
   // hideStuff(name);
