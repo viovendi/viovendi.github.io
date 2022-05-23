@@ -13,9 +13,8 @@ if (getWidgetLang() == 'de') {
 
 
 async function updateTicket(ticket) {
-  // !!!!!!! TEST !!!!! uncomment
- // await $(ticket).find(".vv-selection-input__control").click();
- // await $(ticket).find(".vv-single-select-option").filter(el => el == '0').click();
+  await $(ticket).find(".vv-selection-input__control").click();
+  await $(ticket).find(".vv-single-select-option").filter(el => el == '0').click();
   return
 }
 
