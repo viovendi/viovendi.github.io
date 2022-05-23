@@ -1,4 +1,4 @@
-/*console.log("github customization loaded");
+console.log("github customization loaded");
 let changedBackToSite1 = false;
 setupObserversPage1()
 
