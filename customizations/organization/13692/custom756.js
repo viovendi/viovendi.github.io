@@ -56,6 +56,19 @@ console.log("git custom756");
     if(countries.indexOf(curr_country) != -1 ){
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
+	  
+	const observer = new MutationObserver((mutations) => {
+    var countryObserver = $(".customization2_booker_contact-data_country_input").text().trim();
+    console.log(countryObserver)
+})
+
+const bookerCountryInput = document.querySelector('.customization2_booker_contact-data_country_input');
+
+observer.observe(bookerCountryInput, {
+    childList: true,
+    subtree: true,
+    characterData: true
+});
     
     $('.customization2_booker_contact-data_country_input').on('DOMSubtreeModified', function(e){
       var country = $(".customization2_booker_contact-data_country_input").text().trim();
