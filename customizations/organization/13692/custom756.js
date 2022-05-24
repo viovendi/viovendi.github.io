@@ -56,10 +56,19 @@ console.log("git custom756");
     if(countries.indexOf(curr_country) != -1 ){
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
-	  
-	const observer = new MutationObserver((mutations) => {
-    var countryObserver = $(".customization2_booker_contact-data_country_input").text().trim();
-    console.log(countryObserver)
+
+const observer = new MutationObserver((mutations) => {
+    var country = $(".customization2_booker_contact-data_country_input").text().trim();
+      
+    if(countries.indexOf(country) != -1){
+	    console.log("Show both");
+        invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+    }else{
+        // var click_event = new Event("click");
+	    console.log("hide");
+        invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
+        invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
+    }
 })
 
 const bookerCountryInput = document.querySelector('.customization2_booker_contact-data_country_input');
@@ -69,7 +78,8 @@ observer.observe(bookerCountryInput, {
     subtree: true,
     characterData: true
 });
-    
+	  
+    /*
     $('.customization2_booker_contact-data_country_input').on('DOMSubtreeModified', function(e){
       var country = $(".customization2_booker_contact-data_country_input").text().trim();
       
@@ -83,7 +93,7 @@ observer.observe(bookerCountryInput, {
         invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
       }
       
-    });
+    });*/
   }
   
   function getWidgetLang(){
