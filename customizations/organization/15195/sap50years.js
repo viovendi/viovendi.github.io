@@ -329,6 +329,9 @@ function hideStuff(name) {
 
   }
 
-
+function changeMobilenumber() {
+  document.getElementById("_ngcontent-lej-c178").placeholder = "999999999";
+}
+console.log("changeMobilenumber");
 
 
