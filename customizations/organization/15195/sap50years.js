@@ -331,7 +331,7 @@ function hideStuff(name) {
 
 function changeMobilenumber() {
   console.log("changeMobilenumber");
-  document.getElementById("_ngcontent-lej-c178").placeholder = "999999999";
+  $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
 }
 
 
