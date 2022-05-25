@@ -60,7 +60,7 @@ async function getInfo() {
 
 
 function init(name) {
-  // hideStuff(name);
+   hideStuff(name);
 
   setTimeout(function () {
     startCustomizationPage1();
@@ -319,34 +319,16 @@ function radioButtonClicked(radioButton) {
 
 
 //--- check each ticketcategory, if child, hide some stuff---
-/*
+
 function hideStuff(name) {
   var ticketTitle = $('.customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" || ticketTitle == "Child") {
-    //nothing to hide for children
-    // $('.'+name+' .customization2_attendee_contact-data_email').parent().hide();
-    // $('.'+name+' .customization2_attendee_contact-data_email-confirmation').parent().hide();
+    //TODO
+    
   }
 
-  if (ticketTitle == "Partner") {
-    // since SAP changed so much, there are no question to hide for Partner
-    // $('.'+name+' .customization2_attendee_contact-data_email vv-optional-text > vv-text > span').hide();
-    // $('.'+name+' .customization2_attendee_contact-data_email-confirmation vv-optional-text > vv-text > span').hide();
-    //$('.'+name+' .customization2_attendee_contact-data_email').before('<span class= "addedHeading" style="font-size:14px;padding: 12px;font-family: inherit;color: #343a3f;">Falls ihr Partner auch bei der SAP arbeitet, bitte tragen Sie die SAP-Email-Adresse ein</span>');
   }
 
-  if (ticketTitle.indexOf("Saturday, 07/16/2022") >= 0 || ticketTitle.indexOf("Sunday, 07/17/2022") >= 0 || ticketTitle == "Mitarbeiter:in | Samstag. den 16.07.2022" || ticketTitle == "Mitarbeiter:in | Sonntag. den 17.07.2022") {
-    // done by css via DAT
-    //$('.'+name+' .customization2_attendee_further-data_custom-question-1').parent().hide();
-    //$('.'+name+' .customization2_attendee_further-data_custom-question-2').parent().hide();
-    //$('.'+name+' .customization2_attendee_further-data_headline').hide();
-
-    //TODO hide if view state: .customization2_attendee-state_view
-    //$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-1').hide();
-    //$('.'+name+' .customization2_attendee-state_view .customization2_attendee_further-data_custom-question-2').hide();
-
-  }
-*/
 
 
 
