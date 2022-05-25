@@ -342,6 +342,7 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
 
     if ($(phoneNumber).is(':visible')) {
       console.log("observerChangeMobilenumber");
+      changeMobileNumber();
       $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
       obs.disconnect();
       return;
