@@ -71,6 +71,7 @@ init('customization2_attendee');
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
+    changeMobileNumber();
     //  console.log("nodeInserted");
     console.log("main actions");
     while (typeof $('input[type=radio]') == 'undefined') {
@@ -329,7 +330,7 @@ function hideStuff(name) {
 
   }
 
-function changeMobilenumber() {
+function changeMobileNumber() {
   console.log("changeMobilenumber");
   $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
 }
