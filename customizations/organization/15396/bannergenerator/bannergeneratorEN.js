@@ -10,7 +10,7 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_160x600_EN.png'],
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15396/bannergenerator/2023_ET_Webbanner_Aussteller_160x600_GB.png'],
   ['horizontal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040422_BOE22_Ausstellerbanner_468x60_EN.png'],
   ['email', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040422_BOE22_Ausstellerbanner_180x60_EN.png'],
   ['instagrampost', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_1080x1080_EN.png'],
@@ -30,8 +30,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 4, 31);
         ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 4, 49);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
-        ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
+        ctx.fillText($('#halle_inp').val(), 80 - $('#halle_inp').val().length * 6, 502);
+        ctx.fillText($('#stand_inp').val(), 80 - $('#stand_inp').val().length * 5, 557);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
         ctx.fillText($('#stand_inp').val(), 43, 46);
