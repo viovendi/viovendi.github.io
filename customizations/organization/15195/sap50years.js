@@ -71,7 +71,7 @@ init('customization2_attendee');
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
-    changeMobileNumber();
+    
     //  console.log("nodeInserted");
     console.log("main actions");
     while (typeof $('input[type=radio]') == 'undefined') {
@@ -79,6 +79,7 @@ var insertionListener = function (event) {
     }
     //changesForAttendeeForm();
     init('customization2_attendee');
+    changeMobileNumber();
   }
   if (event.animationName === "nodeSelfBooking") {
     console.log("nodeSelfBooking");
@@ -86,6 +87,7 @@ var insertionListener = function (event) {
   }
   if (event.animationName === "nodeInserted2") {
     init('customization2_attendee');
+    changeMobileNumber();
   }
 }
 
@@ -338,7 +340,7 @@ function changeMobileNumber() {
 oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
     const phoneNumber = document.getElementsByClassName('.customization2_attendee_further-data_custom-question_phone');
 
-    if (!$(phoneNumber).is(':visible')) {
+    if ($(phoneNumber).is(':visible')) {
       console.log("observerChangeMobilenumber");
       $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
       obs.disconnect();
