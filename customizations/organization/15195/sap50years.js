@@ -7,9 +7,10 @@ function getWidgetLang() {
   return lang;
 }
 
-if (getWidgetLang() == 'de') {
+/*if (getWidgetLang() == 'de') {
   $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
 }
+*/
 
 
 async function updateTicket(ticket) {
