@@ -335,5 +335,20 @@ function changeMobileNumber() {
   $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
 }
 
+oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
+    const phoneNumber = document.getElementsByClassName('.customization2_attendee_further-data_custom-question_phone');
+
+    if ($(phoneNumber).is(':visible')) {
+      console.log("observerChangeMobilenumber");
+      $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
+      obs.disconnect();
+      return;
+    }
+  });
+  oberserverPhoneNumber.observe(document, {
+    childList: true,
+    subtree: true
+  });
+
 
 
