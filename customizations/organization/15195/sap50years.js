@@ -338,7 +338,7 @@ function changeMobileNumber() {
 }
 
 oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
-    const phoneNumber = document.getElementsByClassName('.customization2_attendee_further-data_custom-question_phone');
+    const phoneNumber = document.getElementsByClassName('customization2_attendee_further-data_custom-question_phone');
 
     if ($(phoneNumber).is(':visible')) {
       console.log("observerChangeMobilenumber");
