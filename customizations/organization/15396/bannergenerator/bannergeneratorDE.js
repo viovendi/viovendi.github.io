@@ -30,7 +30,7 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 4, 31);
         ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 4, 49);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 80 - $('#halle_inp').val().length * 6, 500);
+        ctx.fillText($('#halle_inp').val(), 80 - $('#halle_inp').val().length * 6, 502);
         ctx.fillText($('#stand_inp').val(), 80 - $('#stand_inp').val().length * 5, 557);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
