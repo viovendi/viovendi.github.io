@@ -79,7 +79,6 @@ var insertionListener = function (event) {
     }
     //changesForAttendeeForm();
     init('customization2_attendee');
-    changeMobileNumber();
   }
   if (event.animationName === "nodeSelfBooking") {
     console.log("nodeSelfBooking");
@@ -87,7 +86,6 @@ var insertionListener = function (event) {
   }
   if (event.animationName === "nodeInserted2") {
     init('customization2_attendee');
-    changeMobileNumber();
   }
 }
 
