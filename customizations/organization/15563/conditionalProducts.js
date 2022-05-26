@@ -165,8 +165,7 @@ function handler() {
     });
 }
 
-
-
+handler();
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
