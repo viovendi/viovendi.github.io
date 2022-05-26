@@ -1,3 +1,5 @@
+console.log("Git start");
+
 const einlasszeiten = [
     [750, "Ihr Einlass: 12:00 - 12:30"],
     [780, "Ihr Einlass: 12:30 - 13:00"],
