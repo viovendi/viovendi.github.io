@@ -147,10 +147,12 @@ function getCheckedEntryTime() {
 
 $(".question-group:nth-of-type(2)").hide();
 $(".question-group:nth-of-type(3)").hide();
+$(".question-group:nth-of-type(4)").hide();
 
 $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
     $(".question-group:nth-of-type(2)").hide();
     $(".question-group:nth-of-type(3)").hide();
+    $(".question-group:nth-of-type(4)").hide();
     var rundgaengeAb = getCheckedEntryTime();
     disableRundgaengeBeforeEntry(rundgaengeAb);
 });
