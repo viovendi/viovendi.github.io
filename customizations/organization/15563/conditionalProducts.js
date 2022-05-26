@@ -1,16 +1,16 @@
 const einlasszeiten = [
-    [720, "Ihr Einlass: 12:00 - 12:30"],
-    [750, "Ihr Einlass: 12:30 - 13:00"],
-    [780, "Ihr Einlass: 13:00 - 13:30"],
-    [810, "Ihr Einlass: 13:30 - 14:00"],
-    [840, "Ihr Einlass: 14:00 - 14:30"],
-    [870, "Ihr Einlass: 14:30 - 15:00"],
-    [900, "Ihr Einlass: 15:00 - 15:30"],
-    [930, "Ihr Einlass: 15:30 - 16:00"],
-    [960, "Ihr Einlass: 16:00 - 16:30"],
-    [990, "Ihr Einlass: 16:30 - 17:00"],
-    [1020, "Ihr Einlass: 17:00 - 17:30"],
-    [1050, "Ihr Einlass: 17:30 - 18:00"]
+    [750, "Ihr Einlass: 12:00 - 12:30"],
+    [780, "Ihr Einlass: 12:30 - 13:00"],
+    [810, "Ihr Einlass: 13:00 - 13:30"],
+    [840, "Ihr Einlass: 13:30 - 14:00"],
+    [870, "Ihr Einlass: 14:00 - 14:30"],
+    [900, "Ihr Einlass: 14:30 - 15:00"],
+    [930, "Ihr Einlass: 15:00 - 15:30"],
+    [960, "Ihr Einlass: 15:30 - 16:00"],
+    [990, "Ihr Einlass: 16:00 - 16:30"],
+    [1020, "Ihr Einlass: 16:30 - 17:00"],
+    [1050, "Ihr Einlass: 17:00 - 17:30"],
+    [1080, "Ihr Einlass: 17:30 - 18:00"]
 ]
 
 const rundgaenge = [
@@ -119,8 +119,6 @@ function uncheckProd(shortName) {
     )
 };
 
-// return true if checkbox is checked, returns false is checkbox is NOT checked
-// checks all checkboxes, filter by shortName
 function isChecked(shortName) {
     var bool = false;
     $('.customization2_attendee_further-data_product').each(function (i, element) {
@@ -147,10 +145,12 @@ function getCheckedEntryTime() {
     return checked;
 }
 
+$(".question-group:nth-of-type(2)").hide();
+$(".question-group:nth-of-type(3)").hide();
+
 $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
+    $(".question-group:nth-of-type(2)").hide();
+    $(".question-group:nth-of-type(3)").hide();
     var rundgaengeAb = getCheckedEntryTime();
     disableRundgaengeBeforeEntry(rundgaengeAb);
 });
-
-
-
