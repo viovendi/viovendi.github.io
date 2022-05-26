@@ -148,6 +148,7 @@ function getCheckedEntryTime() {
 }
 
 function handler() {
+    // Conditional Products
     $(".question-group:nth-of-type(2)").hide();
     $(".question-group:nth-of-type(3)").hide();
     $(".question-group:nth-of-type(4)").hide();
@@ -160,9 +161,14 @@ function handler() {
         disableRundgaengeBeforeEntry(rundgaengeAb);
     });
 
+    
+    // Wprding Changes
     $(".customization2_attendee_count").each(function () {
         $(this).text($(this).text().replace("Teilnehmer", "Person"));
     });
+
+    $(".customization2_attendees_title").text("Persönliche Daten");
+    $(".customization2_attendee_further-data_headline").text("Ticketbuchung");
 }
 
 handler();
