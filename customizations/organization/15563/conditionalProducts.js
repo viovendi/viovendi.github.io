@@ -92,7 +92,7 @@ function disableProd(disable) {
         var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
         if (checkboxName.indexOf(disable) >= 0) {
             //checkbox.prop("disabled", true)
-            checkbox.hide();
+            $(".customization2_attendee_further-data_product:contains(" + disable + ")").hide()
         }
     });
 }
@@ -103,7 +103,7 @@ function enableProd(disable) {
         var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
         if (checkboxName.indexOf(disable) >= 0) {
             //checkbox.prop("disabled", false)
-            checkbox.show();
+            $(".customization2_attendee_further-data_product:contains(" + disable + ")").show()
         }
     });
 }
