@@ -7,9 +7,7 @@ function getWidgetLang() {
   return lang;
 }
 
-if (getWidgetLang() == 'de') {
-  $(".vv-booking-terms").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
-}
+
 
 
 
@@ -60,7 +58,7 @@ async function getInfo() {
 
 
 function init(name) {
-   hideStuff(name);
+   addstuff(name);
 
   setTimeout(function () {
     startCustomizationPage1();
@@ -323,7 +321,10 @@ function radioButtonClicked(radioButton) {
 
 //--- check each ticketcategory, if child, hide some stuff---
 
-function hideStuff(name) {
+function addStuff(name) {
+  if (getWidgetLang() == 'de') {
+  $(".vv-booking-terms").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
+}
   var ticketTitle = $('.customization2_attendee_title').text().trim()
   if (ticketTitle == "Kind" || ticketTitle == "Child") {
     //TODO
