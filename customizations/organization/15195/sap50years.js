@@ -352,7 +352,7 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
       addErrorText();
       
       //obs.disconnect();
-     // return;
+      return;
     }
   
   
