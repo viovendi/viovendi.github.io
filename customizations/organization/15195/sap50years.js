@@ -307,7 +307,7 @@ oberserverError = new MutationObserver((mutations, obs) => {
     else{
     $(".m-box__text").html("<p>Du bist bereits registriert. Bitte gehe auf die <a href='https://50years-wdf.int.sap/registration' target='_blank'>Registrierungsseite</a> klicke auf 'Hier geht es zu deiner Buchung' und benutze deine Buchungsnummer, welche du in der Bestätigungsmail bekommen hast</p>");
     }
-      //obs.disconnect();
+      obs.disconnect();
       return;
     }
   });
