@@ -1,5 +1,6 @@
 console.log("github customization loaded");
 let changedBackToSite1 = false;
+var counter = 0;
 setupObserversPage1()
 
 function getWidgetLang() {
@@ -7,10 +8,11 @@ function getWidgetLang() {
   return lang;
 }
 
-/*if (getWidgetLang() == 'de') {
-  $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
+
+if (getWidgetLang() == 'de') {
+    console.log("de");
+  $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2)").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
 }
-*/
 
 
 async function updateTicket(ticket) {
@@ -60,7 +62,7 @@ async function getInfo() {
 
 
 function init(name) {
-   hideStuff(name);
+   addstuff(name);
 
   setTimeout(function () {
     startCustomizationPage1();
@@ -71,8 +73,8 @@ init('customization2_attendee');
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
+    
     //  console.log("nodeInserted");
-    console.log("main actions");
     while (typeof $('input[type=radio]') == 'undefined') {
       //   console.log('undefined')   
     }
@@ -172,7 +174,8 @@ function resetOtherTicket(ticketBlock) {
     $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(3) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A" target="_blank">hier</a> anmelden</p>');
     $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A" target="_blank">hier</a> anmelden</p>');
   }
-  //jonas code
+  //jonas code 
+  
   console.log("resetting all other then:")
   console.log(ticketBlock.get(0))
   const run = async (tickets) => {
@@ -186,6 +189,7 @@ function resetOtherTicket(ticketBlock) {
   }
 
   run($('.event-category'));
+  
 }
 function addTextToAmountOfTickets() {
   $('.event-category__amount').each(function () {
@@ -227,112 +231,91 @@ function addTextToAmountOfTickets() {
   });
 }
 
-/*var insertionListener = function (event) {
-    if (event.animationName === "nodeInserted") {
-        console.log('bookerNodeInserted')
-        customization()
 
-      // Added this so that this works for every attendee
-        init('customization2_attendee');
-    }
-}
-
-*/
-
-//var chosenDay = 0;
-
-
-
-// OLD Code
-
-/*
-function setRadioGroup(radioGroup) {
-    if (chosenDay == 0) {
-        return;
-    }
-    if (chosenDay == 1) {
-        //    console.log('chosen Day is 1')
-        var buttonToSet = $(radioGroup).find('input[type=radio]').first()
-        var buttonToReset = $(radioGroup).find('input[type=radio]').last()
-    }
-    if (chosenDay == 2) {
-        //    console.log('chosen Day is 2')
-        var buttonToSet = $(radioGroup).find('input[type=radio]').last()
-        var buttonToReset = $(radioGroup).find('input[type=radio]').first()
-    }
-
-
-    //  $(buttonToReset).prop('checked', false);
-    //  $(buttonToReset).get(0).dispatchEvent(new Event('change'));
-    //  console.log($(buttonToSet).get(0));
-    if (typeof $(buttonToSet).get(0) !== 'undefined') {
-        $(buttonToSet).prop('checked', true);
-        $(buttonToSet).get(0).dispatchEvent(new Event('change'));
-        $(buttonToSet).get(0).click();
-        $(buttonToSet).attr('disabled', 'disabled');
-        $(buttonToReset).attr('disabled', 'disabled');
-    } // else  console.log('undefined')
-}
-
-function isFirstRadioButton(radioGroup) {
-    var attendeeField = $(radioGroup).closest('.booking-participant.booking-participant--attendee.customization3_booking-participant_attendee.vv-border-xs.vv-rounded-lg.vv-border-grey-light')[0];
-    var firstAttendeeField = $('.booking-participant.booking-participant--attendee.customization3_booking-participant_attendee.vv-border-xs.vv-rounded-lg.vv-border-grey-light').first()[0];
-    var isFirst = attendeeField == firstAttendeeField;
-    // console.log('isFirst: ' + isFirst)
-    return isFirst;
-}
-
-function changesForAttendeeForm() {
-    $('.customization2_attendee_contact-data_copy-link').hide();
-    //  console.log('hidden copy link');
-
-    var firstRadioQuestion = $('.customization2_attendee_further-data_custom-question.customization2_attendee_further-data_custom-question-1');
-
-    $(firstRadioQuestion).each(function () {
-        disableAndSet($(this));
-    });
-
-    $(firstRadioQuestion).find('.vv-radio__input.customization2_attendee_further-data_custom-question_radio-line_button').click(function () {
-        radioButtonClicked($(this));
-    });
-
-}
-function disableAndSet(radioGroup) {
-    if (!isFirstRadioButton(radioGroup)) {
-
-        setRadioGroup(radioGroup);
-    }
-}
-function radioButtonClicked(radioButton) {
-
-    //  console.log('clicked on radioButton');
-    var parentOfBoth = $(radioButton).closest('.vv-radio-group__control.customization2_attendee_further-data_custom-question_radio-group');
-
-    if ($(radioButton)[0] == $(parentOfBoth).find('input[type=radio]').first()[0]) {
-        chosenDay = 1
-    } else chosenDay = 2
-
-    changesForAttendeeForm();
-}
-
-*/
 
 
 //--- check each ticketcategory, if child, hide some stuff---
 
-function hideStuff(name) {
-  var ticketTitle = $('.customization2_attendee_title').text().trim()
-  if (ticketTitle == "Kind" || ticketTitle == "Child") {
-    //TODO
-    
-  }
+function addstuff(name) {
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_last-name_input').prop('disabled', true);
+
 
   }
 
-function changeMobilenumber() {
+function changeMobileNumber() {
   console.log("changeMobilenumber");
-  document.getElementById("_ngcontent-lej-c178").placeholder = "999999999";
+  $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
 }
+
+function addErrorText() {
+  console.log("errortext");
+  
+}
+
+
+
+oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
+ 
+    
+  
+    const phoneNumber = document.getElementsByClassName('customization2_attendee_further-data_custom-question_phone');
+  
+  
+  
+    if ($(phoneNumber).is(':visible')) {
+      console.log("observerChangeMobilenumber");
+      changeMobileNumber();
+      $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
+      
+      //obs.disconnect();
+      return;
+    }
+  });
+  oberserverPhoneNumber.observe(document, {
+    childList: true,
+    subtree: true
+  });
+
+
+oberserverClick = new MutationObserver((mutations, obs) => {
+  // Valentin Code click 1x
+  
+  const attendeetitle = document.getElementsByClassName('customization2_attendees_title');
+    if ($(attendeetitle).is(':visible')) {
+      console.log("attendeetitle");
+       $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_header.customization3_collapsible-wrapper_header > div.d-none.d-sm-flex.collapsible-wrapper__view-actions.collapsible-wrapper__view-actions--desktop.customization3_collapsible-wrapper_view-actions.customization2_attendee_view-action > div > vv-tooltip > div > vv-button > button").click();
+
+      obs.disconnect();
+      return;
+    }
+  });
+  oberserverClick.observe(document, {
+    childList: true,
+    subtree: true
+  });
+
+oberserverError = new MutationObserver((mutations, obs) => {
+  // Valentin Code click 1x
+  
+  const errorAlreadyRegistered = document.getElementsByClassName('m-box__text');
+  if ($(errorAlreadyRegistered).is(':visible')) {
+      console.log("errorvisible");
+      if (getWidgetLang() == 'en') {
+      $(".m-box__text").html("<p>You are already registered for this event. Please go back to the <a href='https://50years-wdf.int.sap/registration' target='_blank'>registration page</a> and use the booking code you received with your confirmation mail</p>");
+      }
+    else{
+    $(".m-box__text").html("<p>Du bist bereits registriert. Bitte gehe auf die <a href='https://50years-wdf.int.sap/registration' target='_blank'>Registrierungsseite</a> klicke auf 'Hier geht es zu deiner Buchung' und benutze deine Buchungsnummer, welche du in der Bestätigungsmail bekommen hast</p>");
+    }
+      obs.disconnect();
+      return;
+    }
+  });
+  oberserverError.observe(document, {
+    childList: true,
+    subtree: true
+  });
+
 
 
 
