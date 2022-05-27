@@ -246,6 +246,7 @@ function editBookingPortal() {
 };
 
 function changePhoneCountryLabel() {
+    console.log("changePhoneCountryLabel");
     $(".customization2_attendee_further-data_custom-question_phone .iti__selected-flag").click();
     $("li.iti__country:contains(" + country + ")").click();
 };
