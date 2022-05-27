@@ -335,9 +335,31 @@ function changeMobileNumber() {
   $(".customization2_attendee_further-data_custom-question_phone input").attr("placeholder", "1234 56789");
 }
 
-oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
-    const phoneNumber = document.getElementsByClassName('customization2_attendee_further-data_custom-question_phone');
+function addErrorText() {
+  console.log("errortext");
+  $(".p.m-box__text").text("…please go back to the registration page (link) and use the booking code you received with your confirmation");
+}
 
+
+
+oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
+  
+  //Valentin Code - Error message:
+    const errorAlreadyRegistered = document.getElementsByClassName('m-box__text');
+  if ($(errorAlreadyRegistered).is(':visible')) {
+      console.log("errorvisible");
+      addErrorText();
+      $(".p.m-box__text").text("…please go back to the registration page (link) and use the booking code you received with your confirmation");
+      
+      //obs.disconnect();
+     // return;
+    }
+  
+  
+    const phoneNumber = document.getElementsByClassName('customization2_attendee_further-data_custom-question_phone');
+  
+  
+  
     if ($(phoneNumber).is(':visible')) {
       console.log("observerChangeMobilenumber");
       changeMobileNumber();
