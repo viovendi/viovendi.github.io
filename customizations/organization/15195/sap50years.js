@@ -236,8 +236,9 @@ function addTextToAmountOfTickets() {
 //--- check each ticketcategory, if child, hide some stuff---
 
 function addstuff(name) {
-  $('.customization2_attendee_view-action_collapse').click();
   $('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_last-name_input').prop('disabled', true);
+
   console.log("click");
   if (getWidgetLang() == 'de') {
     console.log("de");
