@@ -7,6 +7,16 @@ var dropdownHerr;
 var dropdownFrau;
 var dropdownError;
 var country;
+var veggieMenu;
+var meatMenu;
+var myMealChoice;
+var partnerMealChoice;
+var phone;
+var plantSite;
+var arrivalDate;
+var hotelRoomNeeded;
+var allegries;
+var hotelTransfer;
 
 ticketNumber = "Registrierungsnummer: ";
 dropdownError = "<div class='error-message'> Bitte ausfüllen </div>";
@@ -23,6 +33,16 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownHerr = "Monsieur";
     dropdownFrau = "Madame";
     dropdownError = "<div class='error-message'> Veuillez sélectionner </div>";
+    veggieMenu = "";
+    meatMenu = "";
+    myMealChoice = "";
+    partnerMealChoice = "";
+    phone = "";
+    plantSite = "";
+    arrivalDate = "";
+    hotelRoomNeeded = "";
+    allegries = "";
+    hotelTransfer = "";
 } else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
     console.log("IT");
     country = "Italy";
@@ -33,6 +53,16 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownHerr = "Signore";
     dropdownFrau = "Signora";
     dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
+    veggieMenu = "";
+    meatMenu = "";
+    myMealChoice = "";
+    partnerMealChoice = "";
+    phone = "";
+    plantSite = "";
+    arrivalDate = "";
+    hotelRoomNeeded = "";
+    allegries = "";
+    hotelTransfer = "";
 } else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
     console.log("PL");
     country = "Poland";
@@ -43,6 +73,16 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownHerr = "Pan";
     dropdownFrau = "Pani";
     dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
+    veggieMenu = "";
+    meatMenu = "";
+    myMealChoice = "";
+    partnerMealChoice = "";
+    phone = "";
+    plantSite = "";
+    arrivalDate = "";
+    hotelRoomNeeded = "";
+    allegries = "";
+    hotelTransfer = "";
 } else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
     console.log("CZ");
     country = "Czech";
@@ -53,6 +93,16 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownHerr = "Pan";
     dropdownFrau = "Paní";
     dropdownError = "<div class='error-message'> Prosím zvolte </div>";
+    veggieMenu = "";
+    meatMenu = "";
+    myMealChoice = "";
+    partnerMealChoice = "";
+    phone = "";
+    plantSite = "";
+    arrivalDate = "";
+    hotelRoomNeeded = "";
+    allegries = "";
+    hotelTransfer = "";
 } else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
     console.log("EN");
     country = "United States";
@@ -63,12 +113,22 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownHerr = "Mr";
     dropdownFrau = "Ms/Mrs";
     dropdownError = "<div class='error-message'> Please select </div>";
+    veggieMenu = "";
+    meatMenu = "";
+    myMealChoice = "";
+    partnerMealChoice = "";
+    phone = "";
+    plantSite = "";
+    arrivalDate = "";
+    hotelRoomNeeded = "";
+    allegries = "";
+    hotelTransfer = "";
 } else {
     console.log("ERROR: Unknown widget id")
 }
 console.log("translating")
 
-checkboxSelected=false;
+checkboxSelected = false;
 console.log(checkboxSelected)
 
 function findDropDownByLabel(label) {
@@ -117,6 +177,44 @@ function translatePleaseSelect() {
 
 };
 
+function editBookingPortal() {
+
+    //Questions
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Telefon', phone);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Werk / Standort', plantSite);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich benötige ein Hotelzimmer', hotelRoomNeeded);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich möchte zu folgendem Datum anreisen', arrivalDate);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich wähle zum intergalaktischen Dinner:', myMealChoice);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Meine Begleitung wählt zum intergalaktischen Dinner', partnerMealChoice);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Unverträglichkeiten', allegries);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich benötige einen Hoteltransfer', hotelTransfer);
+
+
+    //Answers
+    changeTextTo('.customization2_attendee_further-data_custom-question_value', 'Fleischmenü', meatMenu);
+    changeTextTo('.customization2_attendee_further-data_custom-question_value', 'Vegetarisches Menü', veggieMenu);
+    changeTextTo('.customization2_attendee_further-data_custom-question_value', 'Ja', dropdownYes);
+    changeTextTo('.customization2_attendee_further-data_custom-question_value', 'Nein', dropdownNo);
+
+    // Salutation
+    changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mr.', dropdownHerr);
+    changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mrs.', dropdownFrau);
+    
+    
+    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
+
+    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
+        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
+        $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
+    };
+};
+
+function changePhoneCountryLabel() {
+    console.log("changePhoneCountryLabel");
+    $(".customization2_attendee_further-data_custom-question_phone .iti__selected-flag").click();
+    $("li.iti__country:contains(" + country + ")").click();
+};
+
 function disableWhenEmpty(field) {
     var inputOfField = $(field).find('.vv-selection-input__value.m-ellipsis').get(0);
 
@@ -128,7 +226,7 @@ function disableWhenEmpty(field) {
 
         $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
 
-            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen"|| $(this).text().trim() == pleaseSelect) {
+            if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen" || $(this).text().trim() == pleaseSelect) {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
@@ -185,28 +283,28 @@ function disableWhenEmpty(field) {
 function customTerms() {
     if (!$('.custom_terms_checkbox').length) {
         console.log("Terms added");
-        console.log("Checkbox selected: "+checkboxSelected)
+        console.log("Checkbox selected: " + checkboxSelected)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
-        if(checkboxSelected){
+        if (checkboxSelected) {
             console.log($('div.custom_terms_checkbox > vv-checkbox > label'))
             $('div.custom_terms_checkbox > vv-checkbox > label').click();
-        }else{
+        } else {
             $('.customization-button-next').prop("disabled", true);
         }
-        $('.customization2_attendee_edit-action_save').on('click',function(e){
-                if(!checkboxSelected){
+        $('.customization2_attendee_edit-action_save').on('click', function (e) {
+            if (!checkboxSelected) {
+                $('.customization-button-next').prop("disabled", true);
+            }
+        });
+        $('.custom_terms_checkbox').on('click', function (e) {
+            if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
+                checkboxSelected = !checkboxSelected;
+                if (!checkboxSelected) {
                     $('.customization-button-next').prop("disabled", true);
-                }
-            });
-        $('.custom_terms_checkbox').on('click',function(e){
-            if(e.target.name!=undefined&&e.target.name=='isTermsAccepted'){
-                checkboxSelected=!checkboxSelected;
-                if(!checkboxSelected){
-                    $('.customization-button-next').prop("disabled", true);
-                }else{
+                } else {
                     $('.customization-button-next').prop("disabled", false);
                 }
                 console.log(checkboxSelected);
@@ -236,20 +334,7 @@ function addWeitereAngabenTeilnehmerHeader() {
     }
 };
 
-function editBookingPortal() {
-    $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
 
-    if ($('.customization3_edit-booking_main_booking-id_label').text().indexOf("Registrierung") == -1) {
-        var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
-        $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
-    };
-};
-
-function changePhoneCountryLabel() {
-    console.log("changePhoneCountryLabel");
-    $(".customization2_attendee_further-data_custom-question_phone .iti__selected-flag").click();
-    $("li.iti__country:contains(" + country + ")").click();
-};
 
 const observer = new MutationObserver((mutations, obs) => {
     const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
@@ -266,6 +351,8 @@ observer.observe(document, {
     childList: true,
     subtree: true
 });
+
+
 
 function handler() {
 
@@ -298,6 +385,21 @@ function handler() {
         console.log('style added');
     }
 
+
+    // Translation
+    editBookingPortal();
+    translatePleaseSelect();
+    changePhoneCountryLabel();
+
+
+
+    // Conditional Questions
+    addHotelDescription();
+    customTerms();
+    addWeitereAngabenTeilnehmerHeader();
+
+
+    
     var field1 = findDropDownByLabel('Ich benötige ein Hotelzimmer (optional)');
     $(field1).hide()
 
@@ -305,7 +407,6 @@ function handler() {
     $(field2).hide()
 
     var dropdown1 = findDropDownByLabel('Werk / Standort');
-
 
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'PM3') {
@@ -331,12 +432,8 @@ function handler() {
 }
 
 handler();
-addHotelDescription();
-customTerms();
-addWeitereAngabenTeilnehmerHeader();
-editBookingPortal();
-translatePleaseSelect();
-changePhoneCountryLabel();
+
+
 
 const observerThisPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
@@ -374,6 +471,8 @@ observerOtherPage.observe(document, {
     childList: true,
     subtree: true
 });
+
+
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
