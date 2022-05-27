@@ -352,7 +352,7 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
       $(".m-box__text").html("<p>You are already registered for this event. Please go back to the <a href='https://50years-wdf.int.sap/registration' target='_blank'>registration page</a> and use the booking code you received with your confirmation mail</p>");
       }
     else{
-    $(".m-box__text").html("<p>Du bist bereits registriert. Bitte gehe auf die <a href='https://50years-wdf.int.sap/registration' target='_blank'>Registrierungsseite</a> und benutze deine Buchungsnummer, welche du in der Bestätigungsmail bekommen hast</p>");
+    $(".m-box__text").html("<p>Du bist bereits registriert. Bitte gehe auf die <a href='https://50years-wdf.int.sap/registration' target='_blank'>Registrierungsseite</a> klicke auf 'Hier geht es zu deiner Buchung' und benutze deine Buchungsnummer, welche du in der Bestätigungsmail bekommen hast</p>");
     }
       obs.disconnect();
       return;
