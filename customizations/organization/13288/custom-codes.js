@@ -64,7 +64,8 @@
       }
       if (event.animationName === "nodeInserted2") {
        $("h4:contains('Weitere Angaben zum Teilnehmer')").hide();
-
+       const field = $$('.customization2_attendee_further-data_custom-question').findField('QR-Code Nummer');
+       console.log(field);
        const qrCode = $( "p:contains('QR-Code Nummer')" ).closest('.customization2_attendee_further-data_custom-question');
 
        qrCode.hide()
