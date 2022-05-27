@@ -240,20 +240,6 @@ function addstuff(name) {
   $('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
   $('.customization2_attendee-1 .customization2_attendee_contact-data_last-name_input').prop('disabled', true);
 
-  console.log("click");
-if (counter == 0){
-  console.log("counter is 0");
-   $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_header.customization3_collapsible-wrapper_header > div.d-none.d-sm-flex.collapsible-wrapper__view-actions.collapsible-wrapper__view-actions--desktop.customization3_collapsible-wrapper_view-actions.customization2_attendee_view-action > div > vv-tooltip > div > vv-button > button").click();
-counter++;
-}
-  
- // $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2)").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
-
-  var ticketTitle = $('.customization2_attendee_title').text().trim()
-  if (ticketTitle == "Kind" || ticketTitle == "Child") {
-    //TODO
-    
-  }
 
   }
 
@@ -270,6 +256,9 @@ function addErrorText() {
 
 
 oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
+  // Valentin Code click 1x
+  
+  
   
   //Valentin Code - Error message:
     const errorAlreadyRegistered = document.getElementsByClassName('m-box__text');
@@ -284,7 +273,14 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
       obs.disconnect();
       return;
     }
-  
+  const attendeetitle = document.getElementsByClassName('customization2_attendees_title');
+    if ($(attendeetitle).is(':visible')) {
+      console.log("attendeetitle");
+       $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_header.customization3_collapsible-wrapper_header > div.d-none.d-sm-flex.collapsible-wrapper__view-actions.collapsible-wrapper__view-actions--desktop.customization3_collapsible-wrapper_view-actions.customization2_attendee_view-action > div > vv-tooltip > div > vv-button > button").click();
+
+      obs.disconnect();
+      return;
+    }
   
     const phoneNumber = document.getElementsByClassName('customization2_attendee_further-data_custom-question_phone');
   
