@@ -237,6 +237,7 @@ function addTextToAmountOfTickets() {
 
 function addstuff(name) {
   $('.customization2_attendee_view-action_collapse').click();
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
   console.log("click");
   if (getWidgetLang() == 'de') {
     console.log("de");
