@@ -440,9 +440,10 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
 
     if ($(page2).is(':visible')) {
         console.log('page 2 visible')
-        editBookingPortal();
-        changePhoneCountryLabel();
-        customTerms();
+        //editBookingPortal();
+        //changePhoneCountryLabel();
+        //customTerms();
+        handler();
         observerOtherPage.observe(document, {
             childList: true,
             subtree: true
