@@ -7,10 +7,10 @@ function getWidgetLang() {
   return lang;
 }
 
-/*if (getWidgetLang() == 'de') {
-  $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > vv-booking-editing-prompt > div > vv-button > button").text("Hier geht es zu deiner Buchung");
+if (getWidgetLang() == 'de') {
+  $(".vv-booking-terms").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
 }
-*/
+
 
 
 async function updateTicket(ticket) {
