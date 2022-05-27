@@ -236,6 +236,8 @@ function addTextToAmountOfTickets() {
 //--- check each ticketcategory, if child, hide some stuff---
 
 function addstuff(name) {
+  $('.customization2_attendee_view-action_collapse').click();
+  console.log("click");
   if (getWidgetLang() == 'de') {
     console.log("de");
  // $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2)").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
