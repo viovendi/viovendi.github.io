@@ -348,8 +348,7 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
     const errorAlreadyRegistered = document.getElementsByClassName('m-box__text');
   if ($(errorAlreadyRegistered).is(':visible')) {
       console.log("errorvisible");
-      $(".m-box__text").text("…1please go back to the registration page (link) and use the booking code you received with your confirmation");
-      $(".m-box__text").html("<p>…2please go back to the registration page (link) and use the booking code you received with your confirmation</p>");
+      $(".m-box__text").html("<p>You are already registered for this event. Please go back to the <a href='https://50years-wdf.int.sap/registration' target='_blank'>registration page</a> and use the booking code you received with your confirmation mail</p>");
       
       obs.disconnect();
       return;
