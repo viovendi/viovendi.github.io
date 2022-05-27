@@ -321,7 +321,7 @@ function radioButtonClicked(radioButton) {
 
 //--- check each ticketcategory, if child, hide some stuff---
 
-function addStuff(name) {
+function addstuff(name) {
   if (getWidgetLang() == 'de') {
     console.log("de");
   $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2)").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
