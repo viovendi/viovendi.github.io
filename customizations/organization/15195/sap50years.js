@@ -242,6 +242,8 @@ function addstuff(name) {
   console.log("click");
   if (getWidgetLang() == 'de') {
     console.log("de");
+    $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_header.customization3_collapsible-wrapper_header > div.d-none.d-sm-flex.collapsible-wrapper__view-actions.collapsible-wrapper__view-actions--desktop.customization3_collapsible-wrapper_view-actions.customization2_attendee_view-action > div > vv-tooltip > div > vv-button > button").click();
+    
  // $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2)").after("Nach Abschluss der Buchung kannst du keine weiteren Personen mehr zu deiner Buchung hinzufügen. Falls du später weitere Personen hinzufügen oder stornieren möchtest, sende bitte eine Email an 50years-wdf@sap.com");
 }
   var ticketTitle = $('.customization2_attendee_title').text().trim()
