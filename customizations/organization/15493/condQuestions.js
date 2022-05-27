@@ -336,6 +336,7 @@ customTerms();
 addWeitereAngabenTeilnehmerHeader();
 editBookingPortal();
 translatePleaseSelect();
+changePhoneCountryLabel();
 
 const observerThisPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
