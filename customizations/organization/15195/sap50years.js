@@ -337,7 +337,8 @@ function changeMobileNumber() {
 
 function addErrorText() {
   console.log("errortext");
-  $(".p.m-box__text").text("…please go back to the registration page (link) and use the booking code you received with your confirmation");
+  $(".m-box__text").text("…1please go back to the registration page (link) and use the booking code you received with your confirmation");
+  $(".m-box__text").html("<p>…2please go back to the registration page (link) and use the booking code you received with your confirmation</p>");
 }
 
 
@@ -349,7 +350,6 @@ oberserverPhoneNumber = new MutationObserver((mutations, obs) => {
   if ($(errorAlreadyRegistered).is(':visible')) {
       console.log("errorvisible");
       addErrorText();
-      $(".p.m-box__text").text("…please go back to the registration page (link) and use the booking code you received with your confirmation");
       
       //obs.disconnect();
      // return;
