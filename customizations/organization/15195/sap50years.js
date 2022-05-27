@@ -174,7 +174,7 @@ function resetOtherTicket(ticketBlock) {
     $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(6) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Bitte beachtet, dass lediglich eigene Kinder zur Veranstaltung eingeladen sind. Die Zutrittsbändchen werden personalisiert. Die Personalien werden stichprobenhaft kontrolliert. Selbstverständlich dürft Ihr alle Eure Kinder mitbringen. Solltet Ihr mehr als 3 haben könnt Ihr diese <a href="mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A" target="_blank">hier</a> anmelden</p>');
   }
   //jonas code Ausgeklmmer TODO wieder einklammern
-  /*
+  
   console.log("resetting all other then:")
   console.log(ticketBlock.get(0))
   const run = async (tickets) => {
@@ -188,7 +188,7 @@ function resetOtherTicket(ticketBlock) {
   }
 
   run($('.event-category'));
-  */
+  
 }
 function addTextToAmountOfTickets() {
   $('.event-category__amount').each(function () {
