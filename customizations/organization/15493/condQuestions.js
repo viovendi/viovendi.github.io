@@ -6,6 +6,7 @@ var dropdownNo;
 var dropdownHerr;
 var dropdownFrau;
 var dropdownError;
+var country;
 
 ticketNumber = "Registrierungsnummer: ";
 dropdownError = "<div class='error-message'> Bitte ausfüllen </div>";
@@ -14,6 +15,7 @@ const url = window.location.href;
 
 if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) {
     console.log("FR");
+    country = "France";
     ticketNumber = "Numéro d'enregistrement: ";
     pleaseSelect = "Veuillez sélectionner";
     dropdownYes = "Oui";
@@ -23,6 +25,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownError = "<div class='error-message'> Veuillez sélectionner </div>";
 } else if (url.includes('booking-15493-33317') || url.includes('booking-15493-33312')) {
     console.log("IT");
+    country = "Italy";
     ticketNumber = "Numero di registrazione: ";
     pleaseSelect = "Si prega di selezionare";
     dropdownYes = "Sì";
@@ -32,6 +35,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
 } else if (url.includes('booking-15493-33316') || url.includes('booking-15493-33311')) {
     console.log("PL");
+    country = "Poland";
     ticketNumber = "Numer zgłoszeniowy: ";
     pleaseSelect = "Prosimy wybrać";
     dropdownYes = "";
@@ -41,6 +45,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
 } else if (url.includes('booking-15493-33319') || url.includes('booking-15493-33314')) {
     console.log("CZ");
+    country = "Czech";
     ticketNumber = "Registrační číslo: ";
     pleaseSelect = "Prosím zvolte";
     dropdownYes = "Tak";
@@ -50,6 +55,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownError = "<div class='error-message'> Prosím zvolte </div>";
 } else if (url.includes('booking-15493-33315') || url.includes('booking-15493-33310')) {
     console.log("EN");
+    country = "United States";
     ticketNumber = "Registration number: ";
     pleaseSelect = "Please select";
     dropdownYes = "Ano";
@@ -237,6 +243,11 @@ function editBookingPortal() {
         var ticketID = $('.customization3_edit-booking_main_booking-id_label strong').text();
         $('.customization3_edit-booking_main_booking-id_label').text(ticketNumber + ticketID);
     };
+};
+
+function changePhoneCountryLabel() {
+    $(".customization2_attendee_further-data_custom-question_phone .iti__selected-flag").click();
+    $("li.iti__country:contains(" + country + ")").click();
 };
 
 const observer = new MutationObserver((mutations, obs) => {
