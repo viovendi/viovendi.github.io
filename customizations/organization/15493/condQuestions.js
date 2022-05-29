@@ -504,6 +504,13 @@ var insertionListener = function (event) {
         editBookingPortal();
         translatePleaseSelect();
     }
+    
+    if (event.animationName === "nodeInserted2") {
+        console.log("Node has been inserted: ", event.target);
+        //Inser your code here.
+        editBookingPortal();
+
+    }
 }
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
