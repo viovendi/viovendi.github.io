@@ -177,7 +177,7 @@ function translatePleaseSelect() {
 
 };
 
-function editBookingPortal() {
+function editBookingPortalAttendee() {
     
     console.log("editBookingPortal");
 
@@ -202,6 +202,11 @@ function editBookingPortal() {
     changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mr.', dropdownHerr);
     changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mrs.', dropdownFrau);
     
+};
+
+function editBookingPortal() {
+    
+    console.log("editBookingPortal");
     
     $('.booking-status.booking-status--paid.customization3_edit-booking_main_booking-status').text('Anmeldung abgeschlossen');
 
@@ -390,6 +395,7 @@ function handler() {
 
     // Translation
     editBookingPortal();
+    editBookingPortalAttendee();
     translatePleaseSelect();
     changePhoneCountryLabel();
 
@@ -503,14 +509,13 @@ var insertionListener = function (event) {
         addHotelDescription();
         customTerms();
         addWeitereAngabenTeilnehmerHeader();
-        editBookingPortal();
         translatePleaseSelect();
     }
     
     if (event.animationName === "nodeInserted2") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
-        editBookingPortal();
+        editBookingPortalAttendee();
 
     }
 }
