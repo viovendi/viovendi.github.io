@@ -453,6 +453,24 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
     }
 });
 
+const observerThisPage = new MutationObserver((mutations, obs) => {
+    const attendee = document.getElementsByClassName('customization2_attendees');
+
+    if ($(attendee).is(':visible')) {
+        console.log('attendee visible')
+        editBookingPortal();
+        //changePhoneCountryLabel();
+        //customTerms();
+        //handler();
+        observerOtherPage.observe(document, {
+            childList: true,
+            subtree: true
+        });
+        obs.disconnect();
+        return;
+    }
+});
+
 const observerOtherPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
 
