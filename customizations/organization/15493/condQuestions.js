@@ -341,26 +341,6 @@ function addWeitereAngabenTeilnehmerHeader() {
     }
 };
 
-
-
-const observer = new MutationObserver((mutations, obs) => {
-    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
-    if ($(page4).is(':visible')) {
-        console.log("page 4 visible");
-        var ticketID = $('.notice__booking-id span').text()
-        $('.notice__booking-id').text(ticketNumber + ticketID);
-        obs.disconnect();
-        return;
-    }
-});
-
-observer.observe(document, {
-    childList: true,
-    subtree: true
-});
-
-
-
 function handler() {
 
     var styles = `
@@ -395,7 +375,6 @@ function handler() {
 
     // Translation
     editBookingPortal();
-    editBookingPortalAttendee();
     translatePleaseSelect();
     changePhoneCountryLabel();
 
@@ -442,6 +421,7 @@ function handler() {
 handler();
 
 
+// Trigger & Observer
 
 const observerThisPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
@@ -453,24 +433,6 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
         //customTerms();
         handler();
         observerOtherPage.observe(document, {
-            childList: true,
-            subtree: true
-        });
-        obs.disconnect();
-        return;
-    }
-});
-
-const bookingPortalAttendee = new MutationObserver((mutations, obs) => {
-    const attendee = document.getElementsByClassName('customization3_booking-participant_attendee');
-
-    if ($(attendee).is(':visible')) {
-        console.log('attendee visible')
-        editBookingPortal();
-        //changePhoneCountryLabel();
-        //customTerms();
-        //handler();
-        bookingPortalAttendee.observe(document, {
             childList: true,
             subtree: true
         });
@@ -494,22 +456,32 @@ const observerOtherPage = new MutationObserver((mutations, obs) => {
     }
 });
 
-observerOtherPage.observe(document, {
+const observer = new MutationObserver((mutations, obs) => {
+    const page4 = document.getElementsByClassName('customization-booking-area-wrapper-page4');
+    if ($(page4).is(':visible')) {
+        console.log("page 4 visible");
+        var ticketID = $('.notice__booking-id span').text()
+        $('.notice__booking-id').text(ticketNumber + ticketID);
+        obs.disconnect();
+        return;
+    }
+});
+
+observer.observe(document, {
     childList: true,
     subtree: true
 });
 
-
+observerOtherPage.observe(document, {
+    childList: true,
+    subtree: true
+});
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         handler();
-        addHotelDescription();
-        customTerms();
-        addWeitereAngabenTeilnehmerHeader();
-        translatePleaseSelect();
     }
     
     if (event.animationName === "nodeInserted2") {
