@@ -453,7 +453,7 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
     }
 });
 
-const observerThisPage = new MutationObserver((mutations, obs) => {
+const bookingPortalAttendee = new MutationObserver((mutations, obs) => {
     const attendee = document.getElementsByClassName('customization2_attendees');
 
     if ($(attendee).is(':visible')) {
@@ -462,7 +462,7 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
         //changePhoneCountryLabel();
         //customTerms();
         //handler();
-        observerOtherPage.observe(document, {
+        bookingPortalAttendee.observe(document, {
             childList: true,
             subtree: true
         });
