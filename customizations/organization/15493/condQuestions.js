@@ -178,6 +178,8 @@ function translatePleaseSelect() {
 };
 
 function editBookingPortal() {
+    
+    console.log("editBookingPortal");
 
     //Questions
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Telefon', phone);
@@ -454,7 +456,7 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
 });
 
 const bookingPortalAttendee = new MutationObserver((mutations, obs) => {
-    const attendee = document.getElementsByClassName('customization2_attendees');
+    const attendee = document.getElementsByClassName('customization3_booking-participant_attendee');
 
     if ($(attendee).is(':visible')) {
         console.log('attendee visible')
