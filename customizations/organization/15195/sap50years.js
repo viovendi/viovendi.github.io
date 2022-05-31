@@ -47,7 +47,7 @@ async function getTicketAmount(eventId) {
 
 function sendEmail() 
 {
-    window.open('mailto:xyz@yourapplicationdomain.com', '_blank');
+    window.open('mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A', '_blank');
     //window.open = "mailto:xyz@yourapplicationdomain.com";
 }
 
@@ -60,7 +60,7 @@ async function getInfo() {
   );
   }
   else{
-  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div>Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div><div><button class="vv-button vv-button-secondary vv-button-secondary-red vv-text__size--lg" onclick="sendEmail();" type="button">Einzelne Personen Stornieren</button></div>'
+  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;>Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div><div><button class="vv-button vv-button-secondary vv-button-secondary-red vv-text__size--lg" onclick="sendEmail();" type="button">Einzelne Personen Stornieren</button></div>'
   );
   }
 
