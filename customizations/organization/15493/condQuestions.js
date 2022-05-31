@@ -179,7 +179,7 @@ function translatePleaseSelect() {
 
 function editBookingPortalAttendee() {
     
-    console.log("editBookingPortal");
+    console.log("editBookingPortalAttendee");
 
     //Questions
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Telefon', phone);
@@ -418,10 +418,13 @@ function handler() {
 
 }
 
-handler();
-
 
 // Trigger & Observer
+
+
+handler();
+editBookingPortalAttendee();
+
 
 const observerThisPage = new MutationObserver((mutations, obs) => {
     const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
