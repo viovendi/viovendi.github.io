@@ -47,7 +47,8 @@ async function getTicketAmount(eventId) {
 
 function sendEmail() 
 {
-    window.location = "mailto:xyz@yourapplicationdomain.com";
+    window.open('mailto:xyz@yourapplicationdomain.com', '_blank');
+    //window.open = "mailto:xyz@yourapplicationdomain.com";
 }
 
 async function getInfo() {
