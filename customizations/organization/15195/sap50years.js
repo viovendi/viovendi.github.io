@@ -49,8 +49,14 @@ async function getInfo() {
   const amtountArray = await getTicketAmount(eventId);
   console.log(amtountArray);
   //TODO
-  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Sonntag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div>'
+  if (getWidgetLang() == 'en') {
+  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">available Tickets on Saturday:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div></div>'
   );
+  }
+  else{
+  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div>Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div>'
+  );
+  }
 
 }
 
