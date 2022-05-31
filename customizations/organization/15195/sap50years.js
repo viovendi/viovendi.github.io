@@ -54,7 +54,7 @@ async function getInfo() {
   );
   }
   else{
-  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div>Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div>'
+  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div>Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div><div><button class="vv-button vv-button-secondary vv-button-secondary-red vv-text__size--lg" onclick="location.href='+'"mailto:xyz@abc.com"'+';" type="button">Einzelne Personen Stornieren</button></div>'
   );
   }
 
