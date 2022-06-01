@@ -30,8 +30,8 @@
 .customization2_attendee_edit-action_save,
 .customization2_attendee_edit-action_cancel,
 .customization-button-previous,
-vv-questions .customization2_attendee_further-data_custom-question_label,
-vv-questions .customization2_attendee_further-data_custom-question_label *,
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question_label,
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question_label *,
 .customization2_booking-terms_custom-term,
 .customization2_booking-terms_text,
 .weitereAngabenTeilnehmer p,
@@ -152,7 +152,7 @@ vv-questions .customization2_attendee_further-data_custom-question_label *,
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Téléphone (en option)";
     font-size: 14px;
 }
@@ -172,42 +172,42 @@ vv-questions .customization2_attendee_further-data_custom-question-1 .customizat
     font-size: 1rem !important;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Usine/site";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "Je souhaite arriver à la date suivante";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
     content: "J'ai besoin d'une chambre d'hôtel";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "Pour le dîner intergalactique, je choisis:";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "Pour le dîner intergalactique, mon/ma partenaire choisit:";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Menu à base de viande";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Menu végétarien";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
     content: "Intolérances (en option)";
     font-size: 14px;
 }
@@ -233,22 +233,22 @@ vv-questions .customization2_attendee_further-data_custom-question-6 .customizat
 }
 
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Pour le dîner intergalactique, mon/ma partenaire choisit :";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Menu à base de viande";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Menu végétarien";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Intolérances (en option)";
     font-size: 14px;
 }

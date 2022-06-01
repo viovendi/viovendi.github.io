@@ -30,8 +30,8 @@
 .customization2_attendee_edit-action_save,
 .customization2_attendee_edit-action_cancel,
 .customization-button-previous,
-vv-questions .customization2_attendee_further-data_custom-question_label,
-vv-questions .customization2_attendee_further-data_custom-question_label *,
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question_label,
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question_label *,
 .customization2_booking-terms_custom-term,
 .customization2_booking-terms_text,
 .weitereAngabenTeilnehmer p,
@@ -152,7 +152,7 @@ vv-questions .customization2_attendee_further-data_custom-question_label *,
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Telefon (volitelně)";
     font-size: 14px;
 }
@@ -172,42 +172,42 @@ vv-questions .customization2_attendee_further-data_custom-question-1 .customizat
     font-size: 1rem !important;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Závod/Pobočka";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "Rád bych přijel k následujícímu datu";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
     content: "Potřebuji hotelový pokoj";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "Volím intergalaktickou večeři:";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "Můj doprovod vybírá pro intergalaktickou večeři";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Masové menu";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Vegetariánské menu";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
     content: "Intolerance (volitelně)";
     font-size: 14px;
 }
@@ -232,22 +232,22 @@ vv-questions .customization2_attendee_further-data_custom-question-6 .customizat
     font-size: 16px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Můj doprovod vybírá pro intergalaktickou večeři";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Masové menu";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Vegetariánské menu";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Intolerance (volitelně)";
     font-size: 14px;
 }
