@@ -187,6 +187,7 @@ function editBookingPortalAttendee() {
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich benötige ein Hotelzimmer', hotelRoomNeeded);
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich möchte zu folgendem Datum anreisen', arrivalDate);
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich wähle zum intergalaktischen Dinner:', myMealChoice);
+    changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich wähle zum intergalaktischen Dinner', myMealChoice);
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Meine Begleitung wählt zum intergalaktischen Dinner', partnerMealChoice);
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Unverträglichkeiten', allegries);
     changeTextTo('.customization2_attendee_further-data_custom-question_label', 'Ich benötige einen Hoteltransfer', hotelTransfer);
