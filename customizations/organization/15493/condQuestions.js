@@ -377,6 +377,8 @@ function handler() {
     editBookingPortal();
     translatePleaseSelect();
     changePhoneCountryLabel();
+    editBookingPortalAttendee();
+    
 
 
 
