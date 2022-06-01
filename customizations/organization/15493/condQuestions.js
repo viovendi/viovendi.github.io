@@ -58,7 +58,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     myMealChoice = "Per la cena intergalattica scelgo:";
     partnerMealChoice = "Il mio accompagnatore per la cena intergalattica sceglie";
     phone = "Telefono (opzionale)";
-    plantSite = "Stabilimento/sito";
+    plantSite = "Stabilimento/Sito";
     arrivalDate = "Voglio arrivare il seguente giorno";
     hotelRoomNeeded = "Ho bisogno di una camera d'albergo";
     allegries = "Intolleranze (optional)";
