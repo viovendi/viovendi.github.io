@@ -377,7 +377,6 @@ function handler() {
     editBookingPortal();
     translatePleaseSelect();
     changePhoneCountryLabel();
-    editBookingPortalAttendee();
     
 
 
@@ -490,6 +489,13 @@ var insertionListener = function (event) {
     }
     
     if (event.animationName === "nodeInserted2") {
+        console.log("Node has been inserted: ", event.target);
+        //Inser your code here.
+        editBookingPortalAttendee();
+
+    }
+    
+     if (event.animationName === "nodeInserted3") {
         console.log("Node has been inserted: ", event.target);
         //Inser your code here.
         editBookingPortalAttendee();
