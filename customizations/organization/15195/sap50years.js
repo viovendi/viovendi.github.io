@@ -45,7 +45,12 @@ async function getTicketAmount(eventId) {
   return amount;
 }
 
-function sendEmail() 
+function sendEmailChild() 
+{
+    window.open('mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A', '_blank');
+
+}
+function storno() 
 {
     window.open('mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A', '_blank');
 
@@ -60,7 +65,7 @@ async function getInfo() {
   );
   }
   else{
-  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div><div><button class="vv-button vv-button-secondary vv-button-secondary-red vv-text__size--lg" style="margin:24px;"onclick="sendEmail();" type="button">Einzelne Personen Stornieren</button></div>'
+  var element = $('.customization3_edit-booking_header').after('<div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">verfügbare Tickets Samstag:' + amtountArray[0] + " --- verfügbare Tickets Sonntag: " + amtountArray[1] + '</div><div class= "addedHeading" style="font-size:14px;padding: 20px;font-family: inherit;color: #343a3f;">Bitte beachte, dass du an dieser Stelle keine Personen hinzufügen oder stornieren kannst. Schreibe hierfür bitte eine E-Mail an 50years-wdf@sap.com</div><div><button class="vv-button vv-button-secondary vv-button-secondary-red vv-text__size--lg" style="margin:24px;"onclick="storno();" type="button">Einzelne Personen stornieren</button></div>'
   );
   }
 
@@ -162,8 +167,8 @@ function resetOtherTicket(ticketBlock) {
 
   if (getWidgetLang() == 'en') {
     //plusone
-   // $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(2) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A" target="_blank">email</a>.</p>');
-   // $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(5) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>Please note that only your own children are invited and all tickets are personalized. If you have more than 3 children that you would like to register, please send us an <a href="mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A" target="_blank">email</a>.</p>');
+    $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(2) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>This event is open to all Walldorf and Rot employees, with their partners and children. If your partner is an SAP employee at the location Walldorf/St.Leon-Rot/Karlsruhe, we kindly ask you to register only one person per couple/ family.</p>');
+    $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(5) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>This event is open to all Walldorf and Rot employees, with their partners and children. If your partner is an SAP employee at the location Walldorf/St.Leon-Rot/Karlsruhe, we kindly ask you to register only one person per couple/ family.</p>');
 
     
     
