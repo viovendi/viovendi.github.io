@@ -52,7 +52,7 @@ function sendEmailChild()
 }
 function storno() 
 {
-    window.open('mailto:50years-wdf@sap.com?subject=Register%20additional%20children&body=Please%20note%20that%20only%20your%20own%20children%20are%20invited%20and%20all%20tickets%20are%20personalized.%0D%0A%0D%0AWe%20need%20the%20following%20Contact%20Details.%0D%0A%0D%0AFirst%20name%3A%0D%0ALast%20name%3A%0D%0AAge%20%5B0-6%5D%5B7-15%5D%5B16-17%5D%5B%C3%9C18%5D%3A%0D%0AEmergency%20contact%20number%20(optional)%3A', '_blank');
+    window.open('mailto:50years-wdf@sap.com?body=Hi%20Event-Team%2C%20Please%20delete%20the%20following%20attendee%20from%20my%20registration%3A%20First%20name%3ALast%20name%3A%20Thanks!', '_blank');
 
 }
 
