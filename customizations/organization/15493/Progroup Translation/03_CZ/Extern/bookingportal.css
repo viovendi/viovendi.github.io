@@ -48,8 +48,15 @@
 	font-size:14px;
 }
 
-.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
+.customization3_edit-booking_header_days-to-go:before {
     content:"JEŠTĚ";
+    font-size: 14px;
+    padding-right: 7px
+    
+}
+
+.customization3_edit-booking_header_days-to-go vv-text:nth-of-type(1):after{
+    content:"DNŮ";
     text-indent: 0;
 	line-height: normal;
 	font-size:14px;
