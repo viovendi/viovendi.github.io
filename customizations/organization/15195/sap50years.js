@@ -164,7 +164,7 @@ function addListenerToTickets() {
   });
 }
 function resetOtherTicket(ticketBlock) {
-
+// change ticketcategorie description
   if (getWidgetLang() == 'en') {
     //plusone
     $("#customization-booking-area-wrapper-page1 > vv-ticket-selection > div > div > div > form > ul > li:nth-child(2) > vv-ticket > div > div:nth-child(1) > div.col-xs-8.col-8 > div > p > vv-category-description > span").html('<p>This event is open to all Walldorf and Rot employees, with their partners and children. If your partner is an SAP employee at the location Walldorf/St.Leon-Rot/Karlsruhe, we kindly ask you to register only one person per couple/ family.</p>');
