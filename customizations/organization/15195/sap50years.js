@@ -308,7 +308,7 @@ oberserverClick = new MutationObserver((mutations, obs) => {
     childList: true,
     subtree: true
   });
-
+/*
 oberserverError = new MutationObserver((mutations, obs) => {
   // Valentin Code click 1x
   
@@ -330,6 +330,6 @@ oberserverError = new MutationObserver((mutations, obs) => {
     subtree: true
   });
 
-
+*/
 
 
