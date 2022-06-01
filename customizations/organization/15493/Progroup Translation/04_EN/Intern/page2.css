@@ -30,8 +30,8 @@
 .customization2_attendee_edit-action_save,
 .customization2_attendee_edit-action_cancel,
 .customization-button-previous,
-.customization2_attendee_further-data_custom-question_label,
-.customization2_attendee_further-data_custom-question_label *,
+vv-questions .customization2_attendee_further-data_custom-question_label,
+vv-questions .customization2_attendee_further-data_custom-question_label *,
 .customization2_booking-terms_custom-term,
 .customization2_booking-terms_text,
 .weitereAngabenTeilnehmer p,
@@ -152,7 +152,7 @@
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Phone (optional)";
     font-size: 14px;
 }
@@ -172,42 +172,42 @@
     font-size: 1rem !important;
 }
 
-.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Plant/site";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "I would like to arrive on the following date";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
     content: "I need a hotel room";
     font-size: 14px;
 }
 
-.customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "My choice for the intergalactic dinner:";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "My guest’s choice for the intergalactic dinner";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Meat menu";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Vegetarian menu";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
     content: "Food intolerances (optional)";
     font-size: 14px;
 }
@@ -232,22 +232,22 @@
     font-size: 16px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "My guest’s choice for the intergalactic dinner";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Meat menu";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Vegetarian menu";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Food intolerances (optional)";
     font-size: 14px;
 }

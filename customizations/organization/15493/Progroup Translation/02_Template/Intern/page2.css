@@ -30,8 +30,8 @@
 .customization2_attendee_edit-action_save,
 .customization2_attendee_edit-action_cancel,
 .customization-button-previous,
-.customization2_attendee_further-data_custom-question_label,
-.customization2_attendee_further-data_custom-question_label *,
+vv-questions .customization2_attendee_further-data_custom-question_label,
+vv-questions .customization2_attendee_further-data_custom-question_label *,
 .customization2_booking-terms_custom-term,
 .customization2_booking-terms_text,
 .weitereAngabenTeilnehmer p,
@@ -150,7 +150,7 @@
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "92";
     font-size: 14px;
 }
@@ -170,42 +170,42 @@
     font-size: 1rem !important;
 }
 
-.customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "96";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "99";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
     content: "Missing 1";
     font-size: 14px;
 }
 
-.customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "102";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "128";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "103";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "104";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee_further-data_custom-question-6 .customization2_attendee_further-data_custom-question_label:after{
     content: "105";
     font-size: 14px;
 }
@@ -230,22 +230,22 @@
     font-size: 16px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "330";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "331";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "332";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "334";
     font-size: 14px;
 }
