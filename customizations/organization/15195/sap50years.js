@@ -52,7 +52,7 @@ function sendEmailChild()
 }
 function storno() 
 {
-window.open('mailto:50years-wdf@sap.com?subject=Cancel%20individual20attendees&body=Hi%20Event-Team%2C%20%0D%0A%0D%0APlease%20delete%20the%20following%20attendee%20from%20my%20registration%3A%20%0D%0A%0D%0AFirst%20name%3A%0D%0A%0D%0ALast%20name%3A%20%0D%0A%0D%0AThanks!', '_blank');
+window.open('mailto:50years-wdf@sap.com?subject=Cancel%20individual%20attendees&body=Hi%20Event-Team%2C%20%0D%0A%0D%0APlease%20delete%20the%20following%20attendee%20from%20my%20registration%3A%20%0D%0A%0D%0AFirst%20name%3A%0D%0A%0D%0ALast%20name%3A%20%0D%0A%0D%0AThanks!', '_blank');
 
 }
 
