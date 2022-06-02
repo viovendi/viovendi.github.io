@@ -30,8 +30,8 @@
 .customization2_attendee_edit-action_save,
 .customization2_attendee_edit-action_cancel,
 .customization-button-previous,
-.customization2_attendee_further-data_custom-question_label,
-.customization2_attendee_further-data_custom-question_label *,
+vv-questions .customization2_attendee_further-data_custom-question_label,
+vv-questions .customization2_attendee_further-data_custom-question_label *,
 .customization2_booking-terms_custom-term,
 .customization2_booking-terms_text,
 .weitereAngabenTeilnehmer p,
@@ -158,12 +158,12 @@
     font-size: 14px;
 }
 
-.customization2_attendee-1 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-1 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Telefon (opcjonalnie)";
     font-size: 14px;
 }
 
-.customization2_attendee-1 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:before{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-1 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:before{
     content: "Potrzebuję transfer z hotelu";
     font-size: 14px;
 }
@@ -180,7 +180,7 @@
     border-radius: 6px;
 }
 
-vv-attendee:first-of-type .customization2_attendee_further-data_custom-question-3:before {
+vv-questions vv-attendee:first-of-type .customization2_attendee_further-data_custom-question-3:before {
     content: "Wybór posiłku";
     font-size: 1rem;
     font-weight: 600;
@@ -188,27 +188,27 @@ vv-attendee:first-of-type .customization2_attendee_further-data_custom-question-
 }
 
 
-.customization2_attendee-1 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-1 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "Na kolację międzygalaktyczną wybieram";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
     content: "Moja osoba towarzysząca wybiera na kolację międzygalaktyczną:";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Zestaw mięsny";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Zestaw wegetariański";
     font-size: 14px;
 }
 
-.customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
     content: "Nietolerancja pokarmowa (opcjonalnie)";
     font-size: 14px;
 }
@@ -233,22 +233,22 @@ vv-attendee:nth-of-type(2) .customization2_attendee_further-data_custom-question
     margin-top: 24px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Moja osoba towarzysząca wybiera na kolację międzygalaktyczną:";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Zestaw mięsny";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Zestaw wegetariański";
     font-size: 14px;
 }
 
-.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Nietolerancja pokarmowa (opcjonalnie)";
     font-size: 14px;
 }
