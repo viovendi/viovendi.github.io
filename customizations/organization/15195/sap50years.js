@@ -41,6 +41,14 @@ async function getTicketAmount(eventId) {
     },
     dataType: 'json',
   })
+  console.log(result.ticket_categories[0].available_amount)
+  console.log(result.ticket_categories[1].available_amount)
+  console.log(result.ticket_categories[2].available_amount)
+  console.log(result.ticket_categories[3].available_amount)
+  console.log(result.ticket_categories[4].available_amount)
+  console.log(result.ticket_categories[5].available_amount)
+  console.log(result.ticket_categories[6].available_amount)
+  console.log(result.ticket_categories[7].available_amount)
   const amount = [result.ticket_categories[0].available_amount, result.ticket_categories[4].available_amount];
   return amount;
 }
