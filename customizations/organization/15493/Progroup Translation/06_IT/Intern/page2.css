@@ -187,7 +187,7 @@ vv-questions .customization2_attendee-state_edit .customization2_attendee_furthe
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-state_edit .customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-1 .customization2_attendee_further-data_custom-question-5 .customization2_attendee_further-data_custom-question_label:after{
     content: "Per la cena intergalattica scelgo:";
     font-size: 14px;
 }
@@ -233,22 +233,22 @@ vv-questions .customization2_attendee-state_edit .customization2_attendee_furthe
 }
 
 
-vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_label:after{
     content: "Il mio accompagnatore per la cena intergalattica sceglie";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-1 p.vv-control-label:after{
     content: "Menù di pesce";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-1 .customization2_attendee_further-data_custom-question_radio-line-2 p.vv-control-label:after{
     content: "Menù vegetariano";
     font-size: 14px;
 }
 
-vv-questions .customization2_attendee-state_edit .customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
+vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .customization2_attendee_further-data_custom-question-2 .customization2_attendee_further-data_custom-question_label:after{
     content: "Intolleranze (optional)";
     font-size: 14px;
 }
