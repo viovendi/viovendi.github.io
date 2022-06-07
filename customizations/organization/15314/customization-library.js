@@ -97,7 +97,7 @@ function myHelpers(elements) {
     This method is needed for selecting answers on multiple dropdowns at once because of synchronization requirements
     params:
         dropdownLabelArray= array of strings containing the labels of the dropdowns
-        valueArray = Array of the answer texts
+        valueArray = Array of the answer texts that should be selected
     */
     this.setValueToDropdownArray = function (dropdownLabelArray, valueArray) {
         if (dropdownLabelArray.length != valueArray.length) {
