@@ -68,8 +68,8 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     country = "Poland";
     ticketNumber = "Numer zgłoszeniowy: ";
     pleaseSelect = "Prosimy wybrać";
-    dropdownYes = "Zestaw wegetariański";
-    dropdownNo = "";
+    dropdownYes = "Tak";
+    dropdownNo = "Nr";
     dropdownHerr = "Pan";
     dropdownFrau = "Pani";
     dropdownError = "<div class='error-message'> Prosimy wybrać </div>";
@@ -108,8 +108,8 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     country = "United States";
     ticketNumber = "Registration number: ";
     pleaseSelect = "Please select";
-    dropdownYes = "Ano";
-    dropdownNo = "Ne";
+    dropdownYes = "Yes";
+    dropdownNo = "No";
     dropdownHerr = "Mr";
     dropdownFrau = "Ms/Mrs";
     dropdownError = "<div class='error-message'> Please select </div>";
