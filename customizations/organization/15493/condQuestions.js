@@ -54,7 +54,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     dropdownFrau = "Signora";
     dropdownError = "<div class='error-message'> Si prega di selezionare </div>";
     veggieMenu = "Menù vegetariano";
-    meatMenu = "Menù di pesce";
+    meatMenu = "Menù di carne";
     myMealChoice = "Per la cena intergalattica scelgo:";
     partnerMealChoice = "Il mio accompagnatore per la cena intergalattica sceglie";
     phone = "Telefono (opzionale)";
