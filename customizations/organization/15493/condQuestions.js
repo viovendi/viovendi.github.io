@@ -202,6 +202,7 @@ function editBookingPortalAttendee() {
     // Salutation
     changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mr.', dropdownHerr);
     changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Mrs.', dropdownFrau);
+    changeTextTo('.customization2_attendee_contact-data_salutation_value', 'Ms.', dropdownFrau);
     
 };
 
