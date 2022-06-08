@@ -258,7 +258,7 @@ vv-questions .customization2_attendee-state_edit.customization2_attendee-2 .cust
 }
 
 .customization2_booking-terms_text:after {
-    content: "I accept the following terms:";
+    content: "I agree to the following conditions:";
     font-size: 14px
 }
 
