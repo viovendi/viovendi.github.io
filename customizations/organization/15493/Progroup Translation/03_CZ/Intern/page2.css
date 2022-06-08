@@ -178,12 +178,12 @@ vv-questions .customization2_attendee-state_edit .customization2_attendee_furthe
 }
 
 vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
-    content: "Rád bych přijel k následujícímu datu";
+    content: "Potřebuji hotelový pokoj";
     font-size: 14px;
 }
 
 vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
-    content: "Potřebuji hotelový pokoj";
+    content: "Rád bych přijel k následujícímu datu";
     font-size: 14px;
 }
 
