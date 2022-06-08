@@ -178,12 +178,12 @@ vv-questions .customization2_attendee-state_edit .customization2_attendee_furthe
 }
 
 vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-3 .customization2_attendee_further-data_custom-question_label:after{
-    content: "Je souhaite arriver à la date suivante";
+    content: "J'ai besoin d'une chambre d'hôtel";
     font-size: 14px;
 }
 
 vv-questions .customization2_attendee-state_edit .customization2_attendee_further-data_custom-question-4 .customization2_attendee_further-data_custom-question_label:after{
-    content: "J'ai besoin d'une chambre d'hôtel";
+    content: "Je souhaite arriver à la date suivante";
     font-size: 14px;
 }
 
