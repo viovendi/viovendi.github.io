@@ -57,7 +57,7 @@ function myHelpers(elements) {
     /*
     This method combines the search for any inputs of the attendee form 
     return:
-        The div containing the label and the input itself
+        The container of the label and the input itself
     */
     this.findQuestionByLabel = function (label) {
         var field = this.findField(label);
