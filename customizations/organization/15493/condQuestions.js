@@ -306,7 +306,8 @@ function customTerms() {
             $('div.custom_terms_checkbox > vv-checkbox > label').click();
         } else {
             $('.customization-button-next').prop("disabled", true);
-            $(".error-message-next-button").show();        }
+        //    $(".error-message-next-button").show();       
+     }
         $('.customization2_attendee_edit-action_save').on('click', function (e) {
             if (!checkboxSelected) {
                 $('.customization-button-next').prop("disabled", true);
