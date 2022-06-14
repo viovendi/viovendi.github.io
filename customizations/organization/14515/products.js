@@ -1,6 +1,6 @@
-console.log("git sommerakademie");
+console.log("git sommerakademie ausgeklammert");
 
-
+/*
 
 // call handler whenever a checkbox is clicked/changed
 function init(name) {
@@ -423,4 +423,4 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
-
+/*
