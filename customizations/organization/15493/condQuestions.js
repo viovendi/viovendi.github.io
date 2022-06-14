@@ -239,7 +239,7 @@ function disableWhenEmpty(field) {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
                 $(field).find('.error-message').show();
                 $('.customization2_attendee_edit-action_save').prop("disabled", true);
-                $("<div class='error-message'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
+                
             } else {
                 $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
                 $(field).find('.error-message').hide();
@@ -290,6 +290,10 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
+    if($(".error-message-next-button").length==0){
+        $("<div class='error-message-next-button'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
+        $(".error-message-next-button").hide();
+    }
     if (!$('.custom_terms_checkbox').length) {
         console.log("Terms added");
         console.log("Checkbox selected: " + checkboxSelected)
@@ -302,12 +306,11 @@ function customTerms() {
             $('div.custom_terms_checkbox > vv-checkbox > label').click();
         } else {
             $('.customization-button-next').prop("disabled", true);
-            $("<div class='error-message'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
-        }
+            $(".error-message-next-button").show();        }
         $('.customization2_attendee_edit-action_save').on('click', function (e) {
             if (!checkboxSelected) {
                 $('.customization-button-next').prop("disabled", true);
-                $("<div class='error-message'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
+                $(".error-message-next-button").show();
             }
         });
         $('.custom_terms_checkbox').on('click', function (e) {
@@ -315,9 +318,10 @@ function customTerms() {
                 checkboxSelected = !checkboxSelected;
                 if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0) {
                     $('.customization-button-next').prop("disabled", true);
-                    $("<div class='error-message'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
+                    $(".error-message-next-button").show();
                 } else {
                     $('.customization-button-next').prop("disabled", false);
+                    $(".error-message-next-button").hide();
                 }
                 console.log(checkboxSelected);
             }
@@ -354,6 +358,15 @@ function handler() {
              background-color: #fff1ef!important;
             
          }
+         .error-message-next-button{
+            display: block;
+            color: #ea674d;
+            font-size: 12px;
+            line-height: 1;
+            margin-bottom: 10px;
+            left: 0;
+            top: 3px;
+        }
          .error-message{
              display: block;
              color: #ea674d;
