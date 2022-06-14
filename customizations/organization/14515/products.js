@@ -1,8 +1,10 @@
 console.log("git sommerakademie ausgeklammert");
 
-/*
+
+
 
 // call handler whenever a checkbox is clicked/changed
+/* 
 function init(name) {
   $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
    // $("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > vv-attendees > div > vv-attendee > div > vv-collapsible-wrapper > div > div.collapsible-wrapper_body.customization3_collapsible-wrapper_body.collapsible-wrapper_body--separated > div > vv-child-form > form > div.customization2_attendee_further-data.vv-mt-xxl > vv-additional-questions > div:nth-child(7)").hide();
@@ -11,7 +13,8 @@ function init(name) {
     handler();
   });
 }
-
+*/
+/*
 function handlernew(){
   var pathname = window.location.pathname;
   var eventId = pathname.split('/')[3];
@@ -26,7 +29,7 @@ function handlernew(){
   }
 }
 handlernew();
-
+*/
 
 
 //hide product group
@@ -381,7 +384,7 @@ disablenaduncheck("10:00 – 15:00 Uhr: Gewalt und Mobbing in der Schule vorbeug
   }
   
 }
-
+/*
 // function pretty similar to handler(); is called when attendee is editing his data
 function inEditMode(){
     const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
@@ -401,6 +404,8 @@ function inEditMode(){
       }
 }
 
+*/
+/*
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log("Node has been inserted Git: ", event.target);
@@ -419,8 +424,9 @@ var insertionListener = function (event) {
   }
 };
 
+
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+*/
 
-/*
