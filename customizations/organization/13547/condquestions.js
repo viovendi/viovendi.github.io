@@ -194,6 +194,7 @@ var insertionListener = function (event) {
           showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
         } else {
           //hideAll();
+          $('.customization2_attendee_further-data_custom-question-2').hide();
           showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
           console.log('hide');
         }
