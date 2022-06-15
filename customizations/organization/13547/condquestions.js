@@ -178,7 +178,7 @@ var insertionListener = function (event) {
 
     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein stimmberechtigtes Mitglied?');
 
-    //hideAll();
+    hideAll();
     handler()
 
 
