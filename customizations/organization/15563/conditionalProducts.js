@@ -163,7 +163,7 @@ function handler() {
         disableRundgaengeBeforeEntry(rundgaengeAb);
     });
 
-    
+
     // Wprding Changes
     $(".customization2_attendee_count").each(function () {
         $(this).text($(this).text().replace("Teilnehmer", "Person"));
@@ -172,15 +172,16 @@ function handler() {
     $(".customization2_attendees_title").text("Persönliche Daten");
     $(".customization2_attendee_further-data_headline").text("Ticketbuchung");
 }
+/*deactivated*/
 
-handler();
+// handler();
 
-var insertionListener = function (event) {
-    if (event.animationName === "nodeInserted") {
-        console.log("Node has been inserted: ", event.target);
-        handler();
-    }
-}
+// var insertionListener = function (event) {
+//     if (event.animationName === "nodeInserted") {
+//         console.log("Node has been inserted: ", event.target);
+//         handler();
+//     }
+// }
 document.addEventListener("animationstart", insertionListener, false);
 document.addEventListener("MSAnimationStart", insertionListener, false);
 document.addEventListener("webkitAnimationStart", insertionListener, false);
