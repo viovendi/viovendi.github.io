@@ -1,8 +1,8 @@
-//OID 12944
+//OID 15786
 
 $(document).ready(function () {
 
-        console.log("GTM starts git");
+        console.log("GTM starts git OID15786");
 
         function changeColorVeranstalter() {
                 console.log("changeColorVeranstalter");
