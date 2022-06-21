@@ -1,5 +1,5 @@
 //OID 15786
-
+/*
 $(document).ready(function () {
 
         console.log("GTM starts git OID15786");
@@ -25,3 +25,4 @@ $(document).ready(function () {
         console.log("git over");
 });
 
+*/
