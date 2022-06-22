@@ -11,7 +11,7 @@ function handler() {
     $('.ew-confirmation__link').hide();
     $('.ew-confirmation__text-paragraph').hide();
 
-    // Change Check Icon Color
+    // Change Icon Color
     $('.ew-confirmation__header svg').css("fill", "#86b817")
 }
 
