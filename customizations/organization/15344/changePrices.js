@@ -35,17 +35,15 @@ function changeTicketAmount() {
 
 };
 
-function handler(){
-  changePriceTags();
-  changeTicketAmount();
-  }
-handler();
-//Insert here, what should run once
-//
+changePriceTags();
+changeTicketAmount();
+
+
 var insertionListener = function(event) {  
   if (event.animationName === "nodeInserted") {    
     console.log("Node has been inserted: ", event.target);    
-    handler(); 
+    changePriceTags();
+    changeTicketAmount();
   }
 }
 document.addEventListener("animationstart", insertionListener, false); 
