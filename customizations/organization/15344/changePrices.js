@@ -13,6 +13,12 @@ function changePriceTags() {
 };
 
 function changeTicketAmount() {
+    
+    //Summary
+    changeTextTo('.customization2_summary_item_quantity', '8', '1');
+    
+    
+    // Dropdown
     changeTextTo('.vv-single-select-option', '8', '1');
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
