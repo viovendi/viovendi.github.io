@@ -8,8 +8,8 @@ function changeTextTo(selector, originalText, newText) {
 };
 
 function changePriceTags() {
-    changeTextTo('.event-category__price', '236,25 EUR', '1.890 EUR');
-    changeTextTo('.event-category__price', '273,75 EUR', '2.190 EUR');
+    $('.customization-category-price:contains(236,25)').text('1.890 EUR')
+    $('.customization-category-price:contains(273,75)').text('2.190 EUR')
 };
 
 function changeTicketAmount() {
