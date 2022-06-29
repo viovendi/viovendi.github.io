@@ -15,7 +15,7 @@ function changePriceTags() {
 function changeTicketAmount() {
     
     //Summary
-    changeTextTo('.customization2_summary_item_quantity', '8', '1');
+    changeTextTo('.customization2_summary_item_quantity', '8x', '1x');
     
     
     // Dropdown
