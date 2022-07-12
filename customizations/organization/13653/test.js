@@ -1,4 +1,4 @@
- console.log('Start working, QR CODE');
+ console.log('Start 11, QR CODE');
 
   function getEl(){
     return new Promise(function (resolve, reject) {
