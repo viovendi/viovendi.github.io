@@ -37,11 +37,11 @@
 
                   var img = document.createElement("img");
                   img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+attendees[j].ticket.checkin_link);
-                  img.setAttribute('style','display: block;')
+                  img.setAttribute('style','display: block; media: print; page-break-before: always')
+                 
                   var ticket = document.createElement("div");
-                  ticket.innerHTML = "test <b>new</b> ";
-                  result[0].append(j+1,"Test", img);
-                  result[0].append(ticket);
+                  
+                  result[0].append(j+1, img);
 
                 }
               }
