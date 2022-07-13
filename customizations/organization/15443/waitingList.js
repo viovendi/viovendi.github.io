@@ -1,7 +1,7 @@
 console.log("Git Start");
 
 function hideCat(catName) {
-    console.log("Hide" + catName);
+    console.log("Hide " + catName);
     $('.customization-booking-area-wrapper .event-categories li:visible').each(function () {
         var currentCat = $(this).find('.event-category__name').text().replace(/^\s+|\s+$/g, "");
         if (currentCat === catName && !$(this).closest('li').hasClass('hidden')) {
@@ -11,7 +11,7 @@ function hideCat(catName) {
 }
 
 function showCat(catName) {
-    console.log("Hide" + catName);
+    console.log("Show " + catName);
     $('.customization-booking-area-wrapper .event-categories li').each(function () {
         var currentCat = $(this).find('.event-category__name').text().replace(/^\s+|\s+$/g, "");
         if (currentCat === catName && $(this).closest('li').hasClass('hidden')) {
