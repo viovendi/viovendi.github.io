@@ -1,9 +1,8 @@
  console.log('Start 11, QR CODE');
-var pathname = window.location.href;
-console.log(pathname);
-//var tetst = pathname.split('/')[4]
-//console.log(tetst);
-var locale = window.location.pathname.split('/')[1]
+var href = window.location.href;
+if (href.contains("booking-13653-34935"))
+{
+
 
   function getEl(){
     return new Promise(function (resolve, reject) {
@@ -60,3 +59,4 @@ var locale = window.location.pathname.split('/')[1]
   };
 
   getXMLHttpRequest(XMLHttpRequest.prototype.open);
+}
