@@ -257,8 +257,8 @@ function addTextToAmountOfTickets() {
 //--- check each ticketcategory, if child, hide some stuff !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!---
 
 function addstuff(name) {
-  //$('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
-  //$('.customization2_attendee-1 .customization2_attendee_contact-data_last-name_input').prop('disabled', true);
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_first-name_input').prop('disabled', true);
+  $('.customization2_attendee-1 .customization2_attendee_contact-data_last-name_input').prop('disabled', true);
 
 
   }
@@ -343,7 +343,7 @@ oberserverError = new MutationObserver((mutations, obs) => {
   });
 
 */
-
+/*
 console.log('SAP all');
 var href = window.location.href;
 if(window.location.href.indexOf('booking-15195-35658') !== -1){
@@ -406,4 +406,4 @@ console.log("works")
 
   getXMLHttpRequest(XMLHttpRequest.prototype.open);
 }
-
+*/
