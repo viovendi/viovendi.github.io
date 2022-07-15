@@ -67,8 +67,8 @@ async function getPage(page) {
   var pages = {
     page1: "customization-booking-area-wrapper-page1",
     page2: "customization-booking-area-wrapper-page2",
-    page3: "customization2_payment_title",
-    page4: "customization-confirmation-label",
+    page3: "customization-booking-area-wrapper-page3",
+    page4: "customization-booking-area-wrapper-page4",
   };
   return new Promise(function (resolve, reject) {
     try {
@@ -108,10 +108,10 @@ async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
 
-    await getPage("page3");
+    await getPage("page2");
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
-    var result = await getPage("page4");
+    var result = await getPage("page3");
     var dooOrder = getOrderInformation(result.dataLayer);
     var order = localStorage.getItem("order");
 
