@@ -89,6 +89,7 @@ async function getPage(page) {
               selector: document.querySelector("." + pages[page]),
               dataLayer: dataLayer,
             });
+            console.log(dataLayer);
           }
         });
       }
@@ -112,9 +113,10 @@ async function hendler() {
 
     //await getPage("page2");
    // getXMLHttpRequest(XMLHttpRequest.prototype.open);
-
+    console.log
     var result = await getPage("page4");
     var dooOrder = getOrderInformation(result.dataLayer);
+    console.log(dooOrder);
     var order = localStorage.getItem("order");
 
     parent.postMessage({ dooOrder, order }, "*");
