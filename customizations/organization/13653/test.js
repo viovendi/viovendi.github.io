@@ -1,15 +1,15 @@
-function getEl(){
-    return new Promise(function (resolve, reject) {
-      var timerId = setInterval(function() {
-        var el  = document.getElementsByClassName("customization-booking-area-wrapper-page4");
-        if(el.length > 0){ 
-          clearInterval(timerId);
-          resolve(el)
-        }           
-      }, 1000);
-    }
-                      )
-  };
+// function getEl(){
+//     return new Promise(function (resolve, reject) {
+//       var timerId = setInterval(function() {
+//         var el  = document.getElementsByClassName("customization-booking-area-wrapper-page4");
+//         if(el.length > 0){
+//           clearInterval(timerId);
+//           resolve(el)
+//         }
+//       }, 1000);
+//     }
+//                       )
+//   };
 
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
@@ -34,7 +34,7 @@ function getXMLHttpRequest(open) {
                   var img = document.createElement("img");
                   img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+attendees[j].ticket.checkin_link);
                   img.setAttribute('style','display: inline-block;')
-                                   
+
                   result[0].append(j+1, img);
                 }
               }
@@ -59,19 +59,19 @@ function getXMLHttpRequest(open) {
   };
 }
 
-function prefillPaymentMethod(selector) {
-  const paymentMethod = document.querySelector(`.${selector}`);
-  paymentMethod.checked = true;
-  paymentMethod.dispatchEvent(new Event("change"));
-  paymentMethod.click();
-}
+// function prefillPaymentMethod(selector) {
+//   const paymentMethod = document.querySelector(`.${selector}`);
+//   paymentMethod.checked = true;
+//   paymentMethod.dispatchEvent(new Event("change"));
+//   paymentMethod.click();
+// }
 
-function outputResult(result) {
-  var pre = document.createElement("pre");
-  pre.innerHTML = result;
-  var widgetContainer = document.getElementById("widgetContainer");
-  widgetContainer.appendChild(pre);
-}
+// function outputResult(result) {
+//   var pre = document.createElement("pre");
+//   pre.innerHTML = result;
+//   var widgetContainer = document.getElementById("widgetContainer");
+//   widgetContainer.appendChild(pre);
+// }
 
 function getOrderInformation(dataLayer) {
   console.log(dataLayer);
@@ -136,15 +136,15 @@ async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
 
-    await getPage("page4");
+    await getPage("page2");
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    
-    //var result = await getPage("page4");
-    //var dooOrder = getOrderInformation(result.dataLayer);
-    //console.log(dooOrder);
-    var order = localStorage.getItem("order");
 
-    //parent.postMessage({ dooOrder, order }, "*");
+    var result = await getPage("page4");
+    var dooOrder = getOrderInformation(result.dataLayer);
+
+    var order = localStorage.getItem("order");
+    console.log(dooOrder, order);
+
   }
 }
 
