@@ -1,4 +1,9 @@
  console.log('Start 11, QR CODE');
+var pathname = window.location.pathname;
+console.log(pathname);
+var tetst = pathname.split('/')[4]
+console.log(tetst);
+var locale = window.location.pathname.split('/')[1]
 
   function getEl(){
     return new Promise(function (resolve, reject) {
