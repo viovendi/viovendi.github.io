@@ -1,4 +1,4 @@
-
+/*
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
@@ -288,3 +288,4 @@ async function hendler() {
 
 hendler();
 setCSSstyles();
+*/
