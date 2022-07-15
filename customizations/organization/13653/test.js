@@ -132,17 +132,19 @@ async function hendler() {
     var order = localStorage.getItem("order");
     console.log(JSON.parse(order).attendees[0].ticket.checkin_link);
     console.log(JSON.parse(order).attendees[1].ticket.checkin_link);
-    console.log(JSON.parse(order).attendees[2].ticket.checkin_link);
+    if (JSON.parse(order).attendees[1].ticket.checkin_link.length){
+    console.log("gibt");}
     var img = document.createElement("img");
     img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
     img.setAttribute('style','display: block;')
     var widgetContainer = document.getElementById("widgetContainer");
     widgetContainer.appendChild(img);
-    
+    /*
     var img2 = document.createElement("img");
     img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[1].ticket.checkin_link);
     img.setAttribute('style','display: block;')
     widgetContainer.appendChild(img2);
+    */
 
     
 
