@@ -1,3 +1,15 @@
+function getEl(){
+    return new Promise(function (resolve, reject) {
+      var timerId = setInterval(function() {
+        var el  = document.getElementsByClassName("customization-booking-area-wrapper-page4");
+        if(el.length > 0){ 
+          clearInterval(timerId);
+          resolve(el)
+        }           
+      }, 1000);
+    }
+                      )
+  };
 
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
