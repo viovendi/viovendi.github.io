@@ -142,9 +142,7 @@ async function hendler() {
     var img0 = document.createElement("img");
     img0.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
     img0.setAttribute('style','display: block;')
-    var style = document.createElement("style");
-    style.innerHTML = `@media img {.pagebreak { page-break-before: always; }}`;
-     document.head.appendChild(style);
+    }
     if (JSON.parse(order).attendees[1]?.ticket.checkin_link.length){
     var img1 = document.createElement("img");
     img1.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[1].ticket.checkin_link);
