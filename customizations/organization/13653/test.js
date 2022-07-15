@@ -136,9 +136,7 @@ async function hendler() {
     var img3 = document.createElement("img");
     var img4 = document.createElement("img");
     var img5 = document.createElement("img");
-    var style = document.createElement("style");
-    style.innerHTML = `@media img {.pagebreak { page-break-before: always; }}`;
-    document.head.appendChild(style);
+    
     
     if (JSON.parse(order).attendees[0]?.ticket.checkin_link.length){
     var img0 = document.createElement("img");
@@ -193,4 +191,13 @@ async function hendler() {
 }
 
 hendler();
+  function setCSSstyles() {
+  var style = document.createElement("style");
+  style.innerHTML = `
+  @media img {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+  `;
+  document.head.appendChild(style);
+}
 
