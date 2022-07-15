@@ -131,7 +131,6 @@ async function hendler() {
 
     var order = localStorage.getItem("order");
     console.log(JSON.parse(order).attendees[0].ticket.checkin_link);
-    console.log(JSON.parse(order).attendees[1].ticket.checkin_link);
     if (JSON.parse(order).attendees[1].ticket.checkin_link.length){
     console.log("gibt");}
     var img = document.createElement("img");
