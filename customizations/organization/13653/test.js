@@ -141,7 +141,7 @@ async function hendler() {
     
     //var result = await getPage("page4");
     //var dooOrder = getOrderInformation(result.dataLayer);
-    console.log(dooOrder);
+    //console.log(dooOrder);
     var order = localStorage.getItem("order");
 
     parent.postMessage({ dooOrder, order }, "*");
