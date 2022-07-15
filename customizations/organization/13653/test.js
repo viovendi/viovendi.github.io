@@ -49,6 +49,7 @@ function outputResult(result) {
 }
 
 function getOrderInformation(dataLayer) {
+  console.log(dataLayer);
   var confirmed = dataLayer.find(function (o) {
     return o.event == "RegistrationConfirmed";
   });
@@ -89,7 +90,6 @@ async function getPage(page) {
               selector: document.querySelector("." + pages[page]),
               dataLayer: dataLayer,
             });
-            console.log(dataLayer);
           }
         });
       }
