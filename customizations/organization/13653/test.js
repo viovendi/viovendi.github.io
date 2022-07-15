@@ -200,4 +200,5 @@ hendler();
   `;
   document.head.appendChild(style);
 }
+setCSSstyles();
 
