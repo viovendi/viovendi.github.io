@@ -111,7 +111,7 @@ async function hendler() {
     await getPage("page2");
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
-    var result = await getPage("page3");
+    var result = await getPage("page4");
     var dooOrder = getOrderInformation(result.dataLayer);
     var order = localStorage.getItem("order");
 
