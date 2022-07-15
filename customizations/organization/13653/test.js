@@ -144,27 +144,27 @@ async function hendler() {
     }
     if (JSON.parse(order).attendees[1]?.ticket.checkin_link.length){
     var img1 = document.createElement("img");
-    img1.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img1.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[1].ticket.checkin_link);
     img1.setAttribute('style','display: block;')
     }
     if (JSON.parse(order).attendees[2]?.ticket.checkin_link.length){
     var img2 = document.createElement("img");
-    img2.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img2.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[2].ticket.checkin_link);
     img2.setAttribute('style','display: block;')
     }
     if (JSON.parse(order).attendees[3]?.ticket.checkin_link.length){
     var img3 = document.createElement("img");
-    img3.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img3.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[3].ticket.checkin_link);
     img3.setAttribute('style','display: block;')
     }
     if (JSON.parse(order).attendees[4]?.ticket.checkin_link.length){
     var img4 = document.createElement("img");
-    img4.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img4.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[4].ticket.checkin_link);
     img4.setAttribute('style','display: block;')
     }
     if (JSON.parse(order).attendees[5]?.ticket.checkin_link.length){
     var img5 = document.createElement("img");
-    img5.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img5.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[5].ticket.checkin_link);
     img5.setAttribute('style','display: block;')
     }
     
