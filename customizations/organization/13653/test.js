@@ -41,7 +41,7 @@ if(window.location.href.indexOf('booking-13653-34935') !== -1){
 
                   var img = document.createElement("img");
                   img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+attendees[j].ticket.checkin_link);
-                  img.setAttribute('style','display: block;')
+                  img.setAttribute('style','display: inline;')
                                    
                   result[0].append(j+1, img);
 
