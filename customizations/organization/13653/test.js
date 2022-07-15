@@ -1,6 +1,6 @@
  console.log('Start 11, QR CODE');
 var href = window.location.href;
-if (href.contains("booking-13653-34935"))
+if(window.location.href.indexOf('booking-13653-34935') !== -1)
 {
 
 
