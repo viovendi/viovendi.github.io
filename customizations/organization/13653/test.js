@@ -144,7 +144,7 @@ async function hendler() {
     //console.log(dooOrder);
     var order = localStorage.getItem("order");
 
-    parent.postMessage({ dooOrder, order }, "*");
+    //parent.postMessage({ dooOrder, order }, "*");
   }
 }
 
