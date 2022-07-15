@@ -130,7 +130,7 @@ async function hendler() {
     var dooOrder = getOrderInformation(result.dataLayer);
 
     var order = localStorage.getItem("order");
-    console.log(JSON.parse(order).attendees[1].ticket.checkin_link);
+    console.log(JSON.parse(order).attendees[0].ticket.checkin_link);
 
   }
 }
