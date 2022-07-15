@@ -131,6 +131,13 @@ async function hendler() {
 
     var order = localStorage.getItem("order");
     console.log(JSON.parse(order).attendees[0].ticket.checkin_link);
+    var img = document.createElement("img");
+    img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img.setAttribute('style','display: inline-block;')
+    var widgetContainer = document.getElementById("widgetContainer");
+    widgetContainer.appendChild(img);
+
+    
 
   }
 }
