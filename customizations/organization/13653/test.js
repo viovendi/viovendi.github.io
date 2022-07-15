@@ -192,8 +192,8 @@ hendler();
   function setCSSstyles() {
   var style = document.createElement("style");
   style.innerHTML = `
-  @media img {
-    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+  @media print {
+    .img { page-break-before: always; } /* page-break-after works, as well */
 }
   `;
   document.head.appendChild(style);
