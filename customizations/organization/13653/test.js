@@ -1,4 +1,4 @@
-/*
+
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
@@ -39,167 +39,6 @@ function prefillPaymentMethod(selector) {
   paymentMethod.checked = true;
   paymentMethod.dispatchEvent(new Event("change"));
   paymentMethod.click();
-}
-
-function createButtons() {
-  const tickets = document.getElementsByClassName(
-    "event-category__ticket-count-wrap"
-  );
-  var arr = Array.from(tickets);
-
-  arr.forEach((ticket) => {
-    const minus = document.createElement("div");
-    minus.classList.add("minus");
-    minus.innerHTML = "&#8722;";
-    ticket.appendChild(minus);
-
-    const plus = document.createElement("div");
-    plus.classList.add("plus");
-    plus.innerHTML = "&#43;";
-    ticket.prepend(plus);
-  });
-}
-
-function selectOptions(options, selectedInput) {
-  for (var y = 0; y < options.length; y++) {
-    var optionsNumber = +options[y].textContent.trim();
-    var inputNumber = +selectedInput.textContent;
-
-    if (optionsNumber === inputNumber) {
-      options[y].dispatchEvent(new Event("change"));
-      options[y].click();
-    }
-  }
-}
-
-function addTicket() {
-  const plus = document.getElementsByClassName("plus");
-  for (var i = 0; i < plus.length; i++) {
-    plus[i].addEventListener("click", function () {
-      const nodes = this.parentNode.childNodes;
-      for (var j = 0; j < nodes.length; j++) {
-        if (nodes[j].nodeName.toLowerCase() === "vv-selection") {
-          var selectedInput = nodes[j].querySelector(
-            ".vv-selection-input__value"
-          );
-          var allOptions = nodes[j].querySelectorAll(
-            ".vv-single-select-option"
-          );
-          selectedInput.textContent = `${+selectedInput.textContent + 1}`;
-          selectOptions(allOptions, selectedInput);
-        }
-      }
-    });
-  }
-}
-
-function subtractTicket() {
-  const minus = document.getElementsByClassName("minus");
-  for (var i = 0; i < minus.length; i++) {
-    minus[i].addEventListener("click", function () {
-      const nodes = this.parentNode.childNodes;
-      for (var j = 0; j < nodes.length; j++) {
-        if (nodes[j].nodeName.toLowerCase() === "vv-selection") {
-          var selectedInput = nodes[j].querySelector(
-            ".vv-selection-input__value"
-          );
-          var allOptions = nodes[j].querySelectorAll(
-            ".vv-single-select-option"
-          );
-          selectedInput.textContent = `${+selectedInput.textContent - 1}`;
-          selectOptions(allOptions, selectedInput);
-        }
-      }
-    });
-  }
-}
-
-function setCSSstyles() {
-  var style = document.createElement("style");
-  style.innerHTML = `
-  vv-booking-editing-prompt{
-    display: none;
-  }
-  .customization-booking-area-wrapper-page1 .event-category {
-    padding: 30px 30px 0;
-  }
-  .background-arrow, select:not(.vv-simple-select__control){
-    background: none;
- }
-
- .customization-booking-area-wrapper .event-category__ticket-count-wrap select{
-     border-color: #e6edf8 !important;
-     font-size: 1rem;
-     text-indent: 13px;
- }
-
-  .customization-booking-area-wrapper-page1 vv-selection .vv-selection-input__control{
-  border-left: 0 !important;
-  border-right: 0 !important;
-  border-radius: 0 !important;
-  border: 1px solid #e6edf8 !important;
-  min-height: 40px !important;
-  padding: 5px !important;
-  padding-top: 9px !important;
-  width: 50px !important;
-  }
-
-  .customization-booking-area-wrapper-page1 vv-selection{
-  width: 50px !important;
-  }
-
-  .customization-booking-area-wrapper-page1 vv-selection vv-icon{
-      display: none;
-  }
-
-  .customization-booking-area-wrapper-page1 .vv-selection-input__value{
-  text-align: center;
-  }
-
- .plus, .minus{
-   background: whitesmoke;
-   border: 1px solid #e6edf8;
-   display: block;
-   width: 50px;
-   height: 40px;
-   line-height: 39px;
-   text-align: center;
-   font-size: 1.6rem;
-   cursor: pointer;
-   color: #0069b6;
- }
- .plus{
-   border-right: none;
-   border-radius: 5px 0px 0px 5px;
- }
- .minus{
-   border-left: none;
-     border-radius: 0px 5px 5px 0px;
- }
- .event-category__ticket-count-wrap{
-  order: 1;
-  margin-right: 40px;
-  display: flex;
-
-}
-.customization-category-price{
-  order: 2
-}
- .event-category .col-4{
-  display: flex;
-  justify-content: end;
-}
-.customization-booking-area-wrapper .customization-button-next {
-  padding: 10px 20px;
-}
-.customization-booking-area-wrapper input, .customization-booking-area-wrapper select{
-  height: 38px;
-}
-.customization-booking-area-wrapper-page2 .vv-nl-mb-xxs:not(:last-child) {
-  margin-bottom: 20px;
-}
-  `;
-  document.head.appendChild(style);
 }
 
 function outputResult(result) {
@@ -269,13 +108,7 @@ async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
 
-    await getPage("page1");
-    createButtons();
-    addTicket();
-    subtractTicket();
-
     await getPage("page3");
-    prefillPaymentMethod("customization2_organizer-bank-transfer_button");
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
     var result = await getPage("page4");
@@ -287,5 +120,4 @@ async function hendler() {
 }
 
 hendler();
-setCSSstyles();
-*/
+
