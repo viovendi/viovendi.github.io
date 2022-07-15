@@ -111,9 +111,9 @@ async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
 
-    //await getPage("page2");
-   // getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    console.log
+    await getPage("page2");
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    
     var result = await getPage("page4");
     var dooOrder = getOrderInformation(result.dataLayer);
     console.log(dooOrder);
