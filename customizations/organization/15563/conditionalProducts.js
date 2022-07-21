@@ -142,14 +142,14 @@ function handler() {
     // Conditional Products
     $(".question-group:nth-of-type(2)").hide();
     
+    // Booking Portal
     if($(".edit-booking__tab").is(":visible")){
         $(".question-group:nth-of-type(2)").show();
         var rundgaengeAb = getCheckedEntryTime();
         disableRundgaengeBeforeEntry(rundgaengeAb);
     }
-   
-
-
+    
+    // Booking Process
     $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
         $(".question-group:nth-of-type(2)").show();
         var rundgaengeAb = getCheckedEntryTime();
@@ -157,16 +157,18 @@ function handler() {
     });
 
 
-    // Wprding Changes
+    // Wording Changes
     $(".customization2_attendee_count").each(function () {
         $(this).text($(this).text().replace("Teilnehmer", "Person"));
     });
 
     $(".customization2_attendees_title").text("Persönliche Daten");
     $(".customization2_attendee_further-data_headline").text("Ticketbuchung");
-
+    
+    // Hide copy attendee data
     $(".customization2_attendee_contact-data_copy-link").hide();
 
+    // Hide product values
     $(".customization2_attendee_further-data_product_value").hide();
 
     
