@@ -1,6 +1,8 @@
 console.log("Git start");
 
 const einlasszeiten = [
+    [690, "Ihr Einlass: 11:00 - 11:30"],
+    [720, "Ihr Einlass: 11:30 - 12:00"],
     [750, "Ihr Einlass: 12:00 - 12:30"],
     [780, "Ihr Einlass: 12:30 - 13:00"],
     [810, "Ihr Einlass: 13:00 - 13:30"],
@@ -16,63 +18,50 @@ const einlasszeiten = [
 ]
 
 const rundgaenge = [
-    [750, "Rundgang Villa Hammerschmidt: 12:30 Uhr"],
-    [765, "Rundgang Villa Hammerschmidt: 12:45 Uhr"],
-    [780, "Rundgang Villa Hammerschmidt: 13:00 Uhr"],
-    [795, "Rundgang Villa Hammerschmidt: 13:15 Uhr"],
-    [810, "Rundgang Villa Hammerschmidt: 13:30 Uhr"],
-    [825, "Rundgang Villa Hammerschmidt: 13:45 Uhr"],
-    [840, "Rundgang Villa Hammerschmidt: 14:00 Uhr *ENGLISH*"],
-    [855, "Rundgang Villa Hammerschmidt: 14:15 Uhr"],
-    [870, "Rundgang Villa Hammerschmidt: 14:30 Uhr"],
-    [885, "Rundgang Villa Hammerschmidt: 14:45 Uhr"],
-    [900, "Rundgang Villa Hammerschmidt: 15:00 Uhr"],
-    [915, "Rundgang Villa Hammerschmidt: 15:15 Uhr"],
-    [930, "Rundgang Villa Hammerschmidt: 15:30 Uhr"],
-    [945, "Rundgang Villa Hammerschmidt: 15:45 Uhr"],
-    [960, "Rundgang Villa Hammerschmidt: 16:00 Uhr *ENGLISH*"],
-    [975, "Rundgang Villa Hammerschmidt: 16:15 Uhr"],
-    [990, "Rundgang Villa Hammerschmidt: 16:30 Uhr"],
-    [1005, "Rundgang Villa Hammerschmidt: 16:45 Uhr"],
-    [1020, "Rundgang Villa Hammerschmidt: 17:00 Uhr"],
-    [1035, "Rundgang Villa Hammerschmidt: 17:15 Uhr"],
-    [1050, "Rundgang Villa Hammerschmidt: 17:30 Uhr"],
-    [1065, "Rundgang Villa Hammerschmidt: 17:45 Uhr"],
-    [1080, "Rundgang Villa Hammerschmidt: 18:00 Uhr"],
-    [760, "Rundgang historische Gebäude BMZ: 12:40 Uhr"],
-    [780, "Rundgang historische Gebäude BMZ: 13:00 Uhr *ENGLISH*"],
-    [800, "Rundgang historische Gebäude BMZ: 13:20 Uhr"],
-    [820, "Rundgang historische Gebäude BMZ: 13:40 Uhr"],
-    [840, "Rundgang historische Gebäude BMZ: 14:00 Uhr"],
-    [860, "Rundgang historische Gebäude BMZ: 14:20 Uhr"],
-    [880, "Rundgang historische Gebäude BMZ: 14:40 Uhr"],
-    [900, "Rundgang historische Gebäude BMZ: 15:00 Uhr *AUDIODESKRIPTION*"],
-    [920, "Rundgang historische Gebäude BMZ: 15:20 Uhr"],
-    [940, "Rundgang historische Gebäude BMZ: 15:40 Uhr"],
-    [960, "Rundgang historische Gebäude BMZ: 16:00 Uhr"],
-    [980, "Rundgang historische Gebäude BMZ: 16:20 Uhr"],
-    [1000, "Rundgang historische Gebäude BMZ: 16:40 Uhr"],
-    [1020, "Rundgang historische Gebäude BMZ: 17:00 Uhr *ENGLISCH*"],
-    [1040, "Rundgang historische Gebäude BMZ: 17:20 Uhr"],
-    [1060, "Rundgang historische Gebäude BMZ: 17:40 Uhr"],
-    [1080, "Rundgang historische Gebäude BMZ: 18:00 Uhr"],
-    [760, "Rundgang Kanzlerbungalow: 12:40 Uhr"],
-    [780, "Rundgang Kanzlerbungalow: 13:00 Uhr *ENGLISH*"],
-    [800, "Rundgang Kanzlerbungalow: 13:20 Uhr"],
-    [820, "Rundgang Kanzlerbungalow: 13:40 Uhr"],
-    [840, "Rundgang Kanzlerbungalow: 14:00 Uhr"],
-    [860, "Rundgang Kanzlerbungalow: 14:20 Uhr"],
-    [880, "Rundgang Kanzlerbungalow: 14:40 Uhr"],
-    [900, "Rundgang Kanzlerbungalow: 15:00 Uhr *AUDIODESKRIPTION*"],
-    [920, "Rundgang Kanzlerbungalow: 15:20 Uhr"],
-    [940, "Rundgang Kanzlerbungalow: 15:40 Uhr"],
-    [960, "Rundgang Kanzlerbungalow: 16:00 Uhr"],
-    [980, "Rundgang Kanzlerbungalow: 16:20 Uhr"],
-    [1000, "Rundgang Kanzlerbungalow: 16:40 Uhr"],
-    [1020, "Rundgang Kanzlerbungalow: 17:00 Uhr *ENGLISH*"],
-    [1040, "Rundgang Kanzlerbungalow: 17:20 Uhr"],
-    [1060, "Rundgang Kanzlerbungalow: 17:40 Uhr"],
-    [1080, "Rundgang Kanzlerbungalow: 18:00 Uhr"]
+    [690, "Schlossrundgang: 11:30 Uhr"],
+    [700, "Schlossrundgang: 11:40 Uhr"],
+    [710, "Schlossrundgang: 11:50 Uhr"],
+    [720, "Schlossrundgang: 12:00 Uhr"],
+    [730, "Schlossrundgang: 12:10 Uhr"],
+    [740, "Schlossrundgang: 12:20 Uhr"],
+    [750, "Schlossrundgang: 12:30 Uhr"],
+    [760, "Schlossrundgang: 13:40 Uhr"],
+    [770, "Schlossrundgang: 13:50 Uhr"],
+    [780, "Schlossrundgang: 13:00 Uhr"],
+    [790, "Schlossrundgang: 13:10 Uhr"],
+    [800, "Schlossrundgang: 13:20 Uhr"],
+    [810, "Schlossrundgang: 13:30 Uhr"],
+    [820, "Schlossrundgang: 13:40 Uhr"],
+    [830, "Schlossrundgang: 13:50 Uhr"],
+    [840, "Schlossrundgang: 14:00 Uhr"],
+    [850, "Schlossrundgang: 14:10 Uhr"],
+    [860, "Schlossrundgang: 14:20 Uhr"],
+    [870, "Schlossrundgang: 14:30 Uhr"],
+    [880, "Schlossrundgang: 14:40 Uhr"],
+    [890, "Schlossrundgang: 14:50 Uhr"],
+    [900, "Schlossrundgang: 15:00 Uhr"],
+    [910, "Schlossrundgang: 15:10 Uhr"],
+    [920, "Schlossrundgang: 15:20 Uhr"],
+    [930, "Schlossrundgang: 15:30 Uhr"],
+    [940, "Schlossrundgang: 15:40 Uhr"],
+    [950, "Schlossrundgang: 15:50 Uhr"],
+    [960, "Schlossrundgang: 16:00 Uhr"],
+    [970, "Schlossrundgang: 16:10 Uhr"],
+    [980, "Schlossrundgang: 16:20 Uhr"],
+    [990, "Schlossrundgang: 16:30 Uhr"],
+    [1000, "Schlossrundgang: 16:40 Uhr"],
+    [1010, "Schlossrundgang: 16:50 Uhr"],
+    [1020, "Schlossrundgang: 17:00 Uhr"],
+    [1030, "Schlossrundgang: 17:10 Uhr"],
+    [1040, "Schlossrundgang: 17:20 Uhr"],
+    [1050, "Schlossrundgang: 17:30 Uhr"],
+    [1060, "Schlossrundgang: 17:40 Uhr"],
+    [1070, "Schlossrundgang: 17:50 Uhr"],
+    [1080, "Schlossrundgang: 18:00 Uhr"],
+    [1090, "Schlossrundgang: 18:10 Uhr"],
+    [1100, "Schlossrundgang: 18:20 Uhr"],
+    [1110, "Schlossrundgang: 18:30 Uhr"],
+    
 ]
 
 function disableRundgaengeBeforeEntry(entryTime) {
@@ -151,14 +140,11 @@ function getCheckedEntryTime() {
 
 function handler() {
     // Conditional Products
-    $(".question-group:nth-of-type(2)").hide();
-    $(".question-group:nth-of-type(3)").hide();
-    $(".question-group:nth-of-type(4)").hide();
+    $("div:not(.edit-booking__tab) .question-group:nth-of-type(2)").hide();
+
 
     $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
         $(".question-group:nth-of-type(2)").show();
-        $(".question-group:nth-of-type(3)").show();
-        $(".question-group:nth-of-type(4)").show();
         var rundgaengeAb = getCheckedEntryTime();
         disableRundgaengeBeforeEntry(rundgaengeAb);
     });
@@ -171,18 +157,23 @@ function handler() {
 
     $(".customization2_attendees_title").text("Persönliche Daten");
     $(".customization2_attendee_further-data_headline").text("Ticketbuchung");
+
+    $(".customization2_attendee_contact-data_copy-link").hide();
+
+    $(".customization2_attendee_further-data_product_value").hide();
+
+    
 }
-/*deactivated*/
 
-// handler();
+handler();
 
-// var insertionListener = function (event) {
-//     if (event.animationName === "nodeInserted") {
-//         console.log("Node has been inserted: ", event.target);
-//         handler();
-//     }
-// }
+var insertionListener = function (event) {
+    if (event.animationName === "nodeInserted") {
+        console.log("Node has been inserted: ", event.target);
+        handler();
+    }
+}
+
 document.addEventListener("animationstart", insertionListener, false);
 document.addEventListener("MSAnimationStart", insertionListener, false);
 document.addEventListener("webkitAnimationStart", insertionListener, false);
-
