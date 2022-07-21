@@ -66,7 +66,7 @@ const rundgaenge = [
 
 function disableRundgaengeBeforeEntry(entryTime) {
     for (let i = 0; i < rundgaenge.length; i++) {
-        if (rundgaenge[i][0] <= entryTime) {
+        if (rundgaenge[i][0] < entryTime) {
             uncheckProd(rundgaenge[i][1]);
             disableProd(rundgaenge[i][1]);
         } else {
