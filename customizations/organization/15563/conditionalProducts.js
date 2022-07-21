@@ -141,7 +141,13 @@ function getCheckedEntryTime() {
 function handler() {
     // Conditional Products
     $(".question-group:nth-of-type(2)").hide();
-    $(".edit-booking__tab .question-group:nth-of-type(2)").show();
+    
+    if($(".edit-booking__tab").is(":visible")){
+        $(".question-group:nth-of-type(2)").show();
+        var rundgaengeAb = getCheckedEntryTime();
+        disableRundgaengeBeforeEntry(rundgaengeAb);
+    }
+   
 
 
     $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
