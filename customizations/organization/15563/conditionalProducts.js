@@ -170,6 +170,7 @@ function handler() {
 
     // Hide product values
     $(".customization2_attendee_further-data_product_value").hide();
+    $(".customization2_attendee_further-data_product_value").css("display", "none");
 
     
 }
