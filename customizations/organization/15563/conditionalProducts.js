@@ -140,7 +140,8 @@ function getCheckedEntryTime() {
 
 function handler() {
     // Conditional Products
-    $("div:not(.edit-booking__tab) .question-group:nth-of-type(2)").hide();
+    $(".question-group:nth-of-type(2)").hide();
+    $(".edit-booking__tab .question-group:nth-of-type(2)").show();
 
 
     $(".question-group:first-of-type .customization2_attendee_further-data_product").on('change', function () {
