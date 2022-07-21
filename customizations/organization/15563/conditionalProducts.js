@@ -168,11 +168,6 @@ function handler() {
     // Hide copy attendee data
     $(".customization2_attendee_contact-data_copy-link").hide();
 
-    // Hide product values
-    $(".customization2_attendee_further-data_product_value").hide();
-    $(".customization2_attendee_further-data_product_value").css("display", "none");
-
-    
 }
 
 handler();
