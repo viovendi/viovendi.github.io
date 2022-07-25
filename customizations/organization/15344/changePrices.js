@@ -46,7 +46,7 @@ function changeTicketAmount() {
 
 };
 
-changePriceTags();
+changePriceTags(); 
 changeTicketAmount();
 
 
