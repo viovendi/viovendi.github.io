@@ -338,6 +338,8 @@ function customTerms() {
             }else {
                 $('.custom_terms_checkbox').click();
                 $('.custom_terms_checkbox').click();
+                $('.customization2_booking-terms_checkbox').click();
+                $('.customization2_booking-terms_checkbox').click();
             }
             $('.customization2_attendee_view-action_edit').on('click', function (e) {
                 $('.customization-button-next').prop("disabled", true);
