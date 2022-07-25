@@ -302,6 +302,18 @@ function customTerms() {
         $('.customization2_booking-terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelectedLower = !checkboxSelectedLower;
+                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0||!checkboxSelectedLower) {
+                    $('.customization-button-next').prop("disabled", true);
+                    $(".error-message-next-button").show();
+                } else {
+                    if($('.customization2_attendee_edit-action_save').length>0){
+                        $('.customization-button-next').prop("disabled", true);
+                    }else{
+                        console.log("enabling the next button");
+                    $('.customization-button-next').prop("disabled", false);
+                    $(".error-message-next-button").hide();
+                    }
+                }
                 console.log("Higher: "+checkboxSelected);
                 console.log("Lower: "+checkboxSelectedLower);
             }
