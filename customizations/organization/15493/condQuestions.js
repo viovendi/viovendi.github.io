@@ -318,7 +318,7 @@ function customTerms() {
         $('.custom_terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelected = !checkboxSelected;
-                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0||$('.customization2_attendee_edit-action_save')) {
+                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0||$('.customization2_attendee_edit-action_save').length>0) {
                     $('.customization-button-next').prop("disabled", true);
                     $(".error-message-next-button").show();
                 } else {
