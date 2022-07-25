@@ -179,7 +179,7 @@ var insertionListener = function (event) {
     var radioGroupGastorMitglied = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Sind Sie ein Gast oder ein stimmberechtigtes Mitglied?');
 
     hideAll();
-    handler()
+    handler();
 
 
     // show 2 questions if 'Gast' or 'Stimmberechtigtes Mitglied' is clicked
@@ -193,7 +193,9 @@ var insertionListener = function (event) {
           console.log('show');
           showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
         } else {
-          hideAll();
+          //hideAll();
+          $('.customization2_attendee_further-data_custom-question-2').hide();
+          showQuestion(".customization2_attendee_further-data_custom-question", "Kommen Sie zusätzlich als Vertreter für andere Mitglieder?");
           console.log('hide');
         }
       });

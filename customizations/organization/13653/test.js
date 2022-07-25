@@ -1,300 +1,202 @@
-console.log("git sommerakademie");
+// function getEl(){
+//     return new Promise(function (resolve, reject) {
+//       var timerId = setInterval(function() {
+//         var el  = document.getElementsByClassName("customization-booking-area-wrapper-page4");
+//         if(el.length > 0){
+//           clearInterval(timerId);
+//           resolve(el)
+//         }
+//       }, 1000);
+//     }
+//                       )
+//   };
 
+function getXMLHttpRequest(open) {
+  XMLHttpRequest.prototype.open = function () {
+    this.addEventListener(
+      "readystatechange",
+      function () {
+        if (this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders") {
+          try {
+            var res =
+              typeof JSON.parse(this.responseText) != "undefined"
+                ? JSON.parse(this.responseText)
+                : undefined;
+          } catch (err) {}
 
-
-// call handler whenever a checkbox is clicked/changed
-function init(name) {
-  $('.' + name + ' .customization2_attendee_further-data_product_checkbox').on('change', function () {
-    handler();
-  });
-}
-
-init('customization2_attendee');
-
-handler();
-
-
-
-
-
-//hides Products
-function hideProduct(shortName) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.includes(shortName)) {
-      $(this).hide();
-    }
-  });
-}
-
-// show Products
-function showProduct(shortName) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_name')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(shortName) >= 0) {
-      $(this).show();
-    }
-  });
-}
-
-function disableProd(disable){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-             if(checkboxName.indexOf(disable) >= 0){
-                checkbox.prop( "disabled", true )
-             }
-    });
-   }
-
-function enableProd(disable){
-    $('.customization2_attendee_further-data_product').each(function(i, element) {
-          var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-          var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-             if(checkboxName.indexOf(disable) >= 0){
-                checkbox.prop( "disabled", false )
-             }
-    });
-   }
-
-
-// this hides or shows another product when checked or unchecked
-function hideProdWhenChecked(shortName, hide) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    checkbox.change(function () {
-      if (checkbox.is(':checked')) {
-        if (checkboxName.includes(shortName)) {
-          hideProduct(hide)
+          if (res != undefined && res._embedded) {
+            var orders = res._embedded.orders;
+            var price =
+              (orders[0].payment.amount - orders[0].total_coupon_discount) /
+              100;
+            localStorage.setItem(
+              "order",
+              JSON.stringify({
+                price: price,
+                orderId: orders[0].id,
+                attendees: orders[0].attendees,
+              })
+            );
+          }
         }
-      } else if (!checkbox.is(':checked')) {
-        if (checkboxName.includes(shortName)) {
-          showProduct(hide);
-        }
+      },
+      false
+    );
+    open.apply(this, arguments);
+  };
+}
+
+// function prefillPaymentMethod(selector) {
+//   const paymentMethod = document.querySelector(`.${selector}`);
+//   paymentMethod.checked = true;
+//   paymentMethod.dispatchEvent(new Event("change"));
+//   paymentMethod.click();
+// }
+
+// function outputResult(result) {
+//   var pre = document.createElement("pre");
+//   pre.innerHTML = result;
+//   var widgetContainer = document.getElementById("widgetContainer");
+//   widgetContainer.appendChild(pre);
+// }
+
+function getOrderInformation(dataLayer) {
+  console.log(dataLayer);
+  var confirmed = dataLayer.find(function (o) {
+    return o.event == "RegistrationConfirmed";
+  });
+  var { purchase } = confirmed.ecommerce;
+  return JSON.stringify({
+    eventId: confirmed.doo.eventId,
+    organizationId: confirmed.doo.organizationId,
+    bookingId: purchase.actionField.id,
+    tickets: purchase.products.filter(function (o) {
+      return o.category == "Ticket";
+    }),
+  });
+}
+
+async function getPage(page) {
+  var pages = {
+    page1: "customization-booking-area-wrapper-page1",
+    page2: "customization-booking-area-wrapper-page2",
+    page3: "customization-booking-area-wrapper-page3",
+    page4: "customization-confirmation-label",
+  };
+  return new Promise(function (resolve, reject) {
+    try {
+      const element = document.querySelector("body");
+
+      var observer = new MutationObserver(pageLoaded);
+
+      function pageLoaded(mutations) {
+        mutations.forEach((mutation) => {
+          var classList = mutation.target.classList
+            ? [...mutation.target.classList]
+            : [];
+          if (
+            mutation.type === "childList" &&
+            classList.indexOf(pages[page]) != -1
+          ) {
+            resolve({
+              selector: document.querySelector("." + pages[page]),
+              dataLayer: dataLayer,
+            });
+          }
+        });
       }
-    })
-  })
-}
 
-function uncheckProduct2whenProduct1Isunchecked(product1, product2){
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    //checkbox.change(function () {
-      if (!checkbox.is(':checked')) {
-        if (checkboxName.includes(product1)) {
-          console.log("uncheck" + product2 +" if " +product1 +" is unchecked");
-          uncheckProd(product2)
-        }
-      } 
-    //})
-  })
-}
-
-
-
-function hideProd(shortName, hide) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    if (checkbox.is(':checked')) {
-      if (checkboxName.includes(shortName)) {
-        hideProduct(hide)
-      }
-    } 
-  })
-}
-
-
-function showProdWhenChecked(shortName, show) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-    checkbox.change(function () {
-      if (checkbox.is(':checked')) {
-        if (checkboxName.indexOf(shortName) >= 0) {
-          showProduct(show)
-        }
-      } else if (!checkbox.is(':checked')) {
-        if (checkboxName.indexOf(shortName) >= 0) {
-          hideProduct(show)
-        }
-      }
-    })
-  })
-}
-
-
-
-function uncheckProd(shortName){
-$('.customization2_attendee_further-data_product').each(function(i, element) {
-     var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-     var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-     if(checkbox.is(':checked')){
-         if(checkboxName.indexOf(shortName) >= 0){
-            checkbox.trigger('click');
-           console.log(checkboxName + "clicked / unchecked");
-         }
-       }
- }
-                                                      )};
-
-
-
-
-function markAsChecked(name) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(name) >= 0) {
-      checkbox.prop('checked', true);
+      observer.observe(element, {
+        characterData: true,
+        subtree: true,
+        childList: true,
+      });
+    } catch (error) {
+      reject(new Error(error));
     }
   });
 }
 
-function markAsUnChecked(name) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.indexOf(name) >= 0) {
-      checkbox.prop('checked', false);
+async function hendler() {
+  console.log("hendler");
+  console.log(document.readyState);
+  if (document.readyState !== "loading") {
+    console.log("document is already ready");
+
+    await getPage("page2");
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+
+    var result = await getPage("page4");
+    var dooOrder = getOrderInformation(result.dataLayer);
+
+    var order = localStorage.getItem("order");
+    var img0 = document.createElement("img");
+    var img1 = document.createElement("img");
+    var img2 = document.createElement("img");
+    var img3 = document.createElement("img");
+    var img4 = document.createElement("img");
+    var img5 = document.createElement("img");
+    
+    
+    if (JSON.parse(order).attendees[0]?.ticket.checkin_link.length){
+    var img0 = document.createElement("img");
+    img0.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[0].ticket.checkin_link);
+    img0.setAttribute('style','display: block;page-break-before: always;')
     }
-  });
-}
-
-// return true if checkbox is checked, returns false is checkbox is NOT checked
-// checks all checkboxes, filter by shortName
-function ischecked(shortName) {
-  var bool = false;
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-
-
-    if (checkbox.is(':checked')) {
-      if (checkboxName.indexOf(shortName) >= 0) {
-        bool = true;
-      }
+    if (JSON.parse(order).attendees[1]?.ticket.checkin_link.length){
+    var img1 = document.createElement("img");
+    img1.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[1].ticket.checkin_link);
+    img1.setAttribute('style','display: block;page-break-before: always;')
     }
-
-
-  })
-  return bool;
-}
-
-
-
-
-// handler is called every time a checkbox is "changed" 
-function handler() {
- 
-    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-    console.log(name);
-
-  if (name == "Teilnehmeranmeldung" ) {
-    // hide other day when 1 day is selected
-   if (ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
-      console.log("checked");
-      disableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      uncheckProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      disableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
-      uncheckProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
-    } 
-    else if (!ischecked("Zweitägig: Mo / Di 13:30 – 17:00 Uhr 10:00 – 17:00 Uhr: Das Neue aus dem Alten, die Schönheit verbirgt sich im Unerwarteten – Schmuckgestaltung aus Abfallmaterial")) {
-      console.log("notchecked");
-      enableProd("10:00 – 17:00 Uhr: Umgang mit Unterrichtsstörungen – Schwierige Situationen meistern");
-      enableProd("Zweitägig: Di/ Mi 10:00 - 17:00 Uhr/ 09:00 - 16:00 Uhr: (Schwierige) Gespräche konstruktiv und erfolgreich führen");
-
-
-     // uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
-      
+    if (JSON.parse(order).attendees[2]?.ticket.checkin_link.length){
+    var img2 = document.createElement("img");
+    img2.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[2].ticket.checkin_link);
+    img2.setAttribute('style','display: block;page-break-before: always;')
     }
-
-    if (ischecked("P2")) {
-      uncheckProd("2Tage");
-      
-    } 
-    else {
-      
-      hideProduct("Workshop 2");
-      uncheckProduct2whenProduct1Isunchecked("Dienstag","Workshop 2");
-      
+    if (JSON.parse(order).attendees[3]?.ticket.checkin_link.length){
+    var img3 = document.createElement("img");
+    img3.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[3].ticket.checkin_link);
+    img3.setAttribute('style','display: block; page-break-before: always;')
     }
+    if (JSON.parse(order).attendees[4]?.ticket.checkin_link.length){
+    var img4 = document.createElement("img");
+    img4.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[4].ticket.checkin_link);
+    img4.setAttribute('style','display: block; page-break-before: always;')
+    }
+    if (JSON.parse(order).attendees[5]?.ticket.checkin_link.length){
+    var img5 = document.createElement("img");
+    img5.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[5].ticket.checkin_link);
+    img5.setAttribute('style','display: block;')
+    }
+    
+    
+    widgetContainer.appendChild(img0);
+    widgetContainer.appendChild(img1);
+    widgetContainer.appendChild(img2);
+    widgetContainer.appendChild(img3);
+    widgetContainer.appendChild(img4);
+    widgetContainer.appendChild(img5);
+    /*
+    var img2 = document.createElement("img");
+    img.setAttribute('src', 'https://chart.googleapis.com/chart?chs=190x190&cht=qr&choe=UTF-8&chl='+JSON.parse(order).attendees[1].ticket.checkin_link);
+    img.setAttribute('style','display: block;')
+    widgetContainer.appendChild(img2);
+    */
 
     
 
   }
-
-
-
-
-
-
 }
 
-// function pretty similar to handler(); is called when attendee is editing his data
-function inEditMode(){
-    const name = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim()
-    console.log('edit mode');
-    console.log(name);
-  
-  // name == "Erwachsenen Ticket" || name == "Tagesticket Kind (6-13 Jahre)" || name == "Tagesticket Kind unter 6 Jahre" || name == "Tagesticket ermäßigt" || name == "Gruppenticket (ab 10 P)" || name == "Tagesticket Erwachsene" || name == "Gruppenticket" || name == "Schwerbehinderten Ticket" || name == "Begleitperson"
-    
-  if (name == "Tagesticket Presse") {
-          console.log("edit state");
-         // you don't need checkbox.change() just check if the checkbox is selected and hide the correct field
-          hideProd("P1", "2 tägiger WS Mo und Di")
-          
-          // maybe we need this so .onchange is triggered
-
-
-
-        // show only the products/Workshop that happen on the selected day
-        //e.g. Workshop1 is on Monday, so only show Workshop1 when Monday/Montag is selected
-        // NOTE: markAsUnchecked does not trigger the deselection of the product, just the checkbox, we need workaround, maybe use .trigger("clicked")
-        if (ischecked("Montag")) {
-
-          showProduct("Workshop 1");
-          showProduct("Workshop 1.1");
-          showProduct("Workshop 1.2");
-
-        } 
-        else if (!ischecked("Montag")) {
-
-          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1");
-          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.1");
-          uncheckProduct2whenProduct1Isunchecked("Montag","Workshop 1.2");
-          hideProduct("Workshop 1");
-          hideProduct("Workshop 1.1");
-          hideProduct("Workshop 1.2");
-
-          console.log("uncheck ws1");
-
-        }
-
-      }
-
-
+hendler();
+  function setCSSstyles() {
+  var style = document.createElement("style");
+  style.innerHTML = `
+  @media print {
+    .img { page-break-before: always; } /* page-break-after works, as well */
 }
+  `;
+  document.head.appendChild(style);
+}
+setCSSstyles();
 
-var insertionListener = function (event) {
-  if (event.animationName === "nodeInserted") {
-    console.log("Node has been inserted Git: ", event.target);
-    //Insert your code here
-    init('customization2_attendee');
-    handler();
-    inEditMode();
-
-  }
-};
-
-document.addEventListener("animationstart", insertionListener, false); // standard + firefox
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE
-document.addEventListener("webkitAnimationStart", insertionListener, false); // 
