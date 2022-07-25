@@ -292,7 +292,7 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
-    $('.vv-checkbox__label').on('click', function (e) {
+    $('.customization2_booking-terms_checkbox').on('click', function (e) {
         if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
             checkboxSelectedLower = !checkboxSelectedLower;
             console.log("Lower: "+checkboxSelectedLower);
