@@ -129,6 +129,7 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
 console.log("translating")
 
 checkboxSelected = false;
+checkboxSelectedLower = false;
 
 console.log(checkboxSelected)
 
@@ -291,6 +292,12 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
+    $('.vv-checkbox__label').on('click', function (e) {
+        if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
+            checkboxSelectedLower = !checkboxSelectedLower;
+            console.log("Lower: "+checkboxSelectedLower);
+        }
+    })
     if($(".error-message-next-button").length==0){
         $("<div class='error-message-next-button'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
         $(".error-message-next-button").hide();
@@ -302,8 +309,8 @@ function customTerms() {
         $('.customization2_booking-terms').prepend('<div class="custom_terms_checkbox" style="margin-bottom:10px"></div>');
         $('.custom_terms_checkbox').append(customBookingTerms);
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
-        if (checkboxSelected) {
-            console.log($('div.custom_terms_checkbox > vv-checkbox > label'))
+        if (checkboxSelected!=checkboxSelectedLower) {
+            console.log("Unequal checkboxes");
             $('div.custom_terms_checkbox > vv-checkbox > label').click();
         } else {
             $('.customization-button-next').prop("disabled", true);
