@@ -321,6 +321,7 @@ function customTerms() {
                     $('.customization-button-next').prop("disabled", true);
                     $(".error-message-next-button").show();
                 } else {
+                    console.log("enabling the next button");
                     $('.customization-button-next').prop("disabled", false);
                     $(".error-message-next-button").hide();
                 }
