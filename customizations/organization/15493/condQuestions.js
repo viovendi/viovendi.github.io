@@ -124,11 +124,12 @@ if (url.includes('booking-15493-33318') || url.includes('booking-15493-33313')) 
     allegries = "Food intolerances (optional)";
     hotelTransfer = "I require a hotel transfer";
 } else {
-    console.log("ERROR: Unknown widget id")
+    console.log("German widget detected")
 }
 console.log("translating")
 
 checkboxSelected = false;
+
 console.log(checkboxSelected)
 
 function findDropDownByLabel(label) {
@@ -317,10 +318,11 @@ function customTerms() {
         $('.custom_terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelected = !checkboxSelected;
-                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0) {
+                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0||$('.customization2_attendee_edit-action_save')) {
                     $('.customization-button-next').prop("disabled", true);
                     $(".error-message-next-button").show();
                 } else {
+
                     console.log("enabling the next button");
                     $('.customization-button-next').prop("disabled", false);
                     $(".error-message-next-button").hide();
