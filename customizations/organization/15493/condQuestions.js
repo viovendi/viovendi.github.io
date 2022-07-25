@@ -295,8 +295,10 @@ function editClicked(){
     console.log('edit clicked');
     $('.customization2_attendee_edit-action_save').on('click', function (e) {
             console.log('clicked on edit SAVE');
-          //  $('.custom_terms_checkbox').click();
-            $('.custom_terms_checkbox').click();
+          if (checkboxSelected&&$(".error-state").length == 0&&$(".error-text").length == 0&&checkboxSelectedLower&&$('.customization2_attendee_edit-action_save').length==0) {
+            $('.customization-button-next').prop("disabled", false);
+            $(".error-message-next-button").hide();
+        }
         $('.customization2_attendee_view-action_edit').on('click', function (e) {
             $('.customization-button-next').prop("disabled", true);
             $(".error-message-next-button").show();
