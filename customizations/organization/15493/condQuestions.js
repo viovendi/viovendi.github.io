@@ -295,7 +295,7 @@ function editClicked(){
     console.log('edit clicked');
     $('.customization2_attendee_edit-action_save').on('click', function (e) {
             console.log('clicked on edit SAVE');
-            $('.custom_terms_checkbox').click();
+          //  $('.custom_terms_checkbox').click();
             $('.custom_terms_checkbox').click();
         $('.customization2_attendee_view-action_edit').on('click', function (e) {
             $('.customization-button-next').prop("disabled", true);
