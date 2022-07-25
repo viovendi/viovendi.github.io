@@ -313,6 +313,11 @@ function customTerms() {
             if (!checkboxSelected) {
                 $('.customization-button-next').prop("disabled", true);
                 $(".error-message-next-button").show();
+            }else {
+                $('.custom_terms_checkbox').click();
+                $('.custom_terms_checkbox').click();
+                //  $('.customization-button-next').prop("disabled", false);
+              //  $(".error-message-next-button").hide();
             }
         });
         $('.custom_terms_checkbox').on('click', function (e) {
