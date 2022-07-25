@@ -292,17 +292,19 @@ function disableWhenEmpty(field) {
 };
 
 function customTerms() {
-    $('.customization2_booking-terms_checkbox').on('click', function (e) {
-        if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
-            checkboxSelectedLower = !checkboxSelectedLower;
-            console.log("Lower: "+checkboxSelectedLower);
-        }
-    })
+    
     if($(".error-message-next-button").length==0){
         $("<div class='error-message-next-button'> Wrong or missing data </div>").insertAfter($('.customization-button-next'));
         $(".error-message-next-button").hide();
     }
     if (!$('.custom_terms_checkbox').length) {
+        $('.customization2_booking-terms_checkbox').on('click', function (e) {
+            if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
+                checkboxSelectedLower = !checkboxSelectedLower;
+                checkboxSelected = !checkboxSelected;
+                console.log("Lower: "+checkboxSelectedLower);
+            }
+        })
         console.log("Terms added");
         console.log("Checkbox selected: " + checkboxSelected)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
