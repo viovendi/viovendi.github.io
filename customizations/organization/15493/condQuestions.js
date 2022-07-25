@@ -304,7 +304,7 @@ function customTerms() {
         $('.custom_terms_checkbox p.customization2_booking-terms_text').text('Ich habe zur Kenntnis genommen, dass die Veranstaltung nach den zum Zeitpunkt der Veranstaltung gültigen Corona-Verordnungen des Landes Sachsen durchgeführt wird. Ich trage dafür Sorge, alle notwendigen Zertifikate am Veranstaltungstag vorweisen zu können.');
         if (checkboxSelected) {
             console.log($('div.custom_terms_checkbox > vv-checkbox > label'))
-          //  $('div.custom_terms_checkbox > vv-checkbox > label').click();
+            $('div.custom_terms_checkbox > vv-checkbox > label').click();
         } else {
             $('.customization-button-next').prop("disabled", true);
         //    $(".error-message-next-button").show();       
