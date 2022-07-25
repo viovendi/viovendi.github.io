@@ -298,10 +298,7 @@ function customTerms() {
         $(".error-message-next-button").hide();
     }
     if (!$('.custom_terms_checkbox').length) {
-        $('.customization2_attendee_view-action_edit').on('click', function (e) {
-                $('.customization-button-next').prop("disabled", true);
-                $(".error-message-next-button").show();
-        });
+        
         $('.customization2_booking-terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelectedLower = !checkboxSelectedLower;
@@ -323,20 +320,22 @@ function customTerms() {
         //    $(".error-message-next-button").show();       
      }
         $('.customization2_attendee_edit-action_save').on('click', function (e) {
-            if (!checkboxSelected) {
+            if (!checkboxSelected||!checkboxSelectedLower) {
                 $('.customization-button-next').prop("disabled", true);
                 $(".error-message-next-button").show();
             }else {
                 $('.custom_terms_checkbox').click();
                 $('.custom_terms_checkbox').click();
-                //  $('.customization-button-next').prop("disabled", false);
-              //  $(".error-message-next-button").hide();
             }
+            $('.customization2_attendee_view-action_edit').on('click', function (e) {
+                $('.customization-button-next').prop("disabled", true);
+                $(".error-message-next-button").show();
+            });
         });
         $('.custom_terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelected = !checkboxSelected;
-                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0) {
+                if (!checkboxSelected||$(".error-state").length != 0||$(".error-text").length != 0||!checkboxSelectedLower) {
                     $('.customization-button-next').prop("disabled", true);
                     $(".error-message-next-button").show();
                 } else {
