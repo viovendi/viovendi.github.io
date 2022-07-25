@@ -301,7 +301,7 @@ function customTerms() {
         $('.customization2_booking-terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelectedLower = !checkboxSelectedLower;
-                checkboxSelected = !checkboxSelected;
+                console.log("Higher: "+checkboxSelected);
                 console.log("Lower: "+checkboxSelectedLower);
             }
         })
