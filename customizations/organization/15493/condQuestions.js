@@ -292,15 +292,13 @@ function disableWhenEmpty(field) {
 };
 
 function editClicked(){
+    console.log('edit clicked');
     $('.customization2_attendee_edit-action_save').on('click', function (e) {
-        if (!checkboxSelected||!checkboxSelectedLower) {
-            $('.customization-button-next').prop("disabled", true);
-            $(".error-message-next-button").show();
-        }else {
+            
             $('.custom_terms_checkbox').click();
             $('.custom_terms_checkbox').click();
 
-        }
+        
         $('.customization2_attendee_view-action_edit').on('click', function (e) {
             $('.customization-button-next').prop("disabled", true);
             $(".error-message-next-button").show();
@@ -350,14 +348,8 @@ function customTerms() {
         //    $(".error-message-next-button").show();       
      }
         $('.customization2_attendee_edit-action_save').on('click', function (e) {
-            if (!checkboxSelected||!checkboxSelectedLower) {
-                $('.customization-button-next').prop("disabled", true);
-                $(".error-message-next-button").show();
-            }else {
                 $('.custom_terms_checkbox').click();
                 $('.custom_terms_checkbox').click();
-
-            }
             $('.customization2_attendee_view-action_edit').on('click', function (e) {
                 $('.customization-button-next').prop("disabled", true);
                 $(".error-message-next-button").show();
