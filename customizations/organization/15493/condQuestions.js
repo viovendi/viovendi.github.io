@@ -298,13 +298,17 @@ function customTerms() {
         $(".error-message-next-button").hide();
     }
     if (!$('.custom_terms_checkbox').length) {
+        $('.customization2_attendee_view-action_edit').on('click', function (e) {
+                $('.customization-button-next').prop("disabled", true);
+                $(".error-message-next-button").show();
+        });
         $('.customization2_booking-terms_checkbox').on('click', function (e) {
             if (e.target.name != undefined && e.target.name == 'isTermsAccepted') {
                 checkboxSelectedLower = !checkboxSelectedLower;
                 console.log("Higher: "+checkboxSelected);
                 console.log("Lower: "+checkboxSelectedLower);
             }
-        })
+        });
         console.log("Terms added");
         console.log("Checkbox selected: " + checkboxSelected)
         var customBookingTerms = $(".customization2_booking-terms .vv-mb-xxs vv-checkbox").clone();
