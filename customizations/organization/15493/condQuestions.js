@@ -298,6 +298,8 @@ function editClicked(){
           if (checkboxSelected&&$(".error-state").length == 0&&$(".error-text").length == 0&&checkboxSelectedLower&&$('.customization2_attendee_edit-action_save').length==0) {
             $('.customization-button-next').prop("disabled", false);
             $(".error-message-next-button").hide();
+        }else{
+            $('.customization-button-next').prop("disabled", true);
         }
         $('.customization2_attendee_view-action_edit').on('click', function (e) {
             $('.customization-button-next').prop("disabled", true);
