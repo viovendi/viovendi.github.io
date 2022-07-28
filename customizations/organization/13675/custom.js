@@ -41,6 +41,13 @@ $('.customization2_attendee_contact-data_last-name_input').on('change', function
 });
 */
 
+function saveToArray(arr, string){
+  $('.customization2_attendee_edit-action_save').on('click', function(e){
+    arr.push(string);
+    localStorage.setItem('attArray', JSON.stringify(arr));
+  });
+}
+
 function attendeeProcess(e, firstName, lastName){
   /*
   if(firstName === '' || lastName === ''){
@@ -58,12 +65,10 @@ function attendeeProcess(e, firstName, lastName){
   console.log(attendyNameString);
   
   if(attArray.indexOf(attendyNameString)!=-1){
-    e.preventDefault();
     showError();
   }else{
     hideError();
-    attArray.push(attendyNameString);
-    localStorage.setItem('attArray', JSON.stringify(attArray));
+    saveToArray(attArray, attendyNameString);
   }  
 }
 
