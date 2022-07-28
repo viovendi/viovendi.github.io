@@ -9,6 +9,12 @@ function hideError(){
   console.log('HIDE ERROR');
 }
 
+
+$('.customization2_attendee_edit-action_save').on('click', function(e){
+  console.log('SAVE!');
+});
+
+
 $('.customization2_attendee_edit-action_save').on('click', function(e){
   
   console.log('save clicked');
@@ -62,8 +68,33 @@ function attendeeProcess(e, firstName, lastName){
   
 }
 
+var insertionListener = function (event) {
+    if (event.animationName === "nodeInserted") {
+        console.log("Node has been inserted: ", event.target);
+        
+        $('.customization2_attendee_edit-action_save').on('click', function(e){
+          console.log('SAVE!');
+          
+            var firstName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
+            var lastName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
+            console.log(firstName);
+            console.log(lastName);
+
+            attendeeProcess(e, firstName, lastName);
+        });
+
+        $('customization2_attendee_view-action_edit').on("click", function (e) {
+            console.log("EDITED");
+        });
+    }
+}
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
+/*
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
@@ -87,5 +118,6 @@ function getXMLHttpRequest(open) {
     open.apply(this, arguments);
   };
 }
+*/
 
 
