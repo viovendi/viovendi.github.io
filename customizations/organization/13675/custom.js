@@ -3,26 +3,35 @@ console.log(111);
 
 function showError(){
   console.log('ERROR');
+  $('.customization2_attendee_edit-action_save').attr('disabled', true);
+  $('.customization2_attendee_edit-action').appendChild('<span class="error-message">ERROR MESSAGE</span>');
 }
 
 function hideError(){
   console.log('HIDE ERROR');
+  $('.customization2_attendee_edit-action_save').attr('disabled', false);
+  $('.customization2_attendee_edit-action').find('.error-message').remove();
 }
 
+/*
 $('.customization2_attendee_edit-action_save').on('click', function(e){
   var that = this;
   getAttendeeData(e, this);
 });
+*/
 
 function getAttendeeData(e, that){
     console.log(getAttendeeData);
     console.log(e);
     var firstName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
     var lastName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
-    attendeeProcess(e, firstName, lastName);
+    if(firstName !== '' && lastName !== ''){
+      console.log('PROCESS');
+      attendeeProcess(e, firstName, lastName);
+    }
 }
 
-
+/*
 $('.customization2_attendee_contact-data_first-name_input').on('change', function(){
   hideError();
 });
@@ -30,11 +39,14 @@ $('.customization2_attendee_contact-data_first-name_input').on('change', functio
 $('.customization2_attendee_contact-data_last-name_input').on('change', function(){
   hideError();
 });
+*/
 
 function attendeeProcess(e, firstName, lastName){
+  /*
   if(firstName === '' || lastName === ''){
     return;
   }
+  */
   
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
@@ -46,25 +58,47 @@ function attendeeProcess(e, firstName, lastName){
   console.log(attendyNameString);
   
   if(attArray.indexOf(attendyNameString)!=-1){
-    console.log(e);
     e.preventDefault();
     showError();
   }else{
+    hideError();
     attArray.push(attendyNameString);
     localStorage.setItem('attArray', JSON.stringify(attArray));
-  }
-  
+  }  
 }
+
+
+
+
+
+// onChange
+function checkAttendeeName(){
+  $('.customization2_attendee_contact-data_first-name_input, .customization2_attendee_contact-data_last-name_input').on('change', function(e){
+    console.log('chamge field!');
+    console.log(this);
+    var that = this;
+    getAttendeeData(e, that);
+  });
+}
+checkAttendeeName();
+
+
+
+
 
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-        console.log("Node has been inserted: ", event.target);
+        console.log("Node has been inserted");
         
+      /*
         $('.customization2_attendee_edit-action_save').on('click', function(e){
           console.log('SAVE!');
           var that = this;
-          getAttendeeData(e, this);
+          getAttendeeData(e, that);
         });
+      */
+      
+        checkAttendeeName();
 
         $('customization2_attendee_view-action_edit').on("click", function (e) {
             console.log("EDITED");
