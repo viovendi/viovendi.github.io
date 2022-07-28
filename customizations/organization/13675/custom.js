@@ -9,19 +9,17 @@ function hideError(){
   console.log('HIDE ERROR');
 }
 
-/*
-$('.customization2_attendee_edit-action_save').on('click', function(e){
-  
-  console.log('save clicked');
-  
-  var firstName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
-  var lastName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
-  console.log(firstName);
-  console.log(lastName);
-  
-  attendeeProcess(e, firstName, lastName);
-});
-*/
+function getAttendeeData(){
+  $('.customization2_attendee_edit-action_save').on('click', function(e){
+    var firstName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
+    var lastName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
+    console.log(firstName);
+    console.log(lastName);
+
+    attendeeProcess(e, firstName, lastName);
+  });
+}
+getAttendeeData();
 
 $('.customization2_attendee_contact-data_first-name_input').on('change', function(){
   hideError();
@@ -71,12 +69,15 @@ var insertionListener = function (event) {
         $('.customization2_attendee_edit-action_save').on('click', function(e){
           console.log('SAVE!');
           
+          getAttendeeData();
+          /*
             var firstName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
             var lastName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
             console.log(firstName);
             console.log(lastName);
-
             attendeeProcess(e, firstName, lastName);
+          */
+          
         });
 
         $('customization2_attendee_view-action_edit').on("click", function (e) {
