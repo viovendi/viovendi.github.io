@@ -13,53 +13,36 @@ function hideError(){
   $('.customization2_attendee_edit-action').find('.error-message').remove();
 }
 
-/*
-$('.customization2_attendee_edit-action_save').on('click', function(e){
-  var that = this;
-  getAttendeeData(e, this);
-});
-*/
-
-function getAttendeeData(e, that){
+function getAttendeeData(that){
     console.log(getAttendeeData);
-    console.log(e);
     var firstName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
     var lastName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
     if(firstName !== '' && lastName !== ''){
       console.log('PROCESS');
-      attendeeProcess(e, firstName, lastName);
+      attendeeProcess(firstName, lastName);
     }
 }
 
-/*
-$('.customization2_attendee_contact-data_first-name_input').on('change', function(){
-  hideError();
-});
-
-$('.customization2_attendee_contact-data_last-name_input').on('change', function(){
-  hideError();
-});
-*/
 
 function saveToArray(arr, string){
   $('.customization2_attendee_edit-action_save').on('click', function(e){
+    
+    console.log(arr);
+    console.log(typof arr);
+    
     arr.push(string);
     localStorage.setItem('attArray', JSON.stringify(arr));
   });
 }
 
-function attendeeProcess(e, firstName, lastName){
-  /*
-  if(firstName === '' || lastName === ''){
-    return;
-  }
-  */
+function attendeeProcess(firstName, lastName){
   
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
   
   if (localStorage.getItem('attArray')){
     attArray = localStorage.getItem('attArray');
+    attArray = JSON.parse(attArray);
   }
   var attendyNameString = firstName+'&'+lastName;
   console.log(attendyNameString);
@@ -73,35 +56,20 @@ function attendeeProcess(e, firstName, lastName){
 }
 
 
-
-
-
 // onChange
 function checkAttendeeName(){
   $('.customization2_attendee_contact-data_first-name_input, .customization2_attendee_contact-data_last-name_input').on('change', function(e){
-    console.log('chamge field!');
+    console.log('changed field!');
     console.log(this);
     var that = this;
-    getAttendeeData(e, that);
+    getAttendeeData(that);
   });
 }
 checkAttendeeName();
 
 
-
-
-
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-        console.log("Node has been inserted");
-        
-      /*
-        $('.customization2_attendee_edit-action_save').on('click', function(e){
-          console.log('SAVE!');
-          var that = this;
-          getAttendeeData(e, that);
-        });
-      */
       
         checkAttendeeName();
 
