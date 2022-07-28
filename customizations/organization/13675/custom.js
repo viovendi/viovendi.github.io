@@ -9,12 +9,7 @@ function hideError(){
   console.log('HIDE ERROR');
 }
 
-
-$('.customization2_attendee_edit-action_save').on('click', function(e){
-  console.log('SAVE!');
-});
-
-
+/*
 $('.customization2_attendee_edit-action_save').on('click', function(e){
   
   console.log('save clicked');
@@ -26,6 +21,7 @@ $('.customization2_attendee_edit-action_save').on('click', function(e){
   
   attendeeProcess(e, firstName, lastName);
 });
+*/
 
 $('.customization2_attendee_contact-data_first-name_input').on('change', function(){
   hideError();
@@ -40,7 +36,7 @@ function attendeeProcess(e, firstName, lastName){
   console.log(firstName);
   console.log(lastName);
   
-  if(firstName !== '' && lastName !== ''){
+  if(firstName === '' || lastName === ''){
     return;
   }
   
