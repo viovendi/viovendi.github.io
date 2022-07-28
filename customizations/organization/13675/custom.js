@@ -13,8 +13,8 @@ $('.customization2_attendee_edit-action_save').on('click', function(e){
   
   console.log('save clicked');
   
-  var firstName = $(this).closest('.customization2_attendee_contact-data_first-name_input').val();
-  var lastName = $(this).closest('.customization2_attendee_contact-data_last-name_input').val();
+  var firstName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
+  var lastName = $(this).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
   console.log(firstName);
   console.log(lastName);
   
