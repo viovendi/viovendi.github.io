@@ -4,7 +4,7 @@ console.log(111);
 function showError(){
   console.log('ERROR');
   $('.customization2_attendee_edit-action_save').attr('disabled', true);
-  $('.customization2_attendee_edit-action').appendChild('<span class="error-message">ERROR MESSAGE</span>');
+  $('.customization2_attendee_edit-action').append('<span class="error-message">ERROR MESSAGE</span>');
 }
 
 function hideError(){
