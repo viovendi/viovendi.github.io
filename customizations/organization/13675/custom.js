@@ -33,10 +33,10 @@ $('.customization2_attendee_contact-data_last-name_input').on('change', function
 
 function attendeeProcess(e, firstName, lastName){
   var attArray = [];
-  console.log(localstorage.getItem('attArray'));
+  console.log(localStorage.getItem('attArray'));
   
   if (localstorage.getItem('attArray').length > 0){
-    attArray = localstorage.getItem('attArray');
+    attArray = localStorage.getItem('attArray');
     console.log(attArray);
   }
   var attendyNameString = firstName+'&'+lastName;
