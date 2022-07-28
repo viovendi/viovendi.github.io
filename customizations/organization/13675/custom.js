@@ -1,6 +1,5 @@
 // get localstorage
-console.log(123456798);
-var attendeesData = [];
+console.log(111);
 
 function showError(){
   console.log('ERROR');
@@ -39,6 +38,10 @@ $('.customization2_attendee_contact-data_last-name_input').on('change', function
 function attendeeProcess(e, firstName, lastName){
   console.log(firstName);
   console.log(lastName);
+  
+  if(firstName !== '' && lastName !== ''){
+    return;
+  }
   
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
