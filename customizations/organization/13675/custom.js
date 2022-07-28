@@ -10,14 +10,19 @@ function hideError(){
   console.log('HIDE ERROR');
 }
 
-$('.customization2_attendees .customization2_attendee_edit-action_save').on('click', function(e){
+$('.customization2_attendee-state_edit .customization2_attendee_edit-action_save').on('click', function(e){
   
   console.log('save clicked');
-  console.log($('.customization2_attendee_contact-data_first-name_input').val());
-  console.log($('.customization2_attendee_contact-data_last-name_input').val());
   
-  var firstName = 'firstName';
-  var lastName = 'lastName';
+  /*
+  console.log($('.customization2_attendee-state_edit .customization2_attendee_contact-data_first-name_input').val());
+  console.log($('.customization2_attendee-state_edit .customization2_attendee_contact-data_last-name_input').val());
+  */
+  
+  var firstName = $('.customization2_attendee-state_edit .customization2_attendee_contact-data_first-name_input').val();
+  var lastName = $('.customization2_attendee-state_edit .customization2_attendee_contact-data_last-name_input').val();
+  console.log(firstName);
+  console.log(lastName);
   
   attendeeProcess(e, firstName, lastName);
 });
@@ -32,6 +37,9 @@ $('.customization2_attendee_contact-data_last-name_input').on('change', function
 
 
 function attendeeProcess(e, firstName, lastName){
+  console.log(firstName);
+  console.log(lastName);
+  
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
   
