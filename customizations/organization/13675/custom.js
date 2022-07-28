@@ -35,7 +35,7 @@ function attendeeProcess(e, firstName, lastName){
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
   
-  if (localstorage.getItem('attArray').length > 0){
+  if (localStorage.getItem('attArray').length > 0){
     attArray = localStorage.getItem('attArray');
     console.log(attArray);
   }
