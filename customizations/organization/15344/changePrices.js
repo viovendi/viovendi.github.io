@@ -8,18 +8,29 @@ function changeTextTo(selector, originalText, newText) {
 };
 
 function changePriceTags() {
-    $('.customization-category-price:contains(236,25)').text('1.890 EUR')
-    $('.customization-category-price:contains(273,75)').text('2.190 EUR')
+    $('.customization-category-price:contains(286,25)').text('2.290 EUR')
+    $('.customization-category-price:contains(236,25)').text('1.990 EUR')
+    $('.customization-category-price:contains(280)').text('1.680 EUR')
+    $('.customization-category-price:contains(311,25)').text('2.490 EUR')
+    $('.customization-category-price:contains(268,25)').text('2.2890 EUR')
+    $('.customization-category-price:contains(315)').text('1.890 EUR')
+
+
+
 };
 
 function changeTicketAmount() {
     
     //Summary
     changeTextTo('.customization2_summary_item_quantity', '8x', '1x');
+    changeTextTo('.customization2_summary_item_quantity', '6x', '1x');
+
     
     
     // Dropdown
     changeTextTo('.vv-single-select-option', '8', '1');
+    changeTextTo('.vv-single-select-option', '6', '1');
+
 
     document.querySelectorAll(".vv-selection-input__value").forEach(el => {
         if (el.innerText === '8') { el.innerText = '1' }
@@ -35,7 +46,7 @@ function changeTicketAmount() {
 
 };
 
-changePriceTags();
+changePriceTags(); 
 changeTicketAmount();
 
 
