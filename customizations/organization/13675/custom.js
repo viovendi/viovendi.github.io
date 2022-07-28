@@ -1,35 +1,26 @@
 // get localstorage
-console.log(111);
+console.log('github-js');
 
 function showError(){
-  console.log('ERROR');
   $('.customization2_attendee_edit-action_save').attr('disabled', true);
   $('.customization2_attendee_edit-action').append('<span class="error-message">ERROR MESSAGE</span>');
 }
 
 function hideError(){
-  console.log('HIDE ERROR');
   $('.customization2_attendee_edit-action_save').attr('disabled', false);
   $('.customization2_attendee_edit-action').find('.error-message').remove();
 }
 
 function getAttendeeData(that){
-    console.log(getAttendeeData);
     var firstName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_first-name_input').val();
     var lastName = $(that).closest('.customization2_attendee-state_edit').find('.customization2_attendee_contact-data_last-name_input').val();
     if(firstName !== '' && lastName !== ''){
-      console.log('PROCESS');
       attendeeProcess(firstName, lastName);
     }
 }
 
-
 function saveToArray(arr, string){
-  $('.customization2_attendee_edit-action_save').on('click', function(e){
-    
-    console.log(arr);
-    console.log(typeof arr);
-    
+  $('.customization2_attendee_edit-action_save').on('click', function(e){    
     arr.push(string);
     localStorage.setItem('attArray', JSON.stringify(arr));
     
@@ -40,14 +31,12 @@ function saveToArray(arr, string){
 function attendeeProcess(firstName, lastName){
   
   var attArray = [];
-  console.log(localStorage.getItem('attArray'));
   
   if (localStorage.getItem('attArray')){
     attArray = localStorage.getItem('attArray');
     attArray = JSON.parse(attArray);
   }
   var attendyNameString = firstName+'&'+lastName;
-  console.log(attendyNameString);
   
   if(attArray.indexOf(attendyNameString)!=-1){
     showError();
@@ -61,8 +50,6 @@ function attendeeProcess(firstName, lastName){
 // onChange
 function checkAttendeeName(){
   $('.customization2_attendee_contact-data_first-name_input, .customization2_attendee_contact-data_last-name_input').on('change', function(e){
-    console.log('changed field!');
-    console.log(this);
     var that = this;
     getAttendeeData(that);
   });
@@ -102,7 +89,7 @@ function getXMLHttpRequest(open) {
 
           if (res != undefined && res._embedded) {
             console.log('order completed');
-            alert('order completed');
+            localStorage.removeItem('attArray');
           }
         }
       },
