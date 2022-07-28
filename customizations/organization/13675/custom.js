@@ -116,7 +116,7 @@ document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
-/*
+
 function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
@@ -132,6 +132,7 @@ function getXMLHttpRequest(open) {
 
           if (res != undefined && res._embedded) {
             console.log('order completed');
+            alert('order completed');
           }
         }
       },
@@ -140,6 +141,6 @@ function getXMLHttpRequest(open) {
     open.apply(this, arguments);
   };
 }
-*/
+
 
 
