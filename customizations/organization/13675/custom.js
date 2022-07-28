@@ -28,10 +28,12 @@ function saveToArray(arr, string){
   $('.customization2_attendee_edit-action_save').on('click', function(e){
     
     console.log(arr);
-    console.log(typof arr);
+    console.log(typeof arr);
     
     arr.push(string);
     localStorage.setItem('attArray', JSON.stringify(arr));
+    
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
   });
 }
 
