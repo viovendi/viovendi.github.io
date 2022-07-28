@@ -1,19 +1,84 @@
 // get localstorage
 console.log(123456798);
 var attendeesData = [];
-//localStorage.setItem("attendeeData", attendeesData);
 
-//localStorage.setItem("lastname", "Smith");
-//localStorage.getItem("lastname");
+function showError(){
+  console.log('ERROR');
+}
+
+function hideError(){
+  console.log('HIDE ERROR');
+}
+
+$('.customization2_attendees .customization2_attendee_edit-action_save').on('click', function(e){
+  
+  console.log('save clicked');
+  console.log($('.customization2_attendee_contact-data_first-name_input').val());
+  console.log($('.customization2_attendee_contact-data_last-name_input').val());
+  
+  var firstName = 'firstName';
+  var lastName = 'lastName';
+  
+  attendeeProcess(e, firstName, lastName);
+});
+
+$('.customization2_attendee_contact-data_first-name_input').on('change', function(){
+  hideError();
+});
+
+$('.customization2_attendee_contact-data_last-name_input').on('change', function(){
+  hideError();
+});
 
 
-// update localstorage
+function attendeeProcess(e, firstName, lastName){
+  var attArray = [];
+  console.log(localstorage.getItem('attArray'));
+  
+  if (localstorage.getItem('attArray').length > 0){
+    attArray = localstorage.getItem('attArray');
+    console.log(attArray);
+  }
+  var attendyNameString = firstName+'&'+lastName;
+  console.log(attendyNameString);
+  
+  if(attArray.indexOf(attendyNameString)!=-1){
+    // attendyNameString exists in array
+    // set error state
+    e.preventDefault();
+    // disable button
+    showError();
+  }else{
+    // add string to the array
+    attArray.push(attendyNameString);
+  }
+  
+}
 
 
 
-// clear localstorage
+function getXMLHttpRequest(open) {
+  XMLHttpRequest.prototype.open = function () {
+    this.addEventListener(
+      "readystatechange",
+      function () {
+        if (this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders") {
+          try {
+            var res =
+              typeof JSON.parse(this.responseText) != "undefined"
+                ? JSON.parse(this.responseText)
+                : undefined;
+          } catch (err) {}
 
-
-// page2 - 
+          if (res != undefined && res._embedded) {
+            console.log('order completed');
+          }
+        }
+      },
+      false
+    );
+    open.apply(this, arguments);
+  };
+}
 
 
