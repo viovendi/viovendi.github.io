@@ -35,7 +35,7 @@ function attendeeProcess(e, firstName, lastName){
   var attArray = [];
   console.log(localStorage.getItem('attArray'));
   
-  if (localStorage.getItem('attArray').length > 0){
+  if (localStorage.getItem('attArray')){
     attArray = localStorage.getItem('attArray');
     console.log(attArray);
   }
@@ -51,6 +51,7 @@ function attendeeProcess(e, firstName, lastName){
   }else{
     // add string to the array
     attArray.push(attendyNameString);
+    localStorage.setItem('attArray', JSON.stringify(attArray));
   }
   
 }
