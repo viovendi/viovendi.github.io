@@ -1,13 +1,10 @@
 console.log('github-js');
 
-/*
 const observer = new MutationObserver((mutations, obs) => {
-  const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
-
+  const page = document.getElementsByClassName('customization-booking-area-wrapper-page3');
   if ($(page).is(':visible')) {
-    
-    // startCustomizationPage1();
-    
+    console.log('stop timer');
+    stopTimer();
     obs.disconnect();
     return;
   }
@@ -17,26 +14,42 @@ observer.observe(document, {
   childList: true,
   subtree: true
 });
-*/
+
+
+
+var timeInterval;
 
 function salutationCheck() {
+  timeInterval = setInterval(checkFunction, 3000);
+}
+
+function checkFunction(){
   var salutation = '';
-  setInterval(function(){
-    salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
-    console.log(salutation);
-    
-    if(salutation && salutation !== 'Please select'){
-      console.log('salutation!!!');
-      // get value Mr/Ms
-      // frun func to hide/show the question 
-      // hideShowQuestion(salutation);
-    }
-  }, 2000);
+  salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
+  console.log(salutation);
+
+  if(salutation && salutation !== 'Please select'){
+    hideShowQuestion(salutation);
+  }
 }
 
 function hideShowQuestion(salutation){
-  
+  if(salutation.indexOf('Mr')>0){
+    // mr case
+    
+  }else{
+    // ms case
+    
+  }
 }
+
+function stopTimer() {
+  clearInterval(timeInterval);
+}
+
+
+
+
 
 function hide(tag, name){
  $(tag).each(function (i, element) {
