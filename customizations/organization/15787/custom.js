@@ -21,7 +21,7 @@ observer.observe(document, {
 
 function salutationCheck() {
   var salutation = '';
-  setTimeInterval(function(){
+  setInterval(function(){
     salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
     console.log(salutation);
     
