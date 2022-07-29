@@ -18,9 +18,6 @@ observer.observe(document, {
   subtree: true
 });
 */
-.vv-single-select-option.vv-single-select-option--extended
-
-
 
 
 
