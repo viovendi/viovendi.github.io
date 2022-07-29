@@ -57,6 +57,7 @@ function show(tag, name){
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log('change');
+    console.log($('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text());
     // salutationChecked();
   }
 }
