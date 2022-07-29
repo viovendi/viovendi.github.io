@@ -4,7 +4,7 @@ console.log('github-js-');
 function showError(){
   $('.customization2_attendee_edit-action_save').attr('disabled', true);
   if($('.error-message').length < 1){
-    $('.customization2_attendee_edit-action').append('<span class="error-message">Jeder Teilnehmer benötigt eine eigene Einlasskarte. Bitte geben Sie für jeden Teilnehmer eigene Daten an.</span>');
+    $('.customization2_attendee_edit-action').append('<span class="error-message">Jeder Gast benötigt eine eigene Einlasskarte. Bitte geben Sie für jeden Gast eigene Daten an.</span>');
   }
 }
 
