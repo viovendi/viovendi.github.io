@@ -1,5 +1,5 @@
 // get localstorage
-console.log('github-js');
+console.log('github-js-');
 
 function showError(){
   $('.customization2_attendee_edit-action_save').attr('disabled', true);
