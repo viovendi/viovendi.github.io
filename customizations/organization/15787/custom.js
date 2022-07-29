@@ -25,7 +25,8 @@ function salutationCheck() {
     salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
     console.log(salutation);
     
-    if(salutation && salutation !== 'Please select''){
+    if(salutation && salutation !== 'Please select'){
+      console.log('salutation!!!');
       // get value Mr/Ms
       // frun func to hide/show the question 
       // hideShowQuestion(salutation);
