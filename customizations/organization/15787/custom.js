@@ -1,37 +1,28 @@
 console.log('github-js');
 
 /*
-function salutationChecked() {
-  $('.customization2_attendee_contact-data_salutation_input').on('change', function(){
-    console.log('change');
-  });
-  
-  
-  $('.customization2_attendee_contact-data_salutation_input').each(function (i, element) {
-    var item = $(this)
-    var label = item.find("label");
-    if (label[0].innerText.replace(/^\s+|\s+$/g, "") == "EFN vorhanden?**") {
-       
-      var radioLabel = item.find("input[type=radio]");
-      $(radioLabel[1]).change(function(){
-        if($(radioLabel[1]).is(':checked')){
-          hide("vv-question-text","EFN Eingabe");
-          show("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch"); 
-        }
-      });
-       
-       $(radioLabel[0]).change(function(){
-        if($(radioLabel[0]).is(':checked')){ 
-          show("vv-question-text","EFN Eingabe");
-          hide("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch");
-        }
-      });
-    }
-  });
- 
-}
- 
- */
+const observer = new MutationObserver((mutations, obs) => {
+  const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+
+  if ($(page).is(':visible')) {
+    
+    // startCustomizationPage1();
+    
+    obs.disconnect();
+    return;
+  }
+});
+
+observer.observe(document, {
+  childList: true,
+  subtree: true
+});
+*/
+.vv-single-select-option.vv-single-select-option--extended
+
+
+
+
 
 function salutationChecked() {
   $('.customization2_attendee_contact-data_salutation_input').on('change', function(){
@@ -61,15 +52,15 @@ function show(tag, name){
  });             
 }
    
-hide("vv-question-text","EFN Eingabe");
-hide("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch"); 
+// hide("vv-question-text","EFN Eingabe");
+// hide("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch"); 
 
-salutationChecked();
-
+// salutationChecked();
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
-    salutationChecked();
+    console.log('change');
+    // salutationChecked();
   }
 }
 
