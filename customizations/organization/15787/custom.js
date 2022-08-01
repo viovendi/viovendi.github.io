@@ -22,8 +22,8 @@ var timeInterval;
 function salutationCheck() {
   timeInterval = setInterval(checkFunction, 3000);
 }
-function getTypeOfPartecipation(){
-  var field = $$('customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation');
+function getTypeOfParticipation(){
+  var field = $$('customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation*');
   var checkboxes = field.find('input');
   console.log(checkboxes);
   var input = checkboxes[0];
@@ -37,7 +37,7 @@ function checkFunction(){
   console.log(salutation);
 
   if(salutation && salutation !== 'Please select'){
-    var typeOfParticipation = getTypeOfPartecipation();
+    var typeOfParticipation = getTypeOfParticipation();
     console.log("Type of participation: "+typeOfParticipation);
     hideShowQuestion(salutation,typeOfParticipation);
   }else{
