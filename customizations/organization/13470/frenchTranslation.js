@@ -51,7 +51,7 @@ observer1.observe(document, {
 function startCustomizationPage1(){
       console.log('page 1 visible');
   //Text von Button auf Seite 1
-      $('.customization-button-next').text('Contineur');
+      $('.customization-button-next').text('Continuer');
   
   const observerMwStText = new MutationObserver((mutations, obs) => {
         const mwstText = $('ew-selection__sum-title').next();
