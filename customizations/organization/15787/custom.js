@@ -42,10 +42,10 @@ function checkFunction(){
   var salutation = '';
   salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
   console.log(salutation);
-
+  getTypeOfParticipation();
   if(salutation && salutation !== 'Please select'){
-    console.log("Type of participation: "+typeOfParticipation);
-    hideShowQuestion(salutation,typeOfParticipation);
+  //  console.log("Type of participation: "+typeOfParticipation);
+  //  hideShowQuestion(salutation,typeOfParticipation);
   }else{
     hide('.customization2_attendee_further-data_custom-question','Type of participation');
     hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
