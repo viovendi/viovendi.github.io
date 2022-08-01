@@ -84,11 +84,11 @@ function stopTimer() {
 
 
 function hide(tag, name){
-  $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name).hide();           
+  $($$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name)).hide();           
 }
 
 function show(tag, name){
-  $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name).show();           
+  $($$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name)).show();           
 }
    
 // hide("vv-question-text","EFN Eingabe");
