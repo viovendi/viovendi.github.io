@@ -71,14 +71,13 @@ function show(tag, name){
 // hide("vv-question-text","EFN Eingabe");
 // hide("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch"); 
 
-// salutationChecked();
+ salutationChecked();
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
     console.log('change');
     console.log($('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text());
     salutationCheck();
-    getTypeOfParticipation();
   }
 }
 
