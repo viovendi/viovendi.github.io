@@ -26,12 +26,8 @@ let isOnsite = false;
 function getTypeOfParticipation(){
   var field = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation*');
   var checkboxes = $(field).find('input');
-  const option2 = $(checkboxes[0].currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
-      console.log("OPTION2: "+option2);
   checkboxes.each(function (i, element) {
     $(element).change(function (input) {
-      console.log('option: ')
-      //on change show these 2 questions
       const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
       isOnsite = option.includes("Onsite")?true:false;
       console.log(option);
@@ -45,8 +41,9 @@ function checkFunction(){
   
   if(salutation && salutation !== 'Please select'){
     console.log("Type of participation: "+isOnsite);
-    hideShowQuestion(salutation,isOnsite);
+    hideShowQuestion(salutation);
   }else{
+    console.log('hiding all');
     hide('.customization2_attendee_further-data_custom-question','Type of participation');
     hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
     hide('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
@@ -56,11 +53,11 @@ function checkFunction(){
   }
 }
 
-function hideShowQuestion(salutation,typeOfParticipation){
+function hideShowQuestion(salutation){
   show('.customization2_attendee_further-data_custom-question','Type of participation');
   show('customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');
 
-  if(typeOfParticipation){
+  if(isOnsite){
     show('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception 14 September');   
