@@ -24,6 +24,13 @@ function salutationCheck() {
 }
 let isOnsite = false;
 function getTypeOfParticipation(){
+  hide('.customization2_attendee_further-data_custom-question','Type of participation');
+    hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
+    hide('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
+    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
+    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception'); 
+    hide('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');
+  
   var field = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation*');
   var checkboxes = $(field).find('input');
   checkboxes.each(function (i, element) {
