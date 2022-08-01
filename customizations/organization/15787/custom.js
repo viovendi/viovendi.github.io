@@ -62,6 +62,7 @@ function hideShowQuestion(salutation){
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception');   
     if(salutation.includes('Ms')){
+      console.log('woman event displayed')
       show('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
     }else{
       hide('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
