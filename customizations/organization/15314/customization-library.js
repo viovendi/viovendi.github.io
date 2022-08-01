@@ -25,6 +25,8 @@ function myHelpers(elements) {
         this.field = null;
 
         elements.forEach((field) => {
+            console.log("FIELD");
+            console.log(field);
             if ($(field.querySelectorAll('.vv-radio-group > p')[0]).text().trim().includes(this.label)) {
                 this.field = field;
             }
