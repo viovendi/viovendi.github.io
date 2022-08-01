@@ -22,14 +22,21 @@ var timeInterval;
 function salutationCheck() {
   timeInterval = setInterval(checkFunction, 3000);
 }
-
+function getTypeOfPartecipation(){
+  var field = $$('customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation');
+  var checkboxes = field.find('input');
+  console.log(checkboxes);
+  var input = checkboxes[0];
+  const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
+  console.log("selected: "+option)
+}
 function checkFunction(){
   var salutation = '';
   salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
   console.log(salutation);
 
   if(salutation && salutation !== 'Please select'){
-    var typeOfParticipation = $$('customization2_attendee_further-data_custom-question').getValueFromDropDown('Type of participation');
+    var typeOfParticipation = $$('customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation');
     console.log("Type of participation: "+typeOfParticipation);
     hideShowQuestion(salutation,typeOfParticipation);
   }else{
