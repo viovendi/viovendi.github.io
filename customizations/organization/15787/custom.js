@@ -48,7 +48,7 @@ function checkFunction(){
     hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
     hide('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
-    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception 14 September'); 
+    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception'); 
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');
   }
 }
@@ -60,7 +60,7 @@ function hideShowQuestion(salutation){
   if(isOnsite){
     show('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
-    show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception 14 September');   
+    show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception');   
     if(salutation.indexOf('Ms')>0){
       show('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
     }else{
@@ -69,7 +69,7 @@ function hideShowQuestion(salutation){
   }else{
     hide('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
-    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception 14 September'); 
+    hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception'); 
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
   }
 
