@@ -33,7 +33,7 @@ function getTypeOfParticipation(){
       console.log('option: ')
       //on change show these 2 questions
       const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
-     // isOnsite = option.contains("Onsite")?true:false;
+      isOnsite = option.includes("Onsite")?true:false;
       console.log(option);
     })
   })
@@ -42,10 +42,10 @@ function checkFunction(){
   var salutation = '';
   salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
   console.log(salutation);
-  getTypeOfParticipation();
+  
   if(salutation && salutation !== 'Please select'){
-  //  console.log("Type of participation: "+typeOfParticipation);
-  //  hideShowQuestion(salutation,typeOfParticipation);
+    console.log("Type of participation: "+isOnsite);
+    hideShowQuestion(salutation,isOnsite);
   }else{
     hide('.customization2_attendee_further-data_custom-question','Type of participation');
     hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
@@ -60,7 +60,7 @@ function hideShowQuestion(salutation,typeOfParticipation){
   show('.customization2_attendee_further-data_custom-question','Type of participation');
   show('customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');
 
-  if(typeOfParticipation.contains("Onsite")){
+  if(typeOfParticipation){
     show('.customization2_attendee_further-data_custom-question','Will you also be attending the GFF Summit');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception 14 September');   
@@ -118,6 +118,7 @@ var insertionListener = function (event) {
     console.log('change');
     console.log($('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text());
     salutationCheck();
+    getTypeOfParticipation();
   }
 }
 
