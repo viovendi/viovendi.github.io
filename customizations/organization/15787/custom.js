@@ -29,6 +29,7 @@ function getTypeOfPartecipation(){
   var input = checkboxes[0];
   const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
   console.log("selected: "+option)
+  return option;
 }
 function checkFunction(){
   var salutation = '';
@@ -36,7 +37,7 @@ function checkFunction(){
   console.log(salutation);
 
   if(salutation && salutation !== 'Please select'){
-    var typeOfParticipation = $$('customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation');
+    var typeOfParticipation = getTypeOfPartecipation();
     console.log("Type of participation: "+typeOfParticipation);
     hideShowQuestion(salutation,typeOfParticipation);
   }else{
