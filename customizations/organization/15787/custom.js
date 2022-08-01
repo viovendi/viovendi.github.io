@@ -30,6 +30,7 @@ function checkFunction(){
 
   if(salutation && salutation !== 'Please select'){
     var typeOfParticipation = $$('customization2_attendee_further-data_custom-question').getValueFromDropDown('Type of participation');
+    console.log("Type of participation: "+typeOfParticipation);
     hideShowQuestion(salutation,typeOfParticipation);
   }else{
     hide('Type of participation','Will you participate in the ICMA European Repo Collateral Council General Meeting');
