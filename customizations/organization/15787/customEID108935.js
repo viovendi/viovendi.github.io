@@ -71,7 +71,7 @@ function show(tag, name){
 // hide("vv-question-text","EFN Eingabe");
 // hide("vv-question-file","Bitte laden Sie einen Nachweis Ihrer medizinischen Tätigkeit hoch"); 
 
- salutationChecked();
+ salutationCheck();
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
