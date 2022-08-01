@@ -33,7 +33,7 @@ function getTypeOfParticipation(){
       console.log('option: ')
       //on change show these 2 questions
       const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
-      isOnsite = option.contains("Onsite")?true:false;
+     // isOnsite = option.contains("Onsite")?true:false;
       console.log(option);
     })
   })
