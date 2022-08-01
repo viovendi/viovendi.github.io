@@ -84,26 +84,11 @@ function stopTimer() {
 
 
 function hide(tag, name){
- $(tag).each(function (i, element) {
-   var item = $(this);
-   var label = item.find("label");
-   console.log(label)
-
-   if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
-     $(item[0]).css("display", "none");
-   }
- });             
+  $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name).hide();           
 }
 
 function show(tag, name){
- $(tag).each(function (i, element) {
-   var item = $(this);
-   var label = item.find("label");
-
-   if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
-     $(item[0]).css("display", "block");
-   }
- });             
+  $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(name).show();           
 }
    
 // hide("vv-question-text","EFN Eingabe");
