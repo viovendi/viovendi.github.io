@@ -87,6 +87,7 @@ function hide(tag, name){
  $(tag).each(function (i, element) {
    var item = $(this);
    var label = item.find("label");
+   console.log(label)
 
    if(label[0].innerText.replace(/^\s+|\s+$/g, "").indexOf(name) == 0){
      $(item[0]).css("display", "none");
