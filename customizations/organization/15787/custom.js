@@ -25,6 +25,14 @@ function salutationCheck() {
 function getTypeOfParticipation(){
   var field = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Type of participation*');
   var checkboxes = $(field).find('input');
+  checkboxes.each(function (i, element) {
+    $(element).change(function (input) {
+      console.log('option: ')
+      //on change show these 2 questions
+      const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
+      console.log(option);
+    })
+  });
   console.log(checkboxes);
   var input = checkboxes[0];
   const option = $(input.currentTarget).siblings('.customization2_attendee_further-data_custom-question_radio-line_label').text().trim();
