@@ -39,11 +39,11 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1053);
         ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1053);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 380 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 775 - $('#stand_inp').val().length * 9, 1233);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 430 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 755 - $('#stand_inp').val().length * 9, 1233);
     }
 }
 
