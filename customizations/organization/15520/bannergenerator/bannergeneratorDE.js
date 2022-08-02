@@ -36,14 +36,14 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
         ctx.fillText($('#stand_inp').val(), 43, 46);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 490 - $('#halle_inp').val().length * 6, 1033);
-        ctx.fillText($('#stand_inp').val(), 810 - $('#stand_inp').val().length * 9, 1033);
+        ctx.fillText($('#halle_inp').val(), 500 - $('#halle_inp').val().length * 6, 1033);
+        ctx.fillText($('#stand_inp').val(), 825 - $('#stand_inp').val().length * 9, 1033);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 490 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 810 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 500 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 825 - $('#stand_inp').val().length * 9, 1233);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 490 - $('#halle_inp').val().length * 6, 1233);
-        ctx.fillText($('#stand_inp').val(), 810 - $('#stand_inp').val().length * 9, 1233);
+        ctx.fillText($('#halle_inp').val(), 500 - $('#halle_inp').val().length * 6, 1233);
+        ctx.fillText($('#stand_inp').val(), 825 - $('#stand_inp').val().length * 9, 1233);
     }
 }
 
