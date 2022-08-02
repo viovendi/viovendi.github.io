@@ -36,8 +36,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 46);
         ctx.fillText($('#stand_inp').val(), 43, 46);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 440 - $('#halle_inp').val().length * 6, 993);
-        ctx.fillText($('#stand_inp').val(), 865 - $('#stand_inp').val().length * 9, 993);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 993);
+        ctx.fillText($('#stand_inp').val(), 645 - $('#stand_inp').val().length * 9, 993);
     } else if (value == 'instagramstory') {
         ctx.fillText($('#halle_inp').val(), 330 - $('#halle_inp').val().length * 6, 1233);
         ctx.fillText($('#stand_inp').val(), 745 - $('#stand_inp').val().length * 9, 1233);
