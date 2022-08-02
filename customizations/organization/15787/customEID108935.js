@@ -30,12 +30,10 @@ function salutationCheck() {
 function checkFunction(){
   var salutation = '';
   salutation = $('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text().trim();
-  console.log(salutation);
   
   if(salutation && salutation !== 'Please select'){
     hideShowQuestion(salutation);
   }else{
-    console.log('hiding all');
     hide('.customization2_attendee_further-data_custom-question','Will you participate in the ICMA European Repo Collateral Council General Meeting');  
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
     hide('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception'); 
@@ -48,7 +46,6 @@ function hideShowQuestion(salutation){
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF Bar on 13 September');   
     show('.customization2_attendee_further-data_custom-question','Will you be attending the GFF evening reception');   
     if(salutation.includes('Ms')){
-      console.log('woman event displayed')
       show('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
     }else{
       hide('.customization2_attendee_further-data_custom-question','Will you be attending the Women Networking Event on 14 September');   
@@ -75,7 +72,6 @@ function show(tag, name){
 
 var insertionListener = function (event) {
   if (event.animationName === "nodeInserted") {
-    console.log('change');
     console.log($('.customization2_attendee_contact-data_salutation_input .vv-selection-input__value').text());
     salutationCheck();
   }
