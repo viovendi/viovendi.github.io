@@ -21,6 +21,8 @@ function hideDefaultOption(selector, originalText) {
 function handler2() {
   changeTextTo(".vv-button-text-blue", "Abweichende Rechnungsadresse angeben", "Indiquer une adresse de facturation différente");
   changeTextTo(".vv-single-select-option", "Bitte auswählen", "Veuillez sélectionner");
+  changeTextTo(".vv-button", "Auswahl bearbeiten", "Modifier la sélection");
+  changeTextTo(".vv-button", "Teilnehmerdaten anzeigen", "Afficher les données des participants");
 
   document.querySelectorAll(".vv-selection-input__value").forEach((el) => {
     if (el.innerText === "Bitte auswählen") {
