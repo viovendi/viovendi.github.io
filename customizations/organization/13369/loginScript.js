@@ -1,8 +1,8 @@
 var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
 console.log(CognitoUserPool)
 var poolData = {
-	UserPoolId: 'eu-central-1_N6OlPZKBe', // Your user pool id here
-	ClientId: '132qeevu4fo2biee2gp40t623d', // Your client id here
+	UserPoolId: 'eu-central-1_B711TPFsr', // Your user pool id here
+	ClientId: '5r4grlcsa0uaa1llt8v94e34n9', // Your client id here
 };
 var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 var userData = {
