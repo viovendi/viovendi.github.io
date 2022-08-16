@@ -282,6 +282,10 @@ changeTextTo(".vv-single-select-option", "Zypern", "Chypre");
     if (el.innerText === "Bitte auswählen") {
       el.innerText = "Veuillez sélectionner";
     }
+    
+    if (el.innerText === "Frankreich") {
+      el.innerText = "France";
+    }
   });
 
   addEventListener("click", (e) => {
