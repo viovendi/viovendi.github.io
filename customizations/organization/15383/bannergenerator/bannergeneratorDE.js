@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_160x600_DE.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_468x60_DE.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_180x60_DE.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_1080x1080_D.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_1080x1350_D.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2022_JH_Ausstellerbanner_Juni_1080x1350_D.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_160x600_D_RZ.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_468x60_D_RZ.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_180x60_D_RZ.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1080_D_RZ.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D_RZ.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D_RZ.png']
 ];
 
 function setTexts() {
