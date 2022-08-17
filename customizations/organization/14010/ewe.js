@@ -72,8 +72,6 @@ function init(name) {
   //markAsCheckedBooker(name)
 
   if (name == 'customization2_attendee') {
-    
-    console.log("if Block attendee")
 
     if (!!$('.customization2_attendee_further-data_custom-question_checkbox-group').length) {
       var fieldDe = $$('.customization2_attendee_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
@@ -82,9 +80,7 @@ function init(name) {
         var textString = $(fieldDe).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
         var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
-        console.log("textString: " + textString);
-        console.log("textString1: " + textString1);
-        console.log("res: " + res);
+
         $(fieldDe).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
         $(fieldDe).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').addClass('with-links');
         //$('.' + name + ' .customization2_attendee_further-data_custom-question_checkbox-line_label').html(res);
@@ -92,7 +88,6 @@ function init(name) {
       } else if($(fieldEn).html()){
         var resultString = $(fieldEn).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
         $(fieldEn).find('.customization2_attendee_further-data_custom-question_checkbox-line_label').html(resultString)
-        console.log("resultString: " + resultString);
       }
     }
   } else {
@@ -100,11 +95,13 @@ function init(name) {
       var fieldDe = $$('.customization2_booker_further-data_custom-question_checkbox-line').findField('Ich bin mit der Verarbeitung')
       var fieldEn = $$('.customization2_booker_further-data_custom-question_checkbox-line').findField('I consent to the use and processing')
       if (!$('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').hasClass('with-links') && $(fieldDe).html()) {
-        var textString = $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').html();
+        var textString = $(fieldDe).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html();
         var textString1 = textString.replace("Einwilligungserklärung", "<a target='_blank' href='https://privacy.vogel.de/'>Einwilligungserklärung</a>");
         var res = textString1.replace("(privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/'>(privacy.vogel.de)</a>");
-        $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').html(res);
-        $('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
+        $(fieldDe).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html(res);
+        $(fieldDe).find('.customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
+        //$('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').html(res);
+        //$('.' + name + ' .customization2_booker_further-data_custom-question_checkbox-line_label').addClass('with-links');
       } else if($(fieldEn).html()){
         var resultString = $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html().replace("declaration of consent (privacy.vogel.de)", "<a target='_blank' href='https://privacy.vogel.de/index_en.html'>declaration of consent (privacy.vogel.de)</a>");
         $(fieldEn).find('.customization2_booker_further-data_custom-question_checkbox-line_label').html(resultString)
