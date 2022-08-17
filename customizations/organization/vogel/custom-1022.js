@@ -1,4 +1,4 @@
-/*console.log('Start-Git');
+console.log('Start-Git');
   
   var categoriesNamesDe = {
 	'Anlagenbau': ['Anlagenplanung', 'Bau Kälte- / Klima- / lufttechnischer Anlagen', 'Bau verfahrenstechnischer Anlagen', 'Engineering-Dienstleister Anlagenbau'],
