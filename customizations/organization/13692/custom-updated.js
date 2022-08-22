@@ -149,6 +149,16 @@ console.log("git custom-updated");
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
+	    
+      console.log('page 4');
+      var payment_method = localStorage.getItem('payment_method');
+      console.log('payment_method');
+      console.log(payment_method);
+	    
+      console.log('allowed_countries');
+      console.log(localStorage.getItem('allowed_countries'));
+	    
+	    
       rebuildPage();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
@@ -161,16 +171,7 @@ console.log("git custom-updated");
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       
-      var payment_method = localStorage.getItem('payment_method');
-	
-      // dedug
-      console.log('page 4->');
-      console.log('payment_method');
-      console.log(payment_method);
-      
-      console.log('allowed_countries');
-      console.log(localStorage.getItem('allowed_countries'));
-	    
+      var payment_method = localStorage.getItem('payment_method');	    
       var free_order = localStorage.getItem('free_order');
       if(free_order && free_order == true){
         responseMessage('success');
