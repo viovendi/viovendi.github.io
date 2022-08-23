@@ -113,10 +113,11 @@ console.log("git custom-updated");
     // update version support
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
-	  
+    // if allowed country
     if(countries_psp.indexOf(curr_country_psp) != -1 ){
-      // allowed country
-      localStorage.setItem('allowed_countries', true);
+      localStorage.setItem('allowed_countries', 'allowed');
+    }else{
+      localStorage.setItem('allowed_countries', 'forbidden');
     }
   });
   
@@ -242,7 +243,7 @@ console.log("git custom-updated");
      console.log(allowed_countries);
      console.log(payment_method);
       
-     if(payment_method){
+     if(payment_method.length > 0 && allowed_countries.length === 0){
         // old version
             console.log('old version');
 	    if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
@@ -252,8 +253,15 @@ console.log("git custom-updated");
 	      $('.customization2_payment').hide();
 	      $('.customization2_booking-terms').css('margin-top', '43px');
 	    }
-     }else if(!payment_method && allowed_countries){
+     }
+	    
+     if(payment_method.length === 0 && allowed_countries.length > 0){
 	console.log('new version');
+     	if(allowed_countries === 'forbidden'){
+		console.log('new version - invoice option');
+	}else{
+		console.log('new version - both options');
+	}
      }
 	  
     /*
