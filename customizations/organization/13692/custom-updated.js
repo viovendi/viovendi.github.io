@@ -9,7 +9,10 @@ console.log("git custom-updated");
   var payment_methods_labels = ['Payment method','Zahlungsmethode','ZAHLUNGSART WÄHLEN'];
   var invoice_payment_method_arr_options = ['Invoice Payment', 'Bank transfer / on account', 'Überweisung / auf Rechnung', 'Überweisung / Kauf auf Rechnung'];
   var hub_payment_method_arr_options = ['Direct Payment', 'Sofortzahlung', 'Sofortbezahlung', 'Sofortzahlung via Kreditkarte' ,'Direct payment via credit card'];
-  
+  // payment humethod names
+  var hub_payment_method = ['Sofortbezahlung'];
+
+
   function getInvoiceRadioGroup(arrayOfLabels){
     var targetElem = null;
     $('vv-additional-question-radio').each(function(){
@@ -258,21 +261,17 @@ console.log("git custom-updated");
      if(payment_method.length === 0 && allowed_countries.length > 0){
 	console.log('new version');
      	if(allowed_countries === 'forbidden'){
-		console.log('new version - invoice option');
+	    console.log('new version - invoice option');
+	    $('.customization2_payment .payment-option').each(function(){
+	      var label = $(this).find('.payment-option__label').text().trim();
+	      if(hub_payment_method.indexOf(label) != -1 ){
+		$(this).addClass('hidden');
+	      }
+	    });
 	}else{
-		console.log('new version - both options');
+	   console.log('new version - both options');
 	}
      }
-	  
-    /*
-    if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-      $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
-    }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
-      $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
-      $('.customization2_payment').hide();
-      $('.customization2_booking-terms').css('margin-top', '43px');
-    }
-    */
   }
   
   var obj, organizer_id;
