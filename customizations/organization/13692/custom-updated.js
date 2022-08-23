@@ -90,6 +90,9 @@ console.log("git custom-updated");
   }
  
   $('.vv-button.customization-button-next').on('click', function(){
+    
+    console.log('click next');
+    
     var payment_method = '';
     var delivery_of_invoice = '';
     $('.customization2_booker_further-data .customization2_booker_further-data_custom-question').each(function(){
@@ -111,6 +114,10 @@ console.log("git custom-updated");
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country_psp = $(".customization2_booker_contact-data_country_input").text().trim();
     
+    console.log(countries_psp);
+    console.log(curr_country_psp);
+    console.log(countries_psp.indexOf(curr_country_psp));
+	  
     if(countries_psp.indexOf(curr_country_psp) != -1 ){
       // allowed country
       localStorage.setItem('allowed_countries', true);
