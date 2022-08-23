@@ -1,134 +1,265 @@
-<!-- Preview variables -->
-<div class="preview-variables" style="display: none;">{{order.tickets[0].category_id}}</div>
-
-<!-- Styling -->
 <style>
-    .content {
-        font-family: Arial, Helvetica, sans-serif;
+    div {
+        margin: 0;
+        padding: 0;
     }
 
-    .container0 {
-        text-align: center;
-        font-size: 70pt;
+    table {
+        border-spacing: 0;
+        width: 100%;
     }
 
-    .container1 {
-        text-align: center;
-        font-size: 15pt;
+
+    #logo {
+        margin: 5px 0 5px 0;
+        width: 160px;
+        height: auto;
     }
 
-    .container2 {
-        text-align: center;
-        font-size: 15pt;
+
+    .container {
+        width: 100%;
+        position: relative;
     }
 
-    .container3 {
-        text-align: left;
-        font-size: 10pt;
+    .container:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
-    .container4 {
-        text-align: center;
-        font-size: 15pt;
+    /* Limitations */
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        max-height: 1.2em;
+        overflow: hidden;
+        padding: 0 0.21em 0.21em 0;
+    }
+
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        max-height: 4.8em;
+        overflow: hidden;
+        padding: 0 0.21em 0.21em 0;
         word-break: normal;
     }
 
-    .span1 {
-        font-size: 12pt;
+    /* Ticket table style */
+    .span-ticket-table {
+        font-size: 11pt !important;
+        color: #0E357A;
+        font-weight: bold;
     }
+
+    #ticket-table {
+        border-top: 3px solid #d9d9d9;
+        border-left: 3px solid #d9d9d9;
+        position: relative;
+        top: -2px;
+        /* td blue label */
+    }
+
+    .sec1-col1,
+    .sec2-col1 {
+        width: 27%;
+    }
+
+    .sec1-col2 {
+        width: 73%;
+    }
+
+    .sec2-col2 {
+        width: 36.5%;
+    }
+
+    .sec2-col3 {
+        width: 36.5%;
+    }
+
+    td,
+    th {
+        font-size: 11pt;
+        line-height: 130%;
+        vertical-align: top;
+        text-align: right;
+    }
+
+    span {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    #ticket-table>tbody>tr>td {
+        padding: 33px 10px 10px 10px;
+        border-right: 3px solid #d9d9d9;
+        border-bottom: 3px solid #d9d9d9;
+        position: relative;
+    }
+
+    #ticket-table>tbody>tr>th {
+        padding: 10px 10px 10px 10px;
+        border-right: 3px solid #d9d9d9;
+        border-bottom: 3px solid #d9d9d9;
+        position: relative;
+    }
+
+    /* Individual styles */
+    .small-hint {
+        font-size: 10pt;
+        color: #6d6d6d;
+        padding-top: 3px;
+    }
+
+
+    #ticket-table .cell-event-name {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+
+    #ticket-table .cell-event-name .big {
+        font-size: 14pt !important;
+    }
+
+    #ticket-table .cell-qrcode {
+        text-align: center;
+        vertical-align: top;
+        padding: 10px 0;
+    }
+
+    #ticket-table .cell-qrcode img {
+        width: 160px;
+        margin-bottom: 5px;
+    }
+
+    #ticket-table .cell-event-logo {
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+    }
+
+    #ticket-table .cell-event-logo-img img {
+        max-width: 140px;
+        max-height: 140px;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    #ticket-table .cell-category {
+        font-size: 10pt;
+    }
+
+    #ticket-table .cell-category b {
+        font-size: 10pt;
+    }
+
+    #ticket-table .cell-category .wrap {
+        height: 90px;
+    }
+
+    #ticket-table .cell-category .big b {
+        font-size: 12pt !important;
+    }
+
+    #ticket-table .cell-attendee {
+        position: relative;
+    }
+
+
+    .var-category-name {
+        float: right;
+        padding-right: 0.21em;
+        width: 420px;
+    }
+
+    .var-category-name .line-clamp-2 {
+        width: 420px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    .var-product {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        max-height: 2.4em;
+        overflow: hidden;
+        padding: 0 0.21em 0.21em 0;
+    }
+
+    .var-product .large-hint {
+        width: 570px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        letter-spacing: 2px;
+    }
+
+
 </style>
-
-<!-- Start Ticket -->
-<div class="preview-variables" style="display: none;">{{order.tickets[0].category_id}}</div>
-<div class="print-area"
-    style="margin: 0; padding: 0; position: relative; width: 100%; height: 100%; font-size: 12pt; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">
-
-    <!-- HTML Element with the background image -->
-    <div class="background"
-        style="height: 100%; width: 100%; background-image: url('https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Messe+Dortmund/Intertabac_Intersupply/2022_IT_Ausstellerticket_D_GB.png'); background-repeat: no-repeat; background-size: 100% auto; overflow: hidden; background-position-y: 50%; background-position-x: 0px;">
-
-        <!-- Ticket content -->
-        <div class="content" style="margin: 0cm 0cm 0cm; position: absolute; width: 21cm;">
-            
-            <!-- Container 0 -->
-            <div class="container0" style="width: 2cm; position: absolute; left: 10.7cm; top: 17.5cm;">
-                <strong>A</strong>
-            </div>
-            
-                <!-- Container 1 -->
-            <div class="container1" style="width: 10cm; position: absolute; left: 10.7cm; top: 19.9cm;">
-                {% case order.tickets[0].category_id %}
-                    {% when 302867%}
-                    <strong> Dauer-Ausstellerausweis </strong><br />
-                    (Kostenloser Dauerausweis)<br />
-                    <em> <strong>Exhibitor pass </strong><br />
-                    (permanent pass subject to a fee)</em>
-
-                    {% when 302870%}
-                    <strong> Ausstellerausweis </strong><br />
-                    (Kostenpflichtiger Dauerausweis)<br />
-                    <em><strong>Exhibitor pass </strong><br />
-                    (permanent pass subject to a fee)</em>
-
-                    {% when 302871%}
-                    <strong> Ausstellerausweis </strong><br />
-                    (Kostenpflichtiger Tagesausweis)<br />
-                    <em><strong>Exhibitor pass </strong><br />
-                    (day pass subject to a fee)</em>
-
-                    {% else %}
-                    {% endcase %}
-
-                <br /><br />
-                <strong>{{attendees[0].first_name}} {{attendees[0].last_name}}</strong>
-                <br /><br />
-                <strong>{{attendees[0].organization}}</strong>
-            </div>
-
-            <!-- Container 2 -->
-            <div class="container2" style="width: 10cm; position: absolute; left: 10.7cm; top: 24.7cm;">
-                Standnummer / <em>Stand number:</em>
-                    {% for a in order.custom_questions %}
-                        {% if a.question contains "Stand" and a.answer != "" %}
-                            {{a.answer}}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-            <!-- Container 3 -->
-            <div class="container3" style="width: 8.9cm; position: absolute; left: 0.9cm; top: 18.9cm;">
-                {% case order.tickets[0].category_id %}
-                    {% when 302867%}
-                    <strong> Dauer-Ausstellerausweis </strong><br />
-                    (Kostenloser Dauerausweis)<br />
-                    <em> <strong>Exhibitor pass </strong><br />
-                    (permanent pass subject to a fee)</em>
-
-                    {% when 302870%}
-                    <strong> Ausstellerausweis </strong><br />
-                    (Kostenpflichtiger Dauerausweis)<br />
-                    <em><strong>Exhibitor pass </strong><br />
-                    (permanent pass subject to a fee)</em>
-
-                    {% when 302871%}
-                    <strong> Ausstellerausweis </strong><br />
-                    (Kostenpflichtiger Tagesausweis)<br />
-                    <em><strong>Exhibitor pass </strong><br />
-                    (day pass subject to a fee)</em>
-
-                    {% else %}
-                    {% endcase %}
-                <br />
-                {{event.start_date | date:'%d.%m.%Y'}} - {{event.end_date | date:'%d.%m.%Y'}}<br />
-                {{attendees[0].ticket.name}}
-            </div>
-
-            <!-- Container 4 -->
-            <div class="container4" style="width: 8cm; position: absolute; left: 11.7cm; top: 26cm;"><img class="qrcode"
-                    style="width: 2.35cm; height: 2.35cm;"
-                    src="https://api.qrserver.com/v1/create-qr-code/?&amp;data={{event.custom_fields.5967}}{{attendees[0].ticket.qrcode | remove: 'https://doo.net/checkin/'}}&amp;size=190x190" />
-                <br /><span class="span1">{{event.custom_fields.5967}}{{attendees[0].ticket.qrcode |
-                    remove:'https://doo.net/checkin/'}}</span></div>
-        </div>
-    </div>
+<div id="print-area" style="margin: 0; padding: 0; position: relative; width: 100%; height: 100%; font-size: 11pt; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">
+<div class="background" style="height: 100%; width: 100%; background-image: url('https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Carat/Carat2022/CARAT+2022+Besucher.png'); background-repeat: no-repeat; background-size: 100% auto; overflow: hidden; background-position-y: 50%; background-position-x: 0px;">
+<table id="ticket-table" style="position: absolute; top: 12.5cm; background: white;">
+<tbody>
+<tr>
+<th class="sec1-col1 cell-event-logo cell-event-logo-img" rowspan="2">{% assign photo_url = event.logo | remove: "https://" %} <img style="width: 100%;" src="https://{{photo_url}}" /></th>
+<th class="sec1-col2 cell-event-name" colspan="2">
+<div class="wrap">
+<div class="line-clamp-2" style="font-size: 16pt;">{{event.name}}</div>
 </div>
+</th>
+</tr>
+<tr>
+<td class="sec1-col2 cell-category" colspan="2">
+<div class="wrap"><span class="span-ticket-table">Buchungskategorie</span>
+<div class="container mb10">
+<div class="var-category-name">
+<div class="line-clamp-2" style="font-size: 9pt;"><strong>{{attendees[0].ticket.name}}</strong></div>
+</div>
+</div>
+<div class="line-clamp-2" style="font-size: 9pt; text-align: right">
+
+    {% for p in attendees %}
+    {% if p.products %}
+      {% for a in p.products %}
+        {{a.name}}{% if forloop.last != true %},{% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sec2-col1 cell-qrcode" rowspan="3"><img src="https://api.qrserver.com/v1/create-qr-code/?data={{attendees[0].ticket.qrcode}}&amp;size=190x190" /> <strong>Scannen entwertet Ticket</strong></td>
+<td colspan="2"><span class="span-ticket-table">Veranstaltungszeitraum und Veranstalter</span>
+<div class="mb10">{{event.start_date | date:"%A, %d. %B %Y, %R"}} Uhr bis {{event.end_date | date:"%d. %B %Y, %R"}} Uhr</div>
+<div class="line-clamp-1">{{event.organizer_name}}</div>
+<div class="line-clamp-1">{{event.organizer_email}}</div>
+</td>
+</tr>
+<tr>
+<td class="sec2-col2"><span class="span-ticket-table">Buchungsinformationen</span>
+<div class="line-clamp-2">Gebucht am {{order.date | date:"%d.%m.%Y"}} von<br />{{order.salutation}} {{order.first_name}} {{order.last_name}}</div>
+<div class="small-hint">Buchungsnummer: {{order.invoice_id}}</div>
+</td>
+<td class="sec2-col3"><span class="span-ticket-table">Teilnehmerinformationen</span>
+<div class="line-clamp-2">{{attendees[0].salutation}} {{attendees[0].first_name}} {{attendees[0].last_name}}</div>
+<div class="small-hint">Ticket 1 von {{order.tickets[0].quantity}}</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- #print-area -->
