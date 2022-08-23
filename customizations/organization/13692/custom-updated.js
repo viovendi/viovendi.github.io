@@ -112,7 +112,7 @@ console.log("git custom-updated");
 	  
     // update version support
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
-    var curr_country_psp = $(".customization2_booker_contact-data_country_input").text().trim();
+    var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
     
     console.log(countries_psp);
     console.log(curr_country_psp);
@@ -156,16 +156,7 @@ console.log("git custom-updated");
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
-	    
-      console.log('page 4');
-      var payment_method = localStorage.getItem('payment_method');
-      console.log('payment_method');
-      console.log(payment_method);
-	    
-      console.log('allowed_countries');
-      console.log(localStorage.getItem('allowed_countries'));
-	    
-	    
+	    	    
       rebuildPage();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
