@@ -113,10 +113,6 @@ console.log("git custom-updated");
     // update version support
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
-    
-    console.log(countries_psp);
-    console.log(curr_country_psp);
-    console.log(countries_psp.indexOf(curr_country_psp));
 	  
     if(countries_psp.indexOf(curr_country_psp) != -1 ){
       // allowed country
@@ -156,7 +152,6 @@ console.log("git custom-updated");
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
-	    	    
       rebuildPage();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
@@ -169,7 +164,7 @@ console.log("git custom-updated");
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       
-      var payment_method = localStorage.getItem('payment_method');	    
+      var payment_method = localStorage.getItem('payment_method');    
       var free_order = localStorage.getItem('free_order');
       if(free_order && free_order == true){
         responseMessage('success');
@@ -241,9 +236,27 @@ console.log("git custom-updated");
   
   
   function rebuildPage(){
-        
-    var payment_method = localStorage.getItem('payment_method');
-    
+     var allowed_countries = localStorage.getItem('allowed_countries')
+     var payment_method = localStorage.getItem('payment_method');
+	  
+     console.log(allowed_countries);
+     console.log(payment_method);
+      
+     if(payment_method){
+        // old version
+            console.log('old version');
+	    if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+	      $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
+	    }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
+	      $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
+	      $('.customization2_payment').hide();
+	      $('.customization2_booking-terms').css('margin-top', '43px');
+	    }
+     }else if(!payment_method && allowed_countries){
+	console.log('new version');
+     }
+	  
+    /*
     if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
       $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
     }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
@@ -251,6 +264,7 @@ console.log("git custom-updated");
       $('.customization2_payment').hide();
       $('.customization2_booking-terms').css('margin-top', '43px');
     }
+    */
   }
   
   var obj, organizer_id;
