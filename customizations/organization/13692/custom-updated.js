@@ -167,20 +167,48 @@ console.log("git custom-updated");
   function checking_page4() {
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
+	
+    var payment_method_updated = '';
+    $('.customization-button-next').on('click', function(e){
+	console.log('click submit');
+	$('.customization2_payment_options .payment-option').each(function(){
+	    console.log($(this).find('.vv-radio__indicator::after').length);
+	    e.preventDefault();	
+	   /*
+	   if($(this).find('.vv-radio__indicator::after')){
+	      $(this).find('.vv-radio__indicator')
+	   }
+	   */
+    	});       
+    });
+    
+
+    
       
       var payment_method = localStorage.getItem('payment_method');    
       var free_order = localStorage.getItem('free_order');
+      
+    /*
+      if(hub_payment_method.indexOf(label) != -1 ){
+	$(this).addClass('hidden');
+      }
+    */
+    console.log(payment_method);
+    if(){}
+      
       if(free_order && free_order == true){
         responseMessage('success');
       }else{
 	      
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
           rebuildPageInvoiceConfirm();
-        }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
+        }else if( (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) || 
+		 (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) ){
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
       }
+
       // if event w/o customization (payment system)
       if(!payment_method || payment_method ==''){
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
@@ -190,7 +218,7 @@ console.log("git custom-updated");
       }
       
       stop_checking_page4();
-	}
+    }
   }
   checking_page4();
   
