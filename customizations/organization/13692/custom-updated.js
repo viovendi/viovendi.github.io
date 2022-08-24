@@ -151,12 +151,31 @@ console.log("git custom-updated");
     }
   }
   checking_page2();
-  
+
+  function getPaymentMethod(){
+     console.log('getPaymentMethod');
+	var payment_method_updated = '';
+	    $('.customization-button-next').on('click', function(e){
+		console.log('click submit');
+		$('.customization2_payment_options .payment-option').each(function(){
+		    console.log($(this).find('.vv-radio__indicator::after').length);
+		    e.preventDefault();	
+		   /*
+		   if($(this).find('.vv-radio__indicator::after')){
+		      $(this).find('.vv-radio__indicator')
+		   }
+		   */
+		});       
+	    });
+  }
   
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
-    if($('.customization-booking-area-wrapper-page3').length > 0){
+    if($('.customization-booking-area-wrapper-page3').length > 0){    
       rebuildPage();
+      
+      getPaymentMethod()
+	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
     }
@@ -167,34 +186,9 @@ console.log("git custom-updated");
   function checking_page4() {
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
-	
-    var payment_method_updated = '';
-    $('.customization-button-next').on('click', function(e){
-	console.log('click submit');
-	$('.customization2_payment_options .payment-option').each(function(){
-	    console.log($(this).find('.vv-radio__indicator::after').length);
-	    e.preventDefault();	
-	   /*
-	   if($(this).find('.vv-radio__indicator::after')){
-	      $(this).find('.vv-radio__indicator')
-	   }
-	   */
-    	});       
-    });
-    
-
-    
       
       var payment_method = localStorage.getItem('payment_method');    
       var free_order = localStorage.getItem('free_order');
-      
-    /*
-      if(hub_payment_method.indexOf(label) != -1 ){
-	$(this).addClass('hidden');
-      }
-    */
-    console.log(payment_method);
-    // if(){}
       
       if(free_order && free_order == true){
         responseMessage('success');
