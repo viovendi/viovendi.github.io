@@ -268,8 +268,6 @@ console.log("git custom-updated");
 		$(this).addClass('hidden');
 	      }
 	    });
-	}else{
-	   console.log('new version - both options');
 	}
      }
   }
