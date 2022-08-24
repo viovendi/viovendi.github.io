@@ -157,9 +157,12 @@ console.log("git custom-updated");
 	var payment_method_updated = '';
 	    $('.customization-button-next').on('click', function(e){
 		console.log('click submit');
+	        e.preventDefault();
 		$('.customization2_payment_options .payment-option').each(function(){
-		    console.log($(this).find('.vv-radio__indicator::after').length);
-		    e.preventDefault();	
+		    console.log('--++--');
+		    console.log($(this).find('.vv-radio__indicator'));
+		    console.log($(this).find('.vv-radio__indicator::after'));
+		    console.log('----');
 		   /*
 		   if($(this).find('.vv-radio__indicator::after')){
 		      $(this).find('.vv-radio__indicator')
