@@ -194,7 +194,7 @@ console.log("git custom-updated");
       }
     */
     console.log(payment_method);
-    if(){}
+    // if(){}
       
       if(free_order && free_order == true){
         responseMessage('success');
