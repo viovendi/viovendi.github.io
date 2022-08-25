@@ -158,10 +158,17 @@ console.log("git custom-updated");
 	    $('.customization-button-next').on('click', function(e){
 		console.log('click submit');
 	        e.preventDefault();
+		    
+		var els = document.querySelectorAll('.payment-option');
+		    for (el of els)(
+		    	pseudo = window.getComputedStyle(el, ':after');
+		        console.log(pseudo.getPropertyValue("content"));
+		    );
+		    
 		$('.customization2_payment_options .payment-option').each(function(){
 		    console.log('--++--');
 		    console.log($(this).find('.vv-radio__indicator'));
-		    console.log($(this).find('.vv-radio__indicator::after'));
+		    console.log($(this).find('.vv-radio__indicator:after'));
 		    console.log('----');
 		   /*
 		   if($(this).find('.vv-radio__indicator::after')){
