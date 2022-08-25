@@ -2,8 +2,6 @@ console.log("git custom-updated");
 // global var
   var isFuncUsed = false;
   var domain_url = 'https://cs.doo.net';
-
-  var allowed_countries = false;
   
   var delivery_invoice_labels = ['Delivery of the invoice','Zustellung der Rechnung'];
   var payment_methods_labels = ['Payment method','Zahlungsmethode','ZAHLUNGSART WÄHLEN'];
@@ -45,6 +43,7 @@ console.log("git custom-updated");
   }
 
   if( localStorage.allowed_countries ){
+    console.log('allowed_countries exists');
     localStorage.removeItem('allowed_countries');
   }
   
