@@ -159,10 +159,10 @@ console.log("git custom-updated");
 	        e.preventDefault();
 		    
 		var els = document.querySelectorAll('.payment-option');
-		    for (var el of els)(
+		    for (var el of els){
 		    	var pseudo = window.getComputedStyle(el, ':after');
 		        console.log(pseudo.getPropertyValue('content'));
-		    );
+		    };
 		    
 		$('.customization2_payment_options .payment-option').each(function(){
 		    console.log('--++--');
