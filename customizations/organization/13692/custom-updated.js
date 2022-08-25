@@ -46,6 +46,10 @@ console.log("git custom-updated");
     console.log('allowed_countries exists');
     localStorage.removeItem('allowed_countries');
   }
+
+  if( localStorage.payment_method_upd ){
+    localStorage.removeItem('payment_method_upd');
+  }
   
   if( localStorage.free_order){
     localStorage.removeItem('free_order');
@@ -144,7 +148,7 @@ console.log("git custom-updated");
     if($('.customization-booking-area-wrapper-page2').length > 0){
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
-        localStorage.setItem('free_order', true); 
+        localStorage.setItem('free_order', true);
       }
       stop_checking_page2();
     }
@@ -153,29 +157,19 @@ console.log("git custom-updated");
 
   function getPaymentMethod(){
      console.log('getPaymentMethod');
-	var payment_method_updated = '';
-	    $('.customization-button-next').on('click', function(e){
-		console.log('click submit');
-	        e.preventDefault();
-		    
-		var els = document.querySelectorAll('.payment-option');
-		    for (var el of els){
-		    	var pseudo = window.getComputedStyle(el, ':after');
-		        console.log(pseudo.getPropertyValue('content'));
-		    };
-		    
-		$('.customization2_payment_options .payment-option').each(function(){
-		    console.log('--++--');
-		    console.log($(this).find('.vv-radio__indicator'));
-		    console.log($(this).find('.vv-radio__indicator:after'));
-		    console.log('----');
-		   /*
-		   if($(this).find('.vv-radio__indicator::after')){
-		      $(this).find('.vv-radio__indicator')
-		   }
-		   */
-		});       
-	    });
+     var payment_method_updated = '';
+     $('.customization-button-next').on('click', function(e){
+       console.log('click submit');
+       e.preventDefault();
+       $('.customization2_organizer-bank-transfer_button').each(function(){
+	  if($(this).is(':checked')){
+	     payment_method_updated = $(this).closest('.customization2_organizer-bank-transfer').find('.payment-option__label').text().trim();
+	  }
+       });
+       console.log('payment_method_updated');
+       console.log(payment_method_updated);
+       localStorage.setItem('payment_method_upd', 'payment_method_updated');
+     });
   }
   
   function checking_page3() {
