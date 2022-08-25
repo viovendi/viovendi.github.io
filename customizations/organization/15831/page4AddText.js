@@ -1,19 +1,4 @@
 console.log("Start Git");
 
-//What runs on every new attendee form
-function handler(){
-  
-  }
-handler();
-//Insert here, what should run once
-//
-var insertionListener = function(event) {  
-  if (event.animationName === "nodeInserted") {    
-    console.log("Node has been inserted: ", event.target);    
-    handler(); 
-  }
-}
-document.addEventListener("animationstart", insertionListener, false); 
-// standard + firefox  
-document.addEventListener("MSAnimationStart", insertionListener, false); // IE  
-document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+$( ".ew-confirmation__organizer-contact" ).prepend('<div> <strong> <u>Hotelbuchung </u></strong><br><br>Um ein Hotelzimmer online zu buchen, klicken Sie bitte <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1661410595108&key=GRP&app=resvlink"><strong> HIER </strong></a> <br><br> Alternativ können Sie eine Hotelbuchung unter Angabe des Stichwortes „<strong> <u>BDS / Berliner DialyseSeminar </u></strong>“ telefonisch unter +49 69 380 79 815 oder per E-Mail unter <a href="mailto:cec.berjw@marriott-service.com">cec.berjw@marriott-service.com</a>  vornehmen.</div>');
+ 
