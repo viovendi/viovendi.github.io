@@ -166,9 +166,7 @@ console.log("git custom-updated");
 	     payment_method_updated = $(this).closest('.customization2_organizer-bank-transfer').find('.payment-option__label').text().trim();
 	  }
        });
-       console.log('payment_method_updated');
-       console.log(payment_method_updated);
-       localStorage.setItem('payment_method_upd', 'payment_method_updated');
+       localStorage.setItem('payment_method_upd', payment_method_updated);
      });
   }
   
@@ -176,9 +174,7 @@ console.log("git custom-updated");
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){    
       rebuildPage();
-      
-      getPaymentMethod()
-	    
+      getPaymentMethod();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
     }
@@ -200,7 +196,7 @@ console.log("git custom-updated");
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
           rebuildPageInvoiceConfirm();
         }else if( (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) || 
-		 (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) ){
+		 (!isFuncUsed && (localStorage.getItem('payment_method_upd').indexOf('Sofortbezahlung') != -1)) ){
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
