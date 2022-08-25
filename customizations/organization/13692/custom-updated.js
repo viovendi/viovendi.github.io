@@ -160,7 +160,7 @@ console.log("git custom-updated");
 	        e.preventDefault();
 		    
 		var els = document.querySelectorAll('.payment-option');
-		    for (el of els)(
+		    for (var el of els)(
 		    	pseudo = window.getComputedStyle(el, ':after');
 		        console.log(pseudo.getPropertyValue("content"));
 		    );
