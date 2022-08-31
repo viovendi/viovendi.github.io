@@ -287,7 +287,7 @@ console.log("git custom-updated");
 	      var label = $(this).find('.payment-option__label').text().trim();
 	      if(hub_payment_method.indexOf(label) === -1 ){
 		$(this).addClass('hidden');
-                $(this).find('.customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
+                $(this).find('.customization2_organizer-bank-transfer').attr('checked', 'checked').click();
 	      }
 	    });
 	}
