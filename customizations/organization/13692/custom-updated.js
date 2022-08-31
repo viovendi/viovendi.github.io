@@ -285,8 +285,9 @@ console.log("git custom-updated");
 	    console.log('new version - invoice option');
 	    $('.customization2_payment .payment-option').each(function(){
 	      var label = $(this).find('.payment-option__label').text().trim();
-	      if(hub_payment_method.indexOf(label) != -1 ){
+	      if(hub_payment_method.indexOf(label) === -1 ){
 		$(this).addClass('hidden');
+                $(this).find('.customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
 	      }
 	    });
 	}
