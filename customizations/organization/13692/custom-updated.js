@@ -43,7 +43,6 @@ console.log("git custom-updated");
   }
 
   if( localStorage.allowed_countries ){
-    console.log('allowed_countries exists');
     localStorage.removeItem('allowed_countries');
   }
 
@@ -263,9 +262,12 @@ console.log("git custom-updated");
   function rebuildPage(){
      var allowed_countries = localStorage.getItem('allowed_countries')
      var payment_method = localStorage.getItem('payment_method');
-	  
+	
+     console.log('rebuildPage');
      console.log(allowed_countries);
+     console.log(allowed_countries.length);
      console.log(payment_method);
+     console.log(payment_method.length);
       
      if(payment_method.length > 0 && allowed_countries.length === 0){
         // old version
