@@ -70,17 +70,17 @@ function setupBannerImage() {
     const value = $('#format_inp').val();
     
     if (value == 'horizontal') {
-        ctx.font = "10pt Verdana";
+        ctx.font = "7pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "15pt Verdana";
+        ctx.font = "12pt Verdana";
     } else if (value == 'email') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "10pt Verdana";
     } else if (value == 'instagrampost') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "23pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "23pt Verdana";
     } else if (value == 'facebook') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "23pt Verdana";
     };
 }
 
