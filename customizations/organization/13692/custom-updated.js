@@ -1,4 +1,4 @@
-console.log("git custom-updated");
+console.log("git custom756");
 // global var
   var isFuncUsed = false;
   var domain_url = 'https://cs.doo.net';
@@ -7,9 +7,10 @@ console.log("git custom-updated");
   var payment_methods_labels = ['Payment method','Zahlungsmethode','ZAHLUNGSART WÄHLEN'];
   var invoice_payment_method_arr_options = ['Invoice Payment', 'Bank transfer / on account', 'Überweisung / auf Rechnung', 'Überweisung / Kauf auf Rechnung'];
   var hub_payment_method_arr_options = ['Direct Payment', 'Sofortzahlung', 'Sofortbezahlung', 'Sofortzahlung via Kreditkarte' ,'Direct payment via credit card'];
+
   // payment humethod names
   var hub_payment_method = ['Sofortbezahlung'];
-
+  
 
   function getInvoiceRadioGroup(arrayOfLabels){
     var targetElem = null;
@@ -34,20 +35,13 @@ console.log("git custom-updated");
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
   
+  
   if( localStorage.delivery_of_invoice){
     localStorage.removeItem('delivery_of_invoice');
   }
   
   if( localStorage.payment_method ){
     localStorage.removeItem('payment_method');
-  }
-
-  if( localStorage.allowed_countries ){
-    localStorage.removeItem('allowed_countries');
-  }
-
-  if( localStorage.payment_method_upd ){
-    localStorage.removeItem('payment_method_upd');
   }
   
   if( localStorage.free_order){
@@ -56,7 +50,7 @@ console.log("git custom-updated");
   }
   
   function check_country(){
-    console.log("check-country");
+	  console.log("check-country");
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
     // var invoice_radio_group = $('.customization2_booker_further-data_custom-question-3 .customization2_booker_further-data_custom-question_radio-group');
     var countries = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
@@ -66,27 +60,27 @@ console.log("git custom-updated");
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
 
-    const observer = new MutationObserver((mutations) => {
-      var country = $(".customization2_booker_contact-data_country_input").text().trim();
+	const observer = new MutationObserver((mutations) => {
+	    var country = $(".customization2_booker_contact-data_country_input").text().trim();
 
-      if(countries.indexOf(country) != -1){
-	    console.log("Show both");
-	invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
-      }else{
-	// var click_event = new Event("click");
-	    console.log("hide");
-	invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
-	invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
-      }
-    });
+	    if(countries.indexOf(country) != -1){
+		    console.log("Show both");
+		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+	    }else{
+		// var click_event = new Event("click");
+		    console.log("hide");
+		invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
+		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
+	    }
+	});
 
-  const bookerCountryInput = document.querySelector('.customization2_booker_contact-data_country_input');
+	const bookerCountryInput = document.querySelector('.customization2_booker_contact-data_country_input');
 
-  observer.observe(bookerCountryInput, {
-    childList: true,
-    subtree: true,
-    characterData: true
-  });
+	observer.observe(bookerCountryInput, {
+	    childList: true,
+	    subtree: true,
+	    characterData: true
+	});
 }
   
   function getWidgetLang(){
@@ -95,9 +89,7 @@ console.log("git custom-updated");
   }
  
   $('.vv-button.customization-button-next').on('click', function(){
-    
-    console.log('click next');
-    
+    console.log('click next 11 set payment method');
     var payment_method = '';
     var delivery_of_invoice = '';
     $('.customization2_booker_further-data .customization2_booker_further-data_custom-question').each(function(){
@@ -114,16 +106,6 @@ console.log("git custom-updated");
     
     localStorage.setItem('payment_method', payment_method);
     localStorage.setItem('delivery_of_invoice', delivery_of_invoice);
-	  
-    // update version support
-    var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
-    var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
-    // if allowed country
-    if(countries_psp.indexOf(curr_country_psp) != -1 ){
-      localStorage.setItem('allowed_countries', 'allowed');
-    }else{
-      localStorage.setItem('allowed_countries', 'forbidden');
-    }
   });
   
   
@@ -147,33 +129,18 @@ console.log("git custom-updated");
     if($('.customization-booking-area-wrapper-page2').length > 0){
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
-        localStorage.setItem('free_order', true);
+        localStorage.setItem('free_order', true); 
       }
       stop_checking_page2();
     }
   }
   checking_page2();
-
-  function getPaymentMethod(){
-     console.log('getPaymentMethod');
-     var payment_method_updated = '';
-     $('.customization-button-next').on('click', function(e){
-       console.log('click submit');
-       e.preventDefault();
-       $('.customization2_organizer-bank-transfer_button').each(function(){
-	  if($(this).is(':checked')){
-	     payment_method_updated = $(this).closest('.customization2_organizer-bank-transfer').find('.payment-option__label').text().trim();
-	  }
-       });
-       localStorage.setItem('payment_method_upd', payment_method_updated);
-     });
-  }
+  
   
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
-    if($('.customization-booking-area-wrapper-page3').length > 0){    
+    if($('.customization-booking-area-wrapper-page3').length > 0){
       rebuildPage();
-      getPaymentMethod();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
     }
@@ -184,25 +151,28 @@ console.log("git custom-updated");
   function checking_page4() {
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
+      console.log('checking_page4');
+      var payment_method = localStorage.getItem('payment_method');
       
-      var payment_method = localStorage.getItem('payment_method');    
       var free_order = localStorage.getItem('free_order');
-      
       if(free_order && free_order == true){
         responseMessage('success');
       }else{
 	      
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+	   console.log('checking_page4 - invoice payment');
           rebuildPageInvoiceConfirm();
-        }else if( (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) || 
-		 (!isFuncUsed && (localStorage.getItem('payment_method_upd').indexOf('Sofortbezahlung') != -1)) ){
+        }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
+	  console.log('checking_page4 - CC hub payment');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
       }
-
       // if event w/o customization (payment system)
       if(!payment_method || payment_method ==''){
+        
+        console.log('checking_page4 - !payment_method || payment_method ==''');
+        
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
         $('.ew-confirmation__text-paragraph').css('display','block');
         $('.customization2_payment-description_organizer-bank-transfer').css('display','block');
@@ -210,7 +180,7 @@ console.log("git custom-updated");
       }
       
       stop_checking_page4();
-    }
+	}
   }
   checking_page4();
   
@@ -224,7 +194,6 @@ console.log("git custom-updated");
     } else if ( window.attachEvent ) {
       window.attachEvent('onmessage', receiveMessage);
     }
-    
   }
   
   function receiveMessage(event) {
@@ -260,40 +229,16 @@ console.log("git custom-updated");
   
   
   function rebuildPage(){
-     var allowed_countries = localStorage.getItem('allowed_countries')
-     var payment_method = localStorage.getItem('payment_method');
-	
-     console.log('rebuildPage');
-     console.log(allowed_countries);
-     console.log(allowed_countries.length);
-     console.log(payment_method);
-     console.log(payment_method.length);
-      
-     if(payment_method.length > 0 && allowed_countries.length === 0){
-        // old version
-            console.log('old version');
-	    if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-	      $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
-	    }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
-	      $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
-	      $('.customization2_payment').hide();
-	      $('.customization2_booking-terms').css('margin-top', '43px');
-	    }
-     }
-	    
-     if(payment_method.length === 0 && allowed_countries.length > 0){
-	console.log('new version');
-     	if(allowed_countries === 'forbidden'){
-	    console.log('new version - invoice option');
-	    $('.customization2_payment .payment-option').each(function(){
-	      var label = $(this).find('.payment-option__label').text().trim();
-	      if(hub_payment_method.indexOf(label) === -1 ){
-		$(this).addClass('hidden');
-                $(this).find('.customization2_organizer-bank-transfer').attr('checked', 'checked').click();
-	      }
-	    });
-	}
-     }
+    console.log('rebuildPage func');
+    var payment_method = localStorage.getItem('payment_method');
+    
+    if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+      $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
+    }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
+      $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
+      $('.customization2_payment').hide();
+      $('.customization2_booking-terms').css('margin-top', '43px');
+    }
   }
   
   var obj, organizer_id;
