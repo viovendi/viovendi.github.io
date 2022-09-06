@@ -27,14 +27,14 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 45);
-        ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
+        ctx.fillText($('#halle_inp').val(), 423 - $('#halle_inp').val().length * 2.5, 38);
+        ctx.fillText($('#stand_inp').val(), 423 - $('#stand_inp').val().length * 2.5, 50);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 512);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 4, 512);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 572);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 44);
-        ctx.fillText($('#stand_inp').val(), 43, 44);
+        ctx.fillText($('#halle_inp').val(), 50 - $('#halle_inp').val().length * 2.5, 34);
+        ctx.fillText($('#stand_inp').val(), 50 - $('#stand_inp').val().length * 2.5, 50);
     } else if (value == 'instagrampost') {
         ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1020);
         ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1020);
@@ -70,17 +70,17 @@ function setupBannerImage() {
     const value = $('#format_inp').val();
     
     if (value == 'horizontal') {
-        ctx.font = "10pt Verdana";
+        ctx.font = "7pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "15pt Verdana";
+        ctx.font = "12pt Verdana";
     } else if (value == 'email') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "10pt Verdana";
     } else if (value == 'instagrampost') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "18pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "18pt Verdana";
     } else if (value == 'facebook') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "18pt Verdana";
     };
 }
 
