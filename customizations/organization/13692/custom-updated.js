@@ -1,4 +1,4 @@
-console.log("git custom756");
+console.log("git custom756 - custom");
 // global var
   var isFuncUsed = false;
   var domain_url = 'https://cs.doo.net';
@@ -171,7 +171,7 @@ console.log("git custom756");
       // if event w/o customization (payment system)
       if(!payment_method || payment_method ==''){
         
-        console.log('checking_page4 - !payment_method || payment_method ==''');
+        console.log('checking_page4 - !payment_method || payment_method ==');
         
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
         $('.ew-confirmation__text-paragraph').css('display','block');
