@@ -52,6 +52,10 @@ console.log("git custom756 - custom");
   if( localStorage.allowed_countries ){
     localStorage.removeItem('allowed_countries');
   }
+
+  if( localStorage.payment_method_upd ){
+    localStorage.removeItem('payment_method_upd');
+  }
   
   function check_country(){
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
@@ -89,7 +93,11 @@ console.log("git custom756 - custom");
     return lang;
   }
  
-  $('.vv-button.customization-button-next').on('click', function(){
+  $('.customization-booking-area-wrapper-page2 .customization-button-next').on('click', function(){
+     console.log('click next 2 page TEST');
+  });
+
+  $('.customization-booking-area-wrapper-page2 .customization-button-next').on('click', function(){
     console.log('click next 2 page - set payment method');
     var payment_method = '';
     var delivery_of_invoice = '';
@@ -157,6 +165,7 @@ console.log("git custom756 - custom");
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
       rebuildPage();
+      getPaymentMethod();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       stop_checking_page3();
     }
@@ -175,14 +184,22 @@ console.log("git custom756 - custom");
         responseMessage('success');
       }else{
 	      
-        if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+        /*if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
 	   console.log('checking_page4 - invoice payment');
           rebuildPageInvoiceConfirm();
         }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
 	  console.log('checking_page4 - CC hub payment');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
+        }*/
+        if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+          rebuildPageInvoiceConfirm();
+        }else if( (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) || 
+		 (!isFuncUsed && (localStorage.getItem('payment_method_upd').indexOf('Sofortbezahlung') != -1)) ){
+          loaderOn('on');
+          sendRequest(obj, organizer_id, free_order);
         }
+	      
       }
       // if event w/o customization (payment system)
       if(!payment_method || payment_method ==''){
@@ -222,6 +239,21 @@ console.log("git custom756 - custom");
       responseMessage('error');
     }
   }
+
+  function getPaymentMethod(){
+     console.log('getPaymentMethod');
+     var payment_method_updated = '';
+     $('.customization-button-next').on('click', function(e){
+       console.log('click submit');
+       e.preventDefault();
+       $('.customization2_organizer-bank-transfer_button').each(function(){
+	  if($(this).is(':checked')){
+	     payment_method_updated = $(this).closest('.customization2_organizer-bank-transfer').find('.payment-option__label').text().trim();
+	  }
+       });
+       localStorage.setItem('payment_method_upd', payment_method_updated);
+     });
+  }
   
   
   function responseMessage(status){
@@ -248,10 +280,7 @@ console.log("git custom756 - custom");
     console.log('rebuildPage func');
     var payment_method = localStorage.getItem('payment_method');
     var allowed_countries = localStorage.getItem('allowed_countries');
-    console.log('allowed_countries');
-    console.log(allowed_countries);
-    console.log(payment_method);
-    console.log(payment_method.length);
+    console.log('allowed_countries: '+allowed_countries);
 	  
     if(!allowed_countries){
        //old integration logic
@@ -277,6 +306,12 @@ console.log("git custom756 - custom");
                 $(this).find('.customization2_organizer-bank-transfer').attr('checked', 'checked').click();
 	      }
 	    });
+	 }else{
+	   $('.customization2_payment .payment-option').each(function(){
+	   	if($(this).hasClass('hidden')){
+		   $(this).removeClass('hidden');
+		}
+	   });
 	 }
       }
     }
