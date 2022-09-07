@@ -252,7 +252,6 @@ console.log("git custom756 - custom");
     var allowed_countries = localStorage.getItem('allowed_countries');
     console.log('allowed_countries');
     console.log(allowed_countries);
-    console.log(allowed_countries.length);
 	  
     if(!allowed_countries){
        //old integration logic
