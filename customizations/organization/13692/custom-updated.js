@@ -112,12 +112,10 @@ console.log("git custom756 - custom");
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
     
-    // if allowed country
-    console.log('payment_method - NEW:');
-    console.log(payment_method);
-    console.log(payment_method.length);
+    // if new integration
     if(!payment_method){
     console.log('set countries data');
+    localStorage.removeItem('allowed_countries');
        if( countries_psp.indexOf(curr_country_psp) != -1 ){
          localStorage.setItem('allowed_countries', 'allowed');
        }else{
