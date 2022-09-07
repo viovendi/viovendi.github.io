@@ -252,6 +252,8 @@ console.log("git custom756 - custom");
     var allowed_countries = localStorage.getItem('allowed_countries');
     console.log('allowed_countries');
     console.log(allowed_countries);
+    console.log(payment_method);
+    console.log(payment_method.length);
 	  
     if(!allowed_countries){
        //old integration logic
@@ -265,11 +267,9 @@ console.log("git custom756 - custom");
          $('.customization2_booking-terms').css('margin-top', '43px');
        }
     }else{
-       //NEW integration logic
-	console.log('new integration logic');
-    /*
-      if(payment_method.length === 0 && allowed_countries.length > 0){
-	console.log('new version');
+      //NEW integration logic
+      console.log('new integration logic');
+      if(payment_method.length === 0){
      	if(allowed_countries === 'forbidden'){
 	    console.log('new version - invoice option');
 	    $('.customization2_payment .payment-option').each(function(){
@@ -281,9 +281,7 @@ console.log("git custom756 - custom");
 	    });
 	 }
       }
-    */
     }
-
   }
   
   var obj, organizer_id;
