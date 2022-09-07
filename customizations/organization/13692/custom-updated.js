@@ -58,6 +58,7 @@ console.log("git custom756 - custom");
   }
   
   function check_country(){
+    console.log('function check_country(){');
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
     var countries = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
@@ -71,9 +72,11 @@ console.log("git custom756 - custom");
 
 	    if(countries.indexOf(country) != -1){
 	        console.log("Show both");
+	        console.log("Set Allowed");
 		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
 	    }else{
 	        console.log("hide");
+		console.log("Set Forbidden");
 		invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
 		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
 	    }
