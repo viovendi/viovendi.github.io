@@ -76,6 +76,7 @@ console.log("git custom756 - custom");
 		   invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
 		}else{
 		   localStorage.setItem('allowed_countries', 'allowed');
+		}
 	    }else{
 	        console.log("hide");
 	       if(invoice_radio_group){
