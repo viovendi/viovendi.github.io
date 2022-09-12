@@ -69,14 +69,21 @@ console.log("git custom756 - custom");
 
 	const observer = new MutationObserver((mutations) => {
 	    var country = $(".customization2_booker_contact-data_country_input").text().trim();
-
+	    localStorage.removeItem('allowed_countries');
 	    if(countries.indexOf(country) != -1){
 	        console.log("Show both");
-		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+		if(invoice_radio_group){
+		   invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
+		}else{
+		   localStorage.setItem('allowed_countries', 'allowed');
 	    }else{
 	        console.log("hide");
-		invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
-		invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
+	       if(invoice_radio_group){
+		  invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
+		  invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
+	       }else{
+		localStorage.setItem('allowed_countries', 'forbidden');
+	       }
 	    }
 	});
 
@@ -135,7 +142,7 @@ console.log("git custom756 - custom");
     }
   });
 }
-getDataFromPage2();
+//getDataFromPage2();
   
   
   var id_page2, id_page3, id_page4 = null;
@@ -156,7 +163,7 @@ getDataFromPage2();
   function checking_page2() {
     id_page2 = requestAnimationFrame(checking_page2);
     if($('.customization-booking-area-wrapper-page2').length > 0){
-      getDataFromPage2();
+      //getDataFromPage2();
 	    
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
