@@ -311,7 +311,7 @@ console.log("git custom756 - custom");
     }else{
       //NEW integration logic
       console.log('new integration logic');
-      if(payment_method.length === 0){
+      if(!payment_method || payment_method.length === 0){
      	if(allowed_countries === 'forbidden'){
 	    console.log('new version - invoice option');
 	    $('.customization2_payment .payment-option').each(function(){
