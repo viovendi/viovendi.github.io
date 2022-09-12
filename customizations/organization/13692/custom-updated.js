@@ -63,7 +63,7 @@ console.log("git custom756 - custom");
     var countries = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
     
-    if(countries.indexOf(curr_country) != -1 ){
+    if((countries.indexOf(curr_country) != -1) && invoice_radio_group ){
       invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }
 
