@@ -1,0 +1,1 @@
+console.log("hide tickets");
