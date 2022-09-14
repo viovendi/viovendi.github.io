@@ -1,0 +1,834 @@
+<head>
+    <style type="text/css">
+        h1,
+        h2 {
+            color: #1552ba
+        }
+
+        .keeptogether,
+        table.invoice-table,
+        table.invoice-table tbody,
+        table.invoice-table td,
+        table.invoice-table tfoot,
+        table.invoice-table th,
+        table.invoice-table thead,
+        table.invoice-table tr {
+            page-break-inside: avoid
+        }
+
+        body {
+            font-family: Arial, serif;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+            line-height: 130%
+        }
+
+        #print-area {
+            position: relative;
+            width: 100%;
+            height: 95%;
+            text-align: justify;
+            margin: 2% 5% 2% 2%
+        }
+
+        h1.headline,
+        table {
+            width: 95%
+        }
+
+        table {
+            border-spacing: 0;
+            border: none;
+            border-collapse: collapse
+        }
+
+        table td {
+            vertical-align: top
+        }
+
+        h1 {
+            font-size: 16pt
+        }
+
+        h2 {
+            font-size: 10pt
+        }
+
+        .keeptogether {
+            margin-right: 5%
+        }
+
+        .page-break-after {
+            display: block;
+            page-break-after: always
+        }
+
+        .page-break-before {
+            display: block;
+            page-break-before: always
+        }
+
+        .logo-big {
+            margin-bottom: 40px;
+            width: 165px
+        }
+
+        #paid_label,
+        svg.paid_label {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            margin-left: -200px;
+            width: 200px;
+            color: #843534
+        }
+
+        .sender b {
+            font-weight: 700;
+            color: #1552ba
+        }
+
+        .receiver table {
+            margin-top: 70px
+        }
+
+        .receiver table tr td:first-child {
+            background: #bed2f0;
+            width: 2px;
+            border-radius: 10px
+        }
+
+        .receiver table tr td:last-child {
+            padding: 18px 0 0 20px
+        }
+
+        .receiver p,
+        .sender p {
+            font-size: 10pt;
+            line-height: 140%;
+            margin: 18px 0
+        }
+
+        ul.bayer_details,
+        ul.overview_details {
+            font-size: 10pt;
+            line-height: 140%;
+            margin: 0 0 25px;
+            padding: 0;
+            list-style: none inside
+        }
+
+        ul.overview_details {
+            padding-left: 25px
+        }
+
+        ul.bayer_details li b,
+        ul.overview_details li b {
+            display: inline-block;
+            font-weight: 600
+        }
+
+        ul.bayer_details li b {
+            width: 180px
+        }
+
+        ul.overview_details li b {
+            width: 160px
+        }
+
+        .small {
+            font-size: 9pt;
+            line-height: 100%
+        }
+
+        .grey-small {
+            font-size: 9pt;
+            color: #505050
+        }
+
+        .date-container {
+            position: relative
+        }
+
+        .date-container .date {
+            text-align: right;
+            position: absolute;
+            right: 5%;
+            top: 5px
+        }
+
+        .invoice-table {
+            margin: 0 0 5px
+        }
+
+        table.invoice-table-soft-wrap,
+        table.invoice-table-soft-wrap tbody,
+        table.invoice-table-soft-wrap td,
+        table.invoice-table-soft-wrap tfoot,
+        table.invoice-table-soft-wrap th,
+        table.invoice-table-soft-wrap thead {
+            page-break-inside: auto
+        }
+
+        .invoice-table tr:last-child td {
+            /* border-bottom: 1px solid #e4e4e4; */
+            /* padding-bottom: 15px!important */
+        }
+
+        .invoice-table thead {
+            background: #bed2f0;
+            color: #fff
+        }
+
+        .invoice-table thead th:first-child {
+            border-radius: 5px 0 0 5px
+        }
+
+        .invoice-table thead th:last-child {
+            border-radius: 0 5px 5px 0
+        }
+
+        .invoice-table thead th {
+            padding: 10px;
+            font-size: 10pt;
+            text-align: left
+        }
+
+        .invoice-table thead th span {
+            font-size: 7pt!important
+        }
+
+        .invoice-table thead .col2 {
+            width: 9%
+        }
+
+        .invoice-table thead .col3 {
+            width: 11%
+        }
+
+        .invoice-table thead .col4 {
+            width: 10%
+        }
+
+        .invoice-table thead .col5 {
+            width: 16%
+        }
+
+
+        .invoice-table tbody tr:first-child {
+            border-radius: 5px 0 0 5px
+        }
+
+        .invoice-table tbody tr:last-child {
+            border-radius: 0 5px 5px 0
+        }
+
+        .invoice-table tbody tr {
+            padding: 10px;
+            font-size: 10pt;
+            text-align: left
+        }
+
+        .invoice-table tbody tr span {
+            font-size: 7pt!important
+        }
+
+        .invoice-table tbody .col2 {
+            width: 9%
+        }
+
+        .invoice-table tbody .col3 {
+            width: 11%
+        }
+
+        .invoice-table tbody .col4 {
+            width: 10%
+        }
+
+        .invoice-table tbody .col5 {
+            width: 16%
+        }
+
+        .invoice-table td {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 10pt
+        }
+
+        .invoice-table td .break-word {
+            word-wrap: break-word
+        }
+
+        .invoice-table tr.title td {
+            padding-top: 15px;
+            /* padding-bottom: 10px */
+        }
+
+        .invoice-table tr.ticket td {
+            padding-left: 30px!important;
+            /* padding-bottom: 5px */
+        }
+
+        .invoice-table tr.product td {
+            padding-left: 30px!important;
+            /* padding-bottom: 5px */
+        }
+
+        .invoice-table tr.tx td {
+            /* padding-left: 30px!important; */
+            /* padding-bottom: 5px */
+        }
+
+        .invoice-table tr.subtotal td {
+            font-size: 11pt;
+            text-align: right;
+            padding-top: 4px;
+            padding-bottom: 4px
+        }
+
+        .invoice-table tr.tax td {
+            font-size: 9pt;
+            text-align: right;
+            padding-top: 4px;
+            padding-bottom: 4px
+        }
+
+        .invoice-table tr.separator td {
+            border-top: 1px solid #e4e4e4;
+            padding-top: 15px;
+            padding-bottom: 5px
+        }
+
+        .invoice-table tr.footer td b {
+            padding-top: 15px;
+            padding-bottom: 5px;
+            font-size: 12pt
+        }
+
+        .invoice-table tbody tr td {
+            text-align: center
+        }
+
+        .invoice-table tbody tr td:first-child {
+            text-align: left!important
+        }
+
+        .invoice-table tbody tr td:last-child {
+            text-align: right!important
+        }
+
+        .payment-details {
+            margin-left: 0px
+        }
+
+        .payment-details td {
+            font-size: 11pt
+        }
+
+        .limit {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 50%;
+            display: inline-block
+        }
+
+        .message-content {
+            margin-right: 5%
+        }
+
+        tr { page-break-inside: avoid }
+
+        html {
+            zoom: 80%;
+        }
+    </style>
+</head>
+<body>
+<table id="print-area">
+	<thead id="print-area"> 
+        <tr>
+            <th style="text-align:left; padding-top:40px; width:80%"><h1 style="word-wrap: break-word">7th Scientific Congress for Aligner <br> Orthodontics</h1></th>
+            <th style="text-align:right; padding-right: 3%">
+                {% if invoice.logo.type == 'custom' %}
+                    <img src="{{ invoice.logo.path }}" style="zoom:1.0">   
+                {% else if invoice.logo.type == 'default' %}
+                    <img src="http logo" style="zoom:0.3">
+                {% else %}
+                
+                {% endif %}
+		    </th>
+            <th></th>
+            <th></th>
+        </tr>
+	</thead>
+    <tfoot id="pageFooter" style="bottom:0px" id="print-area">
+        <tr>
+            <td colspan="3">
+                <br><br><br><br>
+            </td>
+		</tr>
+	</tfoot>
+	<tbody id="print-area">
+		<tr>
+            <td colspan="3">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="receiver">
+
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <p> 
+                                                    {% if order.organization %} 
+                                                        {{ order.organization }}
+                                                    {% endif %}
+                                                    {% unless order.use_company_name %}
+                                                        <br/> {% if order.title %} 
+                                                                {{order.title }} 
+                                                        {% endif %}
+                                                        {{ order.first_name}} {{ order.last_name }} 
+                                                    {% endunless%}
+                                                    <br/> {{order.street}} {{order.house_number}}
+                                                    <br> {{order.zip}} {{order.city}}
+                                                    {% if order.country %}  
+                                                        <br/> {{order.country}} 
+                                                    {% endif %}
+                                                    {%for c in order.custom_questions %} 
+                                                        {% if c.question contains 'UID-Nr.' %}
+                                                            <br />UID-Nr.: {{c.answer}} 
+                                                        {% endif %} 
+                                                    {% endfor %}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td width="38%" class="sender">
+                                <br><br>
+                                <p>
+                                    <b>Veranstalter</b><br/> 
+                                    {{organization.invoice_name}}
+                                    <br> {{organization.invoice_street}} {{organization.invoice_house_number}}
+                                    <br> {{organization.invoice_zip}} {{organization.invoice_city}}
+                                    <br/>USt-ID: DE99015729801
+                                </p>
+
+                                <p>
+                                    <b>Event Agency</b><br/>
+                                    dentevent by ahoy-pr <br/>
+                                    A Hoy PR Agentur- und Verlagsges. mbH <br/>
+                                    Schrannenstraße 4 <br/>
+                                    86150 Augsburg <br/>
+                                    E-Mail: kongress@dgao.com <br/>
+                                    Telefon: +49 (0)821 2461357 <br/>
+                                </p>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>    
+		</tr>
+
+		<tr>
+            <td colspan="3">
+                <div class="date-container">
+                    <h1>Invoice Nr: {{ order.invoice_id }}</h1>
+                    <div class="date">Augsburg, {{ order.date | date: "%d.%m.%Y" }}</div>
+                </div>
+                <br/>
+                <div class="message-content">
+                    Dear
+                    {% if order.salutation %} 
+                        {{order.salutation}}
+                    {% else %}
+                        Mr/Ms    
+                    {% endif %} 
+                    {% if order.title %} 
+                        {{order.title}} 
+                    {% endif %} 
+                    {{ order.last_name }},
+                    <br/><br/> Thank you for your registration. In order to complete your registration, please (wire-)transfer the total amount without deduction and in one transaction to the following bank account.
+                </div>
+
+                <br/>
+                <table class="payment-details" style="margin-left:40px">
+                    <tr>
+                        <td><b>Company:</b></td>
+                        <td>Organizer</td>
+                    </tr>
+                    <tr>
+                        <td><b>IBAN:</b></td>
+                        <td>Organizer IBAN</td>
+                    </tr>
+                    <tr>
+                        <td><b>BIC:</b></td>
+                        <td>Organizer BIC</td>
+                    </tr>
+                    <tr>
+                        <td><b>Amount:</b></td>
+                        <td>{{ order.invoice_total | money }}&nbsp;EUR</td>
+                    </tr>
+                    <tr>
+                        <td><b>Intended use:</b></td>
+                        <td>{{ order.invoice_id }}</td>
+                    </tr>
+                </table>
+            </td>    
+		</tr>
+		<tr>
+            <td colspan="3">
+                <br>
+                <div class="message-content">
+                    Please include the full and unaltered invoice ID in the intended use to ensure the correct matching of the transaction and your booking. You will receive a confirmation email after the payment receipt. Please take into account that this will take a few working days due to the banks' processing time.
+                </div>
+            </td>    
+		</tr>
+		<tr>
+            <td colspan="3">
+                <br/>
+                <div class="date-container">
+                    <h2>Invoice Information:</h2>
+                </div>
+            
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="3">        
+                <table class="invoice-table">
+                    <thead>
+                        <th class="col1">Your booking</th>
+                        <th class="col2">Quantity</th>
+                        <th class="col3">Price <span>net</span></th>
+                        <th class="col4">VAT</th>
+                        <th class="col5">Total <span>incl. VAT</span></th>
+                    </thead>
+                </table>    
+            </td>
+        </tr>
+        <tr> 
+            <td colspan="3">
+                <table class="invoice-table">       
+                    <tbody>
+                        <tr>
+                            <td><b>Booking Categories</b></td>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tbody>   
+                </table>     
+            </td>
+        </tr>           
+                            {% assign bookingCategoryTotal = 0 %}
+                            {% assign productsTotal = 0 %}
+
+                            {% for ticket in order.tickets %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>                    
+                                <tr class="ticket">
+                                    <td class="col1">{{ ticket.category_name }} | {{ ticket.category_description }}</td>
+                                    <td class="col2">{{ ticket.quantity }}</td>
+                                    <td class="col3">{{ ticket.total_without_tax | money}}</td>
+                                    <td class="col4">
+                                        {{ ticket.vat_rate | slice: 0, 2}}%   
+                                    </td>
+                                    <td class="col5">{{ ticket.total_with_tax | money }}</td>
+                                </tr>
+                    </tbody>          
+                </table>      
+            </td>
+        </tr>
+                            {% assign bookingCategoryTotal = bookingCategoryTotal | plus : ticket.total_with_tax %}
+                            {% endfor %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>               
+                            {% if order.products %}
+                                <tr>
+                                    <td><br><b>Products</b></td>
+                                    <td colspan="4"></td>
+                                </tr>      
+                            {% endif %}  
+                    </tbody>
+                </table>
+            </td> 
+        </tr>                                      
+                            {% for product in order.products %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>                    
+                               <tr class="product">
+                                    <td class="col1">{{ product.category_name }}</td>
+                                    <td class="col2">{{ product.quantity }}</td>
+                                    <td class="col3">{{ product.total_without_tax | money}}</td>
+                                    <td class="col4">
+                                        {{ product.vat_rate | slice: 0, 2 }}% 
+                                    </td>
+                                    <td class="col5">{{ product.total_with_tax | money }}</td>
+                                </tr>  
+                    </tbody>
+                </table>
+            </td>
+        </tr>                     
+                                {% assign productsTotal = productsTotal | plus : product.total_with_tax %}    
+                                {% endfor %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <tr>
+                            <td colspan="5">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>           
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody> 
+                        <!-- transaction fee -->
+                        {% if order.transaction_fee.without_tax > 0 %}
+                        <tr class="ticket">
+                            <td class="col1">Transaction fees</td>
+                            <td class="col2"></td>
+                            <td class="col3">{{ order.transaction_fee.without_tax | money }}</td>
+                            <td class="col4">{{ order.transaction_fee.vat }}%</td>
+                            <td class="col5">{{ order.transaction_fee.with_tax | money }}</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </td>
+        </tr>               
+
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <!-- promo -->
+                        {% if order.promo_code %}
+                        <tr>
+                            <td class="col1"><b>Promotion Code</b> - {{ order.promo_code }}</td>
+                            <td class="col2"></td>
+                            <td class="col3"></td>
+                            <td class="col4"></td>
+                            <td class="col5">-{{ order.promo_value | money }}</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <tr>
+                            <td style="border-bottom: 1px solid #e4e4e4;">
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>   
+        {% if order.products %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <!-- subtotal -->
+                        <tr>
+                            <td colspan="5">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="col1"></td>
+                            <td colspan="3" style="width:28%; text-align:right" align="right">Subtotal Booking Categories</td>
+                            <td class="col5">{{ bookingCategoryTotal | money }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr> 
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <!-- subtotal -->
+                        <tr>
+                            <td class="col1"></td>
+                            <td colspan="3" style="width:28%; text-align:right" align="right">Subtotal Products</td>
+                            <td class="col5">{{ productsTotal | money }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>    
+        {% endif %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <!-- total -->
+                        <tr class="footer">
+                            <td class="col1"></td>
+                            <td colspan="3" style="width:28%; text-align:right" align="right"><b>Total in EUR</b></td>
+                            <td class="col5"><b>{{ order.invoice_total | money }}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>    
+                        {% for tax in order.taxes_summary %}
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>                
+                        {% if tax.amount > 0 %}
+                        <tr class="tax">
+                            <td class="col1"></td>
+                            <td class="col2"></td>
+                            <td colspan="3" style="width:19%">
+                                Including VAT {{ tax.vat }} %
+                            </td>
+                            <td class="col5">{{ tax.amount | money }}</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </td>
+        </tr>    
+                        {% endfor %}
+		<tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <tr>
+                            <td style="border-bottom: 1px solid #e4e4e4;">
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="invoice-table">
+                    <tbody>
+                        <tr>
+                            {% if event.vat_reason_text %}
+                                <br>{{ event.vat_reason_text }}
+                            {% endif %}
+                            {% if invoice.message %}
+                                <br><br>{{ invoice.message }}
+                            {% endif %}    
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr> 
+        <tr>
+            <td colspan="3">
+                <div class="date-container">
+                    <h2>Your Registration Details:</h2>
+                </div>
+                <table class="payment-details">
+                    <tr>
+                        <td><b>Event:</b></td>
+                        <td>{{ event.name }} {{event.start_date | date: "%e %B %Y"}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Ticket Buyer:</b></td>
+                        <td>{% if order.title %} {{order.title}} {% endif %} {{ order.first_name }} {{order.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>E-Mail:</b></td>
+                        <td>{{ order.email }}</td>
+                    </tr>
+                    {% assign flag = 0 %}
+                    {% assign count = 0 %}
+                
+                    {% for attendee in attendees %}  
+                        {% if attendee.first_name == order.first_name and attendee.last_name == order.last_name %}
+                            {% assign flag = flag | plus : 1 %}
+                        {% endif %}     
+                        {% assign count = count | plus : 1 %}
+                    {% endfor %}
+                    {% if flag != count and count > 0 %}
+                    <tr>
+                        <td><b>Attendee(s):</b></td>
+                        <td>    
+                                {% assign names = '' %}
+                                {% for attendee in attendees %} 
+                                    {% assign name = '' %}
+                                    {% if forloop.last == true %}
+                                        {% if attendee.title %} 
+                                            {% assign name = name | append: attendee.title | append: ' ' | append: attendee.first_name | append: ' ' | append: attendee.last_name  %}
+                                        {% else %}
+                                            {% assign name = name | append: attendee.first_name | append: ' ' | append: attendee.last_name %}
+                                        {% endif %}
+                                    {% else %}
+                                        {% if attendee.title %} 
+                                            {% assign name = name | append: attendee.title | append: ' ' | append: attendee.first_name | append: ' ' | append: attendee.last_name | append: ', ' %} 
+                                        {% else %}
+                                            {% assign name = name | append: attendee.first_name | append: ' ' | append: attendee.last_name | append: ', ' %}
+                                        {% endif %}
+                                    {% endif %} 
+                                    {% assign names = names | append: name  %}
+                                {% endfor %}
+                                {% assign list = names | split: ", " %}
+
+                                {{ list | uniq | join: ", " }}
+                        </td>
+                    </tr>           
+                    {% endif %}
+                </table>
+            </td>    
+		</tr>
+		<tr>
+            <td colspan="3">
+                <br/>
+
+                <div class="keeptogether">
+
+                    <br/>
+
+                    <br> With kind regards<br/>Your team from dentevent by ahoy-pr
+                </div>
+
+                <p></p>
+            </td>
+		</tr>
+	</tbody>
+</table>
+<script>
+    /* Adds pagenumbers to each page of the PDF using some estimation
+    *  of pixel height per page. Add just before the </body> of a template. */
+    function addFooter() {
+        /* Adjust values as required */
+        var pageStringPrefix = "Page ";
+        var pageStringMiddle = " of ";
+        var heightPerPage = 1170; /* magic number, heuristically found */
+        var bodyHeight = document.body.offsetHeight
+        var totalPages = Math.round(bodyHeight / heightPerPage);
+        for (var currentPage = 1; currentPage <= totalPages; currentPage++) {
+            var element = document.createElement("div");
+            document.body.appendChild(element);
+            element.style.display = "block";
+            element.innerHTML =  "<div style='width:142%; margin-top:0; font-size: 8pt; color: #ACACAC; text-align: center'><span>DGAO - Deutsche Gesellschaft für Aligner Orthodontie e.V. - Richard-Wagner-Str. 9-11 - 50674 Köln<br>Kongressagentur: dentevent by ahoy-pr | A Hoy PR Agentur und Verlagsges. mbh <br> Geschäftsführerin: Doris Hoy-Sauer | USt-ID DE276920950 | Amtsgericht Augsburg HRB 26052</span>"
+             + "<br><div style='font-size:8pt; color:#000000; margin-left:80%; text-align:right'>" + pageStringPrefix + currentPage + pageStringMiddle + totalPages; + "</div></div>"
+            element.style.top = currentPage * heightPerPage + 60 * (currentPage-1);
+            element.style.position = "absolute";
+            element.style.left = "20";
+        }
+    };
+    addFooter();
+</script>
+</body>
