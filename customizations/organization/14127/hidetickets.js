@@ -1,4 +1,6 @@
 console.log("hide tickets");
+const url = window.location.href;
+
 const observerThisPage = new MutationObserver((mutations, obs) => {
     const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
 
@@ -32,9 +34,20 @@ observerOtherPage.observe(document, {
 });
 
 function logCat(){
-    $('.event-category').each(function() {
-        console.log('i');
-        console.log($( this ).find('.event-category__name')[0])
-        console.log($( this ).find('.event-category__name').first().text())
-      });
+    if(
+    url.includes("booking-14127-33594") ||
+    url.includes("booking-14127-33595") ||
+    url.includes("booking-14127-34918") ||
+    url.includes("booking-14127-33925") ||
+    url.includes("booking-14127-33926")
+    ){
+        $('.event-category').each(function() {
+            var ticketName = $( this ).find('.event-category__name').first().text().trim();
+            if(ticketName=="Tagesticket kostenlos vor Ort (mit Legitimierung)"||
+                    ticketName=="Dauerticket kostenlos vor Ort (mit Legitimierung)"){
+                        console.log("hiding a ticket");
+                $(this).hide();
+            }
+          });
+    }
 }
