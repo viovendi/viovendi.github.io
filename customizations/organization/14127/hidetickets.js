@@ -5,6 +5,10 @@ const observerThisPage = new MutationObserver((mutations, obs) => {
     if ($(page1).is(':visible')) {
         console.log('on page 1')
         logCat();
+        observerOtherPage.observe(document, {
+            childList: true,
+            subtree: true
+        });
         obs.disconnect();
         return;
     }
