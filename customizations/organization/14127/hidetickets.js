@@ -13,6 +13,7 @@ const observerOtherPage = new MutationObserver((mutations, obs) => {
     const page1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
 
     if (!$(page1).is(':visible')) {
+        console.log('not on page 1')
         observerThisPage.observe(document, {
             childList: true,
             subtree: true
