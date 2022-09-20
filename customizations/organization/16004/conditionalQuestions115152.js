@@ -70,7 +70,7 @@ function handler(){
   /*
   How to use the conditional questions functions, example:
   */
-  $$('.customization2_attendee_further-data_custom-question').hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof","Abflughafen","Ihr Handiyap", "Ihre Schuhgröße"])
+  $$('.customization2_attendee_further-data_custom-question').hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof","Abflughafen","Ihr Handicap", "Ihre Schuhgröße"])
 
   var disableSaveOnValueSelected = true;
   
@@ -90,7 +90,7 @@ function handler(){
   condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Golf
-  arrayOfLabelsToShow = ["Ihr Handicao"];
+  arrayOfLabelsToShow = ["Ihr Handicap"];
   arrayOfLabelsToHide = ["Ihre Schuhgröße"];
   condQuestion('.customization2_attendee_further-data_product:contains(Golf)', 'input.vv-checkbox__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
