@@ -1,4 +1,4 @@
-function condRadioQuestion (radioSelector, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+function condRadioQuestion(radioSelector, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
     
     console.log("Start condQuestions for: " + radioSelector);
 
@@ -80,17 +80,17 @@ function handler(){
   // Auto
   var arrayOfLabelsToShow = ["Benötigen Sie einen Parkplatz?"];
   var arrayOfLabelsToHide = ["Abreise-Bahnhof","Abflughafen"];
-  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  $$('.customization2_attendee_further-data_custom-question').condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
   
   // Bahn
   arrayOfLabelsToShow = ["Abreise-Bahnhof"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abflughafen"];
-  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  $$('.customization2_attendee_further-data_custom-question').condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Flugzeug
   arrayOfLabelsToShow = ["Abflughafen"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof"];
-  $$('.customization2_attendee_further-data_custom-question').condQuestionDropdown('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  $$('.customization2_attendee_further-data_custom-question').condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   /*
     example
