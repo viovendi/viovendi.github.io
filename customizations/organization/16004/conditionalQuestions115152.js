@@ -1,8 +1,7 @@
 function handler(){
   
-  /*
-  How to use the conditional questions functions, example:
-  */
+  console.log('Start conditional questions');
+  
   $$('.customization2_attendee_further-data_custom-question').hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof","Abflughafen"])
 
   var dropdownLable = "Wie reisen Sie an?";
