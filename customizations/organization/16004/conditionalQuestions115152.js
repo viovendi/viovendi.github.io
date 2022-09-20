@@ -10,7 +10,7 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disabl
     for (let i = 0; i < arrayOfLabelsToHide.length; i++)
         questionsToHide[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToHide[i]);
 
-    $(selector).click(function() {
+    $(selector).on('change', function() {
         console.log(selector + " clicked");
         var input = $(selector).find('input')
         if (input.is(':checked')) {
