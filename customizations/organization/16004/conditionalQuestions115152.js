@@ -15,8 +15,8 @@ function condRadioQuestion(radioSelector, arrayOfLabelsToShow, arrayOfLabelsToHi
         questionsToHide[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToHide[i]);
     //console.log(questionsToHide)
 
-    $(radioSelector).on("DOMSubtreeModified", function () {
-        console.log("Change in DOMSubtree");
+    $(radioSelector)).click(function() {
+        console.log(radioSelector + " clicked");
         if ($(radioSelector).find('input.vv-radio__input').is(':checked')) {
             
             console.log("is checked");
