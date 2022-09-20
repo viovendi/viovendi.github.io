@@ -505,8 +505,8 @@
                     <thead>
                         <th class="col1">Ihre Buchung</th>
                         <th class="col2">Anzahl</th>
-                        <th class="col3">Preis <span>netto</span></th>
-                        <th class="col4">MwSt.</th>
+                        <th class="col3"><span></span></th>
+                        <th class="col4"></th>
                         <th class="col5">Gesamt <span>brutto</span></th>
                     </thead>
                 </table>    
@@ -535,9 +535,9 @@
                                 <tr class="ticket">
                                     <td class="col1">{{ ticket.category_name }} | {{ ticket.category_description }}</td>
                                     <td class="col2">{{ ticket.quantity }}</td>
-                                    <td class="col3">{{ ticket.total_without_tax | money}}</td>
+                                    <td class="col3"></td>
                                     <td class="col4">
-                                        {{ ticket.vat_rate }}%   
+                                           
                                     </td>
                                     <td class="col5">{{ ticket.total_with_tax | money }}</td>
                                 </tr>
@@ -569,9 +569,9 @@
                                <tr class="product">
                                     <td class="col1">{{ product.category_name }}</td>
                                     <td class="col2">{{ product.quantity }}</td>
-                                    <td class="col3">{{ product.total_without_tax | money}}</td>
+                                    <td class="col3"></td>
                                     <td class="col4">
-                                        {{ product.vat_rate }}% 
+                                         
                                     </td>
                                     <td class="col5">{{ product.total_with_tax | money }}</td>
                                 </tr>  
@@ -601,8 +601,8 @@
                         <tr class="ticket">
                             <td class="col1">Transaktionsgeb&uuml;hr</td>
                             <td class="col2"></td>
-                            <td class="col3">{{ order.transaction_fee.without_tax | money }}</td>
-                            <td class="col4">{{ order.transaction_fee.vat }}%</td>
+                            <td class="col3"></td>
+                            <td class="col4"></td>
                             <td class="col5">{{ order.transaction_fee.with_tax | money }}</td>
                         </tr>
                         {% endif %}
@@ -704,9 +704,9 @@
                             <td class="col1"></td>
                             <td class="col2"></td>
                             <td colspan="3" style="width:19%">
-                                Enthaltene MwSt. {{ tax.vat }} %
+                                
                             </td>
-                            <td class="col5">{{ tax.amount | money }}</td>
+                            <td class="col5"></td>
                         </tr>
                         {% endif %}
                     </tbody>

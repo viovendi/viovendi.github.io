@@ -473,8 +473,8 @@
                     <thead>
                         <th class="col1">Your booking</th>
                         <th class="col2">Quantity</th>
-                        <th class="col3">Price <span>net</span></th>
-                        <th class="col4">VAT</th>
+                        <th class="col3"><span></span></th>
+                        <th class="col4"></th>
                         <th class="col5">Total <span>incl. VAT</span></th>
                     </thead>
                 </table>    
@@ -504,9 +504,9 @@
                                 <tr class="ticket">
                                     <td class="col1">{{ ticket.category_name }} | {{ ticket.category_description}}</td>
                                     <td class="col2">{{ ticket.quantity }}</td>
-                                    <td class="col3">{{ ticket.total_without_tax | money}}</td>
+                                    <td class="col3"></td>
                                     <td class="col4">
-                                        {{ ticket.vat_rate | slice: 0, 2}}%   
+                                         
                                     </td>
                                     <td class="col5">{{ ticket.total_with_tax | money }}</td>
                                 </tr>
@@ -538,9 +538,9 @@
                                <tr class="product">
                                     <td class="col1">{{ product.category_name }}</td>
                                     <td class="col2">{{ product.quantity }}</td>
-                                    <td class="col3">{{ product.total_without_tax | money}}</td>
+                                    <td class="col3"></td>
                                     <td class="col4">
-                                        {{ product.vat_rate | slice: 0, 2}}% 
+                                         
                                     </td>
                                     <td class="col5">{{ product.total_with_tax | money }}</td>
                                 </tr>  
@@ -570,8 +570,8 @@
                         <tr class="ticket">
                             <td class="col1">Transaction fees</td>
                             <td class="col2"></td>
-                            <td class="col3">{{ order.transaction_fee.without_tax | money }}</td>
-                            <td class="col4">{{ order.transaction_fee.vat }}%</td>
+                            <td class="col3"></td>
+                            <td class="col4"></td>
                             <td class="col5">{{ order.transaction_fee.with_tax | money }}</td>
                         </tr>
                         {% endif %}
@@ -588,8 +588,8 @@
                         <tr class="ticket">
                             <td class="col1">Expense for cancellation</td>
                             <td class="col2"></td>
-                            <td class="col3">{{ cancellation.fee.without_tax | money }}</td>
-                            <td class="col4">{{ cancellation.fee.vat }}%</td>
+                            <td class="col3"></td>
+                            <td class="col4"></td>
                             <td class="col5">{{ cancellation.fee.with_tax | money }}</td>
                         </tr>
                     </tbody>
@@ -685,9 +685,9 @@
                             <td class="col1"></td>
                             <td class="col2"></td>
                             <td colspan="3" style="width:19%">
-                                Including VAT {{ tax.vat }} %
+                                
                             </td>
-                            <td class="col5">{{ tax.amount | money }}</td>
+                            <td class="col5"></td>
                         </tr>
                         {% endif %}
                     </tbody>
@@ -749,7 +749,7 @@
         var pageStringMiddle = " of ";
         var heightPerPage = 1170; /* magic number, heuristically found */
         var bodyHeight = document.body.offsetHeight
-        var totalPages = Math.ceil(bodyHeight / heightPerPage);
+        var totalPages = Math.round(bodyHeight / heightPerPage);
         for (var currentPage = 1; currentPage <= totalPages; currentPage++) {
             var element = document.createElement("div");
             document.body.appendChild(element);
@@ -759,7 +759,6 @@
             element.style.top = currentPage * heightPerPage + 60 * (currentPage-1);
             element.style.position = "absolute";
             element.style.left = "20";
-            element.style.width = "75%";
         }
     };
     addFooter();
