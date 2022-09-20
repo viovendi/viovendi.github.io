@@ -41,7 +41,7 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disabl
         }
         })
         
-        if(productSelected) {
+        if(!productSelected) {
             $('.customization2_attendee_further-data_custom-question:contains(Ihr Handicap)').hide();
             $('.customization2_attendee_further-data_custom-question:contains(Ihre Schuhgröße)').hide();
         }
