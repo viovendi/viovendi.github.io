@@ -1,4 +1,6 @@
 function condRadioQuestion (radioSelector, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+    
+    console.log("Start condQuestions for: " + radioSelector);
 
     addErrorStyles();
 
@@ -14,7 +16,10 @@ function condRadioQuestion (radioSelector, arrayOfLabelsToShow, arrayOfLabelsToH
     //console.log(questionsToHide)
 
     $(radioSelector).on("DOMSubtreeModified", ".vv-radio__input", function () {
+        console.log("Change in DOMSubtree");
         if ($(radioSelector).find('input.vv-radio__input').is(':checked')) {
+            
+            console.log("is checked");
 
             for (let i = 0; i < questionsToShow.length; i++) {
                 $(questionsToShow[i]).show()
