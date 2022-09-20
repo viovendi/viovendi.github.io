@@ -12,7 +12,8 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disabl
 
     $(selector).click(function() {
         console.log(selector + " clicked");
-        if ($(selector).find('input').is(':checked')) {
+        var input = $(selector).find('input')
+        if (input.is(':checked')) {
             
             console.log("is checked");
 
