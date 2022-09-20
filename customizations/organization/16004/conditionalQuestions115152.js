@@ -1,4 +1,4 @@
-function condQuestion(selector, inputElement, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
     
     console.log("Start condQuestions for: " + selector);
 
@@ -12,16 +12,18 @@ function condQuestion(selector, inputElement, arrayOfLabelsToShow, arrayOfLabels
 
     $(selector).click(function() {
         console.log(selector + " clicked");
-        if ($(selector).find(inputElement).is(':checked')) {
+        if ($(selector).find('input').is(':checked')) {
             
             console.log("is checked");
 
             for (let i = 0; i < questionsToShow.length; i++) {
+                console.log('Show' + questionToShow[i])
                 $(questionsToShow[i]).show()
                 $(questionsToShow[i]).find('vv-optional-text').css("display", "none");
                 $$('.customization2_attendee_further-data_custom-question').disableWhenEmpty(questionsToShow[i]);
             }
             for (let i = 0; i < questionsToHide.length; i++) {
+                console.log('Hide' + questionsToHide[i])
                 $(questionsToHide[i]).hide()
                 $(questionsToHide[i]).find('.customization2_attendee_further-data_custom-question_input').val('')
             }
@@ -30,6 +32,8 @@ function condQuestion(selector, inputElement, arrayOfLabelsToShow, arrayOfLabels
         };
     });
 }
+
+
 /*
 Adds the error styles needed for the conditional questions
 */
@@ -65,7 +69,7 @@ function addErrorStyles () {
 
 function handler(){
     
-    addErrorStyles();
+  addErrorStyles();
   
   /*
   How to use the conditional questions functions, example:
@@ -77,27 +81,27 @@ function handler(){
   // Auto
   var arrayOfLabelsToShow = ["Benötigen Sie einen Parkplatz?"];
   var arrayOfLabelsToHide = ["Abreise-Bahnhof","Abflughafen"];
-  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
   
   // Bahn
   arrayOfLabelsToShow = ["Abreise-Bahnhof"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abflughafen"];
-  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Flugzeug
   arrayOfLabelsToShow = ["Abflughafen"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof"];
-  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Golf
   arrayOfLabelsToShow = ["Ihr Handicap"];
   arrayOfLabelsToHide = ["Ihre Schuhgröße"];
-  condQuestion('.customization2_attendee_further-data_product:contains(Golf)', 'input.vv-checkbox__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_product:contains(Golf)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Laufen
   arrayOfLabelsToShow = ["Ihre Schuhgröße"];
   arrayOfLabelsToHide = ["Ihr Handicap"];
-  condQuestion('.customization2_attendee_further-data_product:contains(Laufen)', 'input.vv-checkbox__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_product:contains(Laufen)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   /*
     example
