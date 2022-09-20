@@ -17,13 +17,13 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disabl
             console.log("is checked");
 
             for (let i = 0; i < questionsToShow.length; i++) {
-                console.log('Show' + questionToShow[i])
+                console.log('Show ' + questionsToShow[i])
                 $(questionsToShow[i]).show()
                 $(questionsToShow[i]).find('vv-optional-text').css("display", "none");
                 $$('.customization2_attendee_further-data_custom-question').disableWhenEmpty(questionsToShow[i]);
             }
             for (let i = 0; i < questionsToHide.length; i++) {
-                console.log('Hide' + questionsToHide[i])
+                console.log('Hide ' + questionsToHide[i])
                 $(questionsToHide[i]).hide()
                 $(questionsToHide[i]).find('.customization2_attendee_further-data_custom-question_input').val('')
             }
