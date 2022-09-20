@@ -1,23 +1,18 @@
-function condRadioQuestion(radioSelector, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
+function condQuestion(selector, inputElement, arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected) {
     
-    console.log("Start condQuestions for: " + radioSelector);
-
-    addErrorStyles();
-
-    var radioGroup = $$('.customization2_attendee_further-data_custom-question').findRadioGroup('Wie reisen Sie an?');
+    console.log("Start condQuestions for: " + selector);
 
     const questionsToShow = [];
     for (let i = 0; i < arrayOfLabelsToShow.length; i++)
         questionsToShow[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToShow[i]);
-    //console.log(questionsToShow)
+
     const questionsToHide = [];
     for (let i = 0; i < arrayOfLabelsToHide.length; i++)
         questionsToHide[i] = $$('.customization2_attendee_further-data_custom-question').findQuestionByLabel(arrayOfLabelsToHide[i]);
-    //console.log(questionsToHide)
 
-    $(radioSelector).click(function() {
-        console.log(radioSelector + " clicked");
-        if ($(radioSelector).find('input.vv-radio__input').is(':checked')) {
+    $(selector).click(function() {
+        console.log(selector + " clicked");
+        if ($(selector).find(inputElement).is(':checked')) {
             
             console.log("is checked");
 
@@ -69,28 +64,40 @@ function addErrorStyles () {
 }
 
 function handler(){
+    
+    addErrorStyles();
   
   /*
   How to use the conditional questions functions, example:
   */
-  $$('.customization2_attendee_further-data_custom-question').hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof","Abflughafen"])
+  $$('.customization2_attendee_further-data_custom-question').hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof","Abflughafen","Ihr Handiyap", "Ihre Schuhgröße"])
 
   var disableSaveOnValueSelected = true;
   
   // Auto
   var arrayOfLabelsToShow = ["Benötigen Sie einen Parkplatz?"];
   var arrayOfLabelsToHide = ["Abreise-Bahnhof","Abflughafen"];
-  condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Auto)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
   
   // Bahn
   arrayOfLabelsToShow = ["Abreise-Bahnhof"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abflughafen"];
-  condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   // Flugzeug
   arrayOfLabelsToShow = ["Abflughafen"];
   arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?","Abreise-Bahnhof"];
-  condRadioQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+  condQuestion('.customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)', 'input.vv-radio__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+
+  // Golf
+  arrayOfLabelsToShow = ["Ihr Handicao"];
+  arrayOfLabelsToHide = ["Ihre Schuhgröße"];
+  condQuestion('.customization2_attendee_further-data_product:contains(Golf)', 'input.vv-checkbox__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
+
+  // Laufen
+  arrayOfLabelsToShow = ["Ihre Schuhgröße"];
+  arrayOfLabelsToHide = ["Ihr Handicap"];
+  condQuestion('.customization2_attendee_further-data_product:contains(Laufen)', 'input.vv-checkbox__input', arrayOfLabelsToShow, arrayOfLabelsToHide, disableSaveOnValueSelected);
 
   /*
     example
