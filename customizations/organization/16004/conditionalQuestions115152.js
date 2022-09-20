@@ -31,6 +31,21 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide, disabl
             if (disableSaveOnValueSelected)
                 $('.customization2_attendee_edit-action_save').prop("disabled", false);
         };
+        
+        var productSelected = false;
+        $('.customization2_attendee_further-data_product').each(function (i, element) {
+        var checkbox = $(this).find('.customization2_attendee_further-data_product_checkbox')
+
+        if (checkbox.is(':checked')) {
+            productSelected = true;
+        }
+        })
+        
+        if(productSelected) {
+            $('.customization2_attendee_further-data_custom-question:contains(Ihr Handicap)').hide();
+            $('.customization2_attendee_further-data_custom-question:contains(Ihre Schuhgröße)').hide();
+        }
+        
     });
 }
 
