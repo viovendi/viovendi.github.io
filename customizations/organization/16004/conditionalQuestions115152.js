@@ -233,40 +233,45 @@ function handler() {
       $(".customization2_attendee_further-data_custom-question:contains(Benötigen Sie einen Parkplatz?)").show();
       var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Benötigen Sie einen Parkplatz?");
       $(question).find("vv-optional-text").css("display", "none");
-      disableWhenEmptyOnLoad(question);
       disableWhenEmpty(question);
+      disableWhenEmptyOnLoad(question);
+      
   } 
   
   if ($(".customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)").find("input").is(":checked")){
       $(".customization2_attendee_further-data_custom-question:contains(Abreise-Bahnhof)").show();
       var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Abreise-Bahnhof");
       $(question).find("vv-optional-text").css("display", "none");
-      disableWhenEmptyOnLoad(question);
       disableWhenEmpty(question);
+      disableWhenEmptyOnLoad(question);
+      
   } 
   
   if ($(".customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)").find("input").is(":checked")){
       $(".customization2_attendee_further-data_custom-question:contains(Abflughafen)").show();
       var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Abflughafen");
       $(question).find("vv-optional-text").css("display", "none");
-      disableWhenEmptyOnLoad(question);
       disableWhenEmpty(question);
+      disableWhenEmptyOnLoad(question);
+      
   } 
   
   if ($(".customization2_attendee_further-data_product:contains(Golf)").find("input").is(":checked")){
       $(".customization2_attendee_further-data_custom-question:contains(Ihr Handicap)").show();
       var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Ihr Handicap");
       $(question).find("vv-optional-text").css("display", "none");
-      disableWhenEmptyOnLoad(question);
       disableWhenEmpty(question);
+      disableWhenEmptyOnLoad(question);
+      
   } 
   
   if ($(".customization2_attendee_further-data_product:contains(Laufen)").find("input").is(":checked")){
       $(".customization2_attendee_further-data_custom-question:contains(Ihre Schuhgröße)").show();
       var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Ihre Schuhgröße");
       $(question).find("vv-optional-text").css("display", "none");
-      disableWhenEmptyOnLoad(question);
       disableWhenEmpty(question);
+      disableWhenEmptyOnLoad(question);
+      
   }
   
 }
