@@ -73,7 +73,7 @@ function disableWhenEmpty(field) {
         $("<div class='error-message'> Bitte ausfüllen </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_radio-group'));
     }
 
-    $(field).on("DOMSubtreeModified", function () {
+    $(field).on("click change input", ".vv-radio__input", function () {
 
       console.log("radio changed");
 
