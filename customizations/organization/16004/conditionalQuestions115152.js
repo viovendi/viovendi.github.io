@@ -22,7 +22,7 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide) {
                 var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel(value);
                 console.log("Hide " + question);
                 $(question).hide();
-                $(question).find(".customization2_attendee_further-data_custom-question_input").val("");
+                $(question).find("input").val("").prop('checked', false).prop('selected', false);
             });
         }
 
