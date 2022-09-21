@@ -45,6 +45,20 @@ function disableWhenEmpty(field) {
           $("<div class='error-message'> Bitte ausfüllen </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_dropdown'));
       }
 
+      if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
+        $(field).find('.error-message').show();
+        $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+    } else {
+        $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
+        $(field).find('.error-message').hide();
+        //   $(".error-state").each(function(){console.log($(this))});
+
+        if ($(".error-state").length == 0)
+            $('.customization2_attendee_edit-action_save').prop("disabled", false);
+    }
+
       $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
       //   console.log("change detected: " + $(this).text())
           if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
@@ -146,6 +160,22 @@ function disableWhenEmpty(field) {
            //     console.log('fired click and change')
       }, 50);
   });
+
+
+  if ($(this).val().trim().length == 0) {
+    $(this).addClass('error-state');
+    $(field).find('.error-message').show();
+    $('.customization2_attendee_edit-action_save').prop("disabled", true);
+
+} else {
+    $(this).removeClass('error-state');
+    $(field).find('.error-message').hide();
+
+    if ($(".error-state").filter(function(){
+        return $(this).is(':visible');
+    }).length == 0)
+        $('.customization2_attendee_edit-action_save').prop("disabled", false);
+}
 
   $(inputOfField).on("click change input load", function (event) {
 
