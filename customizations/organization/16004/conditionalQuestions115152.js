@@ -54,22 +54,32 @@ function handler() {
 
     if($(".customization2_attendee_further-data_custom-question_radio-line:contains(Auto)").find("input").is(":checked")){
         $(".customization2_attendee_further-data_custom-question:contains(Benötigen Sie einen Parkplatz?)").show();
+        var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Benötigen Sie einen Parkplatz?")
+        $$(".customization2_attendee_further-data_custom-question").disableWhenEmpty(question)
     } 
     
     if ($(".customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)").find("input").is(":checked")){
         $(".customization2_attendee_further-data_custom-question:contains(Abreise-Bahnhof)").show();
+        var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Abreise-Bahnhof")
+        $$(".customization2_attendee_further-data_custom-question").disableWhenEmpty(question)
     } 
     
     if ($(".customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)").find("input").is(":checked")){
         $(".customization2_attendee_further-data_custom-question:contains(Abflughafen)").show();
+        var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Abflughafen")
+        $$(".customization2_attendee_further-data_custom-question").disableWhenEmpty(question)
     } 
     
     if ($(".customization2_attendee_further-data_product:contains(Golf)").find("input").is(":checked")){
         $(".customization2_attendee_further-data_custom-question:contains(Ihr Handicap)").show();
+        var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Ihr Handicap")
+        $$(".customization2_attendee_further-data_custom-question").disableWhenEmpty(question)
     } 
     
     if ($(".customization2_attendee_further-data_product:contains(Laufen)").find("input").is(":checked")){
         $(".customization2_attendee_further-data_custom-question:contains(Ihre Schuhgröße)").show();
+        var question = $$(".customization2_attendee_further-data_custom-question").findQuestionByLabel("Ihre Schuhgröße")
+        $$(".customization2_attendee_further-data_custom-question").disableWhenEmpty(question)
     }
     
     // Auto
