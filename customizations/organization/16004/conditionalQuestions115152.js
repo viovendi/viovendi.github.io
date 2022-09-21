@@ -65,7 +65,7 @@ function disableWhenEmpty(field) {
       return;
   }
 
-  inputOfField = $(field).find('vv-radio__input').get(0);
+  inputOfField = $(field).find('.vv-radio__input').get(0);
 
   if (inputOfField != undefined) {
     $(field).find('.customization2_attendee_further-data_custom-question_radio-group').addClass('error-state');
@@ -73,21 +73,27 @@ function disableWhenEmpty(field) {
         $("<div class='error-message'> Bitte ausfüllen </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_radio-group'));
     }
 
-    $(field).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-    //   console.log("change detected: " + $(this).text())
-        if ($(this).text().trim() == "Please select" || $(this).text().trim() == "Bitte auswählen") {
-            $(field).find('.customization2_attendee_further-data_custom-question_dropdown').addClass('error-state');
-            $(field).find('.error-message').show();
-            $('.customization2_attendee_edit-action_save').prop("disabled", true);
+    $(field).on("DOMSubtreeModified", ".vv-radio__input", function () {
 
-        } else {
-            $(field).find('.customization2_attendee_further-data_custom-question_dropdown').removeClass('error-state');
-            $(field).find('.error-message').hide();
-            //   $(".error-state").each(function(){console.log($(this))});
+      var radioSelected = false;
+      $(field).find('.vv-radio__input').each(function (i, element) {
+        if ($(this).is(":checked")) {
+          radioSelected = true;
+        }
+      });
+
+      if (radioSelected) {
+        $(field).find('.customization2_attendee_further-data_custom-question_radio-group').removeClass('error-state');
+        $(field).find('.error-message').hide();
 
             if ($(".error-state").length == 0)
                 $('.customization2_attendee_edit-action_save').prop("disabled", false);
-        }
+      } else {
+            $(field).find('.customization2_attendee_further-data_custom-question_radio-group').addClass('error-state');
+            $(field).find('.error-message').show();
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
+      }
+
     });
 
     return;
