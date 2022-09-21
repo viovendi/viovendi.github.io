@@ -73,6 +73,28 @@ function disableWhenEmpty(field) {
         $("<div class='error-message'> Bitte ausfüllen </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_radio-group'));
     }
 
+    var radioSelected = false;
+      $(field).find('.vv-radio__input').each(function (i, element) {
+        if ($(this).is(":checked")) {
+          radioSelected = true;
+          console.log("radio is selected");
+        }
+      });
+
+      if (radioSelected) {
+        console.log("remove Error State from Radio");
+        $(field).find('.customization2_attendee_further-data_custom-question_radio-group').removeClass('error-state');
+        $(field).find('.error-message').hide();
+
+            if ($(".error-state").length == 0)
+                $('.customization2_attendee_edit-action_save').prop("disabled", false);
+      } else {
+        console.log("add Error State from Radio");
+            $(field).find('.customization2_attendee_further-data_custom-question_radio-group').addClass('error-state');
+            $(field).find('.error-message').show();
+            $('.customization2_attendee_edit-action_save').prop("disabled", true);
+      }
+
     $(field).on("click change input load", ".vv-radio__input", function () {
 
       console.log("radio changed");
