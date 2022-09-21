@@ -73,7 +73,7 @@ function disableWhenEmpty(field) {
         $("<div class='error-message'> Bitte ausfüllen </div>").insertAfter($(field).find('.customization2_attendee_further-data_custom-question_radio-group'));
     }
 
-    $(field).on("click change input", ".vv-radio__input", function () {
+    $(field).on("click change input load", ".vv-radio__input", function () {
 
       console.log("radio changed");
 
@@ -125,7 +125,7 @@ function disableWhenEmpty(field) {
       }, 50);
   });
 
-  $(inputOfField).on("click change input", function (event) {
+  $(inputOfField).on("click change input load", function (event) {
 
       if ($(this).val().trim().length == 0) {
            $(this).addClass('error-state');
@@ -161,6 +161,31 @@ function hideQuestionsIfNoProductSelected(){
 
 function handler() {
 
+    // Auto
+    var arrayOfLabelsToShow = ["Benötigen Sie einen Parkplatz?"];
+    var arrayOfLabelsToHide = ["Abreise-Bahnhof", "Abflughafen"];
+    condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Auto)", arrayOfLabelsToShow, arrayOfLabelsToHide);
+  
+    // Bahn
+    arrayOfLabelsToShow = ["Abreise-Bahnhof"];
+    arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?", "Abflughafen"];
+    condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)", arrayOfLabelsToShow, arrayOfLabelsToHide);
+  
+    // Flugzeug
+    arrayOfLabelsToShow = ["Abflughafen"];
+    arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?", "Abreise-Bahnhof"];
+    condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)", arrayOfLabelsToShow, arrayOfLabelsToHide);
+  
+    // Golf
+    arrayOfLabelsToShow = ["Ihr Handicap"];
+    arrayOfLabelsToHide = ["Ihre Schuhgröße"];
+    condQuestion(".customization2_attendee_further-data_product:contains(Golf)", arrayOfLabelsToShow, arrayOfLabelsToHide);
+  
+    // Laufen
+    arrayOfLabelsToShow = ["Ihre Schuhgröße"];
+    arrayOfLabelsToHide = ["Ihr Handicap"];
+    condQuestion(".customization2_attendee_further-data_product:contains(Laufen)", arrayOfLabelsToShow, arrayOfLabelsToHide);
+
   $$(".customization2_attendee_further-data_custom-question").hideMultipleQuestionsByLabel(["Benötigen Sie einen Parkplatz?", "Abreise-Bahnhof", "Abflughafen", "Ihr Handicap", "Ihre Schuhgröße"]);
 
   if($(".customization2_attendee_further-data_custom-question_radio-line:contains(Auto)").find("input").is(":checked")){
@@ -193,30 +218,6 @@ function handler() {
       disableWhenEmpty(question)
   }
   
-  // Auto
-  var arrayOfLabelsToShow = ["Benötigen Sie einen Parkplatz?"];
-  var arrayOfLabelsToHide = ["Abreise-Bahnhof", "Abflughafen"];
-  condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Auto)", arrayOfLabelsToShow, arrayOfLabelsToHide);
-
-  // Bahn
-  arrayOfLabelsToShow = ["Abreise-Bahnhof"];
-  arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?", "Abflughafen"];
-  condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Bahn)", arrayOfLabelsToShow, arrayOfLabelsToHide);
-
-  // Flugzeug
-  arrayOfLabelsToShow = ["Abflughafen"];
-  arrayOfLabelsToHide = ["Benötigen Sie einen Parkplatz?", "Abreise-Bahnhof"];
-  condQuestion(".customization2_attendee_further-data_custom-question_radio-line:contains(Flugzeug)", arrayOfLabelsToShow, arrayOfLabelsToHide);
-
-  // Golf
-  arrayOfLabelsToShow = ["Ihr Handicap"];
-  arrayOfLabelsToHide = ["Ihre Schuhgröße"];
-  condQuestion(".customization2_attendee_further-data_product:contains(Golf)", arrayOfLabelsToShow, arrayOfLabelsToHide);
-
-  // Laufen
-  arrayOfLabelsToShow = ["Ihre Schuhgröße"];
-  arrayOfLabelsToHide = ["Ihr Handicap"];
-  condQuestion(".customization2_attendee_further-data_product:contains(Laufen)", arrayOfLabelsToShow, arrayOfLabelsToHide);
 }
 
 handler();
