@@ -18,8 +18,9 @@ function getXMLHttpRequest (open) {
             var orders = res._embedded.orders;
                        
             var orderId = orders[0].id;
-            var price = orders[0].payment.amount;
             
+            // defined if free order
+            var price = orders[0].payment.amount;
             var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
             
             // hardcoded, depends on OID
@@ -30,19 +31,37 @@ function getXMLHttpRequest (open) {
             console.log(ticketCategoryId);
             console.log(artikelnummer);
             
+            var isFreeORder = false;
+            var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+";
             
-            var body = {
-            };
-            
-            sendRedirectRequest();
             // send redirect
-            
+            // sendRedirectRequest(body);
           }
         }
       }, false);
       open.apply(this, arguments);
     };
-  };
+};
+
+function sendRedirectRequest(object){
+  $.ajax({
+    url: redirectUrl,
+    type: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    data: object,
+    dataType: 'json',
+    success: function (res) {
+      loaderOn('off');
+    },
+    error: function (jqXHR, exception) {
+      loaderOn('off');
+      responseMessage('error');
+    }
+  });
+}
 
 
 // add listener to the post request on 2nd page
