@@ -15,14 +15,26 @@ function getXMLHttpRequest (open) {
           } catch (err) {}
           if(res != undefined && res._embedded){
             
-            console.log('res:');
-            console.log(res._embedded.orders);
+            var orders = res._embedded.orders;
+                       
+            var orderId = orders[0].id;
+            var price = orders[0].payment.amount;
             
-            //var orders = res._embedded.orders;
-            //var order_id = orders[0].id;
+            var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
             
-            // get data from request
+            // hardcoded, depends on OID
+            var artikelnummer = 1111;
             
+            console.log(orderId);
+            console.log(price);
+            console.log(ticketCategoryId);
+            console.log(artikelnummer);
+            
+            
+            var body = {
+            };
+            
+            sendRedirectRequest();
             // send redirect
             
           }
