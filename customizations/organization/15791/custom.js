@@ -6,3 +6,5 @@ function getFrameParams(){
   console.log(frameUrl);
 }
 getFrameParams();
+
+console.log(is_prod);
