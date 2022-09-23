@@ -3,6 +3,8 @@ console.log('git-code');
 // get iFrameUrlParam from frame URL
 console.log(redirectUrl);
 
+var isFuncUsed = false;
+
 function getXMLHttpRequest (open) {
   console.log('getXMLHttpRequest');
     XMLHttpRequest.prototype.open = function() {
@@ -24,10 +26,20 @@ function getXMLHttpRequest (open) {
             var artikelnummer = 1111;
             
             var isFreeORder = false;
-            var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+            //var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+            
+            var body = {
+              "order_id": orderId,
+              "ticket_category_id": ticketCategoryId,
+              price,
+              artikelnummer
+            }
             
             if(price == 0){
-              body = "order_id="+orderId+"";
+              // body = "order_id="+orderId+"";
+              body = {
+                "order_id": orderId
+              }
             }
             
             // send redirect request
@@ -42,14 +54,17 @@ function getXMLHttpRequest (open) {
 function sendRedirectRequest(bodyData){
   console.log(redirectUrl);
   console.log(bodyData);
+  
+  if(isFuncUsed) return;
+  
   $.ajax({
     url: redirectUrl,
     type: 'post',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    data: bodyData,
+    data: JSON.stringify(bodyData),
     dataType: 'json',
     success: function (res) {
       console.log(res);
@@ -58,6 +73,8 @@ function sendRedirectRequest(bodyData){
       console.log(jqXHR);
     }
   });
+  
+  isFuncUsed = true;
 }
 
 
