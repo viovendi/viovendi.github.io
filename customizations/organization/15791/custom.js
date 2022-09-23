@@ -65,7 +65,7 @@ function sendRedirectRequest(bodyData){
       'Accept': 'application/json'
     },
     data: JSON.stringify(bodyData),
-    dataType: 'json',
+    dataType: 'jsonp',
     success: function (res) {
       console.log(res);
     },
