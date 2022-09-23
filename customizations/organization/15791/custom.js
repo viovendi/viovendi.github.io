@@ -4,9 +4,7 @@ console.log('git-code');
 console.log(redirectUrl);
 
 function getXMLHttpRequest (open) {
-  
   console.log('getXMLHttpRequest');
-  
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
@@ -19,26 +17,21 @@ function getXMLHttpRequest (open) {
                        
             var orderId = orders[0].id;
             
-            // defined if free order
             var price = orders[0].payment.amount;
             var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
             
             // hardcoded, depends on OID
             var artikelnummer = 1111;
             
-            console.log(orderId);
-            console.log(price);
-            console.log(ticketCategoryId);
-            console.log(artikelnummer);
-            
             var isFreeORder = false;
             var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
-            console.log(body);
-            console.log(typeof body);
+            if(price == 0){
+              body = "order_id="+orderId+"";
+            }
             
-            // send redirect
-            // sendRedirectRequest(body);
+            // send redirect request
+            sendRedirectRequest(body);
           }
         }
       }, false);
@@ -47,6 +40,8 @@ function getXMLHttpRequest (open) {
 };
 
 function sendRedirectRequest(bodyData){
+  console.log(redirectUrl);
+  console.log(bodyData);
   $.ajax({
     url: redirectUrl,
     type: 'post',
@@ -57,11 +52,10 @@ function sendRedirectRequest(bodyData){
     data: bodyData,
     dataType: 'json',
     success: function (res) {
-      //loaderOn('off');
+      console.log(res);
     },
     error: function (jqXHR, exception) {
-      //loaderOn('off');
-      //responseMessage('error');
+      console.log(jqXHR);
     }
   });
 }
