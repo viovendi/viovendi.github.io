@@ -32,7 +32,10 @@ function getXMLHttpRequest (open) {
             console.log(artikelnummer);
             
             var isFreeORder = false;
-            var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+";
+            var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+            
+            console.log(body);
+            console.log(body typeof);
             
             // send redirect
             // sendRedirectRequest(body);
@@ -43,22 +46,22 @@ function getXMLHttpRequest (open) {
     };
 };
 
-function sendRedirectRequest(object){
+function sendRedirectRequest(bodyData){
   $.ajax({
     url: redirectUrl,
     type: 'post',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
       'Accept': 'application/json'
     },
-    data: object,
+    data: bodyData,
     dataType: 'json',
     success: function (res) {
-      loaderOn('off');
+      //loaderOn('off');
     },
     error: function (jqXHR, exception) {
-      loaderOn('off');
-      responseMessage('error');
+      //loaderOn('off');
+      //responseMessage('error');
     }
   });
 }
