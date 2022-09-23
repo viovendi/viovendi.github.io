@@ -35,7 +35,7 @@ function getXMLHttpRequest (open) {
             var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
             console.log(body);
-            console.log(body typeof);
+            console.log(typeof body);
             
             // send redirect
             // sendRedirectRequest(body);
