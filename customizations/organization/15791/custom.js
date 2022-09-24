@@ -28,18 +28,18 @@ function getXMLHttpRequest (open) {
             var isFreeORder = false;
             //var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
-            var body = {
+            var body = JSON.stringify({
               "order_id": orderId,
               "ticket_category_id": ticketCategoryId,
               price,
               artikelnummer
-            }
+            });
             
             if(price == 0){
               // body = "order_id="+orderId+"";
-              body = {
+              body = JSON.stringify({
                 "order_id": orderId
-              }
+              });
             }
             
             // send redirect request
@@ -54,9 +54,18 @@ function getXMLHttpRequest (open) {
 function sendRedirectRequest(bodyData){
   console.log(redirectUrl);
   console.log(bodyData);
+  console.log(isFuncUsed);
   
   if(isFuncUsed) return;
   
+    var xhr = new XMLHttpRequest();
+  
+    xhr.open('POST', redirectUrl, false);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.setRequestHeader('Accept', '*/*');
+    xhr.send(bodyData);
+  
+  /*
   $.ajax({
     url: redirectUrl,
     type: 'post',
@@ -73,8 +82,10 @@ function sendRedirectRequest(bodyData){
       console.log(jqXHR);
     }
   });
+  */
   
   isFuncUsed = true;
+  console.log(isFuncUsed);
 }
 
 
