@@ -71,9 +71,7 @@ function sendRedirectRequest(bodyData){
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Origin': 'https://doo.ovas2-branch.w14.westermann.de',
-      'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Request-Method': 'POST',
-      'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type'
+      'Access-Control-Allow-Credentials': 'true'
     },
     data: JSON.stringify(bodyData),
     dataType: 'jsonp',
