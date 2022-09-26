@@ -5,4 +5,4 @@ console.log("git works");
 console.log("clicked");
 location.href = "https://neuheiten.messe-dortmund.com/Danke";
 })*/
-window.open('https://neuheiten.messe-dortmund.com/Danke', '_blank');
+window.open('https://neuheiten.messe-dortmund.com/Danke');
