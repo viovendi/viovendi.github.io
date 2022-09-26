@@ -87,6 +87,47 @@ function sendRedirectRequest(bodyData){
 }
 
 
+/********************/
+function sendRedirectRequest(bodyData){
+  
+  var reqUrl = 'http://test-olexiy.guestmanagement.solutions/map-test-page/54856';
+  
+  var bodyData = JSON.stringify({
+    "order_id": "123456",
+    "ticket_category_id": "445566"
+  });
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', reqUrl, false);
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.setRequestHeader('Accept', '*/*');
+  //xhr.send(bodyData);
+  xhr.send();
+  
+  /*
+  $.ajax({
+    url: redirectUrl,
+    type: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    crossDomain: true,
+    data: bodyData,
+    dataType: 'json',
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (jqXHR, exception) {
+      console.log(jqXHR);
+    }
+  });
+ */
+}
+/********************/
+
+
+
 // add listener to the post request on 2nd page
 getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
@@ -100,6 +141,8 @@ const observer = new MutationObserver((mutations, obs) => {
         // run function of the page3  
         console.log('run page 3 func!');
         // add listener to the post request
+      
+        testRedirect();
       
         // send redirect when request received 
       
