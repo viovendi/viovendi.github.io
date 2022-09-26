@@ -71,7 +71,8 @@ function sendRedirectRequest(bodyData){
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    data: JSON.stringify(bodyData),
+    crossDomain: true,
+    data: bodyData,
     dataType: 'json',
     success: function (res) {
       console.log(res);
