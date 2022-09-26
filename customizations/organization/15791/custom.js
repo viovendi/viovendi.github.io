@@ -58,20 +58,22 @@ function sendRedirectRequest(bodyData){
   
   if(isFuncUsed) return;
   
-    var xhr = new XMLHttpRequest();
+    //var xhr = new XMLHttpRequest();
+    //xhr.open('POST', redirectUrl, false);
+    //xhr.setRequestHeader('Content-type', 'application/json');
+    //xhr.setRequestHeader('Accept', '*/*');
+    //xhr.send(bodyData);
   
-    xhr.open('POST', redirectUrl, false);
-    xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.setRequestHeader('Accept', '*/*');
-    xhr.send(bodyData);
-  
-  /*
   $.ajax({
     url: redirectUrl,
     type: 'post',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'Origin': 'https://doo.ovas2-branch.w14.westermann.de',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Request-Method': 'POST',
+      'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type'
     },
     data: JSON.stringify(bodyData),
     dataType: 'jsonp',
@@ -82,7 +84,6 @@ function sendRedirectRequest(bodyData){
       console.log(jqXHR);
     }
   });
-  */
   
   isFuncUsed = true;
   console.log(isFuncUsed);
