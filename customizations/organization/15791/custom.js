@@ -90,7 +90,7 @@ function sendRedirectRequest(bodyData){
 /********************/
 function testRedirect(){
   
-  var reqUrl = 'http://test-olexiy.guestmanagement.solutions/map-test-page/54856';
+  var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
   
   var bodyData = JSON.stringify({
     "order_id": "123456",
