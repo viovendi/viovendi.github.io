@@ -4,5 +4,7 @@ console.log("git works");
 /*$('.customization-button-next').on('click', function(){
 console.log("clicked");
 location.href = "https://neuheiten.messe-dortmund.com/Danke";
-})*/
+})
 window.open('https://neuheiten.messe-dortmund.com/Danke','_self');
+*/
+window.parent.location.href = "https://neuheiten.messe-dortmund.com/Danke"; 
