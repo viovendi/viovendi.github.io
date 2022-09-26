@@ -58,18 +58,12 @@ function sendRedirectRequest(bodyData){
   
   if(isFuncUsed) return;
   
-    //var xhr = new XMLHttpRequest();
-    //xhr.open('POST', redirectUrl, false);
-    //xhr.setRequestHeader('Content-type', 'application/json');
-    //xhr.setRequestHeader('Accept', '*/*');
-    //xhr.send(bodyData);
-  
   $.ajax({
     url: redirectUrl,
     type: 'post',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': '*/*'
     },
     crossDomain: true,
     data: bodyData,
