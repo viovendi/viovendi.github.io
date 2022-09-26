@@ -70,8 +70,7 @@ function sendRedirectRequest(bodyData){
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Origin': 'https://doo.ovas2-branch.w14.westermann.de',
-      'Access-Control-Allow-Credentials': 'true'
+      'Access-Control-Allow-Origin': '*'
     },
     data: JSON.stringify(bodyData),
     dataType: 'jsonp',
