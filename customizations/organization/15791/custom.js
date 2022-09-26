@@ -70,7 +70,7 @@ function sendRedirectRequest(bodyData){
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Access-Control-Allow-Origin': '*'
+      'Origin': 'https://doo.net'
     },
     data: JSON.stringify(bodyData),
     dataType: 'jsonp',
