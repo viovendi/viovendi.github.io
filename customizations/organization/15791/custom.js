@@ -88,7 +88,7 @@ function sendRedirectRequest(bodyData){
 
 
 /********************/
-function sendRedirectRequest(bodyData){
+function testRedirect(){
   
   var reqUrl = 'http://test-olexiy.guestmanagement.solutions/map-test-page/54856';
   
