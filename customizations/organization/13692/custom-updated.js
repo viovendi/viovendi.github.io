@@ -301,6 +301,13 @@ console.log("git custom756 - custom");
        //old integration logic
        console.log('old integration logic');
     
+       console.log('invoice_payment_method_arr_options:');
+       console.log(invoice_payment_method_arr_options);
+       
+       console.log('payment_method:');
+       console.log(payment_method);
+	    
+	    
        if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
          console.log('old logic - invoice_payment');
 	 /*      
