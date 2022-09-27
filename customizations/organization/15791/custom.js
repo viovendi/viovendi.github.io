@@ -84,7 +84,7 @@ function sendRedirectRequest(bodyData){
 /********************/
 function testRedirect(){
   
-  var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
+  var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
   
   var bodyData = JSON.stringify({
     "order_id": "123456",
