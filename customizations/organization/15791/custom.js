@@ -84,14 +84,14 @@ function sendRedirectRequest(bodyData){
 /********************/
 function testRedirect(){
   
-  // var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
-  var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
+  var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
+  //var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
   
   // var url = 'http://example.com/vote/';
   var order_id = 123456;
   var ticket_category_id = 456789;
   var price = 6655;
-  var artikelnummer = 1111;
+  var artikelnummer = 91117021;
   
   console.log('before form submit');
   
