@@ -87,15 +87,17 @@ function testRedirect(){
   var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
   
   var bodyData = JSON.stringify({
-    "order_id": "123456",
-    "ticket_category_id": "445566"
+    "order_id": 123456,
+    "ticket_category_id": 445566,
+    "price": 6999,
+    "artikelnummer": 91117021
   });
   
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', reqUrl, false);
+  xhr.open('POST', reqUrl, false);
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.setRequestHeader('Accept', '*/*');
-  //xhr.send(bodyData);
+  xhr.send(bodyData);
   xhr.send();
   
   /*
