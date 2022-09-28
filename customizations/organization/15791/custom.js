@@ -84,8 +84,27 @@ function sendRedirectRequest(bodyData){
 /********************/
 function testRedirect(){
   
-  var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
+  // var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
+  var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
   
+  // var url = 'http://example.com/vote/';
+  var order_id = 123456;
+  var ticket_category_id = 456789;
+  var price = 6655;
+  var artikelnummer = 1111;
+  
+  console.log('before form submit');
+  
+var form = $('<form action="' + reqUrl + '" method="post">' +
+  '<input type="text" name="order_id" value="' + order_id + '" />' +
+  '<input type="text" name="ticket_category_id" value="' + ticket_category_id + '" />' +
+  '<input type="text" name="price" value="' + price + '" />' +
+  '<input type="text" name="artikelnummer" value="' + artikelnummer + '" />' +
+  '</form>');
+$('body').append(form);
+form.submit();
+  
+  /*
   var bodyData = JSON.stringify({
     "order_id": 123456,
     "ticket_category_id": 445566,
@@ -96,32 +115,15 @@ function testRedirect(){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', reqUrl, false);
   xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.setRequestHeader('Accept', '*/*');
+  */
+  //xhr.setRequestHeader('Accept', '*/*');
+  /*
   xhr.send(bodyData);
   xhr.send();
+  */
   
-  /*
-  $.ajax({
-    url: redirectUrl,
-    type: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    crossDomain: true,
-    data: bodyData,
-    dataType: 'json',
-    success: function (res) {
-      console.log(res);
-    },
-    error: function (jqXHR, exception) {
-      console.log(jqXHR);
-    }
-  });
- */
 }
 /********************/
-
 
 
 // add listener to the post request on 2nd page
