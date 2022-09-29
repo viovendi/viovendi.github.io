@@ -26,7 +26,7 @@ function getXMLHttpRequest (open) {
             var artikelnummer = 91117021;
             
             var isFreeORder = false;
-            //var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+            //var bodyString = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
             var body = {
               "order_id": orderId,
@@ -62,8 +62,8 @@ function sendRedirectRequest(bodyData){
   console.log(window.top.location);
   return false;
   */
- 
   
+  var windowRedirectUrl = redirectUrl+"&order_id="+bodyData.order_id+"&ticket_category_id="+bodyData.ticket_category_id+"&price="+bodyData.price+"&artikelnummer="+bodyData.artikelnummer+";
   
   if(isFuncUsed) return;
   
@@ -85,7 +85,7 @@ function sendRedirectRequest(bodyData){
     }
   });
   
-  window.top.location.href=redirectUrl;
+  window.top.location.href=windowRedirectUrl;
   //window.parent.location.href='https://www.doo.net/';
   
   isFuncUsed = true;
