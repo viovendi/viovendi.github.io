@@ -57,8 +57,8 @@ function sendRedirectRequest(bodyData){
   console.log(bodyData);
   
   console.log(window.location.href);
-  console.log(window.parent.location.href);
-  console.log(window.top.location.href);
+  console.log(window.parent);
+  console.log(window.top);
   
   return false;
   
@@ -104,7 +104,7 @@ function testRedirect(data){
   console.log(data.price);
   console.log('before form submit');
   
-var form = $('<form action="' + redirectUrl + '" method="post">' +
+var form = $('<form action="' + redirectUrl + '" target="_top" method="post">' +
   '<input type="text" name="order_id" value="' + data.order_id + '" />' +
   '<input type="text" name="ticket_category_id" value="' + data.ticket_category_id + '" />' +
   '<input type="text" name="price" value="' + data.price + '" />' +
