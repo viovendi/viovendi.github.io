@@ -28,22 +28,23 @@ function getXMLHttpRequest (open) {
             var isFreeORder = false;
             //var body = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
-            var body = JSON.stringify({
+            var body = {
               "order_id": orderId,
               "ticket_category_id": ticketCategoryId,
               price,
               artikelnummer
-            });
+            };
             
             if(price == 0){
               // body = "order_id="+orderId+"";
-              body = JSON.stringify({
+              body = {
                 "order_id": orderId
-              });
+              };
             }
             
             // send redirect request
-            sendRedirectRequest(body);
+            testRedirect(body);
+            //sendRedirectRequest(body);
           }
         }
       }, false);
@@ -54,7 +55,6 @@ function getXMLHttpRequest (open) {
 function sendRedirectRequest(bodyData){
   console.log(redirectUrl);
   console.log(bodyData);
-  console.log(isFuncUsed);
   
   if(isFuncUsed) return;
   
@@ -66,7 +66,7 @@ function sendRedirectRequest(bodyData){
       'Accept': '*/*'
     },
     crossDomain: true,
-    data: bodyData,
+    data: JSON.stringify(bodyData),
     dataType: 'json',
     success: function (res) {
       console.log(res);
@@ -82,45 +82,29 @@ function sendRedirectRequest(bodyData){
 
 
 /********************/
-function testRedirect(){
+function testRedirect(data){
   
-  var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
-  //var reqUrl = 'https://www.kfw-event.de/veranstaltung-erstellen';
+  //var reqUrl = 'https://doo.ovas2-branch.w14.westermann.de/doo/anmeldung/return?id=8edadc8f-f8d6-447f-ae60-388ef22c5838';
   
-  // var url = 'http://example.com/vote/';
+  /*
   var order_id = 123456;
   var ticket_category_id = 456789;
   var price = 6655;
   var artikelnummer = 91117021;
+  */
   
+  console.log(data);
+  console.log(data.price);
   console.log('before form submit');
   
-var form = $('<form action="' + reqUrl + '" method="post">' +
-  '<input type="text" name="order_id" value="' + order_id + '" />' +
-  '<input type="text" name="ticket_category_id" value="' + ticket_category_id + '" />' +
-  '<input type="text" name="price" value="' + price + '" />' +
-  '<input type="text" name="artikelnummer" value="' + artikelnummer + '" />' +
+var form = $('<form action="' + redirectUrl + '" method="post">' +
+  '<input type="text" name="order_id" value="' + data.order_id + '" />' +
+  '<input type="text" name="ticket_category_id" value="' + data.ticket_category_id + '" />' +
+  '<input type="text" name="price" value="' + data.price + '" />' +
+  '<input type="text" name="artikelnummer" value="' + data.artikelnummer + '" />' +
   '</form>');
 $('body').append(form);
 form.submit();
-  
-  /*
-  var bodyData = JSON.stringify({
-    "order_id": 123456,
-    "ticket_category_id": 445566,
-    "price": 6999,
-    "artikelnummer": 91117021
-  });
-  
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', reqUrl, false);
-  xhr.setRequestHeader('Content-type', 'application/json');
-  */
-  //xhr.setRequestHeader('Accept', '*/*');
-  /*
-  xhr.send(bodyData);
-  xhr.send();
-  */
   
 }
 /********************/
