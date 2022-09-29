@@ -124,7 +124,7 @@ const observer = new MutationObserver((mutations, obs) => {
         console.log('run page 3 func!');
         // add listener to the post request
       
-        testRedirect();
+        //testRedirect();
       
         // send redirect when request received 
       
