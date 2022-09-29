@@ -56,6 +56,13 @@ function sendRedirectRequest(bodyData){
   console.log(redirectUrl);
   console.log(bodyData);
   
+  console.log(window.location.href);
+  console.log(window.parent.location.href);
+  console.log(window.top.location.href);
+  
+  return false;
+  
+  
   if(isFuncUsed) return;
   
   $.ajax({
@@ -70,7 +77,6 @@ function sendRedirectRequest(bodyData){
     dataType: 'json',
     success: function (res) {
       console.log(res);
-      window.top.location.href = 'https://doo.net';
     },
     error: function (jqXHR, exception) {
       console.log(jqXHR);
