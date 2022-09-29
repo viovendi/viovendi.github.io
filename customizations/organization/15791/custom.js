@@ -60,9 +60,9 @@ function sendRedirectRequest(bodyData){
   console.log(window.location.href);
   console.log(window.parent.location);
   console.log(window.top.location);
-  */
-  
   return false;
+  */
+ 
   
   
   if(isFuncUsed) return;
