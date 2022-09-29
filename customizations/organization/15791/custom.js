@@ -85,8 +85,8 @@ function sendRedirectRequest(bodyData){
     }
   });
   
-  window.top.location.href='https://www.doo.net/';
-  window.parent.location.href='https://www.doo.net/';
+  window.top.location.href=redirectUrl;
+  //window.parent.location.href='https://www.doo.net/';
   
   isFuncUsed = true;
   console.log(isFuncUsed);
