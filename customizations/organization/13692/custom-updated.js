@@ -143,7 +143,7 @@ console.log("git custom756 - custom");
     }
   });
 }
-//getDataFromPage2();
+getDataFromPage2();
   
   
   var id_page2, id_page3, id_page4 = null;
@@ -164,7 +164,7 @@ console.log("git custom756 - custom");
   function checking_page2() {
     id_page2 = requestAnimationFrame(checking_page2);
     if($('.customization-booking-area-wrapper-page2').length > 0){
-      //getDataFromPage2();
+      getDataFromPage2();
 	    
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
