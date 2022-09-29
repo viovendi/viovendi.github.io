@@ -56,9 +56,11 @@ function sendRedirectRequest(bodyData){
   console.log(redirectUrl);
   console.log(bodyData);
   
+  /*
   console.log(window.location.href);
   console.log(window.parent.location);
   console.log(window.top.location);
+  */
   
   return false;
   
@@ -77,6 +79,8 @@ function sendRedirectRequest(bodyData){
     dataType: 'json',
     success: function (res) {
       console.log(res);
+      window.top.location.href='https://www.doo.net/';
+      window.parent.location.href='https://www.doo.net/';
     },
     error: function (jqXHR, exception) {
       console.log(jqXHR);
