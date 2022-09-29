@@ -70,7 +70,7 @@ function sendRedirectRequest(bodyData){
     dataType: 'json',
     success: function (res) {
       console.log(res);
-      window.parent.location.href = 'https://doo.net';
+      window.top.location.href = 'https://doo.net';
     },
     error: function (jqXHR, exception) {
       console.log(jqXHR);
