@@ -79,13 +79,14 @@ function sendRedirectRequest(bodyData){
     dataType: 'json',
     success: function (res) {
       console.log(res);
-      window.top.location.href='https://www.doo.net/';
-      window.parent.location.href='https://www.doo.net/';
     },
     error: function (jqXHR, exception) {
       console.log(jqXHR);
     }
   });
+  
+  window.top.location.href='https://www.doo.net/';
+  window.parent.location.href='https://www.doo.net/';
   
   isFuncUsed = true;
   console.log(isFuncUsed);
