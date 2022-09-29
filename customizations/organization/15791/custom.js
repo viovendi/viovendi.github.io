@@ -63,7 +63,7 @@ function sendRedirectRequest(bodyData){
   return false;
   */
   
-  var windowRedirectUrl = redirectUrl+"&order_id="+bodyData.order_id+"&ticket_category_id="+bodyData.ticket_category_id+"&price="+bodyData.price+"&artikelnummer="+bodyData.artikelnummer+";
+  var windowRedirectUrl = redirectUrl+"&order_id="+bodyData.order_id+"&ticket_category_id="+bodyData.ticket_category_id+"&price="+bodyData.price+"&artikelnummer="+bodyData.artikelnummer+"";
   
   if(isFuncUsed) return;
   
