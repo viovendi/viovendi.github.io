@@ -43,8 +43,8 @@ function getXMLHttpRequest (open) {
             }
             
             // send redirect request
-            testRedirect(body);
-            //sendRedirectRequest(body);
+            //testRedirect(body);
+            sendRedirectRequest(body);
           }
         }
       }, false);
@@ -70,6 +70,7 @@ function sendRedirectRequest(bodyData){
     dataType: 'json',
     success: function (res) {
       console.log(res);
+      window.parent.location.href = 'https://doo.net';
     },
     error: function (jqXHR, exception) {
       console.log(jqXHR);
