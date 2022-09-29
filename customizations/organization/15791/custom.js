@@ -57,8 +57,8 @@ function sendRedirectRequest(bodyData){
   console.log(bodyData);
   
   console.log(window.location.href);
-  console.log(window.parent);
-  console.log(window.top);
+  console.log(window.parent.location);
+  console.log(window.top.location);
   
   return false;
   
