@@ -1,10 +1,14 @@
 console.log("Git Start 1635");
 const url=window.location.href;
 
-console.log(url);
+//console.log(url);
 
 if(url.includes('booking-1635-37283')){
  console.log("access code Widget");
+hideCat('Visitor Ticket - ALL DAYS');
+hideCat('Conference Ticket - ALL DAYS');
+hideCat('Get-Together-Evening');
+hideCat('Visitor Ticket - ONE DAY');
 }
 
 
