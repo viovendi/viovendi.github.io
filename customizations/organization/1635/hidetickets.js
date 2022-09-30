@@ -4,7 +4,6 @@ const url=window.location.href;
 //console.log(url);
 
 if(url.includes('booking-1635-37283')){
- console.log("access code Widget");
 hideCat('Visitor Ticket - ALL DAYS');
 hideCat('Conference Ticket - ALL DAYS');
 hideCat('Get-Together-Evening');
@@ -13,7 +12,7 @@ hideCat('Visitor Ticket - ONE DAY');
 
 
 function hideCat(catName) {
-    console.log("Hide " + catName);
+    //console.log("Hide " + catName);
     $('.customization-booking-area-wrapper .event-categories li:visible').each(function () {
         var currentCat = $(this).find('.event-category__name').text().replace(/^\s+|\s+$/g, "");
         if (currentCat === catName && !$(this).closest('li').hasClass('hidden')) {
