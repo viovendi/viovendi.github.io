@@ -1,4 +1,6 @@
 console.log("Git Start 1635");
+ var widgetContainer = document.getElementById("widgetContainer");
+console.log(widgetContainer);
 
 function hideCat(catName) {
     console.log("Hide " + catName);
