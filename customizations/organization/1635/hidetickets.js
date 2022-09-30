@@ -1,6 +1,12 @@
 console.log("Git Start 1635");
- var widgetContainer = document.getElementById("widgetContainer");
-console.log(widgetContainer);
+const url=window.location.href;
+
+console.log(url);
+
+if(url.includes('booking-1635-37283')){
+ console.log("access code Widget");
+}
+
 
 function hideCat(catName) {
     console.log("Hide " + catName);
