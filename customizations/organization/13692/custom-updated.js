@@ -310,16 +310,16 @@ getDataFromPage2();
 	    
        if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
          console.log('old logic - invoice_payment');
-	 /*      
+	 
          $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
-       */
+       
        }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
          console.log('old logic - hub_payment');
-         /*
+         
          $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
          $('.customization2_payment').hide();
          $('.customization2_booking-terms').css('margin-top', '43px');
-       */
+       
        }
     }else{
       //NEW integration logic
