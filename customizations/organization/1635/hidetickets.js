@@ -20,7 +20,7 @@ function hideCat(catName) {
         }
     });
 }
-
+/*
 function showCat(catName) {
     console.log("Show " + catName);
     $('.customization-booking-area-wrapper .event-categories li').each(function () {
@@ -80,12 +80,13 @@ function handler() {
 
 }
 handler();
+*/
 //Insert here, what should run once
 //
 var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
         console.log("Node has been inserted: ", event.target);
-        handler();
+        //handler();
     }
 }
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox  
