@@ -16,35 +16,21 @@ function getXMLHttpRequest (open) {
           if(res != undefined && res._embedded){
             
             var orders = res._embedded.orders;
-                       
             var orderId = orders[0].id;
-            
             var price = orders[0].payment.amount;
             var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
-            
             // hardcoded, depends on OID for the staging account its 91117021 @olexiy
             var artikelnummer = 91117021;
             
             var isFreeORder = false;
-            //var bodyString = "order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
-            
-            var body = {
-              "order_id": orderId,
-              "ticket_category_id": ticketCategoryId,
-              price,
-              artikelnummer
-            };
+            var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
             if(price == 0){
-              // body = "order_id="+orderId+"";
-              body = {
-                "order_id": orderId
-              };
+              bodyString = "&order_id="+orderId+"";
             }
             
             // send redirect request
-            //testRedirect(body);
-            sendRedirectRequest(body);
+            sendRedirectRequest(bodyString);
           }
         }
       }, false);
@@ -53,43 +39,12 @@ function getXMLHttpRequest (open) {
 };
 
 function sendRedirectRequest(bodyData){
-  console.log(redirectUrl);
-  console.log(bodyData);
   
-  /*
-  console.log(window.location.href);
-  console.log(window.parent.location);
-  console.log(window.top.location);
-  return false;
-  */
+  var windowRedirectUrl = redirectUrl + bodyData;
   
-  var windowRedirectUrl = redirectUrl+"&order_id="+bodyData.order_id+"&ticket_category_id="+bodyData.ticket_category_id+"&price="+bodyData.price+"&artikelnummer="+bodyData.artikelnummer+"";
-  
-  if(isFuncUsed) return;
-  
-  $.ajax({
-    url: redirectUrl,
-    type: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': '*/*'
-    },
-    crossDomain: true,
-    data: JSON.stringify(bodyData),
-    dataType: 'json',
-    success: function (res) {
-      console.log(res);
-    },
-    error: function (jqXHR, exception) {
-      console.log(jqXHR);
-    }
-  });
+  console.log(windowRedirectUrl);
   
   window.top.location.href=windowRedirectUrl;
-  //window.parent.location.href='https://www.doo.net/';
-  
-  isFuncUsed = true;
-  console.log(isFuncUsed);
 }
 
 
