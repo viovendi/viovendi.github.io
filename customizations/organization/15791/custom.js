@@ -38,6 +38,8 @@ function getXMLHttpRequest (open) {
     };
 };
 
+getXMLHttpRequest(XMLHttpRequest.prototype.open);
+
 function sendRedirectRequest(bodyData){
   var windowRedirectUrl = redirectUrl + bodyData;
 
