@@ -25,7 +25,6 @@ function getXMLHttpRequest (open) {
             var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
             
             if(price == 0){
-              console.log('price=0');
               bodyString = "&order_id="+orderId+"";
             }
             
@@ -42,9 +41,5 @@ getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
 function sendRedirectRequest(bodyData){
   var windowRedirectUrl = redirectUrl + bodyData;
-
-  console.log(bodyData);
-  console.log(windowRedirectUrl);
-
   window.top.location.href=windowRedirectUrl;
 }
