@@ -128,6 +128,8 @@ console.log("git custom756 - custom");
     localStorage.setItem('delivery_of_invoice', delivery_of_invoice);
 	  
     // update version support
+    // TODO - 5-10-22
+    /*
     var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
     var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
     
@@ -141,6 +143,7 @@ console.log("git custom756 - custom");
          localStorage.setItem('allowed_countries', 'forbidden');
        }
     }
+	  */
   });
 }
 getDataFromPage2();
