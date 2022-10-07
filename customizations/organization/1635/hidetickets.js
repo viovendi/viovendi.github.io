@@ -1,5 +1,5 @@
 console.log("Git Start 1635");
-const url=window.location.href;
+/*const url=window.location.href;
 
 //console.log(url);
 
@@ -80,7 +80,7 @@ function handler() {
 
 }
 handler();
-*/
+
 //Insert here, what should run once
 //
 var insertionListener = function (event) {
@@ -92,7 +92,7 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox  
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE  
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
-
+*/
 
 
 
