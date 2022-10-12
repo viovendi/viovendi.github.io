@@ -1,0 +1,1 @@
+$( "<p>Test</p>" ).insertBefore(".customization-booking-area-wrapper-page1")
