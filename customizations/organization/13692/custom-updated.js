@@ -126,24 +126,6 @@ console.log("git custom756 - custom");
     
     localStorage.setItem('payment_method', payment_method);
     localStorage.setItem('delivery_of_invoice', delivery_of_invoice);
-	  
-    // update version support
-    // TODO - 5-10-22
-    /*
-    var countries_psp = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
-    var curr_country_psp = $(".customization2_attendee_contact-data_country_value").text().trim();
-    
-    // if new integration
-    if(!payment_method){
-    console.log('set countries data');
-    localStorage.removeItem('allowed_countries');
-       if( countries_psp.indexOf(curr_country_psp) != -1 ){
-         localStorage.setItem('allowed_countries', 'allowed');
-       }else{
-         localStorage.setItem('allowed_countries', 'forbidden');
-       }
-    }
-	  */
   });
 }
 getDataFromPage2();
@@ -205,15 +187,6 @@ getDataFromPage2();
       if(free_order && free_order == true){
         responseMessage('success');
       }else{
-	      
-        /*if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-	   console.log('checking_page4 - invoice payment');
-          rebuildPageInvoiceConfirm();
-        }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
-	  console.log('checking_page4 - CC hub payment');
-          loaderOn('on');
-          sendRequest(obj, organizer_id, free_order);
-        }*/
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
           rebuildPageInvoiceConfirm();
         }else if( (!isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)) || 
@@ -224,10 +197,7 @@ getDataFromPage2();
 	      
       }
       // if event w/o customization (payment system)
-      if(!payment_method || payment_method ==''){
-        
-        console.log('checking_page4 - !payment_method || payment_method ==');
-        
+      if(!payment_method || payment_method ==''){        
         $('.ew-confirmation__label.customization-confirmation-label').css('display','block');
         $('.ew-confirmation__text-paragraph').css('display','block');
         $('.customization2_payment-description_organizer-bank-transfer').css('display','block');
@@ -266,7 +236,6 @@ getDataFromPage2();
      console.log('getPaymentMethod');
      var payment_method_updated = '';
      $('.customization-button-next').on('click', function(e){
-       console.log('click submit');
        e.preventDefault();
        $('.customization2_organizer-bank-transfer_button').each(function(){
 	  if($(this).is(':checked')){
@@ -302,38 +271,22 @@ getDataFromPage2();
     console.log('rebuildPage func');
     var payment_method = localStorage.getItem('payment_method');
     var allowed_countries = localStorage.getItem('allowed_countries');
-    console.log('allowed_countries: '+allowed_countries);
 	  
     if(!allowed_countries){
        //old integration logic
-       console.log('old integration logic');
-    
-       console.log('invoice_payment_method_arr_options:');
-       console.log(invoice_payment_method_arr_options);
-       
-       console.log('payment_method:');
-       console.log(payment_method);
 	    
-	    
-       if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-         console.log('old logic - invoice_payment');
-	 
+       if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){	 
          $('.customization2_payment .vv-control-label.vv-radio__label-text').text('Hiermit bestätige ich die Richtigkeit meiner Angaben.');
-       
        }else if(hub_payment_method_arr_options.indexOf(payment_method) != -1){
-         console.log('old logic - hub_payment');
-         
          $('.customization2_payment .customization2_organizer-bank-transfer_button').attr('checked', 'checked').click();
          $('.customization2_payment').hide();
          $('.customization2_booking-terms').css('margin-top', '43px');
-       
        }
     }else{
       //NEW integration logic
       console.log('new integration logic');
       if(!payment_method || payment_method.length === 0){
      	if(allowed_countries === 'forbidden'){
-	    console.log('new version - invoice option');
 	    $('.customization2_payment .payment-option').each(function(){
 	      var label = $(this).find('.payment-option__label').text().trim();
 	      if(hub_payment_method.indexOf(label) === -1 ){
