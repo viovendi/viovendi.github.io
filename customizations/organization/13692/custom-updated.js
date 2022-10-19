@@ -182,10 +182,11 @@ getDataFromPage2();
   function checking_page3() {
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
+      console.log('function checking_page3');
       rebuildPage();
       getPaymentMethod();
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
-      stop_checking_page3();
+      //stop_checking_page3();
     }
   }
   checking_page3();
@@ -195,6 +196,9 @@ getDataFromPage2();
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       console.log('checking_page4');
+    
+      stop_checking_page3();
+	    
       var payment_method = localStorage.getItem('payment_method');
       
       var free_order = localStorage.getItem('free_order');
