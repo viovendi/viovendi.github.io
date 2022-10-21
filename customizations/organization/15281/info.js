@@ -3,7 +3,7 @@ function handler(){
     console.log("info.jss");
     $(".customization2_attendee_further-data_custom-question_checkbox-line_label:contains(I want to have my contact details shared within the Oerlikon Group)").hide();
     var elementBefore= document.querySelector("#widgetContainer > vv-widget-master > div > div > vv-booking-short > div > vv-information-step-master > div > vv-information-step > form > div:nth-child(2) > vv-questions > div.vv-mt-xxxxl > vv-buyer > div > vv-collapsible-wrapper > div > div > div > vv-child-form > form > div.vv-mb-lg.customization2_booker_contact-data > vv-default-questions > div > div:nth-child(1) > div > vv-input > label > p > vv-optional-text");
-    console.log();
+    console.log("....");
     
     var newInfo = `<vv-tooltip _ngcontent-hfv-c179="" standalone="">
     <div class="vv-tooltip vv-tooltip__size--md vv-tooltip__skin--default vv-tooltip__position--bottom">
@@ -21,7 +21,7 @@ function handler(){
   <!---->
   
   <!---->
-  </vv-tooltip>`
+  </vv-tooltip>`;
     $(newInfo).insertAfter(elementBefore);
 }
   handler();
@@ -43,4 +43,13 @@ function handler(){
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); //
   
-  
+   insertionListener = function(event) {  
+    if (event.animationName === "nodeInserted") {    
+      console.log("Node has been inserted: ", event.target);    
+      handler();
+    }
+  }
+  document.addEventListener("animationstart", insertionListener, false); 
+  // standard + firefox  
+  document.addEventListener("MSAnimationStart", insertionListener, false); // IE  
+  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
