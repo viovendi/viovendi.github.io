@@ -28,16 +28,16 @@ function handler(){
   //Insert here, what should run once
   //
   console.log("info.js");
-  var insertionListener = function(event) {  
-    console.log("info.js");
-
-    if (event.animationName === "nodeInserted") {    
-      console.log("Node has been inserted: ", event.target);    
-      handler(); 
+  var insertionListener = function(event) {
+    if (event.animationName === "nodeInserted") {
+      console.log("Node has been inserted: ", event.target);
+      //Inser your code here.
+      handler();
     }
   }
-  document.addEventListener("animationstart", insertionListener, false); 
-  // standard + firefox  
-  document.addEventListener("MSAnimationStart", insertionListener, false); // IE  
-  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+  
+    
+    document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+    document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+    document.addEventListener("webkitAnimationStart", insertionListener, false); // 
   
