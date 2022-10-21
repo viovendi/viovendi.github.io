@@ -29,6 +29,8 @@ function handler(){
   //
   console.log("info.js");
   var insertionListener = function(event) {  
+    console.log("info.js");
+
     if (event.animationName === "nodeInserted") {    
       console.log("Node has been inserted: ", event.target);    
       handler(); 
