@@ -24,6 +24,7 @@ function handler(){
   handler();
   //Insert here, what should run once
   //
+  console.log("info.js");
   var insertionListener = function(event) {  
     if (event.animationName === "nodeInserted") {    
       console.log("Node has been inserted: ", event.target);    
