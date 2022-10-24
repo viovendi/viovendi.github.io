@@ -30,8 +30,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 35);
         ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 90 - $('#halle_inp').val().length * 6, 497);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 565);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 507);
+        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 575);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 44);
         ctx.fillText($('#stand_inp').val(), 43, 44);
