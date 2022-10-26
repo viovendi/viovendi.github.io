@@ -24,7 +24,7 @@ function handler(){
   
   <!---->
   </vv-tooltip>`;
-    $(newInfo).insertAfter(elementBefore);
+    $(newInfo).appendTo(elementBefore);
 }
   handler();
   //Insert here, what should run once
