@@ -1,9 +1,7 @@
 
-console.log('here');
-
 //What runs on every new attendee form
 function handler(){
-    console.log("info.jss");
+  
     $(".customization2_attendee_further-data_custom-question_checkbox-line_label:contains(I want to have my contact details shared within the Oerlikon Group)").hide();
     var elementBefore = document.querySelector(".customization2_booker_contact-data_company_label")
     console.log(elementBefore);
@@ -31,12 +29,12 @@ function handler(){
   //
   var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-      console.log("Node has been inserted: ", event.target);
+    //  console.log("Node has been inserted: ", event.target);
   
       handler();
   
       $("customization2_attendee_view-action_edit").on("click", function () {
-        console.log("clicked");
+   //     console.log("clicked");
       });
     }
   };
