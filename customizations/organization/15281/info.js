@@ -112,14 +112,3 @@ function handler(){
   document.addEventListener("animationstart", insertionListener, false); // standard + firefox
   document.addEventListener("MSAnimationStart", insertionListener, false); // IE
   document.addEventListener("webkitAnimationStart", insertionListener, false); //
-  
-   insertionListener = function(event) {  
-    if (event.animationName === "nodeInserted") {    
-      console.log("Node has been inserted: ", event.target);    
-      handler();
-    }
-  }
-  document.addEventListener("animationstart", insertionListener, false); 
-  // standard + firefox  
-  document.addEventListener("MSAnimationStart", insertionListener, false); // IE  
-  document.addEventListener("webkitAnimationStart", insertionListener, false); // 
