@@ -1,3 +1,6 @@
+
+console.log('heres');
+
 //-------other js----
 //What runs on every new attendee form
 function changeTextTo(selector, originalText, newText) {
