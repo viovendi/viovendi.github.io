@@ -5,7 +5,7 @@ console.log('here');
 function handler(){
     console.log("info.jss");
     $(".customization2_attendee_further-data_custom-question_checkbox-line_label:contains(I want to have my contact details shared within the Oerlikon Group)").hide();
-    var elementBefore = document.querySelector(".vv-control-label .vv-control-label--regular .customization2_booker_contact-data_company_label")
+    var elementBefore = document.querySelector(".customization2_booker_contact-data_company_label")
     console.log(elementBefore);
     var newInfo = `<vv-tooltip _ngcontent-hfv-c179="" standalone="">
     <div class="vv-tooltip vv-tooltip__size--md vv-tooltip__skin--default vv-tooltip__position--bottom">
