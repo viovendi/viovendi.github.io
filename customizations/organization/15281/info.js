@@ -5,8 +5,7 @@ function handler(){
     $(".customization2_attendee_further-data_custom-question_checkbox-line_label:contains(I want to have my contact details shared within the Oerlikon Group)").hide();
     var elementBefore = document.querySelector(".customization2_booker_contact-data_company_label")
     console.log(elementBefore);
-    var next = $(elementBefore).next();
-    console.log(next)
+    var infos = $(elementBefore).children("vv-tooltip").length;
     
     var newInfo = `<vv-tooltip _ngcontent-hfv-c179="" standalone="">
     <div class="vv-tooltip vv-tooltip__size--md vv-tooltip__skin--default vv-tooltip__position--bottom">
@@ -25,8 +24,8 @@ function handler(){
   
   <!---->
   </vv-tooltip>`;
-  if(next.is("#vv-tooltip")){
-    console.log("exists already")
+  if(infos>0){
+    //console.log("exists already")
 }else{
     $(newInfo).appendTo(elementBefore);
 }
@@ -37,13 +36,7 @@ function handler(){
   //
   var insertionListener = function (event) {
     if (event.animationName === "nodeInserted") {
-    //  console.log("Node has been inserted: ", event.target);
-  
       handler();
-  
-      $("customization2_attendee_view-action_edit").on("click", function () {
-   //     console.log("clicked");
-      });
     }
   };
   
