@@ -1,4 +1,4 @@
-console.log('Start working, Google Tag Manager');
+console.log('git Start');
 
 async function getCode(key) {
   return $.ajax({
@@ -37,7 +37,7 @@ function addCode(code, input) {
 
 function getTicketCategory() {
   const categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-
+  console.log(categoryName);
   switch (categoryName) {
     //Testcode
     // case 'Tagesticket':
