@@ -52,7 +52,7 @@ function handler() {
     var dropdown1 = findDropDownByLabel('Zimmer 1');
     
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
-        if ($(this).text().trim() == 'Einzelzimmer') {
+        if ($(this).text().trim() == 'Einzelzimmer - 1 Person') {
             $(field1).show();
             $(field1).find('vv-optional-text').css("display", "none");
             disableWhenEmpty(field1);
