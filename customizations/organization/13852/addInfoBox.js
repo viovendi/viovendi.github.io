@@ -1,6 +1,6 @@
 //What runs on every new attendee form
 function handler(){
-  $(".event-categories li:nth-of-type(1)").prepend( '<div style=" width: auto; display: block; margin: 0px 0px 0px; padding: 20px 20px 15px; border-radius: 6px 6px 0 0; border-bottom: 1px solid #c7c9d1; background-color: #f7f7f7;"><p style="font-weight: bolder; font-size: 18px; ">MESSESTÄNDE IM MESSEZELT</p> <br> <p> Informationen zu den Messestand-Paketen erhalten Sie <a href="https://elasticbeanstalk-eu-central-1-production.s3.eu-central-1.amazonaws.com/public/uploaded/attributes/14002/kDLNwo4r0I014zm.pdf" target="_blank">hier</a> </p> </div>');
+  $(".customization2_summary_box").before( '<div style=" width: auto; display: block; margin-bottom: 15px; padding: 32px; border-radius: 6px; background-color: #f7f7f7;"><p style="font-weight: 600; font-size: 16px; margin-bottom: 16px;"> Leistungen Messepaket: </p> <ul style="list-style-position: outside; list-style-type: disc; padding-left: 20px"> <li style="margin-bottom:5px">Standard Messestand (Reihenstand inkl. 1 Barhocker , 1 Stehtisch)</li> <li style="margin-bottom:5px">Licht/Strom, WLAN, Teppich</li> <li style="margin-bottom:5px">Abdruck des Logos Ihrer Organisation</li> <li style="margin-bottom:5px">Messemagazin/Messe website: Profil (1/4 Seite) / Logo/Link</li> <li style="margin-bottom:5px">Präsentation Imagefilm während der Messe</li> </ul> </div>');
   }
 handler();
 //Insert here, what should run once
