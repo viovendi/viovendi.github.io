@@ -40,11 +40,11 @@ function getTicketCategory() {
   console.log(categoryName);
   switch (categoryName) {
     //Testcode
-    // case 'Tagesticket':
-    //   return '10668_Test-Codes';
+     case 'Tagesticket':
+       return '10668_Test-Codes';
 
-    case 'Tagesticket':
-      return '10668-day-tickets-c1';
+    //case 'Tagesticket':
+    //  return '10668-day-tickets-c1';
 
     case 'Tagesticket ermäßigt':
       return '10668-day-tickets-c1';
