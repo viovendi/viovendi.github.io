@@ -43,13 +43,13 @@ function handler() {
     }
 
     var field1 = findDropDownByLabel('Zimmer 2 (optional)');
-    var field2 = findDropDownByLabel('Zimmer 2');
+    //var field2 = findDropDownByLabel('Zimmer 2');
 
     $(field1).hide();
-    $(field2).hide();
+    //$(field2).hide();
 
 
-    var dropdown1 = findDropDownByLabel('Zimmer 1');
+    var dropdown1 = findDropDownByLabel('Zimmer 2 (optional)');
     
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'Einzelzimmer - 1 Person') {
