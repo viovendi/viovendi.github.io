@@ -49,7 +49,7 @@ function handler() {
     //$(field2).hide();
 
 
-    var dropdown1 = findDropDownByLabel('Zimmer 2 (optional)');
+    var dropdown1 = findDropDownByLabel('Zimmer 1 (optional)');
     
     $(dropdown1).on("DOMSubtreeModified", ".vv-selection-input__value.m-ellipsis", function () {
         if ($(this).text().trim() == 'Einzelzimmer - 1 Person') {
@@ -61,6 +61,7 @@ function handler() {
             $(field1).hide();
             $(field1).find('.customization2_attendee_further-data_custom-question_dropdown').val('');
             $('.customization2_attendee_edit-action_save').prop("disabled", false);
+            console.log("else");
         }
     });
     
