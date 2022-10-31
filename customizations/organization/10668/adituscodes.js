@@ -1,5 +1,19 @@
 console.log('git Start');
 
+function hideQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label, p");
+
+    if (label.text().trim().includes(name)) {
+      $(item).hide();
+    }
+  });
+}
+
+
+
+
 async function getCode(key) {
   return $.ajax({
     url: 'https://cs.doo.net/v1/integrations/custom-qr-codes/get-code?key=' + key,
@@ -110,3 +124,4 @@ async function handler() {
 }
 
 handler();
+hideQuestion(".customization2_attendee_further-data_custom-question", "Aditus Code");
