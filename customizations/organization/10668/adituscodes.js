@@ -1,4 +1,18 @@
-console.log('Start working, Google Tag Manager');
+console.log('git Start');
+
+function hideQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label, p");
+
+    if (label.text().trim().includes(name)) {
+      $(item).hide();
+    }
+  });
+}
+
+
+
 
 async function getCode(key) {
   return $.ajax({
@@ -37,41 +51,39 @@ function addCode(code, input) {
 
 function getTicketCategory() {
   const categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
-
+  console.log(categoryName);
   switch (categoryName) {
-    //Testcode
-    // case 'Tagesticket':
-    //   return '10668_Test-Codes';
-
-    case 'Tagesticket':
-      return '10668-day-tickets-c1';
+    //Testcodes !! these are all testcodes at the moment
+     case 'Tagesticket':
+       return '166_Tagesticket';
 
     case 'Tagesticket ermäßigt':
-      return '10668-day-tickets-c1';
+      return '174_Tagesticket-ermaessigt';
 
     case 'Nachmittagticket':
-      return '10668-afternoon-tickets-c2';
+      return '177_Nachmittagsticket';
 
     case 'Treff Tagesticket':
-      return '10668-day-tickets-c1';
+      return '10668-day-tickets-c1'; //  ! ! !TODO ! ! !
 
-    case 'Eintrittskarten-Gutschein einlösen':
-      return '10668-day-tickets-c1';
+    case 'Eintrittskartengutschein einlösen':
+      return '178_Freies-Ticket';
+
+    case 'Juniorticket':
+      return '176_Kinderticket';
 
     case 'Presseticket':
-      return '10668-day-tickets-c1';
+      return '184_Presseticket-Samstag';
 
     case 'Ausstellerausweis':
-      return '10668-exhibitors-c3';
-
-    case 'Auf- und Abbauausweis':
-      return '10668-setup-c4';
+      return '4_Ausstellerausweis';
       
-    case 'Juniorticket':
-      return '10668-day-tickets-c1';
+    case 'Auf- und Abbauausweis':
+      return '3_Ausstellerausweis-Auf-Abbau';
 
     default:
       return 'error';
+    
   }
 }
 
@@ -110,3 +122,4 @@ async function handler() {
 }
 
 handler();
+hideQuestion(".customization2_attendee_further-data_custom-question", "Aditus Code");
