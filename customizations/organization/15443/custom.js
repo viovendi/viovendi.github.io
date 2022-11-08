@@ -19,8 +19,8 @@ function getXMLHttpRequest (open) {
             var price = orders[0].payment.amount;
             var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
             // hardcoded, depends on OID for the staging account its 91117021 @olexiy
-            //TODO add correct artikelnummer
-            var artikelnummer = 91117021;
+            //91117023 = Artikelnumber for 15443
+            var artikelnummer = 91117023;
             
             var isFreeORder = false;
             var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
