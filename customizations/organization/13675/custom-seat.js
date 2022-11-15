@@ -1,16 +1,19 @@
 
 console.log('github code');
 
-var head = document.getElementsByTagName('head')[0];
+var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
+
+var div = document.createElement('div');
+div.id = 'chart';
+wrapper.appendChild(div);
 
 var script = document.createElement('script');
 script.type = 'text/javascript';
 script.src = "https://cdn-eu.seatsio.net/chart.js";
+wrapper.appendChild(script);
 
-var div = document.createElement('div');
-div.id = 'chart';
-
-div.onload = createSeats;
+script.onload = createSeats;
+//script.onreadystatechange = createSeats;
 
 fubction createSeats(){
     new seatsio.SeatingChart({
