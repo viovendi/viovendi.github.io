@@ -2,6 +2,11 @@
 console.log('github code');
 
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
+console.log(wrapper);
+
+var wrapper1 = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+console.log(wrapper1);
+
 
 var div = document.createElement('div');
 div.id = 'chart';
