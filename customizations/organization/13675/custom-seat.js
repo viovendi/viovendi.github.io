@@ -15,7 +15,7 @@ wrapper.appendChild(script);
 script.onload = createSeats;
 //script.onreadystatechange = createSeats;
 
-fubction createSeats(){
+function createSeats(){
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
