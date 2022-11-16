@@ -4,9 +4,10 @@ console.log('github code');
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
 console.log(wrapper);
 
-wrapper.onload(console.log(wrapper[0]));
-console.log(wrapper.[0]);
+wrapper.onload(function(){
+    console.log('loaded');
 console.log(wrapper[0]);
+});
 
 
 var div = document.createElement('div');
