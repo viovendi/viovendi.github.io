@@ -5,9 +5,7 @@ var wrapper = document.getElementsByClassName('customization-booking-area-wrappe
 console.log(wrapper);
 console.log(typeof wrapper);
 
-console.log(JSON.parse(wrapper));
-
-console.log($);
+console.log(wrapper.item(0));
 
 
 var div = document.createElement('div');
