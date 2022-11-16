@@ -3,12 +3,9 @@ console.log('github code');
 
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
 console.log(wrapper);
-
-$('.customization-booking-area-wrapper').load(function(){
-    console.log('loaded');
-    console.log(this);
 console.log(wrapper[0]);
-});
+
+console.log($);
 
 
 var div = document.createElement('div');
