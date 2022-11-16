@@ -1,7 +1,7 @@
 
 console.log('github code');
 
-document.load(function(){
+document.ready(function(){
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
 console.log(wrapper);
 
