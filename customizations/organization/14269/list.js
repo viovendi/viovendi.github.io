@@ -1,7 +1,7 @@
 console.log("list.js")
 
 function run(){
-    $("li.ng-star-inserted").each(index => {
+    $("li.ng-star-inserted").each(function() {
         console.log($(this))
     var title = $($(this)).find(".event-article__event-info__title").text()
     console.log(title)
