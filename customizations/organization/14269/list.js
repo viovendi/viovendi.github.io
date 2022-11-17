@@ -1,6 +1,6 @@
 console.log("list.js")
 
-$("li .ng-star-inserted").forEach(element => {
+$("li .ng-star-inserted").each(element => {
     var title = $(element).find(".event-article__event-info__title").text()
     if(title.includes("Profi")){
         console.log("Found Profi event")
