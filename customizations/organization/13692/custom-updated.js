@@ -147,13 +147,15 @@ getDataFromPage2();
   
   
   function checking_page2() {
+	  console.log('checking_page2');
+	  console.log(localStorage.getItem('free_order'));
     id_page2 = requestAnimationFrame(checking_page2);
     if($('.customization-booking-area-wrapper-page2').length > 0){
       getDataFromPage2();
 	    
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
-        localStorage.setItem('free_order', true); 
+        localStorage.setItem('free_order', true);
       }
       stop_checking_page2();
     }
@@ -162,6 +164,9 @@ getDataFromPage2();
   
   
   function checking_page3() {
+	  console.log('checking_page3');
+	  console.log(localStorage.getItem('free_order'));
+	  
     id_page3 = requestAnimationFrame(checking_page3);
     if($('.customization-booking-area-wrapper-page3').length > 0){
       rebuildPage();
@@ -174,6 +179,10 @@ getDataFromPage2();
   
   
   function checking_page4() {
+	  
+	  console.log('checking_page4');
+	  console.log(localStorage.getItem('free_order'));
+	  
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       console.log('checking_page4');
