@@ -2,15 +2,10 @@ console.log("list.js")
 
 function run(){
     $("li.ng-star-inserted").each(function() {
-        console.log($(this))
     var title = $($(this)).find(".event-article__event-info__title").text()
-    console.log(title)
-    if(title.includes("Profi")){
-        console.log("Found Profi event")
-        console.log($(this))
+    if(title.includes("Schüler@HORNBACH")){
         var but = $($(this)).find(".button")
-        console.log("Found the button with href: "+$(but).attr("href"))
-        console.log(but)
+        $(but).attr("href","https://prjkt.ly/Schueler-at-HB-Markt")
     }
 });
 }
