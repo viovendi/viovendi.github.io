@@ -2,7 +2,7 @@ console.log("list.js")
 
 function run(){
     $("li.ng-star-inserted").each(element => {
-    var title = $(element).find(".event-article__event-info__title").text()
+    var title = $($(element).find(".event-article__event-info__title")).text()
     console.log(title)
     if(title.includes("Profi")){
         console.log("Found Profi event")
