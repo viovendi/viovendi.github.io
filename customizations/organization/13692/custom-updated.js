@@ -147,13 +147,21 @@ getDataFromPage2();
   
   
   function checking_page2() {
-	  console.log('checking_page2');
-	  console.log(localStorage.getItem('free_order'));
+    console.log('checking_page2');
     id_page2 = requestAnimationFrame(checking_page2);
+	  
+	  console.log($('.customization-booking-area-wrapper-page2').length);
+	  
     if($('.customization-booking-area-wrapper-page2').length > 0){
+	    
+	  console.log('checking_page-before - getDataFromPage2');
+	    
       getDataFromPage2();
 	    
+	    console.log($('.customization2_summary_total_price').text().trim());
+	    
       if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
+	      console.log('checking_page2-free order');
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
         localStorage.setItem('free_order', true);
       }
