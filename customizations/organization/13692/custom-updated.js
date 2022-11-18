@@ -160,7 +160,9 @@ getDataFromPage2();
 	    console.log(orderPrice);
 	    console.log(orderPrice.length);
 	    
-	    if(orderPrice === '0,00 EUR'){
+	    console.log(orderPrice.indexOf('0,0'));
+	    
+	    if(orderPrice.subs === '0,00 EUR'){
 		console.log('checking_page2-free order-TEST');
 	    }
 	    
