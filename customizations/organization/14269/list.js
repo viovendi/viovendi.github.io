@@ -5,8 +5,10 @@ function run(){
     var title = $($(this)).find(".event-article__event-info__title").text()
     if(title.includes("Schüler@HORNBACH")){
         var but = $($(this)).find(".button")
-        $(but).attr("href","https://prjkt.ly/Schueler-at-HB-Markt");
-        $(but).attr("target","_blank");
+        //$(but).attr("href","https://prjkt.ly/Schueler-at-HB-Markt");
+        $(but).after('<a class="button" target="_blank" href="https://prjkt.ly/Schueler-at-HB-Markt">Mehr Infos</a>');
+        $(but).hide();
+        
     }
 });
 }
