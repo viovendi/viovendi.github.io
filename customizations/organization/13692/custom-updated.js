@@ -152,21 +152,11 @@ getDataFromPage2();
 	  
     if($('.customization-booking-area-wrapper-page2').length > 0){
 	    
-	  console.log('checking_page-before - getDataFromPage2');
-	    
       getDataFromPage2();
 	    
-	    var orderPrice = $('.customization2_summary_total_price').text().trim();
-	    console.log(orderPrice);
-	    console.log(orderPrice.length);
+	    var orderPriceText = $('.customization2_summary_total_price').text().trim();
 	    
-	    console.log(orderPrice.indexOf('0,0'));
-	    
-	    if(orderPrice.subs === '0,00 EUR'){
-		console.log('checking_page2-free order-TEST');
-	    }
-	    
-      if($('.customization2_summary_total_price').text().trim() == '0,00 EUR'){
+      if(orderPriceText === '0,00 EUR' || orderPriceText.indexOf('0,0') === 0){
 	      console.log('checking_page2-free order');
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
         localStorage.setItem('free_order', true);
