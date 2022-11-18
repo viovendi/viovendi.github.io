@@ -48,7 +48,7 @@ if ($('.customization-button-next').text().includes("Book now")){
      $('.customization2_booking-terms_text').html("I consent to the use and processing of my personal data in accordance with <a href='https://privacy.vogel.de/'>declaration of consent</a>.");
     
 }
-    $('.vv-checkbox__indicator').css('margin-top', '-18%');
+    //$('.vv-checkbox__indicator').css('margin-top', '-18%');
     
 
     $('.customization2_booking-terms_list').hide();
