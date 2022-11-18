@@ -160,9 +160,7 @@ getDataFromPage2();
 	    console.log(orderPrice);
 	    console.log(orderPrice.length);
 	    
-	    console.log(orderPrice.indexOf('0,00 EUR'));
-	    
-	    if($('.customization2_summary_total_price').text().trim().indexOf('0,00 EUR')>0){
+	    if(orderPrice === '0,00 EUR'){
 		console.log('checking_page2-free order-TEST');
 	    }
 	    
