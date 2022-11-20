@@ -193,8 +193,12 @@ getDataFromPage2();
       var payment_method = localStorage.getItem('payment_method');
       
       var free_order = localStorage.getItem('free_order');
-      if(free_order && free_order == true){
-	            console.log('checking_page4 FREE ORDER');
+
+	    console.log(payment_method);
+	    console.log(free_order);
+	    
+      if(free_order && free_order === true){
+	console.log('checking_page4 FREE ORDER');
         responseMessage('success');
       }else{
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
