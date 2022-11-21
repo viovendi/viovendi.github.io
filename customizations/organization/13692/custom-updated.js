@@ -197,7 +197,7 @@ getDataFromPage2();
 	    console.log(payment_method);
 	    console.log(free_order);
 	    
-      if(free_order && free_order === true){
+      if(free_order){
 	console.log('checking_page4 FREE ORDER');
         responseMessage('success');
       }else{
