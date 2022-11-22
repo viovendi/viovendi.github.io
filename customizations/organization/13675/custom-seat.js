@@ -11,6 +11,7 @@ $(document).ready(function(){
     div.id = 'chart';
     
     var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
+    console.log(wrapper);
     
     wrapper.append(div);
     wrapper.append(script);
