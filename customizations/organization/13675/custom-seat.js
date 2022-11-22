@@ -1,7 +1,7 @@
 
 console.log('github code');
 
-$(document).ready(function(){
+$('#customization-booking-area-wrapper-page1').ready(function(){
     console.log('ready doc!');
     var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -10,10 +10,10 @@ $(document).ready(function(){
     var div = document.createElement('div');
     div.id = 'chart';
     
-    //var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
+    var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
     var wraper = document.querySelector('.customization-booking-area-wrapper');
+    console.log(wrapper);
     console.log(wraper);
-    
     //wrapper.append(div);
     //wrapper.append(script);
     
