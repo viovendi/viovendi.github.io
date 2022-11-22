@@ -3,11 +3,9 @@ console.log('github code');
 
 console.log(document);
 
-$(document).ready(function(){
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
 console.log(wrapper);
 
-});
 /*
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
 console.log(wrapper);
