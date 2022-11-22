@@ -1,6 +1,8 @@
 
 console.log('github code');
 
+console.log(document);
+
 $(document).ready(function(){
     console.log('ready doc!');
     var script = document.createElement('script');
