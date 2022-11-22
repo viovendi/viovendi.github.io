@@ -11,7 +11,7 @@ $(document).ready(function(){
     div.id = 'chart';
     
     //var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
-    var wraper = document.qurySelector('.customization-booking-area-wrapper');
+    var wraper = document.querySelector('.customization-booking-area-wrapper');
     console.log(wraper);
     
     //wrapper.append(div);
