@@ -14,12 +14,14 @@ $(document).ready(function(){
     
     console.log(div);
     
-    console.log(document.getElementsByClassName('customization-booking-area-wrapper'));
+    var wraper1 = document.getElementsByClassName('customization-booking-area-wrapper');
+    console.log(wraper1);
+    console.log(typeof wraper1);
+    console.log(wraper1.length);
     
-    var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
-    var wraper = document.querySelector('.customization-booking-area-wrapper');
-    console.log(wrapper);
+    var wraper = document.querySelectorAll('.customization-booking-area-wrapper');
     console.log(wraper);
+    
     //wrapper.append(div);
     //wrapper.append(script);
     
