@@ -14,10 +14,9 @@ $(document).ready(function(){
     
     console.log(div);
     
-    var wraper1 = document.getElementsByClassName('customization-booking-area-wrapper');
+    var wraper1 = $('customization-booking-area-wrapper');
     console.log(wraper1);
     console.log(typeof wraper1);
-    console.log($('.customization-booking-area-wrapper'));
     
     var wraper = document.querySelectorAll('.customization-booking-area-wrapper');
     console.log(wraper);
