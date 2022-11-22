@@ -7,12 +7,16 @@ $(document).ready(function(){
     script.type = 'text/javascript';
     script.src = "https://cdn-eu.seatsio.net/chart.js";
     
-    $('.customization-booking-area-wrapper').append("<div id='chart'></div>");
+    console.log(script);
+    
+    var div = document.createElement('div');
+    div.id = 'chart';
+    
+    console.log(div);
+    
+    $('.customization-booking-area-wrapper').append(div);
+    
     $('.customization-booking-area-wrapper').append(script);
-});
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-  console.log(event);
 });
 
 
