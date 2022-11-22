@@ -7,8 +7,8 @@ $(document).ready(function(){
     script.type = 'text/javascript';
     script.src = "https://cdn-eu.seatsio.net/chart.js";
     
-    $('.customization-booking-area-wrapper').appendChild("<div id='chart'></div>");
-    $('.customization-booking-area-wrapper').appendChild(script);
+    $('.customization-booking-area-wrapper').append("<div id='chart'></div>");
+    $('.customization-booking-area-wrapper').append(script);
 });
 
 document.addEventListener("DOMContentLoaded", function(event) { 
