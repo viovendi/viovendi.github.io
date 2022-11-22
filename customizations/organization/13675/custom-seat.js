@@ -2,13 +2,19 @@
 console.log('github code');
 
 $(document).ready(function(){
-    console.log('ready doc');
+    console.log('ready doc!');
 });
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("Hello World!");
-  console.log(e);
+document.addEventListener("DOMContentLoaded", function(event) { 
+  console.log(event);
 });
+
+
+setTimeout(function(){
+var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
+ console.log(wrapper);
+ console.log(wrapper)[0];   
+}, 5000);
 
 /*
 var wrapper = document.querySelector('body');
