@@ -1,10 +1,13 @@
 
 console.log('github code');
 
-console.log(document);
-
-var wrapper = document.querySelector('.customization-booking-area-wrapper');
+var wrapper = document.querySelector('body');
 console.log(wrapper);
+
+var wrap1 = document.getElementsByClassName('customization-booking-area-wrapper');
+
+console.log(wrap1);
+console.log(typeof wrap1);
 
 
 /*
