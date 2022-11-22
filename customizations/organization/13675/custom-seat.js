@@ -14,7 +14,7 @@ $(document).ready(function(){
     
     console.log(div);
     
-    var wraper1 = $('customization-booking-area-wrapper');
+    var wraper1 = $('.customization-booking-area-wrapper');
     console.log(wraper1);
     console.log(typeof wraper1);
     
