@@ -1,6 +1,16 @@
 
 console.log('github code');
 
+$(document).ready(function(){
+    console.log('ready doc');
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  console.log("Hello World!");
+  console.log(e);
+});
+
+/*
 var wrapper = document.querySelector('body');
 console.log(wrapper);
 
@@ -8,7 +18,7 @@ var wrap1 = document.getElementsByClassName('customization-booking-area-wrapper'
 
 console.log(wrap1);
 console.log(typeof wrap1);
-
+/*
 
 /*
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
