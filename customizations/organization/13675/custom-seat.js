@@ -20,7 +20,8 @@ setTimeout(function(){
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
  console.log(wrapper);
  console.log(wrapper[0]);
- console.log(wrapper.0);
+ console.log(wrapper.[0]);
+ console.log(wrapper.['0']);
 }, 5000);
 
 /*
