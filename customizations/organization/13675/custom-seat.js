@@ -1,14 +1,20 @@
 
 console.log('github code');
 
-$('#customization-booking-area-wrapper-page1').ready(function(){
+$(document).ready(function(){
     console.log('ready doc!');
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = "https://cdn-eu.seatsio.net/chart.js";
     
+    console.log(script);
+    
     var div = document.createElement('div');
     div.id = 'chart';
+    
+    console.log(div);
+    
+    console.log(document.getElementsByClassName('customization-booking-area-wrapper'));
     
     var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
     var wraper = document.querySelector('.customization-booking-area-wrapper');
