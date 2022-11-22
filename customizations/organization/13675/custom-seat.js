@@ -10,13 +10,14 @@ $(document).ready(function(){
     var div = document.createElement('div');
     div.id = 'chart';
     
-    var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
-    console.log(wrapper);
+    //var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
+    var wraper = document.qurySelector('.customization-booking-area-wrapper');
+    console.log(wraper);
     
-    wrapper.append(div);
-    wrapper.append(script);
+    //wrapper.append(div);
+    //wrapper.append(script);
     
-    div.onload = createSeats();
+    //div.onload = createSeats();
 });
 
 
