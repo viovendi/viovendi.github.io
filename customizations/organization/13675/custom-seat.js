@@ -1,8 +1,6 @@
 
 console.log('github code');
 
-console.log(document);
-
 $(document).ready(function(){
     console.log('ready doc!');
     var script = document.createElement('script');
@@ -19,7 +17,7 @@ $(document).ready(function(){
     var wraper1 = document.getElementsByClassName('customization-booking-area-wrapper');
     console.log(wraper1);
     console.log(typeof wraper1);
-    console.log(wraper1.length);
+    console.log($('.customization-booking-area-wrapper'));
     
     var wraper = document.querySelectorAll('.customization-booking-area-wrapper');
     console.log(wraper);
