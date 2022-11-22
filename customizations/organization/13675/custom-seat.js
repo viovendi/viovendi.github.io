@@ -14,9 +14,16 @@ $(document).ready(function(){
     
     console.log(div);
     
-    $('.customization-booking-area-wrapper').append(div);
+    var wrapper = document.getElementsByClassName('customization-booking-area-wrapper')[0];
     
+    console.log(wrapper);
+    
+    wrapper.append(div);
+    wrapper.append(script);
+    /*
+    $('.customization-booking-area-wrapper').append(div);
     $('.customization-booking-area-wrapper').append(script);
+    */
 });
 
 
