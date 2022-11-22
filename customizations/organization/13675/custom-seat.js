@@ -3,6 +3,12 @@ console.log('github code');
 
 $(document).ready(function(){
     console.log('ready doc!');
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "https://cdn-eu.seatsio.net/chart.js";
+    
+    $('.customization-booking-area-wrapper').appendChild("<div id='chart'></div>");
+    $('.customization-booking-area-wrapper').appendChild(script);
 });
 
 document.addEventListener("DOMContentLoaded", function(event) { 
@@ -13,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 setTimeout(function(){
 var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
  console.log(wrapper);
- console.log(wrapper)[0];   
+ console.log(wrapper[0]);
+ console.log(wrapper.0);
 }, 5000);
 
 /*
@@ -24,15 +31,8 @@ var wrap1 = document.getElementsByClassName('customization-booking-area-wrapper'
 
 console.log(wrap1);
 console.log(typeof wrap1);
-/*
-
-/*
-var wrapper = document.getElementsByClassName('customization-booking-area-wrapper');
-console.log(wrapper);
-console.log(typeof wrapper);
-
-console.log(wrapper.item(0));
 */
+
 function main(){
 var div = document.createElement('div');
 div.id = 'chart';
