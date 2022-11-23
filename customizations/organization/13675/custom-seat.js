@@ -1,18 +1,18 @@
 
 console.log('github code-!');
 
-
+/*
 $(window).on('load', function() {
     console.log('ready window!');
     console.log($('.customization-booking-area-wrapper'));
 });
-
+*/
 $(document).ready(function(){
     console.log('doc ready!');
     console.log($('.customization-booking-area-wrapper'));
     
     addSeatScript();
-    
+    createSeats();
 });
 
 
@@ -34,8 +34,8 @@ function addSeatScript(){
     var wraper = document.querySelector('.customization-booking-area-wrapper');
     
     console.log(wraper);
-    //wrapper.append(div);
-    //wrapper.append(script);
+    wrapper.append(div);
+    wrapper.append(script);
 }
 
 
