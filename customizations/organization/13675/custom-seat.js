@@ -29,11 +29,6 @@ function elementVisibleAction(){
 
 
 /*
-document.addEventListener("DOMContentLoaded", function(event) {
-    console.log('addEventListener');
-    console.log(document.querySelectorAll('.customization-booking-area-wrapper'));
-  });
-
 $(window).on('load', function() {
     console.log('ready window!');
     console.log($('.customization-booking-area-wrapper'));
@@ -55,12 +50,8 @@ function addSeatScript(){
     script.type = 'text/javascript';
     script.src = "https://cdn-eu.seatsio.net/chart.js";
     
-    console.log(script);
-    
     var div = document.createElement('div');
     div.id = 'chart';
-    
-    console.log(div);
     
     var wraper = $('.customization-booking-area-wrapper');
     
@@ -70,9 +61,9 @@ function addSeatScript(){
     
     setTimeout(function(){
         console.log(seatsio);
-    },3000);
+    },300);
     
-    script.onreadystatechange = handlerC;
+    wraper.onreadystatechange = handlerC;
     //createSeats();
 }
 
