@@ -25,6 +25,8 @@ startCustomization();
 function elementVisibleAction(){
     console.log('Start working widget integration.');
     console.log($('.customization-booking-area-wrapper'));
+    
+    addSeatScript();
 }
 
 
