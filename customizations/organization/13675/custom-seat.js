@@ -20,7 +20,7 @@ $('.viovendi_iframe').on('load', function() {
     console.log($('.customization-booking-area-wrapper'));
 });
 
-$(document).ready({
+$(document).ready(function(){
     console.log('doc ready!');
     console.log($('.viovendi_iframe'));
     console.log($('.customization-booking-area-wrapper'));
