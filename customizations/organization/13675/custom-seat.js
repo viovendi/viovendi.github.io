@@ -1,22 +1,28 @@
 
 console.log('github code-!');
 
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log('addEventListener');
+    console.log(document.querySelectorAll('.customization-booking-area-wrapper'));
+  });
 
 $(window).on('load', function() {
     console.log('ready window!');
     console.log($('.customization-booking-area-wrapper'));
-    
-    addSeatScript();
+    console.log(this.find('.customization-booking-area-wrapper'));
+    //addSeatScript();
 });
 
 $(document).ready(function(){
     console.log('doc ready!');
     console.log($('.customization-booking-area-wrapper'));
+    console.log(this.find('.customization-booking-area-wrapper'));
     
     //addSeatScript();
     //createSeats();
 });
 
+document
 
 
 function addSeatScript(){
@@ -38,8 +44,6 @@ function addSeatScript(){
     console.log(wraper);
     wraper.append(div);
     wraper.append(script);
-    
-    //script.onload = createSeats;
     
     script.onreadystatechange = createSeats;
     script.onload = createSeats;
