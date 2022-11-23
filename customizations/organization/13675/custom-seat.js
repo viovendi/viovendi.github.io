@@ -3,9 +3,7 @@ console.log('github code-!');
 
 function startCustomization(){
     const observer = new MutationObserver((mutations, obs) => {
-        const page = document.getElementsByClassName(
-        'customization-booking-area-wrapper-page1'
-        );
+        const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
     
         if ($(page).is(':visible')) {
             console.log("page-1 visible");
@@ -68,8 +66,8 @@ function addSeatScript(){
     var wraper = $('.customization-booking-area-wrapper');
     
     console.log(wraper);
-    wraper.append(div);
-    wraper.append(script);
+    //wraper.append(div);
+    //wraper.append(script);
     
     console.log(seatsio);
     
