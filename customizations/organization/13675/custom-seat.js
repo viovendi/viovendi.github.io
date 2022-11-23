@@ -1,17 +1,19 @@
 
 console.log('github code-!');
 
-/*
+
 $(window).on('load', function() {
     console.log('ready window!');
     console.log($('.customization-booking-area-wrapper'));
+    
+    addSeatScript();
 });
-*/
+
 $(document).ready(function(){
     console.log('doc ready!');
     console.log($('.customization-booking-area-wrapper'));
     
-    addSeatScript();
+    //addSeatScript();
     //createSeats();
 });
 
