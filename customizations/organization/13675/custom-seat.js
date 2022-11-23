@@ -73,7 +73,6 @@ function addSeatScript(){
     },3000);
     
     script.onreadystatechange = handlerC;
-    script.onload = handlerC;
     //createSeats();
 }
 
