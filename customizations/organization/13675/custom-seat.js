@@ -4,8 +4,12 @@ console.log('github code');
 console.log($('.customization-booking-area-wrapper'));
 console.log($(document).find('.customization-booking-area-wrapper'));
 
-$(document).load(function(){
+$('.viovendi_iframe').load(function(){
     console.log('ready doc!');
+    
+    console.log($('.customization-booking-area-wrapper'));
+    console.log($(document).find('.customization-booking-area-wrapper'));
+    
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = "https://cdn-eu.seatsio.net/chart.js";
