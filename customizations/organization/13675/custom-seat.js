@@ -71,6 +71,8 @@ function addSeatScript(){
     wraper.append(div);
     wraper.append(script);
     
+    console.log(seatsio);
+    
     createSeats();
 }
 
