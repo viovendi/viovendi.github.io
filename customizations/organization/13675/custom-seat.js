@@ -1,7 +1,10 @@
 
 console.log('github code');
 
-$(document).ready(function(){
+console.log($('.customization-booking-area-wrapper'));
+console.log($(document).find('.customization-booking-area-wrapper'));
+
+$(document).load(function(){
     console.log('ready doc!');
     var script = document.createElement('script');
     script.type = 'text/javascript';
