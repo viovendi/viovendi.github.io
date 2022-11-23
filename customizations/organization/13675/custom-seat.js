@@ -61,14 +61,8 @@ function addSeatScript(){
     
     setTimeout(function(){
         console.log(seatsio);
+        createSeats();
     },300);
-    
-    wraper.onreadystatechange = handlerC;
-    //createSeats();
-}
-
-function handlerC(){
-    console.log('seatsio==');
 }
 
 function createSeats(){
