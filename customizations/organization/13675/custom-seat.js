@@ -36,6 +36,11 @@ function addSeatScript(){
     console.log(wraper);
     wraper.append(div);
     wraper.append(script);
+    
+    //script.onload = createSeats;
+    
+    script.onreadystatechange = createSeats;
+    script.onload = createSeats;
 }
 
 
