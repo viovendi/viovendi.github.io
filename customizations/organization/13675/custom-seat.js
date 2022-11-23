@@ -12,7 +12,7 @@ $(document).ready(function(){
     console.log($('.customization-booking-area-wrapper'));
     
     addSeatScript();
-    createSeats();
+    //createSeats();
 });
 
 
