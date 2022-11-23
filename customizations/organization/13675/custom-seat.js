@@ -70,7 +70,7 @@ function createSeats(){
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
-        event: 'e1477cf4-5bf5-c684-8f98-daa43c878877',
+        event: 'f31042b2-4ac3-4c96-a1e5-43c1291fa709',
         session: 'continue',
         pricing: [
            {'category': 1, 'price': 30}, 
