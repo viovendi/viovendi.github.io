@@ -27,6 +27,7 @@ function elementVisibleAction(){
     console.log($('.customization-booking-area-wrapper'));
     
     addSeatScript();
+    
 }
 
 
@@ -70,8 +71,7 @@ function addSeatScript(){
     wraper.append(div);
     wraper.append(script);
     
-    script.onreadystatechange = createSeats;
-    script.onload = createSeats;
+    createSeats();
 }
 
 
