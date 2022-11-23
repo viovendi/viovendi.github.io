@@ -20,13 +20,9 @@ function startCustomization(){
 }
 startCustomization();
 
-function elementVisibleAction(){
-    console.log('Start working widget integration.');
-    console.log($('.customization-booking-area-wrapper'));
-    
+function elementVisibleAction(){    
     addSeatScript();
 }
-
 
 /*
 $(window).on('load', function() {
@@ -42,7 +38,6 @@ $(document).ready(function(){
 });
 */
 
-
 function addSeatScript(){
     console.log('addSeatScript');
     
@@ -53,14 +48,12 @@ function addSeatScript(){
     var div = document.createElement('div');
     div.id = 'chart';
     
-    var wraper = $('.customization-booking-area-wrapper');
+    var wraper = $('.customization-booking-area-wrapper > div');
     
-    console.log(wraper);
     wraper.append(div);
     wraper.append(script);
     
     setTimeout(function(){
-        console.log(seatsio);
         createSeats();
     },300);
 }
