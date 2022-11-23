@@ -1,14 +1,18 @@
 
 console.log('github code-!');
 
+console.log(document);
+console.log($('.viovendi_iframe'));
 console.log($('.customization-booking-area-wrapper'));
-console.log($(document).find('.customization-booking-area-wrapper'));
 
 $('.viovendi_iframe').load(function(){
     console.log('ready doc!');
     
+    console.log(document);
+    console.log($('.viovendi_iframe'));
     console.log($('.customization-booking-area-wrapper'));
-    console.log($(document).find('.customization-booking-area-wrapper'));
+    
+    /*
     
     var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -27,6 +31,7 @@ $('.viovendi_iframe').load(function(){
     
     var wraper = document.querySelectorAll('.customization-booking-area-wrapper');
     console.log(wraper);
+    */
     
     //wrapper.append(div);
     //wrapper.append(script);
