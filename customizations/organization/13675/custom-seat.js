@@ -1,9 +1,30 @@
 
 console.log('github code-!');
 
-console.log(document);
+
+console.log($);
+
 console.log($('.viovendi_iframe'));
 console.log($('.customization-booking-area-wrapper'));
+
+
+$(window).on('load', function() {
+    console.log('ready window!');
+    console.log($('.viovendi_iframe'));
+    console.log($('.customization-booking-area-wrapper'));
+});
+
+$('.viovendi_iframe').on('load', function() {
+    console.log('ready freame!');
+    console.log($('.viovendi_iframe'));
+    console.log($('.customization-booking-area-wrapper'));
+});
+
+$(document).ready({
+    console.log('doc ready!');
+    console.log($('.viovendi_iframe'));
+    console.log($('.customization-booking-area-wrapper'));
+};)
 
 $('.viovendi_iframe').load(function(){
     console.log('ready doc!');
@@ -39,7 +60,7 @@ $('.viovendi_iframe').load(function(){
     //div.onload = createSeats();
 });
 
-
+/*
 function createSeats(){
     console.log('createSeats');
     new seatsio.SeatingChart({
@@ -57,3 +78,4 @@ function createSeats(){
         }
     }).render();
 }
+*/
