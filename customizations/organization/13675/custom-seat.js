@@ -72,10 +72,14 @@ function addSeatScript(){
         console.log(seatsio);
     },3000);
     
-    console.log(seatsio);
+    script.onreadystatechange = handlerC;
+    script.onload = handlerC;
     //createSeats();
 }
 
+function handlerC(){
+    console.log('seatsio==');
+}
 
 function createSeats(){
     console.log('createSeats');
