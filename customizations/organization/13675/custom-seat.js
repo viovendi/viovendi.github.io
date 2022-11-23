@@ -73,7 +73,7 @@ function addSeatScript(){
     
     console.log(seatsio);
     
-    createSeats();
+    //createSeats();
 }
 
 
