@@ -24,10 +24,10 @@ $(document).ready(function(){
     console.log('doc ready!');
     console.log($('.viovendi_iframe'));
     console.log($('.customization-booking-area-wrapper'));
-};)
+});
 
 $('.viovendi_iframe').load(function(){
-    console.log('ready doc!');
+    console.log('ready frame elem!');
     
     console.log(document);
     console.log($('.viovendi_iframe'));
