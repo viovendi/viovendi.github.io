@@ -25,7 +25,6 @@ function elementVisibleAction(){
     console.log($('.customization-booking-area-wrapper'));
     
     addSeatScript();
-    
 }
 
 
@@ -66,10 +65,12 @@ function addSeatScript(){
     var wraper = $('.customization-booking-area-wrapper');
     
     console.log(wraper);
-    //wraper.append(div);
-    //wraper.append(script);
+    wraper.append(div);
+    wraper.append(script);
     
-    console.log(seatsio);
+    setTimeout(function(){
+        console.log(seatsio);
+    },3000);
     
     //createSeats();
 }
