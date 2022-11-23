@@ -1,6 +1,34 @@
 
 console.log('github code-!');
 
+function startCustomization(){
+    const observer = new MutationObserver((mutations, obs) => {
+        const page = document.getElementsByClassName(
+        'customization-booking-area-wrapper-page1'
+        );
+    
+        if ($(page).is(':visible')) {
+            console.log("page-1 visible");
+            elementVisibleAction();
+            obs.disconnect();
+            return;
+        }
+    });
+    
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
+startCustomization();
+
+function elementVisibleAction(){
+    console.log('Start working widget integration.');
+    console.log($('.customization-booking-area-wrapper'));
+}
+
+
+/*
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log('addEventListener');
     console.log(document.querySelectorAll('.customization-booking-area-wrapper'));
@@ -10,19 +38,14 @@ $(window).on('load', function() {
     console.log('ready window!');
     console.log($('.customization-booking-area-wrapper'));
     console.log(this.find('.customization-booking-area-wrapper'));
-    //addSeatScript();
 });
 
 $(document).ready(function(){
     console.log('doc ready!');
     console.log($('.customization-booking-area-wrapper'));
     console.log(this.find('.customization-booking-area-wrapper'));
-    
-    //addSeatScript();
-    //createSeats();
 });
-
-document
+*/
 
 
 function addSeatScript(){
