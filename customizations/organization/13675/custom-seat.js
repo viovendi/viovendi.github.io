@@ -31,11 +31,11 @@ function addSeatScript(){
     
     console.log(div);
     
-    var wraper = document.querySelector('.customization-booking-area-wrapper');
+    var wraper = $('.customization-booking-area-wrapper');
     
     console.log(wraper);
-    wrapper.append(div);
-    wrapper.append(script);
+    wraper.append(div);
+    wraper.append(script);
 }
 
 
