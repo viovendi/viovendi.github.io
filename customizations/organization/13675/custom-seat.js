@@ -50,7 +50,7 @@ function addSeatScript(){
     
     var wraper = $('.customization-booking-area-wrapper > div');
     
-    wraper.append(div);
+    wraper.prepend(div);
     wraper.append(script);
     
     setTimeout(function(){
