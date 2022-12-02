@@ -334,22 +334,35 @@ function responseMessage(status) {
 function changeIcon(color) {
   console.log("Change icon: " + color);
   if (color === "orange") {
+
+    $(".ew-confirmation__header svg path").removeAttr("d");
+    $(".ew-confirmation__header svg").css("fill", color);
+
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("!");
     } else {
       $(".ew-confirmation__header").append('<p class="new-icon-logo" style="position: absolute; text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: 16px;" >!</p>');
     }
-    $(".ew-confirmation__header svg path").removeAttr("d");
-    $(".ew-confirmation__header svg").css("fill", color);
     
   } else if(color === "red") {
+
+    $(".ew-confirmation__header svg path").removeAttr("d");
+    $(".ew-confirmation__header svg").css("fill", color);
+
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("X");
     } else {
       $(".ew-confirmation__header").append('<p class="new-icon-logo" style="position: absolute; text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: 16px;" >!</p>');
     }
-    $(".ew-confirmation__header svg path").removeAttr("d");
+  } else if(color === "green") {
+
+    $(".ew-confirmation__header svg path").attr("d", "M11.0205203,5.56352712 L11.0364773,5.57583912 L11.0364773,5.57583912 C11.2030751,5.7119332 11.2344588,5.95441384 11.1079989,6.12843771 L7.94606256,10.4796375 C7.84347249,10.608871 7.75266449,10.6711311 7.67363856,10.6664179 C7.63585699,10.6664179 7.58160265,10.6571371 7.50370494,10.6221328 L7.49512926,10.6254878 L7.34290373,10.5359322 L5.26672972,9.04277639 C5.08696349,8.91349098 5.04604069,8.66295513 5.1753261,8.4831889 C5.17966406,8.47715713 5.18416886,8.4712471 5.18883525,8.46546567 C5.33771758,8.28100791 5.60543856,8.24647219 5.79625771,8.38710882 L7.5658597,9.69103072 L10.513981,5.64320983 C10.6318542,5.48132908 10.8586396,5.44565392 11.0205203,5.56352712 Z");
+
     $(".ew-confirmation__header svg").css("fill", color);
+
+    if($('.new-icon-logo').length){
+      $(".new-icon-logo").hide();
+    }
   }
 }
 
@@ -447,7 +460,7 @@ function sendRequest(object, oid, free_order) {
         loaderOn("off");
 
         $(".ew-confirmation__block").append(
-          '<iframe id="payment_Frame" height="420" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          '<iframe id="payment_Frame" style"display:block; marging: 0 auto; width: 100%" height="420" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         );
 
         addFrameListener();
