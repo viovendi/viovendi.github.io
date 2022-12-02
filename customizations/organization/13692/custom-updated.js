@@ -341,7 +341,7 @@ function changeIcon(color) {
       $(".new-icon-logo").text("!");
       $(".new-icon-logo").css("color", "orange");
     } else {
-      $(".ew-confirmation__header").append('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 68px" >!</p>');
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 68px" >!</p>');
     }
     
   } else if(color === "red") {
@@ -352,7 +352,7 @@ function changeIcon(color) {
       $(".new-icon-logo").text("X");
       $(".new-icon-logo").css("color", "red");
     } else {
-      $(".ew-confirmation__header").append('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 68px" >X</p>');
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: red;color: white;border-radius: 100%;text-align: center;line-height: 68px" >X</p>');
     }
   } else if(color === "green") {
 
