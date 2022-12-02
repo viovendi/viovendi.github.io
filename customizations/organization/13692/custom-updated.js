@@ -26,6 +26,8 @@ var hub_payment_method_arr_options = [
   "Sofortbezahlung",
   "Sofortzahlung via Kreditkarte",
   "Direct payment via credit card",
+  "Zahlung per Kreditkarte (VISA oder Mastercard)",
+  "Payment via Credit Card (VISA or Mastercard only!)"
 ];
 
 // payment humethod names
@@ -207,8 +209,8 @@ function checking_page3() {
 checking_page3();
 
 function checking_page4() {
-  console.log("checking_page4 func");
-  console.log(localStorage.getItem("free_order"));
+  //console.log("checking_page4 func");
+  //console.log(localStorage.getItem("free_order"));
 
   id_page4 = requestAnimationFrame(checking_page4);
   if ($(".customization-booking-area-wrapper-page4").length > 0) {
@@ -216,7 +218,7 @@ function checking_page4() {
 
     stop_checking_page3();
 
-    var payment_method = localStorage.getItem("payment_method");
+    var payment_method = localStorage.getItem("payment_method_upd");
 
     var free_order = localStorage.getItem("free_order");
 
@@ -230,12 +232,8 @@ function checking_page4() {
       if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
         rebuildPageInvoiceConfirm();
       } else if (
-        (!isFuncUsed &&
-          hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
-        (!isFuncUsed &&
-          localStorage
-            .getItem("payment_method_upd")
-            .indexOf("Sofortbezahlung") != -1)
+        (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
+        (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
       ) {
         loaderOn("on");
         sendRequest(obj, organizer_id, free_order);
