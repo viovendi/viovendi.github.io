@@ -335,28 +335,28 @@ function changeIcon(color) {
   console.log("Change icon: " + color);
   if (color === "orange") {
 
-    $(".ew-confirmation__header svg").hide();
+    $(".ew-confirmation__header svg").css("display", "none");
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("!");
       $(".new-icon-logo").css("color", "orange");
     } else {
-      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 68px" >!</p>');
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 72px" >!</p>');
     }
     
   } else if(color === "red") {
 
-    $(".ew-confirmation__header svg").hide();
+    $(".ew-confirmation__header svg").css("display", "none");
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("X");
-      $(".new-icon-logo").css("color", "red");
+      $(".new-icon-logo").css("background", "red");
     } else {
-      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 28px;background: red;color: white;border-radius: 100%;text-align: center;line-height: 68px" >X</p>');
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: red;color: white;border-radius: 100%;text-align: center;line-height: 72px" >X</p>');
     }
   } else if(color === "green") {
 
-    $(".ew-confirmation__header svg").show();
+    $(".ew-confirmation__header svg").css("display", "block");
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").hide();
@@ -458,7 +458,7 @@ function sendRequest(object, oid, free_order) {
         loaderOn("off");
 
         $(".ew-confirmation__block").append(
-          '<iframe id="payment_Frame" style="display:block; margin: 0 auto; width: 100%" height="420" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          '<iframe id="payment_Frame" style="display:block; margin: 0 auto;" height="420" width="560" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         );
 
         addFrameListener();
