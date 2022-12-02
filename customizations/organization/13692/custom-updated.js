@@ -17,6 +17,8 @@ var invoice_payment_method_arr_options = [
   "Bank transfer / on account",
   "Überweisung / auf Rechnung",
   "Überweisung / Kauf auf Rechnung",
+  "Kauf auf Rechnung",
+  "Payment via Invoice"
 ];
 var hub_payment_method_arr_options = [
   "Direct Payment",
@@ -321,8 +323,14 @@ function responseMessage(status) {
   }
 
   changeIcon(color);
+
   $(".ew-confirmation__header .header__label").text(heading);
-  $(".ew-confirmation__block").append('<div style="color:' + color + ' !important;"><h3>' + heading + "</h3><p>" + message + "</p></div>");
+  if ($(".response-message-notice").length) {
+    $(".response-message-notice").text(message);
+  } else {
+    $(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
+  }
+  
 }
 
 function changeIcon(color) {
