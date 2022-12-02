@@ -311,12 +311,12 @@ function responseMessage(status) {
     message = "Oops! Something went wrong. Please try again later.";
     color = "red";
   } else if (status === "attention" && getWidgetLang() === "de") {
-    heading = "Achtung";
-    message = "Fast geschafft. Geben Sie im nächsten Schritt noch Ihre Kreditkartendetails an. ACHTUNG: Halten Sie Ihre VISA oder Mastercard bereit, den 3 D Secure Code und Ihre Geräte für die 2 Faktor Identifizierung!";
+    heading = "Fast geschafft";
+    message = "Geben Sie im nächsten Schritt noch Ihre Kreditkartendetails an. ACHTUNG: Halten Sie Ihre VISA oder Mastercard bereit, den 3 D Secure Code und Ihre Geräte für die 2 Faktor Identifizierung!";
     color = "orange";
   } else if (status === "attention" && getWidgetLang() === "en") {
-    heading = "Attention";
-    message = "Almost completed. Please enter your credit card details in the next step. NOTICE: We only accept VISA or Mastercard. Please have your credit card, the 3 D Secure Code, and your devices for the 2-factor identification at hand!";
+    heading = "Almost completed";
+    message = "Please enter your credit card details in the next step. NOTICE: We only accept VISA or Mastercard. Please have your credit card, the 3 D Secure Code, and your devices for the 2-factor identification at hand!";
     color = "orange";
   }
 
@@ -332,11 +332,12 @@ function responseMessage(status) {
 }
 
 function changeIcon(color) {
+  console.log("Change icon: " + color);
   if (color === "orange") {
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("!");
     } else {
-      $(".ew-confirmation__header vv-icon").append('<p class="new-icon-logo" style="text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: -34px;margin-bottom: 34px;" >!</p>');
+      $(".ew-confirmation__header").append('<p class="new-icon-logo" style="position: absolute; text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: 16px;" >!</p>');
     }
     $(".ew-confirmation__header svg path").removeAttr("d");
     $(".ew-confirmation__header svg").css("fill", color);
@@ -345,7 +346,7 @@ function changeIcon(color) {
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("X");
     } else {
-      $(".ew-confirmation__header vv-icon").append('<p class="new-icon-logo" style="text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: -34px;margin-bottom: 34px;" >!</p>');
+      $(".ew-confirmation__header").append('<p class="new-icon-logo" style="position: absolute; text-align:center;color: white;font-weight:bold;font-size: 29pt;margin-top: 16px;" >!</p>');
     }
     $(".ew-confirmation__header svg path").removeAttr("d");
     $(".ew-confirmation__header svg").css("fill", color);
@@ -446,7 +447,7 @@ function sendRequest(object, oid, free_order) {
         loaderOn("off");
 
         $(".ew-confirmation__block").append(
-          '<iframe id="payment_Frame" width="560" height="420" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          '<iframe id="payment_Frame" height="420" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         );
 
         addFrameListener();
