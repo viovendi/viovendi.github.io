@@ -335,7 +335,7 @@ function changeIcon(color) {
   console.log("Change icon: " + color);
   if (color === "orange") {
 
-    $(".ew-confirmation__header svg").css("display", "none");
+    $(".ew-confirmation__header vv-icon").hide();
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("!");
@@ -346,7 +346,7 @@ function changeIcon(color) {
     
   } else if(color === "red") {
 
-    $(".ew-confirmation__header svg").css("display", "none");
+    $(".ew-confirmation__header vv-icon").hide();
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").text("X");
@@ -356,7 +356,7 @@ function changeIcon(color) {
     }
   } else if(color === "green") {
 
-    $(".ew-confirmation__header svg").css("display", "block");
+    $(".ew-confirmation__header vv-icon").show();
 
     if($('.new-icon-logo').length){
       $(".new-icon-logo").hide();
@@ -458,7 +458,7 @@ function sendRequest(object, oid, free_order) {
         loaderOn("off");
 
         $(".ew-confirmation__block").append(
-          '<iframe id="payment_Frame" style="display:block; margin: 0 auto;" height="420" width="560" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          '<iframe id="payment_Frame" style="display:block; margin: 0 auto;" height="420" width="330" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         );
 
         addFrameListener();
