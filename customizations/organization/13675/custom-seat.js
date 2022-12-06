@@ -88,6 +88,8 @@ function setTicketCategoryChosen(ticketLabel, action){
                 number++;
             }
             $(this).find('.vv-selection-input__value').text(+number);
+            $('.vv-single-select-option--extended').click();
+            $('.vv-single-select-option--extended').trigger('click');
         }
 
     });
