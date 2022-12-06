@@ -72,6 +72,20 @@ function createSeats(){
         ],
         priceFormatter: function(price) {
             return '$' + price;
+        },
+        onObjectSelected: function (object) {
+            // add the selected seat id to the array
+            console.log('onObjectSelected');
+            console.log(object);
+            selectedSeats.push(object.label);
+        },
+        onObjectDeselected: function (object) {
+            // remove the deselected seat id from the array
+            console.log('onObjectDeselected');
+            console.log(object);
+            
+            var index = selectedSeats.indexOf(object.label);
+            if (index !== -1) selectedSeats.splice(index, 1);
         }
     }).render();
 }
