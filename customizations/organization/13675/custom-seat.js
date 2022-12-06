@@ -68,13 +68,14 @@ function submitButton(){
 function setTicketCategoryChosen(ticketLabel, action){
     console.log('setTicketCategoryChosen');
     console.log(ticketLabel);
+    console.log(tmapObject.ticketLabel);
     console.log(selectedSeats);
     
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
-        if(categoryName === ticketLabel){
+        if(categoryName === tmapObject.ticketLabel){
             let number = parsInt($(this).find('.vv-selection-input__value').text().trim());
             console.log(number);
             if(action === 'remove' && number > 0){
@@ -87,12 +88,7 @@ function setTicketCategoryChosen(ticketLabel, action){
             console.log(number);
             $(this).find('.vv-selection-input__value').text(+number);
         }
-       
-        console.log(categoryName);
-        console.log(mapObject.categoryName);
-        
-        //mapObj.categoryName
-        
+
     });
 }
 
@@ -100,9 +96,9 @@ function setTicketCategoryChosen(ticketLabel, action){
 
 // object for ticket cat mapping
 var mapObject = {
-    'Cat 1': 'T',
-    'Cat 2': 'A',
-    'Cat 3': 'B'
+    'T': 'Cat 1',
+    'A': 'Cat 2',
+    'B': 'Cat 3'
 };
 
 /*************
