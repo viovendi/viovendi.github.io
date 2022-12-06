@@ -58,6 +58,27 @@ function addSeatScript(){
     },500);
 }
 
+function submitButton(){
+    $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
+        e.preventDefault();
+        console.log('submitButton');
+    });
+}
+
+function setTicketCategoryChosen(){
+    console.log('setTicketCategoryChosen');
+}
+
+// object for ticket cat mapping
+var mapObject = {
+    1: 'Cat1',
+    2: 'Cat2',
+    3: 'Cat3'
+};
+
+// array for chosen tickets
+var selectedSeats = [];
+
 function createSeats(){
     console.log('createSeats');
     new seatsio.SeatingChart({
