@@ -65,14 +65,31 @@ function submitButton(){
     });
 }
 
-function setTicketCategoryChosen(ticketObj, mapObj){
+function setTicketCategoryChosen(ticketLabel, action){
     console.log('setTicketCategoryChosen');
+    console.log(ticketLabel);
+    console.log(selectedSeats);
+    
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
+        if(categoryName === ticketLabel){
+            let number = parsInt($(this).find('.vv-selection-input__value').text().trim());
+            console.log(number);
+            if(action === 'remove' && number > 0){
+                number--;
+            }
+            
+            if(action === 'add'){
+                number++;
+            }
+            console.log(number);
+            $(this).find('.vv-selection-input__value').text(+number);
+        }
+       
         console.log(categoryName);
-        console.log(mapObj.categoryName);
+        console.log(mapObject.categoryName);
         
         //mapObj.categoryName
         
@@ -114,8 +131,9 @@ function createSeats(){
             // add the selected seat id to the array
             console.log('onObjectSelected');
             console.log(object);
+            
             selectedSeats.push(object.label);
-            setTicketCategoryChosen(selectedSeats);
+            setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
@@ -125,7 +143,7 @@ function createSeats(){
             var index = selectedSeats.indexOf(object.label);
             if (index !== -1) selectedSeats.splice(index, 1);
             
-            setTicketCategoryChosen(selectedSeats);
+            setTicketCategoryChosen(object.category.label, 'remove');
         }
     }).render();
 }
