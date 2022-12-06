@@ -58,6 +58,15 @@ function addSeatScript(){
     },500);
 }
 
+
+// object for ticket cat mapping
+var mapObject = {
+    'T': 'Cat 1',
+    'A': 'Cat 2',
+    'B': 'Cat 3'
+};
+
+
 function submitButton(){
     $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
         e.preventDefault();
@@ -68,6 +77,7 @@ function submitButton(){
 function setTicketCategoryChosen(ticketLabel, action){
     console.log('setTicketCategoryChosen');
     console.log(ticketLabel);
+    console.log(mapObject);
     console.log(mapObject.ticketLabel);
     console.log(selectedSeats);
     
@@ -91,15 +101,6 @@ function setTicketCategoryChosen(ticketLabel, action){
 
     });
 }
-
-
-
-// object for ticket cat mapping
-var mapObject = {
-    'T': 'Cat 1',
-    'A': 'Cat 2',
-    'B': 'Cat 3'
-};
 
 /*************
 Seats.io
