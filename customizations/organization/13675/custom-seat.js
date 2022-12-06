@@ -86,7 +86,7 @@ function setTicketCategoryChosen(ticketLabel, action){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
         if(categoryName === mapObject[ticketLabel]){
-            let number = parsInt($(this).find('.vv-selection-input__value').text().trim());
+            let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
             console.log(number);
             if(action === 'remove' && number > 0){
                 number--;
