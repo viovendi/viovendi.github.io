@@ -65,16 +65,32 @@ function submitButton(){
     });
 }
 
-function setTicketCategoryChosen(){
+function setTicketCategoryChosen(ticketObj, mapObj){
     console.log('setTicketCategoryChosen');
+    
+    $('.event-categories li').each(function(){
+        const categoryName = $(this).find('.customization-category-name').text().trim();
+        
+        console.log(categoryName);
+        console.log(mapObj.categoryName);
+        
+        //mapObj.categoryName
+        
+    });
 }
+
+
 
 // object for ticket cat mapping
 var mapObject = {
-    1: 'Cat1',
-    2: 'Cat2',
-    3: 'Cat3'
+    'Cat 1': 'T',
+    'Cat 2': 'A',
+    'Cat 3': 'B'
 };
+
+/*************
+Seats.io
+*************/
 
 // array for chosen tickets
 var selectedSeats = [];
@@ -87,9 +103,9 @@ function createSeats(){
         event: 'f31042b2-4ac3-4c96-a1e5-43c1291fa709',
         session: 'continue',
         pricing: [
-           {'category': 1, 'price': 30}, 
-           {'category': 2, 'price': 40}, 
-           {'category': 3, 'price': 50}
+           {'category': 'A', 'price': 30}, 
+           {'category': 'B', 'price': 40}, 
+           {'category': 'T', 'price': 50}
         ],
         priceFormatter: function(price) {
             return '$' + price;
@@ -99,6 +115,7 @@ function createSeats(){
             console.log('onObjectSelected');
             console.log(object);
             selectedSeats.push(object.label);
+            setTicketCategoryChosen(selectedSeats);
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
@@ -107,6 +124,8 @@ function createSeats(){
             
             var index = selectedSeats.indexOf(object.label);
             if (index !== -1) selectedSeats.splice(index, 1);
+            
+            setTicketCategoryChosen(selectedSeats);
         }
     }).render();
 }
