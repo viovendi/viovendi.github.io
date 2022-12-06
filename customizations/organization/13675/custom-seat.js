@@ -61,9 +61,9 @@ function addSeatScript(){
 
 // object for ticket cat mapping
 var mapObject = {
-    'T': 'Cat 1',
-    'A': 'Cat 2',
-    'B': 'Cat 3'
+    T: 'Cat 1',
+    A: 'Cat 2',
+    B: 'Cat 3'
 };
 
 
@@ -79,6 +79,7 @@ function setTicketCategoryChosen(ticketLabel, action){
     console.log(ticketLabel);
     console.log(mapObject);
     console.log(mapObject.ticketLabel);
+    console.log(mapObject[ticketLabel]);
     console.log(selectedSeats);
     
     
