@@ -68,14 +68,14 @@ function submitButton(){
 function setTicketCategoryChosen(ticketLabel, action){
     console.log('setTicketCategoryChosen');
     console.log(ticketLabel);
-    console.log(tmapObject.ticketLabel);
+    console.log(mapObject.ticketLabel);
     console.log(selectedSeats);
     
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
-        if(categoryName === tmapObject.ticketLabel){
+        if(categoryName === mapObject.ticketLabel){
             let number = parsInt($(this).find('.vv-selection-input__value').text().trim());
             console.log(number);
             if(action === 'remove' && number > 0){
