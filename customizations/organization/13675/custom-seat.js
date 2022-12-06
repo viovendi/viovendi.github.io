@@ -55,7 +55,7 @@ function addSeatScript(){
     
     setTimeout(function(){
         createSeats();
-    },300);
+    },500);
 }
 
 function createSeats(){
