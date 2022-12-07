@@ -115,30 +115,30 @@ async function getPage(page) {
 
 
 
+function startCustomization(){
+  const observer = new MutationObserver((mutations, obs) => {
+      const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
 
+      if ($(page).is(':visible')) {
+          console.log("page-1 visible");
+          elementVisibleAction();
+          obs.disconnect();
+          return;
+      }
+  });
 
-//function startCustomization(){
-    const observer = new MutationObserver((mutations, obs) => {
-        const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
-    
-        if ($(page).is(':visible')) {
-            console.log("page-1 visible");
-            elementVisibleAction();
-            obs.disconnect();
-            return;
-        }
-    });
-    
-    observer.observe(document, {
-        childList: true,
-        subtree: true
-    });
-//}
-//startCustomization();
+  observer.observe(document, {
+      childList: true,
+      subtree: true
+  });
+}
+startCustomization();
 
 function elementVisibleAction(){    
     addSeatScript();
 }
+
+
 
 /*
 $(window).on('load', function() {
@@ -153,6 +153,8 @@ $(document).ready(function(){
     console.log(this.find('.customization-booking-area-wrapper'));
 });
 */
+
+
 
 function addSeatScript(){
     console.log('addSeatScript');
@@ -182,14 +184,6 @@ var mapObject = {
     B: 'Cat 3'
 };
 
-/*
-function submitButton(){
-    $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
-        e.preventDefault();
-        console.log('submitButton');
-    });
-}*/
-
 function setTicketCategoryChosen(ticketLabel, action){
     
     $('.event-categories li').each(function(){
@@ -209,9 +203,11 @@ function setTicketCategoryChosen(ticketLabel, action){
             */
             
             var selectedInput = $(this).find('.vv-selection-input__value');
+            console.log('selectedInput');
             console.log(selectedInput);
             
             var allOptions = $(this).find('.vv-single-select-option');
+            console.log('allOptions');
             console.log(allOptions);
             
             if(action === 'add'){
@@ -219,6 +215,7 @@ function setTicketCategoryChosen(ticketLabel, action){
             }else{
                 selectedInput.textContent = `${+selectedInput.textContent - 1}`;
             }
+            console.log('selectedInput');
             console.log(selectedInput);
             
             selectOptions(allOptions, selectedInput);
@@ -243,10 +240,15 @@ function setTicketCategoryChosen(ticketLabel, action){
 }
 
 function selectOptions(options, selectedInput) {
+  console.log('func selectOptions');
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
     var inputNumber = +selectedInput.textContent;
 
+    console.log('optionsNumber+inputNumber');
+    console.log(optionsNumber);
+    console.log(inputNumber);
+    
     if (optionsNumber === inputNumber) {
       options[y].dispatchEvent(new Event("change"));
       options[y].click();
