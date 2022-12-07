@@ -1,21 +1,24 @@
 
 console.log('github code-!');
 
-/*
 async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
 
     await getPage("page1");
-    createButtons();
-    addTicket();
-    subtractTicket();
+    console.log("page1!");
+    addSeatScript();
+    //createButtons();
+    //addTicket();
+    //subtractTicket();
 
     await getPage("page2");
+    console.log("page2!");
 
-    automaticaClicking();
+    //automaticaClicking();
 
     // check if free order
+    /*
     if(isFreeOrder()){
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       prefillTermsCheckBox();
@@ -37,44 +40,41 @@ async function hendler() {
       },
       "*"
     );
+    */
     
   }
 }
 
-if (url.includes("booking-14426-34087")) {
+//if (url.includes("booking-14426-34087")) {
   var insertionListener = function (event) {
     if (event.animationName === "nodeInsertedPOS") {
       hendler();
     }
   };
   hendler();
-  setCSSstyles();
-}
+//}
 
 function setCSSstyles() {
   var style = document.createElement("style");
   style.innerHTML = `
-  .customization-booking-area-wrapper-page1 form {
-    display: flex;
-    flex-direction: column-reverse;
-  }
   @keyframes nodeInsertedSeats {
     from { opacity: 0.99; }
     to { opacity: 1; }
   }
   .event-booking-widget .customization-booking-area-wrapper-page1{
     animation-duration: 0.1s;
-    animation-name: nodeInsertedPOS;
+    animation-name: nodeInsertedSeats;
   }`;
 };
+setCSSstyles();
   
   
 async function getPage(page) {
   var pages = {
     page1: "customization-booking-area-wrapper-page1",
     page2: "customization-booking-area-wrapper-page2",
-    page3: "customization2_payment_title",
-    page4: "customization-confirmation-label",
+    //page3: "customization2_payment_title",
+    //page4: "customization-confirmation-label",
   };
   return new Promise(function (resolve, reject) {
     try {
@@ -110,9 +110,6 @@ async function getPage(page) {
   });
 }
 
-*/
-
-
 
 /*
 function startCustomization(){
@@ -133,13 +130,13 @@ function startCustomization(){
   });
 }
 startCustomization();
-*/
+
 
 
 function elementVisibleAction(){
     addSeatScript();
 }
-
+*/
 
 
 function addSeatScript(){
