@@ -190,17 +190,6 @@ function setTicketCategoryChosen(ticketLabel, action){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
         if(categoryName === mapObject[ticketLabel]){
-            //let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
-            /*
-            if(action === 'remove' && number > 0){
-                number--;
-            }
-            if(action === 'add'){
-                number++;
-            }
-            $(this).find('.vv-selection-input__value').text(+number);
-            $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
-            */
             
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             console.log('selectedInputNum-in');
@@ -211,32 +200,14 @@ function setTicketCategoryChosen(ticketLabel, action){
             console.log(allOptions);
             
             if(action === 'add'){
-              //selectedInput.textContent = `${+selectedInput.textContent + 1}`;
               selectedInputNum++;
             }else{
-              //selectedInput.textContent = `${+selectedInput.textContent - 1}`;
               selectedInputNum--;
             }
             console.log('selectedInputNum-out');
             console.log(selectedInputNum);
             
             selectOptions(allOptions, selectedInputNum);
-            
-            /*
-              for (var j = 0; j < nodes.length; j++) {
-                if (nodes[j].nodeName.toLowerCase() === "vv-selection") {
-                  var selectedInput = nodes[j].querySelector(
-                    ".vv-selection-input__value"
-                  );
-                  var allOptions = nodes[j].querySelectorAll(
-                    ".vv-single-select-option"
-                  );
-                  selectedInput.textContent = `${+selectedInput.textContent + 1}`;
-                  selectOptions(allOptions, selectedInput);
-                }
-              }
-            */
-            
         }
     });
 }
@@ -244,9 +215,11 @@ function setTicketCategoryChosen(ticketLabel, action){
 function selectOptions(options, selectedInput) {
   console.log('func selectOptions');
   
-  var inputNumber = +selectedInput.textContent.trim();
+  var inputNumber = +selectedInput;
   
   for (var y = 0; y < options.length; y++) {
+    console.log('options[y]');
+    console.log(options[y]);
     var optionsNumber = +options[y].textContent.trim();
 
     console.log('optionsNumber+inputNumber');
