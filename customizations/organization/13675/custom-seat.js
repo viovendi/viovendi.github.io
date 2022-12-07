@@ -154,15 +154,18 @@ function selectOptions(options, selectedInput) {
     
     if (optionsNumber === inputNumber) {
       console.log(options[y]);
+
+      options[y].addEventListener('click', e => {});
+      options[y].dispatchEvent(new Event('click'));
         
-      options[y].dispatchEvent(new Event("change"));
-      options[y].click();
-      options[y].trigger('click');
+      //options[y].dispatchEvent(new Event("change"));
+      //options[y].click();
+      //options[y].trigger('click');
         
         setTimeout(function(){
             console.log('setTimeout-click');
             options[y].click();
-        },3000);
+        },2000);
     }
   }
 }
