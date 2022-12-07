@@ -206,8 +206,8 @@ function setTicketCategoryChosen(ticketLabel, action){
             console.log('selectedInput');
             console.log(selectedInput);
           
-          console.log(selectedInput.innerText);
-          console.log(selectedInput.text());
+          console.log(selectedInput[0].innerText);
+          console.log(selectedInput.text().trim());
           
             
             var allOptions = $(this).find('.vv-single-select-option');
