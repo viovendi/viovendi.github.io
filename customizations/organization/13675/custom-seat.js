@@ -101,13 +101,11 @@ function addSeatScript(){
     wraper.append(script);
     
     // TODO replace with onReady function
-    /*
+    
     setTimeout(function(){
         createSeats();
     },500);
-    */
     
-    createSeats();
 }
 
 
