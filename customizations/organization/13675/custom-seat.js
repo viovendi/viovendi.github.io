@@ -1,7 +1,123 @@
 
 console.log('github code-!');
 
-function startCustomization(){
+/*
+async function hendler() {
+  if (document.readyState !== "loading") {
+    console.log("document is already ready");
+
+    await getPage("page1");
+    createButtons();
+    addTicket();
+    subtractTicket();
+
+    await getPage("page2");
+
+    automaticaClicking();
+
+    // check if free order
+    if(isFreeOrder()){
+      getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      prefillTermsCheckBox();
+    }else{
+      await getPage("page3");
+      prefillPaymentMethod("customization2_organizer-bank-transfer_button");
+      prefillTermsCheckBox();
+      getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    }
+
+    var result = await getPage("page4");
+    var dooOrder = getOrderInformation(result.dataLayer);
+    var order = localStorage.getItem("order");
+
+    parent.postMessage(
+      {
+        dooOrder,
+        order,
+      },
+      "*"
+    );
+    
+  }
+}
+
+if (url.includes("booking-14426-34087")) {
+  var insertionListener = function (event) {
+    if (event.animationName === "nodeInsertedPOS") {
+      hendler();
+    }
+  };
+  hendler();
+  setCSSstyles();
+}
+
+function setCSSstyles() {
+  var style = document.createElement("style");
+  style.innerHTML = `
+  .customization-booking-area-wrapper-page1 form {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @keyframes nodeInsertedPOS {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+  }
+  .event-booking-widget .customization-booking-area-wrapper-page1{
+    animation-duration: 0.1s;
+    animation-name: nodeInsertedPOS;
+  }`;
+};
+  
+  
+async function getPage(page) {
+  var pages = {
+    page1: "customization-booking-area-wrapper-page1",
+    page2: "customization-booking-area-wrapper-page2",
+    page3: "customization2_payment_title",
+    page4: "customization-confirmation-label",
+  };
+  return new Promise(function (resolve, reject) {
+    try {
+      const element = document.querySelector("body");
+
+      var observer = new MutationObserver(pageLoaded);
+
+      function pageLoaded(mutations) {
+        mutations.forEach((mutation) => {
+          var classList = mutation.target.classList
+            ? [...mutation.target.classList]
+            : [];
+          if (
+            mutation.type === "childList" &&
+            classList.indexOf(pages[page]) != -1
+          ) {
+            resolve({
+              selector: document.querySelector("." + pages[page]),
+              dataLayer: dataLayer,
+            });
+          }
+        });
+      }
+
+      observer.observe(element, {
+        characterData: true,
+        subtree: true,
+        childList: true,
+      });
+    } catch (error) {
+      reject(new Error(error));
+    }
+  });
+}
+
+*/
+
+
+
+
+
+
+//function startCustomization(){
     const observer = new MutationObserver((mutations, obs) => {
         const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
     
@@ -17,8 +133,8 @@ function startCustomization(){
         childList: true,
         subtree: true
     });
-}
-startCustomization();
+//}
+//startCustomization();
 
 function elementVisibleAction(){    
     addSeatScript();
@@ -80,7 +196,8 @@ function setTicketCategoryChosen(ticketLabel, action){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
         if(categoryName === mapObject[ticketLabel]){
-            let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            //let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            /*
             if(action === 'remove' && number > 0){
                 number--;
             }
@@ -88,11 +205,53 @@ function setTicketCategoryChosen(ticketLabel, action){
                 number++;
             }
             $(this).find('.vv-selection-input__value').text(+number);
-            
             $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
+            */
+            
+            var selectedInput = $(this).find('.vv-selection-input__value');
+            console.log(selectedInput);
+            
+            var allOptions = $(this).find('.vv-single-select-option');
+            console.log(allOptions);
+            
+            if(action === 'add'){
+                selectedInput.textContent = `${+selectedInput.textContent + 1}`;
+            }else{
+                selectedInput.textContent = `${+selectedInput.textContent - 1}`;
+            }
+            console.log(selectedInput);
+            
+            selectOptions(allOptions, selectedInput);
+            
+            /*
+              for (var j = 0; j < nodes.length; j++) {
+                if (nodes[j].nodeName.toLowerCase() === "vv-selection") {
+                  var selectedInput = nodes[j].querySelector(
+                    ".vv-selection-input__value"
+                  );
+                  var allOptions = nodes[j].querySelectorAll(
+                    ".vv-single-select-option"
+                  );
+                  selectedInput.textContent = `${+selectedInput.textContent + 1}`;
+                  selectOptions(allOptions, selectedInput);
+                }
+              }
+            */
+            
         }
-
     });
+}
+
+function selectOptions(options, selectedInput) {
+  for (var y = 0; y < options.length; y++) {
+    var optionsNumber = +options[y].textContent.trim();
+    var inputNumber = +selectedInput.textContent;
+
+    if (optionsNumber === inputNumber) {
+      options[y].dispatchEvent(new Event("change"));
+      options[y].click();
+    }
+  }
 }
 
 /*************
