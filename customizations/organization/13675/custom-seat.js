@@ -147,7 +147,6 @@ function setTicketCategoryChosen(ticketLabel, action){
 }
 
 function selectOptions(options, selectedInput) {
-  console.log('func selectOptions');
   
   var inputNumber = +selectedInput;
   for (var y = 0; y < options.length; y++) {
@@ -158,6 +157,12 @@ function selectOptions(options, selectedInput) {
         
       options[y].dispatchEvent(new Event("change"));
       options[y].click();
+      options[y].trigger('click');
+        
+        setTimeout(function(){
+            console.log('setTimeout-click');
+            options[y].click();
+        },3000);
     }
   }
 }
