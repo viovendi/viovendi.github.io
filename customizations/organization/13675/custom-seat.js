@@ -1,42 +1,143 @@
 
 console.log('github code-!');
 
-function startCustomization(){
-    const observer = new MutationObserver((mutations, obs) => {
-        const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+async function hendler() {
+  if (document.readyState !== "loading") {
+    console.log("document is already ready");
+
+    await getPage("page1");
+    console.log("page1!");
+    addSeatScript();
+    //createButtons();
+    //addTicket();
+    //subtractTicket();
+
+    await getPage("page2");
+    console.log("page2!");
+
+    //automaticaClicking();
+
+    // check if free order
+    /*
+    if(isFreeOrder()){
+      getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      prefillTermsCheckBox();
+    }else{
+      await getPage("page3");
+      prefillPaymentMethod("customization2_organizer-bank-transfer_button");
+      prefillTermsCheckBox();
+      getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    }
+
+    var result = await getPage("page4");
+    var dooOrder = getOrderInformation(result.dataLayer);
+    var order = localStorage.getItem("order");
+
+    parent.postMessage(
+      {
+        dooOrder,
+        order,
+      },
+      "*"
+    );
+    */
     
-        if ($(page).is(':visible')) {
-            console.log("page-1 visible");
-            elementVisibleAction();
-            obs.disconnect();
-            return;
-        }
-    });
-    
-    observer.observe(document, {
+  }
+}
+
+//if (url.includes("booking-14426-34087")) {
+  var insertionListener = function (event) {
+    if (event.animationName === "nodeInsertedPOS") {
+      hendler();
+    }
+  };
+  hendler();
+//}
+
+function setCSSstyles() {
+  var style = document.createElement("style");
+  style.innerHTML = `
+  @keyframes nodeInsertedSeats {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+  }
+  .event-booking-widget .customization-booking-area-wrapper-page1{
+    animation-duration: 0.1s;
+    animation-name: nodeInsertedSeats;
+  }`;
+};
+setCSSstyles();
+  
+  
+async function getPage(page) {
+  var pages = {
+    page1: "customization-booking-area-wrapper-page1",
+    page2: "customization-booking-area-wrapper-page2",
+    //page3: "customization2_payment_title",
+    //page4: "customization-confirmation-label",
+  };
+  return new Promise(function (resolve, reject) {
+    try {
+      const element = document.querySelector("body");
+
+      var observer = new MutationObserver(pageLoaded);
+
+      function pageLoaded(mutations) {
+        mutations.forEach((mutation) => {
+          var classList = mutation.target.classList
+            ? [...mutation.target.classList]
+            : [];
+          if (
+            mutation.type === "childList" &&
+            classList.indexOf(pages[page]) != -1
+          ) {
+            resolve({
+              selector: document.querySelector("." + pages[page]),
+              dataLayer: dataLayer,
+            });
+          }
+        });
+      }
+
+      observer.observe(element, {
+        characterData: true,
+        subtree: true,
         childList: true,
-        subtree: true
-    });
+      });
+    } catch (error) {
+      reject(new Error(error));
+    }
+  });
+}
+
+
+/*
+function startCustomization(){
+  const observer = new MutationObserver((mutations, obs) => {
+      const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
+
+      if ($(page).is(':visible')) {
+          console.log("page-1 visible");
+          elementVisibleAction();
+          obs.disconnect();
+          return;
+      }
+  });
+
+  observer.observe(document, {
+      childList: true,
+      subtree: true
+  });
 }
 startCustomization();
 
-function elementVisibleAction(){    
+
+
+function elementVisibleAction(){
     addSeatScript();
 }
-
-/*
-$(window).on('load', function() {
-    console.log('ready window!');
-    console.log($('.customization-booking-area-wrapper'));
-    console.log(this.find('.customization-booking-area-wrapper'));
-});
-
-$(document).ready(function(){
-    console.log('doc ready!');
-    console.log($('.customization-booking-area-wrapper'));
-    console.log(this.find('.customization-booking-area-wrapper'));
-});
 */
+
 
 function addSeatScript(){
     console.log('addSeatScript');
@@ -53,6 +154,7 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(script);
     
+  // TODO replace with onReady function
     setTimeout(function(){
         createSeats();
     },500);
@@ -66,33 +168,55 @@ var mapObject = {
     B: 'Cat 3'
 };
 
-/*
-function submitButton(){
-    $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
-        e.preventDefault();
-        console.log('submitButton');
-    });
-}*/
-
 function setTicketCategoryChosen(ticketLabel, action){
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
         if(categoryName === mapObject[ticketLabel]){
-            let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
-            if(action === 'remove' && number > 0){
-                number--;
-            }
-            if(action === 'add'){
-                number++;
-            }
-            $(this).find('.vv-selection-input__value').text(+number);
             
-            $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
+            var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            console.log('selectedInputNum-in');
+            console.log(selectedInputNum);
+            
+            var allOptions = $(this).find('.vv-single-select-option');
+            console.log('allOptions');
+            console.log(allOptions);
+            
+            if(action === 'add'){
+              // add record to the state obj
+              selectedInputNum++;
+            }else{
+              // add record to the state obj
+              selectedInputNum--;
+            }
+            console.log('selectedInputNum-out');
+            console.log(selectedInputNum);
+            
+            selectOptions(allOptions, selectedInputNum);
         }
-
     });
+}
+
+function selectOptions(options, selectedInput) {
+  console.log('func selectOptions');
+  
+  var inputNumber = +selectedInput;
+  
+  for (var y = 0; y < options.length; y++) {
+    console.log('options[y]');
+    console.log(options[y]);
+    var optionsNumber = +options[y].textContent.trim();
+
+    console.log('optionsNumber+inputNumber');
+    console.log(optionsNumber);
+    console.log(inputNumber);
+    
+    if (optionsNumber === inputNumber) {
+      options[y].dispatchEvent(new Event("change"));
+      options[y].click();
+    }
+  }
 }
 
 /*************
