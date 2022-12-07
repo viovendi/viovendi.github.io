@@ -202,27 +202,25 @@ function setTicketCategoryChosen(ticketLabel, action){
             $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
             */
             
-            var selectedInput = $(this).find('.vv-selection-input__value');
-            console.log('selectedInput');
-            console.log(selectedInput);
-          
-          console.log(selectedInput[0].innerText);
-          console.log(selectedInput.text().trim());
-          
+            var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            console.log('selectedInputText-in');
+            console.log(selectedInputText);
             
             var allOptions = $(this).find('.vv-single-select-option');
             console.log('allOptions');
             console.log(allOptions);
             
             if(action === 'add'){
-                selectedInput.textContent = `${+selectedInput.textContent + 1}`;
+              //selectedInput.textContent = `${+selectedInput.textContent + 1}`;
+              selectedInputText++;
             }else{
-                selectedInput.textContent = `${+selectedInput.textContent - 1}`;
+              //selectedInput.textContent = `${+selectedInput.textContent - 1}`;
+              selectedInputText--;
             }
-            console.log('selectedInput');
-            console.log(selectedInput);
+            console.log('selectedInput-out');
+            console.log(selectedInputText);
             
-            selectOptions(allOptions, selectedInput);
+            selectOptions(allOptions, selectedInputText);
             
             /*
               for (var j = 0; j < nodes.length; j++) {
