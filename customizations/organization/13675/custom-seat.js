@@ -58,7 +58,7 @@ function setCSSstyles() {
     display: flex;
     flex-direction: column-reverse;
   }
-  @keyframes nodeInsertedPOS {
+  @keyframes nodeInsertedSeats {
     from { opacity: 0.99; }
     to { opacity: 1; }
   }
@@ -114,7 +114,7 @@ async function getPage(page) {
 
 
 
-
+/*
 function startCustomization(){
   const observer = new MutationObserver((mutations, obs) => {
       const page = document.getElementsByClassName('customization-booking-area-wrapper-page1');
@@ -133,26 +133,12 @@ function startCustomization(){
   });
 }
 startCustomization();
+*/
 
-function elementVisibleAction(){    
+
+function elementVisibleAction(){
     addSeatScript();
 }
-
-
-
-/*
-$(window).on('load', function() {
-    console.log('ready window!');
-    console.log($('.customization-booking-area-wrapper'));
-    console.log(this.find('.customization-booking-area-wrapper'));
-});
-
-$(document).ready(function(){
-    console.log('doc ready!');
-    console.log($('.customization-booking-area-wrapper'));
-    console.log(this.find('.customization-booking-area-wrapper'));
-});
-*/
 
 
 
@@ -171,6 +157,7 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(script);
     
+  // TODO replace with onReady function
     setTimeout(function(){
         createSeats();
     },500);
@@ -200,8 +187,10 @@ function setTicketCategoryChosen(ticketLabel, action){
             console.log(allOptions);
             
             if(action === 'add'){
+              // add record to the state obj
               selectedInputNum++;
             }else{
+              // add record to the state obj
               selectedInputNum--;
             }
             console.log('selectedInputNum-out');
