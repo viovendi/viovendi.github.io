@@ -1,6 +1,7 @@
 
-console.log('github code-!');
+console.log('github code');
 
+// calls from custom.js (s3)
 async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
@@ -45,14 +46,6 @@ async function hendler() {
   }
 }
 
-//if (url.includes("booking-14426-34087")) {
-  var insertionListener = function (event) {
-    if (event.animationName === "nodeInsertedSeats") {
-      hendler();
-    }
-  };
-  hendler();
-//}
 
 function setCSSstyles() {
   var style = document.createElement("style");
