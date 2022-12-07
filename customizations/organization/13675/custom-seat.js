@@ -241,9 +241,11 @@ function setTicketCategoryChosen(ticketLabel, action){
 
 function selectOptions(options, selectedInput) {
   console.log('func selectOptions');
+  
+  var inputNumber = +selectedInput.textContent.trim();
+  
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
-    var inputNumber = +selectedInput.textContent;
 
     console.log('optionsNumber+inputNumber');
     console.log(optionsNumber);
