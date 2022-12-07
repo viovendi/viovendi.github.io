@@ -1,7 +1,18 @@
 
 console.log('github code');
 
-// calls from custom.js (s3)
+
+var insertionListener = function (event) {
+    if (event.animationName === "nodeInsertedSeats") {
+        hendler();
+    }
+};
+hendler();
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
+
 async function hendler() {
   if (document.readyState !== "loading") {
     console.log("document is already ready");
