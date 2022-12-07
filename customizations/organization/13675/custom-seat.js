@@ -66,13 +66,13 @@ var mapObject = {
     B: 'Cat 3'
 };
 
-
+/*
 function submitButton(){
     $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
         e.preventDefault();
         console.log('submitButton');
     });
-}
+}*/
 
 function setTicketCategoryChosen(ticketLabel, action){
     
@@ -88,8 +88,8 @@ function setTicketCategoryChosen(ticketLabel, action){
                 number++;
             }
             $(this).find('.vv-selection-input__value').text(+number);
-            $('.vv-single-select-option--extended').click();
-            $('.vv-single-select-option--extended').trigger('click');
+            
+            $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
         }
 
     });
