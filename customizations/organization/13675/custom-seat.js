@@ -160,12 +160,12 @@ function selectOptions(options, selectedInput) {
         
       //options[y].dispatchEvent(new Event("change"));
       //options[y].click();
-      //options[y].trigger('click');
         
-        setTimeout(function(){
-            console.log('setTimeout-click');
-            options[y].click();
-        },2000);
+        options[y].closest('vv-single-select-option').click();
+        
+        options[y].parent().click();
+        
+      //options[y].trigger('click');
     }
   }
 }
