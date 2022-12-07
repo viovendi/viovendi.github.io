@@ -47,7 +47,7 @@ async function hendler() {
 
 //if (url.includes("booking-14426-34087")) {
   var insertionListener = function (event) {
-    if (event.animationName === "nodeInsertedPOS") {
+    if (event.animationName === "nodeInsertedSeats") {
       hendler();
     }
   };
