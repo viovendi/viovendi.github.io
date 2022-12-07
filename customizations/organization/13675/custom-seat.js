@@ -55,8 +55,52 @@ function addSeatScript(){
     
     setTimeout(function(){
         createSeats();
-    },300);
+    },500);
 }
+
+
+// object for ticket cat mapping
+var mapObject = {
+    T: 'Cat 1',
+    A: 'Cat 2',
+    B: 'Cat 3'
+};
+
+/*
+function submitButton(){
+    $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(e){
+        e.preventDefault();
+        console.log('submitButton');
+    });
+}*/
+
+function setTicketCategoryChosen(ticketLabel, action){
+    
+    $('.event-categories li').each(function(){
+        const categoryName = $(this).find('.customization-category-name').text().trim();
+        
+        if(categoryName === mapObject[ticketLabel]){
+            let number = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            if(action === 'remove' && number > 0){
+                number--;
+            }
+            if(action === 'add'){
+                number++;
+            }
+            $(this).find('.vv-selection-input__value').text(+number);
+            
+            $(this).find('.vv-selection-input__value').dispatchEvent(new Event('change'));
+        }
+
+    });
+}
+
+/*************
+Seats.io
+*************/
+
+// array for chosen tickets
+var selectedSeats = [];
 
 function createSeats(){
     console.log('createSeats');
@@ -66,12 +110,30 @@ function createSeats(){
         event: 'f31042b2-4ac3-4c96-a1e5-43c1291fa709',
         session: 'continue',
         pricing: [
-           {'category': 1, 'price': 30}, 
-           {'category': 2, 'price': 40}, 
-           {'category': 3, 'price': 50}
+           {'category': 'A', 'price': 30}, 
+           {'category': 'B', 'price': 40}, 
+           {'category': 'T', 'price': 50}
         ],
         priceFormatter: function(price) {
             return '$' + price;
+        },
+        onObjectSelected: function (object) {
+            // add the selected seat id to the array
+            console.log('onObjectSelected');
+            console.log(object);
+            
+            selectedSeats.push(object.label);
+            setTicketCategoryChosen(object.category.label, 'add');
+        },
+        onObjectDeselected: function (object) {
+            // remove the deselected seat id from the array
+            console.log('onObjectDeselected');
+            console.log(object);
+            
+            var index = selectedSeats.indexOf(object.label);
+            if (index !== -1) selectedSeats.splice(index, 1);
+            
+            setTicketCategoryChosen(object.category.label, 'remove');
         }
     }).render();
 }

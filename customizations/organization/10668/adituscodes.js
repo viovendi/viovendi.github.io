@@ -1,5 +1,5 @@
 console.log('git Start');
-
+/*
 function hideQuestion(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
@@ -123,3 +123,4 @@ async function handler() {
 
 handler();
 hideQuestion(".customization2_attendee_further-data_custom-question", "Aditus Code");
+*/

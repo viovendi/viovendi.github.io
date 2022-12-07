@@ -1,5 +1,5 @@
 // Funktion to show and hide custom question
-
+/*
 function findDropDownByLabel(label) {
     var found = null;
     $(".vv-selection-input").each(function () {
@@ -151,3 +151,4 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
+*/
