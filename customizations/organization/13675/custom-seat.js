@@ -4,6 +4,8 @@ console.log('github code');
 
 var insertionListener = function (event) {
     console.log("event.animationName");
+    console.log(event);
+    console.log(event.animationName);
     if (event.animationName === "nodeInsertedSeats") {
         console.log("event.animationName+");
         hendler();
