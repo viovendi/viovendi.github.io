@@ -123,11 +123,19 @@ function setTicketCategoryChosen(ticketLabel, action){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
+        console.log(categoryName);
+        
         if(categoryName === mapObject[ticketLabel]){
+            
+            console.log($(this));
             
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             
+            console.log(selectedInputNum);
+            
             var allOptions = $(this).find('.vv-single-select-option');
+            
+            console.log(allOptions);
             
             if(action === 'add'){
               // add record to the state obj
