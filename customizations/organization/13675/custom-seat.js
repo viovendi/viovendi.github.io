@@ -181,10 +181,6 @@ function selectOptions(options, selectedInput) {
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
-        
-      //tergetElement.closest('vv-single-select-option').click();
-        
-      //tergetElement.closest('.event-category').find('.event-category__info').click();
     }
   }
 }
@@ -225,7 +221,7 @@ function createSeats(){
             console.log(object.category.label);
             setTimeout(function(){
                 setTicketCategoryChosen(object.category.label, 'add');
-            }, 100);
+            }, 1000);
             //setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
@@ -238,7 +234,7 @@ function createSeats(){
             
             setTimeout(function(){
                 setTicketCategoryChosen(object.category.label, 'remove');
-            }, 100);
+            }, 1000);
             
             //setTicketCategoryChosen(object.category.label, 'remove');
         }
