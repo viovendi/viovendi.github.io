@@ -7,6 +7,8 @@ var insertionListener = function (event) {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
         console.log('ticket cat loaded!!!');
+        clearTicketsInManager();
+        addSeatScript();
     }
 };
 hendler();
@@ -21,8 +23,8 @@ async function hendler() {
 
     await getPage('page1');
     console.log("page1!");
-    clearTicketsInManager();
-    addSeatScript();
+    //clearTicketsInManager();
+    //addSeatScript();
 
     await getPage('page2');
     console.log("page2!");
