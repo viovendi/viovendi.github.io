@@ -3,8 +3,10 @@ console.log('github code');
 
 
 var insertionListener = function (event) {
-    if (event.animationName === "nodeInsertedSeats") {
+    if (event.animationName === 'nodeInsertedSeats') {
         hendler();
+    }else if(event.animationName === 'ticketCatsLoaded'){
+        console.log('ticket cat loaded!!!');
     }
 };
 hendler();
@@ -15,34 +17,30 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 async function hendler() {
-  if (document.readyState !== "loading") {
+  if (document.readyState !== 'loading') {
 
-    await getPage("page1");
+    await getPage('page1');
     console.log("page1!");
+    clearTicketsInManager();
     addSeatScript();
 
-    await getPage("page2");
+    await getPage('page2');
     console.log("page2!");
     // page 2 function
     
   }
 }
 
-/*
-function setCSSstyles() {
-  var style = document.createElement("style");
-  style.innerHTML = `
-  @keyframes nodeInsertedSeats {
-    from { opacity: 0.99; }
-    to { opacity: 1; }
-  }
-  .event-booking-widget .customization-booking-area-wrapper-page1{
-    animation-duration: 0.1s;
-    animation-name: nodeInsertedSeats;
-  }`;
-};
-setCSSstyles();
-*/
+function clearTicketsInManager(){
+    $('.event-categories li').each(function(){
+        var zeroOption = $(this).find('.vv-single-select-option')[0];
+        console.log('zeroOption');
+        console.log(zeroOption);
+        
+        zeroOption.dispatchEvent(new Event("change"));
+        zeroOption.click();
+    });
+}
   
   
 async function getPage(page) {
@@ -103,6 +101,10 @@ function addSeatScript(){
     // TODO replace with onReady function
     
     setTimeout(function(){
+        // wait for categories loaded
+        // set all tickets to 0
+        // run seats io script
+        
         createSeats();
     },500);
     
@@ -124,16 +126,8 @@ function setTicketCategoryChosen(ticketLabel, action){
         if(categoryName === mapObject[ticketLabel]){
             
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
-            console.log('selectedInputNum-in');
-            console.log(selectedInputNum);
             
             var allOptions = $(this).find('.vv-single-select-option');
-            var allOptionsJS = this.querySelectorAll('.vv-single-select-option');
-            
-            console.log('allOptions');
-            console.log(allOptions);
-            console.log('--------');
-            console.log(allOptionsJS);
             
             if(action === 'add'){
               // add record to the state obj
@@ -142,8 +136,6 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            console.log('selectedInputNum-out');
-            console.log(selectedInputNum);
             
             selectOptions(allOptions, selectedInputNum);
         }
@@ -160,9 +152,6 @@ function selectOptions(options, selectedInput) {
         
       const tergetElement = options[y];
       console.log(tergetElement);
-
-      //options[y].addEventListener('click', e => {});
-      //options[y].dispatchEvent(new Event('click'));
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
