@@ -126,7 +126,7 @@ function addSeatScript(){
         //createSeats();
     },500);
     
-    createSeats();
+    //createSeats();
     
 }
 
