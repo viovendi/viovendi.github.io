@@ -34,11 +34,12 @@ async function hendler() {
     //addSeatScript();
       
     console.log($('#chart').lenght);
-        
-    if($('#chart').lenght === 0){
+    /* 
+    if(!$('#chart') || $('#chart').lenght === 0){
         addSeatScript();
         createSeats();
     }
+    */
 
       
     await getPage('page2');
