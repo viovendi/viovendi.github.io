@@ -36,8 +36,6 @@ async function hendler() {
 function clearTicketsInManager(){
     $('.event-categories li').each(function(){
         var zeroOption = $(this).find('.vv-single-select-option')[0];
-        console.log('zeroOption');
-        console.log(zeroOption);
         
         zeroOption.dispatchEvent(new Event("change"));
         zeroOption.click();
@@ -150,10 +148,8 @@ function selectOptions(options, selectedInput) {
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
     
-    if (optionsNumber === inputNumber) {
-        
+    if (optionsNumber === inputNumber) {        
       const tergetElement = options[y];
-      console.log(tergetElement);
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
