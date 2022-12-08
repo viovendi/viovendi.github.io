@@ -11,15 +11,8 @@ var insertionListener = function (event) {
         
         console.log($('#chart').length);
         
-        if($('#chart').lenght === 0){
+        if($('#chart').length === 0){
             console.log('#chart');
-            
-            addSeatScript();
-            createSeats();
-        }
-        
-        if($('#chart').lenght == 0){
-            console.log('#chart==0');
             
             addSeatScript();
             createSeats();
@@ -41,7 +34,7 @@ async function hendler() {
     //clearTicketsInManager();
     //addSeatScript();
       
-    console.log($('#chart').lenght);
+    console.log($('#chart').length);
     /* 
     if(!$('#chart') || $('#chart').lenght === 0){
         addSeatScript();
