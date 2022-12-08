@@ -9,7 +9,7 @@ var insertionListener = function (event) {
         console.log('ticket cat loaded!!!');
         clearTicketsInManager();
         
-        console.log($('#chart').lenght);
+        console.log($('#chart').length);
         
         if($('#chart').lenght === 0){
             addSeatScript();
