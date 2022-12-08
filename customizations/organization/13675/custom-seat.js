@@ -14,7 +14,7 @@ var insertionListener = function (event) {
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
-        //console.log('chartScriptAdded');
+        console.log('chartScriptAdded');
         //createSeats();
     }
 };
@@ -101,6 +101,10 @@ async function getPage(page) {
 }
 
 
+function testLoadFunc(){
+    console.log('testLoadFunc!');
+}
+
 function addSeatScript(){
     console.log('addSeatScript');
     
@@ -116,8 +120,8 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(scriptSeats);
     
-    scriptSeats.onreadystatechange = createSeats;
-    scriptSeats.onload = createSeats;
+    scriptSeats.onreadystatechange = testLoadFunc;
+    scriptSeats.onload = testLoadFunc;
     
     // TODO replace with onReady function
     
@@ -126,7 +130,7 @@ function addSeatScript(){
         // set all tickets to 0
         // run seats io script
         
-        //createSeats();
+        createSeats();
     },500);
     
     //createSeats();
