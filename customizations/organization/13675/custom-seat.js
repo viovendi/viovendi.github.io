@@ -128,8 +128,12 @@ function setTicketCategoryChosen(ticketLabel, action){
             console.log(selectedInputNum);
             
             var allOptions = $(this).find('.vv-single-select-option');
+            var allOptionsJS = this.querySelectorAll('.vv-single-select-option');
+            
             console.log('allOptions');
             console.log(allOptions);
+            console.log('--------');
+            console.log(allOptionsJS);
             
             if(action === 'add'){
               // add record to the state obj
