@@ -161,9 +161,7 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            setTimeout(function(){
-                selectOptions(allOptions, selectedInputNum);
-            }, 100);
+            selectOptions(allOptions, selectedInputNum);
             //selectOptions(allOptions, selectedInputNum);
         }
     });
@@ -225,7 +223,10 @@ function createSeats(){
             selectedSeats.push(object.label);
             
             console.log(object.category.label);
-            setTicketCategoryChosen(object.category.label, 'add');
+            setTimeout(function(){
+                setTicketCategoryChosen(object.category.label, 'add');
+            }, 100);
+            //setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
@@ -235,7 +236,11 @@ function createSeats(){
             var index = selectedSeats.indexOf(object.label);
             if (index !== -1) selectedSeats.splice(index, 1);
             
-            setTicketCategoryChosen(object.category.label, 'remove');
+            setTimeout(function(){
+                setTicketCategoryChosen(object.category.label, 'remove');
+            }, 100);
+            
+            //setTicketCategoryChosen(object.category.label, 'remove');
         }
     }).render();
 }
