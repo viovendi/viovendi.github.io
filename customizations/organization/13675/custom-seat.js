@@ -12,6 +12,8 @@ var insertionListener = function (event) {
         console.log($('#chart').length);
         
         if($('#chart').lenght === 0){
+            console.log('#chart');
+            
             addSeatScript();
         
             createSeats();
@@ -125,6 +127,8 @@ function addSeatScript(){
         
         //createSeats();
     },500);
+    
+    //createSeats();
     
 }
 
