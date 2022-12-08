@@ -153,19 +153,19 @@ function selectOptions(options, selectedInput) {
     var optionsNumber = +options[y].textContent.trim();
     
     if (optionsNumber === inputNumber) {
-      console.log(options[y]);
+        
+      const tergetElement = options[y];
+      console.log(tergetElement);
 
-      options[y].addEventListener('click', e => {});
-      options[y].dispatchEvent(new Event('click'));
+      //options[y].addEventListener('click', e => {});
+      //options[y].dispatchEvent(new Event('click'));
         
-      //options[y].dispatchEvent(new Event("change"));
-      //options[y].click();
+      tergetElement.dispatchEvent(new Event("change"));
+      tergetElement.click();
         
-        options[y].closest('vv-single-select-option').click();
+      tergetElement.closest('vv-single-select-option').click();
         
-        options[y].parent().click();
-        
-      //options[y].trigger('click');
+      tergetElement.parent().click();
     }
   }
 }
