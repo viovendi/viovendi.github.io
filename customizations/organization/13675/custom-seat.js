@@ -8,7 +8,14 @@ var insertionListener = function (event) {
     }else if(event.animationName === 'ticketCatsLoaded'){
         console.log('ticket cat loaded!!!');
         clearTicketsInManager();
-        addSeatScript();
+        
+        console.log($('#chart').lenght);
+        
+        if($('#chart').lenght === 0){
+            addSeatScript();
+        
+            createSeats();
+        }
     }
 };
 hendler();
@@ -25,10 +32,20 @@ async function hendler() {
     console.log("page1!");
     //clearTicketsInManager();
     //addSeatScript();
+      
+    console.log($('#chart').lenght);
+        
+    if($('#chart').lenght === 0){
+        addSeatScript();
+        createSeats();
+    }
 
+      
     await getPage('page2');
     console.log("page2!");
     // page 2 function
+    // autifill the seats io ID
+    console.log();
     
   }
 }
@@ -105,7 +122,7 @@ function addSeatScript(){
         // set all tickets to 0
         // run seats io script
         
-        createSeats();
+        //createSeats();
     },500);
     
 }
