@@ -14,8 +14,8 @@ var insertionListener = function (event) {
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
-        console.log('chartScriptAdded');
-        createSeats();
+        //console.log('chartScriptAdded');
+        //createSeats();
     }
 };
 hendler();
@@ -104,9 +104,9 @@ async function getPage(page) {
 function addSeatScript(){
     console.log('addSeatScript');
     
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = "https://cdn-eu.seatsio.net/chart.js";
+    var scriptSeats = document.createElement('script');
+    scriptSeats.type = 'text/javascript';
+    scriptSeats.src = "https://cdn-eu.seatsio.net/chart.js";
     
     var div = document.createElement('div');
     div.id = 'chart';
@@ -114,7 +114,10 @@ function addSeatScript(){
     var wraper = $('.customization-booking-area-wrapper > div');
     
     wraper.prepend(div);
-    wraper.append(script);
+    wraper.append(scriptSeats);
+    
+    scriptSeats.onreadystatechange = createSeats;
+    scriptSeats.onload = createSeats;
     
     // TODO replace with onReady function
     
