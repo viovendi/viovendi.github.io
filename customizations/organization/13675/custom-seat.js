@@ -150,9 +150,9 @@ function selectOptions(options, selectedInput) {
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
         
-      tergetElement.closest('vv-single-select-option').click();
+      //tergetElement.closest('vv-single-select-option').click();
         
-      tergetElement.closest('.event-category').find('.event-category__info').click();
+      //tergetElement.closest('.event-category').find('.event-category__info').click();
     }
   }
 }
