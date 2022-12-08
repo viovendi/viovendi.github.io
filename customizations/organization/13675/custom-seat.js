@@ -14,7 +14,7 @@ var insertionListener = function (event) {
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
-        console.log('chartScriptAdded');
+        //console.log('chartScriptAdded');
         //createSeats();
     }
 };
@@ -33,7 +33,7 @@ async function hendler() {
     //clearTicketsInManager();
     //addSeatScript();
       
-    console.log($('#chart').length);
+    //console.log($('#chart').length);
     /* 
     if(!$('#chart') || $('#chart').lenght === 0){
         addSeatScript();
@@ -132,9 +132,6 @@ function addSeatScript(){
         
         createSeats();
     },500);
-    
-    //createSeats();
-    
 }
 
 
@@ -146,6 +143,10 @@ var mapObject = {
 };
 
 function setTicketCategoryChosen(ticketLabel, action){
+    console.log('setTicketCategoryChosen');
+    console.log(ticketLabel);
+    console.log(action);
+    
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
@@ -160,13 +161,19 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            selectOptions(allOptions, selectedInputNum);
+            setTimeout(function(){
+                selectOptions(allOptions, selectedInputNum);
+            }, 100);
+            //selectOptions(allOptions, selectedInputNum);
         }
     });
 }
 
 function selectOptions(options, selectedInput) {
-  
+  console.log('selectOptions');
+  console.log(options);
+  console.log(selectedInput);
+    
   var inputNumber = +selectedInput;
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
@@ -192,7 +199,11 @@ Seats.io
 var selectedSeats = [];
 
 function createSeats(){
+    
+    console.log(selectedSeats);
+    
     console.log('createSeats');
+    
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
@@ -212,6 +223,8 @@ function createSeats(){
             console.log(object);
             
             selectedSeats.push(object.label);
+            
+            console.log(object.category.label);
             setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
