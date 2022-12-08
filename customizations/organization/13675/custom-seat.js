@@ -169,7 +169,7 @@ function selectOptions(options, selectedInput) {
         
       tergetElement.closest('vv-single-select-option').click();
         
-      tergetElement.parent().click();
+      //tergetElement.parent().click();
     }
   }
 }
