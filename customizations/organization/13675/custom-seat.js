@@ -10,9 +10,11 @@ var insertionListener = function (event) {
         clearTicketsInManager();
         
         if($('#chart').length === 0){
+            console.log('ticketCatsLoaded');
             addSeatScript();
         }
-    }else if(event.animationName === 'ticketCatsLoaded'){
+    }else if(event.animationName === 'chartScriptAdded'){
+        console.log('chartScriptAdded');
         createSeats();
     }
 };
