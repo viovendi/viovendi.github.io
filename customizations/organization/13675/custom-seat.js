@@ -15,7 +15,13 @@ var insertionListener = function (event) {
             console.log('#chart');
             
             addSeatScript();
+            createSeats();
+        }
         
+        if($('#chart').lenght == 0){
+            console.log('#chart==0');
+            
+            addSeatScript();
             createSeats();
         }
     }
