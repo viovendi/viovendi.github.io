@@ -9,14 +9,11 @@ var insertionListener = function (event) {
         console.log('ticket cat loaded!!!');
         clearTicketsInManager();
         
-        console.log($('#chart').length);
-        
         if($('#chart').length === 0){
-            console.log('#chart');
-            
             addSeatScript();
-            createSeats();
         }
+    }else if(event.animationName === 'ticketCatsLoaded'){
+        createSeats();
     }
 };
 hendler();
@@ -127,7 +124,7 @@ function addSeatScript(){
         //createSeats();
     },500);
     
-    //createSeats();
+    createSeats();
     
 }
 
