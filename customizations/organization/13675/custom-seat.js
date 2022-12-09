@@ -32,18 +32,6 @@ async function hendler() {
     console.log("page1!");
     
     saveSeatsObj();
-    saveSeatsObjSubmit();
-      
-    //clearTicketsInManager();
-    //addSeatScript();
-      
-    //console.log($('#chart').length);
-    /* 
-    if(!$('#chart') || $('#chart').lenght === 0){
-        addSeatScript();
-        createSeats();
-    }
-    */
 
       
     await getPage('page2');
@@ -107,23 +95,10 @@ async function getPage(page) {
 
 function saveSeatsObj(){
  $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(){
-      console.log('save click!');
     if(localStorage.getItem('seatsObject')){
         localStorage.removeItem('seatsObject');
     }
     localStorage.setItem('seatsObject', selectedSeats);
- });
-}
-
-function saveSeatsObjSubmit(){
-$('.customization-booking-area-wrapper-page1 form').on('submit', function(){
-      console.log('submit click!');
-    /*
-    if(localStorage.getItem('seatsObject')){
-        localStorage.removeItem('seatsObject');
-    }
-    localStorage.setItem('seatsObject', selectedSeats);
-    */
  });
 }
 
@@ -131,9 +106,30 @@ function testLoadFunc(){
     console.log('testLoadFunc!');
 }
 
-function addSeatScript(){
-    console.log('addSeatScript');
+/**********.check if seatsio loaded ***********/
+
+function checkIfSeatsioLoaded(){
+    setInterval(checkTimer, 1000);
+}
+
+function checkTimer() {
+    console.log($('#chart .seatsio-loading-screen').length);
     
+    if($('#chart .seatsio-loading-screen').length > 0){
+        console.log('stop interval');
+        clearInterval(checkTimer);
+    }else{
+        console.log('create seats again');
+        if($('#chart').length === 0){
+            addSeatScript();
+        }
+        createSeats();
+    }
+}
+
+/*********************/
+
+function addSeatScript(){
     var scriptSeats = document.createElement('script');
     scriptSeats.type = 'text/javascript';
     scriptSeats.src = "https://cdn-eu.seatsio.net/chart.js";
@@ -146,7 +142,6 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(scriptSeats);
     
-    scriptSeats.onreadystatechange = testLoadFunc;
     scriptSeats.onload = testLoadFunc;
     
     // TODO replace with onReady function
@@ -157,7 +152,10 @@ function addSeatScript(){
         // run seats io script
         
         createSeats();
+        
+        checkIfSeatsioLoaded();
     },500);
+
 }
 
 
@@ -168,10 +166,23 @@ var mapObject = {
     B: 'Cat 3'
 };
 
+
+function setTicketsFromPreviousChose(arr){
+    for(let i = 0; i < arr.length; i+=){
+        console.log(arr[i]);
+    }
+}
+
 function setTicketCategoryChosen(ticketLabel, action){
-    console.log('setTicketCategoryChosen');
-    console.log(ticketLabel);
-    console.log(action);
+   
+    const ticketArray = localStorage.getItem('seatsObject');
+    
+    if(ticketArray){
+        console.log('set from the array page2');
+        setTicketsFromPreviousChose(ticketArray);
+        return;
+    }
+    
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
@@ -187,20 +198,12 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            
-            setTimeout(function(){
-                console.log('setTimeout - selectOptions');
-                selectOptions(allOptions, selectedInputNum);
-            }, 1000);
-            //selectOptions(allOptions, selectedInputNum);
+            selectOptions(allOptions, selectedInputNum);
         }
     });
 }
 
-function selectOptions(options, selectedInput) {
-  console.log('selectOptions');
-  console.log(selectedInput);
-    
+function selectOptions(options, selectedInput) {  
   var inputNumber = +selectedInput;
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
@@ -222,10 +225,6 @@ Seats.io
 var selectedSeats = [];
 
 function createSeats(){
-    
-    console.log(selectedSeats);
-    console.log('createSeats');
-    
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
@@ -246,8 +245,6 @@ function createSeats(){
             
             selectedSeats.push(object.label);
             
-            console.log(object.category.label);
-        
             setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
