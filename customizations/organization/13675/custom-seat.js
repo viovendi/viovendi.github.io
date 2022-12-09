@@ -142,7 +142,7 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(scriptSeats);
     
-    scriptSeats.onload = testLoadFunc;
+    scriptSeats.onload = function() {testLoadFunc()};
     
     // TODO replace with onReady function
     
@@ -168,7 +168,7 @@ var mapObject = {
 
 
 function setTicketsFromPreviousChose(arr){
-    for(let i = 0; i < arr.length; i+=){
+    for(let i = 0; i < arr.length; i+=;){
         console.log(arr[i]);
     }
 }
