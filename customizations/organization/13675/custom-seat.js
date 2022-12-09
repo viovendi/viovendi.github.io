@@ -44,6 +44,7 @@ async function hendler() {
       
     await getPage('page2');
     console.log("page2!");
+    console.log(localStorage.getItem('seatsObject'));
     // page 2 function
     // autifill the seats io ID
     // console.log();
@@ -100,6 +101,16 @@ async function getPage(page) {
   });
 }
 
+function saveTicketObj(){
+ console.log('saveTicketObj!');
+ $('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(){
+    if(localStorage.getItem('seatsObject')){
+        localStorage.removeItem('seatsObject')
+    }
+     localStorage.setItem('seatsObject', selectedSeats)
+ });
+}
+saveTicketObj();
 
 function testLoadFunc(){
     console.log('testLoadFunc!');
