@@ -153,7 +153,7 @@ function addSeatScript(){
         
         createSeats();
         
-        checkIfSeatsioLoaded();
+        //checkIfSeatsioLoaded();
     },500);
 
 }
