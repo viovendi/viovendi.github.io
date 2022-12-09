@@ -46,7 +46,7 @@ async function hendler() {
     console.log("page2!");
     // page 2 function
     // autifill the seats io ID
-    console.log();
+    // console.log();
     
   }
 }
@@ -161,7 +161,11 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            selectOptions(allOptions, selectedInputNum);
+            
+            setTimeout(function(){
+                console.log('setTimeout - selectOptions');
+                selectOptions(allOptions, selectedInputNum);
+            }, 1000);
             //selectOptions(allOptions, selectedInputNum);
         }
     });
@@ -169,7 +173,6 @@ function setTicketCategoryChosen(ticketLabel, action){
 
 function selectOptions(options, selectedInput) {
   console.log('selectOptions');
-  console.log(options);
   console.log(selectedInput);
     
   var inputNumber = +selectedInput;
@@ -195,7 +198,6 @@ var selectedSeats = [];
 function createSeats(){
     
     console.log(selectedSeats);
-    
     console.log('createSeats');
     
     new seatsio.SeatingChart({
@@ -219,10 +221,8 @@ function createSeats(){
             selectedSeats.push(object.label);
             
             console.log(object.category.label);
-            setTimeout(function(){
-                setTicketCategoryChosen(object.category.label, 'add');
-            }, 1000);
-            //setTicketCategoryChosen(object.category.label, 'add');
+        
+            setTicketCategoryChosen(object.category.label, 'add');
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
@@ -232,11 +232,7 @@ function createSeats(){
             var index = selectedSeats.indexOf(object.label);
             if (index !== -1) selectedSeats.splice(index, 1);
             
-            setTimeout(function(){
-                setTicketCategoryChosen(object.category.label, 'remove');
-            }, 1000);
-            
-            //setTicketCategoryChosen(object.category.label, 'remove');
+            setTicketCategoryChosen(object.category.label, 'remove');
         }
     }).render();
 }
