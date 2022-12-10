@@ -188,6 +188,9 @@ function setTicketCategoryChosen(ticketLabel, action){
         const categoryName = $(this).find('.customization-category-name').text().trim();
         
         if(categoryName === mapObject[ticketLabel]){
+            
+            console.log(categoryName);
+            
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             var allOptions = $(this).find('.vv-single-select-option');
             
@@ -198,6 +201,9 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
+            
+            console.log(selectedInputNum);
+            
             selectOptions(allOptions, selectedInputNum);
         }
     });
@@ -246,8 +252,7 @@ function createSeats(){
             selectedSeats.push(object.label);
             
             setTicketCategoryChosen(object.category.label, 'add');
-            
-            setTimeout(function(){console.log('timeout')}, 300);
+
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
@@ -258,6 +263,11 @@ function createSeats(){
             if (index !== -1) selectedSeats.splice(index, 1);
             
             setTicketCategoryChosen(object.category.label, 'remove');
+        },
+        onChartRenderingFailed: function(chart) {
+          console.log('not loaded');
+          chart.destroy();
+          chart.render();
         }
     }).render();
 }
