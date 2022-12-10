@@ -98,7 +98,7 @@ function saveSeatsObj(){
     if(localStorage.getItem('seatsObject')){
         localStorage.removeItem('seatsObject');
     }
-    localStorage.setItem('seatsObject', selectedSeats);
+    localStorage.setItem('seatsObject', JSON.strigify(selectedSeats));
  });
 }
 
@@ -180,7 +180,7 @@ function setTicketCategoryChosen(ticketLabel, action){
     
     if(ticketArray){
         console.log('set from the array page2');
-        setTicketsFromPreviousChose(ticketArray);
+        setTicketsFromPreviousChose(JSON.parse(ticketArray));
         return;
     }
     
