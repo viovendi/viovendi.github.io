@@ -168,21 +168,43 @@ var mapObject = {
 
 
 function setTicketsFromPreviousChose(arr){
-    console.log(arr.length);
-    for(let i = 0; i < arr.length; i++){
-        console.log(arr[i]);
-    }
+    $.each(mapObject, function( key, value ) {
+      //alert( "Key: " + k + ", Value: " + v );
+        console.log('key: '+key);
+        console.log('value: '+value);
+        
+        let keyNum = 0;
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+            if(arr[i].indexOf(key)>0){
+                keyNum++;
+            }
+        }
+        console.log('keyNum out: '+keyNum);
+        
+        // set the data
+        $('.event-categories li').each(function(){
+        const categoryName = $(this).find('.customization-category-name').text().trim();
+        
+        if(categoryName === value){
+            
+            console.log(categoryName);
+            
+            //var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
+            
+            const selectedInputNum = keyNum;
+            var allOptions = $(this).find('.vv-single-select-option');
+            
+            selectOptions(allOptions, selectedInputNum);
+        }
+        
+        
+        
+    });
 }
 
+
 function setTicketCategoryChosen(ticketLabel, action){
-   /*
-    const ticketArray = localStorage.getItem('seatsObject');
-    if(ticketArray){
-        console.log('set from the array page2');
-        setTicketsFromPreviousChose(JSON.parse(ticketArray));
-        return;
-    }
-    */
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
@@ -263,6 +285,14 @@ function createSeats(){
             if (index !== -1) selectedSeats.splice(index, 1);
             
             setTicketCategoryChosen(object.category.label, 'remove');
+        },
+        onChartRendered: function(chart) {
+            console.log('chart is loaded');
+            // run the 
+            if(localStorage.getItem('seatsObject')){
+                console.log('set from the array page2');
+                setTicketsFromPreviousChose(JSON.parse(ticketArray));
+            }
         },
         onChartRenderingFailed: function(chart) {
           console.log('not loaded');
