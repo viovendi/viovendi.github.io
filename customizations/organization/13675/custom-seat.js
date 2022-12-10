@@ -184,21 +184,21 @@ function setTicketsFromPreviousChose(arr){
         
         // set the data
         $('.event-categories li').each(function(){
-        const categoryName = $(this).find('.customization-category-name').text().trim();
+            const categoryName = $(this).find('.customization-category-name').text().trim();
+
+            if(categoryName === value){
+
+                console.log(categoryName);
+
+                //var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
+
+                const selectedInputNum = keyNum;
+                var allOptions = $(this).find('.vv-single-select-option');
+
+                selectOptions(allOptions, selectedInputNum);
+            }
         
-        if(categoryName === value){
-            
-            console.log(categoryName);
-            
-            //var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
-            
-            const selectedInputNum = keyNum;
-            var allOptions = $(this).find('.vv-single-select-option');
-            
-            selectOptions(allOptions, selectedInputNum);
-        }
-        
-        
+        });
         
     });
 }
