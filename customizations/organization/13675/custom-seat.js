@@ -211,14 +211,8 @@ function selectOptions(options, selectedInput) {
     if (optionsNumber === inputNumber) {        
       const tergetElement = options[y];
         
-      setTimeout(function(){
-          console.log(111);
-        tergetElement.dispatchEvent(new Event("change"));
-        tergetElement.click();
-      }, 200);
-        
-      //tergetElement.dispatchEvent(new Event("change"));
-      //tergetElement.click();
+      tergetElement.dispatchEvent(new Event("change"));
+      tergetElement.click();
     }
   }
 }
@@ -252,6 +246,8 @@ function createSeats(){
             selectedSeats.push(object.label);
             
             setTicketCategoryChosen(object.category.label, 'add');
+            
+            setTimeout(function(){console.log('timeout')}, 300);
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
