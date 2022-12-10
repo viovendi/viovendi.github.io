@@ -36,13 +36,21 @@ async function hendler() {
       
     await getPage('page2');
     console.log("page2!");
-    console.log(localStorage.getItem('seatsObject'));
+    setSeatsIdToTicket();
     // page 2 function
     // autifill the seats io ID
     // console.log();
     
   }
 }
+
+
+function setSeatsIdToTicket(){
+    const seatsObj = localStorage.getItem('seatsObject');
+    console.log(seatsObj);
+    console.log('setSeatsIdToTicket');
+}
+
 
 function clearTicketsInManager(){
     $('.event-categories li').each(function(){
@@ -176,7 +184,8 @@ function setTicketsFromPreviousChose(arr){
         let keyNum = 0;
         for(let i = 0; i < arr.length; i++){
             console.log(arr[i]);
-            if(arr[i].indexOf(key)>0){
+            console.log(arr[i].indexOf(key));
+            if(arr[i].indexOf(key) >= 0){
                 keyNum++;
             }
         }
@@ -294,7 +303,7 @@ function createSeats(){
                 console.log('set from the array page2');
                 setTicketsFromPreviousChose(JSON.parse(ticketArray));
                 //clear array
-                localStorage.removeItem('seatsObject');
+                //localStorage.removeItem('seatsObject');
             }
         },
         onChartRenderingFailed: function(chart) {
