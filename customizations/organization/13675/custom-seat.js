@@ -289,9 +289,12 @@ function createSeats(){
         onChartRendered: function(chart) {
             console.log('chart is loaded');
             // run the 
-            if(localStorage.getItem('seatsObject')){
+            const ticketArray = localStorage.getItem('seatsObject');
+            if(ticketArray){
                 console.log('set from the array page2');
                 setTicketsFromPreviousChose(JSON.parse(ticketArray));
+                //clear array
+                localStorage.removeItem('seatsObject');
             }
         },
         onChartRenderingFailed: function(chart) {
