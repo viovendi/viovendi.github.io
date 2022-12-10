@@ -176,30 +176,18 @@ var mapObject = {
 
 
 function setTicketsFromPreviousChose(arr){
-    $.each(mapObject, function( key, value ) {
-      //alert( "Key: " + k + ", Value: " + v );
-        console.log('key: '+key);
-        console.log('value: '+value);
-        
+    $.each(mapObject, function( key, value ) {        
         let keyNum = 0;
         for(let i = 0; i < arr.length; i++){
-            console.log(arr[i]);
-            console.log(arr[i].indexOf(key));
             if(arr[i].indexOf(key) >= 0){
                 keyNum++;
             }
         }
-        console.log('keyNum out: '+keyNum);
-        
         // set the data
         $('.event-categories li').each(function(){
             const categoryName = $(this).find('.customization-category-name').text().trim();
 
             if(categoryName === value){
-
-                console.log(categoryName);
-
-                //var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
 
                 const selectedInputNum = keyNum;
                 var allOptions = $(this).find('.vv-single-select-option');
@@ -232,8 +220,6 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            
-            console.log(selectedInputNum);
             
             selectOptions(allOptions, selectedInputNum);
         }
@@ -290,8 +276,13 @@ function createSeats(){
             console.log('onObjectDeselected');
             console.log(object);
             
+            
+            console.log('selectedSeats: '+selectedSeats);
             var index = selectedSeats.indexOf(object.label);
+            console.log(index);
             if (index !== -1) selectedSeats.splice(index, 1);
+            
+            console.log('selectedSeats-new: '+selectedSeats);
             
             setTicketCategoryChosen(object.category.label, 'remove');
         },
