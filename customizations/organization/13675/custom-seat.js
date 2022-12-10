@@ -175,15 +175,14 @@ function setTicketsFromPreviousChose(arr){
 }
 
 function setTicketCategoryChosen(ticketLabel, action){
-   
+   /*
     const ticketArray = localStorage.getItem('seatsObject');
-    
     if(ticketArray){
         console.log('set from the array page2');
         setTicketsFromPreviousChose(JSON.parse(ticketArray));
         return;
     }
-    
+    */
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('.customization-category-name').text().trim();
@@ -212,8 +211,14 @@ function selectOptions(options, selectedInput) {
     if (optionsNumber === inputNumber) {        
       const tergetElement = options[y];
         
-      tergetElement.dispatchEvent(new Event("change"));
-      tergetElement.click();
+      setTimeout(function(){
+          console.log(111);
+        tergetElement.dispatchEvent(new Event("change"));
+        tergetElement.click();
+      }, 200);
+        
+      //tergetElement.dispatchEvent(new Event("change"));
+      //tergetElement.click();
     }
   }
 }
