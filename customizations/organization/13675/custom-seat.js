@@ -98,7 +98,7 @@ function saveSeatsObj(){
     if(localStorage.getItem('seatsObject')){
         localStorage.removeItem('seatsObject');
     }
-    localStorage.setItem('seatsObject', JSON.strigify(selectedSeats));
+    localStorage.setItem('seatsObject', JSON.stringify(selectedSeats));
  });
 }
 
