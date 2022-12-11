@@ -243,10 +243,10 @@ Seats.io
 
 // array for chosen tickets
 var selectedSeats = [];
-const isEditMode = localStorage.getItem('isEditMode');
-console.log(isEditMode);
 
 function createSeats(){
+    const isEditMode = localStorage.getItem('isEditMode');
+    
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
