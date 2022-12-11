@@ -194,7 +194,8 @@ function setTicketsFromPreviousChose(arr){
             }
         });
     });
-    localStorage.setItem('isEditMode', 0);
+    console.log('removeItem');
+    localStorage.removeItem('isEditMode');
 }
 
 
