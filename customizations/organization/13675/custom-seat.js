@@ -244,6 +244,7 @@ Seats.io
 // array for chosen tickets
 var selectedSeats = [];
 const isEditMode = localStorage.getItem('isEditMode');
+console.log(isEditMode);
 
 function createSeats(){
     new seatsio.SeatingChart({
@@ -264,7 +265,9 @@ function createSeats(){
             console.log('onObjectSelected');
             console.log(object);
             
+            console.log(isEditMode);
             if(!isEditMode || isEditMode === 0){
+                console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
             
