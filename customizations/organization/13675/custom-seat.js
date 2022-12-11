@@ -16,6 +16,10 @@ var insertionListener = function (event) {
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
         //createSeats();
+    }else if(event.animationName === 'attendeeEdited'){
+        console.log('attendeeEdited');
+        // get classnames todetect the attendee number
+        // fill in the ticket id + disable the field
     }
 };
 hendler();
