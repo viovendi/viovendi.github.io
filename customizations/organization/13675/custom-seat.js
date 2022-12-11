@@ -37,6 +37,7 @@ async function hendler() {
     await getPage('page2');
     console.log("page2!");
     setSeatsIdToTicket();
+    localStorage.setItem('isEditMode', 1);
     // page 2 function
     // autifill the seats io ID
     // console.log();
@@ -186,18 +187,14 @@ function setTicketsFromPreviousChose(arr){
         // set the data
         $('.event-categories li').each(function(){
             const categoryName = $(this).find('.customization-category-name').text().trim();
-
             if(categoryName === value){
-
                 const selectedInputNum = keyNum;
                 var allOptions = $(this).find('.vv-single-select-option');
-
                 selectOptions(allOptions, selectedInputNum);
             }
-        
         });
-        
     });
+    localStorage.setItem('isEditMode', 0);
 }
 
 
@@ -246,6 +243,7 @@ Seats.io
 
 // array for chosen tickets
 var selectedSeats = [];
+const isEditMode = localStorage.getItem('isEditMode');
 
 function createSeats(){
     new seatsio.SeatingChart({
@@ -266,7 +264,9 @@ function createSeats(){
             console.log('onObjectSelected');
             console.log(object);
             
-            selectedSeats.push(object.label);
+            if(!isEditMode || isEditMode === 0){
+                selectedSeats.push(object.label);
+            }
             
             setTicketCategoryChosen(object.category.label, 'add');
 
@@ -298,6 +298,7 @@ function createSeats(){
             }
         },
         onChartRenderingFailed: function(chart) {
+          // does not work?!
           console.log('not loaded');
           chart.destroy();
           chart.render();
