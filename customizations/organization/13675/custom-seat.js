@@ -19,8 +19,6 @@ var insertionListener = function (event) {
     }else if(event.animationName === 'attendeeEdited'){
         console.log('attendeeEdited');
         fillTicketId();
-        // get classnames todetect the attendee number
-        // fill in the ticket id + disable the field
     }
 };
 hendler();
@@ -35,17 +33,12 @@ async function hendler() {
 
     await getPage('page1');
     console.log("page1!");
-    
     saveSeatsObj();
 
       
     await getPage('page2');
     console.log("page2!");
-    setSeatsIdToTicket();
     localStorage.setItem('isEditMode', 1);
-    // page 2 function
-    // autifill the seats io ID
-    // console.log();
     
   }
 }
@@ -53,45 +46,22 @@ async function hendler() {
 
 function fillTicketId(){
     console.log('fillTicketId');
-    const seatsArray = localStorage.getItem('seatsObject');
     
     const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
-    
     const classList = expandedAttendee.attr('class').split(/\s+/);
-
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
-    
-    const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
-    
+    const seatsArray = JSON.parse(localStorage.getItem('seatsObject'));
     const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
     
     $.each(labels, function(index, item) {
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
-            //do something
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
-            if(!inputField.val()){
-                // add val
-                console.log('no empty');
+            if(!inputField.val() || inputField.val()==''){
+                inputField.val(seatsArray[attendeeIndex]);
             }
-            
-            if(inputField.val()==''){
-                // add val
-                console.log('empty empty');
-            }            
-            //inputField.val(ticketArray[attendeeIndex]);
             inputField.attr('disabled', true);
-        }
-        
+        }       
     });
-    
-}
-
-
-
-function setSeatsIdToTicket(){
-    const seatsObj = localStorage.getItem('seatsObject');
-    console.log(seatsObj);
-    console.log('setSeatsIdToTicket');
 }
 
 
