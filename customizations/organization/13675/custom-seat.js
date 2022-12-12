@@ -57,20 +57,27 @@ function fillTicketId(){
     
     const expandedAttendee = $('.customization2_attendee.collapsible-wrapper--expanded');
     console.log(expandedAttendee);
+    
     const classList = expandedAttendee.attr('class').split(/\s+/);
     console.log(classList);
     console.log(classList[3]);
     
+
+    const attendeeIndex = parseInt(classList[3].match(/[^-]*$/));
+    console.log(attendeeIndex);
+    
     const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
     console.log(labels);
     
-    /*
-    $.each(classList, function(index, item) {
-        if (item.indexOf('') >= 0) {
+    
+    $.each(labels, function(index, item) {
+        if (item.indexOf('Ticket-ID') >= 0) {
             //do something
-        }
+            const inputField = $(this).clsest('label').find('.customization2_attendee_further-data_custom-question_input');
+            console.log(inputField);
+            inputField.attr('disabled', true);        }
     });
-    */
+    
 }
 
 
