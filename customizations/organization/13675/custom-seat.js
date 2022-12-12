@@ -46,6 +46,19 @@ async function hendler() {
   }
 }
 
+function bookSeats(dooOrderId, dooOrganizationId){
+    const body = {
+        seats: localStorage.getItem('seatsObject'),
+        oid: dooOrganizationId,
+        orderId: dooOrderId
+    };
+    $.post( "https://webhook.site/914d5a40-e10e-4232-ade4-e11774374ccd", body)
+      .done(function() {
+        localStorage.removeItem('seatsObject');
+        localStorage.removeItem('isEditMode');
+      });
+}
+
 function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
@@ -55,13 +68,15 @@ function getXMLHttpRequest (open) {
           } catch (err) {}
           if(res != undefined && res._embedded){
 
-              console.log('succes order post response');
-              console.log(JSON.parse(localStorage.getItem('seatsObject')));
+           // send the request to Make (to confirm the seats booking)
+             const orders = res._embedded.orders;
+             const order_id = orders[0].id;
+             const organizer_id = orders[0].event.organizer_id;
+             bookSeats(order_id, organizer_id);
               
-              client.events.book('eventKey', JSON.parse(localStorage.getItem('seatsObject')));
-              
-            console.log(resSeats);
-            localStorage.removeItem('seatsObject');
+           // remove the data from localStorage
+            // localStorage.removeItem('seatsObject');
+            // localStorage.removeItem('isEditMode');
 
           }
         }
