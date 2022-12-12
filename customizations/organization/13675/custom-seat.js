@@ -18,6 +18,7 @@ var insertionListener = function (event) {
         //createSeats();
     }else if(event.animationName === 'attendeeEdited'){
         console.log('attendeeEdited');
+        fillTicketId();
         // get classnames todetect the attendee number
         // fill in the ticket id + disable the field
     }
@@ -48,6 +49,30 @@ async function hendler() {
     
   }
 }
+
+
+function fillTicketId(){
+    console.log('fillTicketId');
+    const seatsArray = localStorage.getItem('seatsObject');
+    
+    const expandedAttendee = $('.customization2_attendee.collapsible-wrapper--expanded');
+    console.log(expandedAttendee);
+    const classList = expandedAttendee.attr('class').split(/\s+/);
+    console.log(classList);
+    console.log(classList[3]);
+    
+    const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
+    console.log(labels);
+    
+    /*
+    $.each(classList, function(index, item) {
+        if (item.indexOf('') >= 0) {
+            //do something
+        }
+    });
+    */
+}
+
 
 
 function setSeatsIdToTicket(){
