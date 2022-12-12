@@ -56,30 +56,25 @@ function fillTicketId(){
     const seatsArray = localStorage.getItem('seatsObject');
     
     const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
-    console.log(expandedAttendee);
     
     const classList = expandedAttendee.attr('class').split(/\s+/);
-    console.log(classList);
-    console.log(classList[3]);
-    
 
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
-    console.log(attendeeIndex);
     
     const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
-    
-    console.log(ticketArray);
-    console.log(ticketArray[attendeeIndex]);
     
     const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
     
     $.each(labels, function(index, item) {
-        console.log(item.outerText.indexOf('Ticket-ID'));
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
             //do something
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
-            console.log(inputField);
-            inputField.val(ticketArray[attendeeIndex]);
+            if(!inputField.val()){
+                // add val
+            }
+            
+            console.log(inputField.val());
+            //inputField.val(ticketArray[attendeeIndex]);
             inputField.attr('disabled', true);
         }
         
