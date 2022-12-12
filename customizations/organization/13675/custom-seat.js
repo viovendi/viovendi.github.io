@@ -72,6 +72,10 @@ function fillTicketId(){
     
     $.each(labels, function(index, item) {
         console.log(item);
+        console.log(item.outerText);
+        
+        console.log(item.text());
+        
         /*
         const labelText = item.text().trim();
         console.log(labelText);
