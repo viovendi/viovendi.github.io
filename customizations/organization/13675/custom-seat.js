@@ -63,7 +63,7 @@ function fillTicketId(){
     console.log(classList[3]);
     
 
-    const attendeeIndex = parseInt(classList[3].match(/[^-]*$/));
+    const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
     console.log(attendeeIndex);
     
     const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
@@ -73,15 +73,13 @@ function fillTicketId(){
     
     const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
     
-    
-    
     $.each(labels, function(index, item) {
         console.log(item.outerText.indexOf('Ticket-ID'));
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
             //do something
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             console.log(inputField);
-            inputField.attr('value', ticketArray[attendeeIndex]);
+            inputField.val(ticketArray[attendeeIndex]);
             inputField.attr('disabled', true);
         }
         
