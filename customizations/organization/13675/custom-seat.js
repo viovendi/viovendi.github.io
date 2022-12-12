@@ -66,7 +66,7 @@ function fillTicketId(){
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/));
     console.log(attendeeIndex);
     
-    const ticketArray = localStorage.getItem('seatsObject');
+    const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
     
     console.log(ticketArray);
     console.log(ticketArray[attendeeIndex]);
@@ -79,7 +79,7 @@ function fillTicketId(){
         console.log(item.outerText.indexOf('Ticket-ID'));
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
             //do something
-            const inputField = $(this).clsest('label').find('.customization2_attendee_further-data_custom-question_input');
+            const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             console.log(inputField);
             inputField.attr('value', ticketArray[attendeeIndex]);
             inputField.attr('disabled', true);
