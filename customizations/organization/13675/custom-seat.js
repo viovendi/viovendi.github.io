@@ -39,9 +39,34 @@ async function hendler() {
     await getPage('page2');
     console.log("page2!");
     localStorage.setItem('isEditMode', 1);
+      
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
     
+      // submit booking in seats io
   }
 }
+
+function getXMLHttpRequest (open) {
+    XMLHttpRequest.prototype.open = function() {
+      this.addEventListener("readystatechange", function() {
+        if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
+          try {
+            var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
+          } catch (err) {}
+          if(res != undefined && res._embedded){
+
+              console.log('succes order post response');
+              console.log(JSON.parse(localStorage.getItem('seatsObject')));
+              
+            await client.events.book('eventKey', JSON.parse(localStorage.getItem('seatsObject')));
+            localStorage.removeItem('seatsObject');
+
+          }
+        }
+      }, false);
+      open.apply(this, arguments);
+    };
+};
 
 
 function fillTicketId(){
