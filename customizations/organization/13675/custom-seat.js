@@ -71,7 +71,9 @@ function fillTicketId(){
     
     
     $.each(labels, function(index, item) {
-        if (item.indexOf('Ticket-ID') >= 0) {
+        const labelText = item.text().trim();
+        console.log(labelText);
+        if (labelText.indexOf('Ticket-ID') >= 0) {
             //do something
             const inputField = $(this).clsest('label').find('.customization2_attendee_further-data_custom-question_input');
             console.log(inputField);
