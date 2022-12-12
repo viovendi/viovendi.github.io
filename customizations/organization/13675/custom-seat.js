@@ -55,7 +55,7 @@ function fillTicketId(){
     console.log('fillTicketId');
     const seatsArray = localStorage.getItem('seatsObject');
     
-    const expandedAttendee = $('.customization2_attendee.collapsible-wrapper--expanded');
+    const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
     console.log(expandedAttendee);
     
     const classList = expandedAttendee.attr('class').split(/\s+/);
