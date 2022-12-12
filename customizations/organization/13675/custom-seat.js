@@ -46,7 +46,7 @@ async function hendler() {
   }
 }
 
-async function getXMLHttpRequest (open) {
+function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
@@ -58,7 +58,7 @@ async function getXMLHttpRequest (open) {
               console.log('succes order post response');
               console.log(JSON.parse(localStorage.getItem('seatsObject')));
               
-            const resSeats = await client.events.book('eventKey', JSON.parse(localStorage.getItem('seatsObject')));
+              client.events.book('eventKey', JSON.parse(localStorage.getItem('seatsObject')));
               
             console.log(resSeats);
             localStorage.removeItem('seatsObject');
