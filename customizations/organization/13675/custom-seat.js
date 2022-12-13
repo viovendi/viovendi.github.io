@@ -52,7 +52,7 @@ function bookSeats(dooOrderId, dooOrganizationId){
         oid: dooOrganizationId,
         orderId: dooOrderId
     };
-    $.post( "https://webhook.site/914d5a40-e10e-4232-ade4-e11774374ccd", body)
+    $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49', body)
       .done(function() {
         localStorage.removeItem('seatsObject');
         localStorage.removeItem('isEditMode');
