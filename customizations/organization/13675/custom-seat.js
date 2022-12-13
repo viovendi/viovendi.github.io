@@ -102,7 +102,21 @@ function fillTicketId(){
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             if(!inputField.val() || inputField.val()==''){
                 inputField.val(seatsArray[attendeeIndex]);
+                
+                inputField.dispatchEvent(new Event('change'));
                 inputField.click();
+                
+                /* alternative
+                  var event;
+                  if (typeof (Event) === 'function') {
+                    event = new Event('input'); // for Chrome
+                  } else {
+                    event = document.createEvent('Event');
+                    event.initEvent('input', true, true); // for IE
+                  }
+                  input.dispatchEvent(event)
+                */
+                
             }
             inputField.attr('disabled', true);
         }       
@@ -114,7 +128,7 @@ function clearTicketsInManager(){
     $('.event-categories li').each(function(){
         var zeroOption = $(this).find('.vv-single-select-option')[0];
         
-        zeroOption.dispatchEvent(new Event("change"));
+        zeroOption.dispatchEvent(new Event('change'));
         zeroOption.click();
     });
 }
