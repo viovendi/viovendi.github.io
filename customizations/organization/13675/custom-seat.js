@@ -197,8 +197,8 @@ function createSeatsHoldToken(){
       .done(function(res) {
         console.log('res::');
         console.log(typeof res);
-        console.log(res.holdToken);
-        localStorage.setItem('holdToken', res.holdToken);
+        console.log(JSON.parse(res).holdToken);
+        //localStorage.setItem('holdToken', res.holdToken);
       });
 }
 
