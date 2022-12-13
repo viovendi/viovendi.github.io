@@ -115,7 +115,7 @@ function fillTicketId(){
                 event = document.createEvent('Event');
                 event.initEvent('input', true, true); // for IE
               }
-              inputField.dispatchEvent(event);
+              inputField[0].dispatchEvent(event);
                 
             }
             inputField.attr('disabled', true);
