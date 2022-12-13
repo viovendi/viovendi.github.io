@@ -103,6 +103,8 @@ function fillTicketId(){
             if(!inputField.val() || inputField.val()==''){
                 inputField.val(seatsArray[attendeeIndex]);
                 
+                console.log(inputField);
+                
                 inputField.dispatchEvent(new Event('change'));
                 inputField.click();
                 
