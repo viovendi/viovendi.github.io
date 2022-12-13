@@ -48,7 +48,7 @@ async function hendler() {
 
 function bookSeats(dooOrderId, dooOrganizationId){
     const body = {
-        seats: localStorage.getItem('seatsObject'),
+        seats: JSON.parse(localStorage.getItem('seatsObject')),
         oid: dooOrganizationId,
         orderId: dooOrderId
     };
