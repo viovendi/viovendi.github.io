@@ -51,15 +51,18 @@ async function hendler() {
 }
 
 function bookSeats(dooOrderId, dooOrganizationId){
+    const seatHoldToken = localStorage.getItem('holdToken') ? localStorage.getItem('holdToken') : 'none'
     const body = {
         seats: JSON.parse(localStorage.getItem('seatsObject')),
         oid: dooOrganizationId,
-        orderId: dooOrderId
+        orderId: dooOrderId,
+        token: seatHoldToken
     };
     $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49', body)
       .done(function() {
         localStorage.removeItem('seatsObject');
         localStorage.removeItem('isEditMode');
+        localStorage.removeItem('holdToken');
       });
 }
 
@@ -192,8 +195,9 @@ function checkTimer() {
 function createSeatsHoldToken(){
     $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49')
       .done(function(res) {
+        console.log('res::');
         console.log(res);
-        //localStorage.setItem('holdToken', res.);
+        localStorage.setItem('holdToken', '12345');
       });
 }
 
