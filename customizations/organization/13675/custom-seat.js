@@ -193,7 +193,7 @@ function checkTimer() {
 }
 
 function createSeatsHoldToken(){
-    $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49')
+    $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
       .done(function(res) {
         console.log('res::');
         console.log(res);
