@@ -3,6 +3,10 @@ console.log('github code');
 
 
 var insertionListener = function (event) {
+    
+    console.log('event.animationName');
+    console.log(event.animationName);
+    
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
@@ -73,11 +77,6 @@ function getXMLHttpRequest (open) {
              const order_id = orders[0].id;
              const organizer_id = orders[0].event.organizer_id;
              bookSeats(order_id, organizer_id);
-              
-           // remove the data from localStorage
-            // localStorage.removeItem('seatsObject');
-            // localStorage.removeItem('isEditMode');
-
           }
         }
       }, false);
@@ -190,9 +189,18 @@ function checkTimer() {
     }
 }
 
+function createSeatsHoldToken(){
+    $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49')
+      .done(function(res) {
+        console.log(res);
+        //localStorage.setItem('holdToken', res.);
+      });
+}
+
 /*********************/
 
 function addSeatScript(){
+    // move adding script to custom.js ??
     var scriptSeats = document.createElement('script');
     scriptSeats.type = 'text/javascript';
     scriptSeats.src = "https://cdn-eu.seatsio.net/chart.js";
@@ -205,19 +213,15 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(scriptSeats);
     
-    scriptSeats.onload = function() {testLoadFunc()};
-    
+    //scriptSeats.onload = function() {testLoadFunc()};
     // TODO replace with onReady function
     
     setTimeout(function(){
-        // wait for categories loaded
-        // set all tickets to 0
-        // run seats io script
-        
+        // get the holdToken
+        createSeatsHoldToken();
+        // check is container is loaded
         createSeats();
-        
-        //checkIfSeatsioLoaded();
-    },500);
+    }, 500);
 
 }
 
@@ -331,16 +335,10 @@ function createSeats(){
         },
         onObjectDeselected: function (object) {
             // remove the deselected seat id from the array
-            console.log('onObjectDeselected');
-            console.log(object);
             
-            
-            console.log('selectedSeats: '+selectedSeats);
             var index = selectedSeats.indexOf(object.label);
             console.log(index);
             if (index !== -1) selectedSeats.splice(index, 1);
-            
-            console.log('selectedSeats-new: '+selectedSeats);
             
             setTicketCategoryChosen(object.category.label, 'remove');
         },
@@ -349,10 +347,7 @@ function createSeats(){
             // run the 
             const ticketArray = localStorage.getItem('seatsObject');
             if(ticketArray){
-                console.log('set from the array page2');
                 setTicketsFromPreviousChose(JSON.parse(ticketArray));
-                //clear array
-                //localStorage.removeItem('seatsObject');
             }
         },
         onChartRenderingFailed: function(chart) {
