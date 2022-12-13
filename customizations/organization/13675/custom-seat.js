@@ -195,10 +195,7 @@ function checkTimer() {
 function createSeatsHoldToken(){
     $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
       .done(function(res) {
-        console.log('res::');
-        console.log(typeof res);
-        console.log(JSON.parse(res).holdToken);
-        //localStorage.setItem('holdToken', res.holdToken);
+        localStorage.setItem('holdToken', JSON.parse(res).holdToken);
       });
 }
 
