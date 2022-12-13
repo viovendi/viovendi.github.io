@@ -102,23 +102,20 @@ function fillTicketId(){
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             if(!inputField.val() || inputField.val()===''){
                 
-                inputField[0].click();
+              inputField.click();
                 
-                inputField[0].val(seatsArray[attendeeIndex]);
+              inputField.val(seatsArray[attendeeIndex]);
                 
-                inputField[0].dispatchEvent(new Event('change'));
+              // inputField[0].dispatchEvent(new Event('change'));
                 
-                
-                /* alternative
-                  var event;
-                  if (typeof (Event) === 'function') {
-                    event = new Event('input'); // for Chrome
-                  } else {
-                    event = document.createEvent('Event');
-                    event.initEvent('input', true, true); // for IE
-                  }
-                  input.dispatchEvent(event)
-                */
+              let event;
+              if (typeof (Event) === 'function') {
+                event = new Event('input'); // for Chrome
+              } else {
+                event = document.createEvent('Event');
+                event.initEvent('input', true, true); // for IE
+              }
+              inputField.dispatchEvent(event);
                 
             }
             inputField.attr('disabled', true);
