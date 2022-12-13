@@ -312,7 +312,8 @@ function createSeats(token){
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
         event: 'f31042b2-4ac3-4c96-a1e5-43c1291fa709',
-        session: token,
+        session: 'manual',
+        holdToken: token,
         pricing: [
            {'category': 'A', 'price': 30}, 
            {'category': 'B', 'price': 40}, 
