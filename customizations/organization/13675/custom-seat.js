@@ -106,9 +106,7 @@ function fillTicketId(){
                 
                 inputField.val(seatsArray[attendeeIndex]);
                 
-                console.log(inputField);
-                
-                inputField.dispatchEvent(new Event('change'));
+                inputField[0].dispatchEvent(new Event('change'));
                 
                 
                 /* alternative
