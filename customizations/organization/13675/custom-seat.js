@@ -196,6 +196,7 @@ function createSeatsHoldToken(){
     $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
       .done(function(res) {
         localStorage.setItem('holdToken', JSON.parse(res).holdToken);
+        createSeats(JSON.parse(res).holdToken);
       });
 }
 
@@ -222,7 +223,7 @@ function addSeatScript(){
         // get the holdToken
         createSeatsHoldToken();
         // check is container is loaded
-        createSeats();
+        //createSeats();
     }, 500);
 
 }
@@ -305,13 +306,13 @@ Seats.io
 // array for chosen tickets
 var selectedSeats = [];
 
-function createSeats(){
+function createSeats(token){
     
     new seatsio.SeatingChart({
         divId: 'chart',
         workspaceKey: 'ef77668e-17cb-4bc3-b018-710cbb7d7469',
         event: 'f31042b2-4ac3-4c96-a1e5-43c1291fa709',
-        session: 'continue',
+        session: token,
         pricing: [
            {'category': 'A', 'price': 30}, 
            {'category': 'B', 'price': 40}, 
