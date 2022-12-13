@@ -100,11 +100,11 @@ function fillTicketId(){
     $.each(labels, function(index, item) {
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
-            if(!inputField.val() || inputField.val()==''){
+            if(!inputField.val() || inputField.val()===''){
                 
-                inputField.click();
+                inputField[0].click();
                 
-                inputField.val(seatsArray[attendeeIndex]);
+                inputField[0].val(seatsArray[attendeeIndex]);
                 
                 inputField[0].dispatchEvent(new Event('change'));
                 
