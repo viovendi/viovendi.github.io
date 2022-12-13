@@ -101,12 +101,15 @@ function fillTicketId(){
         if (item.outerText.indexOf('Ticket-ID') >= 0) {
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             if(!inputField.val() || inputField.val()==''){
+                
+                inputField.click();
+                
                 inputField.val(seatsArray[attendeeIndex]);
                 
                 console.log(inputField);
                 
                 inputField.dispatchEvent(new Event('change'));
-                inputField.click();
+                
                 
                 /* alternative
                   var event;
