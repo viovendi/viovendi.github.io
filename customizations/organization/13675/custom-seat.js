@@ -102,6 +102,7 @@ function fillTicketId(){
             const inputField = $(this).closest('label').find('.customization2_attendee_further-data_custom-question_input');
             if(!inputField.val() || inputField.val()==''){
                 inputField.val(seatsArray[attendeeIndex]);
+                inputField.click();
             }
             inputField.attr('disabled', true);
         }       
