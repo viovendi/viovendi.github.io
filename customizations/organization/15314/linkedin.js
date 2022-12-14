@@ -1,10 +1,10 @@
-//console.log("running linkedIn customization");
-//sconsole.log($((".customization-booking-area-wrapper"))[0])
+console.log("running linkedIn customization");
+//console.log($((".customization-booking-area-wrapper"))[0])
 //$( '<div style="margin:150px; height = 500px"id="linkedInConsent"><div>I consent to the........Lorem ipsum dolor sit amet, consectetur adipiscing elit. In magna felis, maximus ut sagittis vitae, pellentesque non tellus. Morbi lobortis felis sed volutpat vehicula. Integer nec metus sed mi sollicitudin viverra eu vel felis. Duis fringilla augue in diam bibendum, sed accumsan massa dapibus. Fusce eget iaculis nunc, quis interdum arcu </div><div><button style="width:150px"class="button pull-right float-right col-xs-12 col-12"onclick="insertLinkedIn()">consent</button></div></div>').insertBefore(".customization-booking-area-wrapper")
 $('.viovendi_iframe').height($('.viovendi_iframe').height()+500);
 
 //console.log($(("#widgetContainer"))[0])
-$( '<div style="margin:150px; height = 500px"id="linkedInConsent"><div>I consent to the........Lorem ipsum dolor sit amet, consectetur adipiscing elit. In magna felis, maximus ut sagittis vitae, pellentesque non tellus. Morbi lobortis felis sed volutpat vehicula. Integer nec metus sed mi sollicitudin viverra eu vel felis. Duis fringilla augue in diam bibendum, sed accumsan massa dapibus. Fusce eget iaculis nunc, quis interdum arcu </div><div><button style="width:150px"class="button pull-right float-right col-xs-12 col-12"onclick="insertLinkedIn()">consent</button></div></div>').insertBefore("#widgetContainer")
+$( '<div style="margin:150px; height = 500px"id="linkedInConsent"><div>We want to show you content from LinkedIn - by consenting, you agree that your IP-Address is shared with Microsoft</div><div><button style="width:150px"class="button pull-right float-right col-xs-12 col-12"onclick="insertLinkedIn()">consent</button></div></div>').insertBefore("#widgetContainer")
 
 function insertLinkedIn(){
     $('#linkedInConsent').hide();
