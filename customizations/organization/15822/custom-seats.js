@@ -1,11 +1,10 @@
-
 console.log('github code');
 
 
 var insertionListener = function (event) {
     
-    console.log('event.animationName');
-    console.log(event.animationName);
+    //console.log('event.animationName');
+    //console.log(event.animationName);
     
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
@@ -19,7 +18,6 @@ var insertionListener = function (event) {
         }
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
-        //createSeats();
     }else if(event.animationName === 'attendeeEdited'){
         console.log('attendeeEdited');
         fillTicketId();
@@ -45,8 +43,6 @@ async function hendler() {
     localStorage.setItem('isEditMode', 1);
       
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    
-      // submit booking in seats io
   }
 }
 
@@ -89,8 +85,6 @@ function getXMLHttpRequest (open) {
 
 
 function fillTicketId(){
-    console.log('fillTicketId');
-    
     const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
     const classList = expandedAttendee.attr('class').split(/\s+/);
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
@@ -103,10 +97,7 @@ function fillTicketId(){
             if(!inputField.val() || inputField.val()===''){
                 
               inputField.click();
-                
               inputField.val(seatsArray[attendeeIndex]);
-                
-              // inputField[0].dispatchEvent(new Event('change'));
                 
               let event;
               if (typeof (Event) === 'function') {
@@ -207,6 +198,8 @@ function checkTimer() {
     }
 }
 
+/*********************/
+
 function createSeatsHoldToken(){
     $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
       .done(function(res) {
@@ -214,8 +207,6 @@ function createSeatsHoldToken(){
         createSeats(JSON.parse(res).holdToken);
       });
 }
-
-/*********************/
 
 function addSeatScript(){
     // move adding script to custom.js ??
@@ -237,8 +228,6 @@ function addSeatScript(){
     setTimeout(function(){
         // get the holdToken
         createSeatsHoldToken();
-        // check is container is loaded
-        //createSeats();
     }, 500);
 
 }
@@ -270,7 +259,6 @@ function setTicketsFromPreviousChose(arr){
             }
         });
     });
-    console.log('removeItem');
     localStorage.removeItem('isEditMode');
 }
 
@@ -341,11 +329,8 @@ function createSeats(token){
             // add the selected seat id to the array
             console.log('onObjectSelected');
             console.log(object);
-            
-            console.log('isEditMode:');
-            console.log(localStorage.getItem('isEditMode'));
+
             if(!localStorage.getItem('isEditMode')){
-                console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
             
