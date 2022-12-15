@@ -232,13 +232,14 @@ function createSeatsHoldToken(){
             console.log(isTokenInValid);
         $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
           .done(function(res) {
+            createSeats(JSON.parse(res).holdToken);
             localStorage.setItem('holdToken', JSON.parse(res).holdToken);
           });
+    }else{
+        createSeats(holdToken);
     }
     
-        console.log(localStorage.getItem('holdToken'));
-    
-    createSeats(localStorage.getItem('holdToken'));
+    //createSeats(localStorage.getItem('holdToken'));
 }
 
 /*********************/
