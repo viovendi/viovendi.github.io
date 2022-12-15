@@ -218,7 +218,7 @@ function validateToken(){
       .done(function(res) {
         console.log('res - '+res);
         
-        if(res !== 'invalid'){
+        if(res === 'invalid'){
             $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
               .done(function(res) {
                 createSeats(JSON.parse(res).holdToken);
