@@ -328,7 +328,7 @@ Seats.io
 *************/
 
 // array for chosen tickets
-var selectedSeats = [];
+let selectedSeats = [];
 
 function createSeats(token){
     
@@ -373,9 +373,11 @@ function createSeats(token){
         onChartRendered: function(chart) {
             console.log('chart is loaded');
             // run the 
-            const ticketArray = localStorage.getItem('seatsObject');
+            const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
             if(ticketArray){
-                setTicketsFromPreviousChose(JSON.parse(ticketArray));
+                selectedSeats = ticketArray;
+                //setTicketsFromPreviousChose(JSON.parse(ticketArray));
+                setTicketsFromPreviousChose(ticketArray);
             }
         },
         onChartRenderingFailed: function(chart) {
