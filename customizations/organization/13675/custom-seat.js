@@ -230,8 +230,8 @@ async function createSeatsHoldToken(){
 
     console.log('isTokenExists - '+isTokenExists);
     
-    if(isTokenExists){
-        isTokenInValid = await validateToken(holdToken);
+    if(holdToken){
+        isTokenExists = await validateToken(holdToken);
     }
     
     if(!isTokenExists){
