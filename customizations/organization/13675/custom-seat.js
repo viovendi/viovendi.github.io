@@ -208,32 +208,22 @@ function checkTimer() {
 }
 
 function createSeatsHoldToken(){
-    console.log('createSeatsHoldToken');
-    
     let holdToken = localStorage.getItem('holdToken');
-    console.log(holdToken);
-    
-    let isTokenValid = false;
+    let isTokenInValid = true;
     
     if(holdToken){
         $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
           .done(function(res) {
-            console.log(res);
-            console.log(typeof res);
-            console.log(JSON.parse(res));
-
-            // if valid set isTokenValid = true
+            if(res!== 'invalid'){
+                isTokenInValid = false;
+            }
           });
     }
-    //////////
-    return false;
     
-    
-    if(!isTokenValid){
+    if(isTokenInValid){
         $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
           .done(function(res) {
             localStorage.setItem('holdToken', JSON.parse(res).holdToken);
-            //createSeats(JSON.parse(res).holdToken);
           });
     }
     
