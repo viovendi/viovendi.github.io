@@ -188,6 +188,7 @@ function testLoadFunc(){
 
 /**********.check if seatsio loaded ***********/
 
+/*
 function checkIfSeatsioLoaded(){
     setInterval(checkTimer, 1000);
 }
@@ -206,21 +207,31 @@ function checkTimer() {
         createSeats();
     }
 }
+*/
 
-async function validateToken(holdToken){
+function validateToken(){
     console.log('holdToken start');
-    let isValid = false;
+    let holdToken = localStorage.getItem('holdToken');
+    //let isValid = false;
     
     $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
       .done(function(res) {
         console.log('res - '+res);
+        
         if(res !== 'invalid'){
-            isValid = true;
+            $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
+              .done(function(res) {
+                createSeats(JSON.parse(res).holdToken);
+                localStorage.setItem('holdToken', JSON.parse(res).holdToken);
+              });
+        }else{
+            createSeats(holdToken);
         }
+        
       });
     
-    console.log('isValid - '+isValid);
-    return isValid;
+    //console.log('isValid - '+isValid);
+    //return isValid;
 }
 
 async function createSeatsHoldToken(){
@@ -273,7 +284,8 @@ function addSeatScript(){
     
     setTimeout(function(){
         // get the holdToken
-        createSeatsHoldToken();
+        validateToken();
+       //await createSeatsHoldToken();
         // check is container is loaded
         //createSeats();
     }, 500);
