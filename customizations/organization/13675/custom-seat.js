@@ -237,7 +237,7 @@ function createSeatsHoldToken(){
           });
     }
     
-    createSeats(localStorage.getItem('holdToken');
+    createSeats(localStorage.getItem('holdToken'));
 }
 
 /*********************/
