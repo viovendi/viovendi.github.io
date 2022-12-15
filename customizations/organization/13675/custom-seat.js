@@ -106,8 +106,6 @@ function fillTicketId(){
                 
               inputField.val(seatsArray[attendeeIndex]);
                 
-              // inputField[0].dispatchEvent(new Event('change'));
-                
               let event;
               if (typeof (Event) === 'function') {
                 event = new Event('input'); // for Chrome
@@ -210,13 +208,10 @@ function checkTimer() {
 */
 
 function validateToken(){
-    console.log('holdToken start');
     let holdToken = localStorage.getItem('holdToken');
-    //let isValid = false;
     
     $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
       .done(function(res) {
-        console.log('res - '+res);
         
         if(res === 'invalid'){
             $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
@@ -229,38 +224,6 @@ function validateToken(){
         }
         
       });
-    
-    //console.log('isValid - '+isValid);
-    //return isValid;
-}
-
-async function createSeatsHoldToken(){
-    console.log('createSeatsHoldToken start');
-    
-    let holdToken = localStorage.getItem('holdToken');
-    let isTokenExists = false;
-
-    console.log('isTokenExists def - '+isTokenExists);
-    
-    if(holdToken){
-        isTokenExists = await validateToken(holdToken);
-        console.log('isTokenExists holdToken - '+isTokenExists);
-    }
-    
-    console.log('isTokenExists upd - '+isTokenExists);
-    
-    if(!isTokenExists){
-            console.log('isTokenExists inside- '+isTokenExists);
-        $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
-          .done(function(res) {
-            createSeats(JSON.parse(res).holdToken);
-            localStorage.setItem('holdToken', JSON.parse(res).holdToken);
-          });
-    }else{
-        createSeats(holdToken);
-    }
-    
-    //createSeats(localStorage.getItem('holdToken'));
 }
 
 /*********************/
@@ -285,9 +248,6 @@ function addSeatScript(){
     setTimeout(function(){
         // get the holdToken
         validateToken();
-       //await createSeatsHoldToken();
-        // check is container is loaded
-        //createSeats();
     }, 500);
 
 }
