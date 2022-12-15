@@ -213,6 +213,7 @@ async function validateToken(holdToken){
     
     $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
       .done(function(res) {
+        console.log('res - '+res);
         if(res !== 'invalid'){
             isValid = true;
         }
@@ -228,14 +229,17 @@ async function createSeatsHoldToken(){
     let holdToken = localStorage.getItem('holdToken');
     let isTokenExists = false;
 
-    console.log('isTokenExists - '+isTokenExists);
+    console.log('isTokenExists def - '+isTokenExists);
     
     if(holdToken){
         isTokenExists = await validateToken(holdToken);
+        console.log('isTokenExists holdToken - '+isTokenExists);
     }
     
+    console.log('isTokenExists upd - '+isTokenExists);
+    
     if(!isTokenExists){
-            console.log('isTokenExists - '+isTokenExists);
+            console.log('isTokenExists inside- '+isTokenExists);
         $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
           .done(function(res) {
             createSeats(JSON.parse(res).holdToken);
