@@ -4,24 +4,24 @@ console.log('github code');
 
 var insertionListener = function (event) {
     
-    console.log('event.animationName');
-    console.log(event.animationName);
+    //console.log('event.animationName');
+    //console.log(event.animationName);
     
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
-        console.log('ticket cat loaded!!!');
+        //console.log('ticket cat loaded!!!');
         clearTicketsInManager();
         
         if($('#chart').length === 0){
-            console.log('ticketCatsLoaded');
+            //console.log('ticketCatsLoaded');
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
         //createSeats();
     }else if(event.animationName === 'attendeeEdited'){
-        console.log('attendeeEdited');
+        //console.log('attendeeEdited');
         fillTicketId();
     }
 };
@@ -184,6 +184,7 @@ function testLoadFunc(){
     console.log('testLoadFunc!');
 }
 
+
 /**********.check if seatsio loaded ***********/
 
 /*
@@ -214,6 +215,11 @@ function validateToken(){
       .done(function(res) {
         
         if(res === 'invalid'){
+            // set ticket categories to 0
+            clearTicketsInManager();
+            // clear the seatsAray from localstorage
+            localStorage.removeItem('seatsObject');
+            
             $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
               .done(function(res) {
                 createSeats(JSON.parse(res).holdToken);
