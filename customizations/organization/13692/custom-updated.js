@@ -389,7 +389,7 @@ function rebuildPage() {
           var label = $(this).find(".payment-option__label").text().trim();
 
                       console.log(label);
-                      console.log(hub_payment_method.indexOf(label
+                      console.log(hub_payment_method.indexOf(label));
                                                              
           if (hub_payment_method.indexOf(label) === -1) {
             
