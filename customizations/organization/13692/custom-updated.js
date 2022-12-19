@@ -387,14 +387,8 @@ function rebuildPage() {
       if (allowed_countries === "forbidden") {
         $(".customization2_payment .payment-option").each(function () {
           var label = $(this).find(".payment-option__label").text().trim();
-
-                      console.log(label);
-                      console.log(hub_payment_method.indexOf(label));
                                                              
-          if (hub_payment_method.indexOf(label) === -1) {
-            
-            console.log(this);
-            console.log($(this).find(".customization2_organizer-bank-transfer"));
+          if (hub_payment_method.indexOf(label) !== -1) {
             
             $(this).addClass("hidden");
             $(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
