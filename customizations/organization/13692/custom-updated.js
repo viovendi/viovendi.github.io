@@ -31,7 +31,7 @@ var hub_payment_method_arr_options = [
 ];
 
 // payment humethod names
-var hub_payment_method = ["Sofortbezahlung"];
+var hub_payment_method = ["Sofortbezahlung", "Zahlung per Kreditkarte (VISA oder Mastercard)"];
 
 function getInvoiceRadioGroup(arrayOfLabels) {
   var targetElem = null;
@@ -130,12 +130,14 @@ function getWidgetLang() {
 }
 
 function getDataFromPage2() {
+  /*
   $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
     "click",
     function () {
       console.log("click next 2 page TEST");
     }
   );
+  */
 
   $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
     "click",
