@@ -205,7 +205,8 @@ function checking_page3() {
     rebuildPage();
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    //stop_checking_page3();
+    //
+    stop_checking_page3();
   }
 }
 checking_page3();
@@ -386,10 +387,10 @@ function rebuildPage() {
       if (allowed_countries === "forbidden") {
         $(".customization2_payment .payment-option").each(function () {
           var label = $(this).find(".payment-option__label").text().trim();
-          
-          console.log(label);
-          console.log(hub_payment_method.indexOf(label));
-          
+
+                      console.log(label);
+                      console.log(hub_payment_method.indexOf(label
+                                                             
           if (hub_payment_method.indexOf(label) === -1) {
             
             console.log(this);
