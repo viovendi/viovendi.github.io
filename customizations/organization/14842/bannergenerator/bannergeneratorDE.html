@@ -28,7 +28,7 @@
     .form__input {
       width: 100%;
       margin-top: 10px !important;
-      border: none;
+      border: none !important;
       outline: none;
     }
     input,select {
@@ -50,7 +50,7 @@
       bottom: -1px;
       height: 100%;
       width: 100%;
-      border-bottom: 3px solid #ff0000;
+      border-bottom: 3px solid #313f49;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
@@ -71,36 +71,36 @@
       transform: translateX(0%);
     }
     .btn {
-      background-color: #ff0000;
-      border: 2px solid white;
+      background-color: #313f49;
+      border: 2px solid #313f49;
       color: white;
       padding: 8px !important;
-      border-radius: 5px;
+      
       font-size: 18px !important;
     }
     .btn:hover {
-      background-color: white;
-      border: 2px solid #ff0000;
-      color: #ff0000;
+      background-color: #313f49;
+      border: 2px solid #313f49;
+      color: #becf9c;
     }
     .btn_secondary {
-      background-color: white;
-      border: none;
-      color: #ff0000;
+      background-color: #313f49;
+      border: 2px solid #313f49;
+      color: white;
       padding: 8px !important;
-      border-radius: 5px;
+
       font-size: 18px !important;
     }
     .btn_secondary:hover {
-      background-color: white;
-      border: 2px solid #ff0000;
-      color: #ff0000;
+      background-color: #313f49;
+      border: 2px solid #313f49;
+      color: #becf9c;
     }
  </style>
  <div>
   <div class="signup__container signup__form">
    <form>
-    <img style="display: none" id="banner_img" crossorigin="anonymous" src="https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_160x600_DE.png">
+    <img style="display: none" id="banner_img" crossorigin="anonymous" src="https://viovendi.github.io/customizations/organization/14842/bannergenerator/112922_CREA23_Banner_Aussteller_160_×_600_DE.png">
     <fieldset class="halle__stand">
      <div class="form-group">
       <select name="format" size="1" id="format_inp" class="form__input form-control" required="required">
@@ -112,6 +112,7 @@
        <option value="horizontal">
         468 x 60 (Horizontaler Banner)
        </option>
+<!--
        <option value="email">
         180 x 60 (Email-Signatur)
        </option>
@@ -124,6 +125,7 @@
        <option value="facebook">
         1080 x 1350 (Facebook Post)
        </option>
+-->
       </select>
       <label class="form__label form__label__select">
        <span class="label__content">
@@ -183,9 +185,11 @@
     </fieldset>
    </form>
    <br>
-   <canvas id="canvas" crossorigin="anonymous" style="display: block; margin: auto">
+   <canvas id="canvas" crossorigin="anonymous" style="display: block; margin: auto;">
    </canvas>
+   <div>
+   </div>
   </div>
-  <script src="https://viovendi.github.io/customizations/organization/14334/bannergenerator/bannergeneratorDE.js">
+  <script src="https://viovendi.github.io/customizations/organization/14842/bannergenerator/bannergeneratorDE.js">
   </script>
  </div>
