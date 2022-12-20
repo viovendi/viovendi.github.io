@@ -23,10 +23,10 @@ function getXMLHttpRequest (open) {
             var artikelnummer = 91117024;
             
             var isFreeORder = false;
-            var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+            var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&organisation=15856&artikelnummer="+artikelnummer+"";
             
             if(price == 0){
-              bodyString = "&order_id="+orderId+"";
+              bodyString = "&organisation=15856&order_id="+orderId+"";
             }
             
             // send redirect request

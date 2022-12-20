@@ -1,4 +1,3 @@
-
 console.log('github code');
 
 
@@ -10,18 +9,17 @@ var insertionListener = function (event) {
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
-        //console.log('ticket cat loaded!!!');
+        console.log('ticket cat loaded!!!');
         clearTicketsInManager();
         
         if($('#chart').length === 0){
-            //console.log('ticketCatsLoaded');
+            console.log('ticketCatsLoaded');
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
-        //createSeats();
     }else if(event.animationName === 'attendeeEdited'){
-        //console.log('attendeeEdited');
+        console.log('attendeeEdited');
         fillTicketId();
     }
 };
@@ -45,8 +43,6 @@ async function hendler() {
     localStorage.setItem('isEditMode', 1);
       
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    
-      // submit booking in seats io
   }
 }
 
@@ -89,8 +85,6 @@ function getXMLHttpRequest (open) {
 
 
 function fillTicketId(){
-    console.log('fillTicketId');
-    
     const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
     const classList = expandedAttendee.attr('class').split(/\s+/);
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
@@ -103,7 +97,6 @@ function fillTicketId(){
             if(!inputField.val() || inputField.val()===''){
                 
               inputField.click();
-                
               inputField.val(seatsArray[attendeeIndex]);
                 
               let event;
@@ -184,10 +177,8 @@ function testLoadFunc(){
     console.log('testLoadFunc!');
 }
 
-
 /**********.check if seatsio loaded ***********/
 
-/*
 function checkIfSeatsioLoaded(){
     setInterval(checkTimer, 1000);
 }
@@ -206,33 +197,16 @@ function checkTimer() {
         createSeats();
     }
 }
-*/
-
-function validateToken(){
-    let holdToken = localStorage.getItem('holdToken');
-    
-    $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
-      .done(function(res) {
-        
-        if(res === 'invalid'){
-            // set ticket categories to 0
-            clearTicketsInManager();
-            // clear the seatsAray from localstorage
-            localStorage.removeItem('seatsObject');
-            
-            $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
-              .done(function(res) {
-                createSeats(JSON.parse(res).holdToken);
-                localStorage.setItem('holdToken', JSON.parse(res).holdToken);
-              });
-        }else{
-            createSeats(holdToken);
-        }
-        
-      });
-}
 
 /*********************/
+
+function createSeatsHoldToken(){
+    $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
+      .done(function(res) {
+        localStorage.setItem('holdToken', JSON.parse(res).holdToken);
+        createSeats(JSON.parse(res).holdToken);
+      });
+}
 
 function addSeatScript(){
     // move adding script to custom.js ??
@@ -253,7 +227,7 @@ function addSeatScript(){
     
     setTimeout(function(){
         // get the holdToken
-        validateToken();
+        createSeatsHoldToken();
     }, 500);
 
 }
@@ -285,7 +259,6 @@ function setTicketsFromPreviousChose(arr){
             }
         });
     });
-    console.log('removeItem');
     localStorage.removeItem('isEditMode');
 }
 
@@ -334,7 +307,7 @@ Seats.io
 *************/
 
 // array for chosen tickets
-let selectedSeats = [];
+var selectedSeats = [];
 
 function createSeats(token){
     
@@ -356,11 +329,8 @@ function createSeats(token){
             // add the selected seat id to the array
             console.log('onObjectSelected');
             console.log(object);
-            
-            console.log('isEditMode:');
-            console.log(localStorage.getItem('isEditMode'));
+
             if(!localStorage.getItem('isEditMode')){
-                console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
             
@@ -379,11 +349,9 @@ function createSeats(token){
         onChartRendered: function(chart) {
             console.log('chart is loaded');
             // run the 
-            const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
+            const ticketArray = localStorage.getItem('seatsObject');
             if(ticketArray){
-                selectedSeats = ticketArray;
-                //setTicketsFromPreviousChose(JSON.parse(ticketArray));
-                setTicketsFromPreviousChose(ticketArray);
+                setTicketsFromPreviousChose(JSON.parse(ticketArray));
             }
         },
         onChartRenderingFailed: function(chart) {

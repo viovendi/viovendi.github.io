@@ -47,7 +47,7 @@ function setTexts() {
     }
 }
 
-var canvas = document.getElementById('canvas')
+var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 /*
 After I added jQuery I add all the cusomizations
