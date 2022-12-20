@@ -27,11 +27,11 @@ function setTexts() {
     const value = $('#format_inp').val();
 
      if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 4, 31);
-        ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 4, 49);
+        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 35);
+        ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
-        ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 497);
+        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 565);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 36, 29);
         ctx.fillText($('#stand_inp').val(), 36, 45);
