@@ -388,16 +388,16 @@ function rebuildPage() {
         $(".customization2_payment .payment-option").each(function () {
           var label = $(this).find(".payment-option__label").text().trim();
                                                              
-          if (hub_payment_method.indexOf(label) !== -1) {
+          if (hub_payment_method.indexOf(label) === -1) {
             
-            $(this).addClass("hidden");
+            $(this).addClass("hidden-test");
             $(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }
         });
       } else {
         $(".customization2_payment .payment-option").each(function () {
-          if ($(this).hasClass("hidden")) {
-            $(this).removeClass("hidden");
+          if ($(this).hasClass("hidden-test")) {
+            $(this).removeClass("hidden-test");
           }
         });
       }
