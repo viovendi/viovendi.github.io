@@ -391,10 +391,9 @@ function rebuildPage() {
                                                              
           if (hub_payment_method.indexOf(label) === -1) {
             
-            $(this).addClass("hidden-test");
+            $(this).addClass("hidden");
             //$(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }else{
-            $(this).addClass("hidden-test-123");
             $(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }
         });
