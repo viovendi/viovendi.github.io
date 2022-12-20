@@ -385,15 +385,20 @@ function rebuildPage() {
     //NEW integration logic
     if (!payment_method || payment_method.length === 0) {
       if (allowed_countries === "forbidden") {
+        
         $(".customization2_payment .payment-option").each(function () {
           var label = $(this).find(".payment-option__label").text().trim();
                                                              
           if (hub_payment_method.indexOf(label) === -1) {
             
             $(this).addClass("hidden-test");
+            //$(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
+          }else{
+            $(this).addClass("hidden-test-123");
             $(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }
         });
+        
       } else {
         $(".customization2_payment .payment-option").each(function () {
           if ($(this).hasClass("hidden-test")) {
