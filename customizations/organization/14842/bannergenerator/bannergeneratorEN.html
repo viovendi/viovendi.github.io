@@ -1,0 +1,191 @@
+<style>
+  .signup__form {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+    fieldset {
+      padding: 0;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .clear__download {
+      padding-top: 40px;
+      padding-bottom: 30px;
+      justify-content: center;
+    }
+    .form-group {
+      min-width: 150px;
+      height: 50px;
+      position: relative;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .form__input {
+      width: 100%;
+      margin-top: 10px !important;
+      border: none;
+      outline: none;
+    }
+    input,select {
+      background-color: white !important;
+    }
+    .form__label {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100% !important;
+      height: 100% !important;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+    }
+    .form__label:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: -1px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid #ff0000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .label__content {
+      position: absolute;
+      bottom: 10px;
+      left: 0px;
+      transition: all 0.3s ease;
+    }
+    .form__input:focus+.form__label .label__content,
+    .form__input:valid+.form__label .label__content {
+      transform: translateY(-100%);
+      font-size: 16px;
+      color: #989898 !important;
+    }
+    .form__input:focus+.form__label:after,
+    .form__input:valid+.form__label:after {
+      transform: translateX(0%);
+    }
+    .btn {
+      background-color: #ff0000;
+      border: 2px solid white;
+      color: white;
+      padding: 8px !important;
+      border-radius: 5px;
+      font-size: 18px !important;
+    }
+    .btn:hover {
+      background-color: white;
+      border: 2px solid #ff0000;
+      color: #ff0000;
+    }
+    .btn_secondary {
+      background-color: white;
+      border: none;
+      color: #ff0000;
+      padding: 8px !important;
+      border-radius: 5px;
+      font-size: 18px !important;
+    }
+    .btn_secondary:hover {
+      background-color: white;
+      border: 2px solid #ff0000;
+      color: #ff0000;
+    }
+ </style>
+ <div>
+  <div class="signup__container signup__form">
+   <form>
+    <img style="display: none" id="banner_img" crossorigin="anonymous" src="https://viovendi.github.io/customizations/organization/14334/bannergenerator/040122_BOE22_Ausstellerbanner_160x600_EN.png">
+    <fieldset class="halle__stand">
+     <div class="form-group">
+      <select name="format" size="1" id="format_inp" class="form__input form-control" required="required">
+       <option value="" disabled="" selected="" hidden="">
+       </option>
+       <option value="vertikal">
+        120 x 600 (Vertical banner)
+       </option>
+       <option value="horizontal">
+        468 x 60 (Horizontal banner)
+       </option>
+       <option value="email">
+        180 x 60 (Email signature)
+       </option>
+       <option value="instagrampost">
+        1080 x 1080 (Instagram post)
+       </option>
+       <option value="instagramstory">
+        1080 x 1350 (Instagram Story)
+       </option>
+       <option value="facebook">
+        1080 x 1350 (Facebook post)
+       </option>
+      </select>
+      <label class="form__label form__label__select">
+       <span class="label__content">
+        Format
+       </span>
+      </label>
+     </div>
+     <div class="form-group">
+      <select name="halle" id="halle_inp" class="form__input form-control" required="required">
+       <option value="" disabled="" selected="" hidden="">
+       </option>
+       <option value="3B">
+        3B
+       </option>
+       <option value="4">
+        4
+       </option>
+       <option value="5">
+        5
+       </option>
+       <option value="6">
+        6
+       </option>
+       <option value="7">
+        7
+       </option>
+       <option value="8">
+        8
+       </option>
+      </select>
+      <label class="form__label">
+       <span class="label__content">
+        Hall
+       </span>
+      </label>
+     </div>
+     <div class="form-group">
+      <input id="stand_inp" type="text" class="form__input form-control" placeholder=" " required="required">
+      <label class="form__label">
+       <span class="label__content">
+        Stand
+       </span>
+      </label>
+     </div>
+    </fieldset>
+    <fieldset class="clear__download">
+     <div class="submit__button">
+      <a id="download" download="Banner.png">
+       <button type="button" onclick="download()" class="btn">
+        Download
+       </button>
+      </a>
+     </div>
+     <button type="submit" class="btn_secondary">
+      Clear
+     </button>
+    </fieldset>
+   </form>
+   <br>
+   <canvas id="canvas" crossorigin="anonymous" style="display: block; margin: auto">
+   </canvas>
+  </div>
+  <script src="https://viovendi.github.io/customizations/organization/14334/bannergenerator/bannergeneratorEN.js">
+  </script>
+ </div>
