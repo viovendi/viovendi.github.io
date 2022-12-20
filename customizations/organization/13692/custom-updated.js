@@ -206,7 +206,7 @@ function checking_page3() {
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
     //
-    stop_checking_page3();
+    //stop_checking_page3();
   }
 }
 checking_page3();
