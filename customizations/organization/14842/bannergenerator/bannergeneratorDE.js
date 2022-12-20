@@ -27,7 +27,7 @@ function setTexts() {
     const value = $('#format_inp').val();
 
      if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 390 - $('#halle_inp').val().length * 4, 42);
+        ctx.fillText($('#halle_inp').val(), 390 - $('#halle_inp').val().length * 4, 43);
         ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 43);
     } else if (value == 'vertikal') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 497);
