@@ -21,6 +21,30 @@ async function handler() {
 handler();
 
 
+function sendRequest(object){
+  console.log('sendRequest - start');
+  $.ajax({
+      url: "webhook url",
+      type: "post",
+      headers: {
+        // "Content-Type": "application/json",
+        // Accept: "application/json",
+      },
+      data: JSON.stringify(object),
+      dataType: "json",
+      success: function (res) {
+        // redirect to payment page
+        console.log(res);
+        // const paymentUrl = 
+        // window.location();
+      },
+      error: function (jqXHR, exception) {
+        // show the error message?
+        console.log('Error - no payment page URL');
+      }
+  });
+}
+
 
 function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
@@ -33,8 +57,13 @@ function getXMLHttpRequest (open) {
 
            // send the request to Make (to confirm the seats booking)
              const orders = res._embedded.orders;
+              console.log(orders[0]);
+            
              const order_id = orders[0].id;
              const organizer_id = orders[0].event.organizer_id;
+            
+            
+             // sendRequest({});
             
             // snd the request to get the payment page URL
           }
