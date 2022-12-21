@@ -46,7 +46,7 @@ function sendRequest(object){
   });
 }
 
-
+var isSent = false;
 function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
@@ -60,11 +60,18 @@ function getXMLHttpRequest (open) {
              const orders = res._embedded.orders;
               console.log(orders[0]);
             
-             const order_id = orders[0].id;
-             const organizer_id = orders[0].event.organizer_id;
+             //const order_id = orders[0].id;
+             //const organizer_id = orders[0].event.organizer_id;
             
+            if(!isSent){
+              sendRequest({
+               "orderId":orders[0].id,
+               "orderAmount":orders[0].payment.amount,
+               "orderCurr":orders[0].event.currency.code,
+             });
+            }
             
-             // sendRequest({});
+            isSent = true;
             
             // snd the request to get the payment page URL
           }
