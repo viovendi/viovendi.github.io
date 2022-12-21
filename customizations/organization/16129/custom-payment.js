@@ -1,6 +1,7 @@
 console.log('github-js');
 
 async function handler() {
+  console.log('handler-'+document.readyState);
   if (document.readyState !== 'loading') {
 
     await getPage('page1');
@@ -24,7 +25,7 @@ handler();
 function sendRequest(object){
   console.log('sendRequest - start');
   $.ajax({
-      url: "webhook url",
+      url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
       headers: {
         // "Content-Type": "application/json",
