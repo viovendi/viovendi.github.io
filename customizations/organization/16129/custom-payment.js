@@ -43,11 +43,14 @@ function showErrorMessage() {
   
   if ($(".response-message-notice").length) {
     $(".response-message-notice").text(message);
+  }else{
+    $(".customization-confirmation-description").text(message);
   }
 }
 
 
 function sendRequest(object){
+  console.log(object);
   console.log('sendRequest - start');
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
@@ -72,7 +75,8 @@ function sendRequest(object){
   });
 }
 
-var isSent = false;
+let isSent = false;
+const orderDataobj = {};
 function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
@@ -84,14 +88,14 @@ function getXMLHttpRequest (open) {
 
            // send the request to Make (to confirm the seats booking)
              const orders = res._embedded.orders;
-              console.log(orders[0]);
+             console.log(orders[0]);
+            
+             orderDataobj.orderId = orders[0].id;
+             orderDataobj.orderAmount = orders[0].payment.amount;
+             orderDataobj.orderCurr = orders[0].event.currency.code;
             
             if(!isSent){
-              sendRequest({
-               orderId: orders[0].id,
-               orderAmount: orders[0].payment.amount,
-               orderCurr: orders[0].event.currency.code,
-             });
+              sendRequest(orderDataobj);
             }
             
             isSent = true;
