@@ -48,25 +48,37 @@ function showErrorMessage() {
   }
 }
 
+function sendRequestToSetExtCustomerId(object){
+  $.ajax({
+      url: "https://hook.doo.integromat.celonis.com/gjqjl3fxs8ij8rhnmyew9igz6xbnwj3i",
+      type: "post",
+      headers: {},
+      data: object,
+      dataType: "json",
+      success: function (res) {},
+      error: function (jqXHR, exception) {
+        // show the error message?
+        showErrorMessage();
+        console.log('Error - Contact organizer!');
+      }
+  });
+}
 
-function sendRequest(object){
-  console.log(object);
-  console.log('sendRequest - start');
+
+function sendRequestToGetRedirectUrl(object){
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
-      headers: {
-        // "Content-Type": "application/json",
-        // Accept: "application/json",
-      },
+      headers: {},
       data: object,
-      //data: JSON.stringify(object),
       dataType: "json",
       success: function (res) {
         // redirect to payment page
+        console.log('sendRequestToGetRedirectUrl - res');
         console.log(res);
         // const paymentUrl = 
         // window.location();
+        sendRequestToSetExtCustomerId(res.data.LfFTxnID);
       },
       error: function (jqXHR, exception) {
         // show the error message?
@@ -96,7 +108,7 @@ function getXMLHttpRequest (open) {
              orderDataobj.orderCurr = orders[0].event.currency.code;
             
             if(!isSent){
-              sendRequest(orderDataobj);
+              sendRequestToGetRedirectUrl(orderDataobj);
             }
             
             isSent = true;
