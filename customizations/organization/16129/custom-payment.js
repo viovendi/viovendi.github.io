@@ -80,6 +80,8 @@ function sendRequestToGetRedirectUrl(object){
         
         // window.location();
         dataObj.LfFTxnID = res.LfFTxnID;
+        dataObj.dooOrderId = object.orderId;
+        
         sendRequestToSetExtCustomerId(dataObj);
         
         window.location.href = res.LinkToPayPage;
