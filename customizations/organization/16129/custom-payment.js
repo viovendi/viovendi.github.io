@@ -84,7 +84,8 @@ function sendRequestToGetRedirectUrl(object){
         
         sendRequestToSetExtCustomerId(dataObj);
         
-        window.location.href = res.LinkToPayPage;
+        //window.location.href = res.LinkToPayPage;
+        window.open(res.LinkToPayPage);
       },
       error: function (jqXHR, exception) {
         // show the error message?
