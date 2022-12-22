@@ -66,6 +66,7 @@ function sendRequestToSetExtCustomerId(object){
 
 
 function sendRequestToGetRedirectUrl(object){
+  const dataObj = {};
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
@@ -76,9 +77,12 @@ function sendRequestToGetRedirectUrl(object){
         // redirect to payment page
         console.log('sendRequestToGetRedirectUrl - res');
         console.log(res);
-        // const paymentUrl = 
+        
         // window.location();
-        sendRequestToSetExtCustomerId(res.data.LfFTxnID);
+        dataObj.LfFTxnID = res.LfFTxnID;
+        sendRequestToSetExtCustomerId(dataObj);
+        
+        window.location(res.LinkToPayPage);
       },
       error: function (jqXHR, exception) {
         // show the error message?
