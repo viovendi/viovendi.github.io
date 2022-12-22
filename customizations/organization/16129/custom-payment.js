@@ -82,7 +82,7 @@ function sendRequestToGetRedirectUrl(object){
         dataObj.LfFTxnID = res.LfFTxnID;
         sendRequestToSetExtCustomerId(dataObj);
         
-        window.location(res.LinkToPayPage);
+        window.location.href = res.LinkToPayPage;
       },
       error: function (jqXHR, exception) {
         // show the error message?
