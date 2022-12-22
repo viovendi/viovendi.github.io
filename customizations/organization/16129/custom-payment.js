@@ -22,6 +22,31 @@ async function handler() {
 handler();
 
 
+function changeIcon(color) {
+  $(".ew-confirmation__header vv-icon").hide();
+
+  if($('.new-icon-logo').length){
+    $(".new-icon-logo").text("X");
+    $(".new-icon-logo").css("background", color);
+  } else {
+    $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: red;color: white;border-radius: 100%;text-align: center;line-height: 72px" >X</p>');
+  }
+}
+
+function showErrorMessage() {
+  const heading = "Unexpected error";
+  const message = "Oops! Something went wrong. Please try again later.";
+  const color = "red";
+
+  changeIcon(color);
+  $(".ew-confirmation__header .header__label").text(heading);
+  
+  if ($(".response-message-notice").length) {
+    $(".response-message-notice").text(message);
+  }
+}
+
+
 function sendRequest(object){
   console.log('sendRequest - start');
   $.ajax({
@@ -41,6 +66,7 @@ function sendRequest(object){
       },
       error: function (jqXHR, exception) {
         // show the error message?
+        showErrorMessage();
         console.log('Error - no payment page URL');
       }
   });
@@ -60,14 +86,11 @@ function getXMLHttpRequest (open) {
              const orders = res._embedded.orders;
               console.log(orders[0]);
             
-             //const order_id = orders[0].id;
-             //const organizer_id = orders[0].event.organizer_id;
-            
             if(!isSent){
               sendRequest({
-               "orderId":orders[0].id,
-               "orderAmount":orders[0].payment.amount,
-               "orderCurr":orders[0].event.currency.code,
+               orderId: orders[0].id,
+               orderAmount: orders[0].payment.amount,
+               orderCurr: orders[0].event.currency.code,
              });
             }
             
