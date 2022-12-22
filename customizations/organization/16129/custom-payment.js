@@ -59,7 +59,8 @@ function sendRequest(object){
         // "Content-Type": "application/json",
         // Accept: "application/json",
       },
-      data: JSON.stringify(object),
+      data: object,
+      //data: JSON.stringify(object),
       dataType: "json",
       success: function (res) {
         // redirect to payment page
