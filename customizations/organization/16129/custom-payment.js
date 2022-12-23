@@ -114,6 +114,7 @@ function getXMLHttpRequest (open) {
              console.log(orders[0]);
             
              orderDataobj.orderId = orders[0].id;
+             orderDataobj.buyerEmail = orders[0].email
              orderDataobj.orderAmount = orders[0].payment.amount;
              orderDataobj.orderCurr = orders[0].event.currency.code;
             
