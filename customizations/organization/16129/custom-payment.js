@@ -81,6 +81,7 @@ function sendRequestToGetRedirectUrl(object){
         // window.location();
         dataObj.LfFTxnID = res.LfFTxnID;
         dataObj.dooOrderId = object.orderId;
+        dataObj.email = object.buyerEmail;
         
         sendRequestToSetExtCustomerId(dataObj);
         
