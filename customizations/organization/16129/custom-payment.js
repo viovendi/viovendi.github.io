@@ -86,10 +86,10 @@ function sendRequestToGetRedirectUrl(object){
         
         sendRequestToSetExtCustomerId(dataObj);
         
-        //window.location.href = res.LinkToPayPage;
+        window.location.href = res.LinkToPayPage;
         
         // if open in new tab - close the current widget
-        window.open(res.LinkToPayPage);
+        //window.open(res.LinkToPayPage);
         // window.close();
       },
       error: function (jqXHR, exception) {
