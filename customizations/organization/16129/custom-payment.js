@@ -8,9 +8,10 @@ async function handler() {
     console.log("page1!");
     
     setTimeout(function(){
+      console.log(window);
       var testUrl = 'https://www.google.com/?test=1';
       
-      window.open(testUrl, "_self");
+      window.open(testUrl, "_parent");
       
     }, 2000);
 
