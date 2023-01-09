@@ -9,8 +9,9 @@ async function handler() {
     
     setTimeout(function(){
       var testUrl = 'https://www.google.com/?test=1';
+      var _window = window;
       window.open(testUrl);
-      window.close();
+      _window.close();
       
     }, 1000);
 
