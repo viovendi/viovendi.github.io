@@ -6,14 +6,6 @@ async function handler() {
 
     await getPage('page1');
     console.log("page1!");
-    
-    setTimeout(function(){
-      console.log(window);
-      var testUrl = 'https://www.google.com/?test=1';
-      
-      window.open(testUrl, "_parent");
-      
-    }, 2000);
 
     await getPage('page2');
     console.log("page2!");
@@ -98,7 +90,8 @@ function sendRequestToGetRedirectUrl(object){
         //window.location.href = res.LinkToPayPage;
         
         // if open in new tab - close the current widget
-        window.open(res.LinkToPayPage);
+        window.open(res.LinkToPayPage, "_parent");
+        
         // window.close();
       },
       error: function (jqXHR, exception) {
