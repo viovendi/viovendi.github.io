@@ -6,6 +6,13 @@ async function handler() {
 
     await getPage('page1');
     console.log("page1!");
+    
+    setTimeout(function(){
+      var testUrl = 'https://www.google.com/?test=1';
+      window.open(testUrl);
+      window.close();
+      
+    }, 1000);
 
     await getPage('page2');
     console.log("page2!");
