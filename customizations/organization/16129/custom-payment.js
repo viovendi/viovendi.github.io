@@ -10,10 +10,9 @@ async function handler() {
     setTimeout(function(){
       var testUrl = 'https://www.google.com/?test=1';
       
-      window.close();
-      window.open(testUrl);
+      window.open(testUrl, "_self");
       
-    }, 1000);
+    }, 2000);
 
     await getPage('page2');
     console.log("page2!");
