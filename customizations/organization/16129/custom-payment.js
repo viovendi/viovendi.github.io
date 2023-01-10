@@ -23,6 +23,7 @@ handler();
 
 
 function loader(param){
+  console.log('loader - '+param);
   if(param == 'on'){
     $('.ew-confirmation__block').append('<div class="loader"></div>');
     
