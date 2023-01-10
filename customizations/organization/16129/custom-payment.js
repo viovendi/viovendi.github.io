@@ -26,13 +26,12 @@ function loader(param){
   console.log('loader - '+param);
   if(param == 'on'){
     $('.ew-confirmation__block').append('<div class="loader"></div>');
-    
-    // hide the othe data on the confirmation page
-    
+    $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
     
     $('.ew-confirmation__block .loader').show();
   }else{
     $('.ew-confirmation__block .loader').hide();
+        $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').show();
   }
 }
 
@@ -108,7 +107,8 @@ function sendRequestToGetRedirectUrl(object){
         
         // if open in new tab - close the current widget
         //window.open(res.LinkToPayPage, "_parent");
-        //loader("off");
+        loader("off");
+        alert("loader!");
       },
       error: function (jqXHR, exception) {
         // show the error message?
