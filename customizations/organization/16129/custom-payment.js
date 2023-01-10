@@ -157,8 +157,8 @@ async function getPage(page) {
   var pages = {
     page1: "customization-booking-area-wrapper-page1",
     page2: "customization-booking-area-wrapper-page2",
-    page3: "customization-booking-area-wrapper-page3",
-    page4: "customization-booking-area-wrapper-page4",
+    page3: "customization2_payment_options",
+    page4: "vv-color--cool-gray-650",
   };
   return new Promise(function (resolve, reject) {
     try {
