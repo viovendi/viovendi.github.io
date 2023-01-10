@@ -1,4 +1,4 @@
-console.log('github-js');
+console.log('github-js !');
 
 async function handler() {
   console.log('handler-'+document.readyState);
@@ -62,6 +62,7 @@ function showErrorMessage() {
 }
 
 function sendRequestToSetExtCustomerId(object){
+  console.log('sendRequestToSetExtCustomerId');
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/gjqjl3fxs8ij8rhnmyew9igz6xbnwj3i",
       type: "post",
@@ -79,6 +80,7 @@ function sendRequestToSetExtCustomerId(object){
 
 
 function sendRequestToGetRedirectUrl(object){
+  console.log('sendRequestToGetRedirectUrl');
   const dataObj = {};
   loader("on");
   $.ajax({
@@ -169,6 +171,8 @@ async function getPage(page) {
           var classList = mutation.target.classList
             ? [...mutation.target.classList]
             : [];
+          
+          console.log(classList);
           if (
             mutation.type === "childList" &&
             classList.indexOf(pages[page]) != -1
