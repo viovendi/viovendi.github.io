@@ -26,7 +26,6 @@ handler();
 
 
 function loader(param){
-  console.log('loader - '+param)
   if(param == 'on'){
     $('.ew-confirmation__block').append('<div class="loader"></div>');
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
@@ -63,7 +62,7 @@ function showErrorMessage() {
     $(".customization-confirmation-description").text(message);
   }
 }
-
+// TODO: remove this function 
 function sendRequestToSetExtCustomerId(object){
   console.log('sendRequestToSetExtCustomerId');
   $.ajax({
@@ -117,6 +116,7 @@ function sendRequestToGetRedirectUrl(object){
       },
       error: function (jqXHR, exception) {
         // show the error message?
+        loader("off");
         showErrorMessage();
         console.log('Error - no payment page URL');
       }
