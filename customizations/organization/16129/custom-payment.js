@@ -25,19 +25,6 @@ async function handler() {
 handler();
 
 
-// function checkIfLastPage(){
-//   console.log($('.ew-confirmation__block').length);
-  
-//   if($('.ew-confirmation__block').length > 0){
-//     clearInterval(interval);
-//     isLastPage = true;
-//   }
-// }
-// var interval;
-// var isLastPage = false;
-//  interval = setInterval(checkIfLastPage, 200);
-
-
 function loader(param){
   console.log('loader - '+param)
   if(param == 'on'){
@@ -85,11 +72,15 @@ function sendRequestToSetExtCustomerId(object){
       headers: {},
       data: object,
       dataType: "json",
-      success: function (res) {},
+      success: function (res) {
+        console.log(res);
+      },
       error: function (jqXHR, exception) {
         // show the error message?
+        console.log(jqXHR);
         showErrorMessage();
         console.log('Error - Contact organizer!');
+        console.log(exception);
       }
   });
 }
@@ -97,7 +88,6 @@ function sendRequestToSetExtCustomerId(object){
 
 function sendRequestToGetRedirectUrl(object){
   console.log('sendRequestToGetRedirectUrl');
-  const dataObj = {};
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
@@ -110,18 +100,20 @@ function sendRequestToGetRedirectUrl(object){
         console.log(res);
         
         // window.location();
-        dataObj.LfFTxnID = res.LfFTxnID;
-        dataObj.dooOrderId = object.orderId;
-        dataObj.email = object.buyerEmail;
-        dataObj.eventId = object.eventId;
+        //dataObj.LfFTxnID = res.LfFTxnID;
         
-        sendRequestToSetExtCustomerId(dataObj);
+//         dataObj.dooOrderId = object.orderId;
+//         dataObj.email = object.buyerEmail;
+//         dataObj.eventId = object.eventId;
+        
+        //sendRequestToSetExtCustomerId(dataObj);
         
         // open in same tab
         //window.location.href = res.LinkToPayPage;
         
         // if open in new tab - close the current widget
         //window.open(res.LinkToPayPage, "_parent");
+        window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
         // show the error message?
