@@ -22,6 +22,19 @@ async function handler() {
 handler();
 
 
+function loader(param){
+  if(param == 'on'){
+    $('.ew-confirmation__block').append('<div class="loader"></div>');
+    
+    // hide the othe data on the confirmation page
+    
+    
+    $('.ew-confirmation__block .loader').show();
+  }else{
+    $('.ew-confirmation__block .loader').hide();
+  }
+}
+
 function changeIcon(color) {
   $(".ew-confirmation__header vv-icon").hide();
 
@@ -67,6 +80,7 @@ function sendRequestToSetExtCustomerId(object){
 
 function sendRequestToGetRedirectUrl(object){
   const dataObj = {};
+  loader("on");
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
@@ -90,9 +104,8 @@ function sendRequestToGetRedirectUrl(object){
         //window.location.href = res.LinkToPayPage;
         
         // if open in new tab - close the current widget
-        window.open(res.LinkToPayPage, "_parent");
-        
-        // window.close();
+        //window.open(res.LinkToPayPage, "_parent");
+        //loader("off");
       },
       error: function (jqXHR, exception) {
         // show the error message?
@@ -162,7 +175,7 @@ async function getPage(page) {
           ) {
             resolve({
               selector: document.querySelector("." + pages[page]),
-              dataLayer: dataLayer,
+              //dataLayer: dataLayer,
             });
           }
         });
