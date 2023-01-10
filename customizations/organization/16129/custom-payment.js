@@ -1,4 +1,4 @@
-console.log('github-js !');
+console.log('github-js !!');
 
 async function handler() {
   console.log('handler-'+document.readyState);
@@ -16,14 +16,30 @@ async function handler() {
 
     await getPage('page4');
     console.log("page4!");
+    console.log($('.ew-confirmation__block').length);
+    loader("on");
     
+    console.log($('.loader').length);
   }
 }
 handler();
 
 
+// function checkIfLastPage(){
+//   console.log($('.ew-confirmation__block').length);
+  
+//   if($('.ew-confirmation__block').length > 0){
+//     clearInterval(interval);
+//     isLastPage = true;
+//   }
+// }
+// var interval;
+// var isLastPage = false;
+//  interval = setInterval(checkIfLastPage, 200);
+
+
 function loader(param){
-  console.log('loader - '+param);
+  console.log('loader - '+param)
   if(param == 'on'){
     $('.ew-confirmation__block').append('<div class="loader"></div>');
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
@@ -82,7 +98,6 @@ function sendRequestToSetExtCustomerId(object){
 function sendRequestToGetRedirectUrl(object){
   console.log('sendRequestToGetRedirectUrl');
   const dataObj = {};
-  loader("on");
   $.ajax({
       url: "https://hook.doo.integromat.celonis.com/1bqimjodufy1bi4zxky2rm326pdc50nn",
       type: "post",
@@ -107,8 +122,6 @@ function sendRequestToGetRedirectUrl(object){
         
         // if open in new tab - close the current widget
         //window.open(res.LinkToPayPage, "_parent");
-        loader("off");
-        alert("loader!");
       },
       error: function (jqXHR, exception) {
         // show the error message?
@@ -127,6 +140,7 @@ function getXMLHttpRequest (open) {
           try {
             var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
           } catch (err) {}
+          
           if(res != undefined && res._embedded){
 
            // send the request to Make (to confirm the seats booking)
@@ -142,10 +156,7 @@ function getXMLHttpRequest (open) {
             if(!isSent){
               sendRequestToGetRedirectUrl(orderDataobj);
             }
-            
             isSent = true;
-            
-            // snd the request to get the payment page URL
           }
         }
       }, false);
