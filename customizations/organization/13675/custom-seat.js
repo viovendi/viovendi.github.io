@@ -1,27 +1,18 @@
 
 console.log('github code');
 
-
 var insertionListener = function (event) {
-    
-    //console.log('event.animationName');
-    //console.log(event.animationName);
-    
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
-        //console.log('ticket cat loaded!!!');
         clearTicketsInManager();
         
         if($('#chart').length === 0){
-            //console.log('ticketCatsLoaded');
             addSeatScript();
         }
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
-        //createSeats();
     }else if(event.animationName === 'attendeeEdited'){
-        //console.log('attendeeEdited');
         fillTicketId();
     }
 };
@@ -261,9 +252,10 @@ function addSeatScript(){
 
 // object for ticket cat mapping
 var mapObject = {
-    T: 'Cat 1',
-    A: 'Cat 2',
-    B: 'Cat 3'
+    T: 'Ticket cat T',
+    A: 'Ticket cat A',
+    B: 'Ticket cat B',
+    C: 'Ticket cat C'
 };
 
 
@@ -345,8 +337,9 @@ function createSeats(token){
         session: 'manual',
         holdToken: token,
         pricing: [
-           {'category': 'A', 'price': 30}, 
-           {'category': 'B', 'price': 40}, 
+           {'category': 'A', 'price': 30},
+           {'category': 'B', 'price': 40},
+           {'category': 'C', 'price': 0},
            {'category': 'T', 'price': 50}
         ],
         priceFormatter: function(price) {
