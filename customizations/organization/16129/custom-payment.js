@@ -111,8 +111,8 @@ function sendRequestToGetRedirectUrl(object){
         //window.location.href = res.LinkToPayPage;
         
         // if open in new tab - close the current widget
-        //window.open(res.LinkToPayPage, "_parent");
-        window.open(res.LinkToPayPage, "_blank");
+        window.open(res.LinkToPayPage, "_parent");
+        //window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
         // show the error message?
