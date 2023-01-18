@@ -12,9 +12,11 @@ function hideProduct(shortName) {
   });
 }
 
-//funktion to hide question
 function hideQuestion(tag, name) {
   $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label, p");
+
     if (label.text().trim().includes(name)) {
       $(item).hide();
     }
