@@ -3,11 +3,12 @@ var locale = window.location.pathname.split('/')[1]
 
 console.log(locale);
 
-function hideProduct(shortName) {
-  $('.customization2_attendee_further-data_product').each(function (i, element) {
-    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
-    if (checkboxName.includes(shortName)) {
-      $(this).hide();
+function showQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    var item = $(this);
+    var label = item.find("label, p");
+    if (label.text().trim().includes(name)) {
+      $(item).show();
     }
   });
 }
@@ -15,7 +16,6 @@ function hideProduct(shortName) {
 function hideQuestion(tag, name) {
   $(tag).each(function (i, element) {
     var item = $(this);
-    
     var label = item.find("label, p");
 
     if (label.text().trim().includes(name)) {
@@ -23,8 +23,25 @@ function hideQuestion(tag, name) {
     }
   });
 }
-
+//hide all questions
  hideQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Spanien");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Österreich");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Belgien");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Schweiz");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Holland");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "UK");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Nederland");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Ibérica");
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Belgium");
+
+if (locale == "de-de"){
+  showQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
+}
+if (locale == "en-us"){
+  showQuestion(".customization2_attendee_further-data_custom-question", "UK");
+}
+
 
 
 
