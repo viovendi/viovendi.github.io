@@ -23,6 +23,13 @@ function hideQuestion(tag, name) {
     }
   });
 }
+
+var pathArray = window.location.pathname.split('/');
+    
+for (i = 0; i < pathArray.length; i++) {
+     if(pathArray[i].includes("15448-40425")) 
+            console.log("mitarbeiter");
+}
 //hide all questions
  hideQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
  hideQuestion(".customization2_attendee_further-data_custom-question", "Spanien");
