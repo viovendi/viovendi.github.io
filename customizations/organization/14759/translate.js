@@ -283,7 +283,25 @@ setInterval(function () {
 
 
     $(".customization2_booking-terms_custom-term-1").hide();
-
+    
+    $('.customization2_attendee_further-data_product_capacity').each(function () {
+        var text = $(this).text();
+        $(this).text(text.replace('left', 'kvar'));
+    });
+    
+    $('.customization2_attendee_further-data_headline').text('Mer information');
+    
+    $('.question-group__hint').text($('.question-group__hint').text().replace('Please select at least 1', 'Välj minst 1'));
+    
+    $('vv-optional-text').each(function () {
+        var text = $(this).text();
+        $(this).text(text.replace('optional', 'valfritt'));
+    });
+    
+    $('.customization2_attendee_further-data_product_value').each(function () {
+        var text = $(this).text();
+        $(this).text(text.replace('Booked', 'Bokat'));
+    });
 
     //page 3 Confirmation
 
