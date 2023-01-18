@@ -291,7 +291,10 @@ setInterval(function () {
     
     $('.customization2_attendee_further-data_headline').text('Mer information');
     
-    $('.question-group__hint').text($('.question-group__hint').text().replace('Please select at least 1', 'Välj minst 1'));
+    $('.question-group__hint').each(function () {
+        var text = $(this).text();
+        $(this).text(text.replace('Please select at least', 'Välj minst'));
+    });
     
     $('vv-optional-text').each(function () {
         var text = $(this).text();
