@@ -1,4 +1,30 @@
 // Funktion to show and hide custom question
+var locale = window.location.pathname.split('/')[1]
+
+console.log(locale);
+
+function hideProduct(shortName) {
+  $('.customization2_attendee_further-data_product').each(function (i, element) {
+    var checkboxName = $(this).find('.customization2_attendee_further-data_product_name').text().trim()
+    if (checkboxName.includes(shortName)) {
+      $(this).hide();
+    }
+  });
+}
+
+//funktion to hide question
+function hideQuestion(tag, name) {
+  $(tag).each(function (i, element) {
+    if (label.text().trim().includes(name)) {
+      $(item).hide();
+    }
+  });
+}
+
+ hideQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
+
+
+
 /*
 function findDropDownByLabel(label) {
     var found = null;
