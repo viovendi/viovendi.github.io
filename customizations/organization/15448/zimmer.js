@@ -25,6 +25,8 @@ function hideQuestion(tag, name) {
 }
 
 var pathArray = window.location.pathname.split('/');
+var pathname = window.location.pathname;
+console.log(pathname);
     
 for (i = 0; i < pathArray.length; i++) {
   console.log(pathArray[i]);
