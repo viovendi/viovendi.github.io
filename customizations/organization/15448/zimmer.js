@@ -27,6 +27,7 @@ function hideQuestion(tag, name) {
 var pathArray = window.location.pathname.split('/');
     
 for (i = 0; i < pathArray.length; i++) {
+  console.log(pathArray[i]);
      if(pathArray[i].includes("15448-40425")) 
             console.log("mitarbeiter");
 }
