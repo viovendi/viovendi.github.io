@@ -13,9 +13,9 @@ const imageNameAndURL = [
   ['vertikal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_160x600_GB.png'],
   ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_468x60_GB.png'],
   ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_180x60_GB.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1080_GB.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.png']
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1080_GB.jpg'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.jpg'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.jpg']
 ];
 
 function setTexts() {
