@@ -112,6 +112,7 @@ function generator() {
     setupBannerImage();
 }
 
+
 function download() {
     var download = document.getElementById("download");
 
