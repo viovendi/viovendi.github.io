@@ -238,14 +238,14 @@ function checking_page4() {
               console.log("checking_page4 invoice");
         rebuildPageInvoiceConfirm();
       } else if (
+        (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
+        (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
+      ) {
         console.log("checking_page4 payment hub");
         
         console.log(hub_payment_method_arr_options.indexOf(payment_method));
         console.log(localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung"));
         
-        (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
-        (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
-      ) {
         loaderOn("on");
         sendRequest(obj, organizer_id, free_order);
       }
