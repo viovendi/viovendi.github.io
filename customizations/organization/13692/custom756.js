@@ -161,6 +161,7 @@ observer.observe(bookerCountryInput, {
   
   
   function checking_page4() {
+	  console.log('checking_page4 - func');
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       
@@ -170,10 +171,14 @@ observer.observe(bookerCountryInput, {
       if(free_order && free_order == true){
         responseMessage('success');
       }else{
-	      
+	 console.log('not free order');
+	 console.log(invoice_payment_method_arr_options.indexOf(payment_method));
+	 console.log(hub_payment_method_arr_options.indexOf(payment_method));
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
+	   console.log('INVOICE PAYMENT');
           rebuildPageInvoiceConfirm();
         }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
+		console.log('PAYMENT HUB');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
@@ -252,6 +257,8 @@ observer.observe(bookerCountryInput, {
   var obj, organizer_id;
   
   function getXMLHttpRequest (open) {
+    console.log("getXMLHttpRequest");
+	  
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
@@ -283,6 +290,7 @@ observer.observe(bookerCountryInput, {
   
   
   function sendRequest(object, oid, free_order){
+    console.log("sendRequest-func");
 	  
     isFuncUsed = true;
     if(!free_order || free_order === 'false'){
