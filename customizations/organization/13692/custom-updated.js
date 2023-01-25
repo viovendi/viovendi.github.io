@@ -234,6 +234,12 @@ function checking_page4() {
     } else {
        console.log(invoice_payment_method_arr_options.indexOf(payment_method));
       
+      
+        console.log("checking_page4 payment hub:");
+        
+        console.log(hub_payment_method_arr_options.indexOf(payment_method));
+        console.log(localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung"));
+      
       if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
               console.log("checking_page4 invoice");
         rebuildPageInvoiceConfirm();
@@ -242,10 +248,6 @@ function checking_page4() {
         (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
       ) {
         console.log("checking_page4 payment hub");
-        
-        console.log(hub_payment_method_arr_options.indexOf(payment_method));
-        console.log(localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung"));
-        
         loaderOn("on");
         sendRequest(obj, organizer_id, free_order);
       }
@@ -290,10 +292,14 @@ function getPaymentMethod() {
   var payment_method_updated = "";
   $(".customization-button-next").on("click", function (e) {
     e.preventDefault();
+    console.log($(this));
+    console.log("getPaymentMethod->");
     $(".customization2_organizer-bank-transfer_button").each(function () {
+      console.log($(this));
       if ($(this).is(":checked")) {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
+      console.log(payment_method_updated);
     });
     localStorage.setItem("payment_method_upd", payment_method_updated);
   });
