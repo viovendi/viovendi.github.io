@@ -221,7 +221,7 @@ function checking_page4() {
 
     stop_checking_page3();
 
-    //var payment_method = localStorage.getItem("payment_method_upd");
+    var payment_method_upd = localStorage.getItem("payment_method_upd");
     var payment_method = localStorage.getItem("payment_method");
 
     var free_order = localStorage.getItem("free_order");
@@ -239,13 +239,13 @@ function checking_page4() {
         console.log("checking_page4 payment hub:");
         
         console.log(hub_payment_method_arr_options.indexOf(payment_method));
-        console.log(localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung"));
+        console.log(hub_payment_method.indexOf(payment_method_upd));
       
       if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
         rebuildPageInvoiceConfirm();
       } else if (
         (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
-        (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
+        (!isFuncUsed && hub_payment_method.indexOf(payment_method_upd) != -1)
       ) {
         console.log("checking_page4 payment hub!");
         loaderOn("on");
