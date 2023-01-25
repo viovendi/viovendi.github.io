@@ -232,9 +232,17 @@ function checking_page4() {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
     } else {
+       console.log(invoice_payment_method_arr_options.indexOf(payment_method));
+      
       if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
+              console.log("checking_page4 invoice");
         rebuildPageInvoiceConfirm();
       } else if (
+        console.log("checking_page4 payment hub");
+        
+        console.log(hub_payment_method_arr_options.indexOf(payment_method));
+        console.log(localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung"));
+        
         (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
         (!isFuncUsed && localStorage.getItem("payment_method_upd").indexOf("Sofortbezahlung") != -1)
       ) {
@@ -412,6 +420,7 @@ function rebuildPage() {
 var obj, organizer_id;
 
 function getXMLHttpRequest(open) {
+  console.log('getXMLHttpRequest');
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
       "readystatechange",
@@ -451,6 +460,7 @@ function getXMLHttpRequest(open) {
 }
 
 function sendRequest(object, oid, free_order) {
+    console.log('sendRequest');
   responseMessage("attention");
   isFuncUsed = true;
   if (!free_order || free_order === "false") {
