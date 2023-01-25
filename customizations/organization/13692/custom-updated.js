@@ -98,14 +98,12 @@ function check_country() {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
     localStorage.removeItem("allowed_countries");
     if (countries.indexOf(country) != -1) {
-      console.log("Show both");
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
         localStorage.setItem("allowed_countries", "allowed");
       }
     } else {
-      console.log("hide");
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
@@ -142,7 +140,6 @@ function getDataFromPage2() {
   $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
     "click",
     function () {
-      console.log("click next 2 page - set payment method");
       var payment_method = "";
       var delivery_of_invoice = "";
       $(".customization2_booker_further-data .customization2_booker_further-data_custom-question"
@@ -182,7 +179,6 @@ function stop_checking_page4() {
 }
 
 function checking_page2() {
-  console.log("checking_page2");
   id_page2 = requestAnimationFrame(checking_page2);
 
   if ($(".customization-booking-area-wrapper-page2").length > 0) {
@@ -212,42 +208,28 @@ function checking_page3() {
 checking_page3();
 
 function checking_page4() {
-  //console.log("checking_page4 func");
-  //console.log(localStorage.getItem("free_order"));
 
   id_page4 = requestAnimationFrame(checking_page4);
   if ($(".customization-booking-area-wrapper-page4").length > 0) {
-    console.log("checking_page4 found");
 
     stop_checking_page3();
 
     var payment_method_upd = localStorage.getItem("payment_method_upd");
     var payment_method = localStorage.getItem("payment_method");
-
     var free_order = localStorage.getItem("free_order");
-
-    console.log(payment_method);
-    console.log(free_order);
 
     if (free_order) {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
     } else {
-       console.log(invoice_payment_method_arr_options.indexOf(payment_method));
-      
-      
-        console.log("checking_page4 payment hub:");
-        
-        console.log(hub_payment_method_arr_options.indexOf(payment_method));
-        console.log(hub_payment_method.indexOf(payment_method_upd));
-      
       if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
+        console.log("checking_page4 - invoice payment!");
         rebuildPageInvoiceConfirm();
       } else if (
         (!isFuncUsed && hub_payment_method_arr_options.indexOf(payment_method) != -1) ||
         (!isFuncUsed && hub_payment_method.indexOf(payment_method_upd) != -1)
       ) {
-        console.log("checking_page4 payment hub!");
+        console.log("checking_page4 - payment hub!");
         loaderOn("on");
         sendRequest(obj, organizer_id, free_order);
       }
@@ -292,14 +274,10 @@ function getPaymentMethod() {
   var payment_method_updated = "";
   $(".customization-button-next").on("click", function (e) {
     e.preventDefault();
-    console.log($(this));
-    console.log("getPaymentMethod->");
     $(".customization2_organizer-bank-transfer_button").each(function () {
-      console.log($(this));
       if ($(this).is(":checked")) {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
-      console.log(payment_method_updated);
     });
     localStorage.setItem("payment_method_upd", payment_method_updated);
   });
