@@ -47,7 +47,6 @@ console.log("git custom756");
   }
   
   function check_country(){
-	  console.log("check-country");
     var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
     // var invoice_radio_group = $('.customization2_booker_further-data_custom-question-3 .customization2_booker_further-data_custom-question_radio-group');
     var countries = ['Österreich', 'Austria', 'Deutschland', 'Germany', 'Schweiz', 'Switzerland'];
@@ -61,11 +60,8 @@ const observer = new MutationObserver((mutations) => {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
       
     if(countries.indexOf(country) != -1){
-	    console.log("Show both");
         invoice_radio_group.find('.vv-nl-mb-xxs:first-child').show();
     }else{
-        // var click_event = new Event("click");
-	    console.log("hide");
         invoice_radio_group.find('.vv-nl-mb-xxs:last-child input').trigger('click');
         invoice_radio_group.find('.vv-nl-mb-xxs:first-child').hide();
     }
@@ -161,7 +157,6 @@ observer.observe(bookerCountryInput, {
   
   
   function checking_page4() {
-	  console.log('checking_page4 - func');
     id_page4 = requestAnimationFrame(checking_page4);
     if ($('.customization-booking-area-wrapper-page4').length > 0){
       
@@ -171,14 +166,11 @@ observer.observe(bookerCountryInput, {
       if(free_order && free_order == true){
         responseMessage('success');
       }else{
-	 console.log('not free order');
-	 console.log(invoice_payment_method_arr_options.indexOf(payment_method));
-	 console.log(hub_payment_method_arr_options.indexOf(payment_method));
         if( invoice_payment_method_arr_options.indexOf(payment_method) != -1 ){
-	   console.log('INVOICE PAYMENT');
+	  console.log('INVOICE PAYMENT');
           rebuildPageInvoiceConfirm();
         }else if( !isFuncUsed && (hub_payment_method_arr_options.indexOf(payment_method) != -1)){
-		console.log('PAYMENT HUB');
+	  console.log('PAYMENT HUB');
           loaderOn('on');
           sendRequest(obj, organizer_id, free_order);
         }
@@ -257,8 +249,6 @@ observer.observe(bookerCountryInput, {
   var obj, organizer_id;
   
   function getXMLHttpRequest (open) {
-    console.log("getXMLHttpRequest");
-	  
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
@@ -290,8 +280,6 @@ observer.observe(bookerCountryInput, {
   
   
   function sendRequest(object, oid, free_order){
-    console.log("sendRequest-func");
-	  
     isFuncUsed = true;
     if(!free_order || free_order === 'false'){
     $.ajax({
