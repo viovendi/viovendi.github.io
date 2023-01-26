@@ -295,6 +295,11 @@ observer.observe(bookerCountryInput, {
         
         loaderOn('off');
 
+	      console.log('object');
+	      console.log(object);
+	      console.log('res');
+	      console.log(res);
+	      
         $('.ew-confirmation__block').append('<iframe id="payment_Frame" width="560" height="420" src="'+res.payload+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         
         addFrameListener();
