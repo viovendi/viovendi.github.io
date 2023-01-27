@@ -109,7 +109,7 @@ setInterval(function () {
 
 
 
-    $('.event-article__ticket-info p:contains(Booked up)').text('Fullbokat')
+    $('.event-category__amount--sold:contains(Booked up)').text('Fullbokat')
 
     $('.event-category__error').text('has ended');
 
