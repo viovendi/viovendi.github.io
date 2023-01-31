@@ -144,7 +144,6 @@ async function getPage(page) {
             ? [...mutation.target.classList]
             : [];
           
-          console.log(classList);
           if (
             mutation.type === "childList" &&
             classList.indexOf(pages[page]) != -1
