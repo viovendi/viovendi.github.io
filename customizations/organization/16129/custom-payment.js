@@ -114,7 +114,8 @@ function getXMLHttpRequest (open) {
              orderDataobj.orderCurr = orders[0].event.currency.code;
             
             if(!isSent){
-              sendRequestToGetRedirectUrl(orderDataobj);
+              // TODO uncomment
+              // sendRequestToGetRedirectUrl(orderDataobj);
             }
             isSent = true;
           }
