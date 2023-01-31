@@ -113,9 +113,10 @@ function getXMLHttpRequest (open) {
              orderDataobj.orderAmount = orders[0].payment.amount;
              orderDataobj.orderCurr = orders[0].event.currency.code;
             
-            if(!isSent){
-              // TODO uncomment
-              // sendRequestToGetRedirectUrl(orderDataobj);
+             console.log($('.customization2_payment-description_manual-approval').length);
+            
+            if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
+              sendRequestToGetRedirectUrl(orderDataobj);
             }
             isSent = true;
           }
