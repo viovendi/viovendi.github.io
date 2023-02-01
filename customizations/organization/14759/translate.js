@@ -96,7 +96,7 @@ setInterval(function () {
     $('.vv-multiple-select-dropdown__search-input').attr("placeholder", "Sök");
 
 
-
+    $('.error-text:contains(Please complete)').text('Obligatorisk')
 
     //Organizer contact
     $('.customization-event-info-contact-label').text('Kontakta arrangör');
