@@ -108,8 +108,10 @@ setInterval(function () {
 
 
 
+    $('.event-category span:contains(Registration will start on)').text('Bokning öppnar snart');
+    $('.event-category vv-dates-interval .dates-interval__label').hide()
 
-    $('.event-category__amount--sold:contains(Booked up)').text('Fullbokat')
+    $('.event-category__amount--sold:contains(Booked up)').text('Fullbokat');
 
     $('.event-category__error').text('has ended');
 
