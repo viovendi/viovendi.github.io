@@ -127,6 +127,11 @@ function getWidgetLang() {
   return lang;
 }
 
+function showConfirmationMessage(){
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
+}
+
 function getDataFromPage2() {
   /*
   $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
@@ -325,8 +330,7 @@ function responseMessage(status) {
   }
   
   // show the hiddem booking-confirmation message
-  $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
-  $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
+  showConfirmationMessage();
 
 }
 
