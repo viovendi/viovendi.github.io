@@ -324,6 +324,10 @@ function responseMessage(status) {
     $(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
   }
   
+  // show the hiddem booking-confirmation message
+  $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
+  $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
+
 }
 
 function changeIcon(color) {
