@@ -236,7 +236,7 @@ function checking_page4() {
     console.log(free_order);
 	      console.log(typeof free_order);
 	  
-    if (free_order && free_order === true) {
+    if (free_order && free_order === "true") {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
     } else {
