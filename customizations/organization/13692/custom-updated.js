@@ -128,6 +128,7 @@ function getWidgetLang() {
 }
 
 function showConfirmationMessage(){
+	console.log('showConfirmationMessage');
    $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
    $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
 }
@@ -289,6 +290,8 @@ function getPaymentMethod() {
 }
 
 function responseMessage(status) {
+		console.log('responseMessage');
+			console.log(status);
   if ($("#payment_Frame").length) {
     $("#payment_Frame").remove();
   }
