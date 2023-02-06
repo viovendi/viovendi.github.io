@@ -188,10 +188,16 @@ function checking_page2() {
   id_page2 = requestAnimationFrame(checking_page2);
 
   if ($(".customization-booking-area-wrapper-page2").length > 0) {
+	  
+    console.log("checking_page2");
+	  
     getDataFromPage2();
 
     var orderPriceText = $(".customization2_summary_total_price").text().trim();
 
+	  console.log(orderPriceText);
+	  console.log(orderPriceText.indexOf("0,0"));
+	  
     if (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) {
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       localStorage.setItem("free_order", true);
@@ -204,6 +210,9 @@ checking_page2();
 function checking_page3() {
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
+	  
+    console.log("checking_page3");
+	  
     rebuildPage();
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
@@ -217,13 +226,15 @@ function checking_page4() {
 
   id_page4 = requestAnimationFrame(checking_page4);
   if ($(".customization-booking-area-wrapper-page4").length > 0) {
-
+	console.log("checking_page4");
     stop_checking_page3();
 
     var payment_method_upd = localStorage.getItem("payment_method_upd");
     var payment_method = localStorage.getItem("payment_method");
     var free_order = localStorage.getItem("free_order");
 
+    console.log(free_order);
+	  
     if (free_order) {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
