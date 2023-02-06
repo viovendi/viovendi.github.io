@@ -194,11 +194,13 @@ function checking_page2() {
     getDataFromPage2();
 
     var orderPriceText = $(".customization2_summary_total_price").text().trim();
-
-	  console.log(orderPriceText);
-	  console.log(orderPriceText.indexOf("0,0"));
 	  
-    if (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) {
+    if (
+	    (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) || 
+	    ($('.customization2_summary_item').length > 0 && $(".customization2_summary_total_price").length < 1 ) 
+    ) {
+	    console.log('free order detected');
+	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       localStorage.setItem("free_order", true);
     }
@@ -210,8 +212,6 @@ checking_page2();
 function checking_page3() {
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
-	  
-    console.log("checking_page3");
 	  
     rebuildPage();
     getPaymentMethod();
