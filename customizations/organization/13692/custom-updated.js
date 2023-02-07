@@ -128,8 +128,8 @@ function getWidgetLang() {
 }
 
 function showConfirmationMessage(){
-	console.log('showConfirmationMessage');
    $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__header .header__label').addClass('visible');
    $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
 }
 
