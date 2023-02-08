@@ -30,24 +30,7 @@ if (url.includes("booking-14334-39285")){
 console.log("mitarbeiter");
 }
     
-//hide all questions
- hideQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Spanien");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Österreich");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Belgien");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Schweiz");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Holland");
- hideQuestion(".customization2_attendee_further-data_custom-question", "UK");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Nederland");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Ibérica");
- hideQuestion(".customization2_attendee_further-data_custom-question", "Belgium");
 
-if (locale == "de-de"){
-  showQuestion(".customization2_attendee_further-data_custom-question", "Deutschland");
-}
-if (locale == "en-us"){
-  showQuestion(".customization2_attendee_further-data_custom-question", "UK");
-}
 
 
 
