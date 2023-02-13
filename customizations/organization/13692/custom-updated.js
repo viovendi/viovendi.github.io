@@ -15,6 +15,7 @@ var payment_methods_labels = [
 var invoice_payment_method_arr_options = [
   "Invoice Payment",
   "Bank transfer / on account",
+  "Bank transfer / via invoice",
   "Überweisung / auf Rechnung",
   "Überweisung / Kauf auf Rechnung",
   "Kauf auf Rechnung",
