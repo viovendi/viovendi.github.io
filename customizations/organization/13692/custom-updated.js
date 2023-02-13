@@ -1,4 +1,7 @@
 console.log("git custom-updated (test events)");
+
+console.log(noPaymentHubEvent);
+
 // global var
 var isFuncUsed = false;
 var domain_url = "https://cs.doo.net";
