@@ -31,7 +31,7 @@ function setTexts() {
         ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
     } else if (value == 'vertikal') {
         ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 570);
+        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 575);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 25 - $('#halle_inp').val().length * 6, 42);
         ctx.fillText($('#stand_inp').val(), 44, 42);
