@@ -1,6 +1,6 @@
 console.log("git custom-updated (test events)");
 
-console.log(noPaymentHubEvent);
+//console.log(noPaymentHubEvent);
 
 // global var
 var isFuncUsed = false;
@@ -51,7 +51,8 @@ function getInvoiceRadioGroup(arrayOfLabels) {
 }
 
 var insertionListener = function (event) {
-  if (event.animationName === "nodeInserted" && !noPaymentHubEvent) {
+  if (event.animationName === "nodeInserted") {
+  //if (event.animationName === "nodeInserted" && !noPaymentHubEvent) {
     check_country();
   }
 };
