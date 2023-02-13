@@ -51,7 +51,7 @@ function getInvoiceRadioGroup(arrayOfLabels) {
 }
 
 var insertionListener = function (event) {
-  if (event.animationName === "nodeInserted") {
+  if (event.animationName === "nodeInserted" && noPaymentHubEvent) {
     check_country();
   }
 };
