@@ -287,7 +287,7 @@ function receiveMessage(event) {
     return;
   }
 	console.log('event.data');
-	console.log(event.data);
+	console.log(event);
   if (event.data.status === "Success") {
     responseMessage("success");
   } else {
