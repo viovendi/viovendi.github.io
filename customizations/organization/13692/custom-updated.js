@@ -286,6 +286,8 @@ function receiveMessage(event) {
   if (event.origin !== "https://securepay.swmh.de") {
     return;
   }
+	console.log('event.data');
+	console.log(event.data);
   if (event.data.status === "Success") {
     responseMessage("success");
   } else {
