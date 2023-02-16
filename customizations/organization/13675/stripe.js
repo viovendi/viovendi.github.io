@@ -4,6 +4,7 @@ console.log('github-stripe-js');
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }
   /*  
   if (event.animationName === 'nodeInsertedSeats') {
@@ -28,6 +29,8 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 function getXMLHttpRequest(open) {
+  console.log('getXMLHttpRequest(open)');
+  
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener(
       "readystatechange",
