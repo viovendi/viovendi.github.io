@@ -12,7 +12,7 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
-var stripe = Stripe(pk_live_51MYpwBG8B6ih8cHtuczvq2vKJhb3Jw3208nzg7GnX7TNx7s9HpatzIkYxjgTpudTfnMk1Zj3uVuMbigmJAwaYIYV00sCVgsT7K);
+var stripe = Stripe('pk_live_51MYpwBG8B6ih8cHtuczvq2vKJhb3Jw3208nzg7GnX7TNx7s9HpatzIkYxjgTpudTfnMk1Zj3uVuMbigmJAwaYIYV00sCVgsT7K');
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
