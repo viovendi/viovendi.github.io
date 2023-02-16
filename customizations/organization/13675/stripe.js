@@ -6,27 +6,12 @@ var insertionListener = function (event) {
     console.log('nodeInserted - run request intercept');
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }
-  /*  
-  if (event.animationName === 'nodeInsertedSeats') {
-        hendler();
-    }else if(event.animationName === 'ticketCatsLoaded'){
-        clearTicketsInManager();
-        
-        if($('#chart').length === 0){
-            addSeatScript();
-        }
-    }else if(event.animationName === 'chartScriptAdded'){
-        //console.log('chartScriptAdded');
-    }else if(event.animationName === 'attendeeEdited'){
-        fillTicketId();
-    }
-  */
 };
 
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
-
+  console.log('getXMLHttpRequest(open)');
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener("readystatechange", function () {
 
