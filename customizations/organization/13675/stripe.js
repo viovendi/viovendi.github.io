@@ -34,22 +34,15 @@ function getXMLHttpRequest(open) {
           } else {
             var price = +orders[0].payment.amount;
           }
-          console.log(orders[0]);
-          // if not Stripe
-          /*if(){
-            return;
-          }
-          */
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
             name: orders[0].event.title,
             orderId: orders[0].id,
             amount: price,
-            currency: 'gbp',
             quantity: 1,
-            success_url: '<success_page>',
-            cancel_url: '<fail_page>'
+            success_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?success_url=1',
+            cancel_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?cancel_url=0'
           }
           
           sendRequest(checkoutSessionParameters);
@@ -73,6 +66,7 @@ function sendRequest(checkoutSessionParameters){
     data: JSON.stringify(checkoutSessionParameters),
     dataType: 'json',
     success: function (res) {
+      console.log(res);
       stripe.redirectToCheckout({
         sessionId: res.payload.session_id
       }).then(function (result) {
