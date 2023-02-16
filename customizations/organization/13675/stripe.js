@@ -52,26 +52,7 @@ function getXMLHttpRequest(open) {
             cancel_url: '<fail_page>'
           }
           
-          //sendRequest();
-/*
-          $.ajax({
-            url: '<make scenario webhook link>',
-            type: 'post',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            data: JSON.stringify(checkoutSessionParameters),
-            dataType: 'json',
-            success: function (res) {
-              stripe.redirectToCheckout({
-                sessionId: res.payload.session_id
-              }).then(function (result) {
-                console.log(result)
-              });
-            }
-          });
-          */
+          sendRequest(checkoutSessionParameters);
         }
 
       }
