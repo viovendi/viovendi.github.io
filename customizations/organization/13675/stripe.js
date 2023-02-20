@@ -38,12 +38,14 @@ function getXMLHttpRequest(open) {
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
+            orderId: orders[0].id
+            /*
             name: orders[0].event.title,
-            orderId: orders[0].id,
             amount: price,
             quantity: 1,
             success_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?success_url=1',
             cancel_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?cancel_url=0'
+            */
           }
           
           sendRequest(checkoutSessionParameters);
