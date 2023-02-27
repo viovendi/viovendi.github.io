@@ -44,9 +44,12 @@ function getXMLHttpRequest(open) {
             var price = +orders[0].payment.amount;
           }
           
+          console.log(orders[0]);
+          
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
-            orderId: orders[0].id
+            order_id: orders[0].id,
+            order_tx_number: orders[0].id
           }
           
           sendRequest(checkoutSessionParameters);
@@ -80,7 +83,6 @@ function sendRequest(checkoutSessionParameters){
       */
       console.log(res.payload.url);
       window.open(res.payload.url, "_parent");
-      historyStop();
     },
     error: function (err) {
       console.log(err);
