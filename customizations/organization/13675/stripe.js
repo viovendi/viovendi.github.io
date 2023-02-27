@@ -1,6 +1,14 @@
 // get localstorage
 console.log('github-stripe-js');
 
+function historyStop(){
+  history.pushState(null, document.title, location.href);
+  window.addEventListener('popstate', function (event)
+  {
+    history.pushState(null, document.title, location.href);
+  });
+}
+
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
@@ -39,13 +47,6 @@ function getXMLHttpRequest(open) {
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
             orderId: orders[0].id
-            /*
-            name: orders[0].event.title,
-            amount: price,
-            quantity: 1,
-            success_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?success_url=1',
-            cancel_url: 'https://webhook.site/d159ad8a-e4ab-4c90-9528-16ee6a4fda6f?cancel_url=0'
-            */
           }
           
           sendRequest(checkoutSessionParameters);
@@ -70,11 +71,19 @@ function sendRequest(checkoutSessionParameters){
     dataType: 'json',
     success: function (res) {
       console.log(res);
+      /*
       stripe.redirectToCheckout({
         sessionId: res.payload.session_id
       }).then(function (result) {
         console.log(result)
       });
+      */
+      console.log(res.payload.url);
+      window.open(res.payload.url, "_parent");
+      //historyStop();
+    },
+    error: function (err) {
+      console.log(err);
     }
   });
 }
