@@ -80,7 +80,7 @@ function sendRequest(checkoutSessionParameters){
       */
       console.log(res.payload.url);
       window.open(res.payload.url, "_parent");
-      //historyStop();
+      historyStop();
     },
     error: function (err) {
       console.log(err);
