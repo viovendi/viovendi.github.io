@@ -2,6 +2,30 @@ console.log("git custom-updated (test events)");
 
 //console.log(noPaymentHubEvent);
 
+
+/////// check is localStorage works
+
+function isSupported(getStorage) {
+  try {
+    const key = "__some_random_key_you_are_not_going_to_use__";
+    getStorage().setItem(key, key);
+    getStorage().removeItem(key);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+console.log('check local storage');
+console.log(isSupported(() => localStorage));
+
+let isLocalStorage = isSupported(() => localStorage);
+
+
+console.log(isLocalStorage);
+////////////////////
+
+
+
 // global var
 var isFuncUsed = false;
 var domain_url = "https://cs.doo.net";
