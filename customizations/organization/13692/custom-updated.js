@@ -1,30 +1,4 @@
-console.log("git custom-updated (test events)");
-
-//console.log(noPaymentHubEvent);
-
-
-/////// check is localStorage works
-
-function isSupported(getStorage) {
-  try {
-    const key = "__some_random_key_you_are_not_going_to_use__";
-    getStorage().setItem(key, key);
-    getStorage().removeItem(key);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-console.log('check local storage');
-console.log(isSupported(() => localStorage));
-
-let isLocalStorage = isSupported(() => localStorage);
-
-
-console.log(isLocalStorage);
-////////////////////
-
-
+console.log("git custom-updated");
 
 // global var
 var isFuncUsed = false;
@@ -84,10 +58,6 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
-
-if (localStorage.delivery_of_invoice) {
-  localStorage.removeItem("delivery_of_invoice");
-}
 
 if (localStorage.payment_method) {
   localStorage.removeItem("payment_method");
@@ -163,20 +133,10 @@ function showConfirmationMessage(){
 }
 
 function getDataFromPage2() {
-  /*
-  $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
-    "click",
-    function () {
-      console.log("click next 2 page TEST");
-    }
-  );
-  */
-
   $(".customization-booking-area-wrapper-page2 .customization-button-next").on(
     "click",
     function () {
       var payment_method = "";
-      var delivery_of_invoice = "";
       $(".customization2_booker_further-data .customization2_booker_further-data_custom-question"
       ).each(function () {
         var label = $(this).find(".customization2_booker_further-data_custom-question_label").text().trim();
@@ -184,14 +144,8 @@ function getDataFromPage2() {
         if (payment_methods_labels.indexOf(label) != -1) {
           payment_method = $(this).find(".customization2_booker_further-data_custom-question_value").text().trim();
         }
-
-        if (delivery_invoice_labels.indexOf(label) != -1) {
-          delivery_of_invoice = $(this).find(".customization2_booker_further-data_custom-question_value").text().trim();
-        }
       });
-
       localStorage.setItem("payment_method", payment_method);
-      localStorage.setItem("delivery_of_invoice", delivery_of_invoice);
     }
   );
 }
