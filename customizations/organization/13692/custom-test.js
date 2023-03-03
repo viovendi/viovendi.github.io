@@ -2,9 +2,12 @@ console.log("git custom-test!");
 
 
 function setCookie(name, value) {
+	console.log(name);
+	console.log(value);
   const d = new Date();
   d.setTime(d.getTime() + (1*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
+  console.log(name + "=" + value + ";" + expires + ";path=/");
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
