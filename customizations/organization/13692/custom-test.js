@@ -1,28 +1,23 @@
 console.log("git custom-test!");
-console.log(url);
 
-function getUrlParam(name) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === param) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-    return false;
-};
-
-function addUrlParam(name, value){
-	console.log('&'+name+'='+value);
-	window.location.search += '&'+name+'='+value;
+function setCookie(name, value) {
+  const d = new Date();
+  d.setTime(d.getTime() + (1*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
-addUrlParam('test_name', 'cusom-text-value');
+setCookie('test', 'test text cookie');
+
+function getCookie(cookieName) {
+  let cookie = {};
+  document.cookie.split(';').forEach(function(el) {
+    let [key,value] = el.split('=');
+    cookie[key.trim()] = value;
+  })
+  return cookie[cookieName];
+}
 
 
 // global var
