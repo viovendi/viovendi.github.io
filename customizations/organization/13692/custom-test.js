@@ -1,19 +1,29 @@
 console.log("git custom-test!");
-
 console.log(url);
 
+function getUrlParam(name) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === param) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
 
 function addUrlParam(name, value){
-	let newUrl = url+'&'+name+'='+value;
-	console.log(newUrl);
+	console.log('&'+name+'='+value);
+	window.location.search += '&'+name+'='+value;
 }
 
 addUrlParam('test_name', 'cusom-text-value');
 
-function getUrlParam(){
-}
-function removeUrlParam(){
-}
 
 // global var
 var isFuncUsed = false;
