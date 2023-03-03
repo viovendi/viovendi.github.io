@@ -539,4 +539,3 @@ function loaderOn(param) {
     $(".ew-confirmation__block .loader").hide();
   }
 }
-Footer
