@@ -1,14 +1,6 @@
 // get localstorage
 console.log('github-stripe-js');
 
-function historyStop(){
-  history.pushState(null, document.title, location.href);
-  window.addEventListener('popstate', function (event)
-  {
-    history.pushState(null, document.title, location.href);
-  });
-}
-
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
@@ -20,7 +12,6 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
-var stripe = Stripe('pk_test_51MYpwBG8B6ih8cHtsnpQFffCVWjGivE3d6PfIzX32p2DLWKvLeOtEl6nU03ZrffCmzysm0T2enlUICuLvVnlOP5x00zr2aPfoZ');
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
