@@ -9,6 +9,9 @@ function setCookie(name, value) {
   let expires = "expires="+ d.toUTCString();
   console.log(name + "=" + value + ";" + expires + ";path=/");
   document.cookie = name + "=" + value + ";" + expires + ";secure;path=/";
+	
+  document.cookie = "username=John Doe";
+	
   console.log(document.cookie);
 }
 
