@@ -2,6 +2,19 @@ console.log("git custom-test!");
 
 console.log(url);
 
+
+function addUrlParam(name, value){
+	let newUrl = url+'&'+name+'='+value;
+	console.log(newUrl);
+}
+
+addUrlParam('test_name', 'cusom-text-value');
+
+function getUrlParam(){
+}
+function removeUrlParam(){
+}
+
 // global var
 var isFuncUsed = false;
 var domain_url = "https://cs.doo.net";
