@@ -28,9 +28,8 @@ function getCookie(cookieName) {
 
 
 // data attribute
-const wrapper = document.querySelector("#dmRoot");
-console.log(wrapper);
-console.log($);
+const wrapper = document.querySelector('.customization-booking-area-wrapper');
+console.log(wrapper[0]);
 
 wrapper.dataset.test = "test data set"
 console.log(wrapper.dataset.test);
