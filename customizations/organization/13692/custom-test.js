@@ -15,7 +15,7 @@ function setCookie(name, value) {
   console.log(document.cookie);
 }
 
-setCookie('test', 'test text cookie');
+//setCookie('test', 'test text cookie');
 
 function getCookie(cookieName) {
   let cookie = {};
@@ -26,6 +26,14 @@ function getCookie(cookieName) {
   return cookie[cookieName];
 }
 
+
+// data attribute
+const wrapper = document.querySelector("#dmRoot");
+console.log(wrapper);
+console.log($);
+
+wrapper.dataset.test = "test data set"
+console.log(wrapper.dataset.test);
 
 // global var
 var isFuncUsed = false;
