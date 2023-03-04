@@ -1,19 +1,5 @@
 console.log("git custom-updated");
 
-function setCookie(name, value) {
-  console.log('setCookie');
-  const d = new Date();
-  d.setTime(d.getTime() + (1*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";secure;path=/";
-	
-  document.cookie = "username=John Doe";
-	
-  console.log(document.cookie);
-}
-
-setCookie('test', 'test text cookie');
-
 // global var
 var isFuncUsed = false;
 var domain_url = "https://cs.doo.net";
