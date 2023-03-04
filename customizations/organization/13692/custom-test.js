@@ -2,8 +2,10 @@ console.log("git custom-test!");
 
 
 // data attribute
-const wrapper = document.querySelector('.customization-booking-area-wrapper')[0];
+const wrapper = document.querySelector('.customization-booking-area-wrapper');
 console.log(wrapper);
+
+return false;
 
 wrapper.dataset.payment = "test data set";
 console.log(wrapper.dataset.test);
