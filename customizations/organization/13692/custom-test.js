@@ -250,19 +250,19 @@ function checking_page4() {
     var payment_method_upd, payment_method, free_order;
 	  
     /////
-    if(	localStorage.getItem("payment_method_upd").lenght > 0 ){
+    if(	localStorage.getItem("payment_method_upd") ){
 	payment_method_upd = localStorage.getItem("payment_method_upd");
     }else{
         payment_method_upd = wrapper.dataset.payment_method_upd;
     }
 	  
-    if(	localStorage.getItem("payment_method").lenght > 0 ){
+    if(	localStorage.getItem("payment_method")){
 	payment_method = localStorage.getItem("payment_method");
     }else{
         payment_method = wrapper.dataset.payment_method;
     }
 	  
-    if(	localStorage.getItem("free_order").lenght > 0 ){
+    if(	localStorage.getItem("free_order")){
 	free_order = localStorage.getItem("free_order");
     }else{
         free_order = wrapper.dataset.free_order;
@@ -432,13 +432,13 @@ function rebuildPage() {
 	
   var payment_method, allowed_countries;
 	
-    if(localStorage.getItem("payment_method").lenght > 0 ){
+    if(localStorage.getItem("payment_method")){
 	payment_method = localStorage.getItem("payment_method");
     }else{
 	payment_method = wrapper.dataset.payment_method;
     }
 	
-    if(localStorage.getItem("allowed_countries").lenght > 0 ){
+    if(localStorage.getItem("allowed_countries")){
 	allowed_countries = localStorage.getItem("allowed_countries");
     }else{
 	allowed_countries = wrapper.dataset.allowed_countries;
