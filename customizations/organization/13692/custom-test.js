@@ -1,38 +1,13 @@
 console.log("git custom-test!");
 
 
-function setCookie(name, value) {
-	console.log(name);
-	console.log(value);
-  const d = new Date();
-  d.setTime(d.getTime() + (1*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  console.log(name + "=" + value + ";" + expires + ";path=/");
-  document.cookie = name + "=" + value + ";" + expires + ";secure;path=/";
-	
-  document.cookie = "username=John Doe";
-	
-  console.log(document.cookie);
-}
-
-//setCookie('test', 'test text cookie');
-
-function getCookie(cookieName) {
-  let cookie = {};
-  document.cookie.split(';').forEach(function(el) {
-    let [key,value] = el.split('=');
-    cookie[key.trim()] = value;
-  })
-  return cookie[cookieName];
-}
-
-
 // data attribute
-const wrapper = document.querySelector('.customization-booking-area-wrapper');
-console.log(wrapper[0]);
+const wrapper = document.querySelector('.customization-booking-area-wrapper')[0];
+console.log(wrapper);
 
-wrapper.dataset.test = "test data set"
+wrapper.dataset.payment = "test data set";
 console.log(wrapper.dataset.test);
+
 
 // global var
 var isFuncUsed = false;
@@ -97,18 +72,30 @@ if (localStorage.payment_method) {
   localStorage.removeItem("payment_method");
 }
 
+// local storage workaround
+wrapper.dataset.payment_method = '';
+
 if (localStorage.free_order) {
   localStorage.removeItem("free_order");
   localStorage.setItem("free_order", false);
 }
 
+// local storage workaround
+wrapper.dataset.free_order = false;
+
 if (localStorage.allowed_countries) {
   localStorage.removeItem("allowed_countries");
 }
 
+// local storage workaround
+wrapper.dataset.allowed_countries = '';
+
 if (localStorage.payment_method_upd) {
   localStorage.removeItem("payment_method_upd");
 }
+
+// local storage workaround
+wrapper.dataset.payment_method_upd = '';
 
 function check_country() {
   console.log("function check_country()");
@@ -130,11 +117,15 @@ function check_country() {
   const observer = new MutationObserver((mutations) => {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
     localStorage.removeItem("allowed_countries");
+    // local storage workaround
+    wrapper.dataset.allowed_countries = '';
     if (countries.indexOf(country) != -1) {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
         localStorage.setItem("allowed_countries", "allowed");
+	// local storage workaround
+	wrapper.dataset.allowed_countries = 'allowed';
       }
     } else {
       if (invoice_radio_group) {
@@ -142,6 +133,8 @@ function check_country() {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
         localStorage.setItem("allowed_countries", "forbidden");
+	// local storage workaround
+	wrapper.dataset.allowed_countries = 'forbidden';
       }
     }
   });
@@ -180,6 +173,8 @@ function getDataFromPage2() {
         }
       });
       localStorage.setItem("payment_method", payment_method);
+      // local storage workaround
+       wrapper.dataset.payment_method = payment_method;
     }
   );
 }
@@ -220,6 +215,8 @@ function checking_page2() {
 	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       localStorage.setItem("free_order", true);
+	// local storage workaround
+       wrapper.dataset.free_order = true;
     }
     stop_checking_page2();
   }
@@ -246,12 +243,38 @@ function checking_page4() {
 	console.log("checking_page4");
     stop_checking_page3();
 
+	  /*
     var payment_method_upd = localStorage.getItem("payment_method_upd");
     var payment_method = localStorage.getItem("payment_method");
     var free_order = localStorage.getItem("free_order");
-
+	  */
+    var payment_method_upd, payment_method, free_order;
+	  
+    /////
+    if(	localStorage.getItem("payment_method_upd").lenght > 0 ){
+	payment_method_upd = localStorage.getItem("payment_method_upd");
+    }else{
+        payment_method_upd = wrapper.dataset.payment_method_upd;
+    }
+	  
+    if(	localStorage.getItem("payment_method").lenght > 0 ){
+	payment_method = localStorage.getItem("payment_method");
+    }else{
+        payment_method = wrapper.dataset.payment_method;
+    }
+	  
+    if(	localStorage.getItem("free_order").lenght > 0 ){
+	free_order = localStorage.getItem("free_order");
+    }else{
+        free_order = wrapper.dataset.free_order;
+    }
+    //////
+	  
+    console.log('free_order data:');
+    console.log(payment_method_upd);
+    console.log(payment_method);
     console.log(free_order);
-	      console.log(typeof free_order);
+
 	  
     if (free_order && free_order === "true") {
       console.log("checking_page4 FREE ORDER");
@@ -317,6 +340,7 @@ function getPaymentMethod() {
       }
     });
     localStorage.setItem("payment_method_upd", payment_method_updated);
+    wrapper.dataset.payment_method_upd = payment_method_upd;
   });
 }
 
@@ -402,8 +426,25 @@ function changeIcon(color) {
 }
 
 function rebuildPage() {
+	/*
   var payment_method = localStorage.getItem("payment_method");
   var allowed_countries = localStorage.getItem("allowed_countries");
+	*/
+	
+  var payment_method, allowed_countries;
+	
+    if(localStorage.getItem("payment_method").lenght > 0 ){
+	payment_method = localStorage.getItem("payment_method");
+    }else{
+	payment_method = wrapper.dataset.payment_method;
+    }
+	
+    if(localStorage.getItem("allowed_countries").lenght > 0 ){
+	allowed_countries = localStorage.getItem("allowed_countries");
+    }else{
+	allowed_countries = wrapper.dataset.allowed_countries;
+    }
+	
 
   if (!allowed_countries) {
     //old integration logic
