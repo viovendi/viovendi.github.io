@@ -124,7 +124,8 @@ function check_country() {
       } else {
         localStorage.setItem("allowed_countries", "allowed");
 	// local storage workaround
-	wrapper.dataset.allowed_countries = 'allowed';
+	wrapper.dataset.allowed_countries = "allowed";
+	console.log('wrapper.dataset.allowed_countries');
       }
     } else {
       if (invoice_radio_group) {
