@@ -64,31 +64,37 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
+/*
 if (localStorage.payment_method) {
   localStorage.removeItem("payment_method");
 }
+*/
 
 // local storage workaround
 wrapper.dataset.payment_method = '';
 
+/*
 if (localStorage.free_order) {
   localStorage.removeItem("free_order");
   localStorage.setItem("free_order", false);
 }
+*/
 
 // local storage workaround
 wrapper.dataset.free_order = false;
-
+/*
 if (localStorage.allowed_countries) {
   localStorage.removeItem("allowed_countries");
 }
+*/
 
 // local storage workaround
 wrapper.dataset.allowed_countries = '';
-
+/*
 if (localStorage.payment_method_upd) {
   localStorage.removeItem("payment_method_upd");
 }
+*/
 
 // local storage workaround
 wrapper.dataset.payment_method_upd = '';
@@ -112,14 +118,16 @@ function check_country() {
 
   const observer = new MutationObserver((mutations) => {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
-    localStorage.removeItem("allowed_countries");
+	  
+    // localStorage.removeItem("allowed_countries");
+	  
     // local storage workaround
     wrapper.dataset.allowed_countries = '';
     if (countries.indexOf(country) != -1) {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
-        localStorage.setItem("allowed_countries", "allowed");
+        // localStorage.setItem("allowed_countries", "allowed");
 	// local storage workaround
 	wrapper.dataset.allowed_countries = "allowed";
 	console.log(wrapper.dataset.allowed_countries);
@@ -129,7 +137,7 @@ function check_country() {
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
-        localStorage.setItem("allowed_countries", "forbidden");
+        // localStorage.setItem("allowed_countries", "forbidden");
 	// local storage workaround
 	wrapper.dataset.allowed_countries = 'forbidden';
 	console.log(wrapper.dataset.allowed_countries);
@@ -170,7 +178,7 @@ function getDataFromPage2() {
           payment_method = $(this).find(".customization2_booker_further-data_custom-question_value").text().trim();
         }
       });
-      localStorage.setItem("payment_method", payment_method);
+      // localStorage.setItem("payment_method", payment_method);
       // local storage workaround
        wrapper.dataset.payment_method = payment_method;
        console.log(wrapper.dataset.allowed_countries);
@@ -218,9 +226,9 @@ function checking_page2() {
 	    console.log('free order detected');
 	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
-      localStorage.setItem("free_order", true);
-	// local storage workaround
-       wrapper.dataset.free_order = true;
+      // localStorage.setItem("free_order", true);
+      // local storage workaround
+      wrapper.dataset.free_order = true;
     }
     stop_checking_page2();
   }
@@ -267,23 +275,26 @@ function checking_page4() {
   
 	  
     /////
-    if(	localStorage.getItem("payment_method_upd") ){
+    /*if(	localStorage.getItem("payment_method_upd") ){
 	payment_method_upd = localStorage.getItem("payment_method_upd");
     }else{
         payment_method_upd = wrapper.dataset.payment_method_upd;
-    }
+    }*/
+	  payment_method_upd = wrapper.dataset.payment_method_upd;
 	  
-    if(	localStorage.getItem("payment_method")){
+    /*if(	localStorage.getItem("payment_method")){
 	payment_method = localStorage.getItem("payment_method");
     }else{
         payment_method = wrapper.dataset.payment_method;
-    }
+    }*/
+	  payment_method = wrapper.dataset.payment_method;
 	  
-    if(	localStorage.getItem("free_order")){
+    /*if(	localStorage.getItem("free_order")){
 	free_order = localStorage.getItem("free_order");
     }else{
         free_order = wrapper.dataset.free_order;
-    }
+    }*/
+	  free_order = wrapper.dataset.free_order;
     //////
 	  
     console.log('the order data:');
@@ -355,14 +366,16 @@ function getPaymentMethod() {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
     });
-    localStorage.setItem("payment_method_upd", payment_method_updated);
+    //localStorage.setItem("payment_method_upd", payment_method_updated);
     wrapper.dataset.payment_method_upd = payment_method_upd;
   });
 }
 
 function responseMessage(status) {
-		console.log('responseMessage');
-			console.log(status);
+
+  console.log('responseMessage');
+  console.log(status);
+
   if ($("#payment_Frame").length) {
     $("#payment_Frame").remove();
   }
@@ -449,18 +462,19 @@ function rebuildPage() {
 	
   var payment_method, allowed_countries;
 	
-    if(localStorage.getItem("payment_method")){
+    /*if(localStorage.getItem("payment_method")){
 	payment_method = localStorage.getItem("payment_method");
     }else{
 	payment_method = wrapper.dataset.payment_method;
-    }
+    }*/
+	payment_method = wrapper.dataset.payment_method;
 	
-    if(localStorage.getItem("allowed_countries")){
+    /*if(localStorage.getItem("allowed_countries")){
 	allowed_countries = localStorage.getItem("allowed_countries");
     }else{
 	allowed_countries = wrapper.dataset.allowed_countries;
-    }
-	
+    }*/
+	allowed_countries = wrapper.dataset.allowed_countries;
 
   if (!allowed_countries) {
     //old integration logic
@@ -560,9 +574,9 @@ function sendRequest(object, oid, free_order) {
         loaderOn("off");
         
         console.log('object');
-	      console.log(object);
-	      console.log('res');
-	      console.log(res);
+        console.log(object);
+        console.log('res');
+        console.log(res);
 
         $(".ew-confirmation__block").append(
           '<iframe id="payment_Frame" style="display:block; margin: 0 auto;" height="420" width="330" src="' + res.payload + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
