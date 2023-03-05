@@ -117,7 +117,6 @@ function check_country() {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
     localStorage.removeItem("allowed_countries");
     // local storage workaround
-	  console.log(wrapper);
     wrapper.dataset.allowed_countries = '';
     if (countries.indexOf(country) != -1) {
       if (invoice_radio_group) {
