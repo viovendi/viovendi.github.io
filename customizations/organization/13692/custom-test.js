@@ -198,8 +198,8 @@ function stop_checking_page4() {
 function checking_page2() {
   id_page2 = requestAnimationFrame(checking_page2);
 	
-		console.log('page2 data');
-	 console.log(wrapper.dataset.payment_method_upd);
+    console.log('page2 data');
+    console.log(wrapper.dataset.payment_method_upd);
     console.log(wrapper.dataset.payment_method);
     console.log(wrapper.dataset.free_order);
 
@@ -228,13 +228,14 @@ function checking_page2() {
 checking_page2();
 
 function checking_page3() {
-	console.log('page3 data');
-	 console.log(wrapper.dataset.payment_method_upd);
-    console.log(wrapper.dataset.payment_method);
-    console.log(wrapper.dataset.free_order);
 	
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
+	  
+    console.log('page3 data');
+    console.log(wrapper.dataset.payment_method_upd);
+    console.log(wrapper.dataset.payment_method);
+    console.log(wrapper.dataset.free_order);
 	  
     rebuildPage();
     getPaymentMethod();
@@ -260,7 +261,6 @@ function checking_page4() {
     var payment_method_upd, payment_method, free_order;
 	  
     console.log('page4 dta');
-	  
     console.log(wrapper.dataset.payment_method_upd);
     console.log(wrapper.dataset.payment_method);
     console.log(wrapper.dataset.free_order);
