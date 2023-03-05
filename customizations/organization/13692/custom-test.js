@@ -249,6 +249,11 @@ function checking_page4() {
 	  */
     var payment_method_upd, payment_method, free_order;
 	  
+    console.log(localStorage.getItem("payment_method_upd"));
+    console.log(localStorage.getItem("payment_method"));
+    console.log(localStorage.getItem("free_order"));
+  
+	  
     /////
     if(	localStorage.getItem("payment_method_upd") ){
 	payment_method_upd = localStorage.getItem("payment_method_upd");
