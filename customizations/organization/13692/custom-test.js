@@ -1,9 +1,7 @@
 console.log("git custom-test!");
 
-
 // data attribute
 const wrapper = document.querySelector('.event-booking-widget');
-
 
 // global var
 var isFuncUsed = false;
@@ -70,7 +68,6 @@ if (localStorage.payment_method) {
 }
 */
 
-// local storage workaround
 wrapper.dataset.payment_method = '';
 
 /*
@@ -80,7 +77,6 @@ if (localStorage.free_order) {
 }
 */
 
-// local storage workaround
 wrapper.dataset.free_order = false;
 /*
 if (localStorage.allowed_countries) {
@@ -88,7 +84,6 @@ if (localStorage.allowed_countries) {
 }
 */
 
-// local storage workaround
 wrapper.dataset.allowed_countries = '';
 /*
 if (localStorage.payment_method_upd) {
@@ -226,7 +221,6 @@ function checking_page2() {
 	    console.log('free order detected');
 	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
-      // localStorage.setItem("free_order", true);
       // local storage workaround
       wrapper.dataset.free_order = true;
     }
@@ -261,11 +255,6 @@ function checking_page4() {
 	console.log("checking_page4");
     stop_checking_page3();
 
-	  /*
-    var payment_method_upd = localStorage.getItem("payment_method_upd");
-    var payment_method = localStorage.getItem("payment_method");
-    var free_order = localStorage.getItem("free_order");
-	  */
     var payment_method_upd, payment_method, free_order;
 	  
     console.log('page4 dta');
@@ -273,35 +262,9 @@ function checking_page4() {
     console.log(wrapper.dataset.payment_method);
     console.log(wrapper.dataset.free_order);
   
-	  
-    /////
-    /*if(	localStorage.getItem("payment_method_upd") ){
-	payment_method_upd = localStorage.getItem("payment_method_upd");
-    }else{
-        payment_method_upd = wrapper.dataset.payment_method_upd;
-    }*/
-	  payment_method_upd = wrapper.dataset.payment_method_upd;
-	  
-    /*if(	localStorage.getItem("payment_method")){
-	payment_method = localStorage.getItem("payment_method");
-    }else{
-        payment_method = wrapper.dataset.payment_method;
-    }*/
-	  payment_method = wrapper.dataset.payment_method;
-	  
-    /*if(	localStorage.getItem("free_order")){
-	free_order = localStorage.getItem("free_order");
-    }else{
-        free_order = wrapper.dataset.free_order;
-    }*/
-	  free_order = wrapper.dataset.free_order;
-    //////
-	  
-    console.log('the order data:');
-    console.log(payment_method_upd);
-    console.log(payment_method);
-    console.log(free_order);
-
+    payment_method_upd = wrapper.dataset.payment_method_upd;
+    payment_method = wrapper.dataset.payment_method;
+    free_order = wrapper.dataset.free_order;
 	  
     if (free_order && free_order === "true") {
       console.log("checking_page4 FREE ORDER");
@@ -366,7 +329,6 @@ function getPaymentMethod() {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
     });
-    //localStorage.setItem("payment_method_upd", payment_method_updated);
     wrapper.dataset.payment_method_upd = payment_method_upd;
   });
 }
@@ -455,26 +417,12 @@ function changeIcon(color) {
 }
 
 function rebuildPage() {
-	/*
-  var payment_method = localStorage.getItem("payment_method");
-  var allowed_countries = localStorage.getItem("allowed_countries");
-	*/
 	
   var payment_method, allowed_countries;
 	
-    /*if(localStorage.getItem("payment_method")){
-	payment_method = localStorage.getItem("payment_method");
-    }else{
-	payment_method = wrapper.dataset.payment_method;
-    }*/
-	payment_method = wrapper.dataset.payment_method;
+    payment_method = wrapper.dataset.payment_method;
 	
-    /*if(localStorage.getItem("allowed_countries")){
-	allowed_countries = localStorage.getItem("allowed_countries");
-    }else{
-	allowed_countries = wrapper.dataset.allowed_countries;
-    }*/
-	allowed_countries = wrapper.dataset.allowed_countries;
+    allowed_countries = wrapper.dataset.allowed_countries;
 
   if (!allowed_countries) {
     //old integration logic
