@@ -1,4 +1,4 @@
-console.log("git custom-test!");
+console.log("git custom-data-file!");
 
 // data attribute
 const wrapper = document.querySelector('.event-booking-widget');
@@ -95,7 +95,7 @@ if (localStorage.payment_method_upd) {
 wrapper.dataset.payment_method_upd = '';
 
 function check_country() {
-  console.log("function check_country()");
+  console.log("function check_country");
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var countries = [
     "Österreich",
@@ -200,15 +200,8 @@ function stop_checking_page4() {
 
 function checking_page2() {
   id_page2 = requestAnimationFrame(checking_page2);
-	
-    console.log('page2 data');
-    console.log(wrapper.dataset.payment_method_upd);
-    console.log(wrapper.dataset.payment_method);
-    console.log(wrapper.dataset.free_order);
 
   if ($(".customization-booking-area-wrapper-page2").length > 0) {
-	  
-    console.log("checking_page2");
 	  
     getDataFromPage2();
 
@@ -234,11 +227,6 @@ function checking_page3() {
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
 	  
-    console.log('page3 data');
-    console.log(wrapper.dataset.payment_method_upd);
-    console.log(wrapper.dataset.payment_method);
-    console.log(wrapper.dataset.free_order);
-	  
     rebuildPage();
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
@@ -256,11 +244,6 @@ function checking_page4() {
     stop_checking_page3();
 
     var payment_method_upd, payment_method, free_order;
-	  
-    console.log('page4 dta');
-    console.log(wrapper.dataset.payment_method_upd);
-    console.log(wrapper.dataset.payment_method);
-    console.log(wrapper.dataset.free_order);
   
     payment_method_upd = wrapper.dataset.payment_method_upd;
     payment_method = wrapper.dataset.payment_method;
@@ -520,9 +503,7 @@ function sendRequest(object, oid, free_order) {
       dataType: "json",
       success: function (res) {
         loaderOn("off");
-        
-        console.log('object');
-        console.log(object);
+
         console.log('res');
         console.log(res);
 
