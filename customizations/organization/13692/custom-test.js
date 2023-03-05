@@ -2,7 +2,7 @@ console.log("git custom-test!");
 
 
 // data attribute
-const wrapper = document.querySelector('.customization-booking-area-wrapper');
+const wrapper = document.querySelector('.event-booking-widget');
 
 
 // global var
