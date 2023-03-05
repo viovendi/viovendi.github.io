@@ -3,10 +3,10 @@ console.log("git custom-test!");
 
 // data attribute
 const wrapper = document.querySelector('.customization-booking-area-wrapper');
-console.log(wrapper);
+// console.log(wrapper);
 
-wrapper.dataset.test = "test data set";
-console.log(wrapper.dataset.test);
+// wrapper.dataset.test = "test data set";
+// console.log(wrapper.dataset.test);
 
 // global var
 var isFuncUsed = false;
@@ -117,6 +117,7 @@ function check_country() {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
     localStorage.removeItem("allowed_countries");
     // local storage workaround
+	  console.log(wrapper);
     wrapper.dataset.allowed_countries = '';
     if (countries.indexOf(country) != -1) {
       if (invoice_radio_group) {
