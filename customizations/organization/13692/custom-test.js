@@ -197,6 +197,11 @@ function stop_checking_page4() {
 
 function checking_page2() {
   id_page2 = requestAnimationFrame(checking_page2);
+	
+		console.log('page2 data');
+	 console.log(wrapper.dataset.payment_method_upd);
+    console.log(wrapper.dataset.payment_method);
+    console.log(wrapper.dataset.free_order);
 
   if ($(".customization-booking-area-wrapper-page2").length > 0) {
 	  
@@ -223,6 +228,11 @@ function checking_page2() {
 checking_page2();
 
 function checking_page3() {
+	console.log('page3 data');
+	 console.log(wrapper.dataset.payment_method_upd);
+    console.log(wrapper.dataset.payment_method);
+    console.log(wrapper.dataset.free_order);
+	
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
 	  
@@ -248,6 +258,8 @@ function checking_page4() {
     var free_order = localStorage.getItem("free_order");
 	  */
     var payment_method_upd, payment_method, free_order;
+	  
+    console.log('page4 dta');
 	  
     console.log(wrapper.dataset.payment_method_upd);
     console.log(wrapper.dataset.payment_method);
