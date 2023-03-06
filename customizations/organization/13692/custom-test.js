@@ -62,36 +62,9 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
-/*
-if (localStorage.payment_method) {
-  localStorage.removeItem("payment_method");
-}
-*/
-
 wrapper.dataset.payment_method = '';
-
-/*
-if (localStorage.free_order) {
-  localStorage.removeItem("free_order");
-  localStorage.setItem("free_order", false);
-}
-*/
-
 wrapper.dataset.free_order = false;
-/*
-if (localStorage.allowed_countries) {
-  localStorage.removeItem("allowed_countries");
-}
-*/
-
 wrapper.dataset.allowed_countries = '';
-/*
-if (localStorage.payment_method_upd) {
-  localStorage.removeItem("payment_method_upd");
-}
-*/
-
-// local storage workaround
 wrapper.dataset.payment_method_upd = '';
 
 function check_country() {
@@ -122,20 +95,14 @@ function check_country() {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
-        // localStorage.setItem("allowed_countries", "allowed");
-	// local storage workaround
 	wrapper.dataset.allowed_countries = "allowed";
-	console.log(wrapper.dataset.allowed_countries);
       }
     } else {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
-        // localStorage.setItem("allowed_countries", "forbidden");
-	// local storage workaround
 	wrapper.dataset.allowed_countries = 'forbidden';
-	console.log(wrapper.dataset.allowed_countries);
       }
     }
   });
@@ -173,10 +140,7 @@ function getDataFromPage2() {
           payment_method = $(this).find(".customization2_booker_further-data_custom-question_value").text().trim();
         }
       });
-      // localStorage.setItem("payment_method", payment_method);
-      // local storage workaround
        wrapper.dataset.payment_method = payment_method;
-       console.log(wrapper.dataset.allowed_countries);
     }
   );
 }
@@ -214,7 +178,6 @@ function checking_page2() {
 	    console.log('free order detected');
 	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
-      // local storage workaround
       wrapper.dataset.free_order = true;
     }
     stop_checking_page2();
@@ -312,7 +275,7 @@ function getPaymentMethod() {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
     });
-    wrapper.dataset.payment_method_upd = payment_method_upd;
+    wrapper.dataset.payment_method_upd = payment_method_updated;
   });
 }
 
