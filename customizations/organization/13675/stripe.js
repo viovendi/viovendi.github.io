@@ -15,6 +15,7 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
+  loader('on');
   console.log('getXMLHttpRequest(open)');
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener("readystatechange", function () {
@@ -43,9 +44,7 @@ function getXMLHttpRequest(open) {
             order_tx_number: orders[0].invoice_id
           }
           
-          loader('on');
-          
-          //sendRequest(checkoutSessionParameters);
+          sendRequest(checkoutSessionParameters);
         }
 
       }
@@ -86,6 +85,9 @@ function sendRequest(checkoutSessionParameters){
 function loader(param) {
   console.log('loader');
   console.log(param);
+  
+  console.log($(".ew-confirmation__block"));
+  
   if (param == "on") {
     $(".ew-confirmation__block").append('<div class="loader"></div>');
     $(".ew-confirmation__block .loader").show();
