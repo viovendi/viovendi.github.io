@@ -43,6 +43,8 @@ function getXMLHttpRequest(open) {
             order_tx_number: orders[0].invoice_id
           }
           
+          loader('On');
+          
           sendRequest(checkoutSessionParameters);
         }
 
@@ -79,4 +81,13 @@ function sendRequest(checkoutSessionParameters){
       console.log(err);
     }
   });
+}
+
+function loader(param) {
+  if (param == "on") {
+    $(".ew-confirmation__block").append('<div class="loader"></div>');
+    $(".ew-confirmation__block .loader").show();
+  } else {
+    $(".ew-confirmation__block .loader").hide();
+  }
 }
