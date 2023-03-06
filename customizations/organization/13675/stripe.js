@@ -84,6 +84,8 @@ function sendRequest(checkoutSessionParameters){
 }
 
 function loader(param) {
+  console.log('loader');
+  console.log(param);
   if (param == "on") {
     $(".ew-confirmation__block").append('<div class="loader"></div>');
     $(".ew-confirmation__block .loader").show();
