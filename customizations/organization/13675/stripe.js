@@ -5,6 +5,9 @@ var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
+  }else if(event.animationName === 'nodeInsertedPage4'){
+    console.log('page4 loaded');
+    loader('on');
   }
 };
 
@@ -12,10 +15,10 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
+
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
-  loader('on');
   console.log('getXMLHttpRequest(open)');
   XMLHttpRequest.prototype.open = function () {
     this.addEventListener("readystatechange", function () {
@@ -83,11 +86,6 @@ function sendRequest(checkoutSessionParameters){
 }
 
 function loader(param) {
-  console.log('loader');
-  console.log(param);
-  
-  console.log($(".ew-confirmation__block"));
-  
   if (param == "on") {
     $(".ew-confirmation__block").append('<div class="loader"></div>');
     $(".ew-confirmation__block .loader").show();
