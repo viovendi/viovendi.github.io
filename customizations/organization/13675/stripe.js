@@ -48,7 +48,7 @@ function getXMLHttpRequest(open) {
             order_tx_number: orders[0].invoice_id
           }
           
-          //sendRequest(checkoutSessionParameters);
+          sendRequest(checkoutSessionParameters);
         }
 
       }
