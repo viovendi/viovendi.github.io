@@ -43,9 +43,9 @@ function getXMLHttpRequest(open) {
             order_tx_number: orders[0].invoice_id
           }
           
-          loader('On');
+          loader('on');
           
-          sendRequest(checkoutSessionParameters);
+          //sendRequest(checkoutSessionParameters);
         }
 
       }
