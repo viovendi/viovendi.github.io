@@ -7,6 +7,7 @@ var insertionListener = function (event) {
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
+    $('.header__label').text("Please wait, you'll be redirected to the payment page...");
     loader('on');
   }
 };
