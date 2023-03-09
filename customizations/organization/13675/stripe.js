@@ -60,7 +60,7 @@ function getXMLHttpRequest(open) {
 function sendRequest(checkoutSessionParameters){
   console.log('sendRequest');
   $.ajax({
-    url: 'https://hook.doo.integromat.celonis.com/vq4u7ulswcgth6j97cmqk057g6soy6xx',
+    url: 'https://hook.doo.integromat.celonis.com/iyn4bq5iw24r2lo1stvrurbbidi88yng',
     type: 'post',
     headers: {
       'Content-Type': 'application/json',
