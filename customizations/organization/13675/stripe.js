@@ -15,9 +15,11 @@ var insertionListener = function (event) {
     // if confirmation without booking approval!
     const confirmText = $('.ew-confirmation__summary strong').text().trim();
     
-    if(confirmText.includes('Freigabe geprüft') && confirmText.includes('checked for approval')){
+    if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
+       console.log('showTheDefaultText - confirmation required');
        showTheDefaultText();
     }else{
+       console.log('showTheDefaultText - standard case');
        $('.header__label').text("Please wait, you'll be redirected to the payment page...");
        loader('on');
     }
