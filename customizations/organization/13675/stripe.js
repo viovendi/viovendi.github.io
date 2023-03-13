@@ -7,6 +7,7 @@ var insertionListener = function (event) {
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
+    // if confirmation without booking approval!
     $('.header__label').text("Please wait, you'll be redirected to the payment page...");
     loader('on');
   }
@@ -48,8 +49,11 @@ function getXMLHttpRequest(open) {
             //order_id: orders[0].id,
             order_tx_number: orders[0].invoice_id
           }
-          
-          // sendRequest(checkoutSessionParameters);
+          if(orders[0].status != 'pending_organizer_approval'){
+            sendRequest(checkoutSessionParameters);
+          }else{
+            console.log('booking approval!');
+          }
         }
 
       }
