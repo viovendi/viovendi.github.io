@@ -8,8 +8,12 @@ var insertionListener = function (event) {
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
     // if confirmation without booking approval!
-    $('.header__label').text("Please wait, you'll be redirected to the payment page...");
-    loader('on');
+    const confirmText = $('.ew-confirmation__summary strong').text().trim();
+    
+    if(!confirmText.includes('Freigabe geprüft') && !confirmText.includes('checked for approval')){
+       $('.header__label').text("Please wait, you'll be redirected to the payment page...");
+       loader('on');
+    }
   }
 };
 
