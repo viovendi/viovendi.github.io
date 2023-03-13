@@ -40,15 +40,16 @@ function getXMLHttpRequest(open) {
             var price = +orders[0].payment.amount;
           }
           
+          console.log('orders:');
           console.log(orders[0]);
           
           var checkoutSessionParameters = {
-            organizer_id: orders[0].event.organizer_id,
-            order_id: orders[0].id,
+            //organizer_id: orders[0].event.organizer_id,
+            //order_id: orders[0].id,
             order_tx_number: orders[0].invoice_id
           }
           
-          sendRequest(checkoutSessionParameters);
+          // sendRequest(checkoutSessionParameters);
         }
 
       }
@@ -70,14 +71,6 @@ function sendRequest(checkoutSessionParameters){
     dataType: 'json',
     success: function (res) {
       console.log(res);
-      /*
-      stripe.redirectToCheckout({
-        sessionId: res.payload.session_id
-      }).then(function (result) {
-        console.log(result)
-      });
-      */
-      console.log(res.payload.url);
       window.open(res.payload.url, "_parent");
     },
     error: function (err) {
