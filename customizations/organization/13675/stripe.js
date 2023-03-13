@@ -1,6 +1,11 @@
 // get localstorage
 console.log('github-stripe-js');
 
+function showTheDefaultText(){
+  console.log('showTheDefaultText');
+  $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
+}
+
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
@@ -10,7 +15,9 @@ var insertionListener = function (event) {
     // if confirmation without booking approval!
     const confirmText = $('.ew-confirmation__summary strong').text().trim();
     
-    if(!confirmText.includes('Freigabe geprüft') && !confirmText.includes('checked for approval')){
+    if(confirmText.includes('Freigabe geprüft') && confirmText.includes('checked for approval')){
+       showTheDefaultText();
+    }else{
        $('.header__label').text("Please wait, you'll be redirected to the payment page...");
        loader('on');
     }
