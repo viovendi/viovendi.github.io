@@ -37,7 +37,7 @@ var insertionListener = function (event) {
       if(isStripePayment){
         console.log('isStripe - true');
         console.log($('.event-booking-widget'));
-        $('.event-booking-widget').data('payment_method') = 'stripe';
+        $('.event-booking-widget').data('payment_method', 'stripe');
       }
     });
     
@@ -77,7 +77,7 @@ function getXMLHttpRequest(open) {
   XMLHttpRequest.prototype.open = function () {
     
     console.log($('.event-booking-widget'));
-    $('.event-booking-widget').data('payment_method') = '';
+    $('.event-booking-widget').data('payment_method', '');
     
     this.addEventListener("readystatechange", function () {
 
@@ -99,8 +99,6 @@ function getXMLHttpRequest(open) {
           
           console.log('orders:');
           console.log(orders[0]);
-          
-          console.log(dataLayer);
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
