@@ -1,6 +1,11 @@
 // get localstorage
 console.log('github-stripe-js');
 
+// data attribute
+const wrapper = document.querySelector('.event-booking-widget');
+
+wrapper.dataset.payment_method = '';
+
 function showTheDefaultText(){
   console.log('showTheDefaultText');
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
@@ -18,6 +23,9 @@ var insertionListener = function (event) {
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
     // if confirmation without booking approval!
+    // check if payment stripe
+    // wrapper.dataset.payment_method = '';
+    
     const confirmText = $('.ew-confirmation__summary strong').text().trim();
     
     if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
@@ -61,6 +69,10 @@ function getXMLHttpRequest(open) {
           
           console.log('orders:');
           console.log(orders[0]);
+          
+          // set the payment method if stripe
+          //wrapper.dataset.payment_method = '';
+          //
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
