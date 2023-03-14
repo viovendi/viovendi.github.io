@@ -6,6 +6,11 @@ function showTheDefaultText(){
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
 }
 
+function hideDefaultText(){
+  console.log('hideDefaultText');
+  $('.ew-confirmation__block .customization-confirmation-label, .ew-confirmation__block .ew-confirmation__text-paragraph, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display': 'none'});
+}
+
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
