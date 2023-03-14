@@ -36,18 +36,17 @@ var insertionListener = function (event) {
       console.log('bttn clicked!');
       if(isStripePayment){
         console.log('isStripe - true');
-        wrapper.dataset.payment_method = 'stripe';
+        $('.event-booking-widget').data('payment_method') = 'stripe';
       }
     });
     
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
-    // if confirmation without booking approval!
-    // check if payment stripe
-    // wrapper.dataset.payment_method = '';
     
-    if(wrapper.dataset.payment_method === 'stripe'){
+    console.log($('.event-booking-widget').data('payment_method'));
+    
+    if($('.event-booking-widget').data('payment_method') === 'stripe'){
       console.log('page4 Stripe!!!');
     }
     
@@ -70,16 +69,13 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 var resCount = 0;
-let wrapper;
 
 function getXMLHttpRequest(open) {
   console.log('getXMLHttpRequest(open)');
-  // data attribute
-  wrapper = document.querySelector('.event-booking-widget');
 
   XMLHttpRequest.prototype.open = function () {
     
-    wrapper.dataset.payment_method = '';
+    $('.event-booking-widget').dataset.payment_method = '';
     
     this.addEventListener("readystatechange", function () {
 
