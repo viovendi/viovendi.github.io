@@ -11,13 +11,33 @@ function hideDefaultText(){
   $('.ew-confirmation__block .customization-confirmation-label, .ew-confirmation__block .ew-confirmation__text-paragraph, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display': 'none'});
 }
 
+function isStripePayment(){
+  let paymentInput;
+  let isStripe = false;
+  
+  if($('.payment-method-selection__payment-options--multiple').lenght > 0){
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+  }else{
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+  }
+  
+  if(ifpaymentInput.closest('label').hasClass('customization_payment-option_Stripe')){
+    isStripe = true;
+  }
+  
+  return isStripe;
+}
+
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
     
-    //???
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
       console.log('bttn clicked!');
+      if(isStripePayment){
+        console.log('isStripe - true');
+        wrapper.dataset.payment_method = 'stripe';
+      }
     });
     
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
@@ -26,6 +46,10 @@ var insertionListener = function (event) {
     // if confirmation without booking approval!
     // check if payment stripe
     // wrapper.dataset.payment_method = '';
+    
+    if(wrapper.dataset.payment_method === 'stripe'){
+      console.log('page4 Stripe!!!');
+    }
     
     const confirmText = $('.ew-confirmation__summary strong').text().trim();
     
@@ -46,16 +70,16 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 var resCount = 0;
-//let wrapper;
+let wrapper;
 
 function getXMLHttpRequest(open) {
   console.log('getXMLHttpRequest(open)');
   // data attribute
-  //wrapper = document.querySelector('.event-booking-widget');
+  wrapper = document.querySelector('.event-booking-widget');
 
   XMLHttpRequest.prototype.open = function () {
     
-   // wrapper.dataset.payment_method = '';
+    wrapper.dataset.payment_method = '';
     
     this.addEventListener("readystatechange", function () {
 
