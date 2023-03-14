@@ -75,7 +75,7 @@ function getXMLHttpRequest(open) {
 
   XMLHttpRequest.prototype.open = function () {
     
-    $('.event-booking-widget').dataset.payment_method = '';
+    $('.event-booking-widget').data('payment_method') = '';
     
     this.addEventListener("readystatechange", function () {
 
