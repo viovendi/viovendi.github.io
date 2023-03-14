@@ -79,7 +79,7 @@ function getXMLHttpRequest(open) {
             order_tx_number: orders[0].invoice_id
           }
           if(orders[0].status === 'active'){
-            sendRequest(checkoutSessionParameters);
+            //sendRequest(checkoutSessionParameters);
           }
         }
 
