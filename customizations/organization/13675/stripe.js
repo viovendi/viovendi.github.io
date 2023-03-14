@@ -41,7 +41,7 @@ var insertionListener = function (event) {
     
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
       console.log('bttn clicked!');
-      if(isStripePayment){
+      if(isStripePayment()){
         console.log('isStripe - true');
         //console.log($('.event-booking-widget'));
         //$('.event-booking-widget').data('payment_method', 'stripe');
