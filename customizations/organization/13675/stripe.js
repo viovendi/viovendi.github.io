@@ -25,7 +25,10 @@ function isStripePayment(){
     paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }
   
-  if(ifpaymentInput.closest('label').hasClass('customization_payment-option_Stripe')){
+  console.log(paymentInput);
+  console.log(paymentInput.closest('label').hasClass('customization_payment-option_Stripe'));
+  
+  if(paymentInput.closest('label').hasClass('customization_payment-option_Stripe')){
     isStripe = true;
   }
   
