@@ -22,13 +22,12 @@ function isStripePayment(){
   if($('.payment-method-selection__payment-options--multiple').lenght > 0){
     paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }else{
-    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+    paymentInput = $('.customization2_payment_options .payment-option__label');
+    
+    console.log(paymentInput.text().trim().toLowerCase());
   }
   
-  console.log(paymentInput);
-  console.log(paymentInput.closest('label').hasClass('customization_payment-option_Stripe'));
-  
-  if(paymentInput.closest('label').hasClass('customization_payment-option_Stripe')){
+  if(paymentInput.closest('label').hasClass('customization_payment-option_Stripe') || paymentInput.text().trim().toLowerCase() === 'stripe'){
     isStripe = true;
   }
   
