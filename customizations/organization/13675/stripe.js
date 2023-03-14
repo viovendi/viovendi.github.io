@@ -58,6 +58,7 @@ function getXMLHttpRequest(open) {
           console.log(orders[0]);
           
           var checkoutSessionParameters = {
+            organizer_id: orders[0].event.organizer_id,
             order_tx_number: orders[0].invoice_id
           }
           if(orders[0].status === 'active'){
