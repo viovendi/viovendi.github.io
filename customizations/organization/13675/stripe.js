@@ -14,6 +14,12 @@ function hideDefaultText(){
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
+    
+    //???
+    $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
+      console.log('bttn clicked!');
+    });
+    
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
@@ -40,16 +46,16 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 var resCount = 0;
-let wrapper;
+//let wrapper;
 
 function getXMLHttpRequest(open) {
   console.log('getXMLHttpRequest(open)');
   // data attribute
-  wrapper = document.querySelector('.event-booking-widget');
+  //wrapper = document.querySelector('.event-booking-widget');
 
   XMLHttpRequest.prototype.open = function () {
     
-    wrapper.dataset.payment_method = '';
+   // wrapper.dataset.payment_method = '';
     
     this.addEventListener("readystatechange", function () {
 
@@ -72,16 +78,14 @@ function getXMLHttpRequest(open) {
           console.log('orders:');
           console.log(orders[0]);
           
-          // set the payment method if stripe
-          //wrapper.dataset.payment_method = '';
-          //
+          console.log(dataLayer);
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
             order_tx_number: orders[0].invoice_id
           }
           if(orders[0].status === 'active'){
-            //sendRequest(checkoutSessionParameters);
+            sendRequest(checkoutSessionParameters);
           }
         }
 
