@@ -1,11 +1,6 @@
 // get localstorage
 console.log('github-stripe-js');
 
-// data attribute
-const wrapper = document.querySelector('.event-booking-widget');
-
-wrapper.dataset.payment_method = '';
-
 function showTheDefaultText(){
   console.log('showTheDefaultText');
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
@@ -45,10 +40,17 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 var resCount = 0;
+let wrapper;
 
 function getXMLHttpRequest(open) {
   console.log('getXMLHttpRequest(open)');
+  // data attribute
+  wrapper = document.querySelector('.event-booking-widget');
+
   XMLHttpRequest.prototype.open = function () {
+    
+    wrapper.dataset.payment_method = '';
+    
     this.addEventListener("readystatechange", function () {
 
       if (this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders") {
