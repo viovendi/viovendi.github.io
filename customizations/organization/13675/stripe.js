@@ -1,6 +1,10 @@
 // get localstorage
 console.log('github-stripe-js');
 
+// remove local storage data
+localStorage.removeItem('payment_method');
+
+
 function showTheDefaultText(){
   console.log('showTheDefaultText');
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
@@ -36,8 +40,9 @@ var insertionListener = function (event) {
       console.log('bttn clicked!');
       if(isStripePayment){
         console.log('isStripe - true');
-        console.log($('.event-booking-widget'));
-        $('.event-booking-widget').data('payment_method', 'stripe');
+        //console.log($('.event-booking-widget'));
+        //$('.event-booking-widget').data('payment_method', 'stripe');
+        localStorage.setItem('payment_method', 'stripe');
       }
     });
     
@@ -45,9 +50,14 @@ var insertionListener = function (event) {
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
     
-    console.log($('.event-booking-widget').data('payment_method'));
-    
+    //console.log($('.event-booking-widget').data('payment_method'));
+    /*
     if($('.event-booking-widget').data('payment_method') === 'stripe'){
+      console.log('page4 Stripe!!!');
+    }
+    */
+    
+    if(localStorage.getItem('payment_method') === 'stripe'){
       console.log('page4 Stripe!!!');
     }
     
@@ -76,8 +86,8 @@ function getXMLHttpRequest(open) {
 
   XMLHttpRequest.prototype.open = function () {
     
-    console.log($('.event-booking-widget'));
-    $('.event-booking-widget').data('payment_method', '');
+    //console.log($('.event-booking-widget'));
+    //$('.event-booking-widget').data('payment_method', '');
     
     this.addEventListener("readystatechange", function () {
 
