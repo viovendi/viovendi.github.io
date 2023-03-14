@@ -1,11 +1,6 @@
 // get localstorage
 console.log('github-stripe-js');
 
-setTimeout(function(){
-  console.log($('.event-booking-widget'));
-}, 1000);
-console.log($('.event-booking-widget'));
-
 function showTheDefaultText(){
   console.log('showTheDefaultText');
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
@@ -41,6 +36,7 @@ var insertionListener = function (event) {
       console.log('bttn clicked!');
       if(isStripePayment){
         console.log('isStripe - true');
+        console.log($('.event-booking-widget'));
         $('.event-booking-widget').data('payment_method') = 'stripe';
       }
     });
@@ -80,6 +76,7 @@ function getXMLHttpRequest(open) {
 
   XMLHttpRequest.prototype.open = function () {
     
+    console.log($('.event-booking-widget'));
     $('.event-booking-widget').data('payment_method') = '';
     
     this.addEventListener("readystatechange", function () {
