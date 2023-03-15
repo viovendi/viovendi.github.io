@@ -23,8 +23,6 @@ function isStripePayment(){
     paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }else{
     paymentInput = $('.customization2_payment_options .payment-option__label');
-    
-    console.log(paymentInput.text().trim().toLowerCase());
   }
   
   if(paymentInput.closest('label').hasClass('customization_payment-option_Stripe') || paymentInput.text().trim().toLowerCase() === 'stripe'){
@@ -36,40 +34,25 @@ function isStripePayment(){
 
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
-    console.log('nodeInserted - run request intercept');
     
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
-      console.log('bttn clicked!');
       if(isStripePayment()){
-        console.log('isStripe - true');
-        //console.log($('.event-booking-widget'));
         //$('.event-booking-widget').data('payment_method', 'stripe');
         localStorage.setItem('payment_method', 'stripe');
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
       }
     });
     
-    //getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
     
-    //console.log($('.event-booking-widget').data('payment_method'));
-    /*
-    if($('.event-booking-widget').data('payment_method') === 'stripe'){
-      console.log('page4 Stripe!!!');
-    }
-    */
-    
     if(localStorage.getItem('payment_method') === 'stripe'){
-      console.log('page4 Stripe!!!');
     
       const confirmText = $('.ew-confirmation__summary strong').text().trim();
 
       if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
-         console.log('showTheDefaultText - confirmation required');
          showTheDefaultText();
       }else{
-         console.log('showTheDefaultText - standard case');
          hideDefaultText();
          $('.header__label').text("Please wait, you'll be redirected to the payment page...");
          loader('on');
@@ -86,12 +69,8 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 var resCount = 0;
 
 function getXMLHttpRequest(open) {
-  console.log('getXMLHttpRequest(open)');
 
   XMLHttpRequest.prototype.open = function () {
-    
-    //console.log($('.event-booking-widget'));
-    //$('.event-booking-widget').data('payment_method', '');
     
     this.addEventListener("readystatechange", function () {
 
@@ -111,9 +90,6 @@ function getXMLHttpRequest(open) {
             var price = +orders[0].payment.amount;
           }
           
-          console.log('orders:');
-          console.log(orders[0]);
-          
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
             order_tx_number: orders[0].invoice_id
@@ -130,7 +106,6 @@ function getXMLHttpRequest(open) {
 };
 
 function sendRequest(checkoutSessionParameters){
-  console.log('sendRequest');
   $.ajax({
     url: 'https://hook.doo.integromat.celonis.com/iyn4bq5iw24r2lo1stvrurbbidi88yng',
     type: 'post',
