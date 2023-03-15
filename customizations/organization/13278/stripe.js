@@ -1,27 +1,79 @@
 // get localstorage
 console.log('github-stripe-js');
 
+// remove local storage data
+localStorage.removeItem('payment_method');
+
+
 function showTheDefaultText(){
   console.log('showTheDefaultText');
   $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
 }
 
+function hideDefaultText(){
+  console.log('hideDefaultText');
+  $('.ew-confirmation__block .customization-confirmation-label, .ew-confirmation__block .ew-confirmation__text-paragraph, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display': 'none'});
+}
+
+function isStripePayment(){
+  let paymentInput;
+  let isStripe = false;
+  
+  if($('.payment-method-selection__payment-options--multiple').lenght > 0){
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+  }else{
+    paymentInput = $('.customization2_payment_options .payment-option__label');
+    
+    console.log(paymentInput.text().trim().toLowerCase());
+  }
+  
+  if(paymentInput.closest('label').hasClass('customization_payment-option_Stripe') || paymentInput.text().trim().toLowerCase() === 'stripe'){
+    isStripe = true;
+  }
+  
+  return isStripe;
+}
+
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    
+    $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
+      console.log('bttn clicked!');
+      if(isStripePayment()){
+        console.log('isStripe - true');
+        //console.log($('.event-booking-widget'));
+        //$('.event-booking-widget').data('payment_method', 'stripe');
+        localStorage.setItem('payment_method', 'stripe');
+        getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      }
+    });
+    
+    //getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
-    // if confirmation without booking approval!
-    const confirmText = $('.ew-confirmation__summary strong').text().trim();
     
-    if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
-       console.log('showTheDefaultText - confirmation required');
-       showTheDefaultText();
-    }else{
-       console.log('showTheDefaultText - standard case');
-       $('.header__label').text("Please wait, you'll be redirected to the payment page...");
-       loader('on');
+    //console.log($('.event-booking-widget').data('payment_method'));
+    /*
+    if($('.event-booking-widget').data('payment_method') === 'stripe'){
+      console.log('page4 Stripe!!!');
+    }
+    */
+    
+    if(localStorage.getItem('payment_method') === 'stripe'){
+      console.log('page4 Stripe!!!');
+    
+      const confirmText = $('.ew-confirmation__summary strong').text().trim();
+
+      if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
+         console.log('showTheDefaultText - confirmation required');
+         showTheDefaultText();
+      }else{
+         console.log('showTheDefaultText - standard case');
+         hideDefaultText();
+         $('.header__label').text("Please wait, you'll be redirected to the payment page...");
+         loader('on');
+      }
     }
   }
 };
@@ -35,7 +87,12 @@ var resCount = 0;
 
 function getXMLHttpRequest(open) {
   console.log('getXMLHttpRequest(open)');
+
   XMLHttpRequest.prototype.open = function () {
+    
+    //console.log($('.event-booking-widget'));
+    //$('.event-booking-widget').data('payment_method', '');
+    
     this.addEventListener("readystatechange", function () {
 
       if (this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders") {
@@ -58,8 +115,8 @@ function getXMLHttpRequest(open) {
           console.log(orders[0]);
           
           var checkoutSessionParameters = {
-            order_tx_number: orders[0].invoice_id,
-            organizer_id: orders[0].event.organizer_id
+            organizer_id: orders[0].event.organizer_id,
+            order_tx_number: orders[0].invoice_id
           }
           if(orders[0].status === 'active'){
             sendRequest(checkoutSessionParameters);
