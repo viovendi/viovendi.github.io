@@ -252,8 +252,8 @@ function addSeatScript(){
 
 // object for ticket cat mapping
 var mapObject = {
-    T: 'DAT 2023 – Ausstellerticket',
-    A: 'Ticket cat A',
+    Normal: 'DAT 2023 – Ausstellerticket',
+    Premium: 'DAT 2023 Ausstellerticket (Premium)'
 };
 
 
