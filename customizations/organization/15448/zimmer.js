@@ -23,13 +23,7 @@ function hideQuestion(tag, name) {
     }
   });
 }
-const url = window.location.href;
-console.log(url);
 
-if (url.includes("booking-14334-39285")){
-console.log("mitarbeiter");
-}
-    
 
 
 
