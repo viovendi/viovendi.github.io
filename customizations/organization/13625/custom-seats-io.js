@@ -104,12 +104,7 @@ function fillTicketId(){
                 event = document.createEvent('Event');
                 event.initEvent('input', true, true); // for IE
               }
-                                
-                console.log('inputField[0]');
-                console.log(inputField[0]);
-                
-              inputField[0].dispatchEvent(event);
-                
+              inputField[0].dispatchEvent(event);           
             }
             inputField.attr('disabled', true);
         }       
@@ -119,10 +114,9 @@ function fillTicketId(){
 
 function clearTicketsInManager(){
     $('.event-categories li').each(function(){
-        var zeroOption = $(this).find('.vv-single-select-option')[0];
         
-        console.log('zeroOption');
-        console.log(zeroOption);
+        console.log($(this));
+        var zeroOption = $(this).find('.vv-single-select-option')[0];
         
         zeroOption.dispatchEvent(new Event('change'));
         zeroOption.click();
@@ -227,7 +221,7 @@ function validateToken(){
             createSeats(holdToken);
         }
         
-      });
+    });
 }
 
 /*********************/
@@ -319,9 +313,6 @@ function selectOptions(options, selectedInput) {
     
     if (optionsNumber === inputNumber) {        
       const tergetElement = options[y];
-        
-      console.log('tergetElement');
-      console.log(tergetElement);
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
