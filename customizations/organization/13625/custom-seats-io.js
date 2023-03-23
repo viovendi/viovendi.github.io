@@ -115,14 +115,20 @@ function fillTicketId(){
 function clearTicketsInManager(){
     $('.event-categories li').each(function(){
         
+        /*
         console.log($(this));
         console.log($(this).find('.vv-single-select-option'));
         console.log($(this).find('.vv-single-select-option')[0]);
+        */
         
-        var zeroOption = $(this).find('.vv-single-select-option')[0];
+        if($(this).find('.vv-single-select-option')[0]){
+            var zeroOption = $(this).find('.vv-single-select-option')[0];
+                zeroOption.dispatchEvent(new Event('change'));
+                zeroOption.click();
+        }
         
-        zeroOption.dispatchEvent(new Event('change'));
-        zeroOption.click();
+        // zeroOption.dispatchEvent(new Event('change'));
+        // zeroOption.click();
     });
 }
   
