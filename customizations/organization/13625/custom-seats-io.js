@@ -117,7 +117,7 @@ function clearTicketsInManager(){
         console.log('----');
         console.log($(this).find('.vv-single-select-option'));
         console.log('--//--');
-    }
+    });
     
     $('.event-categories .event-category:not(.event-category--fade)').each(function(){
     //$('.event-categories li').each(function(){
