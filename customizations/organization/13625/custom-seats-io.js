@@ -114,6 +114,13 @@ function fillTicketId(){
 
 function clearTicketsInManager(){
     $('.event-categories li').each(function(){
+        console.log('----');
+        console.log($(this).find('.vv-single-select-option'));
+        console.log('--//--');
+    }
+    
+    $('.event-categories .event-category:not(.event-category--fade)').each(function(){
+    //$('.event-categories li').each(function(){
         
         console.log($(this).find('.vv-single-select-option'));
         
