@@ -113,25 +113,30 @@ function fillTicketId(){
 
 
 function clearTicketsInManager(){
+    /*
     $('.event-categories li').each(function(){
         console.log('----');
         console.log($(this).find('.vv-single-select-option'));
         console.log('--//--');
-    });
-    
-    $('.event-categories .event-category:not(.event-category--fade)').each(function(){
-    //$('.event-categories li').each(function(){
-        
-        console.log($(this).find('.vv-single-select-option'));
         
         if($(this).find('.vv-single-select-option')[0]){
             var zeroOption = $(this).find('.vv-single-select-option')[0];
                 zeroOption.dispatchEvent(new Event('change'));
                 zeroOption.click();
         }
+    });
+    */
+    
+    $('.event-categories .event-category:not(.event-category--fade)').each(function(){
         
-        // zeroOption.dispatchEvent(new Event('change'));
-        // zeroOption.click();
+        /*if($(this).find('.vv-single-select-option')[0]){
+            var zeroOption = $(this).find('.vv-single-select-option')[0];
+                zeroOption.dispatchEvent(new Event('change'));
+                zeroOption.click();
+        }*/
+        var zeroOption = $(this).find('.vv-single-select-option')[0];
+            zeroOption.dispatchEvent(new Event('change'));
+            zeroOption.click();
     });
 }
   
