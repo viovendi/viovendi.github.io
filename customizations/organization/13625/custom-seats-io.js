@@ -310,6 +310,10 @@ function setTicketCategoryChosen(ticketLabel, action){
         
         if(categoryName === mapObject[ticketLabel]){
             
+            if(categoryName.indexOf('DAT 2023') > -1){
+                $(this).removeClass('hidden');
+            }
+            
             console.log(categoryName);
             
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
@@ -324,6 +328,10 @@ function setTicketCategoryChosen(ticketLabel, action){
             }
             
             selectOptions(allOptions, selectedInputNum);
+        }else{
+            if(categoryName.indexOf('DAT 2023') > -1){
+                $(this).addClass('hidden');
+            }
         }
     });
 }
