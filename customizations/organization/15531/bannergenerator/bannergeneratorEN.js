@@ -58,12 +58,12 @@ function setTexts() {
         ctx.fillText(
             $("#halle_inp").val(),
             78 - $("#halle_inp").val().length * 6,
-            518
+            428
         );
         ctx.fillText(
             $("#stand_inp").val(),
             78 - $("#stand_inp").val().length * 5,
-            578
+            489
         );
     } else if (value == "email") {
         ctx.fillText(
