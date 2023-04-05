@@ -306,7 +306,7 @@ function setTicketsFromPreviousChose(arr){
 function setTicketCategoryChosen(ticketLabel, action){
     
     $('.event-categories li').each(function(){
-        const categoryName = $(this).find('div.event-category > .customization-category-name').text().trim();
+        const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
         
         console.log(categoryName);
         
