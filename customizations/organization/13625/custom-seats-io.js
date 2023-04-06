@@ -318,16 +318,21 @@ if(categoryName.indexOf('DAT 2023') > -1){
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        
-        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis'));
-        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0]);
-        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0].innerText);
-        
-        const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis').innerText;
-        
         console.log(categoryName);
+        
+        if(!categoryName){
+            return;
+        }
+        
+        const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0].innerText;
         console.log(categoryChosen);
 
+        // DAT 2023 – Ausstellerticket
+        // DAT 2023 Ausstellerticket (Premium)
+        
+        if(categoryName.indexOf('DAT 2023') > -1 && categoryChosen > 0){
+            $(this).addClass('visible');
+        }
     });
 }
 
@@ -350,9 +355,7 @@ function setTicketCategoryChosen(ticketLabel, action){
               // add record to the state obj
               selectedInputNum--;
             }
-            
             selectOptions(allOptions, selectedInputNum);
-            
         }
     });
     
@@ -369,10 +372,13 @@ function selectOptions(options, selectedInput) {
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
         
-      $('.event-categories').click();
+      //$('.event-categories').click();
     }
   }
-    hideTheCategroy();
+    setTimeout(function(){
+      $('.event-categories').click();
+      hideTheCategroy();
+    }, 300);
 }
 
 /*************
