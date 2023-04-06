@@ -341,6 +341,7 @@ function setTicketCategoryChosen(ticketLabel, action){
             if(action === 'add'){
               // add record to the state obj
               selectedInputNum++;
+                
             }else{
               // add record to the state obj
               selectedInputNum--;
@@ -364,9 +365,10 @@ function selectOptions(options, selectedInput) {
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
         
-      hideTheCategroy();
+      $('.event-categories').click();
     }
   }
+    hideTheCategroy();
 }
 
 /*************
