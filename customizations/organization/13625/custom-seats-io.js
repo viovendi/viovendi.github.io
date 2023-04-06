@@ -317,14 +317,13 @@ if(categoryName.indexOf('DAT 2023') > -1){
 
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
-        const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
+        const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
         
-        console.log($('.event-categories li div.event-category .vv-selection-input__value'));
-        
-        const categoryChosen = $(this).find('div.event-category .vv-selection-input__value').text().trim();
+        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis'));
+        const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis').text().trim();
         
         console.log(categoryName);
-        //console.log(categoryChosen);
+        console.log(categoryChosen);
 
     });
 }
