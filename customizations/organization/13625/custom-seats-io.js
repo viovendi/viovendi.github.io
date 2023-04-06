@@ -319,10 +319,12 @@ function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
         
+        console.log($('.event-categories li div.event-category .vv-selection-input__value'));
+        
         const categoryChosen = $(this).find('div.event-category .vv-selection-input__value').text().trim();
         
         console.log(categoryName);
-        console.log(categoryChosen);
+        //console.log(categoryChosen);
 
     });
 }
