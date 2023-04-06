@@ -313,6 +313,8 @@ if(categoryName.indexOf('DAT 2023') > -1){
 }
 
 */
+
+/*
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
@@ -324,10 +326,9 @@ function hideTheCategroy(){
 
     });
 }
+*/
 
 function setTicketCategoryChosen(ticketLabel, action){
-    
-    hideTheCategroy();
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
@@ -346,8 +347,10 @@ function setTicketCategoryChosen(ticketLabel, action){
             }
             
             selectOptions(allOptions, selectedInputNum);
+            
         }
     });
+    
 }
 
 function selectOptions(options, selectedInput) {  
@@ -360,6 +363,8 @@ function selectOptions(options, selectedInput) {
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
+        
+      hideTheCategroy();
     }
   }
 }
