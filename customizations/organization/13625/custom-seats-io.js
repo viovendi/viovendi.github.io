@@ -302,21 +302,37 @@ function setTicketsFromPreviousChose(arr){
     localStorage.removeItem('isEditMode');
 }
 
+/*
+
+if(categoryName.indexOf('DAT 2023') > -1){
+    $(this).removeClass('hidden');
+}
+
+if(categoryName.indexOf('DAT 2023') > -1){
+    $(this).addClass('hidden');
+}
+
+*/
+function hideTheCategroy(){
+    $('.event-categories li').each(function(){
+        const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
+        
+        const categoryChosen = $(this).find('div.event-category .vv-selection-input__value').text().trim();
+        
+        console.log(categoryName);
+        console.log(categoryChosen);
+
+    });
+}
 
 function setTicketCategoryChosen(ticketLabel, action){
+    
+    hideTheCategroy();
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
         
-        console.log(categoryName);
-        
         if(categoryName === mapObject[ticketLabel]){
-            
-            if(categoryName.indexOf('DAT 2023') > -1){
-                $(this).removeClass('hidden');
-            }
-            
-            console.log(categoryName);
             
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             var allOptions = $(this).find('.vv-single-select-option');
@@ -330,10 +346,6 @@ function setTicketCategoryChosen(ticketLabel, action){
             }
             
             selectOptions(allOptions, selectedInputNum);
-        }else{
-            if(categoryName.indexOf('DAT 2023') > -1){
-                $(this).addClass('hidden');
-            }
         }
     });
 }
