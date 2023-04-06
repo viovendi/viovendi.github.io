@@ -320,6 +320,9 @@ function hideTheCategroy(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
         
         console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis'));
+        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0]);
+        console.log($(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0].innerText);
+        
         const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis').innerText;
         
         console.log(categoryName);
