@@ -314,7 +314,7 @@ if(categoryName.indexOf('DAT 2023') > -1){
 
 */
 
-/*
+
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
@@ -326,7 +326,7 @@ function hideTheCategroy(){
 
     });
 }
-*/
+
 
 function setTicketCategoryChosen(ticketLabel, action){
     
