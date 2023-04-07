@@ -49,6 +49,8 @@ function bookSeats(dooOrderId, dooOrganizationId){
         orderId: dooOrderId,
         token: seatHoldToken
     };
+    
+    console.log(body);
     console.log('sent data to sieats');
     
     $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49', body)
@@ -59,6 +61,7 @@ function bookSeats(dooOrderId, dooOrganizationId){
       });
 }
 
+var isSent = false;
 function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
@@ -73,7 +76,10 @@ function getXMLHttpRequest (open) {
              const orders = res._embedded.orders;
              const order_id = orders[0].id;
              const organizer_id = orders[0].event.organizer_id;
-             bookSeats(order_id, organizer_id);
+             if(!isSent){
+                bookSeats(order_id, organizer_id);
+                isSent = true;
+             }
           }
         }
       }, false);
