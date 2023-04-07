@@ -1,5 +1,5 @@
 
-console.log('github code');
+console.log('github seats.io code');
 
 var insertionListener = function (event) {
     if (event.animationName === 'nodeInsertedSeats') {
@@ -36,8 +36,6 @@ async function hendler() {
     localStorage.setItem('isEditMode', 1);
       
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
-    
-      // submit booking in seats io
   }
 }
 
@@ -49,9 +47,6 @@ function bookSeats(dooOrderId, dooOrganizationId){
         orderId: dooOrderId,
         token: seatHoldToken
     };
-    
-    console.log(body);
-    console.log('sent data to sieats');
     
     $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49', body)
       .done(function() {
@@ -122,27 +117,8 @@ function fillTicketId(){
 
 
 function clearTicketsInManager(){
-    /*
-    $('.event-categories li').each(function(){
-        console.log('----');
-        console.log($(this).find('.vv-single-select-option'));
-        console.log('--//--');
-        
-        if($(this).find('.vv-single-select-option')[0]){
-            var zeroOption = $(this).find('.vv-single-select-option')[0];
-                zeroOption.dispatchEvent(new Event('change'));
-                zeroOption.click();
-        }
-    });
-    */
     
     $('.event-categories .event-category:not(.event-category--fade)').each(function(){
-        
-        /*if($(this).find('.vv-single-select-option')[0]){
-            var zeroOption = $(this).find('.vv-single-select-option')[0];
-                zeroOption.dispatchEvent(new Event('change'));
-                zeroOption.click();
-        }*/
         var zeroOption = $(this).find('.vv-single-select-option')[0];
             zeroOption.dispatchEvent(new Event('change'));
             zeroOption.click();
@@ -198,34 +174,6 @@ function saveSeatsObj(){
  });
 }
 
-function testLoadFunc(){
-    console.log('testLoadFunc!');
-}
-
-
-/**********.check if seatsio loaded ***********/
-
-/*
-function checkIfSeatsioLoaded(){
-    setInterval(checkTimer, 1000);
-}
-
-function checkTimer() {
-    console.log($('#chart .seatsio-loading-screen').length);
-    
-    if($('#chart .seatsio-loading-screen').length > 0){
-        console.log('stop interval');
-        clearInterval(checkTimer);
-    }else{
-        console.log('create seats again');
-        if($('#chart').length === 0){
-            addSeatScript();
-        }
-        createSeats();
-    }
-}
-*/
-
 function validateToken(){
     let holdToken = localStorage.getItem('holdToken');
     
@@ -266,9 +214,6 @@ function addSeatScript(){
     wraper.prepend(div);
     wraper.append(scriptSeats);
     
-    //scriptSeats.onload = function() {testLoadFunc()};
-    // TODO replace with onReady function
-    
     setTimeout(function(){
         // get the holdToken
         validateToken();
@@ -308,8 +253,6 @@ function setTicketsFromPreviousChose(arr){
 
 function hideCategoryByName(name){
     let category = '';
-    
-    console.log($('.event-categories li'));
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
@@ -359,7 +302,6 @@ function selectOptions(options, selectedInput) {
   }
     setTimeout(function(){
       $('.event-categories').click();
-      //hideTheCategroy();
     }, 300);
 }
 
