@@ -318,19 +318,13 @@ function findCategoryByName(name){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
         
-        console.log(name);
-        console.log(categoryName);
-        
-        console.log(categoryName.indexOf(name));
-        
         if(categoryName.indexOf(name) > -1){
-            console.log('!!!!!!');
             category = this;
         }
     });
     return category;
 }
-
+/*
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
@@ -353,7 +347,7 @@ function hideTheCategroy(){
         }
     });
 }
-
+*/
 
 function setTicketCategoryChosen(ticketLabel, action){
     
@@ -433,15 +427,21 @@ function createSeats(token){
                 selectedSeats.push(object.label);
             }
             
+            
+            
             // hide ticket cat
-            console.log(object.category);
-            console.log(object.category.label);
+            if(object.category.label === 'Normal'){
+                 $('.event-categories li').removeClass('hidden');
+                    
+                const cat = findCategoryByName('DAT 2023 Ausstellerticket (Premium)');
+                cat.addClass('hidden');
+            }
             
-            console.log(findCategoryByName('DAT 2023 – Ausstellerticket'));
-            
-            /*if(object.category.label === 'Normal'){
-                
-            }*/
+            if(object.category.label === 'Premium'){
+                 $('.event-categories li').removeClass('hidden');
+                const cat = findCategoryByName('DAT 2023 – Ausstellerticket');
+                cat.addClass('hidden');
+            }
             
             setTicketCategoryChosen(object.category.label, 'add');
 
