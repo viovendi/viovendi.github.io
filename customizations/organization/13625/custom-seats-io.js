@@ -13,7 +13,7 @@ var insertionListener = function (event) {
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
     }else if(event.animationName === 'attendeeEdited'){
-        fillTicketId();
+        //fillTicketId();  Function to fill in the Ticket-ID custom attendee question. It's not relevant for OID#13625
     }
 };
 hendler();
@@ -69,8 +69,6 @@ function getXMLHttpRequest (open) {
           if(res != undefined && res._embedded){
 
            // send the request to Make (to confirm the seats booking)
-              
-             console.log(orders[0]);
               
              const orders = res._embedded.orders;
              const order_id = orders[0].id;
