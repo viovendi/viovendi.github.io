@@ -302,17 +302,6 @@ function setTicketsFromPreviousChose(arr){
     localStorage.removeItem('isEditMode');
 }
 
-/*
-
-if(categoryName.indexOf('DAT 2023') > -1){
-    $(this).removeClass('hidden');
-}
-
-if(categoryName.indexOf('DAT 2023') > -1){
-    $(this).addClass('hidden');
-}
-
-*/
 function findCategoryByName(name){
     let category = '';
     $('.event-categories li').each(function(){
@@ -324,30 +313,7 @@ function findCategoryByName(name){
     });
     return category;
 }
-/*
-function hideTheCategroy(){
-    $('.event-categories li').each(function(){
-        const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        //console.log(categoryName);
-        
-        if(!categoryName){
-            return;
-        }
-        
-        const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0].innerText;
-        //console.log(categoryChosen);
 
-         findCategoryByName('DAT 2023 – Ausstellerticket');
-        
-        // DAT 2023 – Ausstellerticket
-        // DAT 2023 Ausstellerticket (Premium)
-        
-        if(categoryName.indexOf('DAT 2023 – Ausstellerticket') > -1 && categoryChosen > 0){
-            $(this).addClass('visible');
-        }
-    });
-}
-*/
 
 function setTicketCategoryChosen(ticketLabel, action){
     
@@ -428,19 +394,20 @@ function createSeats(token){
             }
             
             
-            
             // hide ticket cat
             if(object.category.label === 'Normal'){
                  $('.event-categories li').removeClass('hidden');
                     
                 const cat = findCategoryByName('DAT 2023 Ausstellerticket (Premium)');
-                cat.addClass('hidden');
+                console.log(cat);
+                console.log(typeof cat);
+                //cat.addClass('hidden');
             }
             
             if(object.category.label === 'Premium'){
                  $('.event-categories li').removeClass('hidden');
                 const cat = findCategoryByName('DAT 2023 – Ausstellerticket');
-                cat.addClass('hidden');
+                //cat.addClass('hidden');
             }
             
             setTicketCategoryChosen(object.category.label, 'add');
