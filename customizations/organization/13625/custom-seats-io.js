@@ -304,6 +304,9 @@ function setTicketsFromPreviousChose(arr){
 
 function hideCategoryByName(name){
     let category = '';
+    
+    console.log($('.event-categories li'));
+    
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
         $(this).removeClass('hidden');
