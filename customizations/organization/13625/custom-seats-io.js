@@ -317,7 +317,14 @@ function findCategoryByName(name){
     let category = '';
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
+        
+        console.log(name);
+        console.log(categoryName);
+        
+        console.log(categoryName.indexOf(name));
+        
         if(categoryName.indexOf(name) > -1){
+            console.log('!!!!!!');
             category = this;
         }
     });
@@ -361,7 +368,6 @@ function setTicketCategoryChosen(ticketLabel, action){
             if(action === 'add'){
               // add record to the state obj
               selectedInputNum++;
-                
             }else{
               // add record to the state obj
               selectedInputNum--;
@@ -382,13 +388,11 @@ function selectOptions(options, selectedInput) {
         
       tergetElement.dispatchEvent(new Event("change"));
       tergetElement.click();
-        
-      //$('.event-categories').click();
     }
   }
     setTimeout(function(){
       $('.event-categories').click();
-      hideTheCategroy();
+      //hideTheCategroy();
     }, 300);
 }
 
@@ -428,6 +432,16 @@ function createSeats(token){
                 console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
+            
+            // hide ticket cat
+            console.log(object.category);
+            console.log(object.category.label);
+            
+            console.log(findCategoryByName('DAT 2023 – Ausstellerticket'));
+            
+            /*if(object.category.label === 'Normal'){
+                
+            }*/
             
             setTicketCategoryChosen(object.category.label, 'add');
 
