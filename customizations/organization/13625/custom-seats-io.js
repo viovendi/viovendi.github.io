@@ -306,7 +306,7 @@ function hideCategoryByName(name){
     let category = '';
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        
+        $(this).removeClass('hidden');
         if(categoryName.indexOf(name) > -1){
             $(this).addClass('hidden');
         }
@@ -396,13 +396,13 @@ function createSeats(token){
             
             // hide ticket cat
             if(object.category.label === 'Normal'){
-                $('.event-categories li').removeClass('hidden');
+                //$('.event-categories li').removeClass('hidden');
                     
                 hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
             
             if(object.category.label === 'Premium'){
-                 $('.event-categories li').removeClass('hidden');
+                 //$('.event-categories li').removeClass('hidden');
                  hideCategoryByName('DAT 2023 – Ausstellerticket');
             }
             
