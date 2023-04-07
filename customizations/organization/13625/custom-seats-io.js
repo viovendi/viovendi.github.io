@@ -396,12 +396,11 @@ function createSeats(token){
             
             // hide ticket cat
             if(object.category.label === 'Normal'){
-                 $('.event-categories li').removeClass('hidden');
+                $('.event-categories li').removeClass('hidden');
                     
                 const cat = findCategoryByName('DAT 2023 Ausstellerticket (Premium)');
-                console.log(cat);
-                console.log(typeof cat);
-                //cat.addClass('hidden');
+                console.log(cat.find('li'));
+                cat.find('li').addClass('hidden');
             }
             
             if(object.category.label === 'Premium'){
