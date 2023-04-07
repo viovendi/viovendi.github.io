@@ -313,24 +313,35 @@ if(categoryName.indexOf('DAT 2023') > -1){
 }
 
 */
-
+function findCategoryByName(name){
+    let category = '';
+    $('.event-categories li').each(function(){
+        const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
+        if(categoryName.indexOf(name) > -1){
+            category = this;
+        }
+    });
+    return category;
+}
 
 function hideTheCategroy(){
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        console.log(categoryName);
+        //console.log(categoryName);
         
         if(!categoryName){
             return;
         }
         
         const categoryChosen = $(this).find('div.event-category:not(.event-category--child) .vv-selection-input__value.m-ellipsis')[0].innerText;
-        console.log(categoryChosen);
+        //console.log(categoryChosen);
 
+         findCategoryByName('DAT 2023 – Ausstellerticket');
+        
         // DAT 2023 – Ausstellerticket
         // DAT 2023 Ausstellerticket (Premium)
         
-        if(categoryName.indexOf('DAT 2023') > -1 && categoryChosen > 0){
+        if(categoryName.indexOf('DAT 2023 – Ausstellerticket') > -1 && categoryChosen > 0){
             $(this).addClass('visible');
         }
     });
