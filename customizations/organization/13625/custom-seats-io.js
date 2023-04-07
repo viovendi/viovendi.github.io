@@ -399,14 +399,11 @@ function createSeats(token){
             
             // hide ticket cat
             if(object.category.label === 'Normal'){
-                //$('.event-categories li').removeClass('hidden');
-                    
                 hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
             
             if(object.category.label === 'Premium'){
-                 //$('.event-categories li').removeClass('hidden');
-                 hideCategoryByName('DAT 2023 – Ausstellerticket');
+                hideCategoryByName('DAT 2023 – Ausstellerticket');
             }
             
             setTicketCategoryChosen(object.category.label, 'add');
@@ -418,6 +415,8 @@ function createSeats(token){
             var index = selectedSeats.indexOf(object.label);
             console.log(index);
             if (index !== -1) selectedSeats.splice(index, 1);
+            
+            $('.event-categories li').removeClass('hidden');
             
             setTicketCategoryChosen(object.category.label, 'remove');
         },
