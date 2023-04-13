@@ -1,4 +1,4 @@
-console.log('github-js !!');
+console.log('github-js');
 
 async function handler() {
   console.log('handler-'+document.readyState);
@@ -18,8 +18,6 @@ async function handler() {
     console.log("page4!");
     console.log($('.ew-confirmation__block').length);
     loader("on");
-    
-    console.log($('.loader').length);
   }
 }
 handler();
@@ -83,7 +81,7 @@ function sendRequestToGetRedirectUrl(object){
         //window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
-        // show the error message?
+        // show different error message depends on the status received from the scenario?
         loader("off");
         showErrorMessage();
         console.log('Error - no payment page URL');
@@ -105,15 +103,12 @@ function getXMLHttpRequest (open) {
 
            // send the request to Make (to confirm the seats booking)
              const orders = res._embedded.orders;
-             console.log(orders[0]);
             
              orderDataobj.orderId = orders[0].id;
              orderDataobj.eventId = orders[0].event.id;
              orderDataobj.buyerEmail = orders[0].email
              orderDataobj.orderAmount = orders[0].payment.amount;
              orderDataobj.orderCurr = orders[0].event.currency.code;
-            
-             console.log($('.customization2_payment-description_manual-approval').length);
             
             if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
               sendRequestToGetRedirectUrl(orderDataobj);
