@@ -105,6 +105,7 @@ function getXMLHttpRequest (open) {
              const orders = res._embedded.orders;
             
              orderDataobj.orderId = orders[0].id;
+             orderDataobj.organizationId = orders[0].event.organizer_id;
              orderDataobj.eventId = orders[0].event.id;
              orderDataobj.buyerEmail = orders[0].email
              orderDataobj.orderAmount = orders[0].payment.amount;
