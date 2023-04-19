@@ -170,9 +170,9 @@ function showError(){
     const first_page_bttn = $('.customization-booking-area-wrapper-page1 .customization-button-next');
     first_page_bttn.attr('disabled', true);
     
-        console.log($('.error-message').length);
-    first_page_bttn.after('<span class="error-message">Please choose the seat.</span>');
-    first_page_bttn.insertAfter('<span class="error-message">Please choose the seat.</span>');
+    console.log($('.error-message').length);
+    
+    first_page_bttn.closest('div').append('<span class="error-message">Please choose the seat.</span>');
     
     if($('.error-message').length < 0){
         first_page_bttn.after('<span class="error-message">Please choose the seat.</span>');
