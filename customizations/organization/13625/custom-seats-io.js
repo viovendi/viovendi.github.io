@@ -169,6 +169,11 @@ function showError(){
     console.log('showError');
     const first_page_bttn = $('.customization-booking-area-wrapper-page1 .customization-button-next');
     first_page_bttn.attr('disabled', true);
+    
+        console.log($('.error-message').length);
+    first_page_bttn.after('<span class="error-message">Please choose the seat.</span>');
+    first_page_bttn.insertAfter('<span class="error-message">Please choose the seat.</span>');
+    
     if($('.error-message').length < 0){
         first_page_bttn.after('<span class="error-message">Please choose the seat.</span>');
     }
@@ -189,8 +194,6 @@ function saveSeatsObj(){
      if(selectedSeats.length < 1){
         console.log('empty seats arr');
          showError();
-     }else{
-         hideError();
      }
      
     if(localStorage.getItem('seatsObject')){
@@ -361,14 +364,12 @@ function createSeats(token){
             console.log('onObjectSelected');
             console.log(object);
             
-            console.log('isEditMode:');
-            console.log(localStorage.getItem('isEditMode'));
+            hideError();
           
             if(!localStorage.getItem('isEditMode')){
                 console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
-            
             
             // hide ticket cat
             if(object.category.label === 'Normal'){
