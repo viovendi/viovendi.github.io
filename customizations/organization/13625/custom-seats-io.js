@@ -117,7 +117,6 @@ function fillTicketId(){
 
 
 function clearTicketsInManager(){
-    
     $('.event-categories .event-category:not(.event-category--fade)').each(function(){
         var zeroOption = $(this).find('.vv-single-select-option')[0];
             zeroOption.dispatchEvent(new Event('change'));
@@ -172,7 +171,7 @@ function showError(){
     
     console.log($('.error-message').length);
     
-    first_page_bttn.closest('div').append('<span class="error-message">Please choose the seat.</span>');
+    first_page_bttn.closest('div').append('<span class="error-message" style="color: red; position: absolute; right: 40px; bottom: 100px;">Please choose the seat.</span>');
     
     if($('.error-message').length < 0){
         first_page_bttn.after('<span class="error-message">Please choose the seat.</span>');
