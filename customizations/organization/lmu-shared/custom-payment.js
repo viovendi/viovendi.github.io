@@ -12,7 +12,7 @@ async function handler() {
     
     await getPage('page3');
     console.log("page3!");
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    //getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
     await getPage('page4');
     console.log("page4!");
@@ -21,6 +21,11 @@ async function handler() {
   //}
 }
 handler();
+
+$('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
+  console.log('page 3 clicked!');
+  getXMLHttpRequest(XMLHttpRequest.prototype.open);
+});
 
 
 function loader(param){
