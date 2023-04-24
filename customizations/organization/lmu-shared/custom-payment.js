@@ -1,4 +1,4 @@
-console.log('lmu-shared-js!');
+console.log('lmu-shared-js');
 
 async function handler() {
   console.log('handler-'+document.readyState);
@@ -12,7 +12,7 @@ async function handler() {
     
     await getPage('page3');
     console.log("page3!");
-    //getXMLHttpRequest(XMLHttpRequest.prototype.open);
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
     await getPage('page4');
     console.log("page4!");
@@ -22,9 +22,14 @@ async function handler() {
 }
 handler();
 
+let isgetHttp = 0;
+
 $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
   console.log('page 3 clicked!');
-  getXMLHttpRequest(XMLHttpRequest.prototype.open);
+  console.log(isgetHttp);
+  if(!isgetHttp){
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+  }
 });
 
 
@@ -97,6 +102,7 @@ function sendRequestToGetRedirectUrl(object){
 let isSent = false;
 const orderDataobj = {};
 function getXMLHttpRequest (open) {
+    isgetHttp = 1;
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
