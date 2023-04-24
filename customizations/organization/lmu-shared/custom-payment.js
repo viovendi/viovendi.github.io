@@ -1,24 +1,24 @@
-console.log('lmu-shared-js');
+console.log('lmu-shared-js!');
 
 async function handler() {
   console.log('handler-'+document.readyState);
-  if (document.readyState !== 'loading') {
+  //if (document.readyState !== 'loading') {
 
     await getPage('page1');
     console.log("page1!");
 
     await getPage('page2');
     console.log("page2!");
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
     
     await getPage('page3');
     console.log("page3!");
+    getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
     await getPage('page4');
     console.log("page4!");
     console.log($('.ew-confirmation__block').length);
     loader("on");
-  }
+  //}
 }
 handler();
 
