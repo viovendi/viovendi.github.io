@@ -30,10 +30,8 @@ function isEpayPayment(){
   let isEpay = false;
   
   if($('.payment-method-selection__payment-options--multiple').length > 0){
-    console.log("multiple");
     paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }else{
-    console.log("single");
     paymentInput = $('.customization2_payment_options .payment-option__label');
   }
     
@@ -44,14 +42,10 @@ function isEpayPayment(){
   return isEpay;
 }
 
-
-
 var insertionListener = function (event) {
-
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
-      
-    console.log(isEpayPayment());
+
     // page3
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
       console.log('bttn clicked!');
@@ -68,9 +62,7 @@ var insertionListener = function (event) {
     // page4
     if(localStorage.getItem('payment_method') === 'ePay'){
       console.log('page4 ePay!!!');
-    
       loader("on");
-      
     }
   }
 };
@@ -134,6 +126,7 @@ function sendRequestToGetRedirectUrl(object){
         }else{
           loader("off");
           showErrorMessage();
+          console.log('Error - Broken payment link');
         }
         //window.open(res.LinkToPayPage, "_parent");
         //window.open(res.LinkToPayPage, "_blank");
@@ -180,46 +173,3 @@ function getXMLHttpRequest (open) {
       open.apply(this, arguments);
     };
 };
-  
-// remove if not needed
-async function getPage(page) {
-  var pages = {
-    page1: "customization-booking-area-wrapper-page1",
-    page2: "customization-booking-area-wrapper-page2",
-    page3: "customization2_payment_options",
-    page4: "vv-color--cool-gray-650",
-  };
-  return new Promise(function (resolve, reject) {
-    try {
-      const element = document.querySelector("body");
-
-      var observer = new MutationObserver(pageLoaded);
-
-      function pageLoaded(mutations) {
-        mutations.forEach((mutation) => {
-          var classList = mutation.target.classList
-            ? [...mutation.target.classList]
-            : [];
-          
-          if (
-            mutation.type === "childList" &&
-            classList.indexOf(pages[page]) != -1
-          ) {
-            resolve({
-              selector: document.querySelector("." + pages[page]),
-              //dataLayer: dataLayer,
-            });
-          }
-        });
-      }
-
-      observer.observe(element, {
-        characterData: true,
-        subtree: true,
-        childList: true,
-      });
-    } catch (error) {
-      reject(new Error(error));
-    }
-  });
-}
