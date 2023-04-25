@@ -25,33 +25,6 @@ head.appendChild(styleSheetStripe);
 // remove local storage data
 localStorage.removeItem('payment_method');
 
-
-async function handler() {
-  console.log('handler-'+document.readyState);
-  //if (document.readyState !== 'loading') {
-
-    await getPage('page1');
-    console.log("page1!");
-
-    await getPage('page2');
-    console.log("page2!");
-    
-    await getPage('page3');
-    console.log("page3!");
-  
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
-
-    await getPage('page4');
-    console.log("page4!");
-    console.log($('.ew-confirmation__block').length);
-    loader("on");
-  //}
-}
-// handler();
-
-
-//let isgetHttp = 0;
-
 function isEpayPayment(){
   let paymentInput;
   let isEpay = false;
@@ -63,15 +36,10 @@ function isEpayPayment(){
     console.log("single");
     paymentInput = $('.customization2_payment_options .payment-option__label');
   }
-  
-  console.log(paymentInput.text().trim());
     
   if(paymentInput.closest('label').hasClass('customization_payment-option_???') || paymentInput.text().trim() === 'ePay Bayern'){
     isEpay = true;
   }
-  
-  console.log('isEpay');
-  console.log(isEpay);
     
   return isEpay;
 }
@@ -101,18 +69,6 @@ var insertionListener = function (event) {
       console.log('page4 ePay!!!');
     
       loader("on");
-      /*
-      const confirmText = $('.ew-confirmation__summary strong').text().trim();
-      if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
-         console.log('showTheDefaultText - confirmation required');
-         showTheDefaultText();
-      }else{
-         console.log('showTheDefaultText - standard case');
-         hideDefaultText();
-         $('.header__label').text("Please wait, you'll be redirected to the payment page...");
-         loader('on');
-      }
-      */
       
     }
   }
@@ -121,14 +77,6 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
-
-
-
-
-
-
-
-
 
 
 function loader(param){
@@ -180,7 +128,13 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-        window.open(res.LinkToPayPage, "_parent");
+        if(res.LinkToPayPage.indexOf('http') > 0){
+           window.open(res.LinkToPayPage, "_parent");
+        }else{
+          loader("off");
+          showErrorMessage();
+        }
+        //window.open(res.LinkToPayPage, "_parent");
         //window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
