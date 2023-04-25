@@ -70,7 +70,7 @@ function setupBannerImage() {
     const value = $('#format_inp').val();
     
     if (value == 'horizontal') {
-        ctx.font = "12pt Verdana";
+        ctx.font = "11pt Verdana";
     } else if (value == 'vertikal') {
         ctx.font = "13pt Verdana";
     } else if (value == 'email') {
