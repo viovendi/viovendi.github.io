@@ -55,33 +55,22 @@ async function handler() {
 function isEpayPayment(){
   let paymentInput;
   let isEpay = false;
-    
-  console.log("isEpayPayment()");
-    
-  console.log($('.payment-method-selection__payment-options--multiple').length);
-  
-  console.log($('.customization2_payment').find('.payment-method-selection__payment-options--multiple').length);
   
   if($('.payment-method-selection__payment-options--multiple').length > 0){
-    
     console.log("multiple");
-    
     paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }else{
-      
     console.log("single");
-      
     paymentInput = $('.customization2_payment_options .payment-option__label');
   }
   
-  console.log(paymentInput.closest('label'));
-
   console.log(paymentInput.text().trim());
-  
+    
   if(paymentInput.closest('label').hasClass('customization_payment-option_???') || paymentInput.text().trim() === 'ePay Bayern'){
     isEpay = true;
   }
   
+  console.log('isEpay');
   console.log(isEpay);
     
   return isEpay;
@@ -93,8 +82,6 @@ var insertionListener = function (event) {
 
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
-    
-    console.log(isEpayPayment());
       
     // page3
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
