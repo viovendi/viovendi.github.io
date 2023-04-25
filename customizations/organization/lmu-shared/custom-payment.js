@@ -57,6 +57,10 @@ function isEpayPayment(){
   let isEpay = false;
     
   console.log("isEpayPayment()");
+    
+  console.log($('.payment-method-selection__payment-options--multiple').lenght);
+  
+  console.log($('.customization2_payment').find('.payment-method-selection__payment-options--multiple').lenght);
   
   if($('.payment-method-selection__payment-options--multiple').lenght > 0){
     
