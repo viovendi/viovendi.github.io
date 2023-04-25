@@ -36,10 +36,8 @@ function isEpayPayment(){
     console.log("single");
     paymentInput = $('.customization2_payment_options .payment-option__label');
   }
-  
-    console.log(paymentInput);
     
-  if(paymentInput.closest('label').hasClass('customization_payment-option_???') || paymentInput.text().trim() === 'ePay Bayern'){
+  if(paymentInput.closest('label').hasClass('customization_payment-option_ePayServiceBayern') || paymentInput.text().trim() === 'ePay Bayern'){
     isEpay = true;
   }
     
