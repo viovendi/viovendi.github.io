@@ -56,23 +56,28 @@ function isEpayPayment(){
   let paymentInput;
   let isEpay = false;
   
-  console.log($('.customization2_payment_options .payment-option__label'));
-  console.log($('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked'));
-  
   if($('.payment-method-selection__payment-options--multiple').lenght > 0){
-    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
     
-    console.log("page4!");
+    console.log("multiple");
+    
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
   }else{
+      
+    console.log("single");
+      
     paymentInput = $('.customization2_payment_options .payment-option__label');
   }
   
-  console.log(paymentInput);
+  console.log(paymentInput.closest('label'));
+
+  console.log(paymentInput.text().trim());
   
   if(paymentInput.closest('label').hasClass('customization_payment-option_???') || paymentInput.text().trim() === 'ePay Bayern'){
     isEpay = true;
   }
   
+  console.log(isEpay);
+    
   return isEpay;
 }
 
