@@ -1,5 +1,31 @@
 console.log('lmu-shared-js');
 
+// add styles for animation
+var styleSheetStripe = document.createElement("style");
+styleSheetStripe.innerHTML = `
+@keyframes nodeInserted {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+.event-booking-widget .customization-booking-area-wrapper-page3{
+    animation-duration: 0.1s;
+    animation-name: nodeInserted;
+}
+@keyframes nodeInsertedPage4 {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+.event-booking-widget .customization-booking-area-wrapper-page4{
+    animation-duration: 0.1s;
+    animation-name: nodeInsertedPage4;
+}
+`;
+head.appendChild(styleSheetStripe);
+
+// remove local storage data
+localStorage.removeItem('payment_method');
+
+
 async function handler() {
   console.log('handler-'+document.readyState);
   //if (document.readyState !== 'loading') {
@@ -12,6 +38,7 @@ async function handler() {
     
     await getPage('page3');
     console.log("page3!");
+  
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
     await getPage('page4');
@@ -20,17 +47,88 @@ async function handler() {
     loader("on");
   //}
 }
-handler();
+// handler();
 
-let isgetHttp = 0;
 
-$('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
-  console.log('page 3 clicked!');
-  console.log(isgetHttp);
-  if(!isgetHttp){
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+//let isgetHttp = 0;
+
+function isEpayPayment(){
+  let paymentInput;
+  let isEpay = false;
+  
+  console.log($('.customization2_payment_options .payment-option__label'));
+  console.log($('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked'));
+  
+  if($('.payment-method-selection__payment-options--multiple').lenght > 0){
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+    
+    console.log("page4!");
+  }else{
+    paymentInput = $('.customization2_payment_options .payment-option__label');
   }
-});
+  
+  console.log(paymentInput);
+  
+  if(paymentInput.closest('label').hasClass('customization_payment-option_???') || paymentInput.text().trim() === 'ePay Bayern'){
+    isEpay = true;
+  }
+  
+  return isEpay;
+}
+
+
+
+var insertionListener = function (event) {
+
+  if (event.animationName === 'nodeInserted') {
+    console.log('nodeInserted - run request intercept');
+    
+    // page3
+    $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
+      console.log('bttn clicked!');
+      if(isEpayPayment()){
+        console.log('isisEpayPayment - true');
+        localStorage.setItem('payment_method', 'ePay');
+        getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      }
+    });
+    
+  }else if(event.animationName === 'nodeInsertedPage4'){
+    console.log('page4 loaded');
+    
+    // page4
+    if(localStorage.getItem('payment_method') === 'ePay'){
+      console.log('page4 ePay!!!');
+    
+      loader("on");
+      /*
+      const confirmText = $('.ew-confirmation__summary strong').text().trim();
+      if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
+         console.log('showTheDefaultText - confirmation required');
+         showTheDefaultText();
+      }else{
+         console.log('showTheDefaultText - standard case');
+         hideDefaultText();
+         $('.header__label').text("Please wait, you'll be redirected to the payment page...");
+         loader('on');
+      }
+      */
+      
+    }
+  }
+};
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
+
+
+
+
+
+
+
+
 
 
 function loader(param){
@@ -82,11 +180,6 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-        
-        // open in same tab
-        //window.location.href = res.LinkToPayPage;
-        
-        // if open in new tab - close the current widget
         window.open(res.LinkToPayPage, "_parent");
         //window.open(res.LinkToPayPage, "_blank");
       },
@@ -133,7 +226,7 @@ function getXMLHttpRequest (open) {
     };
 };
   
-  
+// remove if not needed
 async function getPage(page) {
   var pages = {
     page1: "customization-booking-area-wrapper-page1",
