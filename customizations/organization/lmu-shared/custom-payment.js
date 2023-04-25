@@ -55,6 +55,8 @@ async function handler() {
 function isEpayPayment(){
   let paymentInput;
   let isEpay = false;
+    
+  console.log("isEpayPayment()");
   
   if($('.payment-method-selection__payment-options--multiple').lenght > 0){
     
@@ -88,6 +90,8 @@ var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
     console.log('nodeInserted - run request intercept');
     
+    console.log(isEpayPayment());
+      
     // page3
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
       console.log('bttn clicked!');
