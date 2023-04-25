@@ -58,11 +58,11 @@ function isEpayPayment(){
     
   console.log("isEpayPayment()");
     
-  console.log($('.payment-method-selection__payment-options--multiple').lenght);
+  console.log($('.payment-method-selection__payment-options--multiple').length);
   
-  console.log($('.customization2_payment').find('.payment-method-selection__payment-options--multiple').lenght);
+  console.log($('.customization2_payment').find('.payment-method-selection__payment-options--multiple').length);
   
-  if($('.payment-method-selection__payment-options--multiple').lenght > 0){
+  if($('.payment-method-selection__payment-options--multiple').length > 0){
     
     console.log("multiple");
     
