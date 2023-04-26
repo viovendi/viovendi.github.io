@@ -124,6 +124,10 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
+        window.open(res.LinkToPayPage, "_parent");
+          
+        console.log(res.LinkToPayPage.indexOf('http'));
+          /*
         if(res.LinkToPayPage.indexOf('http') > 0){
            window.open(res.LinkToPayPage, "_parent");
         }else{
@@ -131,6 +135,8 @@ function sendRequestToGetRedirectUrl(object){
           showErrorMessage();
           console.log('Error - Broken payment link');
         }
+        */
+          
         //window.open(res.LinkToPayPage, "_parent");
         //window.open(res.LinkToPayPage, "_blank");
       },
