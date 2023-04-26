@@ -1,36 +1,78 @@
 console.log('lmu-shared-js');
 
-async function handler() {
-  console.log('handler-'+document.readyState);
-  //if (document.readyState !== 'loading') {
-
-    await getPage('page1');
-    console.log("page1!");
-
-    await getPage('page2');
-    console.log("page2!");
-    
-    await getPage('page3');
-    console.log("page3!");
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
-
-    await getPage('page4');
-    console.log("page4!");
-    console.log($('.ew-confirmation__block').length);
-    loader("on");
-  //}
+// add styles for animation
+var styleSheetStripe = document.createElement("style");
+styleSheetStripe.innerHTML = `
+@keyframes nodeInserted {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
 }
-handler();
+.event-booking-widget .customization-booking-area-wrapper-page3{
+    animation-duration: 0.1s;
+    animation-name: nodeInserted;
+}
+@keyframes nodeInsertedPage4 {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+.event-booking-widget .customization-booking-area-wrapper-page4{
+    animation-duration: 0.1s;
+    animation-name: nodeInsertedPage4;
+}
+`;
+head.appendChild(styleSheetStripe);
 
-let isgetHttp = 0;
+// remove local storage data
+localStorage.removeItem('payment_method');
 
-$('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
-  console.log('page 3 clicked!');
-  console.log(isgetHttp);
-  if(!isgetHttp){
-    getXMLHttpRequest(XMLHttpRequest.prototype.open);
+function isEpayPayment(){
+  let paymentInput;
+  let isEpay = false;
+  
+  if($('.payment-method-selection__payment-options--multiple').length > 0){
+    paymentInput = $('.customization2_payment_options.payment-method-selection__payment-options--multiple input:checked');
+  }else{
+    paymentInput = $('.customization2_payment_options .payment-option__label');
   }
-});
+    
+  if(paymentInput.closest('label').hasClass('customization_payment-option_ePayServiceBayern') ||
+     paymentInput.closest('label').hasClass('customization_payment-option_custom_payment') ||
+     paymentInput.text().trim() === 'ePay Bayern' ||
+     paymentInput.text().trim() === 'custom_payment'){
+    isEpay = true;
+  }
+    
+  return isEpay;
+}
+
+var insertionListener = function (event) {
+  if (event.animationName === 'nodeInserted') {
+    console.log('nodeInserted - run request intercept');
+
+    // page3
+    $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
+      console.log('bttn clicked!');
+      if(isEpayPayment()){
+        console.log('isisEpayPayment - true');
+        localStorage.setItem('payment_method', 'ePay');
+        getXMLHttpRequest(XMLHttpRequest.prototype.open);
+      }
+    });
+    
+  }else if(event.animationName === 'nodeInsertedPage4'){
+    console.log('page4 loaded');
+    
+    // page4
+    if(localStorage.getItem('payment_method') === 'ePay'){
+      console.log('page4 ePay!!!');
+      loader("on");
+    }
+  }
+};
+
+document.addEventListener("animationstart", insertionListener, false); // standard + firefox
+document.addEventListener("MSAnimationStart", insertionListener, false); // IE
+document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
 
 function loader(param){
@@ -82,12 +124,14 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-        
-        // open in same tab
-        //window.location.href = res.LinkToPayPage;
-        
-        // if open in new tab - close the current widget
-        window.open(res.LinkToPayPage, "_parent");
+        if(res.LinkToPayPage.indexOf('http') > 0){
+           window.open(res.LinkToPayPage, "_parent");
+        }else{
+          loader("off");
+          showErrorMessage();
+          console.log('Error - Broken payment link');
+        }
+        //window.open(res.LinkToPayPage, "_parent");
         //window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
@@ -132,46 +176,3 @@ function getXMLHttpRequest (open) {
       open.apply(this, arguments);
     };
 };
-  
-  
-async function getPage(page) {
-  var pages = {
-    page1: "customization-booking-area-wrapper-page1",
-    page2: "customization-booking-area-wrapper-page2",
-    page3: "customization2_payment_options",
-    page4: "vv-color--cool-gray-650",
-  };
-  return new Promise(function (resolve, reject) {
-    try {
-      const element = document.querySelector("body");
-
-      var observer = new MutationObserver(pageLoaded);
-
-      function pageLoaded(mutations) {
-        mutations.forEach((mutation) => {
-          var classList = mutation.target.classList
-            ? [...mutation.target.classList]
-            : [];
-          
-          if (
-            mutation.type === "childList" &&
-            classList.indexOf(pages[page]) != -1
-          ) {
-            resolve({
-              selector: document.querySelector("." + pages[page]),
-              //dataLayer: dataLayer,
-            });
-          }
-        });
-      }
-
-      observer.observe(element, {
-        characterData: true,
-        subtree: true,
-        childList: true,
-      });
-    } catch (error) {
-      reject(new Error(error));
-    }
-  });
-}
