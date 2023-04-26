@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_160x600_E.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_468x60_E.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_180x60_E.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1080_E.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1350_E.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/Ausstellerbanner_1080x1350_E.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_160x600_E_RZ.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_468x60_E_RZ.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_180x60_E_RZ.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_1080x1080_E_RZ.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_1080x1350_E_RZ.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/15267/bannergenerator/VF23_Ausstellerbanner_1080x1350_E_RZ.png']
 ];
 
 function setTexts() {
@@ -27,23 +27,23 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 35);
+        ctx.fillText($('#halle_inp').val(), 397 - $('#halle_inp').val().length * 4, 45);
         ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 4, 45);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 497);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 565);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
+        ctx.fillText($('#stand_inp').val(), 76 - $('#stand_inp').val().length * 5, 578);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 24 - $('#halle_inp').val().length * 6, 44);
-        ctx.fillText($('#stand_inp').val(), 43, 44);
+        ctx.fillText($('#halle_inp').val(), 30 - $('#halle_inp').val().length * 6, 42);
+        ctx.fillText($('#stand_inp').val(), 54, 42);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1020);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1020);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1024);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1024);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1225);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1225);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1225);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1225);
+        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
+        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     }
 }
 
