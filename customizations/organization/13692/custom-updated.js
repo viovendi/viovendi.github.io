@@ -1,4 +1,4 @@
-console.log("git custom-updated");
+console.log("NOT USING NOW");
 
 // global var
 var isFuncUsed = false;
