@@ -1,4 +1,4 @@
-console.log("git custom756");
+console.log("NOT USING NOW - OLD SOLUTION");
 // global var
   var isFuncUsed = false;
   var domain_url = 'https://cs.doo.net';
