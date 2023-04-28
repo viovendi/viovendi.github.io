@@ -246,6 +246,7 @@ function rebuildPageInvoiceConfirm() {
 }
 
 function addFrameListener() {
+  console.log('addFrameListener');
   if (window.addEventListener) {
     window.addEventListener("message", receiveMessage, false);
   } else if (window.attachEvent) {
