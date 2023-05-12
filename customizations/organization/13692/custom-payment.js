@@ -1,4 +1,4 @@
-console.log("git custom-payment-js");
+console.log("git custom-payment-js !");
 
 // data attribute
 const wrapper = document.querySelector('.event-booking-widget');
@@ -86,7 +86,7 @@ function check_country() {
 
   const observer = new MutationObserver((mutations) => {
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
-	  
+	  console.log(country);
     // localStorage.removeItem("allowed_countries");
 	  
     // local storage workaround
