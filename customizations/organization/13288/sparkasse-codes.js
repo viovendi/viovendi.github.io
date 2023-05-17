@@ -8,7 +8,7 @@
       formValid = false;
 
       function getCategoryName() {
-          var categoryName = $('.customization2_attendee-state_edit .customization2_attendee_title').text().trim();
+          var categoryName = $('.customization2_attendee-state_edit .customization3_attendee_ticket-category_title').text().trim();
           if (categoryName) {
               return categoryName;
           }
@@ -33,7 +33,7 @@
                           addCode(res.payload.tierpark_code, "QR-Code Nummer")
                       }, 7000);
                       addCode(res.payload.tierpark_code, "QR-Code Nummer")
-                  } 
+                  }
               }
           });
       }
