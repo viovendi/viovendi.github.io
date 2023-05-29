@@ -171,6 +171,10 @@ function checking_page2() {
 
     var orderPriceText = $(".customization2_summary_total_price").text().trim();
 	  
+	  console.log('is ofrder free');
+		console.log(orderPriceText);
+		console.log(orderPriceText.indexOf("0,0"));
+	  
     if (
 	    (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) || 
 	    ($('.customization2_summary_item').length > 0 && $(".customization2_summary_total_price").length < 1 ) 
