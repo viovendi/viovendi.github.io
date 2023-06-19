@@ -173,6 +173,7 @@ function checking_page2() {
 	  
     if (
 	    (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) || 
+	    (orderPriceText === "0.00 EUR" || orderPriceText.indexOf("0.0") === 0) || 
 	    ($('.customization2_summary_item').length > 0 && $(".customization2_summary_total_price").length < 1 ) 
     ) {
 	    console.log('free order detected');
