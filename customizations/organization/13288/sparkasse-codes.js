@@ -4,35 +4,40 @@
   var formValid;
   var events = ['54641']
 
+
+
   function handler() {
       formValid = false;
 
-      function getCategoryName() {
-          var categoryName = $('.customization2_attendee-state_edit .customization3_attendee_ticket-category_title').text().trim();
+      function getCustomKeyFromCategoryName() {
+         const mapping = {
+            Erwachsenenkarten: 'Adults-Codes',
+            'Kinderkarten 4 bis 14 Jahre': 'Children-Codes',
+          };
+          const categoryName = $('.customization2_attendee-state_edit .customization3_attendee_ticket-category_title').text().trim();
           if (categoryName) {
-              return categoryName;
+              return mapping[categoryName];;
           }
       }
 
-      function getCode(eventId) {
+      function getCode(customKey) {
           $.ajax({
-              url: 'https://cs.doo.net/v1/integrations/tierpark/get-code',
+              url: 'https://hook.doo.integromat.celonis.com/anygsh60qh9bfljyvq68p3hyg4eqjfnd',
               headers: {
                   'Accept': '*/*',
                   'Content-Type': 'application/json',
               },
               type: 'post',
               data: JSON.stringify({
-                  "event_id": eventId,
-                  "event_category_name": getCategoryName()
+                  "customKey": customKey
               }),
               dataType: 'json',
               success: function (res) {
-                  if (res.payload.tierpark_code) {
+                  if (res.payload.customCode) {
                       setTimeout(function () {
-                          addCode(res.payload.tierpark_code, "QR-Code Nummer")
+                          addCode(res.payload.customCode, "QR-Code Nummer")
                       }, 7000);
-                      addCode(res.payload.tierpark_code, "QR-Code Nummer")
+                      addCode(res.payload.customCode, "QR-Code Nummer")
                   }
               }
           });
@@ -59,9 +64,9 @@
           }
 
       };
-     var categoryName = getCategoryName()
-      if (categoryName == "Kinderkarten 4 bis 14 Jahre" || categoryName == "Erwachsenenkarten") {
-          getCode(eventId);
+     var custumKey = getCustomKeyFromCategoryName()
+      if (custumKey == "Adults-Codes" || custumKey == "Children-Codes") {
+          getCode(customKey);
       }
 
   }
