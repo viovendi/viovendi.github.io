@@ -16,7 +16,6 @@
           };
           const categoryName = $('.customization2_attendee-state_edit .customization3_attendee_ticket-category_title').text().trim();
           if (categoryName) {
-            console.log(mapping[categoryName])
               return mapping[categoryName];
           }
       }
@@ -65,8 +64,8 @@
           }
 
       };
-     var custumKey = getCustomKeyFromCategoryName()
-      if (custumKey == "Adults-Codes" || custumKey == "Children-Codes") {
+     var customKey = getCustomKeyFromCategoryName()
+      if (customKey == "Adults-Codes" || customKey == "Children-Codes") {
           getCode(customKey);
       }
 
