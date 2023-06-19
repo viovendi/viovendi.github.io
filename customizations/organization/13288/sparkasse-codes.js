@@ -35,9 +35,9 @@
               success: function (res) {
                   if (res.payload.customCode) {
                       setTimeout(function () {
-                          addCode(res.payload.customCode, "QR-Code Nummer")
+                          addCode(res.payload.customCode, "QR-Code Nummer", customKey)
                       }, 7000);
-                      addCode(res.payload.customCode, "QR-Code Nummer")
+                      addCode(res.payload.customCode, "QR-Code Nummer", customKey)
                   }
               }
           });
