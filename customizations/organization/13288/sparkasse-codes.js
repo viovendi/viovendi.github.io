@@ -16,7 +16,7 @@
           };
           const categoryName = $('.customization2_attendee-state_edit .customization3_attendee_ticket-category_title').text().trim();
           if (categoryName) {
-            console.log(categoryName)
+            console.log(mapping[categoryName])
               return mapping[categoryName];
           }
       }
