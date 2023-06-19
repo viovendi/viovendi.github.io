@@ -43,7 +43,7 @@
           });
       }
 
-      function addCode(code, inputName) {
+      function addCode(code, inputName, customKey) {
 
           var elements = document.querySelectorAll(".customization2_attendee-state_edit .customization2_attendee_further-data .customization2_attendee_further-data_custom-question");
 
@@ -62,7 +62,27 @@
                   input.dispatchEvent(event)
               }
           }
-
+          $.ajax({
+            url: 'https://hook.doo.integromat.celonis.com/anygsh60qh9bfljyvq68p3hyg4eqjfnd',
+            headers: {
+                'Accept': '*/*',
+                'Content-Type': 'application/json',
+            },
+            type: 'post',
+            data: JSON.stringify({
+                "key": customKey,
+                "customCode": code,
+            }),
+            dataType: 'json',
+            success: function (res) {
+                if (res.payload.customCode) {
+                    setTimeout(function () {
+                        addCode(res.payload.customCode, "QR-Code Nummer", customKey)
+                    }, 7000);
+                    addCode(res.payload.customCode, "QR-Code Nummer", customKey)
+                }
+            }
+        });
       };
      var customKey = getCustomKeyFromCategoryName()
       if (customKey == "Adults-Codes" || customKey == "Children-Codes") {
