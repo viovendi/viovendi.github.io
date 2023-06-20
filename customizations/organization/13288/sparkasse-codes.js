@@ -22,7 +22,7 @@
 
       function getCode(customKey) {
           $.ajax({
-              url: 'https://hook.doo.integromat.celonis.com/anygsh60qh9bfljyvq68p3hyg4eqjfnd',
+              url: 'https://hook.doo.integromat.celonis.com/fx3sxnl3j5b5nsy9aiycha5y7808v1mv',
               headers: {
                   'Accept': '*/*',
                   'Content-Type': 'application/json',
@@ -63,7 +63,7 @@
               }
           }
           $.ajax({
-            url: 'https://hook.doo.integromat.celonis.com/led49ltq8titmljyzhl124xn3ul4i0et',
+            url: 'https://hook.doo.integromat.celonis.com/pnvb73je96c5c9di8g9xkqkuo08xj2ly',
             headers: {
                 'Accept': '*/*',
                 'Content-Type': 'application/json',
