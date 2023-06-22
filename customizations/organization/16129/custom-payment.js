@@ -76,7 +76,7 @@ var insertionListener = function (event) {
       loader("on");
     }else{
       // if no ePay data in the storage - add the button on the page
-      if(window.location.href.includes('132373')){
+      if(window.location.href.includes('132373') || window.location.href.includes('123626')){
         const dooTxNumber = $('.notice__booking-id span').text().trim();
         addPaymentButton(dooTxNumber);
       }
