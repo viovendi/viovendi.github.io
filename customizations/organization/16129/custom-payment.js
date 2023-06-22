@@ -29,7 +29,8 @@ styleSheetStripe.innerHTML = `
     transition: all 0.3s;
 }
 .custom-payment-button:hover{
-	background: #3b85db;
+    color: #fff;
+    background-color: #3b85db;
 }
 `;
 head.appendChild(styleSheetStripe);
