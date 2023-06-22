@@ -1,4 +1,4 @@
-console.log('custom-payment-js - test');
+ot console.log('custom-payment-js - test');
 
 // add styles for animation
 var styleSheetStripe = document.createElement("style");
@@ -82,7 +82,7 @@ document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
 function addPaymentButton(txNumber){
-  const button = "<p>If you choose the ePay method but</p><p><a href='https://hook.doo.integromat.celonis.com/zvvn15hrwphf1y97yironrxq7k8cwsut?doo-tx-number="+txNumber+"' class='payment-button'>Press to make a payment</a></p>"
+  const button = "<p>If you choose the ePay payment method but have not been redirected to the ePay payment page, please use this button <a href='https://hook.doo.integromat.celonis.com/zvvn15hrwphf1y97yironrxq7k8cwsut?doo-tx-number="+txNumber+"' class='custom-payment-button'>Press to make a payment</a></p>"
   $('.ew-confirmation__summary').append(button);
 }
 
