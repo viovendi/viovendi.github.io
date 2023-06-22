@@ -1,4 +1,4 @@
-ot console.log('custom-payment-js - test');
+console.log('custom-payment-js - test');
 
 // add styles for animation
 var styleSheetStripe = document.createElement("style");
