@@ -19,6 +19,13 @@ styleSheetStripe.innerHTML = `
     animation-duration: 0.1s;
     animation-name: nodeInsertedPage4;
 }
+.custom-payment-button{
+    background-color: #006ab7;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
 `;
 head.appendChild(styleSheetStripe);
 
