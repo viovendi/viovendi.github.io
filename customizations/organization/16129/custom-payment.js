@@ -20,11 +20,16 @@ styleSheetStripe.innerHTML = `
     animation-name: nodeInsertedPage4;
 }
 .custom-payment-button{
-    background-color: #006ab7;
+    background-color: #0b65bd;
     color: #fff;
     padding: 5px 15px;
     border-radius: 3px;
+    font-weight: 400;
     cursor: pointer;
+    transition: all 0.3s;
+}
+.custom-payment-button:hover{
+	background: #3b85db;
 }
 `;
 head.appendChild(styleSheetStripe);
@@ -89,7 +94,7 @@ document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
 function addPaymentButton(txNumber){
-  const button = "<p style='padding-top: 30px;'>If you choose the <strong>ePay</strong> payment method but have not been redirected to the ePay payment page, please use this button <div style='text-align: center;'><a href='https://hook.doo.integromat.celonis.com/zvvn15hrwphf1y97yironrxq7k8cwsut?doo-tx-number="+txNumber+"' class='custom-payment-button'>Press to make a payment</a></div></p>"
+  const button = "<p style='padding-top: 30px;'>If you chose the <strong>ePay</strong> payment method but have not been redirected to the ePay payment page, please use this button <div style='text-align: center;'><a href='https://hook.doo.integromat.celonis.com/zvvn15hrwphf1y97yironrxq7k8cwsut?doo-tx-number="+txNumber+"' class='custom-payment-button'>Press to make a payment</a></div></p>"
   $('.ew-confirmation__summary').append(button);
 }
 
