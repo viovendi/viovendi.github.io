@@ -11,7 +11,7 @@ head.appendChild(script);
 
 const imageNameAndURL = [
   ['vertikal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_160x600px.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_468x60.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_468x60renamed.png'],
   ['email', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_180x60.png'],
   ['instagrampost', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_1080x1080.png'],
   ['instagramstory', 'https://viovendi.github.io/customizations/organization/14334/bannergenerator/063023_BOE23_Ausstellerbanner_DE_02_1080x1350.png'],
