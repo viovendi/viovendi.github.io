@@ -28,7 +28,7 @@ function setTexts() {
 
      if (value == 'horizontal') {
         ctx.fillText($('#halle_inp').val(), 65 - $('#halle_inp').val().length * 4, 31);
-        ctx.fillText($('#stand_inp').val(), 61 - $('#stand_inp').val().length * 4, 49);
+        ctx.fillText($('#stand_inp').val(), 65 - $('#stand_inp').val().length * 4, 49);
     } else if (value == 'vertikal') {
         ctx.fillText($('#halle_inp').val(), 110 - $('#halle_inp').val().length * 6, 515);
         ctx.fillText($('#stand_inp').val(), 110 - $('#stand_inp').val().length * 5, 555);
@@ -70,7 +70,7 @@ function setupBannerImage() {
     const value = $('#format_inp').val();
     
     if (value == 'horizontal') {
-        ctx.font = "10pt Verdana";
+        ctx.font = "9pt Verdana";
     } else if (value == 'vertikal') {
         ctx.font = "15pt Verdana";
     } else if (value == 'email') {
