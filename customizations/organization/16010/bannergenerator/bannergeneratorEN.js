@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_160x600_E.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_468x60_E.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_180x60_E.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1080_E.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_E.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_E.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_160x600px_E.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_468x60px_E_02.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_180x60px_E.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_1080x1080px_E.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_1080x1350px_E.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/16010/bannergenerator/Heatexpo_23_Ausstellerbanner_1080x1350px_E.png']
 ];
 
 function setTexts() {
