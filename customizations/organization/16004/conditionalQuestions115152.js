@@ -18,7 +18,7 @@ function condQuestion(selector, arrayOfLabelsToShow, arrayOfLabelsToHide) {
         console.log("Hide " + question);
         $(question).hide();
         $(question).find("input").val("").prop('checked', false).prop('selected', false);
-        $(question).find('.vv-single-select-option:contains(Bitte auswählen)').click();
+        $(question).find('.vv-selection-option:contains(Bitte auswählen)').click();
       });
     }
 
