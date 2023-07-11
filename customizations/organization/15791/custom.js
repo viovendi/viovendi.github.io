@@ -5,12 +5,6 @@ console.log(redirectUrl);
 
 function processData(eventId, orderId, price, ticketCategoryId){
 
-  console.log('processData');
-  console.log(eventId);
-  console.log(orderId);
-  console.log(price);
-  console.log(ticketCategoryId);
-
   let bodyString = '';
 
   if(price == 0){
@@ -28,10 +22,11 @@ function processData(eventId, orderId, price, ticketCategoryId){
     },
     dataType: 'json',
     success: function (res) {
-      console.log(res);
+      const artikelnummer = res.payload.articleNumber;
+      console.log(artikelnummer);
 
-      // bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
-      // sendRedirectRequest(bodyString);
+      bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+      sendRedirectRequest(bodyString);
     },
     error: function (err) {
       console.log(err);
