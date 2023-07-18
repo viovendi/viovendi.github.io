@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     function moveTerms() {
         
-        var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb#teilnahmebedingungen' target='_blank' rel='noopener noreferrer'>Teilnahmebedingungen</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> habe ich zur Kenntnis genommen.</p>";
+        var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb#teilnahmebedingungen' target='_blank' rel='noopener noreferrer'>Teilnahmebedingungen</a>, <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben#Gewinnspiele' target='_blank' rel='noopener noreferrer'>Widerruf</a> habe ich zur Kenntnis genommen. </br> </br> Mit der Teilnahme am Gewinnspiel erkläre ich mein Einverständnis zum Empfang eines Newsletters mit Informationen zu weiteren Gewinnspielen und Aktionen von SZ Erleben, bei dem Öffnungsquoten und Link-Klicks gemessen werden. </br></p>";
 
 
         // Add Terms after Booker data
