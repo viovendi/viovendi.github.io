@@ -49,16 +49,8 @@ var insertionListener = function (event) {
       }
     });
     
-    //getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }else if(event.animationName === 'nodeInsertedPage4'){
     console.log('page4 loaded');
-    
-    //console.log($('.event-booking-widget').data('payment_method'));
-    /*
-    if($('.event-booking-widget').data('payment_method') === 'stripe'){
-      console.log('page4 Stripe!!!');
-    }
-    */
     
     if(localStorage.getItem('payment_method') === 'stripe'){
       console.log('page4 Stripe!!!');
@@ -90,9 +82,6 @@ function getXMLHttpRequest(open) {
 
   XMLHttpRequest.prototype.open = function () {
     
-    //console.log($('.event-booking-widget'));
-    //$('.event-booking-widget').data('payment_method', '');
-    
     this.addEventListener("readystatechange", function () {
 
       if (this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders") {
@@ -110,9 +99,6 @@ function getXMLHttpRequest(open) {
           } else {
             var price = +orders[0].payment.amount;
           }
-          
-          console.log('orders:');
-          console.log(orders[0]);
           
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
@@ -141,7 +127,6 @@ function sendRequest(checkoutSessionParameters){
     data: JSON.stringify(checkoutSessionParameters),
     dataType: 'json',
     success: function (res) {
-      console.log(res);
       window.open(res.payload.url, "_parent");
     },
     error: function (err) {
