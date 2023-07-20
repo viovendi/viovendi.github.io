@@ -4,6 +4,93 @@ console.log('github-stripe-js');
 // remove local storage data
 localStorage.removeItem('payment_method');
 
+function getWidgetLang() {
+  var lang = $("html").attr("lang");
+  return lang;
+}
+
+function showConfirmationMessage(){
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__header').addClass('visible');
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__header .header__label').addClass('visible');
+   $('.customization-booking-area-wrapper-page4 .ew-confirmation__block').addClass('visible');
+}
+
+function changeIcon(color) {
+  console.log("Change icon: " + color);
+  if (color === "orange") {
+    $(".ew-confirmation__header vv-icon").hide();
+    if($('.new-icon-logo').length){
+      $(".new-icon-logo").text("!");
+      $(".new-icon-logo").css("color", "orange");
+    } else {
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 72px" >!</p>');
+    }
+    
+  } else if(color === "red") {
+
+    $(".ew-confirmation__header vv-icon").hide();
+    if($('.new-icon-logo').length){
+      $(".new-icon-logo").text("X");
+      $(".new-icon-logo").css("background", "red");
+    } else {
+      $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: red;color: white;border-radius: 100%;text-align: center;line-height: 72px" >X</p>');
+    }
+  } else if(color === "green") {
+
+    $(".ew-confirmation__header vv-icon").show();
+
+    if($('.new-icon-logo').length){
+      $(".new-icon-logo").hide();
+    }
+  }
+}
+
+
+function responseMessage(status) {
+
+  console.log('responseMessage');
+  console.log(status);
+
+  var heading, message, color;
+  if (status === "success" && getWidgetLang() === "de") {
+    heading = "Buchungsbestätigung";
+    message = "Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.";
+    color = "green";
+  } else if (status === "success" && getWidgetLang() === "en") {
+    heading = "Booking confirmation";
+    message = "Thank you for your booking. Shortly you will receive your booking confirmation by e-mail.";
+    color = "greeen";
+  } else if (status === "error" && getWidgetLang() === "de") {
+    heading = "Unerwarteter Fehler";
+    message = "Hoppla! Da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.";
+    color = "red";
+  } else if (status === "error" && getWidgetLang() === "en") {
+    heading = "Unexpected error";
+    message = "Oops! Something went wrong. Please try again later.";
+    color = "red";
+  } else if (status === "attention" && getWidgetLang() === "de") {
+    heading = "Fast geschafft";
+    message = "Geben Sie im nächsten Schritt noch Ihre Kreditkartendetails an. ACHTUNG: Halten Sie Ihre VISA oder Mastercard bereit, den 3 D Secure Code und Ihre Geräte für die 2 Faktor Identifizierung!";
+    color = "orange";
+  } else if (status === "attention" && getWidgetLang() === "en") {
+    heading = "Almost completed";
+    message = "Please enter your credit card details in the next step. NOTICE: We only accept VISA or Mastercard. Please have your credit card, the 3 D Secure Code, and your devices for the 2-factor identification at hand!";
+    color = "orange";
+  }
+
+  changeIcon(color);
+
+  $(".ew-confirmation__header .header__label").text(heading);
+  if ($(".response-message-notice").length) {
+    $(".response-message-notice").text(message);
+  } else {
+    $(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
+  }
+  
+  // show the hiddem booking-confirmation message
+  showConfirmationMessage();
+
+}
 
 function showTheDefaultText(){
   console.log('showTheDefaultText');
@@ -42,6 +129,7 @@ var insertionListener = function (event) {
       console.log('bttn clicked!');
       if(isStripePayment()){
         console.log('isStripe - true');
+        responseMessage("attention");
         //console.log($('.event-booking-widget'));
         //$('.event-booking-widget').data('payment_method', 'stripe');
         localStorage.setItem('payment_method', 'stripe');
