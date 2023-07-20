@@ -133,7 +133,7 @@ var insertionListener = function (event) {
         //console.log($('.event-booking-widget'));
         //$('.event-booking-widget').data('payment_method', 'stripe');
         localStorage.setItem('payment_method', 'stripe');
-        getXMLHttpRequest(XMLHttpRequest.prototype.open);
+        // getXMLHttpRequest(XMLHttpRequest.prototype.open);
       }
     });
     
