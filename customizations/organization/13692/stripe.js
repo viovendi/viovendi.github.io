@@ -129,10 +129,10 @@ var insertionListener = function (event) {
       console.log('bttn clicked!');
       if(isStripePayment()){
         console.log('isStripe - true');
-        responseMessage("attention");
         //console.log($('.event-booking-widget'));
         //$('.event-booking-widget').data('payment_method', 'stripe');
         localStorage.setItem('payment_method', 'stripe');
+        
         // getXMLHttpRequest(XMLHttpRequest.prototype.open);
       }
     });
@@ -144,15 +144,18 @@ var insertionListener = function (event) {
       console.log('page4 Stripe!!!');
     
       const confirmText = $('.ew-confirmation__summary strong').text().trim();
-
+      
       if(confirmText.includes('Freigabe geprüft') || confirmText.includes('checked for approval')){
          console.log('showTheDefaultText - confirmation required');
          showTheDefaultText();
       }else{
          console.log('showTheDefaultText - standard case');
-         hideDefaultText();
-         $('.header__label').text("Please wait, you'll be redirected to the payment page...");
-         loader('on');
+
+         responseMessage("attention");
+        
+         // hideDefaultText();
+         // $('.header__label').text("Please wait, you'll be redirected to the payment page...");
+         // loader('on');
       }
     }
   }
