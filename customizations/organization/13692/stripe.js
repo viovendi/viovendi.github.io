@@ -57,8 +57,8 @@ function responseMessage(status) {
     message = "Vielen Dank für Ihre Buchung. In Kürze erhalten Sie Ihre Bestätigung per E-Mail.";
     color = "green";
   } else if (status === "success" && getWidgetLang() === "en") {
-    heading = "Booking confirmation";
-    message = "Thank you for your booking. Shortly you will receive your booking confirmation by e-mail.";
+    heading = "Complete your registration now to secure your spot at the conference!";
+    message = "Nearly complete<br>In the next step you will be redirected to our credit card payment service Stripe.<br>Please make sure you have your VISA or Mastercard and your 3D Secure code ready, as well as your 2-factor identification devices!<br>Once you have completed the payment process, you will receive a confirmation email and your conference ticket.";
     color = "greeen";
   } else if (status === "error" && getWidgetLang() === "de") {
     heading = "Unerwarteter Fehler";
