@@ -204,7 +204,7 @@ function checking_page4() {
 
   id_page4 = requestAnimationFrame(checking_page4);
   if ($(".customization-booking-area-wrapper-page4").length > 0) {
-	console.log("checking_page4");
+		console.log("checking_page4");
     stop_checking_page3();
 
     var payment_method_upd, payment_method, free_order;
@@ -217,7 +217,10 @@ function checking_page4() {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
     } else {
-      if (invoice_payment_method_arr_options.indexOf(payment_method) != -1) {
+      if (
+				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) || 
+				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) 
+			) {
         console.log("checking_page4 - invoice payment!");
         rebuildPageInvoiceConfirm();
       } else if (
