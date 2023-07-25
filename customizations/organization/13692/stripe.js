@@ -73,7 +73,7 @@ function responseMessage(status) {
     message = "Geben Sie im nächsten Schritt noch Ihre Kreditkartendetails an. ACHTUNG: Halten Sie Ihre VISA oder Mastercard bereit, den 3 D Secure Code und Ihre Geräte für die 2 Faktor Identifizierung!";
     color = "orange";
   } else if (status === "attention" && getWidgetLang() === "en") {
-    heading = "Almost completed";
+    heading = "Complete your registration now to secure your spot at the conference!";
     message = "Please enter your credit card details in the next step. NOTICE: We only accept VISA or Mastercard. Please have your credit card, the 3 D Secure Code, and your devices for the 2-factor identification at hand!";
     color = "orange";
   }
