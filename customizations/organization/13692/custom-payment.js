@@ -219,7 +219,7 @@ function checking_page4() {
     } else {
       if (
 				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) || 
-				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) 
+				(invoice_payment_method_arr_options.indexOf(payment_method_upd) != -1) 
 			) {
         console.log("checking_page4 - invoice payment!");
         rebuildPageInvoiceConfirm();
