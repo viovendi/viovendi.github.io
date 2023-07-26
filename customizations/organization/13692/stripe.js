@@ -84,7 +84,8 @@ function responseMessage(status) {
   if ($(".response-message-notice").length) {
     $(".response-message-notice").text(message);
   } else {
-    $(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
+    //$(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
+    $(".ew-confirmation__block .customization-confirmation-description").after('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
   }
   
   // show the hiddem booking-confirmation message
@@ -94,7 +95,7 @@ function responseMessage(status) {
 
 function showTheDefaultText(){
   console.log('showTheDefaultText');
-  $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
+  $('.ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__organizer-contact').css({'display':'block'});
 }
 
 function hideDefaultText(){
