@@ -80,6 +80,8 @@ function responseMessage(status) {
 
   changeIcon(color);
 
+  $(".ew-confirmation__notice").hide();
+  
   $(".ew-confirmation__header .header__label").text(heading);
   if ($(".response-message-notice").length) {
     $(".response-message-notice").text(message);
