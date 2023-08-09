@@ -1,5 +1,7 @@
 console.log("github -> /13369/hideOrShowQuestions")
 // Function to show and hide custom question
+//disable all customizations
+    /*
 function setup(){
     var styles = `
     
@@ -180,5 +182,4 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // 
-
-
+*/
