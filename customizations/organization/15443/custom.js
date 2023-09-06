@@ -1,7 +1,39 @@
-console.log('git-code');
+console.log('git-code-updated');
 
 // get iFrameUrlParam from frame URL
 console.log(redirectUrl);
+
+function processData(eventId, orderId, price, ticketCategoryId){
+
+  let bodyString = '';
+
+  if(price == 0){
+    bodyString = "&order_id="+orderId+"";
+    sendRedirectRequest(bodyString);
+    return;
+  }
+
+  $.ajax({
+    url: 'https://hook.doo.integromat.celonis.com/9blbh06jpsfmslydphupwhmjeymhuu1l?eventId='+eventId+'',
+    type: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    dataType: 'json',
+    success: function (res) {
+      const artikelnummer = res.payload.articleNumber;
+      console.log(artikelnummer);
+
+      bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&artikelnummer="+artikelnummer+"";
+      sendRedirectRequest(bodyString);
+    },
+    error: function (err) {
+      console.log(err);
+    }
+  });
+}
+
 
 var isFuncUsed = false;
 
@@ -15,22 +47,12 @@ function getXMLHttpRequest (open) {
           if(res != undefined && res._embedded){
             
             var orders = res._embedded.orders;
+            var eventId = orders[0].event.id;
             var orderId = orders[0].id;
             var price = orders[0].payment.amount;
             var ticketCategoryId = orders[0].attendees[0].ticket.event_ticket_id;
-            // hardcoded, depends on OID for the staging account its 91117021 @olexiy
-            //91117021 = Artikelnumber for 15443
-            var artikelnummer = 91117021;
-            
-            var isFreeORder = false;
-            var bodyString = "&order_id="+orderId+"&ticket_category_id="+ticketCategoryId+"&price="+price+"&organisation=15443&artikelnummer="+artikelnummer+"";
-            
-            if(price == 0){
-              bodyString = "&organisation=15443&order_id="+orderId+"";
-            }
-            
-            // send redirect request
-            sendRedirectRequest(bodyString);
+
+            processData(eventId, orderId, price, ticketCategoryId);
           }
         }
       }, false);
