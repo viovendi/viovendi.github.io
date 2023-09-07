@@ -47,6 +47,7 @@ function startCustomizationPage2(){
 	markAsChecked('customization2_attendee');
 
 	setTimeout(()=>{
+		console.log('setTimeout:');
 		hideAndMoveCheckbox();
 		checkAndHidePrivacy();
 	}, 500);
