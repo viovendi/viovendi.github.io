@@ -21,19 +21,19 @@ function markAsChecked(name) {
 	}
 
 function hideAndMoveCheckbox() {
+	console.log('hideAndMoveCheckbox');
 	// $('.customization2_booking-terms_checkbox.vv-checkbox__indicator').css("display", "none");
 	$('.customization2_booking-terms_text').css("position", "relative");
 	$('.customization2_booking-terms_text').css("left", "24px");
 	console.log('hided')
 }
 
-
 /* check and hide privacy checkbox */
 function checkAndHidePrivacy(){
   console.log('checkAndHidePrivacy');
   if ($('.customization2_booking-terms').length > 0 ){
     $('.customization2_booking-terms .customization2_booking-terms_checkbox').trigger('click');
-  //  $('.customization2_booking-terms .vv-checkbox__indicator').css('display', 'none');
+  // $('.customization2_booking-terms .vv-checkbox__indicator').css('display', 'none');
     $('.customization2_booking-terms .vv-checkbox').on('click', function(e){
       e.preventDefault();
     });
@@ -45,13 +45,23 @@ startCustomizationPage2();
 function startCustomizationPage2(){
       
 	markAsChecked('customization2_attendee');
-	hideAndMoveCheckbox();
-	checkAndHidePrivacy();
+
+	setTimeout(function(
+		//hideAndMoveCheckbox();
+		//checkAndHidePrivacy();
+	), 500);
+	//hideAndMoveCheckbox();
+	//checkAndHidePrivacy();
+	
     const observerThisPage = new MutationObserver((mutations, obs) => {
         const page2 = document.getElementsByClassName('customization-booking-area-wrapper-page2');
     
         if ($(page2).is(':visible')) {
             startCustomizationPage2();
+					
+						hideAndMoveCheckbox();
+						checkAndHidePrivacy();
+					
             obs.disconnect();
             return;
         }
