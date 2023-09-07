@@ -46,10 +46,11 @@ function startCustomizationPage2(){
       
 	markAsChecked('customization2_attendee');
 
-	setTimeout(function(
-		//hideAndMoveCheckbox();
-		//checkAndHidePrivacy();
-	), 500);
+	setTimeout(()=>{
+		hideAndMoveCheckbox();
+		checkAndHidePrivacy();
+	}, 500);
+
 	//hideAndMoveCheckbox();
 	//checkAndHidePrivacy();
 	
@@ -58,10 +59,6 @@ function startCustomizationPage2(){
     
         if ($(page2).is(':visible')) {
             startCustomizationPage2();
-					
-						hideAndMoveCheckbox();
-						checkAndHidePrivacy();
-					
             obs.disconnect();
             return;
         }
