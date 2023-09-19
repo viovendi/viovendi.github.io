@@ -149,13 +149,7 @@ function sendRequestToGetRedirectUrl(object){
       success: function (res) {
         // redirect to payment page
 
-        if (window.location.href.includes('booking-16129-50187')){
-          console.log('_self');
-          window.open(res.LinkToPayPage, "_self");
-        }else{
-            window.open(res.LinkToPayPage, "_parent");
-        }
-        //window.open(res.LinkToPayPage, "_parent");
+        window.open(res.LinkToPayPage, "_parent");
           
         console.log(res.LinkToPayPage.indexOf('http'));
           /*
