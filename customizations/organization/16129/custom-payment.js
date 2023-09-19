@@ -198,6 +198,12 @@ function getXMLHttpRequest (open) {
             
             if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
               sendRequestToGetRedirectUrl(orderDataobj);
+              // modify iframe
+                console.log(window.location.href.includes('booking-16129-50187'));
+              if (window.location.href.includes('booking-16129-50187')){
+                  console.log('modify iframe');
+                  $(".viovendi_iframe").attr('sandbox','allow-scripts');
+              }
             }
             isSent = true;
           }
