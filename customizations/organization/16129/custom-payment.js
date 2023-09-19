@@ -72,6 +72,8 @@ var insertionListener = function (event) {
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
           // modify iframe
+        console.log(window.location.href);  
+        console.log(window.location.href.includes('booking-16129-50187'));
         if (window.location.href.includes('booking-16129-50187')){
           console.log('modify iframe');
           $(".viovendi_iframe").attr('sandbox','allow-top-navigation');
