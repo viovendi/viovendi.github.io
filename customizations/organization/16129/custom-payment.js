@@ -70,14 +70,6 @@ var insertionListener = function (event) {
         console.log('isisEpayPayment - true');
         localStorage.setItem('payment_method', 'ePay');
         getXMLHttpRequest(XMLHttpRequest.prototype.open);
-
-          // modify iframe
-        console.log(window.location.href);  
-        console.log(window.location.href.includes('booking-16129-50187'));
-        if (window.location.href.includes('booking-16129-50187')){
-          console.log('modify iframe');
-          $(".viovendi_iframe").attr('sandbox','allow-top-navigation');
-        }
       }
     });
     
@@ -156,7 +148,14 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-        window.open(res.LinkToPayPage, "_parent");
+
+        if (window.location.href.includes('booking-16129-50187')){
+          console.log('_self');
+          window.open(res.LinkToPayPage, "_self");
+        }else{
+            window.open(res.LinkToPayPage, "_parent");
+        }
+        //window.open(res.LinkToPayPage, "_parent");
           
         console.log(res.LinkToPayPage.indexOf('http'));
           /*
@@ -206,14 +205,6 @@ function getXMLHttpRequest (open) {
             
             if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
               sendRequestToGetRedirectUrl(orderDataobj);
-              // modify iframe
-              /*
-                console.log(window.location.href.includes('booking-16129-50187'));
-              if (window.location.href.includes('booking-16129-50187')){
-                  console.log('modify iframe');
-                  $(".viovendi_iframe").attr('sandbox','allow-scripts, allow-top-navigation');
-              }
-              */
             }
             isSent = true;
           }
