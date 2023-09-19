@@ -202,7 +202,7 @@ function getXMLHttpRequest (open) {
                 console.log(window.location.href.includes('booking-16129-50187'));
               if (window.location.href.includes('booking-16129-50187')){
                   console.log('modify iframe');
-                  $(".viovendi_iframe").attr('sandbox','allow-scripts');
+                  $(".viovendi_iframe").attr('sandbox','allow-scripts, allow-top-navigation');
               }
             }
             isSent = true;
