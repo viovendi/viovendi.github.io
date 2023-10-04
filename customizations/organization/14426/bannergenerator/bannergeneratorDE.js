@@ -78,7 +78,7 @@ function setupBannerImage() {
     } else if (value == 'instagrampost') {
         ctx.font = "44pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "44pt Verdana";
+        ctx.font = "50pt Verdana";
     } else if (value == 'facebook') {
         ctx.font = "50pt Verdana";
     };
