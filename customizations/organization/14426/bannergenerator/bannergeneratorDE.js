@@ -27,11 +27,11 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 45);
-        ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 5, 45);
+        ctx.fillText($('#halle_inp').val(), 385 - $('#halle_inp').val().length * 6, 45);
+        ctx.fillText($('#stand_inp').val(), 425 - $('#stand_inp').val().length * 5, 45);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 578);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 500);
+        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 570);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 28 - $('#halle_inp').val().length * 6, 43);
         ctx.fillText($('#stand_inp').val(), 49, 43);
@@ -72,7 +72,7 @@ function setupBannerImage() {
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "15pt Verdana";
     } else if (value == 'email') {
         ctx.font = "13pt Verdana";
     } else if (value == 'instagrampost') {
