@@ -42,8 +42,8 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
         ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 1150);
+        ctx.fillText($('#stand_inp').val(), 700 - $('#stand_inp').val().length * 9, 1150);
     }
 }
 
@@ -76,11 +76,11 @@ function setupBannerImage() {
     } else if (value == 'email') {
         ctx.font = "13pt Verdana";
     } else if (value == 'instagrampost') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "36pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "36pt Verdana";
     } else if (value == 'facebook') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "36pt Verdana";
     };
 }
 
