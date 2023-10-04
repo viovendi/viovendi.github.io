@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_160x600_GB.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_468x60_GB.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_180x60_GB.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1080_GB.jpg'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.jpg'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/2023_JH_Downloadbanner_1080x1350_GB.jpg']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/01_EN.png'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/02_EN.png'],
+  ['email', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/030623_JH24_Ausstellerbanner_180x60_EN_SD.png'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/030623_JH24_Ausstellerbanner_1080x1080_EN_SD.png'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/030623_JH24_Ausstellerbanner_1080x1350_EN_SD.png'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/14426/bannergenerator/030623_JH24_Ausstellerbanner_1080x1350_EN_SD.png']
 ];
 
 function setTexts() {
@@ -27,23 +27,23 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 400 - $('#halle_inp').val().length * 6, 45);
-        ctx.fillText($('#stand_inp').val(), 435 - $('#stand_inp').val().length * 5, 45);
+        ctx.fillText($('#halle_inp').val(), 357 - $('#halle_inp').val().length * 6, 47);
+        ctx.fillText($('#stand_inp').val(), 410 - $('#stand_inp').val().length * 5, 47);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 518);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 578);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 504);
+        ctx.fillText($('#stand_inp').val(), 76 - $('#stand_inp').val().length * 5, 570);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 28 - $('#halle_inp').val().length * 6, 43);
-        ctx.fillText($('#stand_inp').val(), 49, 43);
+        ctx.fillText($('#halle_inp').val(), 95 - $('#halle_inp').val().length * 6, 50);
+        ctx.fillText($('#stand_inp').val(), 120, 50);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1025);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1025);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 980);
+        ctx.fillText($('#stand_inp').val(), 600 - $('#stand_inp').val().length * 9, 980);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
+        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
+        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
     }
 }
 
@@ -70,17 +70,17 @@ function setupBannerImage() {
     const value = $('#format_inp').val();
     
     if (value == 'horizontal') {
-        ctx.font = "10pt Verdana";
+        ctx.font = "14pt Verdana";
     } else if (value == 'vertikal') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "17pt Verdana";
     } else if (value == 'email') {
-        ctx.font = "13pt Verdana";
+        ctx.font = "10pt Verdana";
     } else if (value == 'instagrampost') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "44pt Verdana";
     } else if (value == 'instagramstory') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "50pt Verdana";
     } else if (value == 'facebook') {
-        ctx.font = "26pt Verdana";
+        ctx.font = "50pt Verdana";
     };
 }
 
