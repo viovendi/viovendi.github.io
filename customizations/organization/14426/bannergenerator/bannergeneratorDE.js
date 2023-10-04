@@ -30,20 +30,20 @@ function setTexts() {
         ctx.fillText($('#halle_inp').val(), 357 - $('#halle_inp').val().length * 6, 47);
         ctx.fillText($('#stand_inp').val(), 410 - $('#stand_inp').val().length * 5, 47);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 500);
-        ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 570);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 504);
+        ctx.fillText($('#stand_inp').val(), 76 - $('#stand_inp').val().length * 5, 570);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 95 - $('#halle_inp').val().length * 6, 50);
         ctx.fillText($('#stand_inp').val(), 120, 50);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 240 - $('#halle_inp').val().length * 6, 980);
-        ctx.fillText($('#stand_inp').val(), 620 - $('#stand_inp').val().length * 9, 980);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 980);
+        ctx.fillText($('#stand_inp').val(), 600 - $('#stand_inp').val().length * 9, 980);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
-        ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
+        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 235 - $('#halle_inp').val().length * 6, 1052);
-        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1052);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
+        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
     }
 }
 
