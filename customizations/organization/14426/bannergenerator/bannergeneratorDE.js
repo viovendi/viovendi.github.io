@@ -27,23 +27,23 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 360 - $('#halle_inp').val().length * 6, 45);
-        ctx.fillText($('#stand_inp').val(), 415 - $('#stand_inp').val().length * 5, 45);
+        ctx.fillText($('#halle_inp').val(), 355 - $('#halle_inp').val().length * 6, 47);
+        ctx.fillText($('#stand_inp').val(), 410 - $('#stand_inp').val().length * 5, 47);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 495);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 500);
         ctx.fillText($('#stand_inp').val(), 78 - $('#stand_inp').val().length * 5, 570);
     } else if (value == 'email') {
-        ctx.fillText($('#halle_inp').val(), 88 - $('#halle_inp').val().length * 6, 50);
-        ctx.fillText($('#stand_inp').val(), 110, 50);
+        ctx.fillText($('#halle_inp').val(), 92 - $('#halle_inp').val().length * 6, 50);
+        ctx.fillText($('#stand_inp').val(), 115, 50);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 300 - $('#halle_inp').val().length * 6, 985);
-        ctx.fillText($('#stand_inp').val(), 680 - $('#stand_inp').val().length * 9, 990);
+        ctx.fillText($('#halle_inp').val(), 250 - $('#halle_inp').val().length * 6, 980);
+        ctx.fillText($('#stand_inp').val(), 660 - $('#stand_inp').val().length * 9, 980);
     } else if (value == 'instagramstory') {
         ctx.fillText($('#halle_inp').val(), 510 - $('#halle_inp').val().length * 6, 1227);
         ctx.fillText($('#stand_inp').val(), 835 - $('#stand_inp').val().length * 9, 1227);
     } else if (value == 'facebook') {
-        ctx.fillText($('#halle_inp').val(), 280 - $('#halle_inp').val().length * 6, 1050);
-        ctx.fillText($('#stand_inp').val(), 600 - $('#stand_inp').val().length * 9, 1050);
+        ctx.fillText($('#halle_inp').val(), 260 - $('#halle_inp').val().length * 6, 1052);
+        ctx.fillText($('#stand_inp').val(), 590 - $('#stand_inp').val().length * 9, 1052);
     }
 }
 
