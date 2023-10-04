@@ -27,20 +27,20 @@ function setTexts() {
     const value = $('#format_inp').val();
 
     if (value == 'horizontal') {
-        ctx.fillText($('#halle_inp').val(), 357 - $('#halle_inp').val().length * 6, 47);
-        ctx.fillText($('#stand_inp').val(), 410 - $('#stand_inp').val().length * 5, 47);
+        ctx.fillText($('#halle_inp').val(), 337 - $('#halle_inp').val().length * 6, 47);
+        ctx.fillText($('#stand_inp').val(), 390 - $('#stand_inp').val().length * 5, 47);
     } else if (value == 'vertikal') {
-        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 504);
-        ctx.fillText($('#stand_inp').val(), 76 - $('#stand_inp').val().length * 5, 570);
+        ctx.fillText($('#halle_inp').val(), 78 - $('#halle_inp').val().length * 6, 494);
+        ctx.fillText($('#stand_inp').val(), 76 - $('#stand_inp').val().length * 5, 560);
     } else if (value == 'email') {
         ctx.fillText($('#halle_inp').val(), 95 - $('#halle_inp').val().length * 6, 50);
         ctx.fillText($('#stand_inp').val(), 120, 50);
     } else if (value == 'instagrampost') {
-        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 980);
-        ctx.fillText($('#stand_inp').val(), 600 - $('#stand_inp').val().length * 9, 980);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 880);
+        ctx.fillText($('#stand_inp').val(), 600 - $('#stand_inp').val().length * 9, 880);
     } else if (value == 'instagramstory') {
-        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
-        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
+        ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 955);
+        ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 955);
     } else if (value == 'facebook') {
         ctx.fillText($('#halle_inp').val(), 230 - $('#halle_inp').val().length * 6, 1055);
         ctx.fillText($('#stand_inp').val(), 580 - $('#stand_inp').val().length * 9, 1055);
