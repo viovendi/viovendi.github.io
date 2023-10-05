@@ -359,6 +359,7 @@ function createSeats(token){
         event: '9acbae92-ab17-45d9-b934-1f1255cc3e86',
         session: 'manual',
         holdToken: token,
+        language: 'de',
         maxSelectedObjects: 1,
         /*pricing: [
            {'category': 'A', 'price': 30},
