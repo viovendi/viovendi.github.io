@@ -360,6 +360,7 @@ function createSeats(token){
         session: 'manual',
         holdToken: token,
         language: 'de',
+        features: {disabled: ['backgroundImage']},
         maxSelectedObjects: 1,
         /*pricing: [
            {'category': 'A', 'price': 30},
