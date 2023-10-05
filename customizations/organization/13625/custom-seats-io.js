@@ -290,7 +290,9 @@ function hideCategoryByName(name){
     let category = '';
     
     $('.event-categories li').each(function(){
-        const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
+        // const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
+        // changed structure?
+        const categoryName = $(this).find('.customization-category-name').text().trim();
         $(this).removeClass('hidden');
         if(categoryName.indexOf(name) > -1){
             $(this).addClass('hidden');
@@ -303,7 +305,9 @@ function hideCategoryByName(name){
 function setTicketCategoryChosen(ticketLabel, action){
     
     $('.event-categories li').each(function(){
-        const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
+        // const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
+        // changed structure?
+        const categoryName = $(this).find('.customization-category-name').text().trim();
         console.log(categoryName);
         if(categoryName === mapObject[ticketLabel]){
             console.log('found');
