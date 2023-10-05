@@ -5,11 +5,18 @@ var insertionListener = function (event) {
     if (event.animationName === 'nodeInsertedSeats') {
         hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
+        if($('.event-categories>li').length > 0){
+            clearTicketsInManager();
+            if($('#chart').length === 0){
+                addSeatScript();
+            }
+        }
+        /*
         clearTicketsInManager();
-        
         if($('#chart').length === 0){
             addSeatScript();
         }
+        */
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
     }else if(event.animationName === 'attendeeEdited'){
