@@ -304,9 +304,9 @@ function setTicketCategoryChosen(ticketLabel, action){
     
     $('.event-categories li').each(function(){
         const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
-        
+        console.log(categoryName);
         if(categoryName === mapObject[ticketLabel]){
-            
+            console.log('found');
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             var allOptions = $(this).find('.vv-single-select-option');
             
@@ -379,11 +379,15 @@ function createSeats(token){
             
             // hide ticket cat
             if(object.category.label === 'Normal'){
-                hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
+                console.log(`hide-${mapObject.Premium}`);
+                hideCategoryByName(mapObject.Premium);
+                //hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
             
             if(object.category.label === 'Premium'){
-                hideCategoryByName('DAT 2023 – Ausstellerticket');
+                console.log(`hide-${mapObject.Normal}`);
+                hideCategoryByName(mapObject.Normal);
+                //hideCategoryByName('DAT 2023 – Ausstellerticket');
             }
             
             setTicketCategoryChosen(object.category.label, 'add');
