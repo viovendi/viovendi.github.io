@@ -149,9 +149,9 @@ function sendRequestToGetRedirectUrl(object){
       success: function (res) {
         // redirect to payment page
 
-        window.open(res.LinkToPayPage, "_parent");
+        // window.open(res.LinkToPayPage, "_parent");
+          window.open(`${res.LinkToPayPage}&langKey=en`, "_parent");
           
-        console.log(res.LinkToPayPage.indexOf('http'));
           /*
         if(res.LinkToPayPage.indexOf('http') > 0){
            window.open(res.LinkToPayPage, "_parent");
@@ -161,9 +161,6 @@ function sendRequestToGetRedirectUrl(object){
           console.log('Error - Broken payment link');
         }
         */
-          
-        //window.open(res.LinkToPayPage, "_parent");
-        //window.open(res.LinkToPayPage, "_blank");
       },
       error: function (jqXHR, exception) {
         // show different error message depends on the status received from the scenario?
