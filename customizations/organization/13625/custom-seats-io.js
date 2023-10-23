@@ -40,16 +40,16 @@ async function hendler() {
       
     await getPage('page2');
     console.log("page2!");
-    localStorage.setItem('isEditMode', 1);
+    sessionStorage.setItem('isEditMode', 1);
       
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }
 }
 
 function bookSeats(dooOrderId, dooOrganizationId){
-    const seatHoldToken = localStorage.getItem('holdToken') ? localStorage.getItem('holdToken') : 'none'
+    const seatHoldToken = sessionStorage.getItem('holdToken') ? sessionStorage.getItem('holdToken') : 'none'
     const body = {
-        seats: JSON.parse(localStorage.getItem('seatsObject')),
+        seats: JSON.parse(sessionStorage.getItem('seatsObject')),
         oid: dooOrganizationId,
         orderId: dooOrderId,
         token: seatHoldToken
@@ -57,9 +57,9 @@ function bookSeats(dooOrderId, dooOrganizationId){
     
     $.post( 'https://hook.doo.integromat.celonis.com/rtensm428nebgnsh0p4prkxcgivg5e49', body)
       .done(function() {
-        localStorage.removeItem('seatsObject');
-        localStorage.removeItem('isEditMode');
-        localStorage.removeItem('holdToken');
+        sessionStorage.removeItem('seatsObject');
+        sessionStorage.removeItem('isEditMode');
+        sessionStorage.removeItem('holdToken');
       });
 }
 
@@ -96,7 +96,7 @@ function fillTicketId(){
     const expandedAttendee = $('.customization2_attendee.customization2_attendee-state_edit');
     const classList = expandedAttendee.attr('class').split(/\s+/);
     const attendeeIndex = parseInt(classList[3].match(/[^-]*$/))-1;
-    const seatsArray = JSON.parse(localStorage.getItem('seatsObject'));
+    const seatsArray = JSON.parse(sessionStorage.getItem('seatsObject'));
     const labels = expandedAttendee.find('.customization2_attendee_further-data_custom-question_label');
     
     $.each(labels, function(index, item) {
@@ -202,15 +202,15 @@ function saveSeatsObj(){
          showError();
      }
      
-    if(localStorage.getItem('seatsObject')){
-        localStorage.removeItem('seatsObject');
+    if(sessionStorage.getItem('seatsObject')){
+        sessionStorage.removeItem('seatsObject');
     }
-    localStorage.setItem('seatsObject', JSON.stringify(selectedSeats));
+    sessionStorage.setItem('seatsObject', JSON.stringify(selectedSeats));
  });
 }
 
 function validateToken(){
-    let holdToken = localStorage.getItem('holdToken');
+    let holdToken = sessionStorage.getItem('holdToken');
     
     $.post( 'https://hook.doo.integromat.celonis.com/pirid122b2617uut25d9rfppipf08jnw', { token: holdToken })
       .done(function(res) {
@@ -218,13 +218,13 @@ function validateToken(){
         if(res === 'invalid'){
             // set ticket categories to 0
             clearTicketsInManager();
-            // clear the seatsAray from localstorage
-            localStorage.removeItem('seatsObject');
+            // clear the seatsAray from sessionStorage
+            sessionStorage.removeItem('seatsObject');
             
             $.post( 'https://hook.doo.integromat.celonis.com/1n36mejk0v8t313x5epfidrw0w32mskl')
               .done(function(res) {
                 createSeats(JSON.parse(res).holdToken);
-                localStorage.setItem('holdToken', JSON.parse(res).holdToken);
+                sessionStorage.setItem('holdToken', JSON.parse(res).holdToken);
               });
         }else{
             createSeats(holdToken);
@@ -283,7 +283,7 @@ function setTicketsFromPreviousChose(arr){
         });
     });
     console.log('removeItem');
-    localStorage.removeItem('isEditMode');
+    sessionStorage.removeItem('isEditMode');
 }
 
 function hideCategoryByName(name){
@@ -378,7 +378,7 @@ function createSeats(token){
             
             hideError();
           
-            if(!localStorage.getItem('isEditMode')){
+            if(!sessionStorage.getItem('isEditMode')){
                 console.log('isEditMode-off');
                 selectedSeats.push(object.label);
             }
@@ -413,7 +413,7 @@ function createSeats(token){
         onChartRendered: function(chart) {
             console.log('chart is loaded');
             // run the 
-            const ticketArray = JSON.parse(localStorage.getItem('seatsObject'));
+            const ticketArray = JSON.parse(sessionStorage.getItem('seatsObject'));
             if(ticketArray){
                 selectedSeats = ticketArray;
                 //setTicketsFromPreviousChose(JSON.parse(ticketArray));
