@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-  ['vertikal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/02_D.png'],
-  ['horizontal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/01_D.png'],
-  ['email', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_180x60_D.png'],
-  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1080_D.png'],
-  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D.png'],
-  ['facebook', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D.png']
+  ['vertikal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/02_D.png','160','600'],
+  ['horizontal', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/01_D.png','468','60'],
+  ['email', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_180x60_D.png','180','60'],
+  ['instagrampost', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1080_D.png','1080','1080'],
+  ['instagramstory', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D.png','1080','1350'],
+  ['facebook', 'https://viovendi.github.io/customizations/organization/15383/bannergenerator/Structures_Ausstellerbanner_1080x1350_D.png','1080','1350']
 ];
 
 function setTexts() {
@@ -68,7 +68,7 @@ function setupBannerImage() {
     ctx.drawImage($('#banner_img').get(0), 0, 0);
 
     const value = $('#format_inp').val();
-    
+
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
@@ -101,6 +101,8 @@ function generator() {
                 console.log(imageNameAndURL[i][0])
                 $('#banner_img').attr('crossOrigin', 'Anonymous');
                 $('#banner_img').attr("src", imageNameAndURL[i][1]);
+                $('#banner_img').attr("width", imageNameAndURL[i][2]);
+                $('#banner_img').attr("height", imageNameAndURL[i][3]);
                 $('#banner_img').on('load', function () {
                     setupBannerImage();
                     setTexts()
