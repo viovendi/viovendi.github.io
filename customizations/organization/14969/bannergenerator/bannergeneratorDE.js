@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-['vertikal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_160x600_D.png'],
-['horizontal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_468x60_D.png'],
-['email', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_180x60_D_RZ.png'],
-['instagrampost', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_1080x1080_D_RZ.png'],
-['instagramstory', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_1080x1350_D_RZ.png'],
-['facebook', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2023_IL_Banner_Aussteller_1080x1350_D_RZ.png']
+['vertikal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_160x600_D.png','160','600'],
+['horizontal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_468x60_D.png','468','60'],
+['email', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_180x60_D_RZ.png','180','60'],
+['instagrampost', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1080_D_RZ.png','1080','1080'],
+['instagramstory', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_D_RZ.png','1080','1350'],
+['facebook', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_D_RZ.png','1080','1350']
 ];
 
 function setTexts() {
@@ -59,16 +59,16 @@ function handlerQ() {
     generator();
 }
 
-function setupBannerImage() {
+function setupBannerImage(width, height) {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
-    canvas.width = $('#banner_img').width();
+    canvas.width = width;
     canvas.crossOrigin = 'Anonymous';
-    canvas.height = $('#banner_img').height();
+    canvas.height = height;
     ctx.drawImage($('#banner_img').get(0), 0, 0);
 
     const value = $('#format_inp').val();
-    
+
     if (value == 'horizontal') {
         ctx.font = "10pt Verdana";
     } else if (value == 'vertikal') {
@@ -102,14 +102,14 @@ function generator() {
                 $('#banner_img').attr('crossOrigin', 'Anonymous');
                 $('#banner_img').attr("src", imageNameAndURL[i][1]);
                 $('#banner_img').on('load', function () {
-                    setupBannerImage();
+                    setupBannerImage(imageNameAndURL[i][2],imageNameAndURL[i][3]);
                     setTexts()
                 });
             }
         }
     });
 
-    setupBannerImage();
+    setupBannerImage("160", "600")
 }
 
 function download() {
