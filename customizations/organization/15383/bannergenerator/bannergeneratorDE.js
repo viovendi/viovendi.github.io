@@ -59,12 +59,12 @@ function handlerQ() {
     generator();
 }
 
-function setupBannerImage() {
+function setupBannerImage(width, height) {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
-    canvas.width = $('#banner_img').width();
+    canvas.width = width;
     canvas.crossOrigin = 'Anonymous';
-    canvas.height = $('#banner_img').height();
+    canvas.height = height;
     ctx.drawImage($('#banner_img').get(0), 0, 0);
 
     const value = $('#format_inp').val();
@@ -101,17 +101,15 @@ function generator() {
                 console.log(imageNameAndURL[i][0])
                 $('#banner_img').attr('crossOrigin', 'Anonymous');
                 $('#banner_img').attr("src", imageNameAndURL[i][1]);
-                $('#banner_img').attr("width", imageNameAndURL[i][2]);
-                $('#banner_img').attr("height", imageNameAndURL[i][3]);
                 $('#banner_img').on('load', function () {
-                    setupBannerImage();
+                    setupBannerImage(imageNameAndURL[i][2],imageNameAndURL[i][3]);
                     setTexts()
                 });
             }
         }
     });
 
-    setupBannerImage();
+    setupBannerImage("160", "600");
 }
 
 function download() {
