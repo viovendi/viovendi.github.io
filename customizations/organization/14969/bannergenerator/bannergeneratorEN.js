@@ -10,12 +10,12 @@ script.onload = handlerQ;
 head.appendChild(script);
 
 const imageNameAndURL = [
-['vertikal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_160x600_E.png','160','600'],
-['horizontal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_468x60_E.png','468','60'],
-['email', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_180x60_D_RZ.png','180','60'],
-['instagrampost', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1080_E_RZ.png','1080','1080'],
-['instagramstory', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_E_RZ.png','1080','1350'],
-['facebook', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_E_RZ.png','1080','1350']
+['vertikal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_160x600_E.jpg','160','600'],
+['horizontal', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_468x60_E.jpg','468','60'],
+['email', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_180x60_E.jpg','180','60'],
+['instagrampost', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1080_E.jpg','1080','1080'],
+['instagramstory', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_E.jpg','1080','1350'],
+['facebook', 'https://viovendi.github.io/customizations/organization/14969/bannergenerator/2024_IL_Banner_Aussteller_1080x1350_E.jpg','1080','1350']
 ];
 
 function setTexts() {
@@ -116,7 +116,7 @@ function download() {
     var download = document.getElementById("download");
 
     // canvas.crossOrigin = "Anonymous";
-    var image = canvas.toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
+    var image = canvas.toDataURL("image/jpg")
+        .replace("image/jpg", "image/octet-stream");
     download.setAttribute("href", image);
 }
