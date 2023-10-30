@@ -85,14 +85,9 @@ localStorage.removeItem('payment_method_upd');
 */
 
 
-
-/*********/
-// const myInterval = setInterval(cgeckCountryData, 300);
-
 function cgeckCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
-  console.log(invoice_radio_group);
   console.log(country);
 
   if(! country) return;
@@ -102,8 +97,14 @@ function cgeckCountryData() {
     wrapper.dataset.allowed_countries = '';
     // localStorage.removeItem("allowed_countries");
 
+    console.log(countries.indexOf(country));
+
     if (countries.indexOf(country) != -1) {
+	    
       if (invoice_radio_group) {
+	      
+      console.log('allowed');
+	      
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
 	wrapper.dataset.allowed_countries = "allowed";
@@ -111,6 +112,9 @@ function cgeckCountryData() {
       }
     } else {
       if (invoice_radio_group) {
+	      
+	console.log('forbidden');
+	      
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
@@ -123,33 +127,19 @@ function cgeckCountryData() {
 function myStopFunction() {
   clearInterval(myInterval);
 }
-/*************/
-
 
 function check_country() {
   console.log("function check_country");
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
-  /*
-	var countries = [
-    "Österreich",
-    "Austria",
-    "Deutschland",
-    "Germany",
-    "Schweiz",
-    "Switzerland",
-  ];
-*/
+
   // var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
   var curr_country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
-
- // .vv-selection-input__value
-
 	
   if (countries.indexOf(curr_country) != -1 && invoice_radio_group) {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
 
-  const myInterval = setInterval(cgeckCountryData, 300);
+  const myInterval = setInterval(cgeckCountryData, 500);
 
   // const observer = new MutationObserver((mutations) => {
 /*
