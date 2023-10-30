@@ -62,17 +62,57 @@ document.addEventListener("animationstart", insertionListener, false); // standa
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
-/*
+
 wrapper.dataset.payment_method = '';
 wrapper.dataset.free_order = false;
 wrapper.dataset.allowed_countries = '';
 wrapper.dataset.payment_method_upd = '';
-*/
 
+/*
 localStorage.removeItem('payment_method');
 localStorage.removeItem('false');
 localStorage.removeItem('allowed_countries');
 localStorage.removeItem('payment_method_upd');
+*/
+
+
+
+/*********/
+// const myInterval = setInterval(cgeckCountryData, 300);
+
+function cgeckCountryData() {
+  var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
+  if(! country) return;
+  console.log(country);
+    // localStorage.removeItem("allowed_countries");
+	  
+    // local storage workaround
+    wrapper.dataset.allowed_countries = '';
+    // localStorage.removeItem("allowed_countries");
+
+    if (countries.indexOf(country) != -1) {
+      if (invoice_radio_group) {
+        invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
+      } else {
+	wrapper.dataset.allowed_countries = "allowed";
+	// localStorage.setItem("allowed_countries", "allowed");
+      }
+    } else {
+      if (invoice_radio_group) {
+        invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
+        invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
+      } else {
+	wrapper.dataset.allowed_countries = 'forbidden';
+        // localStorage.setItem("allowed_countries", "forbidden");
+      }
+    }
+}
+
+function myStopFunction() {
+  clearInterval(myInterval);
+}
+/*************/
+
 
 function check_country() {
   console.log("function check_country");
@@ -85,46 +125,57 @@ function check_country() {
     "Schweiz",
     "Switzerland",
   ];
-  var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
 
+  // var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
+  var curr_country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
+
+ // .vv-selection-input__value
+
+	
   if (countries.indexOf(curr_country) != -1 && invoice_radio_group) {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
 
-  const observer = new MutationObserver((mutations) => {
+  const myInterval = setInterval(cgeckCountryData, 300);
+
+  // const observer = new MutationObserver((mutations) => {
+/*
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
 	  console.log(country);
     // localStorage.removeItem("allowed_countries");
 	  
     // local storage workaround
-    // wrapper.dataset.allowed_countries = '';
-    localStorage.removeItem("allowed_countries");
+    wrapper.dataset.allowed_countries = '';
+    // localStorage.removeItem("allowed_countries");
 
     if (countries.indexOf(country) != -1) {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
-	// wrapper.dataset.allowed_countries = "allowed";
-	localStorage.setItem("allowed_countries", "allowed");
+	wrapper.dataset.allowed_countries = "allowed";
+	// localStorage.setItem("allowed_countries", "allowed");
       }
     } else {
       if (invoice_radio_group) {
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
-	// wrapper.dataset.allowed_countries = 'forbidden';
-        localStorage.setItem("allowed_countries", "forbidden");
+	wrapper.dataset.allowed_countries = 'forbidden';
+        // localStorage.setItem("allowed_countries", "forbidden");
       }
     }
-  });
+	*/
+  //});
 
-  const bookerCountryInput = document.querySelector(".customization2_booker_contact-data_country_input");
-
+  //const bookerCountryInput = document.querySelector(".customization2_booker_contact-data_country_input");
+/*
   observer.observe(bookerCountryInput, {
     childList: true,
     subtree: true,
     characterData: true,
   });
+*/
+	
 }
 
 function getWidgetLang() {
@@ -151,8 +202,8 @@ function getDataFromPage2() {
           payment_method = $(this).find(".customization2_booker_further-data_custom-question_value").text().trim();
         }
       });
-       // wrapper.dataset.payment_method = payment_method;
-       localStorage.setItem("payment_method", payment_method);
+       wrapper.dataset.payment_method = payment_method;
+       // localStorage.setItem("payment_method", payment_method);
     }
   );
 }
@@ -191,8 +242,8 @@ function checking_page2() {
 	    console.log('free order detected');
 	    
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
-      // wrapper.dataset.free_order = true;
-      localStorage.setItem("free_order", true);
+      wrapper.dataset.free_order = true;
+      // localStorage.setItem("free_order", true);
     }
     stop_checking_page2();
   }
@@ -222,15 +273,15 @@ function checking_page4() {
 
     var payment_method_upd, payment_method, free_order;
 
-  /*
     payment_method_upd = wrapper.dataset.payment_method_upd;
     payment_method = wrapper.dataset.payment_method;
     free_order = wrapper.dataset.free_order;
-  */
-
+  
+    /*
     payment_method_upd = localStorage.getItem("payment_method_upd");
     payment_method = localStorage.getItem("payment_method");
     free_order = localStorage.getItem("free_order");
+     */
 	  
     if (free_order && free_order === "true") {
       console.log("checking_page4 FREE ORDER");
@@ -299,8 +350,8 @@ function getPaymentMethod() {
         payment_method_updated = $(this).closest(".customization2_organizer-bank-transfer").find(".payment-option__label").text().trim();
       }
     });
-    // wrapper.dataset.payment_method_upd = payment_method_updated;
-    localStorage.setItem("payment_method_upd", payment_method_updated);
+    wrapper.dataset.payment_method_upd = payment_method_updated;
+    // localStorage.setItem("payment_method_upd", payment_method_updated);
   });
 }
 
@@ -390,14 +441,14 @@ function changeIcon(color) {
 function rebuildPage() {
 	
   var payment_method, allowed_countries;
-    /*
+
     payment_method = wrapper.dataset.payment_method;
     allowed_countries = wrapper.dataset.allowed_countries;
-    */
-
+    
+/*
     payment_method = localStorage.getItem("payment_method");
     allowed_countries = localStorage.getItem("allowed_countries");
-
+*/
   if (!allowed_countries) {
     //old integration logic
 
