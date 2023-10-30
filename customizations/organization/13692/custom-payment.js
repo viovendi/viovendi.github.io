@@ -90,9 +90,12 @@ localStorage.removeItem('payment_method_upd');
 // const myInterval = setInterval(cgeckCountryData, 300);
 
 function cgeckCountryData() {
+  var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
-  if(! country) return;
+  console.log(invoice_radio_group);
   console.log(country);
+
+  if(! country) return;
     // localStorage.removeItem("allowed_countries");
 	  
     // local storage workaround
