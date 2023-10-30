@@ -35,6 +35,15 @@ var hub_payment_method_arr_options = [
   "Payment via Credit Card (VISA or Mastercard only!)"
 ];
 
+  var countries = [
+    "Österreich",
+    "Austria",
+    "Deutschland",
+    "Germany",
+    "Schweiz",
+    "Switzerland",
+  ];
+
 // payment humethod names
 var hub_payment_method = ["Sofortbezahlung", "Zahlung per Kreditkarte (VISA oder Mastercard)"];
 
@@ -117,7 +126,8 @@ function myStopFunction() {
 function check_country() {
   console.log("function check_country");
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
-  var countries = [
+  /*
+	var countries = [
     "Österreich",
     "Austria",
     "Deutschland",
@@ -125,7 +135,7 @@ function check_country() {
     "Schweiz",
     "Switzerland",
   ];
-
+*/
   // var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
   var curr_country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
 
