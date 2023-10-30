@@ -90,6 +90,8 @@ function cgeckCountryData() {
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
   console.log(country);
 
+ console.log(invoice_radio_group);
+	
   if(! country) return;
     // localStorage.removeItem("allowed_countries");
 	  
