@@ -87,6 +87,7 @@ localStorage.removeItem('payment_method_upd');
 
 function cgeckCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
+  var countryDropdown = $(".customization2_booker_contact-data_country_input");
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
   console.log(country);
 
@@ -116,7 +117,8 @@ function cgeckCountryData() {
       if (invoice_radio_group) {
 	      
 	console.log('forbidden');
-	      
+
+	if(countryDropdown.hasClass('p-dropdown-open')) return;
         invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       } else {
