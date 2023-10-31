@@ -89,8 +89,9 @@ function checkCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var countryDropdown = $(".customization2_booker_contact-data_country_input");
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
+  
   console.log(country);
-
+  console.log('invoice_radio_group');
   console.log(invoice_radio_group);
 	
   if(! country) return;
@@ -108,19 +109,20 @@ function checkCountryData() {
       	console.log('allowed');
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
-				wrapper.dataset.allowed_countries = "allowed";
-		// localStorage.setItem("allowed_countries", "allowed");
+        console.log('set allowed');
+	wrapper.dataset.allowed_countries = "allowed";
+	// localStorage.setItem("allowed_countries", "allowed");
       }
     } else {
       if (invoice_radio_group) {
-	      
-				console.log('forbidden');
+	console.log('forbidden');
 
-				if(countryDropdown.hasClass('p-dropdown-open')) return;
-        	invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
-        	invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
+	if(countryDropdown.hasClass('p-dropdown-open')) return;
+	  invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
+	  invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
       	} else {
-					wrapper.dataset.allowed_countries = 'forbidden';
+      	  console.log('set forbidden');
+	  wrapper.dataset.allowed_countries = 'forbidden';
         // localStorage.setItem("allowed_countries", "forbidden");
       }
     }
