@@ -1,2 +1,1 @@
-// Change booking portal link on checkout page
-$(".customization-client-portal-link").attr("href", "https://animationsinstitut.de/en/confirmation-event")
+window.location.href = "https://animationsinstitut.de/en/confirmation-event";
