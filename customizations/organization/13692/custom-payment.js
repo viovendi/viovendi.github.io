@@ -137,6 +137,7 @@ $('.customization2_booker_edit-action_save').on('click', function(){
 	myStopFunction();
 });
 
+let myInterval;
 function check_country() {
   console.log("function check_country");
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
@@ -148,7 +149,7 @@ function check_country() {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
 	
-  const myInterval = setInterval(checkCountryData, 500);
+myInterval = setInterval(checkCountryData, 500);
 
   // const observer = new MutationObserver((mutations) => {
 /*
