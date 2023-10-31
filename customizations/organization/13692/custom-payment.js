@@ -85,13 +85,13 @@ localStorage.removeItem('payment_method_upd');
 */
 
 
-function cgeckCountryData() {
+function checkCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var countryDropdown = $(".customization2_booker_contact-data_country_input");
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
   console.log(country);
 
- console.log(invoice_radio_group);
+  console.log(invoice_radio_group);
 	
   if(! country) return;
     // localStorage.removeItem("allowed_countries");
@@ -105,24 +105,22 @@ function cgeckCountryData() {
     if (countries.indexOf(country) != -1) {
 	    
       if (invoice_radio_group) {
-	      
-      console.log('allowed');
-	      
+      	console.log('allowed');
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
       } else {
-	wrapper.dataset.allowed_countries = "allowed";
-	// localStorage.setItem("allowed_countries", "allowed");
+				wrapper.dataset.allowed_countries = "allowed";
+		// localStorage.setItem("allowed_countries", "allowed");
       }
     } else {
       if (invoice_radio_group) {
 	      
-	console.log('forbidden');
+				console.log('forbidden');
 
-	if(countryDropdown.hasClass('p-dropdown-open')) return;
-        invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
-        invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
-      } else {
-	wrapper.dataset.allowed_countries = 'forbidden';
+				if(countryDropdown.hasClass('p-dropdown-open')) return;
+        	invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
+        	invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
+      	} else {
+					wrapper.dataset.allowed_countries = 'forbidden';
         // localStorage.setItem("allowed_countries", "forbidden");
       }
     }
@@ -131,6 +129,20 @@ function cgeckCountryData() {
 function myStopFunction() {
   clearInterval(myInterval);
 }
+
+$('.customization2_booker_edit-action_save').on('click', function(){
+	console.log('stop country check');
+	myStopFunction();
+});
+
+/*function checkOpenCountryDropdown(){
+	var countryDropdown = $(".customization2_booker_contact-data_country_input");
+	if(countryDropdown.hasClass('p-dropdown-open')){
+		const myInterval = setInterval(checkCountryData, 500);
+	}else{
+		myStopFunction();
+	}
+}*/
 
 function check_country() {
   console.log("function check_country");
@@ -143,7 +155,9 @@ function check_country() {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
 
-  const myInterval = setInterval(cgeckCountryData, 500);
+  //const checkCountryInterval = setInterval(checkOpenCountryDropdown, 300);
+	
+  const myInterval = setInterval(checkCountryData, 500);
 
   // const observer = new MutationObserver((mutations) => {
 /*
