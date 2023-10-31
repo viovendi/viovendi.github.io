@@ -84,6 +84,10 @@ localStorage.removeItem('allowed_countries');
 localStorage.removeItem('payment_method_upd');
 */
 
+function isDropdownOpened(){
+  let isOpen = true;
+	
+}
 
 function checkCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
@@ -115,17 +119,18 @@ function checkCountryData() {
       }
     } else {
       if (invoice_radio_group) {
-	console.log('forbidden');
+				console.log('forbidden');
 
-	if(countryDropdown.hasClass('p-dropdown-open')) return;
-	  invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
-	  invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
-      	} else {
-      	  console.log('set forbidden');
-	  wrapper.dataset.allowed_countries = 'forbidden';
-        // localStorage.setItem("allowed_countries", "forbidden");
-      }
-    }
+				// if(countryDropdown.hasClass('p-dropdown-open')) return;
+				if($('.vv-selection-input__control').hasClass('p-dropdown-open')) return;
+				  invoice_radio_group.find(".vv-nl-mb-xxs:last-child input").trigger("click");
+				  invoice_radio_group.find(".vv-nl-mb-xxs:first-child").hide();
+				} else {
+					console.log('set forbidden');
+				  wrapper.dataset.allowed_countries = 'forbidden';
+			        // localStorage.setItem("allowed_countries", "forbidden");
+				}
+		}
 }
 
 function myStopFunction() {
