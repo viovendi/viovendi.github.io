@@ -137,15 +137,6 @@ $('.customization2_booker_edit-action_save').on('click', function(){
 	myStopFunction();
 });
 
-/*function checkOpenCountryDropdown(){
-	var countryDropdown = $(".customization2_booker_contact-data_country_input");
-	if(countryDropdown.hasClass('p-dropdown-open')){
-		const myInterval = setInterval(checkCountryData, 500);
-	}else{
-		myStopFunction();
-	}
-}*/
-
 function check_country() {
   console.log("function check_country");
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
@@ -156,8 +147,6 @@ function check_country() {
   if (countries.indexOf(curr_country) != -1 && invoice_radio_group) {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
-
-  //const checkCountryInterval = setInterval(checkOpenCountryDropdown, 300);
 	
   const myInterval = setInterval(checkCountryData, 500);
 
@@ -277,7 +266,9 @@ function checking_page3() {
 	
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
-	  
+    // stop checking the country
+		myStopFunction();
+	
     rebuildPage();
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
