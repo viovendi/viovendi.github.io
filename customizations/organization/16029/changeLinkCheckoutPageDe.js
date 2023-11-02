@@ -1,2 +1,2 @@
 // Change booking portal link on checkout page
-window.location.href = "https://animationsinstitut.de/de/anmeldung-bestaetigung";
+window.open('https://animationsinstitut.de/de/anmeldung-bestaetigung', '_blank');
