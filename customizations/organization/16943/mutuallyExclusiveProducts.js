@@ -11,7 +11,6 @@ function trigger() {
     })) return;
     
     products.forEach(function (p, pindex) {
-      if (lookup[p.innerText.trim()]) return;
       var input = p.querySelector(".customization2_booker_further-data_product_checkbox");
       if (select[pindex]) {
         p.classList.remove("ng-valid");
