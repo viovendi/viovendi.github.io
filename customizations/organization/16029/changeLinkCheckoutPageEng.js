@@ -1,1 +1,1 @@
-window.location.href = "https://animationsinstitut.de/en/confirmation-event";
+window.open('https://animationsinstitut.de/en/confirmation-event', '_blank');
