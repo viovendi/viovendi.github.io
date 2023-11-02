@@ -33,6 +33,6 @@ groups.forEach(function (g, gindex) {
       trigger(gindex);
     }
   });
-  q.querySelector("vv-button > button").onclick = function () { trigger(-1); };
+  g.querySelector("vv-button > button").onclick = function () { trigger(-1); };
 });
 
