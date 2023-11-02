@@ -24,26 +24,14 @@ function trigger() {
   });
 }
 
-function insertionListener(event) {
-  if (event.animationName === "nodeInserted") {
-    console.log("Node has been inserted: ", event.target);
-    trigger();
-  }
-}
-
-document.addEventListener("animationstart", insertionListener, false);
-document.addEventListener("MSAnimationStart", insertionListener, false);
-document.addEventListener("webkitAnimationStart", insertionListener, false);
-
 groups.forEach(function (g, gindex) {
-  //g.onchange = () => { trigger(-1); };
   g.querySelectorAll("vv-checkbox").forEach(function (box, index) {
     var product = box.innerText.trim();
     box.querySelector(".customization2_booker_further-data_product_checkbox").onclick = function () {
       lookup[product] = !lookup[product];
       select[index] = lookup[product];
-      trigger(gindex);
+      trigger();
     }
   });
-  //g.querySelector("vv-button > button").onclick = function () { trigger(-1); };
+  g.querySelector("vv-button > button").onclick = function () { setTimeout(trigger, 100); };
 });
