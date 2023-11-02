@@ -25,6 +25,8 @@ function trigger(gindex) {
 }
 
 groups.forEach(function (g, gindex) {
+  g.onchange = () => { trigger(-1); };
+  /*
   g.querySelectorAll("vv-checkbox").forEach(function (box, index) {
     var product = box.innerText.trim();
     box.querySelector(".customization2_booker_further-data_product_checkbox").onclick = function () {
@@ -34,5 +36,6 @@ groups.forEach(function (g, gindex) {
     }
   });
   g.querySelector("vv-button > button").onclick = function () { trigger(-1); };
+  */
 });
 
