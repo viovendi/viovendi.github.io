@@ -131,6 +131,17 @@ function clearTicketsInManager(){
         console.log(zeroOption1);
 
         console.log($(this).find('.vv-selection-input')[0]);
+
+        $(this).find('.vv-selection-input')[0].click(function(){
+            console.log('clicked');
+        });
+
+        console.log($(this).find('p-dropdown-items'));
+        console.log($(this).find('p-dropdown-items')[0]);
+
+        return false;
+        
+        /*
         $(this).find('.vv-selection-input')[0].click(()=>{
             console.log('clicked!');
             
@@ -138,6 +149,7 @@ function clearTicketsInManager(){
             console.log($(this).find('p-dropdown-items'));
             console.log($(this).find('p-dropdown-items')[0]);
         });
+        */
         //$(this).find('.vv-selection-input')[0].dispatchEvent(new Event('change'));
         
         // console.log($(this).find('p-dropdown-items')[0]);
