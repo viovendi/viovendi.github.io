@@ -125,9 +125,11 @@ function fillTicketId(){
 
 function clearTicketsInManager(){
     $('.event-categories .event-category:not(.event-category--fade)').each(function(){
-        var zeroOption = $(this).find('.vv-single-select-option')[0];
-            zeroOption.dispatchEvent(new Event('change'));
-            zeroOption.click();
+        //var zeroOption = $(this).find('.vv-single-select-option')[0];
+        var zeroOption1 = $(this).find('.p-dropdown-items-wrapper p-dropdownitem:first-child');
+        console.log(zeroOption1);
+            //zeroOption.dispatchEvent(new Event('change'));
+            //zeroOption.click();
     });
 }
   
@@ -278,7 +280,8 @@ function setTicketsFromPreviousChose(arr){
             if(categoryName === value){
                 const selectedInputNum = keyNum;
                 var allOptions = $(this).find('.vv-single-select-option');
-                selectOptions(allOptions, selectedInputNum);
+                console.log($(this));
+                //selectOptions(allOptions, selectedInputNum);
             }
         });
     });
@@ -303,7 +306,7 @@ function hideCategoryByName(name){
 
 
 function setTicketCategoryChosen(ticketLabel, action){
-    
+    console.log('setTicketCategoryChosen');
     $('.event-categories li').each(function(){
         // const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
         // changed structure?
@@ -312,7 +315,10 @@ function setTicketCategoryChosen(ticketLabel, action){
         if(categoryName === mapObject[ticketLabel]){
             console.log('found');
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
-            var allOptions = $(this).find('.vv-single-select-option');
+            console.log(selectedInputNum);
+            //var allOptions = $(this).find('.vv-single-select-option');
+            var allOptions = $(this).find('.p-dropdown-items-wrapper p-dropdownitem');
+            console.log(allOptions);
             
             if(action === 'add'){
               // add record to the state obj
@@ -327,7 +333,12 @@ function setTicketCategoryChosen(ticketLabel, action){
     
 }
 
-function selectOptions(options, selectedInput) {  
+function selectOptions(options, selectedInput) {
+    console.log("selectOptions");
+    
+    console.log(options);
+    console.log(selectedInput);
+    
   var inputNumber = +selectedInput;
   for (var y = 0; y < options.length; y++) {
     var optionsNumber = +options[y].textContent.trim();
