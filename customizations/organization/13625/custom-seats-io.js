@@ -279,9 +279,10 @@ function setTicketsFromPreviousChose(arr){
             const categoryName = $(this).find('.customization-category-name').text().trim();
             if(categoryName === value){
                 const selectedInputNum = keyNum;
-                var allOptions = $(this).find('.vv-single-select-option');
+                //var allOptions = $(this).find('.vv-single-select-option');
+                var allOptions = $(this).find('.p-dropdown-items-wrapper p-dropdownitem');
                 console.log($(this));
-                //selectOptions(allOptions, selectedInputNum);
+                selectOptions(allOptions, selectedInputNum);
             }
         });
     });
