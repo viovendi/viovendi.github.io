@@ -135,10 +135,11 @@ function clearTicketsInManager(){
         $(this).find('.vv-selection-input').dispatchEvent(new Event('change'));
 
         console.log($(this).find('p-dropdown-items'));
-        console.log($(this).find('p-dropdown-items')[0]);
         
-        $(this).find('p-dropdown-items')[0].dispatchEvent(new Event('change'));
-        $(this).find('p-dropdown-items')[0].click('click');
+        // console.log($(this).find('p-dropdown-items')[0]);
+        
+        // $(this).find('p-dropdown-items')[0].dispatchEvent(new Event('change'));
+        // $(this).find('p-dropdown-items')[0].click('click');
         
             //zeroOption.dispatchEvent(new Event('change'));
             //zeroOption.click();
