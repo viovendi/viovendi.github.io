@@ -131,13 +131,12 @@ function clearTicketsInManager(){
         console.log(zeroOption1);
 
         let inputItem = $(this).find('.vv-selection-input')[0];
+
+        console.log(inputItem);
         
         inputItem.click(function(){
             console.log('clicked');
         });
-
-        console.log($(this).find('p-dropdown-items'));
-        console.log($(this).find('p-dropdown-items')[0]);
 
         return false;
         
