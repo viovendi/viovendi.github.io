@@ -129,6 +129,17 @@ function clearTicketsInManager(){
         var zeroOption1 = $(this).find('.p-dropdown-items-wrapper p-dropdownitem:first-child');
         console.log('zeroOption1');
         console.log(zeroOption1);
+
+        console.log($(this).find('.vv-selection-input'));
+        $(this).find('.vv-selection-input').click('click');
+        $(this).find('.vv-selection-input').dispatchEvent(new Event('change'));
+
+        console.log($(this).find('p-dropdown-items'));
+        console.log($(this).find('p-dropdown-items')[0]);
+        
+        $(this).find('p-dropdown-items')[0].dispatchEvent(new Event('change'));
+        $(this).find('p-dropdown-items')[0].click('click');
+        
             //zeroOption.dispatchEvent(new Event('change'));
             //zeroOption.click();
     });
