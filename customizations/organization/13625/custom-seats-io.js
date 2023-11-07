@@ -130,7 +130,7 @@ function clearTicketsInManager(){
         console.log('zeroOption1');
         console.log(zeroOption1);
 
-        let inputItem = ($(this).find('.vv-selection-input')[0];
+        let inputItem = $(this).find('.vv-selection-input')[0];
         
         inputItem.click(function(){
             console.log('clicked');
