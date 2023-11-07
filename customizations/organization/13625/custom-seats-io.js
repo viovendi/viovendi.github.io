@@ -127,6 +127,7 @@ function clearTicketsInManager(){
     $('.event-categories .event-category:not(.event-category--fade)').each(function(){
         //var zeroOption = $(this).find('.vv-single-select-option')[0];
         var zeroOption1 = $(this).find('.p-dropdown-items-wrapper p-dropdownitem:first-child');
+        console.log('zeroOption1');
         console.log(zeroOption1);
             //zeroOption.dispatchEvent(new Event('change'));
             //zeroOption.click();
@@ -280,8 +281,9 @@ function setTicketsFromPreviousChose(arr){
             if(categoryName === value){
                 const selectedInputNum = keyNum;
                 //var allOptions = $(this).find('.vv-single-select-option');
-                var allOptions = $(this).find('.p-dropdown-items-wrapper p-dropdownitem');
+                var allOptions = $(this).find('p-dropdownitem');
                 console.log($(this));
+                console.log(allOptions);
                 selectOptions(allOptions, selectedInputNum);
             }
         });
@@ -309,8 +311,6 @@ function hideCategoryByName(name){
 function setTicketCategoryChosen(ticketLabel, action){
     console.log('setTicketCategoryChosen');
     $('.event-categories li').each(function(){
-        // const categoryName = $(this).find('div.event-category .customization-category-name').text().trim();
-        // changed structure?
         const categoryName = $(this).find('.customization-category-name').text().trim();
         console.log(categoryName);
         if(categoryName === mapObject[ticketLabel]){
@@ -318,7 +318,7 @@ function setTicketCategoryChosen(ticketLabel, action){
             var selectedInputNum = parseInt($(this).find('.vv-selection-input__value').text().trim());
             console.log(selectedInputNum);
             //var allOptions = $(this).find('.vv-single-select-option');
-            var allOptions = $(this).find('.p-dropdown-items-wrapper p-dropdownitem');
+            var allOptions = $(this).find('p-dropdownitem');
             console.log(allOptions);
             
             if(action === 'add'){
