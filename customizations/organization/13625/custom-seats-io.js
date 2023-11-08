@@ -131,14 +131,7 @@ function clearTicketsInManager(){
         console.log(zeroOption1);
 
         let inputItem = $(this).find('.vv-selection-input__control')[0]
-        console.log(inputItem);
-        
-        inputItem.click(function(){
-            setTimeout(()=>{
-                console.log('clicked111');
-            },200)
-            console.log('clicked');
-        });
+        inputItem.click();
 
         console.log($(this).find('p-dropdown-items'));
         console.log($(this).find('p-dropdown-items')[0]);
@@ -161,8 +154,8 @@ function clearTicketsInManager(){
         // $(this).find('p-dropdown-items')[0].dispatchEvent(new Event('change'));
         // $(this).find('p-dropdown-items')[0].click('click');
         
-            //zeroOption.dispatchEvent(new Event('change'));
-            //zeroOption.click();
+        //zeroOption.dispatchEvent(new Event('change'));
+        //zeroOption.click();
     });
 }
   
