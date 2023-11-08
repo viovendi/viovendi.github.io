@@ -25,7 +25,7 @@ function trigger() {
 }
 
 groups.forEach(function (g, gindex) {
-  g.querySelectorAll("vv-checkbox").forEach(function (box, index) {
+  g.querySelectorAll(".customization2_attendee_further-data_product").forEach(function (box, index) {
     var product = box.innerText.trim();
     box.querySelector(".customization2_attendee_further-data_product_checkbox").onclick = function () {
       lookup[product] = !lookup[product];
