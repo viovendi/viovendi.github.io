@@ -1,11 +1,11 @@
 var lookup = { };
 var h = document.querySelector(".customization2_attendee_further-data");
 var t = h.children[1];
-var groups = t.querySelectorAll("form>div");
+var groups = t.querySelectorAll("div.question-group");
 var select = [...groups[0].querySelectorAll("vv-checkbox")].map(function () { return false; });
 function trigger() {
   groups.forEach(function (gd, gdindex) {
-    var products = gd.querySelectorAll("vv-checkbox");
+    var products = gd.querySelectorAll(".customization2_attendee_further-data_product");
     if ([...products].some(function (p) {
       if (lookup[p.innerText.trim()]) return true;
     })) return;
