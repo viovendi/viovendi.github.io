@@ -5,8 +5,7 @@ var groups = t.querySelectorAll("div.question-group");
 var select = [...groups[0].querySelectorAll("vv-checkbox")].map(function () { return false; });
 function trigger() {
   groups.forEach(function (gd, gdindex) {
-    var products = gd.querySelectorAll(".customization2_attendee_further-data_product");
-    //var products = gd.querySelectorAll("vv-checkbox");
+    var products = gd.querySelectorAll(".customization2_attendee_further-data_product .question-product__name");
     if ([...products].some(function (p) {
       if (lookup[p.innerText.trim()]) return true;
     })) return;
@@ -26,7 +25,7 @@ function trigger() {
 
 groups.forEach(function (g, gindex) {
   g.querySelectorAll(".customization2_attendee_further-data_product").forEach(function (box, index) {
-    var product = box.innerText.trim();
+    var product = box.querySelector(".question-product__name").innerText.trim();
     box.querySelector(".customization2_attendee_further-data_product_checkbox").onclick = function () {
       lookup[product] = !lookup[product];
       select[index] = lookup[product];
