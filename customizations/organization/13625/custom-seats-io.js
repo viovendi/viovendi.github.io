@@ -134,9 +134,15 @@ function clearTicketsInManager(){
         console.log(inputItem);
         
         inputItem.click(function(){
+            setTimeout(()=>{
+                console.log('clicked111');
+            },200)
             console.log('clicked');
         });
 
+        console.log($(this).find('p-dropdown-items'));
+        console.log($(this).find('p-dropdown-items')[0]);
+        
         return false;
         
         /*
