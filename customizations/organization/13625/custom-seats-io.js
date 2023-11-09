@@ -3,13 +3,12 @@ console.log('github seats.io code');
 
 var insertionListener = function (event) {
     if (event.animationName === 'nodeInsertedSeats') {
-        // TODO: enable
-        //hendler();
+        // handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
         if($('.event-categories>li').length > 0){
-            clearTicketsInManager();
+            // clearTicketsInManager();
             if($('#chart').length === 0){
-                addSeatScript();
+                // addSeatScript();
             }
         }
         /*
@@ -24,14 +23,14 @@ var insertionListener = function (event) {
         //fillTicketId();  Function to fill in the Ticket-ID custom attendee question. It's not relevant for OID#13625
     }
 };
-hendler();
+handler();
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
 
-async function hendler() {
+async function handler() {
   if (document.readyState !== 'loading') {
 
     await getPage('page1');
@@ -140,6 +139,14 @@ function clearTicketsInManager(){
         return false;
         
         /*
+
+        const dropdown = document.querySelector('.vv-selection-input__control');
+        dropdown.click();
+        const options = Array.from(dropdown.querySelectorAll('.vv-selection-option'));
+        const option = options.find(el => el.textContent.trim() === '3');
+        option.click();
+
+        
         $(this).find('.vv-selection-input')[0].click(()=>{
             console.log('clicked!');
             
