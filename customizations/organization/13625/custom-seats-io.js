@@ -3,7 +3,8 @@ console.log('github seats.io code');
 
 var insertionListener = function (event) {
     if (event.animationName === 'nodeInsertedSeats') {
-        hendler();
+        // TODO: enable
+        //hendler();
     }else if(event.animationName === 'ticketCatsLoaded'){
         if($('.event-categories>li').length > 0){
             clearTicketsInManager();
