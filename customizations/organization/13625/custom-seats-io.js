@@ -23,7 +23,7 @@ var insertionListener = function (event) {
         //fillTicketId();  Function to fill in the Ticket-ID custom attendee question. It's not relevant for OID#13625
     }
 };
-handler();
+//handler();
 
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
