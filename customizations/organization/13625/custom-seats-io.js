@@ -81,7 +81,14 @@ async function handler() {
 }
 
 function bookSeats(dooOrderId, dooOrganizationId){
+    console.log('bookSeats - start');
     const seatHoldToken = sessionStorage.getItem('holdToken') ? sessionStorage.getItem('holdToken') : 'none'
+
+    console.log(seatHoldToken);
+    console.log(JSON.parse(sessionStorage.getItem('seatsObject')));
+    console.log(dooOrderId);
+    console.log(seatHoldToken);
+    
     const body = {
         seats: JSON.parse(sessionStorage.getItem('seatsObject')),
         oid: dooOrganizationId,
@@ -99,8 +106,10 @@ function bookSeats(dooOrderId, dooOrganizationId){
 
 var isSent = false;
 function getXMLHttpRequest (open) {
+    console.log('getXMLHttpRequest - open');
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
+          console.log('getXMLHttpRequest - addEventListener');
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
           try {
             var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
@@ -108,6 +117,8 @@ function getXMLHttpRequest (open) {
           if(res != undefined && res._embedded){
 
            // send the request to Make (to confirm the seats booking)
+              console.log('getXMLHttpRequest - response');
+              console.log(orders);
               
              const orders = res._embedded.orders;
              const order_id = orders[0].id;
