@@ -118,12 +118,15 @@ function getXMLHttpRequest (open) {
 
            // send the request to Make (to confirm the seats booking)
               console.log('getXMLHttpRequest - response');
-              console.log(orders);
               
              const orders = res._embedded.orders;
              const order_id = orders[0].id;
              const organizer_id = orders[0].event.organizer_id;
+
+            console.log(orders);
+            console.log(isSent);
              if(!isSent){
+                 console.log('orders - bookSeats');
                 bookSeats(order_id, organizer_id);
                 isSent = true;
              }
