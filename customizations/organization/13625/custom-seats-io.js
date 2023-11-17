@@ -2,11 +2,11 @@
 console.log('github seats.io code!');
 
 var insertionListener = function (event) {
-    console.log(event);
+    //console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
         // handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
-        console.log('ticketCatsLoaded');
+        //console.log('ticketCatsLoaded');
         checkSelectedCategory();
         if($('.event-categories>li').length > 0){
             // clearTicketsInManager();
@@ -42,13 +42,17 @@ function checkSelectedCategory(){
         }
         console.log(ticketNumber);
         if(ticketNumber > 0){
+            console.log('catName');
             console.log(catName);
+            console.log(catName.indexOf('DAT 2023 Ausstellerticket (Premium)'));
+            console.log(catName.indexOf('DAT 2023 – Ausstellerticket'));
+            console.log('end catName');
             if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0){
                 console.log('hide DAT 2023 – Ausstellerticket');
-                hideCategoryByName('DAT 2023 – Ausstellerticket');
+                //hideCategoryByName('DAT 2023 – Ausstellerticket');
             }else if(catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
                 console.log('hide DAT 2023 Ausstellerticket (Premium)');
-                hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
+               // hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
         }
     })
