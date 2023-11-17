@@ -83,14 +83,19 @@ async function handler() {
 function bookSeats(dooOrderId, dooOrganizationId){
     console.log('bookSeats - start');
 
-    console.log(JSON.parse(sessionStorage.getItem('seatsObject')));
+    console.log(dooOrganizationId);
     console.log(dooOrderId);
-    console.log(seatHoldToken);
     
-    const seatHoldToken = sessionStorage.getItem('holdToken') ? sessionStorage.getItem('holdToken') : 'none';
+    // const seatHoldToken = sessionStorage.getItem('holdToken') ? sessionStorage.getItem('holdToken') : 'none';
 
-    console.log(seatHoldToken);
+    const message = JSON.stringify({
+        order_id: dooOrderId,
+        oid: dooOrganizationId,
+        channel: 'DOO_WIDGET',
+    });
+    window.parent.postMessage(message, '*');
     
+    /*
     const body = {
         seats: JSON.parse(sessionStorage.getItem('seatsObject')),
         oid: dooOrganizationId,
@@ -104,6 +109,7 @@ function bookSeats(dooOrderId, dooOrganizationId){
         sessionStorage.removeItem('isEditMode');
         sessionStorage.removeItem('holdToken');
       });
+      */
 }
 
 var isSent = false;
