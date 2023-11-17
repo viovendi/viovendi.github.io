@@ -47,12 +47,12 @@ function checkSelectedCategory(){
             console.log(catName.indexOf('DAT 2023 Ausstellerticket (Premium)'));
             console.log(catName.indexOf('DAT 2023 – Ausstellerticket'));
             console.log('end catName');
-            if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0){
+            if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') >= 0){
                 console.log('hide DAT 2023 – Ausstellerticket');
-                //hideCategoryByName('DAT 2023 – Ausstellerticket');
-            }else if(catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
+                hideCategoryByName('DAT 2023 – Ausstellerticket');
+            }else if(catName.indexOf('DAT 2023 – Ausstellerticket') >= 0){
                 console.log('hide DAT 2023 Ausstellerticket (Premium)');
-               // hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
+                hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
         }
     })
