@@ -1,10 +1,13 @@
 
-console.log('github seats.io code');
+console.log('github seats.io code!');
 
 var insertionListener = function (event) {
+    console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
         // handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
+        console.log('ticketCatsLoaded');
+        checkSelectedCategory();
         if($('.event-categories>li').length > 0){
             // clearTicketsInManager();
             if($('#chart').length === 0){
@@ -28,6 +31,43 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
+
+function checkSelectedCategory(){
+    console.log('chechSelectedCategory');
+    $('.event-categories li').each(function(){
+        const ticketNumber = $(this).find('.vv-selection-input__value').text().trim();
+        console.log('ticketNumber');
+        if(ticketNumber != 0){
+            const catName = $(this).find('.customization-category-name').text().trim();
+            console.log('catName');
+            if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0){
+                hideCategoryByName('DAT 2023 – Ausstellerticket');
+            }else if(catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
+                hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
+            }
+        }
+    })
+}
+
+function hideCategoryByName(name){
+    let category = '';
+    console.log('hideCategoryByName');
+    $('.event-categories li').each(function(){
+        // const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
+        // changed structure?
+        const categoryName = $(this).find('.customization-category-name').text().trim();
+        $(this).removeClass('hidden');
+        if(categoryName.indexOf(name) > -1){
+            $(this).addClass('hidden');
+        }
+    });
+    return category;
+}
+
+
+
+
+
 
 
 async function handler() {
@@ -323,21 +363,6 @@ function setTicketsFromPreviousChose(arr){
     });
     console.log('removeItem');
     sessionStorage.removeItem('isEditMode');
-}
-
-function hideCategoryByName(name){
-    let category = '';
-    
-    $('.event-categories li').each(function(){
-        // const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        // changed structure?
-        const categoryName = $(this).find('.customization-category-name').text().trim();
-        $(this).removeClass('hidden');
-        if(categoryName.indexOf(name) > -1){
-            $(this).addClass('hidden');
-        }
-    });
-    return category;
 }
 
 
