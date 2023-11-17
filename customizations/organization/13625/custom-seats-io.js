@@ -33,25 +33,16 @@ document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
 
 function checkSelectedCategory(){
-    console.log('chechSelectedCategory');
     $('.event-categories li').each(function(){
         const ticketNumber = $(this).find('.vv-selection-input__value').text().trim();
         const catName = $(this).find('.customization-category-name').text().trim();
-        if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0 || catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
+        if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') >= 0 || catName.indexOf('DAT 2023 – Ausstellerticket') >= 0){
             $(this).find('.vv-selection-input__control.p-dropdown').addClass('p-disabled');
         }
-        console.log(ticketNumber);
         if(ticketNumber > 0){
-            console.log('catName');
-            console.log(catName);
-            console.log(catName.indexOf('DAT 2023 Ausstellerticket (Premium)'));
-            console.log(catName.indexOf('DAT 2023 – Ausstellerticket'));
-            console.log('end catName');
             if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') >= 0){
-                console.log('hide DAT 2023 – Ausstellerticket');
                 hideCategoryByName('DAT 2023 – Ausstellerticket');
             }else if(catName.indexOf('DAT 2023 – Ausstellerticket') >= 0){
-                console.log('hide DAT 2023 Ausstellerticket (Premium)');
                 hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
         }
