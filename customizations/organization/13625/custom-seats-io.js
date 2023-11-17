@@ -44,8 +44,10 @@ function checkSelectedCategory(){
         if(ticketNumber > 0){
             console.log(catName);
             if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0){
+                console.log('hide DAT 2023 – Ausstellerticket');
                 hideCategoryByName('DAT 2023 – Ausstellerticket');
             }else if(catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
+                console.log('hide DAT 2023 Ausstellerticket (Premium)');
                 hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
         }
