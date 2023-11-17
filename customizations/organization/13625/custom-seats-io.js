@@ -41,8 +41,10 @@ function checkSelectedCategory(){
             const catName = $(this).find('.customization-category-name').text().trim();
             console.log('catName');
             if(catName.indexOf('DAT 2023 Ausstellerticket (Premium)') != 0){
+                $(this).find('.vv-selection-input__control.p-dropdown').addClass('p-disabled');
                 hideCategoryByName('DAT 2023 – Ausstellerticket');
             }else if(catName.indexOf('DAT 2023 – Ausstellerticket') != 0){
+                $(this).find('.vv-selection-input__control.p-dropdown').addClass('p-disabled');
                 hideCategoryByName('DAT 2023 Ausstellerticket (Premium)');
             }
         }
@@ -63,6 +65,23 @@ function hideCategoryByName(name){
     });
     return category;
 }
+/*
+$('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(){
+    console.log('click submit 1page');
+    const selectedSeats = sessionStorage.getItem('seatsObject');
+    console.log(selectedSeats);
+     
+     if(selectedSeats.length < 1){
+        console.log('empty seats arr');
+         showError();
+     }
+     
+    if(sessionStorage.getItem('seatsObject')){
+        sessionStorage.removeItem('seatsObject');
+    }
+    sessionStorage.setItem('seatsObject', JSON.stringify(selectedSeats));
+ });
+*/
 
 
 
