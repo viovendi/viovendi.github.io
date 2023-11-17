@@ -4,7 +4,7 @@ console.log('github seats.io code!');
 var insertionListener = function (event) {
     //console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
-        // handler();
+        handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
         //console.log('ticketCatsLoaded');
         checkSelectedCategory();
@@ -61,41 +61,20 @@ function hideCategoryByName(name){
         }
     });
 }
-/*
-$('.customization-booking-area-wrapper-page1 .customization-button-next').on('click', function(){
-    console.log('click submit 1page');
-    const selectedSeats = sessionStorage.getItem('seatsObject');
-    console.log(selectedSeats);
-     
-     if(selectedSeats.length < 1){
-        console.log('empty seats arr');
-         showError();
-     }
-     
-    if(sessionStorage.getItem('seatsObject')){
-        sessionStorage.removeItem('seatsObject');
-    }
-    sessionStorage.setItem('seatsObject', JSON.stringify(selectedSeats));
- });
-*/
-
-
-
-
 
 
 
 async function handler() {
   if (document.readyState !== 'loading') {
 
-    await getPage('page1');
-    console.log("page1!");
-    saveSeatsObj();
+    //await getPage('page1');
+    //console.log("page1!");
+    //saveSeatsObj();
 
       
     await getPage('page2');
     console.log("page2!");
-    sessionStorage.setItem('isEditMode', 1);
+    //sessionStorage.setItem('isEditMode', 1);
       
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }
