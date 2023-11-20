@@ -1,6 +1,6 @@
 console.log('custom-payment-js - 16129');
 
-throw new exception('custom-js: loaded');
+throw new Error('custom-js: loaded');
     
 // add styles for animation
 var styleSheetStripe = document.createElement("style");
@@ -150,8 +150,6 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-
-          throw new exception('custom-js: payment link received');
           
         // window.open(res.LinkToPayPage, "_parent");
           window.open(`${res.LinkToPayPage}&langKey=en`, "_parent");
