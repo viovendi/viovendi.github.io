@@ -1,6 +1,4 @@
 console.log('custom-payment-js - 16129');
-
-throw new Error('custom-js: loaded');
     
 // add styles for animation
 var styleSheetStripe = document.createElement("style");
