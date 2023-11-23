@@ -143,7 +143,7 @@ function getXMLHttpRequest (open) {
     };
 };
 
-
+/*
 function fillTicketId(){
     console.log('fillTicketId');
     
@@ -191,8 +191,6 @@ function clearTicketsInManager(){
         console.log($(this).find('p-dropdown-items')[0]);
         
         return false;
-        
-        /*
 
         const dropdown = document.querySelector('.vv-selection-input__control');
         dropdown.click();
@@ -208,7 +206,7 @@ function clearTicketsInManager(){
             console.log($(this).find('p-dropdown-items'));
             console.log($(this).find('p-dropdown-items')[0]);
         });
-        */
+        
         //$(this).find('.vv-selection-input')[0].dispatchEvent(new Event('change'));
         
         // console.log($(this).find('p-dropdown-items')[0]);
@@ -220,7 +218,7 @@ function clearTicketsInManager(){
         //zeroOption.click();
     });
 }
-  
+  */
   
 async function getPage(page) {
   var pages = {
@@ -260,7 +258,7 @@ async function getPage(page) {
     }
   });
 }
-
+/*
 function showError(){
     console.log('showError');
     const first_page_bttn = $('.customization-booking-area-wrapper-page1 .customization-button-next');
@@ -322,9 +320,9 @@ function validateToken(){
         
     });
 }
-
+*/
 /*********************/
-
+/*
 function addSeatScript(){
     // move adding script to custom.js ??
     var scriptSeats = document.createElement('script');
@@ -427,12 +425,14 @@ function selectOptions(options, selectedInput) {
       $('.event-categories').click();
     }, 300);
 }
+*/
 
 /*************
 Seats.io
 *************/
 
 // array for chosen tickets
+/*
 let selectedSeats = [];
 
 function createSeats(token){
@@ -446,15 +446,6 @@ function createSeats(token){
         language: 'de',
         features: {disabled: ['backgroundImage']},
         maxSelectedObjects: 1,
-        /*pricing: [
-           {'category': 'A', 'price': 30},
-           {'category': 'B', 'price': 40},
-           {'category': 'C', 'price': 0},
-           {'category': 'T', 'price': 50}
-        ],
-        priceFormatter: function(price) {
-            return '$' + price;
-        },*/
         onObjectSelected: function (object) {
             // add the selected seat id to the array
             console.log('onObjectSelected');
@@ -512,3 +503,4 @@ function createSeats(token){
         }
     }).render();
 }
+*/
