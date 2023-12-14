@@ -125,17 +125,7 @@ function sendRequestToGetRedirectUrl(object){
       dataType: "json",
       success: function (res) {
         // redirect to payment page
-        //window.open(res.LinkToPayPage, "_parent");
         window.open(`${res.LinkToPayPage}&langKey=en`, "_parent");
-          /*
-        if(res.LinkToPayPage.indexOf('http') > 0){
-           window.open(res.LinkToPayPage, "_parent");
-        }else{
-          loader("off");
-          showErrorMessage();
-          console.log('Error - Broken payment link');
-        }
-        */
       },
       error: function (jqXHR, exception) {
         // show different error message depends on the status received from the scenario?
@@ -158,8 +148,6 @@ function getXMLHttpRequest (open) {
           } catch (err) {}
           
           if(res != undefined && res._embedded){
-
-           // send the request to Make (to confirm the seats booking)
              const orders = res._embedded.orders;
             
              orderDataobj.orderId = orders[0].id;
