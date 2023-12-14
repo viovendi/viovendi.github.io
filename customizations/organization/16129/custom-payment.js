@@ -55,7 +55,7 @@ function isEpayPayment(){
      paymentInput.text().trim() === 'custom_payment'){
         isEpay = true;
         // test throw
-        throw "ePay payment method";
+        // throw "ePay payment method";
   }
     
   return isEpay;
