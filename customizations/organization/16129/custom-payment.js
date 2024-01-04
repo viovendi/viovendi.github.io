@@ -33,6 +33,7 @@ styleSheetStripe.innerHTML = `
     background-color: #3b85db;
 }
 `;
+var head = document.getElementsByTagName('head')[0];
 head.appendChild(styleSheetStripe);
 
 // remove local storage data
