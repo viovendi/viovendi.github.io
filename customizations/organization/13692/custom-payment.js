@@ -86,21 +86,21 @@ localStorage.removeItem('payment_method_upd');
 
 function isDropdownOpened(){
   let isOpen = true;
-	
+
 }
 
 function checkCountryData() {
   var invoice_radio_group = getInvoiceRadioGroup(payment_methods_labels);
   var countryDropdown = $(".customization2_booker_contact-data_country_input");
   var country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
-  
-  console.log(country);
-  console.log('invoice_radio_group');
-  console.log(invoice_radio_group);
-	
+
+  // console.log(country);
+  // console.log('invoice_radio_group');
+  // console.log(invoice_radio_group);
+
   if(! country) return;
     // localStorage.removeItem("allowed_countries");
-	  
+
     // local storage workaround
     wrapper.dataset.allowed_countries = '';
     // localStorage.removeItem("allowed_countries");
@@ -108,7 +108,7 @@ function checkCountryData() {
     console.log(countries.indexOf(country));
 
     if (countries.indexOf(country) != -1) {
-	    
+
       if (invoice_radio_group) {
       	console.log('allowed');
         invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
@@ -149,11 +149,11 @@ function check_country() {
 
   // var curr_country = $(".customization2_booker_contact-data_country_input").text().trim();
   var curr_country = $(".customization2_booker_contact-data_country_input .vv-selection-input__value").text().trim();
-	
+
   if (countries.indexOf(curr_country) != -1 && invoice_radio_group) {
     invoice_radio_group.find(".vv-nl-mb-xxs:first-child").show();
   }
-	
+
 myInterval = setInterval(checkCountryData, 500);
 
   // const observer = new MutationObserver((mutations) => {
@@ -161,7 +161,7 @@ myInterval = setInterval(checkCountryData, 500);
     var country = $(".customization2_booker_contact-data_country_input").text().trim();
 	  console.log(country);
     // localStorage.removeItem("allowed_countries");
-	  
+
     // local storage workaround
     wrapper.dataset.allowed_countries = '';
     // localStorage.removeItem("allowed_countries");
@@ -193,7 +193,7 @@ myInterval = setInterval(checkCountryData, 500);
     characterData: true,
   });
 */
-	
+
 }
 
 function getWidgetLang() {
@@ -247,18 +247,18 @@ function checking_page2() {
   id_page2 = requestAnimationFrame(checking_page2);
 
   if ($(".customization-booking-area-wrapper-page2").length > 0) {
-	  
+
     getDataFromPage2();
 
     var orderPriceText = $(".customization2_summary_total_price").text().trim();
-	  
+
     if (
-	    (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) || 
-	    (orderPriceText === "0.00 EUR" || orderPriceText.indexOf("0.0") === 0) || 
-	    ($('.customization2_summary_item').length > 0 && $(".customization2_summary_total_price").length < 1 ) 
+	    (orderPriceText === "0,00 EUR" || orderPriceText.indexOf("0,0") === 0) ||
+	    (orderPriceText === "0.00 EUR" || orderPriceText.indexOf("0.0") === 0) ||
+	    ($('.customization2_summary_item').length > 0 && $(".customization2_summary_total_price").length < 1 )
     ) {
 	    console.log('free order detected');
-	    
+
       getXMLHttpRequest(XMLHttpRequest.prototype.open);
       wrapper.dataset.free_order = true;
       // localStorage.setItem("free_order", true);
@@ -269,12 +269,12 @@ function checking_page2() {
 checking_page2();
 
 function checking_page3() {
-	
+
   id_page3 = requestAnimationFrame(checking_page3);
   if ($(".customization-booking-area-wrapper-page3").length > 0) {
     // stop checking the country
 		myStopFunction();
-	
+
     rebuildPage();
     getPaymentMethod();
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
@@ -296,20 +296,20 @@ function checking_page4() {
     payment_method_upd = wrapper.dataset.payment_method_upd;
     payment_method = wrapper.dataset.payment_method;
     free_order = wrapper.dataset.free_order;
-  
+
     /*
     payment_method_upd = localStorage.getItem("payment_method_upd");
     payment_method = localStorage.getItem("payment_method");
     free_order = localStorage.getItem("free_order");
      */
-	  
+
     if (free_order && free_order === "true") {
       console.log("checking_page4 FREE ORDER");
       responseMessage("success");
     } else {
       if (
-				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) || 
-				(invoice_payment_method_arr_options.indexOf(payment_method_upd) != -1) 
+				(invoice_payment_method_arr_options.indexOf(payment_method) != -1) ||
+				(invoice_payment_method_arr_options.indexOf(payment_method_upd) != -1)
 			) {
         console.log("checking_page4 - invoice payment!");
         rebuildPageInvoiceConfirm();
@@ -419,7 +419,7 @@ function responseMessage(status) {
   } else {
     $(".ew-confirmation__block").append('<div><h3></h3><p class="response-message-notice">' + message + "</p></div>");
   }
-  
+
   // show the hiddem booking-confirmation message
   showConfirmationMessage();
 
@@ -437,7 +437,7 @@ function changeIcon(color) {
     } else {
       $(".ew-confirmation__header").prepend('<p class="new-icon-logo" style="height: 68px;width: 68px;font-weight:bold;font-size: 32px;background: orange;color: white;border-radius: 100%;text-align: center;line-height: 72px" >!</p>');
     }
-    
+
   } else if(color === "red") {
 
     $(".ew-confirmation__header vv-icon").hide();
@@ -459,12 +459,12 @@ function changeIcon(color) {
 }
 
 function rebuildPage() {
-	
+
   var payment_method, allowed_countries;
 
     payment_method = wrapper.dataset.payment_method;
     allowed_countries = wrapper.dataset.allowed_countries;
-    
+
 /*
     payment_method = localStorage.getItem("payment_method");
     allowed_countries = localStorage.getItem("allowed_countries");
@@ -483,19 +483,19 @@ function rebuildPage() {
     //NEW integration logic
     if (!payment_method || payment_method.length === 0) {
       if (allowed_countries === "forbidden") {
-        
+
         $(".customization2_payment .payment-option").each(function () {
           var label = $(this).find(".payment-option__label").text().trim();
-                                                             
+
           if (hub_payment_method.indexOf(label) === -1) {
-            
+
             $(this).addClass("hidden");
             //$(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }else{
             $(this).find(".customization2_organizer-bank-transfer").attr("checked", "checked").click();
           }
         });
-        
+
       } else {
         $(".customization2_payment .payment-option").each(function () {
           if ($(this).hasClass("hidden-test")) {
