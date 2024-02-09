@@ -1,3 +1,5 @@
+var pathname = window.location.pathname;
+var eventId = pathname.split('/')[3];
 $(document).ready(function () {
     console.log("Start termsAndDoi");
 
@@ -37,28 +39,51 @@ $(document).ready(function () {
     function moveTerms() {
         
         var terms = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb#teilnahmebedingungen' target='_blank' rel='noopener noreferrer'>Teilnahmebedingungen</a>, <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben#Gewinnspiele' target='_blank' rel='noopener noreferrer'>Widerruf</a> habe ich zur Kenntnis genommen. </br> </br> Mit der Teilnahme am Gewinnspiel erkläre ich mein Einverständnis zum Empfang eines Newsletters mit Informationen zu weiteren Gewinnspielen und Aktionen von SZ Erleben, bei dem Öffnungsquoten und Link-Klicks gemessen werden. </br></p>";
-
+        var termsWithoutLottery = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb#teilnahmebedingungen' target='_blank' rel='noopener noreferrer'>Teilnahmebedingungen</a>, <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben#Gewinnspiele' target='_blank' rel='noopener noreferrer'>Widerruf</a> habe ich zur Kenntnis genommen. </br> </br> </p>";
 
         // Add Terms after Booker data
-        if(!$('#45408464531').length){
+        if (eventId === "150309") {
+            if(!$('#45408464531').length){
             
-            if($(".customization2_booker_further-data").length){
-                console.log("Adding terms after booker further data");
-                $(".customization2_booker_further-data").after(terms);
+                if($(".customization2_booker_further-data").length){
+                    console.log("Adding terms after booker further data");
+                    $(".customization2_booker_further-data").after(termsWithoutLottery);
+                
+                } else if ($(".customization2_booker_contact-data").length){
+                    console.log("Adding terms after booker contact data");
+                    $(".customization2_booker_contact-data").after(termsWithoutLottery);
+                
+                } else if ($(".customization2_attendee_further-data").length && !$(".customization2_booker").length){
+                    console.log("Adding terms after attendee further data");
+                    $(".customization2_attendee_further-data").after(termsWithoutLottery);
+                
+                } else if ($(".customization2_attendee_contact-data").length && !$(".customization2_booker").length){
+                    console.log("Adding terms after attendee contact data");
+                    $(".customization2_attendee_contact-data").after(termsWithoutLottery);
+                }
+            };
+        } else {
+            if(!$('#45408464531').length){
             
-            } else if ($(".customization2_booker_contact-data").length){
-                console.log("Adding terms after booker contact data");
-                $(".customization2_booker_contact-data").after(terms);
-            
-            } else if ($(".customization2_attendee_further-data").length && !$(".customization2_booker").length){
-                console.log("Adding terms after attendee further data");
-                $(".customization2_attendee_further-data").after(terms);
-            
-            } else if ($(".customization2_attendee_contact-data").length && !$(".customization2_booker").length){
-                console.log("Adding terms after attendee contact data");
-                $(".customization2_attendee_contact-data").after(terms);
-            }
-        };
+                if($(".customization2_booker_further-data").length){
+                    console.log("Adding terms after booker further data");
+                    $(".customization2_booker_further-data").after(terms);
+                
+                } else if ($(".customization2_booker_contact-data").length){
+                    console.log("Adding terms after booker contact data");
+                    $(".customization2_booker_contact-data").after(terms);
+                
+                } else if ($(".customization2_attendee_further-data").length && !$(".customization2_booker").length){
+                    console.log("Adding terms after attendee further data");
+                    $(".customization2_attendee_further-data").after(terms);
+                
+                } else if ($(".customization2_attendee_contact-data").length && !$(".customization2_booker").length){
+                    console.log("Adding terms after attendee contact data");
+                    $(".customization2_attendee_contact-data").after(terms);
+                }
+            };
+        }
+    
         
         $('#45408464531').css({
             "padding-top": "20px",
