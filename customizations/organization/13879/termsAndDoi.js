@@ -42,7 +42,7 @@ $(document).ready(function () {
         var termsWithoutLottery = "<p id='45408464531'>Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb#teilnahmebedingungen' target='_blank' rel='noopener noreferrer'>Teilnahmebedingungen</a>, <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben#Gewinnspiele' target='_blank' rel='noopener noreferrer'>Widerruf</a> habe ich zur Kenntnis genommen. </br> </br> </p>";
 
         // Add Terms after Booker data
-        if (eventId === "150309") {
+        if (eventId === "150309" || eventId === "153066") {
             if(!$('#45408464531').length){
             
                 if($(".customization2_booker_further-data").length){
