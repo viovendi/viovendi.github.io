@@ -142,7 +142,8 @@ function sendRequest(checkoutSessionParameters){
     dataType: 'json',
     success: function (res) {
       console.log(res);
-      window.open(res.payload.url, "_parent");
+      //window.open(res.payload.url, "_parent");
+      window.open(res.payload.url);
     },
     error: function (err) {
       console.log(err);
