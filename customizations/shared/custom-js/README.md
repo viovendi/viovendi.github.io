@@ -101,13 +101,15 @@ await custom_js("conditional", {
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
 2. The entrance function should be called `run`:
+
 ```js
 // something.js
 async function run(a, b) {
   // perform job or call some other functions
 }
-```  
+```
 3. Add a new entry in the overview of this README:
+
 ```md
 ## {title} ({link to your profile for easier communication})
 {description}
