@@ -116,7 +116,9 @@ await custom_js("css", ".error { color: red; }");
 Peforms a callback on all attendee elements.
 * Name: `attendees`
 * Args:
-  * `callback` - callback with a single argument, which is the attendee element as a DOM element
+  * `callback` - callback with a two arguments, which are in order:
+    * the attendee element as a DOM element
+    * the index of attendee
 
 #### Examples
 ```js
