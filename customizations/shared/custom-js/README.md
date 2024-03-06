@@ -112,6 +112,19 @@ await custom_js("css", ".error { color: red; }");
 
 
 
+## Attendees ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+Peforms a callback on all attendee elements.
+* Name: `attendees`
+* Args:
+  * `callback` - callback with a single argument, which is the attendee element as a DOM element
+
+#### Examples
+```js
+await custom_js("attendees", attendee => { /* add listener to attendee or smth */ });
+```
+
+
+
 # Contribution
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
