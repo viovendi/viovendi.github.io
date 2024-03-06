@@ -97,6 +97,20 @@ await custom_js("conditional", {
 
 
 
+## CSS ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+Add a CSS stylesheet to the document and wait until it loads.
+* Name: `css`
+* Args:
+  * `css` - stylesheet as a string
+* Returns: the loaded event
+
+#### Examples
+```js
+await custom_js("css", ".error { color: red; }");
+```
+
+
+
 # Contribution
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
