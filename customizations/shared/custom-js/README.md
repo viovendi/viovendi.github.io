@@ -49,14 +49,14 @@ Find a question on the attendee page using `match`.
 * Name: `findQuestion`
 * Args:
   * `question` - the search pattern
-  * `dom` - optional argument, returns a raw DOMElement if `true` or jQuery object if omitted
+  * `attendee` - optional argument, uses a special attendee element instead of the whole document to search for the question; recommended!
 * Returns: the question which was searched
 
 #### Examples
 ```js
 await custom_js("findQuestion", "What is your Job Title?");
 
-await custom_js("findQuestion", "Event Registration on {...}", true);
+await custom_js("findQuestion", "Event Registration on {...}", attendee);
 ```
 
 ## Conditional Questions ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
@@ -64,6 +64,7 @@ The so often used conditional questions customization.
 Automatically adds all the needed listeners and logic.
 * Name: `conditional`
 * Args:
+  * `attendee` - The attendee element on which to perform the setup
   * `structure` - The structure of conditional questions, explanation below
 
 #### Further Explanation
@@ -78,7 +79,7 @@ The unlocked questions may have 4 different formats:
 
 #### Examples
 ```js
-await custom_js("conditional", {
+await custom_js("conditional", attendee1, {
   "Organisation": {
     "I ask for trip organisation": {                                      // format 1
       "How do you plan to arrive?": {
