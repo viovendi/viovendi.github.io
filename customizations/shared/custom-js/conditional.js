@@ -1,7 +1,7 @@
-async function conditional(cond, show, dict) {
+async function conditional(attendee, cond, show, dict) {
   if (cond.constructor === "".constructor) {
     // single question without further action
-    const el = await custom_js("findQuestion", cond);
+    const el = await custom_js("findQuestion", cond, attendee);
     if (show) {
       el.show();
     } else {
@@ -9,16 +9,16 @@ async function conditional(cond, show, dict) {
     }
   } else if (cond.constructor === [].constructor) {
     // multiple questions without further action
-    for (const c of cond) { await conditional(c, show, dict); }
+    for (const c of cond) { await conditional(attendee, c, show, dict); }
   } else {
     for (const question in cond) {
       const answers = cond[question];
       if (answers == null || answers == "") {
-        await conditional(question, show, dict);
+        await conditional(attendee, question, show, dict);
         continue;
       }
 
-      const el = await custom_js("findQuestion", question);
+      const el = await custom_js("findQuestion", question, attendee);
 
       // setup handler for sub-answers
       if (!(question in dict)) {
@@ -29,7 +29,7 @@ async function conditional(cond, show, dict) {
           
           for (const possible in answers) {
             const match = await custom_js("match", possible, selected);
-            await conditional(answers[possible], match, dict);
+            await conditional(attendee, answers[possible], match, dict);
           }
         }
         // setup change listener
@@ -43,12 +43,12 @@ async function conditional(cond, show, dict) {
       } else {
         // hide the question and all sub-questions
         el.hide();
-        for (const answer in answers) { await conditional(answers[answer], false, dict); }
+        for (const answer in answers) { await conditional(attendee, answers[answer], false, dict); }
       }
     }
   }
 }
 
-async function run(cond) {
-  await conditional(cond, true, { });
+async function run(attendee, cond) {
+  await conditional(attendee, cond, true, { });
 }
