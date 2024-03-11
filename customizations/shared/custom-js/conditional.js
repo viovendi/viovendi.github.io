@@ -33,7 +33,8 @@ async function conditional(attendee, cond, show, dict) {
           }
         }
         // whenever some action happens in that question
-        el.click(handle);
+        if (el.is("vv-additional-question-radio")) el.change(handle);
+        if (el.is("vv-additional-question-dropdown")) el.click(handle);
         dict[question] = handle;
       }
       if (show) {
