@@ -1,9 +1,11 @@
 const attendee_states = { };
 
 async function run(options) {
+  console.log(attendee_states);
+  
   const attendees = $(".customization3_booking-participant_attendee").parent().get();
-  console.log(attendees);
   for (const a_id in attendee_states) {
+    console.log("removing the old shit");
     attendee_states[a_id].observer.disconnect();
     if (!attendees.some(a => a.id == a_id)) {
       options.remove?.(attendee, a_id, console.log("remove"));
@@ -11,8 +13,11 @@ async function run(options) {
     }
   }
   attendees.forEach(attendee => {
+    console.log(attendee);
+    
     const id = attendee.id;
     if (!(id in attendee_states)) {
+      console.log("new attendee, wohoo!");
       attendee_states[id] = { };
     }
     const state = attendee_states[id];
@@ -21,6 +26,7 @@ async function run(options) {
       const save = $(attendee).find(".customization2_attendee_edit-action_save").get(0);
       const body = $(attendee).find(".customization3_collapsible-wrapper_body");
       if (save != state.save_button) {
+        console.log("the save button changed \"-\"");
         if (save) options.title_open?.(attendee, id, console.log("title_open"));
         else options.title_close?.(attendee, id, console.log("title_close"));
 
