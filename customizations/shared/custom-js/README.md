@@ -162,8 +162,8 @@ for this group:
 
 we receive the following result:
 
-<img height="120" alt="Checkbox group some" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/79b97f3e-7950-4c4c-9b0e-16de06d09c44">
-<img height="120" alt="Checkbox group none" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/65bf5ed6-4391-43cc-a49d-8c270ebeaf38">
+<img height="120" alt="Checkbox group some" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/65bf5ed6-4391-43cc-a49d-8c270ebeaf38">
+<img height="120" alt="Checkbox group none" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/79b97f3e-7950-4c4c-9b0e-16de06d09c44">
 
 
 # Contribution
