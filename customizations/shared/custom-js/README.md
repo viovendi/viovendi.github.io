@@ -113,16 +113,30 @@ await custom_js("css", ".error { color: red; }");
 
 
 ## Attendees ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
-Peforms a callback on all attendee elements.
+Peforms a event based functions on attendee elements.
+This tool should be called on the booking page of the widget.
 * Name: `attendees`
 * Args:
-  * `callback` - callback with a two arguments, which are in order:
-    * the attendee element as a DOM element
-    * the index of attendee
+  * `options` - object with following possible parameters:
+    * `open` - called when a new attendee appears or the old one is being edited after was saved already
+    * `close` - called when an attendee saves his data and the form closes
+    * `remove` - called when the booker went back to ticket selection, removed a ticket and came back - one attendee should have disappeared from the booking page
+    * The arguments passed to these functions are:
+      * the attendee element as a DOM element
+      * the index of attendee
 
 #### Examples
 ```js
-await custom_js("attendees", attendee => { /* add listener to attendee or smth */ });
+function startCustomization() {
+  window.addEventListener("doo_page_loaded", async event => {
+    if (event.detail.widget.page.name == "booking_registration_details") {
+      await custom_js("attendees", {
+        "open": (attendee, i) => applyDesign(attendee),
+        "close": (attendee, i) => removeDescription(attendee)
+      });
+    }
+  });
+}
 ```
 
 
