@@ -2,6 +2,7 @@ const attendee_states = { };
 
 async function run(options) {
   const attendees = $(".customization3_booking-participant_attendee").parent().get();
+  console.log(attendees);
   for (const a_id in attendee_states) {
     attendee_states[a_id].observer.disconnect();
     if (!attendees.some(a => a.id == a_id)) {
