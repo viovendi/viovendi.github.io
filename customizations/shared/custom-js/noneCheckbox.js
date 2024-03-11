@@ -10,7 +10,7 @@ async function run(attendee, question, none) {
         break;
       }
     }
-    q.find("input").forEach(async function () {
+    q.find("input").each(async function () {
       const text = $(this).next(".vv-checkbox__label").find(".vv-checkbox__label-text").text().trim();
       const same = await custom_js("match", none, text);
       if ((d && !same) || (!d && t.length && same)) {
