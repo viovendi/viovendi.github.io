@@ -5,7 +5,7 @@ async function run(options) {
   for (const a_id in attendee_states) {
     attendee_states[a_id].observer.disconnect();
     if (!attendees.some(a => a.id == a_id)) {
-      options.remove?.(attendee, a_id);
+      options.remove?.(attendee, a_id, console.log("remove"));
       delete attendee_states[a_id];
     }
   }
@@ -16,21 +16,15 @@ async function run(options) {
     }
     const state = attendee_states[id];
     
-    const save = $(attendee).find(".customization2_attendee_edit-action_save").get(0);
-    const body = $(attendee).find(".customization3_collapsible-wrapper_body");
-    
-    if (save) options.open?.(attendee, id);
-    else if (body.length) options.close?.(attendee, id);
-    
     function execute() {
       const save = $(attendee).find(".customization2_attendee_edit-action_save").get(0);
       const body = $(attendee).find(".customization3_collapsible-wrapper_body");
       if (save != state.save_button) {
-        if (save) options.title_open?.(attendee, id);
-        else options.title_close?.(attendee, id);
+        if (save) options.title_open?.(attendee, id, console.log("title_open"));
+        else options.title_close?.(attendee, id, console.log("title_close"));
 
-        if (save) options.open?.(attendee, id);
-        else if (body.length) options.close?.(attendee, id);
+        if (save) options.open?.(attendee, id, console.log("open"));
+        else if (body.length) options.close?.(attendee, id, console.log("close"));
         else return;
         state.save_button = save;
       }
