@@ -30,7 +30,7 @@ async function run(options) {
 
       if (new_state == info.state && save == info.save_button) return;
       info.state = new_state;
-      info.save_button = save_button;
+      info.save_button = save;
 
       if (save) options.title_open?.(attendee, id, console.log("title_open"));
       else options.title_close?.(attendee, id, console.log("title_close"));
