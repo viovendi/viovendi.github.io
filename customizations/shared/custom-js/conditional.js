@@ -29,11 +29,15 @@ async function conditional(attendee, cond, show, dict) {
           else if (el.is("vv-additional-question-checkboxes")) selected = el.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
 
           for (const possible in answers) {
+            let same = false;
             for (const selection of selected) {
               const match = await custom_js("match", possible, selected);
-              await conditional(attendee, answers[possible], match, dict);
-              break;
+              if (match) {
+                same = true;
+                break;
+              }
             }
+            await conditional(attendee, answers[possible], same, dict);
           }
         }
         // whenever some action happens in that question
