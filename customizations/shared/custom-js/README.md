@@ -124,7 +124,7 @@ This tool should be called on the booking page of the widget.
     * `remove` - called when the booker went back to ticket selection, removed a ticket and came back - one attendee should have disappeared from the booking page
     * The arguments passed to these functions are:
       * the attendee element as a DOM element
-      * the index of attendee
+      * the internal and unique ID of the attendee element
 
 #### Examples
 ```js
