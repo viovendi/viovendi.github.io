@@ -142,6 +142,30 @@ function startCustomization() {
 
 
 
+## None Checkbox ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+Puts a listener on a checkbox group which will enable and disable options if there is
+a "no selection" option.
+* Name: `noneCheckbox`
+* Args:
+  * `attendee` - The attendee element on which to perform the setup
+  * `question` - The question to use
+  * `none` - The "no selection" option
+
+#### Examples
+With this code:
+```js
+await custom_js("noneCheckbox", document, "Workshop{...}", "I am not {...}");
+```
+for this group:
+
+<img height="120" alt="Checkbox group" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/d9fdf492-2e2d-4c5d-a094-740b331041f1">
+
+we receive the following result:
+
+<img height="120" alt="Checkbox group some" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/79b97f3e-7950-4c4c-9b0e-16de06d09c44">
+<img height="120" alt="Checkbox group none" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/65bf5ed6-4391-43cc-a49d-8c270ebeaf38">
+
+
 # Contribution
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
