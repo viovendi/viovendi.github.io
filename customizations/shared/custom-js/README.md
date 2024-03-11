@@ -118,8 +118,9 @@ This tool should be called on the booking page of the widget.
 * Name: `attendees`
 * Args:
   * `options` - object with following possible parameters:
-    * `open` - called when a new attendee appears or the old one is being edited after was saved already
-    * `close` - called when an attendee saves his data and the form closes
+    * `open` - called when the attendee is before editing his form
+    * `close` - called when an attendee saves his data and the form closes, but still visible
+    * `title` - called when the form is closed and collapsed
     * `remove` - called when the booker went back to ticket selection, removed a ticket and came back - one attendee should have disappeared from the booking page
     * The arguments passed to these functions are:
       * the attendee element as a DOM element
