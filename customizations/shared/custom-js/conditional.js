@@ -32,8 +32,8 @@ async function conditional(attendee, cond, show, dict) {
             await conditional(attendee, answers[possible], match, dict);
           }
         }
-        // setup change listener
-        el.on("change", handle);
+        // whenever some action happens in that question
+        el.click(handle);
         dict[question] = handle;
       }
       if (show) {
