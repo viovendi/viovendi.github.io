@@ -28,6 +28,8 @@ async function run(options) {
       else if (body) new_state = "close";
       else new_state = "title";
 
+      console.log(info.state, new_state, !!save, !!body);
+
       if (new_state == info.state && save == info.save_button) return;
       info.state = new_state;
       info.save_button = save;
