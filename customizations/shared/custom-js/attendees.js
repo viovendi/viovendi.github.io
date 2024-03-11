@@ -1,7 +1,7 @@
 const attendees_info = { };
 
 async function run(options) {
-  console.log(attendee_states);
+  console.log(attendees_info);
   
   const attendees = $(".customization3_booking-participant_attendee").parent().get();
   for (const a_id in attendees_info) {
@@ -13,7 +13,7 @@ async function run(options) {
   }
   attendees.forEach(attendee => {
     const id = attendee.id;
-    if (!(id in attendee_states)) {
+    if (!(id in attendees_info)) {
       console.log("new attendee, wohoo!");
       attendees_info[id] = { };
     }
