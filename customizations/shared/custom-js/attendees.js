@@ -17,8 +17,6 @@ async function run(options) {
     const info = attendees_info[id];
     
     function execute() {
-      if (!($(attendee).find("vv-additional-questions").find("form").length)) return;
-      
       const save = $(attendee).find(".customization2_attendee_edit-action_save").get(0);
       const body = $(attendee).find(".customization3_collapsible-wrapper_body").get(0);
 
@@ -26,6 +24,8 @@ async function run(options) {
       if (save && body) new_state = "open";
       else if (body) new_state = "close";
       else new_state = "title";
+
+      if (new_state == "open" && !($(attendee).find("vv-additional-questions").find("form").length)) return;
 
       if (new_state == info.state && save == info.save_button) return;
       info.state = new_state;
