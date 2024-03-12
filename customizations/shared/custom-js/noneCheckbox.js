@@ -21,6 +21,6 @@ async function run(attendee, question, none) {
       }
     });
   }
-  q.change(disable);  
-
+  q.change(disable);
+  disable();
 }
