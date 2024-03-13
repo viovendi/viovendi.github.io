@@ -9,6 +9,9 @@ async function run(attendee, text, ...required) {
     div.style.display = "none";
     const divi = document.createElement("div");
     divi.classList.add("error-text", "customization2_attendee_further-data_custom-question_error", "error-text--left", "vv-text-wrap--no-wrap");
+    divi.style["margin-top"] = "4px";
+    divi.style["font-size"] = ".75rem";
+    divi.style["line-height"] = ".875rem";
     divi.innerHTML = text;
     div.appendChild(divi);
     el.find("vv-show-errors").get(0).appendChild(div);    
