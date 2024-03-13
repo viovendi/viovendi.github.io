@@ -33,6 +33,7 @@ async function conditional(attendee, cond, show, dict) {
                 break;
               }
             }
+            console.log(question, "has answer:", selected, "matches", possible, ":", same);
             await conditional(attendee, answers[possible], same, dict);
           }
         }
