@@ -51,7 +51,7 @@ async function run(attendee, text, ...required) {
     const first = $(attendee).find(".customization2_attendee_further-data").find(".ng-invalid").get(0);
     for (const [el, setter] of through) {
       if (el.is(".ng-invalid:visible") && el.get(0) == first) {
-        first.scrollIntoView();
+        first.scrollIntoView({ "behaviour": "smooth" });
         if (anyWrong) event.preventDefault();
         break;
       }
