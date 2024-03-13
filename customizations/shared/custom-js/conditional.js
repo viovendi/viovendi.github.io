@@ -17,16 +17,11 @@ async function conditional(attendee, cond, show, dict) {
         await conditional(attendee, question, show, dict);
         continue;
       }
-
       const el = await custom_js("findQuestion", question, attendee);
 
       // setup handler for sub-answers
       if (!(question in dict)) {
-        let selector;
-        if (el.is("vv-additional-question-radio")) selector = () => [el.find("input:checked").next(".customization2_attendee_further-data_custom-question_radio-line_label").find(".vv-radio__label-text").text().trim()];
-        else if (el.is("vv-additional-question-dropdown")) selector = () => [el.find(".customization2_attendee_further-data_custom-question_dropdown .vv-selection-input__value").text().trim()];
-        else if (el.is("vv-additional-question-checkboxes")) selector = () => el.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
-
+        const selector = await custom_js("answersSelector", el);
         async function handle() {
           const selected = selector();
           for (const possible in answers) {
@@ -42,9 +37,8 @@ async function conditional(attendee, cond, show, dict) {
           }
         }
         // whenever some action happens in that question
-        if (el.is("vv-additional-question-radio")) el.change(handle);
-        else if (el.is("vv-additional-question-dropdown")) el.click(handle);
-        else if (el.is("vv-additional-question-checkboxes")) el.change(handle);
+        await custom_js("questionHandler", el, handle)
+        
         dict[question] = handle;
       }
       if (show) {
