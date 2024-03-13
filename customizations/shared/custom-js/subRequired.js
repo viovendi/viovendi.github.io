@@ -17,13 +17,17 @@ async function run(attendee, text, ...required) {
     function setter() {
       const answers = selector();
       if (answers.join("")) {
-        el.removeClass("ng-invalid");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-invalid");
+        el.removeClass("ng-invalid", "ng-dirty");
+        el.addClass("ng-valid");
+        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-valid");
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").hide();
         return false;
       } else {
-        el.addClass("ng-invalid");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-invalid");
+        el.addClass("ng-invalid", "ng-dirty");
+        el.removeClass("ng-valid");
+        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-valid");
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").show();
         return true;
       }
@@ -33,19 +37,19 @@ async function run(attendee, text, ...required) {
   }
 
   $(attendee).find(".customization2_attendee_edit-action_save").click(event => {
-    let anyCancel = false;
+    let anyWrong = false;
     for (const [el, setter] of through) {
       if (el.is(":visible")) {
-        const cancel = setter();
-        if (cancel) anyCancel = true;
+        const wrong = setter();
+        if (wrong) anyWrong = true;
       }
     }
-    if (anyCancel) event.preventDefault();
 
     const first = $(attendee).find(".customization2_attendee_further-data").find(".ng-invalid").get(0);
     for (const [el, setter] of through) {
       if (el.is(".ng-invalid") && el.get(0) == first) {
         first.scrollIntoView();
+        if (anyWrong) event.preventDefault();
         break;
       }
     }
