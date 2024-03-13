@@ -1,5 +1,5 @@
 async function run(attendee, text, ...required) {
-  const through = { };
+  const through = [];
   for (const question of required) {
     const el = await custom_js("findQuestion", question, attendee);
     el.find("vv-optional-text").hide();
@@ -29,21 +29,21 @@ async function run(attendee, text, ...required) {
       }
     }
     await custom_js("questionHandler", el, setter);
-    through[el] = setter;
+    through.push([el, setter]);
   }
 
   $(attendee).find(".customization2_attendee_edit-action_save").click(event => {
     let anyCancel = false;
-    for (const el in through) {
+    for (const [el, setter] of through) {
       if (el.is(":visible")) {
-        const cancel = through[el]();
+        const cancel = setter();
         if (cancel) anyCancel = true;
       }
     }
     if (anyCancel) event.preventDefault();
 
     const first = $(attendee).find(".customization2_attendee_further-data").find(".ng-invalid").get(0);
-    for (const el in through) {
+    for (const [el, setter] of through) {
       if (el.is(".ng-invalid") && el.get(0) == first) {
         first.scrollIntoView();
         break;
