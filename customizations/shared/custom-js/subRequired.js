@@ -20,10 +20,12 @@ async function run(attendee, text, ...required) {
         el.removeClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").hide();
+        return false;
       } else {
         el.addClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").show();
+        return true;
       }
 
       await custom_js("questionHandler", el, setter);
@@ -33,9 +35,15 @@ async function run(attendee, text, ...required) {
   }
 
   $(attendee).find(".customization2_attendee_edit-action_save").click(event => {
+    let anyCancel = false;
     for (const el in through) {
-      if (el.is(":visible")) through[el]();
+      if (el.is(":visible")) {
+        const cancel = through[el]();
+        if (cancel) anyCancel = true;
+      }
     }
+    if (anyCancel) event.preventDefault();
+
     const first = $(attendee).find(".customization2_attendee_further-data").find(".ng-invalid").get(0);
     for (const el in through) {
       if (el.is(".ng-invalid") && el.get(0) == first) {
