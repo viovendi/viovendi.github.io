@@ -27,10 +27,8 @@ async function run(attendee, text, ...required) {
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").show();
         return true;
       }
-
-      await custom_js("questionHandler", el, setter);
     }
-
+    await custom_js("questionHandler", el, setter);
     through[el] = setter;
   }
 
