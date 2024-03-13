@@ -27,7 +27,7 @@ async function conditional(attendee, cond, show, dict) {
           for (const possible in answers) {
             let same = false;
             for (const selection of selected) {
-              const match = await custom_js("match", possible, selected);
+              const match = await custom_js("match", possible, selection);
               if (match) {
                 same = true;
                 break;
