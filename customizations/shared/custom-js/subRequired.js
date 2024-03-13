@@ -16,7 +16,7 @@ async function run(attendee, text, ...required) {
     const selector = await custom_js("answersSelector", el);
     function setter() {
       const answers = selector();
-      if (asnwers.join("")) {
+      if (answers.join("")) {
         el.removeClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-invalid");
         el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").hide();
