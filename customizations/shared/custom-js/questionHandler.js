@@ -1,9 +1,16 @@
 async function run(element, handler) {
-  if (element.is("vv-additional-question-dropdown")) element.click(handle);
-  else if (
+  if (element.is("vv-additional-question-dropdown")) {
+    element.click(handle);
+  } else if (
     element.is("vv-additional-question-radio") ||
-    element.is("vv-additional-question-checkboxes") ||
+    element.is("vv-additional-question-checkboxes")
+  ) {
+    element.change(handle);
+  } else if (
     element.is("vv-additional-question-text") ||
     element.is("vv-additional-question-paragraph")
-  ) element.change(handle);
+  ) {
+    element.change(handler);
+    element.focusout(handler);
+  }
 }
