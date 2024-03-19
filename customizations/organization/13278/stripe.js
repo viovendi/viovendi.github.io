@@ -131,7 +131,7 @@ function addPaymentLinkToPage(linkUrl){
   if(linkUrl.indexOf('http') < 0){
     linkText = `<p>The error occurred while payment process, please contact</p>`;
   }
-  $('.customization-confirmation-description').append(linkText);
+  $('.customization-confirmation-description').after(linkText);
 }
   
 
