@@ -127,7 +127,7 @@ function getXMLHttpRequest(open) {
 };
 
 function addPaymentLinkToPage(linkUrl){
-  let linkText = `<p>If no new tab opens in the next 10 seconds, click on this link: <a href="${linkUrl}" target="_parent">${linkUrl}</a></p>`;
+  let linkText = `<p>If no new tab opens in the next 10 seconds, click on this link: <a href="${linkUrl}" target="_blank">${linkUrl}</a></p>`;
   if(linkUrl.indexOf('http') < 0){
     linkText = `<p>The error occurred while payment process, please contact</p>`;
   }
