@@ -126,6 +126,15 @@ function getXMLHttpRequest(open) {
   };
 };
 
+function addPaymentLinkToPage(linkUrl){
+  let linkText = `<p>If no new tab opens in the next 10 seconds, click on this link: <a href="${linkUrl}">${linkUrl}</a></p>`;
+  if(linkUrl.indexOf('http') < 0){
+    linkText = `<p>The error occurred while payment process, please contact</p>`;
+  }
+  $('.customization-confirmation-description').append(linkText);
+}
+  
+
 function sendRequest(checkoutSessionParameters){
   console.log('sendRequest');
   $.ajax({
@@ -141,6 +150,8 @@ function sendRequest(checkoutSessionParameters){
       console.log(res);
       //window.open(res.payload.url, "_parent");
       //window.open(res.payload.url);
+      loader('off');
+      addPaymentLinkToPage(res.payload.url);
     },
     error: function (err) {
       console.log(err);
