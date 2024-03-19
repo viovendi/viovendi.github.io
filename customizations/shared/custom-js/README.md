@@ -13,7 +13,9 @@ Here is an overview of all helpers currently defined here.
 
 
 
-## Loader ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## Loader
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 Installs the `custom_js` function to dynamically load other helpers.
 * Args:
   * `name` - name of the helper
@@ -27,7 +29,9 @@ await custom_js("findQuestion", "What is your Job Title?", true);
 
 
 
-## Match ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## Match
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 Matches a string against a search pattern (not regex).
 * Name: `match`
 * Args:
@@ -44,7 +48,9 @@ await custom_js("match", "Roses are {...}", "I like roses"); // false
 
 
 
-## Find Question ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## Find Question
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 Find a question on the attendee page using `match`.
 * Name: `findQuestion`
 * Args:
@@ -59,7 +65,9 @@ await custom_js("findQuestion", "What is your Job Title?");
 await custom_js("findQuestion", "Event Registration on {...}", attendee);
 ```
 
-## Conditional Questions ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## Conditional Questions
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 The so often used conditional questions customization.
 Automatically adds all the needed listeners and logic.
 * Name: `conditional`
@@ -98,7 +106,9 @@ await custom_js("conditional", attendee1, {
 
 
 
-## CSS ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## CSS
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 Add a CSS stylesheet to the document and wait until it loads.
 * Name: `css`
 * Args:
@@ -112,13 +122,17 @@ await custom_js("css", ".error { color: red; }");
 
 
 
-## Attendees ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
-Peforms a event based functions on attendee elements.
+## Attendees
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Peforms event based functions on attendee elements.
 This tool should be called on the booking page of the widget.
+The different functions are being called whenever an attendee element
+changes its' state.
 * Name: `attendees`
 * Args:
-  * `options` - object with following possible parameters:
-    * `open` - called when the attendee is before editing his form
+  * `options` - object with following possible parameters (different states in which an attendee element can be):
+    * `open` - called when the attendee is editing his form
     * `close` - called when an attendee saves his data and the form closes, but still visible
     * `title` - called when the form is closed and collapsed
     * `remove` - called when the booker went back to ticket selection, removed a ticket and came back - one attendee should have disappeared from the booking page
@@ -126,14 +140,22 @@ This tool should be called on the booking page of the widget.
       * the attendee element as a DOM element
       * the internal and unique ID of the attendee element
 
+#### Further Explanation
+Whenever the state of an attendee element changes, the visuals
+are being re-calculated on the client and some customizations such as
+listeners for Conditional Questions or None Checkbox or any manually added
+titles and descriptions will disappear. To prevent a difficult setup where
+any change is tracked instead it is recommended to use this tool like shown
+in the example below, which is a fail-safe solution.
+
 #### Examples
 ```js
 function startCustomization() {
   window.addEventListener("doo_page_loaded", async event => {
     if (event.detail.widget.page.name == "booking_registration_details") {
       await custom_js("attendees", {
-        "open": (attendee, i) => applyDesign(attendee),
-        "close": (attendee, i) => removeDescription(attendee)
+        "open": (attendee, id) => applyDesign(attendee),
+        "close": (attendee, id) => removeDescription(attendee)
       });
     }
   });
@@ -142,7 +164,9 @@ function startCustomization() {
 
 
 
-## None Checkbox ([Dmitry](https://github.com/Dmitry-the-Werkstudent))
+## None Checkbox
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
 Puts a listener on a checkbox group which will enable and disable options if there is
 a "no selection" option.
 * Name: `noneCheckbox`
@@ -166,6 +190,87 @@ we receive the following result:
 <img height="120" alt="Checkbox group none" src="https://github.com/viovendi/viovendi.github.io/assets/148325186/79b97f3e-7950-4c4c-9b0e-16de06d09c44">
 
 
+
+
+## Question Handler
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Attach a handler to a question which is being called whenever the selection or input in that question
+is changed. Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
+* Name: `questionHandler`
+* Args:
+  * `element` - a jQuery element of the question (retrieved from e.g. `findQuestion`)
+  * `handler` - a function to call whenever a selection is being made
+
+#### Examples
+```js
+const job = await custom_js("findQuestion", "Jobtitle", attendee);
+await custom_js("questionHandler", job, () => {
+  console.log("'Jobtitle' input changed!");
+});
+```
+
+
+
+## Answers Selector
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Sets us a function for a question element which will fetch the answers.
+Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
+* Name: `answersSelector`
+* Args:
+  * `element` - a jQuery element of a question
+* Returns: a function, which when called returns an array of answers on the given question element
+  * The array type is for compatibility with different internal tools which use this tool under the hood 
+  * For `checkboxes` the array will have all the answers as array elements
+  * For any other question type the array will always have one element; if no selection is made, that element will be an empty string `""`
+  * To check if a selection has been made you can prove `answers.join("").length > 0`
+
+#### Further Explanation
+The return is a function, not the answer itself! To get the answers you have to first call the function.
+This is optimal and reduces latency since the code checks for the question type only once.
+
+#### Examples
+```js
+const job = await custom_js("findQuestion", "Jobtitle", attendee);
+const selector = await custom_js("answersSelector", job);
+await custom_js("questionHandler", job, () => {
+  console.log("'Jobtitle' input changed to", selector());
+});
+```
+
+
+
+## Sub Required
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Makes a question act as it would be required instead of optional.
+If the question is hidden, it is ignored.
+Useful in combination with `conditional`.
+* Name: `subRequired`
+* Args:
+  * `attendee` - the attendee to perform this action on 
+  * `text` - text to display when the selection has to be made 
+  * `...required` - a list of question names to fetch with `findQuestion`
+
+#### Examples
+```js
+await custom_js("conditional", attendee, {
+  "Jobtitle": {
+    "other": "What is your Jobtitle?"
+  }
+});
+await custom_js("subRequired", attendee, "Fill out this field", "What is your Jobtitle?");
+```
+This snippet makes a conditional question setup for the "Jobtitle" question,
+and if "other" is selected, the text field "What is your Jobtitle?" appears -
+the question is made to bahave like other required questions:
+* the gray info "(optional)" will be hidden
+* red text will appear if nothing is entered
+* the "Save" button will not work
+* etc.
+
+
 # Contribution
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
@@ -180,7 +285,9 @@ async function run(a, b) {
 3. Add a new entry in the overview of this README:
 
 ```md
-## {title} ({link to your profile for easier communication})
+## {title}
+> by {link to your profile for easier communication}
+
 {description}
 * Name: `{name of the file wihtout ".js"}`
 * Args:
