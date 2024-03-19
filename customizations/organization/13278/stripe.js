@@ -111,9 +111,6 @@ function getXMLHttpRequest(open) {
             var price = +orders[0].payment.amount;
           }
           
-          console.log('orders:');
-          console.log(orders[0]);
-          
           var checkoutSessionParameters = {
             organizer_id: orders[0].event.organizer_id,
             order_tx_number: orders[0].invoice_id
@@ -143,7 +140,7 @@ function sendRequest(checkoutSessionParameters){
     success: function (res) {
       console.log(res);
       //window.open(res.payload.url, "_parent");
-      window.open(res.payload.url);
+      //window.open(res.payload.url);
     },
     error: function (err) {
       console.log(err);
