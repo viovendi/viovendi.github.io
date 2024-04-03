@@ -39,6 +39,8 @@ function isEpayPayment(){
      paymentInput.closest('label').hasClass('customization_payment-option_custom_payment') ||
      paymentInput.text().trim() === 'ePay Bayern' ||
      paymentInput.text().trim() === 'ePayBayern' ||
+     paymentInput.text().trim() === 'ePay (Credit Card, PayPal, Direct Debit)' ||
+     paymentInput.text().trim() === 'ePay (Kreditkarte, PayPal, Lastschrift)' ||
      paymentInput.text().trim() === 'custom_payment'){
     isEpay = true;
   }
