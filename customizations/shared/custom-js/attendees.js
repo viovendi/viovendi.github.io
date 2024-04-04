@@ -5,7 +5,7 @@ async function run(options) {
   for (const a_id in attendees_info) {
     attendees_info[a_id].observer.disconnect();
     if (!attendees.some(a => a.id == a_id)) {
-      options.remove?.(attendee, a_id);
+      options.remove?.(null, a_id);
       delete attendees_info[a_id];
     }
   }
