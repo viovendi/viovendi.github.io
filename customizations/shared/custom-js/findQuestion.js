@@ -7,5 +7,7 @@ async function run(exactLabel, attendee) {
     if(label.find("vv-optional-text").length) match += label.find("vv-optional-text").text().trim();
     return await custom_js("match", match, allText);
   }));
-  return qu.filter((i, q) => results[i]).parent();
+  let p = qu.filter((i, q) => results[i]).parent();
+  while (!p.get(0).tagName.toLowerCase().startsWith("vv-additional-question-")) p = p.parent();
+  return p;
 }
