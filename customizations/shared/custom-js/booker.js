@@ -14,13 +14,13 @@ async function run(options) {
     else new_state = "title";
 
     if (new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
-
     if (new_state == "open" && booker_info.state == "open" && save == booker_info.save_button) return;
     if (new_state == booker_info.state && !booker_info.first) return;
+
     booker_info.state = new_state;
     booker_info.save_button = save;
-
     booker_info.first = false;
+
     if (save) options.open?.(booker);
     else if (body && $(body).text().trim()) options.close?.(booker);
     else options.title?.(booker);
