@@ -19,7 +19,7 @@ async function run(options) {
     booker_info.save_button = save;
 
     if (save) options.open?.(booker);
-    else if (body) options.close?.(booker);
+    else if (body && $(body).text().trim()) options.close?.(booker);
     else options.title?.(booker);
   }
   execute();
