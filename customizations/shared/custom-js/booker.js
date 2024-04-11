@@ -9,7 +9,7 @@ async function run(options) {
 
     let new_state;
     if (save && body) new_state = "open";
-    else if (body) new_state = "close";
+    else if (body && $(body).text().trim()) new_state = "close";
     else new_state = "title";
 
     if (new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
