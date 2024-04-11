@@ -7,6 +7,8 @@ async function run(options) {
     if (!attendees.some(a => a.id == a_id)) {
       options.remove?.(null, a_id);
       delete attendees_info[a_id];
+    } else {
+      attendees_info[a_id].first = true;
     }
   }
   attendees.forEach(attendee => {
@@ -26,10 +28,12 @@ async function run(options) {
       else new_state = "title";
 
       if (new_state == "open" && !($(attendee).find("vv-additional-questions").find("form").length)) return;
+      if (new_state == "open" && info.state == "open" && save == info.save_button) return;
+      if (new_state == info.state && !info.first) return;
 
-      if (new_state == info.state && save == info.save_button) return;
       info.state = new_state;
       info.save_button = save;
+      info.first = false;
 
       if (save) options.open?.(attendee, id);
       else if (body) options.close?.(attendee, id);
