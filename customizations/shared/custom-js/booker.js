@@ -2,6 +2,7 @@ const booker_info = { };
 
 async function run(options) {
   const booker = $(".customization2_booker").parent();
+  booker_info.first = true;
   
   function execute() {
     const save = booker.find(".customization2_booker_edit-action_save").get(0);
@@ -14,10 +15,12 @@ async function run(options) {
 
     if (new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
 
-    if (new_state == booker_info.state && save == booker_info.save_button) return;
+    if (new_state == "open" && booker_info.state == "open" && save == booker_info.save_button) return;
+    if (new_state == booker_info.state && !booker_info.first) return;
     booker_info.state = new_state;
     booker_info.save_button = save;
 
+    booker_info.first = false;
     if (save) options.open?.(booker);
     else if (body && $(body).text().trim()) options.close?.(booker);
     else options.title?.(booker);
