@@ -1,7 +1,27 @@
 const booker_info = { };
 
 async function run(options) {
-  const booker = $(".customization2_booker").parent();
+  booker_info.global_observer?.disconnect();
+  function execute() {
+    if ($(".customization2_booker_title").length) {
+      booker_info.global_observer?.disconnect();
+      const booker = $(".customization2_booker").parent().parent();
+      _run(booker, options);
+      return true;
+    }
+    return false;
+  }
+  const f = execute();
+  if (!f) {
+    booker_info.global_observer = new MutationObserver(execute);
+    booker_info.global_observer.observe();
+  }
+}
+
+async function _run(booker, options) {
+  const be = booker.get(0);
+
+  options.create?.(be);
   booker_info.first = true;
   
   function execute() {
@@ -21,14 +41,14 @@ async function run(options) {
     booker_info.save_button = save;
     booker_info.first = false;
 
-    if (save) options.open?.(booker);
-    else if (body && $(body).text().trim()) options.close?.(booker);
-    else options.title?.(booker);
+    if (save) options.open?.(be);
+    else if (body && $(body).text().trim()) options.close?.(be);
+    else options.title?.(be);
   }
   execute();
   
   booker_info.observer = new MutationObserver(execute);
-  booker_info.observer.observe(booker.get(0), {
+  booker_info.observer.observe(be, {
     "childList": true,
     "subtree": true
   });
