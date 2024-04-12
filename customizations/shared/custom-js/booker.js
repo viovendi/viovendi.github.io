@@ -14,7 +14,10 @@ async function run(options) {
   const f = execute();
   if (!f) {
     booker_info.global_observer = new MutationObserver(execute);
-    booker_info.global_observer.observe();
+    booker_info.global_observer.observe(document, {
+      "childList": true,
+      "subtree": true
+    });
   }
 }
 
