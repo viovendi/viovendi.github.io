@@ -18,6 +18,7 @@ async function conditional(attendee, cond, show, dict) {
         continue;
       }
       const el = await custom_js("findQuestion", question, attendee);
+      if (!el.get(0)) return;
 
       // setup handler for sub-answers
       if (!(question in dict)) {
