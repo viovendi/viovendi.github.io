@@ -9,6 +9,7 @@ var insertionListener = function (event) {
         // handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
         checkSelectedCategory();
+        getXMLHttpRequest(XMLHttpRequest.prototype.open);
         /*
         if($('.event-categories>li').length > 0){
             // clearTicketsInManager();
@@ -82,6 +83,7 @@ async function handler() {
     getXMLHttpRequest(XMLHttpRequest.prototype.open);
   }
 }
+*/
 
 function bookSeats(dooOrderId, dooOrganizationId){
     console.log('bookSeats - start');
@@ -112,11 +114,9 @@ function bookSeats(dooOrderId, dooOrganizationId){
         sessionStorage.removeItem('isEditMode');
         sessionStorage.removeItem('holdToken');
       });
-      */
-/*
-}
 */
-/*
+}
+
 
 var isSent = false;
 function getXMLHttpRequest (open) {
