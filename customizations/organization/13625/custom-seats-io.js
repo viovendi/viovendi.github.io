@@ -4,31 +4,29 @@ console.log('github seats.io code!');
 // hide the category after the widget has been rendered
 checkSelectedCategory();
 
-
 var insertionListener = function (event) {
-    //console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
-        handler();
+        // handler();
     }else if(event.animationName === 'ticketCatsLoaded'){
-        //console.log('ticketCatsLoaded');
         checkSelectedCategory();
+        /*
         if($('.event-categories>li').length > 0){
             // clearTicketsInManager();
             if($('#chart').length === 0){
                 // addSeatScript();
             }
         }
-        /*
         clearTicketsInManager();
         if($('#chart').length === 0){
             addSeatScript();
         }
         */
-    }else if(event.animationName === 'chartScriptAdded'){
+    }
+    /*else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
     }else if(event.animationName === 'attendeeEdited'){
         //fillTicketId();  Function to fill in the Ticket-ID custom attendee question. It's not relevant for OID#13625
-    }
+    }*/
 };
 //handler();
 
