@@ -4,6 +4,7 @@ console.log('github seats.io code!');
 // hide the category after the widget has been rendered
 checkSelectedCategory();
 
+/*
 var insertionListener = function (event) {
     //console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
@@ -22,7 +23,7 @@ var insertionListener = function (event) {
         if($('#chart').length === 0){
             addSeatScript();
         }
-        */
+        *//*
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
     }else if(event.animationName === 'attendeeEdited'){
@@ -34,6 +35,7 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
+*/
 
 function checkSelectedCategory(){
     console.log('checkSelectedCategory:');
@@ -46,7 +48,6 @@ function checkSelectedCategory(){
         }
         */
         if(ticketNumber > 0){
-            console.log(catName);
             if(catName.indexOf('Ausstellerticket (Premium), 07.05.2025') >= 0){
                 hideCategoryByName('Ausstellerticket, 07.05.2025');
             }else if(catName.indexOf('Ausstellerticket, 07.05.2025') >= 0){
@@ -57,10 +58,7 @@ function checkSelectedCategory(){
 }
 
 function hideCategoryByName(name){
-    console.log('hideCategoryByName');
     $('.event-categories li').each(function(){
-        // const categoryName = $(this).find('div.event-category:not(.event-category--child) .customization-category-name').text().trim();
-        // changed structure?
         const categoryName = $(this).find('.customization-category-name').text().trim();
         $(this).removeClass('hidden');
         if(categoryName.indexOf(name) > -1){
@@ -70,7 +68,7 @@ function hideCategoryByName(name){
 }
 
 
-
+/*
 async function handler() {
   if (document.readyState !== 'loading') {
 
@@ -117,7 +115,10 @@ function bookSeats(dooOrderId, dooOrganizationId){
         sessionStorage.removeItem('holdToken');
       });
       */
+/*
 }
+*/
+/*
 
 var isSent = false;
 function getXMLHttpRequest (open) {
@@ -226,7 +227,7 @@ function clearTicketsInManager(){
     });
 }
   */
-  
+  /*
 async function getPage(page) {
   var pages = {
     page1: "customization-booking-area-wrapper-page1",
