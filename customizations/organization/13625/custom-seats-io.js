@@ -4,7 +4,7 @@ console.log('github seats.io code!');
 // hide the category after the widget has been rendered
 checkSelectedCategory();
 
-/*
+
 var insertionListener = function (event) {
     //console.log(event);
     if (event.animationName === 'nodeInsertedSeats') {
@@ -23,7 +23,7 @@ var insertionListener = function (event) {
         if($('#chart').length === 0){
             addSeatScript();
         }
-        *//*
+        */
     }else if(event.animationName === 'chartScriptAdded'){
         //console.log('chartScriptAdded');
     }else if(event.animationName === 'attendeeEdited'){
@@ -35,7 +35,7 @@ var insertionListener = function (event) {
 document.addEventListener("animationstart", insertionListener, false); // standard + firefox
 document.addEventListener("MSAnimationStart", insertionListener, false); // IE
 document.addEventListener("webkitAnimationStart", insertionListener, false); // Chrome + Safari
-*/
+
 
 function checkSelectedCategory(){
     console.log('checkSelectedCategory:');
