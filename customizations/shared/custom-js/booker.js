@@ -36,9 +36,14 @@ async function _run(booker, options) {
     else if (body && $(body).text().trim()) new_state = "close";
     else new_state = "title";
 
+    console.log("new state:", new_state);
+    
     if (new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
+    console.log("pass 1");
     if (new_state == "open" && booker_info.state == "open" && save == booker_info.save_button) return;
+    console.log("pass 2");
     if (new_state == booker_info.state && !booker_info.first) return;
+    console.log("pass 3");
 
     booker_info.state = new_state;
     booker_info.save_button = save;
