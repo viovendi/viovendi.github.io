@@ -1,12 +1,12 @@
 const booker_info = { };
 
-async function run(options) {
+async function run(options, additional) {
   booker_info.global_observer?.disconnect();
   function execute() {
     if ($(".customization2_booker_title").length) {
       booker_info.global_observer?.disconnect();
       const booker = $(".customization2_booker").parent().parent();
-      _run(booker, options);
+      _run(booker, options, additional ?? true);
       return true;
     }
     return false;
@@ -21,7 +21,7 @@ async function run(options) {
   }
 }
 
-async function _run(booker, options) {
+async function _run(booker, options, additional) {
   const be = booker.get(0);
 
   options.create?.(be);
@@ -36,14 +36,9 @@ async function _run(booker, options) {
     else if (body && $(body).text().trim()) new_state = "close";
     else new_state = "title";
 
-    console.log("new state:", new_state);
-    
-    if (new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
-    console.log("pass 1");
+    if (additional && new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
     if (new_state == "open" && booker_info.state == "open" && save == booker_info.save_button) return;
-    console.log("pass 2");
     if (new_state == booker_info.state && !booker_info.first) return;
-    console.log("pass 3");
 
     booker_info.state = new_state;
     booker_info.save_button = save;
