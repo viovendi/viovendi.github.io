@@ -11,6 +11,7 @@ async function run(exactLabel, attendee) {
   let p = qu.filter((i, q) => results[i]).parent();
   while (true) {
     const el = p.get(0);
+    console.log(el)
     if (!el || el.tagName.toLowerCase().startsWith("vv-additional-question-")) return p;
     p = p.parent();
   }
