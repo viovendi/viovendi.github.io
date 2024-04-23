@@ -6,7 +6,7 @@ function run(){
     if(title.includes("Schüler@HORNBACH")){
         if($('#464413').length == 0){
         var but = $($(this)).find(".button:not(#464413)");
-        $(but).after('<a class="button" id="464413" target="_blank" href="https://prjkt.ly/Schueler-at-HB-Markt">Mehr Infos</a>');
+        $(but).after('<a class="button" id="464413" target="_blank" href="https://jobs.hornbach.com/Germany/content/Schueler-bei-HORNBACH/?locale=de_DE">Mehr Infos</a>');
         $(but).hide();
         }
     }
