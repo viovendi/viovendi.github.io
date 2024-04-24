@@ -115,13 +115,13 @@ function loader(param){
     console.log('loader');
   if(param == 'on'){
     console.log('loader-on');
-    $('.ew-confirmation__block').append('<div class="loader"></div>');
-    $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
+    $('.ew-confirmation__notice').append('<div class="loader"></div>');
+    $('.ew-confirmation__summary, .ew-confirmation__notice p, .ew-confirmation__notice a, .ew-confirmation__organizer-contact').hide();
     
-    $('.ew-confirmation__block .loader').show();
+    $('.loader').show();
   }else{
-    $('.ew-confirmation__block .loader').hide();
-        $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').show();
+    $('.loader').hide();
+        $('.ew-confirmation__summary, .ew-confirmation__notice p, .ew-confirmation__notice a, .ew-confirmation__organizer-contact').show();
   }
 }
 
