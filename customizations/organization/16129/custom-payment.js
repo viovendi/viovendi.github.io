@@ -112,7 +112,9 @@ function addPaymentButton(txNumber){
 }
 
 function loader(param){
+    console.log('loader');
   if(param == 'on'){
+    console.log('loader-on');
     $('.ew-confirmation__block').append('<div class="loader"></div>');
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
     
