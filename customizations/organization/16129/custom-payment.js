@@ -116,7 +116,7 @@ function loader(param){
   if(param == 'on'){
     console.log('loader-on');
     $('.ew-confirmation__notice').append('<div class="loader"></div>');
-    $('.ew-confirmation__summary, .ew-confirmation__notice p, .ew-confirmation__notice a, .ew-confirmation__organizer-contact').hide();
+    $('.ew-confirmation__summary, .ew-confirmation__notice p, .ew-confirmation__notice a, .ew-confirmation__notice h3, .ew-confirmation__notice h4, .ew-confirmation__organizer-contact').hide();
     
     $('.loader').show();
   }else{
