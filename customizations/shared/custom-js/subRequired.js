@@ -21,16 +21,16 @@ async function run(attendee, text, ...required) {
     function setter() {
       const answers = selector();
       if (answers.join("")) {
-        el.removeClass("ng-invalid", "ng-dirty");
+        el.removeClass("ng-invalid ng-dirty");
         el.addClass("ng-valid");
-        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-invalid ng-dirty");
         el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-valid");
         el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").hide();
         return false;
       } else {
-        el.addClass("ng-invalid", "ng-dirty");
+        el.addClass("ng-invalid ng-dirty");
         el.removeClass("ng-valid");
-        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-invalid ng-dirty");
         el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-valid");
         el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").show();
         return true;
