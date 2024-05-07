@@ -1,4 +1,5 @@
 async function run(attendee, text, ...required) {
+  const type = $(attendee).is("vv-attendee") ? "attendee" : "booker";
   const through = [];
   for (const question of required) {
     const el = await custom_js("findQuestion", question, attendee);
@@ -8,7 +9,7 @@ async function run(attendee, text, ...required) {
     div.classList.add("position-relative");
     div.style.display = "none";
     const divi = document.createElement("div");
-    divi.classList.add("error-text", "customization2_attendee_further-data_custom-question_error", "error-text--left", "vv-text-wrap--no-wrap");
+    divi.classList.add("error-text", "customization2_" + type + "_further-data_custom-question_error", "error-text--left", "vv-text-wrap--no-wrap");
     divi.style["margin-top"] = "4px";
     divi.style["font-size"] = ".75rem";
     divi.style["line-height"] = ".875rem";
@@ -22,16 +23,16 @@ async function run(attendee, text, ...required) {
       if (answers.join("")) {
         el.removeClass("ng-invalid", "ng-dirty");
         el.addClass("ng-valid");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-invalid", "ng-dirty");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-valid");
-        el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").hide();
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-valid");
+        el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").hide();
         return false;
       } else {
         el.addClass("ng-invalid", "ng-dirty");
         el.removeClass("ng-valid");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).addClass("ng-invalid", "ng-dirty");
-        el.find(".customization2_attendee_further-data_custom-question").children().eq(0).removeClass("ng-valid");
-        el.find(".customization2_attendee_further-data_custom-question").find("vv-show-errors").children("div").show();
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-invalid", "ng-dirty");
+        el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-valid");
+        el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").show();
         return true;
       }
     }
@@ -39,7 +40,7 @@ async function run(attendee, text, ...required) {
     through.push([el, setter]);
   }
 
-  $(attendee).find(".customization2_attendee_edit-action_save").click(event => {
+  $(attendee).find(".customization2_" + type + "_edit-action_save").click(event => {
     let anyWrong = false;
     for (const [el, setter] of through) {
       if (el.is(":visible")) {
@@ -48,7 +49,7 @@ async function run(attendee, text, ...required) {
       }
     }
 
-    const first = $(attendee).find(".customization2_attendee_further-data").find(".ng-invalid").get(0);
+    const first = $(attendee).find(".customization2_" + type + "_further-data").find(".ng-invalid").get(0);
     for (const [el, setter] of through) {
       if (el.is(".ng-invalid:visible") && el.get(0) == first) {
         first.scrollIntoView({ "behaviour": "smooth" });
