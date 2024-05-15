@@ -9,9 +9,10 @@ async function run(exactLabel, attendee) {
     return await custom_js("match", match, allText);
   }));
   let p = qu.filter((i, q) => results[i]).parent();
+
   while (true) {
     const el = p.get(0);
-    if (!el || el.tagName.toLowerCase().startsWith("vv-additional-question-")) return p;
+    if (!el || p.parent().parent().is("vv-additional-questions") || p.parent().is("vv-additional-answers")) return p;
     p = p.parent();
   }
 }
