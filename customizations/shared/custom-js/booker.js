@@ -3,7 +3,7 @@ const booker_info = { };
 async function run(options, additional) {
   booker_info.global_observer?.disconnect();
   function execute() {
-    if ($(".customization2_booker_title").length) {
+    if ($(".customization2_booker_contact-data_headline").length) {
       booker_info.global_observer?.disconnect();
       const booker = $(".customization2_booker").parent().parent();
       _run(booker, options, additional ?? true);
