@@ -11,6 +11,9 @@ styleSheetStripe.innerHTML = `
     background-repeat: no-repeat;
     background-position: center;
 }
+.loader p{
+    margin-top: 30px;
+}
 @keyframes nodeInserted {
     from { opacity: 0.99; }
     to { opacity: 1; }
