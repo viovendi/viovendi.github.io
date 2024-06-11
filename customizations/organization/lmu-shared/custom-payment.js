@@ -88,13 +88,17 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 function loader(param){
     console.log('loader');
   if(param == 'on'){
-    $('.confirmation-header').append('<div class="loader"></div>');
+    console.log('on');
+    $('.confirmation-header').append('<div class="loader"><p>Please wait, you will be redirected to a page to complete your payment.</p></div>');
+    console.log($('.confirmation-header'));
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
     $('.ew-confirmation__summary, .ew-confirmation__notice, .ew-confirmation__organizer-contact').hide();
     
-    $('.confirmation-header .loader').show();
+    console.log($('.loader'));
+      
+    $('.loader').show();
   }else{
-    $('.confirmation-header .loader').hide();
+    $('.loader').hide();
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').show();
     $('.ew-confirmation__summary, .ew-confirmation__notice, .ew-confirmation__organizer-contact').show();
   }
