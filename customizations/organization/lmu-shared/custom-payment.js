@@ -12,7 +12,7 @@ styleSheetStripe.innerHTML = `
     background-position: center;
 }
 .loader p{
-    margin-top: 30px;
+    padding-top: 100px;
 }
 @keyframes nodeInserted {
     from { opacity: 0.99; }
