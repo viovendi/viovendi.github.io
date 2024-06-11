@@ -61,11 +61,8 @@ function isEpayPayment(){
 
 var insertionListener = function (event) {
   if (event.animationName === 'nodeInserted') {
-    console.log('nodeInserted - run request intercept');
-
     // page3
     $('.customization-booking-area-wrapper-page3 .customization-button-next').on('click', function(){
-      console.log('bttn clicked!');
       if(isEpayPayment()){
         console.log('isisEpayPayment - true');
         localStorage.setItem('payment_method', 'ePay');
@@ -74,8 +71,6 @@ var insertionListener = function (event) {
     });
     
   }else if(event.animationName === 'nodeInsertedPage4'){
-    console.log('page4 loaded');
-    
     // page4
     if(localStorage.getItem('payment_method') === 'ePay'){
       console.log('page4 ePay!!!');
@@ -90,15 +85,10 @@ document.addEventListener("webkitAnimationStart", insertionListener, false); // 
 
 
 function loader(param){
-    console.log('loader');
   if(param == 'on'){
-    console.log('on');
     $('.confirmation-header').append('<div class="loader"><p>Please wait, you will be redirected to a page to complete your payment.</p></div>');
-    console.log($('.confirmation-header'));
     $('.ew-confirmation .ew-confirmation__header, .ew-confirmation .ew-confirmation__heading, .ew-confirmation .ew-confirmation__summary, .ew-confirmation .ew-confirmation__notice, .ew-confirmation .ew-confirmation__organizer-contact').hide();
     $('.ew-confirmation__summary, .ew-confirmation__notice, .ew-confirmation__organizer-contact').hide();
-    
-    console.log($('.loader'));
       
     $('.loader').show();
   }else{
