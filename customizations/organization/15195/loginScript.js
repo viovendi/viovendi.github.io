@@ -1,3 +1,4 @@
+console.log("test");
 var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
 console.log(CognitoUserPool)
 var poolData = {
