@@ -1,7 +1,7 @@
 console.log("COMPLEX-864")
 console.log('GTM file connected');
 
-
+/* disable
 
 const requiredInputs = (id) => {
   const errorMessage = `<vv-show-errors _nghost-sqr-c37=""><div _ngcontent-sqr-c37="" class="error-relative">
@@ -104,3 +104,4 @@ productChecked(workshopblockValue);
 $('.customization2_attendee_edit-action_save').on('click', (e) => {
   console.log('click')
 })
+*/
