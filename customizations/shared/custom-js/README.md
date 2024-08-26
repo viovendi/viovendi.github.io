@@ -126,7 +126,7 @@ await custom_js("css", ".error { color: red; }");
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
 Peforms event based functions on attendee elements.
-This tool should be called on the booking page of the widget.
+This tool should be called on the booking page of the widget or in the booking portal.
 The different functions are being called whenever an attendee element
 changes its' state.
 * Name: `attendees`
@@ -271,6 +271,8 @@ the question is made to bahave like other required questions:
 * etc.
 
 
+
+---
 # Contribution
 When adding a new helper, remember following these steps:
 1. Create the file in this directory
