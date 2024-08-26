@@ -1,12 +1,12 @@
 const booker_info = { };
 
-async function run(options, additional) {
+async function run(options) {
   booker_info.global_observer?.disconnect();
   function execute() {
     if ($(".customization2_booker_contact-data_headline").length) {
       booker_info.global_observer?.disconnect();
       const booker = $(".customization2_booker").parent().parent();
-      _run(booker, options, additional ?? true);
+      _run(booker, options);
       return true;
     }
     return false;
@@ -21,7 +21,7 @@ async function run(options, additional) {
   }
 }
 
-async function _run(booker, options, additional) {
+async function _run(booker, options) {
   const be = booker.get(0);
 
   options.create?.(be);
@@ -43,9 +43,8 @@ async function _run(booker, options, additional) {
       }
     }
 
-    console.log("Additional questions there?", booker.find("vv-additional-questions").length);
-    
-    if (additional && new_state == "open" && !(booker.find("vv-additional-questions").find("form").length)) return;
+    const additional = booker.find("vv-additional-questions");
+    if (additional.length && new_state == "open" && !(additional.find("form").length)) return;
     if (new_state == "open" && booker_info.state == "open" && save == booker_info.save_button) return;
     if (new_state == booker_info.state && !booker_info.first) return;
 
