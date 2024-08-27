@@ -27,7 +27,8 @@ async function run(options) {
       else if (body) new_state = "close";
       else new_state = "title";
 
-      if (new_state == "open" && !($(attendee).find("vv-additional-questions").find("form").length)) return;
+      const additional = $(attendee).find("vv-additional-questions");
+      if (additional.length && new_state == "open" && !(additional.find("form").length)) return;
       if (new_state == "open" && info.state == "open" && save == info.save_button) return;
       if (new_state == info.state && !info.first) return;
 
