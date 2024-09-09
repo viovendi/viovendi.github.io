@@ -3,7 +3,7 @@ const attendees_info = { };
 async function run(options) {
   const stack = (new Error()).stack;
   if (!(stack in attendees_info)) {
-    attendees_info = { };
+    attendees_info[stack] = { };
   }
   const attendees = $(".customization3_booking-participant_attendee").parent().get();
   for (const a_id in attendees_info[stack]) {
