@@ -1,22 +1,26 @@
 const attendees_info = { };
 
 async function run(options) {
+  const stack = (new Error()).stack;
+  if (!(stack in attendees_info)) {
+    attendees_info[stack] = { };
+  }
   const attendees = $(".customization3_booking-participant_attendee").parent().get();
-  for (const a_id in attendees_info) {
-    attendees_info[a_id].observer.disconnect();
+  for (const a_id in attendees_info[stack]) {
+    attendees_info[stack][a_id].observer.disconnect();
     if (!attendees.some(a => a.id == a_id)) {
       options.remove?.(null, a_id);
-      delete attendees_info[a_id];
+      delete attendees_info[stack][a_id];
     } else {
-      attendees_info[a_id].first = true;
+      attendees_info[stack][a_id].first = true;
     }
   }
   attendees.forEach(attendee => {
     const id = attendee.id;
-    if (!(id in attendees_info)) {
-      attendees_info[id] = { };
+    if (!(id in attendees_info[stack])) {
+      attendees_info[stack][id] = { };
     }
-    const info = attendees_info[id];
+    const info = attendees_info[stack][id];
     
     function execute() {
       const save = $(attendee).find(".customization2_attendee_edit-action_save").get(0);
