@@ -26,7 +26,7 @@ async function run(options) {
   }
 }
 
-async function _run(booker, options) {
+async function _run(booker, options, stack) {
   const be = booker.get(0);
 
   options.create?.(be);
