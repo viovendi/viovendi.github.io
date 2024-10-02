@@ -1,7 +1,8 @@
 async function run(attendee, cond) {
-// for the possibility of multiple answers pointing to the same question
-  function propagateReferences(cond, path, ref) {
-    console.log(cond, path, ref);
+  const ref = { };
+
+  // for the possibility of multiple answers pointing to the same question
+  function propagateReferences(cond, path) {
     if (cond.constructor == "".constructor) {
       // single question without further action
       if (!(cond in ref)) {
@@ -10,16 +11,16 @@ async function run(attendee, cond) {
       ref[cond].add(path);
     } else if (cond.constructor === [].constructor) {
       // multiple questions without further action
-      for (const c of cond) { propagateReferences(c, path, ref); }
+      for (const c of cond) { propagateReferences(c, path); }
     } else {
       for (const question in cond) {
         const answers = cond[question];
-        propagateReferences(question, path, ref);
+        propagateReferences(question, path);
         if (answers == null || answers == "") {
           continue;
         }
         for (const possible in answers) {
-          propagateReferences(answers[possible], path + "/" + question + "." + possible, ref);
+          propagateReferences(answers[possible], path + "/" + question + "." + possible);
         }
       }
     }
@@ -100,8 +101,7 @@ async function run(attendee, cond) {
     }
   }
 
-  const ref = { };
-  propagateReferences(cond, "", ref);
+  propagateReferences(cond, "");
 
   for (const question in ref) {
     const q = await custom_js("findQuestion", question, attendee);

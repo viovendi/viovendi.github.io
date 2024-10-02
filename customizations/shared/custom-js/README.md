@@ -272,6 +272,41 @@ the question is made to bahave like other required questions:
 
 
 
+## Booker
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Peforms event based functions on the booker element.
+This tool should be called on the booking page of the widget or in the booking portal.
+The different functions are being called whenever the booker element
+changes its' state.
+* Name: `attendees`
+* Args:
+  * `options` - object with following possible parameters (different states in which an attendee element can be):
+    * `open` - called when the booker is editing his form
+    * `close` - called when an booker saves his data and the form closes, but still visible
+    * `title` - called when the form is closed and collapsed
+    * The single argument passed to these functions is:
+      * the booker element as a DOM element
+
+#### Further Explanation
+Practically the same as the `attendees` customization.
+
+#### Examples
+```js
+function startCustomization() {
+  window.addEventListener("doo_page_loaded", async event => {
+    if (event.detail.widget.page.name == "booking_registration_details") {
+      await custom_js("booker", {
+        "open": booker => moveQuestions(booker),
+        "close": booker => renameTitle(booker)
+      });
+    }
+  });
+}
+```
+
+
+
 ---
 # Contribution
 When adding a new helper, remember following these steps:
@@ -282,8 +317,14 @@ When adding a new helper, remember following these steps:
 // something.js
 async function run(a, b) {
   // perform job or call some other functions
+  // keep all sub-functions or variables needed for one run
+  // inside this `run()` function
 }
+// keep all shared variables outside
+// and name them `custom_js_*` to reduce the chance of name collisions
 ```
+3. All functions and variables needed for one run are to be kept inside the function
+4. 
 3. Add a new entry in the overview of this README:
 
 ```md

@@ -1,17 +1,17 @@
-const cache = { };
+const custom_js_cache = { };
 
 window.custom_js = async function (name, ...args) {
-  if (name + "#loading" in cache) {
-    await cache[name + "#loading"];
-    return await cache[name](...args);
+  if (name + "#load" in custom_js_cache) {
+    await custom_js_cache[name + "#load"];
+    return await custom_js_cache[name](...args);
   }
   let loaded;
-  cache[name + "#loading"] = new Promise(res => {
+  custom_js_cache[name + "#load"] = new Promise(res => {
     loaded = res;
   });
   return new Promise(resolve => {
     $.getScript("https://viovendi.github.io/customizations/shared/custom-js/" + name + ".js", async () => {
-      cache[name] = run;
+      custom_js_cache[name] = run;
       loaded();
       resolve(await run(...args));
     });
