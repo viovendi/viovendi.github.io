@@ -8,4 +8,6 @@ async function run(element) {
     return () => element.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
   else if (element.is("vv-additional-question-text") || element.is("vv-additional-question-paragraph"))
     return () => [element.find(".customization2_" + type + "_further-data_custom-question_input").val()];
+  else if (element.is("vv-additional-question-phone"))
+    return () => [element.find(".customization2_attendee_further-data_custom-question_phone input").val()];
 }
