@@ -8,7 +8,8 @@ async function run(element, handler) {
     element.change(handler);
   } else if (
     element.is("vv-additional-question-text") ||
-    element.is("vv-additional-question-paragraph")
+    element.is("vv-additional-question-paragraph") ||
+    element.is("vv-additional-question-phone")    
   ) {
     element.change(handler);
     element.focusout(handler);
