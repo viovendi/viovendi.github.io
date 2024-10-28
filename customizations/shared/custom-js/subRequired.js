@@ -41,18 +41,19 @@ async function run(attendee, text, ...required) {
   }
 
   function click(event, att) {
-    let firstWrong = true;
-    const first = $(".ng-invalid:not(form)").get(0);
+    let anyWrong = false;
     for (const [el, setter] of through) {
       if (el.is(":visible")) {
         const wrong = setter();
-        if (wrong && firstWrong) {
-          if (first == el.get(0)) {
-            event.preventDefault();
-            el.get(0).scrollIntoView({ "behavior": "smooth" });
-          }
-          firstWrong = false;
-        }
+        if (wrong) anyWrong = true;
+      }
+    }
+    if (!anyWrong) return;
+    const first = $(".ng-invalid:not(form)").get(0);
+    for (const [el, setter]) {
+      if (first == el.get(0)) {
+        event.preventDefault();
+        el.get(0).scrollIntoView({ "behavior": "smooth" });
       }
     }
   }
