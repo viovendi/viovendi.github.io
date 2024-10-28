@@ -40,7 +40,7 @@ async function run(attendee, text, ...required) {
     through.push([el, setter]);
   }
 
-  $(attendee).find(".customization2_" + type + "_edit-action_save").click(event => {
+  function click(event, att) {
     let anyWrong = false;
     for (const [el, setter] of through) {
       if (el.is(":visible")) {
@@ -49,7 +49,7 @@ async function run(attendee, text, ...required) {
       }
     }
 
-    const first = $(attendee).find(".customization2_" + type + "_further-data").find(".ng-invalid").get(0);
+    const first = (att ? $(attendee).find(".customization2_" + type + "_further-data") : $(document)).find(".ng-invalid").get(0);
     for (const [el, setter] of through) {
       if (el.is(".ng-invalid:visible") && el.get(0) == first) {
         first.scrollIntoView({ "behaviour": "smooth" });
@@ -57,5 +57,8 @@ async function run(attendee, text, ...required) {
         break;
       }
     }
-  });
+  }
+
+  $(attendee).find(".customization2_" + type + "_edit-action_save").click(e => click(e, true));
+  $(".customization-button-next").click(e => click(e, false));
 }
