@@ -47,7 +47,7 @@ async function run(attendee, text, ...required) {
       if (el.is(":visible")) {
         const wrong = setter();
         if (wrong && firstWrong) {
-          if (first == el) {
+          if (first == el.get(0)) {
             event.preventDefault();
             el.get(0).scrollIntoView({ "behavior": "smooth" });
           }
