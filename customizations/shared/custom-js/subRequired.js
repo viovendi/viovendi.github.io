@@ -41,24 +41,20 @@ async function run(attendee, text, ...required) {
   }
 
   function click(event, att) {
-    let anyWrong = false;
+    let firstWrong = true;
+    const first = $(".ng-invalid:not(form)").get(0);
     for (const [el, setter] of through) {
       if (el.is(":visible")) {
         const wrong = setter();
-        if (wrong) anyWrong = true;
-      }
-    }
-
-    const first = (att ? $(attendee).find(".customization2_" + type + "_further-data") : $(document)).find(".ng-invalid").get(0);
-    for (const [el, setter] of through) {
-      if (el.is(".ng-invalid:visible") && el.get(0) == first) {
-        first.scrollIntoView({ "behaviour": "smooth" });
-        if (anyWrong) event.preventDefault();
-        break;
+        if (wrong && firstWrong) {
+          event.preventDefault();
+          if (first == el) el.get(0).scrollIntoView({ "behavior": "smooth" });
+          firstWrong = false;
+        }
       }
     }
   }
 
-  $(attendee).find(".customization2_" + type + "_edit-action_save").click(e => click(e, true));
-  $(".customization-button-next").click(e => click(e, false));
+  $(attendee).find(".customization2_" + type + "_edit-action_save").click(click);
+  $(".customization-button-next").click(click);
 }
