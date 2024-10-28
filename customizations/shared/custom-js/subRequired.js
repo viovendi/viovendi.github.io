@@ -50,7 +50,7 @@ async function run(attendee, text, ...required) {
     }
     if (!anyWrong) return;
     const first = $(".ng-invalid:not(form)").get(0);
-    for (const [el, setter]) {
+    for (const [el, setter] of through) {
       if (first == el.get(0)) {
         event.preventDefault();
         el.get(0).scrollIntoView({ "behavior": "smooth" });
