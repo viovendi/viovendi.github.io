@@ -6,7 +6,7 @@ window.custom_js = new Proxy(async function (name, ...args) {
 }, {
   "get": function(target, tool) {
     // new style: custom_js.tool_name(...args)
-    return async (...args) => await custom_js_load_and_run(name, ...args);
+    return async (...args) => await custom_js_load_and_run(tool, ...args);
   }
 });
 
