@@ -513,7 +513,11 @@ setInterval(function () {
     if ($('.confirmation-dialog__content > div > button').text().trim() == 'Cancel booking') { $('.confirmation-dialog__content > div > button').text('Avbryt bokningen') }
 
 
-
+    
+    // Next (tickets)
+    $(".ew-selection__further .customization-button-next").text("Nästa");
+    // Book (booking)
+    $(".customization-button-next:not(.ew-selection__further .customization-button-next)").text("Boka");
 
 
 }, 3000);
