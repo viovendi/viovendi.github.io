@@ -4,8 +4,9 @@ A collection of up-to-date helpers for common customizations.
 # Usage
 1. Load jQuery.
 2. Install the custom-js-loader using `$.getScript("https://viovendi.github.io/customizations/shared/custom-js/loader.js");`.
-3. This will install the function `async custom_js(name, ...args)`.
+3. This will install the helper `custom_js`.
 4. Now it can be used to load and use different helpers from this directory.
+
 
 
 # Overview
@@ -16,14 +17,18 @@ Here is an overview of all helpers currently defined here.
 ## Loader
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
-Installs the `custom_js` function to dynamically load other helpers.
-* Args:
-  * `name` - name of the helper
-  * `...args` - comma separated arguments to pass to the helper
+Installs `custom_js` to dynamically load other helpers.
+* Usage:
+  * Getter style: `custom_js.tool_name(arg1, arg2, ...)`
+  * Function style: `custom_js(tool_name, arg1, arg2, ...)`
 * Returns: the data returned by the helper
 
 #### Examples
 ```js
+// Getter style (preferred way)
+await custom_js.findQuestion("What is your Job Title?", attendee);
+
+// Function style
 await custom_js("findQuestion", "What is your Job Title?", attendee);
 ```
 
@@ -41,9 +46,9 @@ Matches a string against a search pattern (not regex).
 
 #### Examples
 ```js
-await custom_js("match", "I am a {...} and I want to {...}", "I am a bird and I want to fly"); // true
+await custom_js.match("I am a {...} and I want to {...}", "I am a bird and I want to fly"); // true
 
-await custom_js("match", "Roses are {...}", "I like roses"); // false
+await custom_js.match("Roses are {...}", "I like roses"); // false
 ```
 
 
@@ -55,14 +60,14 @@ Find a question on the attendee page using `match`.
 * Name: `findQuestion`
 * Args:
   * `question` - the search pattern
-  * `attendee` - optional argument, uses a special attendee element instead of the whole document to search for the question; recommended!
-* Returns: the question which was searched
+  * `attendee` - optional argument, uses a special attendee element instead of the whole document to search for the question; **recommended!**
+* Returns: `jQuery object` - the question(s) which was (were) searched
 
 #### Examples
 ```js
-await custom_js("findQuestion", "What is your Job Title?");
+await custom_js.findQuestion("What is your Job Title?");
 
-await custom_js("findQuestion", "Event Registration on {...}", attendee);
+await custom_js.findQuestion("Event Registration on {...}", attendee);
 ```
 
 ## Conditional Questions
@@ -76,18 +81,18 @@ Automatically adds all the needed listeners and logic.
   * `structure` - The structure of conditional questions, explanation below
 
 #### Further Explanation
-The `structure` argument is an object. The key is the question which should unlock further questions.
-The value is each answer, which unlocks further questions.
+The `structure` argument is an **Object**. The keys are the questions which should unlock further questions.
+The values are the corresponding answers, which unlock further questions.
 
 The unlocked questions may have 4 different formats:
-1. It is as well conditional and can unlock further questions; the same format as described above should be used
-2. It opens only one further question, which is not conditional; a String should be used
-3. It opens multiple questions, which are all not conditional; an Array of String should be used
-4. It opens further questions, but only some of them are conditional; those not conditional questions should have `null` as their value
+1. It is as well conditional and can unlock further questions: the **same format** as described above should be used
+2. It opens only one further question, which is not conditional: a **String** should be used
+3. It opens multiple questions, which are all not conditional: an **Array of Strings** should be used
+4. It opens further questions, but only some of them are conditional: those not conditional questions should have `null` as their value, all other same as `1.`
 
 #### Examples
 ```js
-await custom_js("conditional", attendee1, {
+await custom_js.conditional(attendee1, {
   "Organisation": {
     "I ask for trip organisation": {                                       // format 1
       "How do you plan to arrive?": {
@@ -113,11 +118,11 @@ Add a CSS stylesheet to the document and wait until it loads.
 * Name: `css`
 * Args:
   * `css` - stylesheet as a string
-* Returns: the loaded event
+* Returns: the `load` event
 
 #### Examples
 ```js
-await custom_js("css", ".custom_js_error { color: red; }");
+await custom_js.css(".custom_js_error { color: red; }");
 ```
 
 
@@ -131,21 +136,21 @@ The different functions are being called whenever an attendee element
 changes its' state.
 * Name: `attendees`
 * Args:
-  * `options` - object with following possible parameters (different states in which an attendee element can be):
+  * `options` - **Object** with following possible parameters (different states in which an attendee element can be):
     * `open` - called when the attendee is editing his form
     * `close` - called when an attendee saves his data and the form closes, but still visible
     * `title` - called when the form is closed and collapsed
     * `remove` - called when the booker went back to ticket selection, removed a ticket and came back - one attendee should have disappeared from the booking page
     * The arguments passed to these functions are:
-      * the attendee element as a DOM element
-      * the internal and unique ID of the attendee element
+      * the attendee element as a **DOM element**
+      * the internal and **unique ID** of the attendee element
 
 #### Further Explanation
 Whenever the state of an attendee element changes, the visuals
 are being re-calculated on the client and some customizations such as
 listeners for Conditional Questions or None Checkbox or any manually added
 titles and descriptions will disappear. To prevent a difficult setup where
-any change is tracked instead it is recommended to use this tool like shown
+any change is tracked, it is recommended to use this tool instead, like shown
 in the example below, which is a fail-safe solution.
 
 #### Examples
@@ -153,7 +158,7 @@ in the example below, which is a fail-safe solution.
 function startCustomization() {
   window.addEventListener("doo_page_loaded", async event => {
     if (event.detail.widget.page.name == "booking_registration_details") {
-      await custom_js("attendees", {
+      await custom_js.attendees({
         "open": (attendee, id) => applyDesign(attendee),
         "close": (attendee, id) => removeDescription(attendee)
       });
@@ -178,7 +183,7 @@ a "no selection" option.
 #### Examples
 With this code:
 ```js
-await custom_js("noneCheckbox", document, "Workshop{...}", "I am not {...}");
+await custom_js.noneCheckbox(document, "Workshop{...}", "I am not {...}");
 ```
 for this group:
 
@@ -199,13 +204,13 @@ Attach a handler to a question which is being called whenever the selection or i
 is changed. Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
 * Name: `questionHandler`
 * Args:
-  * `element` - a jQuery element of the question (retrieved from e.g. `findQuestion`)
+  * `element` - a **jQuery object** of the question (retrieved from e.g. `findQuestion`)
   * `handler` - a function to call whenever a selection is being made
 
 #### Examples
 ```js
-const job = await custom_js("findQuestion", "Jobtitle", attendee);
-await custom_js("questionHandler", job, () => {
+const job = await custom_js.findQuestion("Jobtitle", attendee);
+await custom_js.questionHandler(job, () => {
   console.log("'Jobtitle' input changed!");
 });
 ```
@@ -220,7 +225,7 @@ Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`
 * Name: `answersSelector`
 * Args:
   * `element` - a jQuery element of a question
-* Returns: a function, which when called returns an array of answers on the given question element
+* Returns: a function, which when called returns an **Array of Strings** on the given question element
   * The array type is for compatibility with different internal tools which use this tool under the hood 
   * For `checkboxes` the array will have all the answers as array elements
   * For any other question type the array will always have one element; if no selection is made, that element will be an empty string `""`
@@ -232,10 +237,11 @@ This is optimal and reduces latency since the code checks for the question type 
 
 #### Examples
 ```js
-const job = await custom_js("findQuestion", "Jobtitle", attendee);
-const selector = await custom_js("answersSelector", job);
-await custom_js("questionHandler", job, () => {
-  console.log("'Jobtitle' input changed to", selector());
+const job = await custom_js.findQuestion("Jobtitle", attendee);
+const selector = await custom_js.answersSelector(job);
+await custom_js.questionHandler(job, () => {
+  const answer = selector().join("");
+  console.log("'Jobtitle' input changed to", answer);
 });
 ```
 
@@ -255,19 +261,20 @@ Useful in combination with `conditional`.
 
 #### Examples
 ```js
-await custom_js("conditional", attendee, {
+await custom_js.conditional(attendee, {
   "Jobtitle": {
     "other": "What is your Jobtitle?"
   }
 });
-await custom_js("subRequired", attendee, "Fill out this field", "What is your Jobtitle?");
+await custom_js.subRequired(attendee, "Fill out this field", "What is your Jobtitle?");
 ```
 This snippet makes a conditional question setup for the "Jobtitle" question,
 and if "other" is selected, the text field "What is your Jobtitle?" appears -
 the question is made to bahave like other required questions:
 * the gray info "(optional)" will be hidden
 * red text will appear if nothing is entered
-* the "Save" button will not work
+* the "Save" and "Book now" buttons will not work: When clicked and the question is empty, the question will
+  be scrolled into view, just like any other required questions would do.
 * etc.
 
 
@@ -277,26 +284,25 @@ the question is made to bahave like other required questions:
 
 Peforms event based functions on the booker element.
 This tool should be called on the booking page of the widget or in the booking portal.
-The different functions are being called whenever the booker element
-changes its' state.
-* Name: `attendees`
+The different functions are being called whenever the booker element changes its' state.
+* Name: `booker`
 * Args:
-  * `options` - object with following possible parameters (different states in which an attendee element can be):
+  * `options` - **Object** with following possible parameters (different states in which an attendee element can be):
     * `open` - called when the booker is editing his form
     * `close` - called when an booker saves his data and the form closes, but still visible
     * `title` - called when the form is closed and collapsed
     * The single argument passed to these functions is:
-      * the booker element as a DOM element
+      * the booker element as a **DOM element**
 
 #### Further Explanation
-Practically the same as the `attendees` customization.
+Practically the same as the `attendees` customization, just for the booker.
 
 #### Examples
 ```js
 function startCustomization() {
   window.addEventListener("doo_page_loaded", async event => {
     if (event.detail.widget.page.name == "booking_registration_details") {
-      await custom_js("booker", {
+      await custom_js.booker({
         "open": booker => moveQuestions(booker),
         "close": booker => renameTitle(booker)
       });
@@ -321,11 +327,10 @@ async function run(a, b) {
   // inside this `run()` function
 }
 // keep all shared variables outside
-// and name them `custom_js_*` to reduce the chance of name collisions
+// and name them `custom_js_<helper>_<variable>` to reduce the chance of name collisions
 ```
 3. All functions and variables needed for one run are to be kept inside the function
-4. 
-3. Add a new entry in the overview of this README:
+4. Add a new entry in this README:
 
 ```md
 ## {title}
