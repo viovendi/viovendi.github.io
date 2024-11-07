@@ -24,7 +24,7 @@ Installs the `custom_js` function to dynamically load other helpers.
 
 #### Examples
 ```js
-await custom_js("findQuestion", "What is your Job Title?", true);
+await custom_js("findQuestion", "What is your Job Title?", attendee);
 ```
 
 
@@ -89,13 +89,13 @@ The unlocked questions may have 4 different formats:
 ```js
 await custom_js("conditional", attendee1, {
   "Organisation": {
-    "I ask for trip organisation": {                                      // format 1
+    "I ask for trip organisation": {                                       // format 1
       "How do you plan to arrive?": {
-        "Flight": "Airport",                                              // format 2
+        "Flight": "Airport",                                               // format 2
         "Train": {
-          "Train Station": null,                                          // format 4
+          "Train Station": null,                                           // format 4
           "I have a BahnCard": {
-            "Ja, {...}": ["BahnCard number", "BahnCard expiration date"]  // format 3
+            "Yes, {...}": ["BahnCard number", "BahnCard expiration date"]  // format 3
           }
         }
       }
@@ -117,7 +117,7 @@ Add a CSS stylesheet to the document and wait until it loads.
 
 #### Examples
 ```js
-await custom_js("css", ".error { color: red; }");
+await custom_js("css", ".custom_js_error { color: red; }");
 ```
 
 
