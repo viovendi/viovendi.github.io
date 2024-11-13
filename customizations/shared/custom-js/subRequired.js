@@ -3,8 +3,13 @@ async function run(attendee, text, ...required) {
   const through = [];
   for (const question of required) {
     const el = await custom_js("findQuestion", question, attendee);
-    el.find("vv-optional-text").hide();
+    if (el.length == 0) continue;
 
+    el.find(".question-label-status")
+      .removeClass(["question-label-status--optional", "customization-question-label-status-optional"])
+      .addClass(["question-label-status--required", "customization-question-label-status-required"])
+      .text("*");
+    
     const div = document.createElement("div");
     div.classList.add("position-relative");
     div.style.display = "none";
