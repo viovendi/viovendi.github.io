@@ -67,6 +67,18 @@ $('.p-datepicker-prev').click(function () {
 });
 
 
+$(document.head).append(`
+    <style>
+        .gtm-search-filter {
+            visibility: hidden;
+        }
+        .gtm-search-filter::before {
+            content: "Alla varuhus";
+            visibility: visible;
+        }
+    </style>
+`);
+
 setInterval(function () {
 
 
@@ -513,12 +525,19 @@ setInterval(function () {
     if ($('.confirmation-dialog__content > div > button').text().trim() == 'Cancel booking') { $('.confirmation-dialog__content > div > button').text('Avbryt bokningen') }
 
 
-    
+    // CP-10102
     // Next (tickets)
     $(".ew-selection__further .customization-button-next").text("Nästa");
     // Book (booking)
     $(".customization-button-next:not(.ew-selection__further .customization-button-next)").text("Boka");
 
+    // CP-10239
+    // Search
+    $("vv-input-search input").attr("placeholder", "Sök");
+    // Filter
+    $(".vv-selection-input__value.p-placeholder:contains('All event locations')").addClass("gtm-search-filter");
+    $(".vv-selection-input__value.p-placeholder:not(:contains('All event locations'))").removeClass("gtm-search-filter");
+    $(".vv-selection-option.p-placeholder:contains('All event locations')").text("Alla varuhus");
 
 }, 3000);
 //99 available Replace the word
