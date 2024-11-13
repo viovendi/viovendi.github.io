@@ -4,7 +4,7 @@ async function run(exactLabel, attendee) {
     const labelSelector = ".customization2_" + ($(q).is(".customization2_attendee_further-data_custom-question") ? "attendee" : "booker") + "_further-data_custom-question_label";
     const label = $(q).find(labelSelector).clone();
     label.find("vv-tooltip").text("");
-    label.find("vv-optional-text").text("");
+    label.find("vv-field-label-status").text("");
     const allText = [...label.get(0).childNodes].map(c => $(c).text().trim()).join("");
     return await custom_js("match", exactLabel, allText);
   }));
