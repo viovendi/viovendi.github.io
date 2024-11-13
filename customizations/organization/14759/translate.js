@@ -535,8 +535,14 @@ setInterval(function () {
     // Search
     $("vv-input-search input").attr("placeholder", "Sök");
     // Filter
-    $(".vv-selection-input__value.p-placeholder:contains('All event locations')").addClass("gtm-search-filter");
-    $(".vv-selection-input__value.p-placeholder:not(:contains('All event locations'))").removeClass("gtm-search-filter");
+    const f = $(".vv-selection-input__value.p-placeholder");
+    if (f.is(":contains('Alla varuhus')")) {
+        // pass
+    } else if (f.is(":contains('All event locations')")) {
+        f.addClass("gtm-search-filter");
+    } else {
+        f.removeClass("gtm-search-filter");
+    }
     $(".vv-selection-option.p-placeholder:contains('All event locations')").text("Alla varuhus");
 
 }, 3000);
