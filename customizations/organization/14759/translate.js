@@ -535,10 +535,8 @@ setInterval(function () {
     // Search
     $("vv-input-search input").attr("placeholder", "Sök");
     // Filter
-    const f = $(".vv-selection-input__value.p-placeholder");
-    if (f.is(":contains('Alla varuhus')")) {
-        // pass
-    } else if (f.is(":contains('All event locations')")) {
+    const f = $(".vv-selection-input__value");
+    if (f.is(":contains('All event locations')")) {
         f.addClass("gtm-search-filter");
     } else {
         f.removeClass("gtm-search-filter");
