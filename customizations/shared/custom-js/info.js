@@ -15,6 +15,7 @@ async function run() {
     // long
     "eventId": eid,
     "organizerId": oid,
-    "locale": lang
+    "locale": lang,
+    "language": lang
   };
 }
