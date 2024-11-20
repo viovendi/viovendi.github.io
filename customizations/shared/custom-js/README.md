@@ -313,6 +313,27 @@ function startCustomization() {
 
 
 
+## Info
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+{description}
+* Name: `info`
+* Returns: Event ID, Organization ID and Language
+
+#### Further Explanation
+Returns data in a JSON with multiple formats:
+* Short lowercase: `oid`, `eid` and `lang`
+* Short uppercase: `OID` and `EID`
+* Long: `organizerId`, `eventId` and `locale`
+
+#### Examples
+```js
+const { oid, eid, lang } = await custom_js.info();
+const { organizerId, eventId, locale } = await custom_js.info();
+```
+
+
+
 ---
 # Contribution
 When adding a new helper, remember following these steps:
