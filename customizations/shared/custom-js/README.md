@@ -324,7 +324,7 @@ function startCustomization() {
 Returns data in a JSON with multiple formats:
 * Short lowercase: `oid`, `eid` and `lang`
 * Short uppercase: `OID` and `EID`
-* Long: `organizerId`, `eventId` and `locale`
+* Long: `organizerId`, `eventId`, `locale` and `language`
 
 #### Examples
 ```js
