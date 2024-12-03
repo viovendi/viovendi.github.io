@@ -50,4 +50,9 @@ function startCustomizationList() {
         }
         return _open.apply(this, a);
     };
+
+    if ($(".vv-pagination__item:contains('>')").length) {
+        // pagination loaded without proxy
+        $(".vv-button:contains('Suchen')").click();
+    }
 }
