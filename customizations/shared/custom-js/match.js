@@ -1,6 +1,7 @@
 function run(match, allText) {
   if (match == "{...}" && allText == "") return false;
   const groups = match.split("{...}");
+  if (!allText.startsWith(groups[0])) return false;
   let i = 0;
   let lastEmpty = false;
   for (const group of groups) {
