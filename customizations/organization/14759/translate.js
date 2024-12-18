@@ -546,6 +546,8 @@ setInterval(function () {
     $(".vv-selection-option.p-placeholder:contains('All event locations')").text("Alla varuhus");
 
     $(".vv-button:contains('Search')").text("Sök");
+
+    $("vv-custom-filters").hide();
     
 }, 3000);
 //99 available Replace the word
