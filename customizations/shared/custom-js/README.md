@@ -316,7 +316,7 @@ function startCustomization() {
 ## Info
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
-{description}
+Get info about an event.
 * Name: `info`
 * Returns: Event ID, Organization ID and Language
 
@@ -330,6 +330,33 @@ Returns data in a JSON with multiple formats:
 ```js
 const { oid, eid, lang } = await custom_js.info();
 const { organizerId, eventId, locale } = await custom_js.info();
+```
+
+
+
+## Page
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Simplify the custom page loading event subscription which waits for the content to load.
+* Name: `page`
+* Args:
+  * `callback` - A function which receives `customEvent.detail`
+
+#### Further Explanation
+Usually it is simple enough to subcribe to the `doo_page_loaded` event,
+however during navigation, some of the pages are loaded asynchornously
+and the event is fired before the HTML is ready. This helper solves this
+problem and waits for the page to finish loading before executing the callback.
+
+#### Examples
+```js
+custom_js.page(loaded => {
+  const page = loaded.widget.page.name;
+  if (page == "booking_ticket_selection") {
+    // ...
+  }
+});
+
 ```
 
 
