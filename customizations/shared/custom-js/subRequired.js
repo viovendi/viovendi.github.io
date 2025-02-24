@@ -68,5 +68,5 @@ async function run(attendee, text, ...required) {
   }
 
   $(attendee).find(".customization2_" + type + "_edit-action_save").click(click);
-  $(".customization-button-next").get(0).onclick = click;
+  $(".customization-button-next").get(0)?.onclick = click;
 }
