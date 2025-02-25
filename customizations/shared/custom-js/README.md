@@ -70,6 +70,8 @@ await custom_js.findQuestion("What is your Job Title?");
 await custom_js.findQuestion("Event Registration on {...}", attendee);
 ```
 
+
+
 ## Conditional Questions
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
@@ -196,7 +198,6 @@ we receive the following result:
 
 
 
-
 ## Question Handler
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
@@ -220,11 +221,11 @@ await custom_js.questionHandler(job, () => {
 ## Answers Selector
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
-Sets us a function for a question element which will fetch the answers.
+Sets a function for a question element which will fetch the answers.
 Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
 * Name: `answersSelector`
 * Args:
-  * `element` - a jQuery element of a question
+  * `element` - a jQuery element of the question
 * Returns: a function, which when called returns an **Array of Strings** on the given question element
   * The array type is for compatibility with different internal tools which use this tool under the hood 
   * For `checkboxes` the array will have all the answers as array elements
@@ -361,6 +362,90 @@ custom_js.page(loaded => {
 
 
 
+## Find Ticket
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Find a ticket using `match`.
+* Name: `findTicket`
+* Args:
+  * `name` - the search pattern for the name of a ticket
+* Returns: `jQuery object` - the ticket if found or else an empty object.
+
+#### Examples
+```js
+await custom_js.findTicket("Anmeldung Aussteller");
+
+await custom_js.findTicket("Übernachtung am {...}");
+```
+
+
+
+## Ticket Handler
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Attach a handler to a ticket which is being called whenever the user clicks the ticket selection.
+* Name: `ticketHandler`
+* Args:
+  * `element` - a **jQuery object** of the ticket (retrieved from e.g. `findTicket`)
+  * `handler` - a function to call whenever a selection is being made
+
+#### Examples
+```js
+const ticket = await custom_js.findTicket("Anmeldung Teilnehmer");
+await custom_js.ticketHandler(ticket, () => {
+  console.log("'Ticket' clicked!");
+});
+```
+
+
+
+## Ticket Selector
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Sets a function for a ticket element which will fetch the current ticket amount.
+* Name: `ticketSelector`
+* Args:
+  * `element` - a jQuery element of the ticket
+* Returns: a function, which when called returns an **Integer** of the ticket amount
+
+#### Further Explanation
+The return is a function, not the amount itself! To get the amount you have to first call the function.
+
+#### Examples
+```js
+const ticket = await custom_js.findTicket("Anmeldung Teilnehmer");
+const selector = await custom_js.ticketSelector(ticket);
+await custom_js.ticketHandler(ticket, () => {
+  console.log("Selected tickets:", selector());
+});
+```
+
+
+
+## Enable Ticket
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Enables/disables the ticket selection.
+* Name: `enableTicket`
+* Args:
+  * `element` - a jQuery element of the ticket
+  * `enable` - a Boolean
+    * `true` - enable the ticket selection
+    * `false` - disable the ticket selection
+
+#### Further Explanation
+Enables/disables the dropdown button. If some tickets have already been selected, their amount doesn't change by calling this helper.
+
+#### Examples
+```js
+const ticket = await custom_js.findTicket("Anmeldung Teilnehmer");
+if (/* some condition */) {
+  await custom_js.enableTicket(ticket, false);
+}
+```
+
+
+
 ---
 # Contribution
 When adding a new helper, remember following these steps:
@@ -399,3 +484,9 @@ async function run(a, b) {
 
 {4 new lines}
 ```
+
+---
+# TODO
+* Answer setters - set a given answer for a question
+* Product helpers
+* Ticket setters - set a given amount for a ticket

@@ -29,7 +29,7 @@ async function run(attendee, cond) {
   async function conditional(attendee, cond, show, dict, path) {
     if (cond.constructor === "".constructor) {
       // single question without further action
-      const el = await custom_js("findQuestion", cond, attendee);
+      const el = await custom_js.findQuestion(cond, attendee);
       if (show) {
         el_show(el, path);
       } else {
@@ -45,18 +45,18 @@ async function run(attendee, cond) {
           await conditional(attendee, question, show, dict, path);
           continue;
         }
-        const el = await custom_js("findQuestion", question, attendee);
+        const el = await custom_js.findQuestion(question, attendee);
         if (!el.get(0)) return;
   
         // setup handler for sub-answers
         if (!(question in dict)) {
-          const selector = await custom_js("answersSelector", el);
+          const selector = await custom_js.answersSelector(el);
           async function handle() {
             const selected = selector();
             for (const possible in answers) {
               let same = false;
               for (const selection of selected) {
-                const match = await custom_js("match", possible, selection);
+                const match = await custom_js.match(possible, selection);
                 if (match) {
                   same = true;
                   break;
@@ -66,7 +66,7 @@ async function run(attendee, cond) {
             }
           }
           // whenever some action happens in that question
-          await custom_js("questionHandler", el, handle)
+          await custom_js.questionHandler(el, handle);
           
           dict[question] = handle;
         }
@@ -104,7 +104,7 @@ async function run(attendee, cond) {
   propagateReferences(cond, "");
 
   for (const question in ref) {
-    const q = await custom_js("findQuestion", question, attendee);
+    const q = await custom_js.findQuestion(question, attendee);
     for (const e of q.get()) {
       e.dataset.conditional_watching = JSON.stringify([...ref[question]]);
     }

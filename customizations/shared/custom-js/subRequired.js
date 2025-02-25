@@ -2,7 +2,7 @@ async function run(attendee, text, ...required) {
   const type = $(attendee).is("vv-attendee") ? "attendee" : "booker";
   const through = [];
   for (const question of required) {
-    const el = await custom_js("findQuestion", question, attendee);
+    const el = await custom_js.findQuestion(question, attendee);
     // not found
     if (el.length == 0) continue;
     // already required
@@ -25,7 +25,7 @@ async function run(attendee, text, ...required) {
     div.appendChild(divi);
     el.find("vv-show-errors").get(0).appendChild(div);    
     
-    const selector = await custom_js("answersSelector", el);
+    const selector = await custom_js.answersSelector(el);
     function setter() {
       const answers = selector();
       if (answers.join("")) {
@@ -44,7 +44,7 @@ async function run(attendee, text, ...required) {
         return true;
       }
     }
-    await custom_js("questionHandler", el, setter);
+    await custom_js.questionHandler(el, setter);
     through.push([el, setter]);
   }
 

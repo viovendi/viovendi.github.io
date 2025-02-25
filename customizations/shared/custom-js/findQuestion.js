@@ -6,7 +6,7 @@ async function run(exactLabel, attendee) {
     label.find("vv-tooltip").text("");
     label.find("vv-field-label-status").text("");
     const allText = [...label.get(0).childNodes].map(c => $(c).text().trim()).join("");
-    return await custom_js("match", exactLabel, allText);
+    return await custom_js.match(exactLabel, allText);
   }));
   let p = qu.filter((i, q) => results[i]).parent();
 
