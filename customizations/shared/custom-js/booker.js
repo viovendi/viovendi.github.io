@@ -1,16 +1,23 @@
-const custom_js_booker_info = { };
+const custom_js_booker_info = [];
 
 async function run(options) {
-  const stack = (new Error()).stack;
-  if (!(stack in custom_js_booker_info)) {
-    custom_js_booker_info[stack] = { };
+  let info = null;
+  for (const [opt, state] of custom_js_booker_info) {
+    if (opt == options) {
+      info = state;
+      break;
+    }
+  }
+  if (info == null) {
+    info = { };
+    custom_js_booker_info.push([options, info]);
   }
 
   async function _run(booker) {
     const be = booker.get(0);
 
     options.create?.(be);
-    custom_js_booker_info[stack].first = true;
+    info.first = true;
     
     function execute() {
       const save = booker.find(".customization2_booker_edit-action_save").get(0);
@@ -30,12 +37,12 @@ async function run(options) {
 
       const additional = booker.find("vv-additional-questions");
       if (additional.length && new_state == "open" && !(additional.find("form").length)) return;
-      if (new_state == "open" && custom_js_booker_info[stack].state == "open" && save == custom_js_booker_info[stack].save_button) return;
-      if (new_state == custom_js_booker_info[stack].state && !custom_js_booker_info[stack].first) return;
+      if (new_state == "open" && info.state == "open" && save == info.save_button) return;
+      if (new_state == info.state && !info.first) return;
 
-      custom_js_booker_info[stack].state = new_state;
-      custom_js_booker_info[stack].save_button = save;
-      custom_js_booker_info[stack].first = false;
+      info.state = new_state;
+      info.save_button = save;
+      info.first = false;
 
       if (save) options.open?.(be);
       else if (body && $(body).text().trim()) options.close?.(be);
@@ -43,28 +50,28 @@ async function run(options) {
     }
     execute();
 
-    custom_js_booker_info[stack].observer?.disconnect();
-    custom_js_booker_info[stack].observer = new MutationObserver(execute);
-    custom_js_booker_info[stack].observer.observe(be, {
+    info.observer?.disconnect();
+    info.observer = new MutationObserver(execute);
+    info.observer.observe(be, {
       "childList": true,
       "subtree": true
     });
   }
   
-  custom_js_booker_info[stack].global_observer?.disconnect();
-  function execute() {
+  info.global_observer?.disconnect();
+  function already() {
     if ($(".customization2_booker_contact-data_headline").length) {
-      custom_js_booker_info[stack].global_observer?.disconnect();
+      info.global_observer?.disconnect();
       const booker = $(".customization2_booker").parent().parent();
       _run(booker);
       return true;
     }
     return false;
   }
-  const f = execute();
+  const f = already();
   if (!f) {
-    custom_js_booker_info[stack].global_observer = new MutationObserver(execute);
-    custom_js_booker_info[stack].global_observer.observe(document, {
+    info.global_observer = new MutationObserver(already);
+    info.global_observer.observe(document, {
       "childList": true,
       "subtree": true
     });
