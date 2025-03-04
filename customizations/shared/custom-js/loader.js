@@ -1,3 +1,5 @@
+if ("custom_js" in window) throw new Error("Tried to load the custom.js helper more than once!");
+
 const custom_js_cache = { };
 
 window.custom_js = new Proxy(async function (name, ...args) {
@@ -26,3 +28,10 @@ async function custom_js_load_and_run(name, ...args) {
     });
   });
 }
+
+// make sure to cache page loads if setup takes too long
+let custom_js_last_pageload = null;
+window.addEventListener("doo_page_loaded", async event => {
+  await new Promise(r => $(document).ready(r));
+  custom_js_last_pageload = event.detail;
+});
