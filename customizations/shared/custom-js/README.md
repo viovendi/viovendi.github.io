@@ -405,7 +405,7 @@ await custom_js.ticketHandler(ticket, () => {
 Sets a function for a ticket element which will fetch the current ticket amount.
 * Name: `ticketSelector`
 * Args:
-  * `element` - a jQuery element of the ticket
+  * `ticket` - a **jQuery object** of the ticket
 * Returns: a function, which when called returns an **Integer** of the ticket amount
 
 #### Further Explanation
@@ -428,8 +428,8 @@ await custom_js.ticketHandler(ticket, () => {
 Enables/disables the ticket selection.
 * Name: `enableTicket`
 * Args:
-  * `element` - a jQuery element of the ticket
-  * `enable` - a Boolean
+  * `ticket` - a **jQuery object** of the ticket
+  * `enable` - a **Boolean**
     * `true` - enable the ticket selection
     * `false` - disable the ticket selection
 
@@ -442,6 +442,65 @@ const ticket = await custom_js.findTicket("Anmeldung Teilnehmer");
 if (/* some condition */) {
   await custom_js.enableTicket(ticket, false);
 }
+```
+
+
+
+## Set Ticket
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Sets the ticket selection to a given value.
+* Name: `setTicket`
+* Args:
+  * `ticket` - a **jQuery object** of the ticket
+  * `value` - an **Integer** specifying the amount of tickets
+
+#### Further Explanation
+Select an amount for the given ticket. If that amount is not allowed (not present in the dropdown), the selection is not changed.
+
+#### Examples
+```js
+const ticket = await custom_js.findTicket("Anmeldung Teilnehmer");
+await custom_js.setTicket(ticket, 1);
+```
+
+
+
+## Wait For Create
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Wait until an element appears.
+* Name: `waitForCreate`
+* Args:
+  * `selector` - a function, which returns a **jQuery object** of the searched element
+  * `parent` - an optional **jQuery object** of the parent of the searched element for efficiency, can be `null`
+* Returns: a **jQuery object** of the searched element
+
+#### Further Explanation
+Wait until an element appears in DOM using a MutationObserver. The appearing of the element doesn't mean it is visible, rather it means, that the element has been created in the HTML.
+
+#### Examples
+```js
+const ticket = await custom_js.waitForCreate(async () => await custom_js.findTicket("Anmeldung Teilnehmer"));
+```
+
+
+
+## Wait For Delete
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Wait until an element disappears.
+* Name: `waitForDelete`
+* Args:
+  * `selector` - a function, which returns a **jQuery object** of the searched element
+  * `parent` - an optional **jQuery object** of the parent of the searched element for efficiency, can be `null`
+
+#### Further Explanation
+Wait until an element disappears in DOM using a MutationObserver. The disappearing of the element doesn't mean it is hidden, rather it means, that the element has been deleted from the HTML.
+
+#### Examples
+```js
+await custom_js.waitForDelete(async () => await custom_js.findTicket("Ticket Begleitperson"));
 ```
 
 
@@ -462,7 +521,7 @@ async function run(a, b) {
 // keep all shared variables outside
 // and name them `custom_js_<helper>_<variable>` to reduce the chance of name collisions
 ```
-3. All functions and variables needed for one run are to be kept inside the function
+3. All functions and variables needed for one run are **to be kept inside the `run()` function**
 4. Add a new entry in this README:
 
 ```md
@@ -489,4 +548,3 @@ async function run(a, b) {
 # TODO
 * Answer setters - set a given answer for a question
 * Product helpers
-* Ticket setters - set a given amount for a ticket
