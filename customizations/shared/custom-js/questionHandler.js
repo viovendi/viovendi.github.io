@@ -16,7 +16,7 @@ async function run(element, handler) {
   } else if (element.is(".question-group")) {
     element.find(".customization2_attendee_further-data_product_checkbox, .customization2_booker_further-data_product_checkbox").change(handler);
   } else {
-    if (element.find("input")) {
+    if (element.find("input").length) {
       element.find("input").change(handler);
       element.find("input").focusout(handler);
     } else {

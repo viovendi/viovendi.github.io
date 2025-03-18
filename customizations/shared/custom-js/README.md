@@ -46,12 +46,19 @@ Matches a string against a search pattern (not regex).
 
 #### Further Explanation
 The search can be inversed by adding `!` at the beginning.
+The search can have multiple parts, by splitting the parts with `|`.
+To use a literal `|` you have to escape it with `^`.
 
 #### Examples
 ```js
 await custom_js.match("I am a {...} and I want to {...}", "I am a bird and I want to fly"); // true
-
 await custom_js.match("Roses are {...}", "I like roses"); // false
+
+await custom_js.match("!{...}bad{...}", "Roses are red"); // true
+await custom_js.match("!{...}bad{...}", "Roses are bad"); // false
+await custom_js.match("!{...}bad{...}", "I like badminton"); // false
+
+await custom_js.match("!Berlin|München", "Berlin"); // false: NOT ('Berlin' OR 'München')
 ```
 
 
