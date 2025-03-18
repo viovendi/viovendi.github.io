@@ -1,4 +1,6 @@
 async function run(element, handler) {
+  if (element.length > 1) throw new Error("custom_js.questionHandler used with multiple questions");
+
   if (element.is("vv-additional-question-dropdown")) {
     element.click(handler);
   } else if (

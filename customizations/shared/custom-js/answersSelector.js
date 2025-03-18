@@ -1,4 +1,6 @@
 async function run(element) {
+  if (element.length > 1) throw new Error("custom_js.answersSelector used with multiple questions");
+
   const type = element.find(".customization2_attendee_further-data_custom-question").get(0) ? "attendee" : "booker";
   if (element.is("vv-additional-question-radio"))
     return () => [element.find("input:checked").next(".customization2_" + type + "_further-data_custom-question_radio-line_label").find(".vv-radio__label-text").text().trim()];

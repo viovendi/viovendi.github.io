@@ -81,6 +81,19 @@ Since different types of questions have to be searched in different ways, there 
 
 Product groups can't be fetched if the question form is closed.
 
+The question finder may return a reference to multiple questions, make sure you know what you are doing, when using a selector for multiple questions.
+In general, it is safe to use `findQuestion` with a selector for multiple questions if:
+* The resulted questions are an endpoint of a customisation:
+  * final shown questions in `conditional`
+  * questions used in `subRequired`
+* You use the result with your own jQuery code
+
+It is not safe to use mulitple question selectors, if any of the following applies:
+* The question is being used for a condition in `conditonal`
+* The question is used in a helper, which relies on answer comparison or tracking (`noneCheckbox`, `questionHandler`, `answersSelector`)
+
+Most cases are covered by internal checks and will throw an error if used improperly.
+
 #### Examples
 ```js
 await custom_js.findQuestion("What is your Job Title?");
@@ -256,7 +269,6 @@ It also supports product groups and default questions.
 #### Further Explanation
 The return is a function, not the answer itself! To get the answers you have to first call the function.
 This is optimal and reduces latency since the code checks for the question type only once.
-
 All answers will be a one-element array if the question form is closed.
 
 #### Examples
@@ -393,6 +405,9 @@ Find a ticket using `match`.
 * Args:
   * `name` - the search pattern for the name of a ticket
 * Returns: `jQuery object` - the ticket if found or else an empty object.
+
+#### Further Explanation
+In comparison to `findQuestion`, this helper will always return a reference to only 1 or 0 tickets.
 
 #### Examples
 ```js

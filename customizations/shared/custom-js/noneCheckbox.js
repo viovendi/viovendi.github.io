@@ -1,5 +1,6 @@
 async function run(attendee, question, none) {
   const q = await custom_js.findQuestion(question, attendee ?? document);
+  if (q.length > 1) throw new Error("custom_js.noneCheckbox used with multiple questions");
 
   async function disable() {
     const t = q.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
