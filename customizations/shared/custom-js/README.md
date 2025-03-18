@@ -587,3 +587,4 @@ async function run(a, b) {
 ---
 # TODO
 * Answer setters - set a given answer for a question
+* subRequired for product groups

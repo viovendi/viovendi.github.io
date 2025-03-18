@@ -82,7 +82,7 @@ async function run(attendee, text, ...required) {
   const save = $(".customization-button-next").get(0);
   const id = [text, ...required].join(",");
   if (save != null) {
-    if (custom_js_save_onclick[id]) save.removeEventListener(custom_js_save_onclick[id]);
+    if (custom_js_save_onclick[id]) save.removeEventListener("click", custom_js_save_onclick[id]);
     custom_js_save_onclick[id] = click;
     save.addEventListener("click", click);
   }
