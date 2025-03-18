@@ -7,6 +7,8 @@ async function run(attendee, text, ...required) {
     const els = await custom_js.findQuestion(question, attendee);
     for (let i = 0; i < els.length; i++) {
       const el = els.eq(i);
+      if (el.is(".question-group")) throw new Error("custom_js.subRequired used with a product group");
+
       // already required
       if (el.find(".customization-question-label-status-required").length) continue;
 
@@ -24,21 +26,32 @@ async function run(attendee, text, ...required) {
       `);
       
       const selector = await custom_js.answersSelector(el);
+      const custom = el.find(".customization2_" + type + "_further-data_custom-question").length;
       function setter() {
         const answers = selector();
         if (answers.join("")) {
           el.removeClass("ng-invalid ng-dirty");
           el.addClass("ng-valid");
-          el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-invalid ng-dirty");
-          el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-valid");
-          el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").hide();
+          if (custom) {
+            el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-invalid ng-dirty");
+            el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-valid");
+          } else {
+            el.children().eq(0).removeClass("ng-invalid ng-dirty");
+            el.children().eq(0).addClass("ng-valid");
+          }
+          el.find("vv-show-errors").children("div").hide();
           return false;
         } else {
           el.addClass("ng-invalid ng-dirty");
           el.removeClass("ng-valid");
-          el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-invalid ng-dirty");
-          el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-valid");
-          el.find(".customization2_" + type + "_further-data_custom-question").find("vv-show-errors").children("div").show();
+          if (custom) {
+            el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).addClass("ng-invalid ng-dirty");
+            el.find(".customization2_" + type + "_further-data_custom-question").children().eq(0).removeClass("ng-valid");
+          } else {
+            el.children().eq(0).removeClass("ng-valid");
+            el.children().eq(0).addClass("ng-invalid ng-dirty");
+          }
+          el.find("vv-show-errors").children("div").show();
           return true;
         }
       }
