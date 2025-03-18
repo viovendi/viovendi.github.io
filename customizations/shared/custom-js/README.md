@@ -44,6 +44,9 @@ Matches a string against a search pattern (not regex).
   * `text` - the text to test our pattern against
 * Returns: `boolean` - whether the test was successfull or not
 
+#### Further Explanation
+The search can be inversed by adding `!` at the beginning.
+
 #### Examples
 ```js
 await custom_js.match("I am a {...} and I want to {...}", "I am a bird and I want to fly"); // true
