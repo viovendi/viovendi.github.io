@@ -55,11 +55,13 @@ async function run(attendee, cond) {
             const selected = selector();
             for (const possible in answers) {
               let same = false;
-              for (const selection of selected) {
-                const match = await custom_js.match(possible, selection);
-                if (match) {
-                  same = true;
-                  break;
+              if (selected.join("")) {
+                for (const selection of selected) {
+                  const match = await custom_js.match(possible, selection);
+                  if (match) {
+                    same = true;
+                    break;
+                  }
                 }
               }
               await conditional(attendee, answers[possible], same, dict, path + "/" + question + "." + possible);

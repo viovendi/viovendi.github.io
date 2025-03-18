@@ -124,6 +124,8 @@ The unlocked questions may have 4 different formats:
 3. It opens multiple questions, which are all not conditional: an **Array of Strings** should be used
 4. It opens further questions, but only some of them are conditional: those not conditional questions should have `null` as their value, all other same as `1.`
 
+If an answer to a question was not given, all of the underlying questions will be hidden.
+
 #### Examples
 ```js
 await custom_js.conditional(attendee1, {
@@ -291,7 +293,7 @@ If the question is hidden, it is ignored.
 Useful in combination with `conditional`.
 * Name: `subRequired`
 * Args:
-  * `attendee` - the attendee to perform this action on 
+  * `attendee` - the attendee to perform this action on (required!)
   * `text` - text to display when the selection has to be made 
   * `...required` - a list of question names to fetch with `findQuestion`
 
