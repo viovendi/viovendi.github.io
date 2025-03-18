@@ -63,11 +63,20 @@ Find a question on the attendee page using `match`.
   * `attendee` - optional argument, uses a special attendee element instead of the whole document to search for the question; **recommended!**
 * Returns: `jQuery object` - the question(s) which was (were) searched
 
+#### Further Explanation
+Since different types of questions have to be searched in different ways, there are also different ways of passing the `question` parameter.
+* Additional questions: Normal passing
+* Product groups: Add a `$` before the search pattern
+* Default questions: These questions do not support any kind of search, make the argument like `.` + `<name of the question>`
+
+Product groups can't be fetched if the question form is closed.
+
 #### Examples
 ```js
 await custom_js.findQuestion("What is your Job Title?");
-
 await custom_js.findQuestion("Event Registration on {...}", attendee);
+await custom_js.findQuestion("$Hotelbuchung am {...}", attendee);
+await custom_js.findQuestion(".salutation", attendee);
 ```
 
 
@@ -201,8 +210,9 @@ we receive the following result:
 ## Question Handler
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
-Attach a handler to a question which is being called whenever the selection or input in that question
-is changed. Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
+Attach a handler to a question which is being called whenever the selection or input in that question is changed.
+Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`, `phone` and `paragraph`.
+It also supports product groups and default questions.
 * Name: `questionHandler`
 * Args:
   * `element` - a **jQuery object** of the question (retrieved from e.g. `findQuestion`)
@@ -222,7 +232,8 @@ await custom_js.questionHandler(job, () => {
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
 Sets a function for a question element which will fetch the answers.
-Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text` and `paragraph`.
+Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`, `phone` and `paragraph`.
+It also supports product groups and default questions.
 * Name: `answersSelector`
 * Args:
   * `element` - a jQuery element of the question
@@ -235,6 +246,8 @@ Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`
 #### Further Explanation
 The return is a function, not the answer itself! To get the answers you have to first call the function.
 This is optimal and reduces latency since the code checks for the question type only once.
+
+All answers will be a one-element array if the question form is closed.
 
 #### Examples
 ```js
@@ -547,4 +560,3 @@ async function run(a, b) {
 ---
 # TODO
 * Answer setters - set a given answer for a question
-* Product helpers

@@ -10,4 +10,16 @@ async function run(element) {
     return () => [element.find(".customization2_" + type + "_further-data_custom-question_input").val()];
   else if (element.is("vv-additional-question-phone"))
     return () => [element.find(".customization2_attendee_further-data_custom-question_phone input").val()];
+  else if (element.is(".question-group"))
+    return () => element.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
+  else {
+    // first check for closed questions
+    if (element.find(".customization2_" + type + "_further-data_custom-question").length) return () => [element.find(".customization2_" + type + "_further-data_custom-question_value").text().trim()];
+
+    // then check for default questions
+    const cls = [...element.prop("classList")].filter(c => c.includes("_contact-data_"))[0];
+    if (!cls) return () => [];
+    if (cls.endsWith("_value")) return () => [element.text().trim()];
+    else return () => [element.find(".vv-selection-input__value").text().trim()];
+  }
 }
