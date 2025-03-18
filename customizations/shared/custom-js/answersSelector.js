@@ -5,7 +5,7 @@ async function run(element) {
   if (element.is("vv-additional-question-radio"))
     return () => [element.find("input:checked").next(".customization2_" + type + "_further-data_custom-question_radio-line_label").find(".vv-radio__label-text").text().trim()];
   else if (element.is("vv-additional-question-dropdown"))
-    return () => [element.find(".customization2_" + type + "_further-data_custom-question_dropdown .vv-selection-input__value").text().trim()];
+    return () => [element.find(".customization2_" + type + "_further-data_custom-question_dropdown .vv-selection-input__value:not(.p-placeholder)").text().trim()];
   else if (element.is("vv-additional-question-checkboxes"))
     return () => element.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
   else if (element.is("vv-additional-question-text") || element.is("vv-additional-question-paragraph"))
@@ -22,6 +22,6 @@ async function run(element) {
     const cls = [...element.prop("classList")].filter(c => c.includes("_contact-data_"))[0];
     if (!cls) return () => [];
     if (cls.endsWith("_value")) return () => [element.text().trim()];
-    else return () => [element.find(".vv-selection-input__value").text().trim()];
+    else return () => [element.find(".vv-selection-input__value:not(.p-placeholder)").text().trim()];
   }
 }

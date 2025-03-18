@@ -7,10 +7,8 @@ async function run(attendee, text, ...required) {
     const els = await custom_js.findQuestion(question, attendee);
     for (let i = 0; i < els.length; i++) {
       const el = els.eq(i);
-      // not found
-      if (el.length == 0) continue;
       // already required
-      if (el.find(".question-label-status--required").length) continue;
+      if (el.find(".customization-question-label-status-required").length) continue;
 
       el.find(".question-label-status")
         .removeClass(["question-label-status--optional", "customization-question-label-status-optional"])
