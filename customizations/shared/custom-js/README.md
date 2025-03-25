@@ -545,6 +545,21 @@ await custom_js.waitForDelete(async () => await custom_js.findTicket("Ticket Beg
 
 
 
+## Load DataLayer
+> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
+
+Add a GTM DataLayer to the page and wait until it loads. The communication of frame with the parent is set up as well.
+* Name: `loadDataLayer`
+* Args:
+  * `gtmKey` - a **String**, the GTM-Container which has to be loaded
+
+#### Examples
+```js
+await custom_js.loadDataLayer("GTM-A1BC23D");
+```
+
+
+
 ---
 # Contribution
 When adding a new helper, remember following these steps:
