@@ -2,37 +2,40 @@
 A collection of up-to-date helpers for common customizations.
 
 # Usage
+## Manual jQuery Installation
 1. Load jQuery.
 2. Install the custom-js-loader using `$.getScript("https://viovendi.github.io/customizations/shared/custom-js/loader.js");`.
 3. This will install the helper `custom_js`.
 4. Now it can be used to load and use different helpers from this directory.
 
+## Combined Loader
+This is a new approach to reduce code size and simplify dependencies loading.
+1. Load `https://viovendi.github.io/customizations/shared/custom-js/combined-loader.js`.
+2. This will first load jQuery from our servers and then install the `custom_js`helper.
+3. The function to start customizations should be called `init()`.
+
+Setup:
+```js
+// custom.js
+
+const script = document.createElement("script");
+script.type = "text/javascript";
+script.src = "https://viovendi.github.io/customizations/shared/custom-js/combined-loader.js";
+document.head.appendChild(script);
+
+async function init() {
+  // continue here as usual
+
+  console.log("jQuery and custom_js loaded!");
+  const { eventId } = await custom_js.info();
+  // ...
+}
+
+```
 
 
 # Overview
 Here is an overview of all helpers currently defined here.
-
-
-
-## Loader
-> by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
-
-Installs `custom_js` to dynamically load other helpers.
-* Usage:
-  * Getter style: `custom_js.tool_name(arg1, arg2, ...)`
-  * Function style: `custom_js(tool_name, arg1, arg2, ...)`
-* Returns: the data returned by the helper
-
-#### Examples
-```js
-// Getter style (preferred way)
-await custom_js.findQuestion("What is your Job Title?", attendee);
-
-// Function style
-await custom_js("findQuestion", "What is your Job Title?", attendee);
-```
-
-
 
 ## Match
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
