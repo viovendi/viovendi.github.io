@@ -1,7 +1,7 @@
 async function run(element) {
   if (element.length > 1) throw new Error("custom_js.answersSelector used with multiple questions");
 
-  const type = element.find(".customization2_attendee_further-data_custom-question").get(0) ? "attendee" : "booker";
+  const type = element.find(".customization2_attendee_further-data_custom-question, customization2_attendee_further-data_product").get(0) ? "attendee" : "booker";
   if (element.is("vv-additional-question-radio"))
     return () => [element.find("input:checked").next(".customization2_" + type + "_further-data_custom-question_radio-line_label").find(".vv-radio__label-text").text().trim()];
   else if (element.is("vv-additional-question-dropdown"))
@@ -12,7 +12,7 @@ async function run(element) {
     return () => [element.find(".customization2_" + type + "_further-data_custom-question_input").val()];
   else if (element.is("vv-additional-question-phone"))
     return () => [element.find(".customization2_attendee_further-data_custom-question_phone input").val()];
-  else if (element.is(".question-group"))
+  else if (element.is(".question-group") || element.is("vv-additional-question-product"))
     return () => element.find("input:checked").next(".vv-checkbox__label").find(".vv-checkbox__label-text").map((i, t) => $(t).text().trim()).get();
   else {
     // first check for closed questions

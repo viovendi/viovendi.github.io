@@ -79,7 +79,7 @@ Find a question on the attendee page using `match`.
 #### Further Explanation
 Since different types of questions have to be searched in different ways, there are also different ways of passing the `question` parameter.
 * Additional questions: Normal passing
-* Product groups: Add a `$` before the search pattern
+* Product groups: Add a `$` before the search pattern (important: product groups are covered by the `$` selector, but single products are handled the same way as regular questions)
 * Default questions: These questions do not support any kind of search, make the argument like `.` + `<name of the question>`
 
 Product groups can't be fetched if the question form is closed.
@@ -260,7 +260,7 @@ await custom_js.questionHandler(job, () => {
 > by [Dmitry](https://github.com/Dmitry-the-Werkstudent)
 
 Sets a function for a question element which will fetch the answers.
-Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`, `phone` and `paragraph`.
+Currently supported question types are `dropdown`, `radio`, `checkboxes`, `text`, `phone`, `paragraph`, `product` and `product group`.
 It also supports product groups and default questions.
 * Name: `answersSelector`
 * Args:

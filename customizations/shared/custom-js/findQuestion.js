@@ -22,9 +22,25 @@ async function run(exactLabel, attendee) {
 
   } else {
     // additional questions
-    const qu = $(attendee ?? document).find(".customization2_attendee_further-data_custom-question, .customization2_booker_further-data_custom-question");
+    const qu = $(attendee ?? document).find(".customization2_attendee_further-data_custom-question, .customization2_booker_further-data_custom-question, .customization2_attendee_further-data_product, customization2_booker_further-data_product");
     const results = await Promise.all(qu.map(async (i, q) => {
-      const labelSelector = ".customization2_" + ($(q).is(".customization2_attendee_further-data_custom-question") ? "attendee" : "booker") + "_further-data_custom-question_label";
+      let labelSelector;
+      if ($(q).is(".customization2_attendee_further-data_custom-question")) {
+        labelSelector = ".customization2_attendee_further-data_custom-question_label";
+
+      } else if ($(q).is(".customization2_booker_further-data_custom-question")) {
+        labelSelector = ".customization2_booker_further-data_custom-question_label";
+
+      } else if ($(q).is(".customization2_attendee_further-data_product")) {
+        labelSelector = ".customization2_attendee_further-data_product_name";
+
+      } else if ($(q).is(".customization2_booker_further-data_product")) {
+        labelSelector = ".customization2_booker_further-data_product_name";
+
+      } else {
+        return false;
+      }
+
       const label = $(q).find(labelSelector).clone();
       label.find("vv-tooltip").text("");
       label.find("vv-field-label-status").text("");
