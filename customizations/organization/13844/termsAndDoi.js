@@ -36,7 +36,11 @@ $(document).ready(function () {
 
     function moveTerms() {
         
-        var terms = "<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die <a style='color: #3b9f9a !important' href='https://sz-erleben.sueddeutsche.de/agb' target='_blank' rel='noopener noreferrer'>AGB</a> und <a style='color: #3b9f9a !important' href='https://www.swmh-datenschutz.de/sz-erleben' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a> habe ich zur Kenntnis genommen.</p>";
+        var terms = `<p id='45408464531'>Als vertraglich geschuldete Gegenleistung für die Teilnahme am Event erkläre ich mich damit einverstanden, dass die o.a. Daten für an mich gerichtete Werbung von der SZ GmbH genutzt werden (z.B. für Informationen über eigene und fremde Produkte und Dienstleistungen, Rabattaktionen, Zufriedenheitsumfragen). Meine Einwilligung kann ich jederzeit durch einen Klick auf den Abmelde-Link am Ende der Mail widerrufen.<br><br>
+    Die Daten verarbeitet die SZ GmbH zur Vertragserfüllung, sie verarbeitet die Anrede aufgrund ihres berechtigten Interesses an einer persönlichen Kundenansprache und die Kontaktdaten aufgrund ihres berechtigten Interesses an Direktwerbung. Weitere Informationen zum Datenschutz unter <a href="https://www.sz.de/datenschutz" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">www.sz.de/datenschutz</a>.<br><br>
+    Im Rahmen der Veranstaltung erstellen und verwenden wir Foto- und Filmaufnahmen aufgrund unserer überwiegenden berechtigten Interessen an Dokumentation, Berichterstattung sowie der Bewerbung von weiteren Veranstaltungen auf unserer Website, in Print- und Digitalprodukten der SZ und in den gedruckten Programmen von weiteren Veranstaltungen sowie in sozialen Netzwerken.<br><br>
+    Die AGBs (<a href="https://www.sueddeutsche.de/advertorial/event-finanzloge/agb" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://www.sueddeutsche.de/advertorial/event-finanzloge/agb</a>) und Datenschutzhinweise (<a href="https://www.sz.de/datenschutz" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">www.sz.de/datenschutz</a>) habe ich zur Kenntnis genommen.
+</p>`;
 
 
         // Add Terms after Booker data
