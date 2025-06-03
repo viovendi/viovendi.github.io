@@ -46,7 +46,7 @@ async function run(attendee, cond) {
           continue;
         }
         const el = await custom_js.findQuestion(question, attendee);
-        if (!el.get(0)) return;
+        if (!el.get(0)) continue;
   
         // setup handler for sub-answers
         if (!(question in dict)) {
