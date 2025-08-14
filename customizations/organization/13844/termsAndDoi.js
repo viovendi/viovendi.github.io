@@ -43,7 +43,7 @@ $(document).ready(function () {
 </p>`;
         */
 
-        const terms = `<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die AGB ( <a href="https://agb.swmh.de/sz_veranstaltungen" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://agb.swmh.de/sz_veranstaltungen</a>) und Datenschutzhinweise ( <a href="https://www.swmh-datenschutz.de/sz-erleben" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://www.swmh-datenschutz.de/sz-erleben</a>) habe ich zur Kenntnis genommen.</p>`;`
+        const terms = `<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die AGB ( <a href="https://agb.swmh.de/sz_veranstaltungen" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://agb.swmh.de/sz_veranstaltungen</a>) und Datenschutzhinweise ( <a href="https://www.swmh-datenschutz.de/sz-erleben" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://www.swmh-datenschutz.de/sz-erleben</a>) habe ich zur Kenntnis genommen.</p>`;
 
 
         // Add Terms after Booker data
