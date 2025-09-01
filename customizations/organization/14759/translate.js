@@ -32,7 +32,7 @@ function translateDates() {
     //div.p-datepicker-calendar-container.ng-tns-c47-0.ng-star-inserted >
     //$("div.p-datepicker-calendar-container.ng-tns-c47-1.ng-star-inserted > table > thead > tr > th:nth-child(2) > span")
 
-    var month = $(".p-datepicker-month").text();
+    var month = $(".p-datepicker-select-month").text();
     var enMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     var swMonths = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
 
@@ -40,7 +40,7 @@ function translateDates() {
     var indexEN = enMonths.indexOf(month);
 
     //replace english month by swedish month by using the same index
-    $(".p-datepicker-month").text(swMonths[indexEN]);
+    $(".p-datepicker-select-month").text(swMonths[indexEN]);
 
 }
 
@@ -59,10 +59,10 @@ $('.vv-selection-input__control').click(function () {
 $('.vv-input__control-container').click(function () {
     translateDates();
 });
-$('.p-datepicker-next').click(function () {
+$('.p-datepicker-next-button').click(function () {
     translateDates();
 });
-$('.p-datepicker-prev').click(function () {
+$('.p-datepicker-prev-button').click(function () {
     translateDates();
 });
 
