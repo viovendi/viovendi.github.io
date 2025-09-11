@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     function hideEmail() {
         console.log("hideEmail");
+        /*
         $('.customization2_attendee_contact-data_email-confirmation *').css({
             "opacity": "0",
             "height": "0px"
@@ -31,6 +32,7 @@ $(document).ready(function () {
             "opacity": "0",
             "height": "0px"
         });
+        */
     };
 
 
