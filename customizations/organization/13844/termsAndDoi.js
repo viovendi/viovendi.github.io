@@ -9,7 +9,6 @@ $(document).ready(function () {
         var attendeeEmail2 = $('.customization2_attendee_contact-data_email-confirmation_input');
         attendeeEmail2.val(attendeeEmail1.val());
         document.querySelector('.customization2_attendee_contact-data_email-confirmation_input').dispatchEvent(new Event('input', { bubbles: true }));
-        //$('.customization2_attendee_contact-data_email-confirmation_input').focus();
         $('.customization2_attendee_edit-action_save').focus();
     };
 
@@ -19,7 +18,6 @@ $(document).ready(function () {
         var box2 = $('.customization2_booker_contact-data_email-confirmation_input');
         box2.val(box1.val());
         document.querySelector('.customization2_booker_contact-data_email-confirmation_input').dispatchEvent(new Event('input', { bubbles: true }));
-        //$('.customization2_booker_contact-data_email-confirmation_input').focus();
         $('.customization2_booker_edit-action_save').focus();
     };
 
@@ -92,15 +90,11 @@ $(document).ready(function () {
         });
     }
 
-
-    // TODO: enable after bug fixed
     $('body').on('change', '.customization2_attendee_contact-data_email_input', emailConfirmationAttendee);
     $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
-    
-    // TODO: enable after bug fixed
-    //hideEmail();
+    hideEmail();
     
     moveTerms();
     checkAndHideTerms();
@@ -109,8 +103,7 @@ $(document).ready(function () {
         if (event.animationName === "nodeInserted") {
 
             console.log("event listener");
-            // TODO: enable after bug fixed
-            //hideEmail();
+            hideEmail();
             
             moveTerms();
             checkAndHideTerms();
