@@ -9,6 +9,7 @@ $(document).ready(function () {
         var attendeeEmail2 = $('.customization2_attendee_contact-data_email-confirmation_input');
         attendeeEmail2.val(attendeeEmail1.val());
         $('.customization2_attendee_contact-data_email-confirmation_input').focus();
+        $('.customization2_attendee_contact-data_email-confirmation_input').trigger('click');
         $('.customization2_attendee_edit-action_save').focus();
     };
 
