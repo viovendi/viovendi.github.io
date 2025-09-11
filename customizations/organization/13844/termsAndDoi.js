@@ -92,8 +92,8 @@ $(document).ready(function () {
 
 
     // TODO: enable after bug fixed
-    //$('body').on('change', '.customization2_attendee_contact-data_email_input', emailConfirmationAttendee);
-    //$('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
+    $('body').on('change', '.customization2_attendee_contact-data_email_input', emailConfirmationAttendee);
+    $('body').on('change', '.customization2_booker_contact-data_email_input', emailConfirmationBooker);
 
 
     
