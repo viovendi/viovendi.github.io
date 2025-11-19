@@ -1,5 +1,5 @@
-if (window.init == null) {
-    throw new Error("The init function is not defined, please create a function called 'init' to reliably start customizations after everything is loaded.");
+if (window.init == null && window.customization == null) {
+    throw new Error("Neither the init function nor the customization config are defined, please create a function called 'init' to reliably start customizations after everything is loaded, or declare a config variable 'customization'.");
 }
 
 (() => {
@@ -12,7 +12,11 @@ if (window.init == null) {
 
     async function custom_js_jquery_handler() {
         await $.getScript("https://viovendi.github.io/customizations/shared/custom-js/loader.js");
-        init();
+        if (window.init != null) {
+            init();
+        } else {
+            custom_js.customization(customization);
+        }
     }
 
 })();
