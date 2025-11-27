@@ -15,7 +15,9 @@ async function run(data) {
     const { eventId } = await custom_js.info();
     function call(page) {
         lookup[eventId + "/" + page]?.forEach(f => f());
+        lookup[eventId + "/*"]?.forEach(f => f());
         lookup["*/" + page]?.forEach(f => f());
+        lookup["*/*"]?.forEach(f => f());
     }
     call("init");
 
