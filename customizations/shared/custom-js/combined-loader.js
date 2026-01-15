@@ -12,6 +12,7 @@ if (window.init == null && window.customization == null) {
 
     async function custom_js_jquery_handler() {
         await $.getScript("https://viovendi.github.io/customizations/shared/custom-js/loader.js");
+        await new Promise(r => $(document).ready(r));
         if (window.init != null) {
             init();
         } else {
