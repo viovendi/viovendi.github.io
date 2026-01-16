@@ -12,7 +12,7 @@ $(document).ready(function () {
         $('.customization2_attendee_contact-data_email-confirmation_input').focus();
         attendeeEmail2.val(attendeeEmail1.val());
         $('.customization2_attendee_contact-data_email-confirmation_input').click();
-        attendeeEmail2.dispatchEvent(new Event('input', { bubbles: true }));
+        attendeeEmail2.get(0).dispatchEvent(new Event('input', { bubbles: true }));
         $('.customization2_attendee_edit-action_save').click();
     };
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
         $('.customization2_booker_contact-data_email-confirmation_input').focus();
         box2.val(box1.val());
         $('.customization2_booker_contact-data_email-confirmation_input').click();
-        box2.dispatchEvent(new Event('input', { bubbles: true }));
+        box2.get(0).dispatchEvent(new Event('input', { bubbles: true }));
         $('.customization2_booker_edit-action_save').click();
     };
 
