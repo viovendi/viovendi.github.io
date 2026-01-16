@@ -9,9 +9,10 @@ $(document).ready(function () {
     function emailConfirmationAttendee() {
         var attendeeEmail1 = $('.customization2_attendee_contact-data_email_input');
         var attendeeEmail2 = $('.customization2_attendee_contact-data_email-confirmation_input');
+        $('.customization2_attendee_contact-data_email-confirmation_input').focus();
         attendeeEmail2.val(attendeeEmail1.val());
         $('.customization2_attendee_contact-data_email-confirmation_input').click();
-        attendeeEmail1.dispatchEvent(new Event('input', { bubbles: true }));
+        attendeeEmail2.dispatchEvent(new Event('input', { bubbles: true }));
         $('.customization2_attendee_edit-action_save').click();
     };
 
@@ -19,9 +20,10 @@ $(document).ready(function () {
     function emailConfirmationBooker() {
         var box1 = $('.customization2_booker_contact-data_email_input');
         var box2 = $('.customization2_booker_contact-data_email-confirmation_input');
+        $('.customization2_booker_contact-data_email-confirmation_input').focus();
         box2.val(box1.val());
         $('.customization2_booker_contact-data_email-confirmation_input').click();
-        box1.dispatchEvent(new Event('input', { bubbles: true }));
+        box2.dispatchEvent(new Event('input', { bubbles: true }));
         $('.customization2_booker_edit-action_save').click();
     };
 
