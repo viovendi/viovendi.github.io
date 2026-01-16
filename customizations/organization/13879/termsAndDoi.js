@@ -10,8 +10,8 @@ $(document).ready(function () {
         var attendeeEmail1 = $('.customization2_attendee_contact-data_email_input');
         var attendeeEmail2 = $('.customization2_attendee_contact-data_email-confirmation_input');
         attendeeEmail2.val(attendeeEmail1.val());
-        $('.customization2_attendee_contact-data_email-confirmation_input').focus();
-        $('.customization2_attendee_edit-action_save').focus();
+        $('.customization2_attendee_contact-data_email-confirmation_input').focus().click();
+        $('.customization2_attendee_edit-action_save').focus().click();
     };
 
     // Email Confirmation Booker
@@ -19,12 +19,13 @@ $(document).ready(function () {
         var box1 = $('.customization2_booker_contact-data_email_input');
         var box2 = $('.customization2_booker_contact-data_email-confirmation_input');
         box2.val(box1.val());
-        $('.customization2_booker_contact-data_email-confirmation_input').focus();
-        $('.customization2_booker_edit-action_save').focus();
+        $('.customization2_booker_contact-data_email-confirmation_input').focus().click();
+        $('.customization2_booker_edit-action_save').focus().click();
     };
 
     function hideEmail() {
         console.log("hideEmail");
+        /*
         $('.customization2_attendee_contact-data_email-confirmation *').css({
             "opacity": "0",
             "height": "0px"
@@ -33,6 +34,7 @@ $(document).ready(function () {
             "opacity": "0",
             "height": "0px"
         });
+        */
     };
 
 
