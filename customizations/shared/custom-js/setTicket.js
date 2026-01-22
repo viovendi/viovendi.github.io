@@ -6,7 +6,7 @@ async function run(ticket, value) {
     const options = panel.find(".p-select-option");
     const search = value.toString();
     const select = options.filter((_, t) => $(t).text().trim() == search);
-    (select.length ? select : options.find(".vv-selection-option--selected")).click();
+    (select.length ? select : options.find(".vv-selection-option--selected")).trigger("click");
     await custom_js.waitForDelete(() => ctrl.find("p-overlay .p-select-list"), ctrl);
     ctrl.find("p-overlay").show();
 }
