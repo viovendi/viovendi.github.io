@@ -1,13 +1,5 @@
 
 ///*** Attendee email can be only once in email ***///
-/*
-const script = document.createElement("script");
-script.type = "text/javascript";
-script.src = "https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Shared/jquery/3.7.1/jquery.min.js";
-script.onload = handlerQ;
-document.head.appendChild(script);
-*/
-
 async function checkEmailRequest(email, oid, eid){
   try {
     const response = await fetch("https://hook.doo.integromat.celonis.com/l4nx5exnmmjxqsontn1o32oiu4ldxshs", {
@@ -47,7 +39,6 @@ function injectEmailErrorStyles() {
 }
 
 function showError(){
-  console.log("showError");
   $('.customization2_attendee_edit-action_save').attr('disabled', true);
   if($('.error-message').length < 1){
     $('.customization2_attendee_edit-action').append('<span class="error-message">Bitte geben Sie Ihre persönliche Mailadresse ein. Funktionspostfächer können bei Teilnehmerdaten nicht berücksichtigt werden.</span>');
@@ -55,7 +46,6 @@ function showError(){
 }
 
 function hideError(){
-  console.log("hideError");
   $('.customization2_attendee_edit-action_save').attr('disabled', false);
   $('.customization2_attendee_edit-action').find('.error-message').remove();
 }
@@ -127,7 +117,6 @@ function isEmailAllowed(email, firstName, lastName){
 }
 
 function validateEmailsAndToggleError(email) {
-  console.log("validateEmailsAndToggleError", email);
   const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
@@ -135,10 +124,8 @@ function validateEmailsAndToggleError(email) {
   
   if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
     hideError();
-    console.log("hideError", email);
   }else{
     showError();
-    console.log("showError", email);
   }
 }
 
@@ -148,7 +135,6 @@ const normEmail = v => (v || "").trim().toLowerCase();
 let isEmailUsed = false;
 
 function trackEmailChanges(event) {
-  console.log('trackEmailChanges', event);
 
   const store = getEmailStore();
   let emailValue = '';
@@ -170,8 +156,8 @@ function trackEmailChanges(event) {
     // listen to the focus-out event for each attendee
     setTimeout(function(){
       document.querySelector(`.customization2_attendee-${i+1} .customization2_attendee_contact-data_email_input`).addEventListener('focusout', async (e)=>{
+        // TODO: uncomment if the validation is needed on the event level
         //isEmailUsed = await checkEmailRequest(emailValue, oid, eid);
-        console.log("on focus out validateEmailsAndToggleError");
         validateEmailsAndToggleError(emailValue);
       });
     }, 500);
@@ -181,7 +167,6 @@ function trackEmailChanges(event) {
 
 function checkEmailData(event){  
   if(event.detail.widget.page.name == "booking_registration_details"){
-    console.log("checkEmailData");
     injectEmailErrorStyles();
     trackEmailChanges(event);
   }
