@@ -187,7 +187,5 @@ function checkEmailData(event){
   }
 }
 
-function handlerQ(){
-  window.addEventListener('doo_page_loaded', checkEmailData);
-}
+window.addEventListener('doo_page_loaded', checkEmailData);
 ///*****///
