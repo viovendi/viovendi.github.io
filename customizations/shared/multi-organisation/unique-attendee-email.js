@@ -127,6 +127,7 @@ function isEmailAllowed(email, firstName, lastName){
 }
 
 function validateEmailsAndToggleError(email) {
+  console.log("validateEmailsAndToggleError", email);
   const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
@@ -134,8 +135,10 @@ function validateEmailsAndToggleError(email) {
   
   if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
     hideError();
+    console.log("hideError", email);
   }else{
     showError();
+    console.log("showError", email);
   }
 }
 
@@ -168,6 +171,7 @@ function trackEmailChanges(event) {
     setTimeout(function(){
       document.querySelector(`.customization2_attendee-${i+1} .customization2_attendee_contact-data_email_input`).addEventListener('focusout', async (e)=>{
         //isEmailUsed = await checkEmailRequest(emailValue, oid, eid);
+        console.log("on focus out validateEmailsAndToggleError");
         validateEmailsAndToggleError(emailValue);
       });
     }, 500);
@@ -177,7 +181,7 @@ function trackEmailChanges(event) {
 
 function checkEmailData(event){  
   if(event.detail.widget.page.name == "booking_registration_details"){
-    
+    console.log("checkEmailData");
     injectEmailErrorStyles();
     trackEmailChanges(event);
   }
