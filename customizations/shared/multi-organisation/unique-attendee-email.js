@@ -1,10 +1,12 @@
 
 ///*** Attendee email can be only once in email ***///
+/*
 const script = document.createElement("script");
 script.type = "text/javascript";
 script.src = "https://doo-product-consulting-uploads.s3.eu-central-1.amazonaws.com/Shared/jquery/3.7.1/jquery.min.js";
 script.onload = handlerQ;
 document.head.appendChild(script);
+*/
 
 async function checkEmailRequest(email, oid, eid){
   try {
