@@ -15,7 +15,7 @@ async function run(attendee, text, ...required) {
       el.find(".question-label-status")
         .removeClass(["question-label-status--optional", "customization-question-label-status-optional"])
         .addClass(["question-label-status--required", "customization-question-label-status-required"])
-        .text("*");
+        .text(" * ");
       
       el.find("vv-show-errors").append(`
         <div class="position-relative" style="display: none;">
