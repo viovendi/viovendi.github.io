@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Hornbach Widget Generator</title>
+
+        <script>
+            function onSubmit(event) {
+                event.preventDefault();
+                const form = new FormData(event.target);
+
+                const tag = form.get("tag");
+                const lang = form.get("lang");
+                const events = form.get("events");
+
+                if (tag == null || lang == null || events == null) {
+                    return;
+                }
+
+                const output = document.getElementById("output");
+                output.innerText =
+                    '<div class="viovendi-widget viovendi-event-list-widget" data-viovendi-locale="' + lang +
+                    '" data-viovendi-organizer="14444" data-viovendi-widget-config-name="' + (events == "ten" ? "list-14269-3858" : "list-14269-3872") +
+                    '" data-viovendi-organization-tag="' + tag +
+                    '"></div>\n<script type="text/javascript" src="https://doo.net/viovendi-embed.js" data-viovendi-version="1"><' + '/script>';
+
+            }
+        </script>
+
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+
+            #container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            form {
+                width: 400px;
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 20px;
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            #output {
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #F99D27;
+                font-family: monospace;
+                width: 400px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="container">
+            <form onsubmit="onSubmit(event)">
+                <label>
+                    Organization:
+                    <select name="tag">
+                        <option value="HOR">Hornbach Germany</option>
+                        <option value="HORLUX">Hornbach Luxembourg</option>
+                        <option value="HORS">Hornbach Sweden</option>
+                    </select>
+                </label>
+                <label>
+                    Language:
+                    <select name="lang">
+                        <option value="de-de">German</option>
+                        <option value="fr-fr">French</option>
+                        <option value="sv-se">Swedish</option>
+                    </select>
+                </label>
+                <div>
+                    Events:
+                    <label>
+                        <input type="radio" name="events" value="ten" checked="checked">
+                        10 events
+                    </label>
+                    <label>
+                        <input type="radio" name="events" value="three">
+                        3 events
+                    </label>
+                </div>
+                <input type="submit" value="Generate widget">
+            </form>
+            <div style="margin-top: 50px;">
+                <div>Widget Code:</div>
+                <br>
+                <div id="output"></div>
+            </div>
+        </div>
+    </body>
+</html>
