@@ -171,6 +171,13 @@ function trackEmailChanges(event) {
   }
   console.log("trackEmailChanges-value", emailValue);
   validateEmailsAndToggleError(emailValue);
+
+  $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
+    console.log('clicked');
+    const email = $('.customization2_attendee_contact-data_email_input').val();
+    console.log('clck-email', email);
+    //validateEmailsAndToggleError(email);
+  });
 }
 
 function checkEmailData(event){  
