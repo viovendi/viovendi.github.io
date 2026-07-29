@@ -26,6 +26,7 @@ function injectEmailErrorStyles() {
   if (document.getElementById('email-error-styles')) return;
 
   const style = document.createElement('style');
+  style.id = 'email-error-styles';
   style.textContent = `
     .customization2_attendee_edit-action span.error-message {
       position: absolute;
@@ -148,7 +149,7 @@ function trackEmailChanges(event) {
   for (let i = 0; i < event.detail.order.attendees.length; i++) {
     const attendeeTools = window.doo.tools.booking.attendee({ index: i });
     attendeeTools.defaultQuestions.watchAnswerChange('email', ({ value }) => {
-      if (!value || value.lenght < 5) return;
+      if (!value || value.length < 5) return;
       store.rawByIndex[i] = value ?? "";
       store.byIndex[i] = normEmail(value);
       store.updatedAt = Date.now();
