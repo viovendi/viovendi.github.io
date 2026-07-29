@@ -171,11 +171,6 @@ function trackEmailChanges(event) {
   }
   console.log("trackEmailChanges-value", emailValue);
   validateEmailsAndToggleError(emailValue);
-
-  $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
-    const email = $('.customization2_attendee_contact-data_email_input').val();
-    validateEmailsAndToggleError(email);
-  });
 }
 
 function checkEmailData(event){  
@@ -184,6 +179,12 @@ function checkEmailData(event){
     trackEmailChanges(event);
   }
 }
+
+// extra check an email
+$('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
+  const email = $('.customization2_attendee_contact-data_email_input').val();
+  validateEmailsAndToggleError(email);
+});
 
 window.addEventListener('doo_page_loaded', checkEmailData);
 ///*****///
