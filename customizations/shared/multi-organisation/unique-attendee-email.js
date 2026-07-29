@@ -121,6 +121,10 @@ function validateEmailsAndToggleError(email) {
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
   if(!fName || !fName.value || !lName || !lName.value) return;
+
+  console.log('validateEmailsAndToggleError-email', email);
+  console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
+  console.log('validateEmailsAndToggleError-isEmailAllowed', isEmailAllowed(email, fName.value, lName.value));
   
   if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
     hideError();
@@ -151,6 +155,7 @@ function trackEmailChanges(event) {
 
       console.log('Email changed:', i, store.byIndex[i], window.__emailStore);
       emailValue = value;
+      console.log("emailValue-value", value);
       validateEmailsAndToggleError(value);
     });
     // listen to the focus-out event for each attendee
@@ -158,10 +163,13 @@ function trackEmailChanges(event) {
       document.querySelector(`.customization2_attendee-${i+1} .customization2_attendee_contact-data_email_input`).addEventListener('focusout', async (e)=>{
         // TODO: uncomment if the validation is needed on the event level
         //isEmailUsed = await checkEmailRequest(emailValue, oid, eid);
+
+        console.log("emailValue", emailValue);
         validateEmailsAndToggleError(emailValue);
       });
     }, 500);
   }
+  console.log("trackEmailChanges-value", emailValue);
   validateEmailsAndToggleError(emailValue);
 }
 
