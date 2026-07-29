@@ -1,5 +1,7 @@
 
 ///*** Attendee email can be only once in email ***///
+console.log('email-checking');
+
 async function checkEmailRequest(email, oid, eid){
   try {
     const response = await fetch("https://hook.doo.integromat.celonis.com/l4nx5exnmmjxqsontn1o32oiu4ldxshs", {
@@ -118,6 +120,7 @@ function isEmailAllowed(email, firstName, lastName){
 }
 
 function validateEmailsAndToggleError(email) {
+  let isvalid = false;
   const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
@@ -129,9 +132,11 @@ function validateEmailsAndToggleError(email) {
   
   if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
     hideError();
+    isvalid = true;
   }else{
     showError();
   }
+  return isvalid;
 }
 
 
@@ -181,9 +186,10 @@ function checkEmailData(event){
     
     // extra check an email
     setTimeout(function(){
-      $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
+      $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(e){
+        e.preventDefault();
         const email = $('.customization2_attendee_contact-data_email_input').val();
-        validateEmailsAndToggleError(email);
+        if(!validateEmailsAndToggleError(email)) return;
       });
     }, 300);
   }
