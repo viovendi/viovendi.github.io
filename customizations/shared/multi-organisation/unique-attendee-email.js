@@ -177,14 +177,16 @@ function checkEmailData(event){
   if(event.detail.widget.page.name == "booking_registration_details"){
     injectEmailErrorStyles();
     trackEmailChanges(event);
+    
+    // extra check an email
+    setTimeout(function(){
+      $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
+        const email = $('.customization2_attendee_contact-data_email_input').val();
+        validateEmailsAndToggleError(email);
+      });
+    }, 300);
   }
 }
-
-// extra check an email
-$('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(){
-  const email = $('.customization2_attendee_contact-data_email_input').val();
-  validateEmailsAndToggleError(email);
-});
 
 window.addEventListener('doo_page_loaded', checkEmailData);
 ///*****///
