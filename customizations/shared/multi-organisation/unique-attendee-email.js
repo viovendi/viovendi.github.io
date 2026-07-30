@@ -79,9 +79,9 @@ function hasDuplicateEmails() {
   return false;
 }
 
-function isEmailAllowed(email){
+function isEmailAllowed(email, firstName, lastName){
   
-  if ( !email ) return false;
+  if (!email || !firstName || !lastName) return false;
 
   const restrictedPrefixes = [
     "contact@",
@@ -120,18 +120,20 @@ function isEmailAllowed(email){
 }
 
 function validateEmailsAndToggleError(email) {
-  console.log('validateEmailsAndToggleError-email', email);
-  
   let isvalid = false;
-  // const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
-  // const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
+  const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
+  const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
-  // move check after email?
-  // if(!fName || !fName.value || !lName || !lName.value) return;
+  //if(!fName || !fName.value || !lName || !lName.value) return;
+  if(!fName || !fName.value || !lName || !lName.value) {
+    showError();
+  }
 
-  // console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
+  console.log('validateEmailsAndToggleError-email', email);
+  console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
+  console.log('validateEmailsAndToggleError-isEmailAllowed', isEmailAllowed(email, fName.value, lName.value));
   
-  if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email) ){
+  if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
     hideError();
     isvalid = true;
   }else{
@@ -167,7 +169,7 @@ function trackEmailChanges(event) {
     });
     // listen to the focus-out event for each attendee
     setTimeout(function(){
-      document.querySelector(`.customization2_attendee-${i+1} .customization2_attendee_contact-data_email_input`).addEventListener('focusout', async (e)=>{
+      document.querySelector(`.customization2_attendee-${i+1} .customization2_attendee_contact-data_email_input, .customization2_attendee-${i+1} .customization2_attendee_contact-data_first-name_input, .customization2_attendee-${i+1} .customization2_attendee_contact-data_first-name_input`).addEventListener('focusout', async (e)=>{
         // TODO: uncomment if the validation is needed on the event level
         //isEmailUsed = await checkEmailRequest(emailValue, oid, eid);
 
@@ -184,17 +186,6 @@ function checkEmailData(event){
   if(event.detail.widget.page.name == "booking_registration_details"){
     injectEmailErrorStyles();
     trackEmailChanges(event);
-    
-    // extra check an email
-    /*
-    setTimeout(function(){
-      showError();
-      $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(e){
-        const email = $('.customization2_attendee_contact-data_email_input').val();
-        validateEmailsAndToggleError(email);
-      });
-    }, 300);
-    */
   }
 }
 
