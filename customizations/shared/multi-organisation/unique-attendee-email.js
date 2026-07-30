@@ -127,8 +127,8 @@ function validateEmailsAndToggleError(email) {
   console.log('validateEmailsAndToggleError', fName);
   console.log('validateEmailsAndToggleError', lName);
 
-  console.log('validateEmailsAndToggleError', fName.value);
-  console.log('validateEmailsAndToggleError', lName.value);
+  console.log('validateEmailsAndToggleError', fName?.value);
+  console.log('validateEmailsAndToggleError', lName?.value);
 
   if(!fName || !fName.value || !lName || !lName.value) return;
   /*
