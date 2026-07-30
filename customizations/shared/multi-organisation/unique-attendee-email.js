@@ -80,10 +80,8 @@ function hasDuplicateEmails() {
 }
 
 function isEmailAllowed(email){
-  const firstName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
-  const lastName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
   
-  if (!email || !firstName || !lastName || !firstName.value || !lastName.value ) return false;
+  if ( !email ) return false;
 
   const restrictedPrefixes = [
     "contact@",
