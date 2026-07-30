@@ -79,9 +79,11 @@ function hasDuplicateEmails() {
   return false;
 }
 
-function isEmailAllowed(email, firstName, lastName){
+function isEmailAllowed(email){
+  const firstName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
+  const lastName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
   
-  if (!email || !firstName || !lastName) return false;
+  if (!email || !firstName || !lastName || !firstName.value || !lastName.value ) return false;
 
   const restrictedPrefixes = [
     "contact@",
@@ -123,16 +125,15 @@ function validateEmailsAndToggleError(email) {
   console.log('validateEmailsAndToggleError-email', email);
   
   let isvalid = false;
-  const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
-  const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
+  // const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
+  // const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
   // move check after email?
   // if(!fName || !fName.value || !lName || !lName.value) return;
 
-  console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
-  console.log('validateEmailsAndToggleError-isEmailAllowed', isEmailAllowed(email, fName.value, lName.value));
+  // console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
   
-  if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email, fName.value, lName.value) ){
+  if(!hasDuplicateEmails() && !isEmailUsed && isEmailAllowed(email) ){
     hideError();
     isvalid = true;
   }else{
