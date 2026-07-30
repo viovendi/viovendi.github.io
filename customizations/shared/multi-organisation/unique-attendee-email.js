@@ -124,6 +124,12 @@ function validateEmailsAndToggleError(email) {
   const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
+  console.log('validateEmailsAndToggleError', fName);
+  console.log('validateEmailsAndToggleError', lName);
+
+  console.log('validateEmailsAndToggleError', fName.value);
+  console.log('validateEmailsAndToggleError', lName.value);
+
   if(!fName || !fName.value || !lName || !lName.value) return;
   /*
   if(!fName || !fName.value || !lName || !lName.value) {
