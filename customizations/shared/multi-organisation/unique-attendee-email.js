@@ -185,6 +185,7 @@ function checkEmailData(event){
     trackEmailChanges(event);
     
     // extra check an email
+    /*
     setTimeout(function(){
       showError();
       $('.customization2_attendee_edit-action_save, .customization-button-next').on('click', function(e){
@@ -192,6 +193,7 @@ function checkEmailData(event){
         validateEmailsAndToggleError(email);
       });
     }, 300);
+    */
   }
 }
 
