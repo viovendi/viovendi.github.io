@@ -126,14 +126,8 @@ function validateEmailsAndToggleError(email) {
   const fName = document.querySelector('.customization2_attendee_contact-data_first-name_input');
   const lName = document.querySelector('.customization2_attendee_contact-data_last-name_input');
 
+  // move check after email?
   // if(!fName || !fName.value || !lName || !lName.value) return;
-  if(!fName || !fName.value || !lName || !lName.value){
-    showError();
-    return
-  }else{
-    hideError();
-    return
-  }
 
   console.log('validateEmailsAndToggleError-hasDuplicateEmails', hasDuplicateEmails());
   console.log('validateEmailsAndToggleError-isEmailAllowed', isEmailAllowed(email, fName.value, lName.value));
