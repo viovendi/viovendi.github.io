@@ -20,11 +20,10 @@
 
                 const output = document.getElementById("output");
                 output.innerText =
-                    '<div class="viovendi-widget viovendi-event-list-widget" data-viovendi-locale="' + lang +
-                    '" data-viovendi-organizer="14444" data-viovendi-widget-config-name="' + (events == "ten" ? "list-14269-3858" : "list-14269-3872") +
-                    '" data-viovendi-organization-tag="' + tag +
-                    '"></div>\n<script type="text/javascript" src="https://doo.net/viovendi-embed.js" data-viovendi-version="1"><' + '/script>';
-
+                    `<div class="viovendi-widget viovendi-event-list-widget" data-viovendi-locale="${lang}"` +
+                    ` data-viovendi-organizer="14444" data-viovendi-widget-config-name="list-14269-3858" data-viovendi-organization-tag="${tag}"` +
+                    (events == "ten" ? "" : ` data-viovendi-events-per-page="3"`) +
+                    `></div>\n<script type="text/javascript" src="https://doo.net/viovendi-embed.js" data-viovendi-version="1"><` + `/script>`;
             }
         </script>
 
