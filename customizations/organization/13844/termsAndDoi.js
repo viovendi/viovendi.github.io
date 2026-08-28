@@ -35,7 +35,13 @@ $(document).ready(function () {
 
 
     function moveTerms() {
-        const terms = `<p id='45408464531'>Ihre o.a. Daten werden zur persönlichen Ansprache und Abwicklung der Veranstaltung verwendet und gelöscht, sobald diese Zwecke weggefallen sind. Die AGB ( <a href="https://agb.swmh.de/sz_veranstaltungen" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://agb.swmh.de/sz_veranstaltungen</a>) und Datenschutzhinweise ( <a href="https://www.swmh-datenschutz.de/sz-erleben" target="_blank" rel="noopener noreferrer" style="color: #3b9f9a !important;">https://www.swmh-datenschutz.de/sz-erleben</a>) habe ich zur Kenntnis genommen.</p>`;
+        const terms = `<p id='45408464531'>
+            Ihre o.a. Daten verarbeiten wir zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO), Geburtsdatum/-ort aufgrund einer rechtlichen Verpflichtung (Art. 6 Abs. 1 lit. c DSGVO),
+            die Kontaktdaten aufgrund unseres berechtigten Interesses an Direktwerbung (Art. 6 Abs. 1 lit. f DSGVO, § 7 Abs. 3 UWG) und die freiwilligen Angaben zur persönlichen Kundenansprache
+            mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGV), die Sie jederzeit unter <a href="mailto:werbewiderspruch@sz.de">werbewiderspruch@sz.de</a> widerrufen können.
+            Die <a href="https://agb.swmh.de/sz_veranstaltungen" target="_blank" rel="noopener noreferrer">AGB</a> und
+            <a href="https://datenschutz.swmh.de/sz_live" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> habe ich zur Kenntnis genommen.
+        </p>`;
 
         // Add Terms after Booker data
         if(!$('#45408464531').length){
