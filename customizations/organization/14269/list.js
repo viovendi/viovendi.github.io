@@ -146,6 +146,9 @@ if(url.includes("list-14269-2638") && url.includes("attribute_names=Forst")){
     $.getScript('https://viovendi.github.io/customizations/organization/14269/hidefirstpage.js?t='+ timestamp);
     /******************************* END of GTM code **************************************************/
 
+}else if(url.includes("list-14269-3858")){
+    // code migrated from GTM COMPLEX-240 for list widget list-14269-2638
+    console.log("list-14269-3858");
 }
 
 
