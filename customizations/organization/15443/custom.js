@@ -70,14 +70,7 @@ getXMLHttpRequest(XMLHttpRequest.prototype.open);
 */
 
 // replace order crated watcher
-window.addEventListener("doo_booking_created", event => {
-  console.log('shared-doo_booking_created:', event);
-
-  console.log('shared-event:', event.detail.event.id);
-  console.log('shared-order:', event.detail.order.id);
-  console.log('shared-amount:', event.detail.order.payment.amount);
-  console.log('shared-event_ticket_id:', event.detail.order.attendees[0].ticketCategory.id);
-  
+window.addEventListener("doo_booking_created", event => {  
   processData(event.detail.event.id, event.detail.order.id, event.detail.order.payment.amount, event.detail.order.attendees[0].ticketCategory.id);
 });
 
