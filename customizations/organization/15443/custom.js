@@ -38,12 +38,18 @@ console.log('shared-processData-data:', [eventId, orderId, price, ticketCategory
 var isFuncUsed = false;
 
 function getXMLHttpRequest (open) {
+  console.log('shared-getXMLHttpRequest');
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
+        
+        console.log('shared-getXMLHttpRequest-this.__zone_symbol__xhrURL:', this.__zone_symbol__xhrURL);
+        
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
           try {
             var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
+            console.log('shared-getXMLHttpRequest-res:', res);
           } catch (err) {}
+          
           if(res != undefined && res._embedded){
             
             var orders = res._embedded.orders;
@@ -61,6 +67,20 @@ function getXMLHttpRequest (open) {
 };
 
 getXMLHttpRequest(XMLHttpRequest.prototype.open);
+
+// replace order crated watcher
+window.addEventListener("doo_booking_created", event => {
+  console.log('shared-doo_booking_created:', event);
+
+  console.log('shared-event:', event.detail.event.id);
+  console.log('shared-order:', event.detail.order.id);
+  console.log('shared-amount:', event.detail.order.payment.amount);
+  console.log('shared-event_ticket_id:', event.detail.order.attendees[0].ticket.id);
+  
+});
+
+
+
 
 function sendRedirectRequest(bodyData){
   console.log('shared-sendRedirectRequest-bodyData:', bodyData);
