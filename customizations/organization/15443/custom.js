@@ -1,10 +1,10 @@
 console.log('git-code-updated');
 
 // get iFrameUrlParam from frame URL
-console.log(redirectUrl);
+console.log('shared-redirectUrl:', redirectUrl);
 
 function processData(eventId, orderId, price, ticketCategoryId){
-
+console.log('shared-processData-data:', [eventId, orderId, price, ticketCategoryId]);
   let bodyString = '';
 
   if(price == 0){
@@ -63,6 +63,7 @@ function getXMLHttpRequest (open) {
 getXMLHttpRequest(XMLHttpRequest.prototype.open);
 
 function sendRedirectRequest(bodyData){
+  console.log('shared-sendRedirectRequest-bodyData:', bodyData);
   var windowRedirectUrl = redirectUrl + bodyData;
   window.top.location.href=windowRedirectUrl;
 }
