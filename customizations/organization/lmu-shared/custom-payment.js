@@ -152,6 +152,7 @@ function getXMLHttpRequest (open) {
     isgetHttp = 1;
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
+          console.log(this)
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
             console.log(this.__zone_symbol__xhrURL)
           try {
