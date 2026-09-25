@@ -153,10 +153,11 @@ function getXMLHttpRequest (open) {
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
+            console.log(this.__zone_symbol__xhrURL)
           try {
             var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
           } catch (err) {}
-          
+          console.log(res)
           if(res != undefined && res._embedded){
              const orders = res._embedded.orders;
             
