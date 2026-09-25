@@ -166,7 +166,7 @@ function getXMLHttpRequest (open) {
              orderDataobj.buyerEmail = orders[0].email
              orderDataobj.orderAmount = orders[0].payment.amount;
              orderDataobj.orderCurr = orders[0].event.currency.code;
-            
+              console.log(orderDataobj);
             if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
               sendRequestToGetRedirectUrl(orderDataobj);
             }
