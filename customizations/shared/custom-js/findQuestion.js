@@ -22,7 +22,7 @@ async function run(exactLabel, attendee) {
 
   } else {
     // additional questions
-    const qu = $(attendee ?? document).find(".customization2_attendee_further-data_custom-question, .customization2_booker_further-data_custom-question, .customization2_attendee_further-data_product, customization2_booker_further-data_product");
+    const qu = $(attendee ?? document).find(".customization2_attendee_further-data_custom-question, .customization2_booker_further-data_custom-question, .customization2_attendee_further-data_product, .customization2_booker_further-data_product");
     const results = await Promise.all(qu.map(async (i, q) => {
       let labelSelector;
       if ($(q).is(".customization2_attendee_further-data_custom-question")) {
