@@ -1,12 +1,12 @@
 async function run(selector, parent, callback) {
-    const s = await selector();
+    const s = await selector(parent);
     let exists = false;
     if (s.length) {
         callback(s);
         exists = true;
     }
     const observer = new MutationObserver(async () => {
-        const s = await selector();
+        const s = await selector(parent);
         if (!s.length) {
             exists = false;
             return;
