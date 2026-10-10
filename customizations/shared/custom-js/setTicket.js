@@ -6,6 +6,7 @@ async function run(ticket, value, deleting) {
     const options = panel.find(".p-select-option");
     const search = value.toString();
     const select = options.filter((_, t) => $(t).text().trim() == search);
+    await new Promise(res => setTimeout(res, 100));
     (select.length ? select : options.find(".vv-selection-option--selected")).click();
     if (!deleting) {
         await custom_js.waitForDelete(() => ctrl.find("p-overlay .p-select-list"), ctrl);
