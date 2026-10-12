@@ -176,14 +176,16 @@ function sendRequestToGetRedirectUrl(object){
 let isSent = false;
 const orderDataobj = {};
 function getXMLHttpRequest (open) {
+    console.log('getXMLHttpRequest', getXMLHttpRequest);
     isgetHttp = 1;
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener("readystatechange", function() {
+        console.log('getXMLHttpRequest-this', this.__zone_symbol__xhrURL);
         if(this.__zone_symbol__xhrURL == "https://api.doo.net/v1/orders" ){
           try {
             var res = typeof JSON.parse(this.responseText) != "undefined" ? JSON.parse(this.responseText): undefined;
           } catch (err) {}
-          
+          console.log('getXMLHttpRequest-res', res._embedded);
           if(res != undefined && res._embedded){
 
              const orders = res._embedded.orders;
@@ -194,8 +196,12 @@ function getXMLHttpRequest (open) {
              orderDataobj.buyerEmail = orders[0].email
              orderDataobj.orderAmount = orders[0].payment.amount;
              orderDataobj.orderCurr = orders[0].event.currency.code;
+
+             console.log('getXMLHttpRequest-isSent', isSent);
+             console.log('getXMLHttpRequest-lenght', $('.customization2_payment-description_manual-approval').length);
             
             if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
+              console.log('getXMLHttpRequest-run redirect!');
               sendRequestToGetRedirectUrl(orderDataobj);
             }
             isSent = true;
@@ -205,3 +211,16 @@ function getXMLHttpRequest (open) {
       open.apply(this, arguments);
     };
 };
+
+function orderHandler(event){
+    console.log('orderHandler-event', event.detail);
+    
+    console.log('orderHandler', event.detail.order.id);
+    console.log('orderHandler', event.detail.organization.id);
+    console.log('orderHandler', event.detail.event.id);
+    console.log('orderHandler', event.detail.order.buyer.email);
+    console.log('orderHandler', event.detail.order.payment.amount);
+    console.log('orderHandler', event.detail.event.currency.code);
+}
+
+window.addEventListener('doo_booking_created', orderHandler);
