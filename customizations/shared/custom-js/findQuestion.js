@@ -4,10 +4,10 @@ async function run(exactLabel, attendee) {
     const search = exactLabel.slice(1);
     const p = $(attendee ?? document).find("vv-default-questions, vv-default-answers");
     if (p.is("vv-default-questions")) {
-      const q = p.find("div[class*='customization2_attendee_contact-data_" + search + "'], div[class*='customization2_booker_contact-data_" + search + "']").not("[class*='_input'], [class*='_error']");
+      const q = p.find("[class*='customization2_attendee_contact-data_" + search + "'], [class*='customization2_booker_contact-data_" + search + "']").not("[class*='_input'], [class*='_error']");
       return q;
     } else {
-      const q = p.find("div[class*='customization2_attendee_contact-data_" + search + "_value'], div[class*='customization2_booker_contact-data_" + search + "_value']");
+      const q = p.find("[class*='customization2_attendee_contact-data_" + search + "_value'], [class*='customization2_booker_contact-data_" + search + "_value']");
       return q;
     }
   } else if (exactLabel.startsWith("$")) {
