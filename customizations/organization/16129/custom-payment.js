@@ -230,7 +230,7 @@ function orderHandler(event){
     isSent = true;
 }
 
-fucntion runOrderEventWatcher(){
+function runOrderEventWatcher(){
   console.log('runOrderEventWatcher');
   window.addEventListener('doo_booking_created', orderHandler);
 }
