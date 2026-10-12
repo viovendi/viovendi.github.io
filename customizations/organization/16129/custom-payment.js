@@ -81,7 +81,8 @@ var insertionListener = function (event) {
       if(isEpayPayment()){
         console.log('isisEpayPayment - true');
         localStorage.setItem('payment_method', 'ePay');
-        getXMLHttpRequest(XMLHttpRequest.prototype.open);
+        //getXMLHttpRequest(XMLHttpRequest.prototype.open);
+        runOrderEventWatcher();
       }
     });
     
@@ -214,13 +215,22 @@ function getXMLHttpRequest (open) {
 
 function orderHandler(event){
     console.log('orderHandler-event', event.detail);
-    
-    console.log('orderHandler', event.detail.order.id);
-    console.log('orderHandler', event.detail.organization.id);
-    console.log('orderHandler', event.detail.event.id);
-    console.log('orderHandler', event.detail.order.buyer.email);
-    console.log('orderHandler', event.detail.order.payment.amount);
-    console.log('orderHandler', event.detail.event.currency.code);
+            
+     orderDataobj.orderId = event.detail.order.id;
+     orderDataobj.organizationId = event.detail.event.organizer.id;
+     orderDataobj.eventId = event.detail.event.id;
+     orderDataobj.buyerEmail = event.detail.order.buyer.email;
+     orderDataobj.orderAmount = event.detail.order.payment.amount;
+     orderDataobj.orderCurr = event.detail.event.currency.code;
+
+    if(!isSent && $('.customization2_payment-description_manual-approval').length < 1){
+      console.log('redirect!');
+      sendRequestToGetRedirectUrl(orderDataobj);
+    }
+    isSent = true;
 }
 
-window.addEventListener('doo_booking_created', orderHandler);
+fucntion runOrderEventWatcher(){
+  console.log('runOrderEventWatcher');
+  window.addEventListener('doo_booking_created', orderHandler);
+}
