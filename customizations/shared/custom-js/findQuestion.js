@@ -45,7 +45,12 @@ async function run(exactLabel, attendee) {
       label.find("vv-tooltip").text("");
       label.find("vv-field-label-status").text("");
       label.find("vv-tooltip-standalone").text("");
-      const allText = [...label.get(0).childNodes].map(c => $(c).text().trim()).join("");
+      let allText;
+      try {
+        allText = [...label.get(0).childNodes].map(c => $(c).text().trim()).join("");
+      } catch (err) {
+        allText = label.text().trim();
+      }
       return await custom_js.match(exactLabel, allText);
     }));
     let p = qu.filter((i, q) => results[i]).parent();
