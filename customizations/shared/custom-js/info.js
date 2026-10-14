@@ -8,7 +8,7 @@ async function run() {
   return {
 
     // short lowercase
-    eid, oid, lang, type, config
+    eid, oid, lang, type, config,
 
     // short uppercase
     "EID": eid,
