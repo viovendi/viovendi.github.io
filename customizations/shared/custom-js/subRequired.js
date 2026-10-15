@@ -11,11 +11,11 @@ async function run(attendee, text, ...required) {
 
       if (isProductGroup) {
         el.append(`
-          <p class="question-group__error" style="display: none;">
+          <div class="question-group__error" style="display: none;">
             <p style="display: flex; align-items: center; font-size: .75rem; line-height: 1rem; color: #c13c26;">
               ${text}
             </p>
-          </p>
+          </div>
         `);
       } else {
         // already required
