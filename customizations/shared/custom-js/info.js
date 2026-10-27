@@ -1,5 +1,6 @@
 async function run() {
   const url = new URL(window.location.href);
+  console.log('info-url', url);
   const eid = url.searchParams.get("doo_event_id");
   const oid = url.searchParams.get("organizerId");
   const lang = url.searchParams.get("doo_locale");
