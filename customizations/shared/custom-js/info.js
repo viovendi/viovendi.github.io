@@ -4,8 +4,20 @@ async function run() {
   const oid = url.searchParams.get("organizerId");
   const lang = url.searchParams.get("doo_locale");
   console.log('url', url);
-  console.log('attendee_type->', url.searchParams.get("attendee_type"));
-  const type = url.searchParams.get("attendee_type") ?? (JSON.parse(url.searchParams.get("doo_buyer_prefill") ?? "{}").attendee_type ?? null);
+  
+  const type =
+    (() => {
+        const embeddedUrl = url.searchParams.get("embeddedUrl");
+
+        return embeddedUrl
+            ? new URL(decodeURIComponent(embeddedUrl))
+                  .searchParams.get("attendee_type")
+            : null;
+    })() ??
+    (JSON.parse(url.searchParams.get("doo_buyer_prefill") ?? "{}").attendee_type ?? null);
+  
+  console.log('type', type);
+  
   const config = url.searchParams.get("booking_widget_config_name");
   return {
 
