@@ -3,7 +3,7 @@ async function run() {
   const eid = url.searchParams.get("doo_event_id");
   const oid = url.searchParams.get("organizerId");
   const lang = url.searchParams.get("doo_locale");
-  console.log('attendee_type->searchParams', url.searchParams);
+  console.log('url', url);
   console.log('attendee_type->', url.searchParams.get("attendee_type"));
   const type = url.searchParams.get("attendee_type") ?? (JSON.parse(url.searchParams.get("doo_buyer_prefill") ?? "{}").attendee_type ?? null);
   const config = url.searchParams.get("booking_widget_config_name");
