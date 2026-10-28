@@ -3,8 +3,8 @@ async function run() {
   const eid = url.searchParams.get("doo_event_id");
   const oid = url.searchParams.get("organizerId");
   const lang = url.searchParams.get("doo_locale");
-  console.log('url', url);
-  
+
+  // extended logic for getting attendee type
   const type =
     (() => {
         const embeddedUrl = url.searchParams.get("embeddedUrl");
@@ -15,8 +15,6 @@ async function run() {
             : null;
     })() ??
     (JSON.parse(url.searchParams.get("doo_buyer_prefill") ?? "{}").attendee_type ?? null);
-  
-  console.log('type', type);
   
   const config = url.searchParams.get("booking_widget_config_name");
   return {
